@@ -46,9 +46,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | --- | --- |
 | Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` |
 | Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` |
-| CRM / Messaging Operator | `marketing/marketing-line-official-account-operator.md` |
-| EC Marketplace Operator | `marketing/marketing-rakuten-amazon-japan-operator.md` |
-| Search SEO Specialist | `marketing/marketing-yahoo-google-japan-seo.md` |
-| Manufacturing DX Consultant | `specialized/japanese-manufacturing-dx-consultant.md` |
-| Invoice / Tax System Advisor | `specialized/japanese-invoice-system-advisor.md` |
-| Electronic Bookkeeping Reviewer | `specialized/japanese-electronic-bookkeeping-reviewer.md` |
+| Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` |
+| HR Performance Reviewer | `hr/hr-japanese-performance-review-facilitator.md` |
+| Design System Maintainer | `design/design-japanese-design-system-maintainer.md` |
+| Tool Evaluator | `testing/testing-japanese-tool-evaluator.md` |
+| Knowledge Base Steward | `specialized/specialized-japanese-knowledge-base-steward.md` |

@@ -36,10 +36,30 @@
 | `product/product-japanese-product-manager.md` | 日本市場向け product planning |
 | `product/product-japanese-b2b-saas-planner.md` | B2B SaaS、契約、権限、CS |
 | `legal/legal-japanese-privacy-compliance-reviewer.md` | 個人情報保護法、privacy review |
+| `legal/legal-japanese-contract-reviewer.md` | 業務委託、NDA、SaaS 契約 review |
+| `legal/legal-japanese-sla-maintenance-contract-reviewer.md` | SLA、保守契約、責任分界 |
 | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
+| `marketing/marketing-line-official-account-operator.md` | LINE 公式アカウント運用 |
+| `marketing/marketing-rakuten-amazon-japan-operator.md` | 楽天 / Amazon Japan EC 運用 |
+| `marketing/marketing-yahoo-google-japan-seo.md` | Yahoo! JAPAN / Google SEO |
+| `marketing/marketing-seminar-webinar-planner.md` | B2B セミナー / ウェビナー |
+| `finance/finance-japanese-invoice-system-advisor.md` | インボイス制度、請求書 system |
+| `finance/finance-electronic-bookkeeping-reviewer.md` | 電子帳簿保存法 review |
+| `hr/hr-japanese-it-recruiter.md` | IT 採用、職務要件、面談設計 |
+| `hr/hr-japanese-onboarding-specialist.md` | 新メンバー onboarding |
+| `design/design-japanese-business-ui-designer.md` | 日本の業務 UI / 管理画面 |
+| `design/design-accessibility-auditor-ja.md` | 日本語 UI accessibility audit |
 | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
 | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
+| `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
+| `support/support-japanese-helpdesk-responder.md` | 日本語 helpdesk 一次対応 |
+| `support/support-release-note-writer-ja.md` | 日本語 release note |
 | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共 sector |
+| `specialized/specialized-japanese-manufacturing-dx-consultant.md` | 製造業 DX |
+| `specialized/specialized-factory-iot-planner.md` | 工場 IoT plan |
+| `specialized/specialized-quality-control-kaizen-advisor.md` | 品質管理、カイゼン |
+| `supply-chain/supply-chain-japanese-vendor-evaluator.md` | vendor 評価、調達 |
+| `supply-chain/supply-chain-inventory-forecasting-ja.md` | 在庫予測、安全在庫 |
 
 ## Agent 形式
 

@@ -18,7 +18,7 @@ while IFS= read -r file; do
       errors=$((errors + 1))
     fi
   done
-done < <(find engineering project-management testing product marketing legal sales support specialized -name '*.md' -type f | sort)
+done < <(find engineering project-management testing product marketing finance hr design legal sales support supply-chain specialized -name '*.md' -type f | sort)
 
 if [ "$errors" -gt 0 ]; then
   exit 1
