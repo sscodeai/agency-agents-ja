@@ -82,6 +82,46 @@ color: blue
 ## 出力フォーマット
 ```
 
+## 使い方
+
+### 直接指定
+
+AI coding tool に agent file を指定して読み込ませます。
+
+```text
+engineering/engineering-japanese-requirements-engineer.md を使って、この Backlog ticket の要件と受入条件を整理してください。
+```
+
+```text
+testing/testing-evidence-collector-ja.md を使って、この PR の検証 evidence をまとめてください。
+```
+
+### superpowers-ja workflow-runner と使う
+
+`superpowers-ja` の `workflow-runner` skill は YAML workflow を読み、複数 role を順番に実行できます。
+
+例:
+
+```text
+superpowers-ja の workflow-runner を使って examples/workflow-japanese-sier-requirements.md を実行してください。
+ticket は PROJ-1234、spec は docs/spec.md です。
+```
+
+workflow 内の `agents_dir` はこの repository root を基準にします。
+
+### Agent を探す
+
+[AGENT-LIST.md](AGENT-LIST.md) から用途に近い agent を探してください。一覧は `scripts/generate-agent-list.js` で自動生成します。
+
+## メンテナンス
+
+```bash
+node scripts/generate-agent-list.js
+scripts/validate.sh
+```
+
+CI では `scripts/validate.sh` を実行し、frontmatter、命名、禁止語、`AGENT-LIST.md` の同期を確認します。
+
 ## Roadmap
 
 agent の設計方針と追加予定は [ROADMAP.md](ROADMAP.md) に記録します。

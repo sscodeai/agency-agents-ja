@@ -17,6 +17,10 @@
   ],
   "author": "SS",
   "license": "MIT",
+  "scripts": {
+    "generate:list": "node scripts/generate-agent-list.js",
+    "validate": "scripts/validate.sh"
+  },
   "homepage": "https://github.com/sscodeai/agency-agents-ja#readme",
   "repository": {
     "type": "git",

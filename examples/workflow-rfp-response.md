@@ -1,0 +1,30 @@
+# Workflow: RFP Response
+
+```yaml
+name: rfp-response
+agents_dir: "."
+inputs:
+  - name: rfp
+    required: true
+steps:
+  - id: requirements
+    role: "engineering/engineering-japanese-requirements-engineer"
+    task: "RFP {{rfp}} から要求、前提、未決事項、確認質問を抽出してください。"
+    output: requirements
+  - id: architecture
+    role: "engineering/engineering-japanese-sier-architect"
+    task: "Requirements {{requirements}} に対する提案 architecture とリスクを整理してください。"
+    depends_on: [requirements]
+    output: architecture
+  - id: legal
+    role: "legal/legal-japanese-sla-maintenance-contract-reviewer"
+    task: "Requirements {{requirements}} と architecture {{architecture}} から SLA / 保守契約上の注意点を整理してください。"
+    depends_on: [requirements, architecture]
+    output: legal
+  - id: proposal
+    role: "sales/sales-japanese-rfp-response-writer"
+    task: "Requirements {{requirements}}、architecture {{architecture}}、legal notes {{legal}} をもとに提案書 outline を作ってください。"
+    depends_on: [requirements, architecture, legal]
+    output: summary
+```
+```
