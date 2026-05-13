@@ -26,7 +26,9 @@ agency-agents-ja の agent 設計ロードマップです。
 | Privacy / Compliance Reviewer | `legal/legal-japanese-privacy-compliance-reviewer.md` | 個人情報保護法、委託先管理、privacy review へ調整 |
 | Technical Content Strategist | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報へ特化 |
 | Backend Architect | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ、運用を日本の業務 system 向けに調整 |
+| Data Engineer | `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality、個人情報へ特化 |
 | Frontend Engineer | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form/table、IME、検収しやすい UI へ調整 |
+| Mobile App Builder | `engineering/engineering-japanese-mobile-app-builder.md` | 日本向け mobile app、push、store release、support へ特化 |
 | Security Engineer | `engineering/engineering-japanese-security-engineer.md` | 個人情報、委託先、監査、社内 system risk を追加 |
 | SRE | `engineering/engineering-japanese-sre.md` | 障害報告、保守契約、顧客影響、runbook を日本運用向けに調整 |
 | Database Optimizer | `engineering/engineering-japanese-database-optimizer.md` | 帳票、CSV、batch、migration、rollback を重視 |
@@ -36,9 +38,12 @@ agency-agents-ja の agent 設計ロードマップです。
 | Product Manager | `product/product-japanese-product-manager.md` | 日本市場、顧客要望、受入条件、業務 impact を重視 |
 | B2B SaaS Planner | `product/product-japanese-b2b-saas-planner.md` | B2B SaaS の契約、権限、CS、onboarding へ特化 |
 | QA Planner | `testing/testing-japanese-qa-planner.md` | 単体、結合、総合、受入、回帰の QA 計画へ拡張 |
+| API Tester | `testing/testing-japanese-api-tester.md` | API contract、認証認可、異常系、検収 evidence へ特化 |
 | CSV / Excel Tester | `testing/testing-shift-jis-csv-tester.md` | 日本業務で頻出する CSV / Excel / 文字コード検証へ特化 |
 | Incident Report Writer | `support/support-japanese-incident-report-writer.md` | 障害報告書、時系列、再発防止へ特化 |
 | Proposal Writer | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提、保守運用へ調整 |
+| Sales Engineer | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility、RFP 質問回答へ特化 |
+| Technical Writer | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、runbook、検収資料へ特化 |
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
 | Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
 | HR Performance Reviewer | `hr/hr-japanese-performance-review-facilitator.md` | IT 職種の目標設定、1on1、評価 feedback へ特化 |
@@ -52,8 +57,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | --- | --- |
 | Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` |
 | Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` |
-| Sales Engineer | `sales/sales-japanese-sales-engineer.md` |
-| Data Engineer | `engineering/engineering-japanese-data-engineer.md` |
-| API Tester | `testing/testing-japanese-api-tester.md` |
-| Mobile App Builder | `engineering/engineering-japanese-mobile-app-builder.md` |
-| Technical Writer | `engineering/engineering-japanese-technical-writer.md` |
+| Customer Support Analytics | `support/support-japanese-support-analytics-reporter.md` |
+| Account Strategist | `sales/sales-japanese-account-strategist.md` |
+| Prompt Engineer | `specialized/specialized-japanese-prompt-engineer.md` |
+| Meeting Assistant | `specialized/specialized-japanese-meeting-assistant.md` |
+| Risk Assessor | `specialized/specialized-japanese-risk-assessor.md` |

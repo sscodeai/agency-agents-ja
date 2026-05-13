@@ -1,0 +1,27 @@
+name: api-integration-delivery
+agents_dir: "."
+inputs:
+  - name: integration_request
+    required: true
+  - name: api_spec
+    required: true
+steps:
+  - id: requirements
+    role: "engineering/engineering-japanese-requirements-engineer"
+    task: "Integration request {{integration_request}} と API spec {{api_spec}} を読み、要件、前提、未決事項、受入条件を整理してください。"
+    output: requirements
+  - id: backend
+    role: "engineering/engineering-japanese-backend-architect"
+    task: "Requirements {{requirements}} をもとに API 連携の backend design、認証、retry、冪等性、監査ログを設計してください。"
+    depends_on: [requirements]
+    output: backend
+  - id: api_test
+    role: "testing/testing-japanese-api-tester"
+    task: "Requirements {{requirements}} と backend design {{backend}} をもとに API test plan、異常系、権限、検収 evidence を作ってください。"
+    depends_on: [requirements, backend]
+    output: api_test
+  - id: technical_doc
+    role: "engineering/engineering-japanese-technical-writer"
+    task: "Requirements {{requirements}}、backend design {{backend}}、API test plan {{api_test}} をもとに、顧客・運用担当向け API 連携 document outline を作ってください。"
+    depends_on: [requirements, backend, api_test]
+    output: summary

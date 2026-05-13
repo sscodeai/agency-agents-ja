@@ -19,19 +19,23 @@
 | `engineering/engineering-japanese-requirements-engineer.md` | 要件定義、受入条件、仕様確認 |
 | `engineering/engineering-japanese-sier-architect.md` | SIer / 受託開発向け architecture |
 | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ |
+| `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality |
 | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form、table |
 | `engineering/engineering-japanese-code-reviewer.md` | 日本語チーム向け code review |
 | `engineering/engineering-japanese-security-engineer.md` | 認証認可、個人情報、security review |
 | `engineering/engineering-japanese-sre.md` | SLO、監視、障害対応、runbook |
 | `engineering/engineering-japanese-database-optimizer.md` | DB、query、index、migration |
 | `engineering/engineering-japanese-legacy-modernization-engineer.md` | legacy system modernization |
+| `engineering/engineering-japanese-mobile-app-builder.md` | iOS / Android / React Native / Flutter |
 | `engineering/engineering-japanese-performance-engineer.md` | response time、batch、DB、frontend 性能改善 |
+| `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、運用手順 |
 | `engineering/engineering-kintone-developer.md` | Cybozu kintone 開発 |
 | `engineering/engineering-line-works-integration-developer.md` | LINE WORKS 連携 |
 | `project-management/project-management-japanese-pm.md` | WBS、課題、進捗、会議体 |
 | `project-management/project-management-backlog-redmine-jira-steward.md` | ticket workflow 管理 |
 | `project-management/project-management-acceptance-criteria-writer.md` | 受入条件、検収条件 |
 | `testing/testing-japanese-qa-planner.md` | QA plan、test matrix |
+| `testing/testing-japanese-api-tester.md` | API contract、異常系、権限、検収 evidence |
 | `testing/testing-evidence-collector-ja.md` | テスト証跡、CI 結果、検収資料 |
 | `testing/testing-shift-jis-csv-tester.md` | Shift_JIS、CSV、Excel 検証 |
 | `product/product-japanese-product-manager.md` | 日本市場向け product planning |
@@ -54,6 +58,7 @@
 | `design/design-accessibility-auditor-ja.md` | 日本語 UI accessibility audit |
 | `design/design-japanese-design-system-maintainer.md` | 業務 UI design system 運用 |
 | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
+| `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility |
 | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
 | `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
 | `support/support-japanese-helpdesk-responder.md` | 日本語 helpdesk 一次対応 |
@@ -122,12 +127,14 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | Workflow | 用途 |
 | --- | --- |
 | `workflows/japanese-sier-requirements-review.yaml` | SIer / 受託開発の要件、設計、検収準備 |
+| `workflows/api-integration-delivery.yaml` | API 連携の要件、backend design、API test、document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 |
+| `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |
 
 ### Agent を探す
 

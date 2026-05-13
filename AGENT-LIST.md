@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 50
+Total agents: 55
 
 ## Engineering
 
@@ -8,14 +8,17 @@ Total agents: 50
 | --- | --- | --- |
 | 日本向けバックエンドアーキテクト | 日本の業務システム、SaaS、受託開発向けに API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。 | `engineering/engineering-japanese-backend-architect.md` |
 | 日本語コードレビュアー | 日本語チーム向け code review 専門家。丁寧な表現、明確な重大度、証跡、受入条件、保守運用リスクを重視する。 | `engineering/engineering-japanese-code-reviewer.md` |
+| 日本向けデータエンジニア | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する data engineer。 | `engineering/engineering-japanese-data-engineer.md` |
 | 日本向けデータベース最適化エンジニア | 業務システムの database schema、query、index、migration、帳票・CSV・batch workload を最適化する専門家。 | `engineering/engineering-japanese-database-optimizer.md` |
 | 日本向けフロントエンドエンジニア | 日本の業務画面、管理画面、SaaS UI 向けに React/Vue、form、table、accessibility、入力補助、検証しやすい UI を実装する frontend engineer。 | `engineering/engineering-japanese-frontend-engineer.md` |
 | レガシーモダナイゼーションエンジニア | 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。 | `engineering/engineering-japanese-legacy-modernization-engineer.md` |
+| 日本向けモバイルアプリエンジニア | 日本向け iOS / Android / React Native / Flutter app の業務要件、push 通知、認証、審査、運用、障害対応を考慮して実装する mobile app builder。 | `engineering/engineering-japanese-mobile-app-builder.md` |
 | 日本向けパフォーマンスエンジニア | 日本の業務システム、SaaS、EC における response time、batch、DB、frontend、外部連携の性能課題を調査し改善計画を作る performance engineer。 | `engineering/engineering-japanese-performance-engineer.md` |
 | 要件定義エンジニア | 日本の受託開発、SI、SaaS 開発で要件定義、受入条件、仕様確認、未決事項整理を行う専門家。曖昧な依頼を実装可能な要件へ落とし込む。 | `engineering/engineering-japanese-requirements-engineer.md` |
 | 日本向けセキュリティエンジニア | 日本企業の web application、業務システム、SaaS に対して threat modeling、認証認可、個人情報、監査ログ、脆弱性対応を review する。 | `engineering/engineering-japanese-security-engineer.md` |
 | 日本 SIer アーキテクト | SIer / 受託開発向けの architecture 専門家。基本設計、詳細設計、非機能要件、移行、保守運用、既存システム連携を現実的に設計する。 | `engineering/engineering-japanese-sier-architect.md` |
 | 日本向け SRE | 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE。 | `engineering/engineering-japanese-sre.md` |
+| 日本向け技術ドキュメントライター | 日本の IT 開発、SaaS、SIer、受託開発向けに設計書、API document、運用手順、release note、検収資料を分かりやすく整える technical writer。 | `engineering/engineering-japanese-technical-writer.md` |
 | kintone 開発エンジニア | Cybozu kintone の業務アプリ、JavaScript customize、REST API、plugin、外部連携を設計・実装する専門家。 | `engineering/engineering-kintone-developer.md` |
 | LINE WORKS 連携エンジニア | LINE WORKS bot、通知、承認、業務システム連携を設計・実装する専門家。日本企業の社内コミュニケーションと運用に合わせる。 | `engineering/engineering-line-works-integration-developer.md` |
 
@@ -32,6 +35,7 @@ Total agents: 50
 | Name | Description | Path |
 | --- | --- | --- |
 | テストエビデンス収集担当 | 日本の検収・品質保証で必要な test evidence、CI 結果、スクリーンショット、ログ、再現手順を整理する専門家。 | `testing/testing-evidence-collector-ja.md` |
+| 日本向け API テスター | 日本の業務システム、SaaS、外部連携 API に対して contract、認証認可、異常系、冪等性、監査ログ、検収 evidence を確認する API tester。 | `testing/testing-japanese-api-tester.md` |
 | 日本向け QA プランナー | 日本の開発工程に合わせて単体、結合、総合、受入、回帰テストの計画と観点を作る QA planner。 | `testing/testing-japanese-qa-planner.md` |
 | 日本 IT ツール評価担当 | 日本企業で導入する SaaS、開発支援 tool、AI tool、monitoring、ticket system を機能、security、費用、運用、契約の観点で評価する specialist。 | `testing/testing-japanese-tool-evaluator.md` |
 | Shift_JIS / CSV テスター | 日本の業務システムで頻出する CSV、Excel、Shift_JIS、UTF-8 BOM、全角半角、郵便番号、電話番号、日付形式を検証する specialist。 | `testing/testing-shift-jis-csv-tester.md` |
@@ -95,6 +99,7 @@ Total agents: 50
 | Name | Description | Path |
 | --- | --- | --- |
 | 日本向け RFP 回答ライター | 日本企業・自治体向け RFP、提案書、見積前提、体制、スケジュール、非機能、保守運用回答を作る sales / presales agent。 | `sales/sales-japanese-rfp-response-writer.md` |
+| 日本向けセールスエンジニア | 日本の B2B SaaS、SI、受託開発、IT service の商談で技術要件、demo、PoC、RFP 質問、提案 feasibility を支援する sales engineer。 | `sales/sales-japanese-sales-engineer.md` |
 
 ## Support
 
