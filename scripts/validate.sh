@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 errors=0
-AGENT_DIRS="engineering project-management testing product marketing finance hr design legal sales support supply-chain specialized"
+AGENT_DIRS="engineering project-management testing product marketing paid-media finance hr design legal sales support supply-chain specialized"
 
 while IFS= read -r file; do
   if ! head -n 1 "$file" | grep -q '^---$'; then

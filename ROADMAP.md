@@ -31,6 +31,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | SRE | `engineering/engineering-japanese-sre.md` | 障害報告、保守契約、顧客影響、runbook を日本運用向けに調整 |
 | Database Optimizer | `engineering/engineering-japanese-database-optimizer.md` | 帳票、CSV、batch、migration、rollback を重視 |
 | Legacy Modernization Engineer | `engineering/engineering-japanese-legacy-modernization-engineer.md` | legacy system 調査と段階移行へ特化 |
+| Performance Engineer | `engineering/engineering-japanese-performance-engineer.md` | 業務 peak、batch、DB、frontend、外部連携の性能改善へ特化 |
 | Workflow Steward | `project-management/project-management-backlog-redmine-jira-steward.md` | Backlog / Redmine / Jira の日本現場運用へ拡張 |
 | Product Manager | `product/product-japanese-product-manager.md` | 日本市場、顧客要望、受入条件、業務 impact を重視 |
 | B2B SaaS Planner | `product/product-japanese-b2b-saas-planner.md` | B2B SaaS の契約、権限、CS、onboarding へ特化 |
@@ -39,6 +40,11 @@ agency-agents-ja の agent 設計ロードマップです。
 | Incident Report Writer | `support/support-japanese-incident-report-writer.md` | 障害報告書、時系列、再発防止へ特化 |
 | Proposal Writer | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提、保守運用へ調整 |
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
+| Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
+| HR Performance Reviewer | `hr/hr-japanese-performance-review-facilitator.md` | IT 職種の目標設定、1on1、評価 feedback へ特化 |
+| Design System Maintainer | `design/design-japanese-design-system-maintainer.md` | 業務 UI の component、文言、accessibility、実装連携へ特化 |
+| Tool Evaluator | `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool の導入評価へ特化 |
+| Knowledge Base Steward | `specialized/specialized-japanese-knowledge-base-steward.md` | 社内 wiki、runbook、FAQ、document governance へ特化 |
 
 ## Backlog
 
@@ -46,8 +52,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | --- | --- |
 | Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` |
 | Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` |
-| Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` |
-| HR Performance Reviewer | `hr/hr-japanese-performance-review-facilitator.md` |
-| Design System Maintainer | `design/design-japanese-design-system-maintainer.md` |
-| Tool Evaluator | `testing/testing-japanese-tool-evaluator.md` |
-| Knowledge Base Steward | `specialized/specialized-japanese-knowledge-base-steward.md` |
+| Sales Engineer | `sales/sales-japanese-sales-engineer.md` |
+| Data Engineer | `engineering/engineering-japanese-data-engineer.md` |
+| API Tester | `testing/testing-japanese-api-tester.md` |
+| Mobile App Builder | `engineering/engineering-japanese-mobile-app-builder.md` |
+| Technical Writer | `engineering/engineering-japanese-technical-writer.md` |

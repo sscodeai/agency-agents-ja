@@ -8,6 +8,7 @@ const CATEGORIES = [
   ['testing', 'Testing'],
   ['product', 'Product'],
   ['marketing', 'Marketing'],
+  ['paid-media', 'Paid Media'],
   ['finance', 'Finance'],
   ['hr', 'HR'],
   ['design', 'Design'],

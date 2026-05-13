@@ -25,6 +25,7 @@
 | `engineering/engineering-japanese-sre.md` | SLO、監視、障害対応、runbook |
 | `engineering/engineering-japanese-database-optimizer.md` | DB、query、index、migration |
 | `engineering/engineering-japanese-legacy-modernization-engineer.md` | legacy system modernization |
+| `engineering/engineering-japanese-performance-engineer.md` | response time、batch、DB、frontend 性能改善 |
 | `engineering/engineering-kintone-developer.md` | Cybozu kintone 開発 |
 | `engineering/engineering-line-works-integration-developer.md` | LINE WORKS 連携 |
 | `project-management/project-management-japanese-pm.md` | WBS、課題、進捗、会議体 |
@@ -43,21 +44,26 @@
 | `marketing/marketing-rakuten-amazon-japan-operator.md` | 楽天 / Amazon Japan EC 運用 |
 | `marketing/marketing-yahoo-google-japan-seo.md` | Yahoo! JAPAN / Google SEO |
 | `marketing/marketing-seminar-webinar-planner.md` | B2B セミナー / ウェビナー |
+| `paid-media/paid-media-japan-search-social-strategist.md` | 日本向け検索広告 / SNS 広告 |
 | `finance/finance-japanese-invoice-system-advisor.md` | インボイス制度、請求書 system |
 | `finance/finance-electronic-bookkeeping-reviewer.md` | 電子帳簿保存法 review |
 | `hr/hr-japanese-it-recruiter.md` | IT 採用、職務要件、面談設計 |
 | `hr/hr-japanese-onboarding-specialist.md` | 新メンバー onboarding |
+| `hr/hr-japanese-performance-review-facilitator.md` | IT 人事評価、1on1、昇格判断 |
 | `design/design-japanese-business-ui-designer.md` | 日本の業務 UI / 管理画面 |
 | `design/design-accessibility-auditor-ja.md` | 日本語 UI accessibility audit |
+| `design/design-japanese-design-system-maintainer.md` | 業務 UI design system 運用 |
 | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
 | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
 | `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
 | `support/support-japanese-helpdesk-responder.md` | 日本語 helpdesk 一次対応 |
 | `support/support-release-note-writer-ja.md` | 日本語 release note |
+| `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool 評価 |
 | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共 sector |
 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` | 製造業 DX |
 | `specialized/specialized-factory-iot-planner.md` | 工場 IoT plan |
 | `specialized/specialized-quality-control-kaizen-advisor.md` | 品質管理、カイゼン |
+| `specialized/specialized-japanese-knowledge-base-steward.md` | 社内 knowledge base / wiki 整備 |
 | `supply-chain/supply-chain-japanese-vendor-evaluator.md` | vendor 評価、調達 |
 | `supply-chain/supply-chain-inventory-forecasting-ja.md` | 在庫予測、安全在庫 |
 
@@ -117,6 +123,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | --- | --- |
 | `workflows/japanese-sier-requirements-review.yaml` | SIer / 受託開発の要件、設計、検収準備 |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS |
+| `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |

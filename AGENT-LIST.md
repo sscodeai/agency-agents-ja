@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 44
+Total agents: 50
 
 ## Engineering
 
@@ -11,6 +11,7 @@ Total agents: 44
 | 日本向けデータベース最適化エンジニア | 業務システムの database schema、query、index、migration、帳票・CSV・batch workload を最適化する専門家。 | `engineering/engineering-japanese-database-optimizer.md` |
 | 日本向けフロントエンドエンジニア | 日本の業務画面、管理画面、SaaS UI 向けに React/Vue、form、table、accessibility、入力補助、検証しやすい UI を実装する frontend engineer。 | `engineering/engineering-japanese-frontend-engineer.md` |
 | レガシーモダナイゼーションエンジニア | 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。 | `engineering/engineering-japanese-legacy-modernization-engineer.md` |
+| 日本向けパフォーマンスエンジニア | 日本の業務システム、SaaS、EC における response time、batch、DB、frontend、外部連携の性能課題を調査し改善計画を作る performance engineer。 | `engineering/engineering-japanese-performance-engineer.md` |
 | 要件定義エンジニア | 日本の受託開発、SI、SaaS 開発で要件定義、受入条件、仕様確認、未決事項整理を行う専門家。曖昧な依頼を実装可能な要件へ落とし込む。 | `engineering/engineering-japanese-requirements-engineer.md` |
 | 日本向けセキュリティエンジニア | 日本企業の web application、業務システム、SaaS に対して threat modeling、認証認可、個人情報、監査ログ、脆弱性対応を review する。 | `engineering/engineering-japanese-security-engineer.md` |
 | 日本 SIer アーキテクト | SIer / 受託開発向けの architecture 専門家。基本設計、詳細設計、非機能要件、移行、保守運用、既存システム連携を現実的に設計する。 | `engineering/engineering-japanese-sier-architect.md` |
@@ -32,6 +33,7 @@ Total agents: 44
 | --- | --- | --- |
 | テストエビデンス収集担当 | 日本の検収・品質保証で必要な test evidence、CI 結果、スクリーンショット、ログ、再現手順を整理する専門家。 | `testing/testing-evidence-collector-ja.md` |
 | 日本向け QA プランナー | 日本の開発工程に合わせて単体、結合、総合、受入、回帰テストの計画と観点を作る QA planner。 | `testing/testing-japanese-qa-planner.md` |
+| 日本 IT ツール評価担当 | 日本企業で導入する SaaS、開発支援 tool、AI tool、monitoring、ticket system を機能、security、費用、運用、契約の観点で評価する specialist。 | `testing/testing-japanese-tool-evaluator.md` |
 | Shift_JIS / CSV テスター | 日本の業務システムで頻出する CSV、Excel、Shift_JIS、UTF-8 BOM、全角半角、郵便番号、電話番号、日付形式を検証する specialist。 | `testing/testing-shift-jis-csv-tester.md` |
 
 ## Product
@@ -51,6 +53,12 @@ Total agents: 44
 | セミナー / ウェビナー企画者 | 日本の B2B SaaS / IT 企業向けに seminar、webinar、white paper、lead nurturing の企画を作る marketer。 | `marketing/marketing-seminar-webinar-planner.md` |
 | Yahoo! JAPAN / Google SEO スペシャリスト | 日本語検索向け technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う specialist。 | `marketing/marketing-yahoo-google-japan-seo.md` |
 
+## Paid Media
+
+| Name | Description | Path |
+| --- | --- | --- |
+| 日本向け検索・SNS広告ストラテジスト | 日本の B2B SaaS、IT service、EC 向けに Google / Yahoo! JAPAN / Meta / X / LinkedIn 広告の設計、運用、改善方針を作る paid media strategist。 | `paid-media/paid-media-japan-search-social-strategist.md` |
+
 ## Finance
 
 | Name | Description | Path |
@@ -64,6 +72,7 @@ Total agents: 44
 | --- | --- | --- |
 | 日本 IT 採用担当 | 日本の IT エンジニア採用、職務要件、スカウト、カジュアル面談、選考設計、採用広報を支援する recruiter。 | `hr/hr-japanese-it-recruiter.md` |
 | 日本 IT オンボーディング担当 | 日本の IT 組織で新入社員・業務委託・協力会社メンバーの onboarding、権限、環境構築、業務理解を支援する specialist。 | `hr/hr-japanese-onboarding-specialist.md` |
+| 日本 IT 人事評価ファシリテーター | 日本の IT 組織で engineer / designer / PM / support 職の目標設定、評価観点、1on1、昇格判断、フィードバック文面を整える facilitator。 | `hr/hr-japanese-performance-review-facilitator.md` |
 
 ## Design
 
@@ -71,6 +80,7 @@ Total agents: 44
 | --- | --- | --- |
 | 日本向けアクセシビリティ監査者 | 日本語 UI、行政・公共 sector、業務 system に対して WCAG / JIS を意識した accessibility audit を行う。 | `design/design-accessibility-auditor-ja.md` |
 | 日本業務 UI デザイナー | 日本の業務画面、管理画面、申請画面、帳票画面に強い UI designer。高密度 table、入力補助、誤操作防止を重視する。 | `design/design-japanese-business-ui-designer.md` |
+| 日本業務 Design System メンテナー | 日本の業務システム、SaaS 管理画面、申請・承認 UI 向けに design system、component rule、文言、accessibility、実装連携を整える maintainer。 | `design/design-japanese-design-system-maintainer.md` |
 
 ## Legal
 
@@ -108,5 +118,6 @@ Total agents: 44
 | --- | --- | --- |
 | 自治体 DX コンサルタント | 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。 | `specialized/japanese-public-sector-dx-consultant.md` |
 | 工場 IoT プランナー | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
+| 日本 IT ナレッジベース管理者 | 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。 | `specialized/specialized-japanese-knowledge-base-steward.md` |
 | 製造業 DX コンサルタント | 日本の製造業向けに現場業務、品質、在庫、原価、設備、IoT、MES、traceability を踏まえた DX 提案を行う consultant。 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` |
 | 品質管理・カイゼンアドバイザー | 日本の製造・業務現場で品質問題、なぜなぜ分析、再発防止、標準化、カイゼン活動を支援する advisor。 | `specialized/specialized-quality-control-kaizen-advisor.md` |

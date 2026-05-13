@@ -1,0 +1,27 @@
+name: b2b-lead-generation
+agents_dir: "."
+inputs:
+  - name: offer
+    required: true
+  - name: target_persona
+    required: true
+steps:
+  - id: seo
+    role: "marketing/marketing-yahoo-google-japan-seo"
+    task: "Offer {{offer}} と target persona {{target_persona}} をもとに、日本語検索で狙う keyword、content、technical SEO の改善案を整理してください。"
+    output: seo
+  - id: paid_media
+    role: "paid-media/paid-media-japan-search-social-strategist"
+    task: "Offer {{offer}}、target persona {{target_persona}}、SEO plan {{seo}} をもとに search / social ads の campaign plan を作ってください。"
+    depends_on: [seo]
+    output: paid_media
+  - id: webinar
+    role: "marketing/marketing-seminar-webinar-planner"
+    task: "Offer {{offer}} と paid media plan {{paid_media}} をもとに、lead 獲得向け webinar / white paper 企画を作ってください。"
+    depends_on: [paid_media]
+    output: webinar
+  - id: sales
+    role: "sales/sales-japanese-rfp-response-writer"
+    task: "SEO plan {{seo}}、paid media plan {{paid_media}}、webinar plan {{webinar}} をもとに、営業 follow-up と提案書 outline を作ってください。"
+    depends_on: [seo, paid_media, webinar]
+    output: summary
