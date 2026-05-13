@@ -43,6 +43,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Incident Report Writer | `support/support-japanese-incident-report-writer.md` | 障害報告書、時系列、再発防止へ特化 |
 | Proposal Writer | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提、保守運用へ調整 |
 | Sales Engineer | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility、RFP 質問回答へ特化 |
+| Account Strategist | `sales/sales-japanese-account-strategist.md` | 既存顧客の更新、拡張提案、stakeholder mapping へ特化 |
 | Technical Writer | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、runbook、検収資料へ特化 |
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
 | Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
@@ -50,6 +51,10 @@ agency-agents-ja の agent 設計ロードマップです。
 | Design System Maintainer | `design/design-japanese-design-system-maintainer.md` | 業務 UI の component、文言、accessibility、実装連携へ特化 |
 | Tool Evaluator | `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool の導入評価へ特化 |
 | Knowledge Base Steward | `specialized/specialized-japanese-knowledge-base-steward.md` | 社内 wiki、runbook、FAQ、document governance へ特化 |
+| Customer Support Analytics | `support/support-japanese-support-analytics-reporter.md` | 問い合わせ、SLA、FAQ、product feedback の分析へ特化 |
+| Prompt Engineer | `specialized/specialized-japanese-prompt-engineer.md` | 社内 AI 活用 prompt、評価、guardrail へ特化 |
+| Meeting Assistant | `specialized/specialized-japanese-meeting-assistant.md` | 顧客定例、議事録、決定事項、課題管理へ特化 |
+| Risk Assessor | `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用の risk assessment へ特化 |
 
 ## Backlog
 
@@ -57,8 +62,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | --- | --- |
 | Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` |
 | Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` |
-| Customer Support Analytics | `support/support-japanese-support-analytics-reporter.md` |
-| Account Strategist | `sales/sales-japanese-account-strategist.md` |
-| Prompt Engineer | `specialized/specialized-japanese-prompt-engineer.md` |
-| Meeting Assistant | `specialized/specialized-japanese-meeting-assistant.md` |
-| Risk Assessor | `specialized/specialized-japanese-risk-assessor.md` |
+| Policy Writer | `legal/legal-japanese-policy-writer.md` |
+| Corporate Training Designer | `hr/hr-japanese-corporate-training-designer.md` |
+| Developer Advocate | `marketing/marketing-japanese-developer-advocate.md` |
+| AI Policy Writer | `legal/legal-japanese-ai-policy-writer.md` |
+| Automation Governance Architect | `specialized/specialized-japanese-automation-governance-architect.md` |

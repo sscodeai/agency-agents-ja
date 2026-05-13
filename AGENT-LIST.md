@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 55
+Total agents: 60
 
 ## Engineering
 
@@ -98,6 +98,7 @@ Total agents: 55
 
 | Name | Description | Path |
 | --- | --- | --- |
+| 日本向けアカウントストラテジスト | 日本の B2B SaaS / SI / IT service で既存顧客の account plan、更新、拡張提案、稟議支援、関係者 mapping を設計する account strategist。 | `sales/sales-japanese-account-strategist.md` |
 | 日本向け RFP 回答ライター | 日本企業・自治体向け RFP、提案書、見積前提、体制、スケジュール、非機能、保守運用回答を作る sales / presales agent。 | `sales/sales-japanese-rfp-response-writer.md` |
 | 日本向けセールスエンジニア | 日本の B2B SaaS、SI、受託開発、IT service の商談で技術要件、demo、PoC、RFP 質問、提案 feasibility を支援する sales engineer。 | `sales/sales-japanese-sales-engineer.md` |
 
@@ -108,6 +109,7 @@ Total agents: 55
 | 日本 B2B カスタマーサクセスマネージャー | 日本の B2B SaaS / IT service で onboarding、定着、活用促進、QBR、解約防止を支援する CSM。 | `support/support-japanese-customer-success-manager.md` |
 | 日本語ヘルプデスク対応者 | 日本語の問い合わせ、障害一次受付、操作案内、FAQ、エスカレーションを丁寧かつ正確に行う support responder。 | `support/support-japanese-helpdesk-responder.md` |
 | 障害報告書ライター | 日本の顧客・社内向け障害報告書、時系列、影響範囲、原因、暫定対応、恒久対応、再発防止策を整理する。 | `support/support-japanese-incident-report-writer.md` |
+| 日本向けサポート分析レポーター | 日本の B2B SaaS / IT service の問い合わせ、障害、FAQ、SLA、顧客満足度を分析し、改善 action と定例 report を作る support analytics reporter。 | `support/support-japanese-support-analytics-reporter.md` |
 | 日本語リリースノートライター | 日本語の release note、顧客向け変更案内、社内共有、影響範囲、注意事項を分かりやすく書く writer。 | `support/support-release-note-writer-ja.md` |
 
 ## Supply Chain
@@ -125,4 +127,7 @@ Total agents: 55
 | 工場 IoT プランナー | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
 | 日本 IT ナレッジベース管理者 | 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。 | `specialized/specialized-japanese-knowledge-base-steward.md` |
 | 製造業 DX コンサルタント | 日本の製造業向けに現場業務、品質、在庫、原価、設備、IoT、MES、traceability を踏まえた DX 提案を行う consultant。 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` |
+| 日本 IT 会議アシスタント | 日本の IT プロジェクト、SI、SaaS、顧客定例で agenda、議事録、決定事項、課題、宿題、次回 action を整理する meeting assistant。 | `specialized/specialized-japanese-meeting-assistant.md` |
+| 日本 IT プロンプトエンジニア | 日本の IT 開発、業務運用、CS、営業、社内 AI 活用向けに prompt、評価観点、ガードレール、再利用 template を設計する prompt engineer。 | `specialized/specialized-japanese-prompt-engineer.md` |
+| 日本 IT リスクアセッサー | 日本の IT project、SaaS、SI、業務委託、AI 活用における delivery、security、legal、operation、顧客影響 risk を整理する risk assessor。 | `specialized/specialized-japanese-risk-assessor.md` |
 | 品質管理・カイゼンアドバイザー | 日本の製造・業務現場で品質問題、なぜなぜ分析、再発防止、標準化、カイゼン活動を支援する advisor。 | `specialized/specialized-quality-control-kaizen-advisor.md` |

@@ -19,6 +19,7 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/api-integration-delivery.yaml` | API 連携の要件整理、backend design、API test、技術 document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS の release scope、QA、release note、CS 案内 |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation の SEO、検索 / SNS 広告、webinar、営業 follow-up |
+| `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、契約更新 risk |
 | `workflows/incident-report.yaml` | 障害時系列、security / privacy 確認、顧客向け障害報告書 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app の要件整理、設計、検収準備 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX、工場 IoT、品質管理の初期 assessment |

@@ -58,17 +58,22 @@
 | `design/design-accessibility-auditor-ja.md` | 日本語 UI accessibility audit |
 | `design/design-japanese-design-system-maintainer.md` | 業務 UI design system 運用 |
 | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
+| `sales/sales-japanese-account-strategist.md` | 既存顧客 account plan、更新、拡張提案 |
 | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility |
 | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
 | `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
 | `support/support-japanese-helpdesk-responder.md` | 日本語 helpdesk 一次対応 |
 | `support/support-release-note-writer-ja.md` | 日本語 release note |
+| `support/support-japanese-support-analytics-reporter.md` | 問い合わせ、SLA、FAQ、顧客影響分析 |
 | `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool 評価 |
 | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共 sector |
 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` | 製造業 DX |
 | `specialized/specialized-factory-iot-planner.md` | 工場 IoT plan |
 | `specialized/specialized-quality-control-kaizen-advisor.md` | 品質管理、カイゼン |
 | `specialized/specialized-japanese-knowledge-base-steward.md` | 社内 knowledge base / wiki 整備 |
+| `specialized/specialized-japanese-meeting-assistant.md` | 議事録、決定事項、課題、次 action |
+| `specialized/specialized-japanese-prompt-engineer.md` | 社内 AI 活用 prompt、評価、guardrail |
+| `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用 risk assessment |
 | `supply-chain/supply-chain-japanese-vendor-evaluator.md` | vendor 評価、調達 |
 | `supply-chain/supply-chain-inventory-forecasting-ja.md` | 在庫予測、安全在庫 |
 
@@ -130,6 +135,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/api-integration-delivery.yaml` | API 連携の要件、backend design、API test、document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |
+| `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |
