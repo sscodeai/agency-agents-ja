@@ -1,0 +1,20 @@
+name: incident-report
+agents_dir: "."
+inputs:
+  - name: incident_notes
+    required: true
+steps:
+  - id: sre
+    role: "engineering/engineering-japanese-sre"
+    task: "Incident notes {{incident_notes}} を時系列、影響範囲、暫定対応、恒久対応に整理してください。"
+    output: sre
+  - id: security
+    role: "engineering/engineering-japanese-security-engineer"
+    task: "Incident summary {{sre}} から security / privacy risk と追加確認事項を抽出してください。"
+    depends_on: [sre]
+    output: security
+  - id: report
+    role: "support/support-japanese-incident-report-writer"
+    task: "SRE summary {{sre}} と security review {{security}} をもとに顧客向け障害報告書を作ってください。"
+    depends_on: [sre, security]
+    output: summary

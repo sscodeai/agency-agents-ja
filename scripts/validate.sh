@@ -50,8 +50,12 @@ if ! node scripts/generate-agent-list.js --check; then
   errors=$((errors + 1))
 fi
 
+if ! node scripts/validate-workflows.js; then
+  errors=$((errors + 1))
+fi
+
 if [ "$errors" -gt 0 ]; then
   exit 1
 fi
 
-echo "All agent files are valid."
+echo "All agent files and workflows are valid."

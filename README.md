@@ -103,11 +103,24 @@ testing/testing-evidence-collector-ja.md を使って、この PR の検証 evid
 例:
 
 ```text
-superpowers-ja の workflow-runner を使って examples/workflow-japanese-sier-requirements.md を実行してください。
+superpowers-ja の workflow-runner を使って agency-agents-ja/workflows/japanese-sier-requirements-review.yaml を実行してください。
 ticket は PROJ-1234、spec は docs/spec.md です。
 ```
 
-workflow 内の `agents_dir` はこの repository root を基準にします。
+workflow 内の `agents_dir` はこの repository root を基準にします。詳しい連携方法は [docs/README.superpowers-ja.md](docs/README.superpowers-ja.md) を参照してください。
+
+### Workflow YAML
+
+`workflows/` には `superpowers-ja` から直接使える machine-readable workflow を置いています。
+
+| Workflow | 用途 |
+| --- | --- |
+| `workflows/japanese-sier-requirements-review.yaml` | SIer / 受託開発の要件、設計、検収準備 |
+| `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS |
+| `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 |
+| `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
+| `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |
+| `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 |
 
 ### Agent を探す
 
@@ -117,10 +130,11 @@ workflow 内の `agents_dir` はこの repository root を基準にします。
 
 ```bash
 node scripts/generate-agent-list.js
+node scripts/validate-workflows.js
 scripts/validate.sh
 ```
 
-CI では `scripts/validate.sh` を実行し、frontmatter、命名、禁止語、`AGENT-LIST.md` の同期を確認します。
+CI では `scripts/validate.sh` を実行し、frontmatter、命名、禁止語、`AGENT-LIST.md` の同期、workflow の role path と依存関係を確認します。
 
 ## Roadmap
 
