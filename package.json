@@ -1,0 +1,41 @@
+{
+  "name": "agency-agents-ja",
+  "version": "0.1.0",
+  "description": "日本の IT 開発、SIer、受託開発、自社サービス、SaaS、EC、製造業 DX 向け AI 専門家エージェント集",
+  "keywords": [
+    "ai-agents",
+    "prompts",
+    "system-prompts",
+    "japanese",
+    "japan",
+    "multi-agent",
+    "agency-agents",
+    "sier",
+    "requirements",
+    "kintone",
+    "line-works"
+  ],
+  "author": "SS",
+  "license": "MIT",
+  "homepage": "https://github.com/sscodeai/agency-agents-ja#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sscodeai/agency-agents-ja.git"
+  },
+  "files": [
+    "engineering/",
+    "project-management/",
+    "testing/",
+    "product/",
+    "marketing/",
+    "legal/",
+    "sales/",
+    "support/",
+    "specialized/",
+    "examples/",
+    "README.md",
+    "AGENT-LIST.md",
+    "ROADMAP.md",
+    "LICENSE"
+  ]
+}

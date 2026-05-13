@@ -1,0 +1,32 @@
+# Workflow: Japanese SIer Requirements Review
+
+```yaml
+name: japanese-sier-requirements-review
+agents_dir: "."
+inputs:
+  - name: ticket
+    required: true
+  - name: spec
+    required: true
+steps:
+  - id: requirements
+    role: "engineering/engineering-japanese-requirements-engineer"
+    task: "Ticket {{ticket}} と仕様 {{spec}} を読み、要件、受入条件、未決事項を整理してください。"
+    output: requirements
+  - id: architecture
+    role: "engineering/engineering-japanese-sier-architect"
+    task: "要件整理 {{requirements}} をもとに、基本設計レベルの architecture option とリスクを整理してください。"
+    depends_on: [requirements]
+    output: architecture
+  - id: qa_evidence
+    role: "testing/testing-evidence-collector-ja"
+    task: "要件 {{requirements}} と architecture {{architecture}} をもとに、検収で必要な test evidence plan を作ってください。"
+    depends_on: [requirements, architecture]
+    output: qa_evidence
+  - id: pm_summary
+    role: "project-management/project-management-japanese-pm"
+    task: "要件 {{requirements}}、設計 {{architecture}}、テスト証跡計画 {{qa_evidence}} を統合し、WBS、課題、次 action をまとめてください。"
+    depends_on: [requirements, architecture, qa_evidence]
+    output: summary
+```
+```
