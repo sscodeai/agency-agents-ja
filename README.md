@@ -51,6 +51,12 @@
 | `legal/legal-japanese-data-privacy-officer.md` | 個人情報、委託先、保存期間、漏えい対応 |
 | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
 | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS developer advocacy |
+| `marketing/marketing-japanese-product-marketing-manager.md` | positioning、message、launch、sales enablement |
+| `marketing/marketing-japanese-case-study-writer.md` | 導入事例、顧客 proof、公開許諾 |
+| `marketing/marketing-japanese-community-manager.md` | user group、developer community、feedback loop |
+| `marketing/marketing-japanese-customer-marketing-manager.md` | 既存顧客 marketing、advocacy、user group |
+| `marketing/marketing-instagram-lemon8-operator.md` | Instagram / Lemon8 採用広報、event、事例 |
+| `marketing/marketing-tiktok-japan-strategist.md` | TikTok / short video strategy |
 | `marketing/marketing-line-official-account-operator.md` | LINE 公式アカウント運用 |
 | `marketing/marketing-rakuten-amazon-japan-operator.md` | 楽天 / Amazon Japan EC 運用 |
 | `marketing/marketing-yahoo-google-japan-seo.md` | Yahoo! JAPAN / Google SEO |
@@ -67,6 +73,7 @@
 | `design/design-japanese-design-system-maintainer.md` | 業務 UI design system 運用 |
 | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
 | `sales/sales-japanese-account-strategist.md` | 既存顧客 account plan、更新、拡張提案 |
+| `sales/sales-japanese-partner-alliance-manager.md` | partner alliance、co-marketing、共同提案 |
 | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility |
 | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
 | `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
@@ -148,6 +155,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |
 | `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 |
+| `workflows/japan-go-to-market-campaign.yaml` | 日本市場 GTM、導入事例、community、SNS、partner、広告 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 |

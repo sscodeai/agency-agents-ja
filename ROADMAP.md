@@ -31,6 +31,12 @@ agency-agents-ja の agent 設計ロードマップです。
 | AI Policy Writer | `legal/legal-japanese-ai-policy-writer.md` | 生成 AI / AI tool 利用 policy、禁止用途、承認 flow へ特化 |
 | Technical Content Strategist | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報へ特化 |
 | Developer Advocate | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS の sample、workshop、developer feedback へ特化 |
+| Product Marketing Manager | `marketing/marketing-japanese-product-marketing-manager.md` | 日本市場向け positioning、message、launch、sales enablement へ特化 |
+| Case Study Writer | `marketing/marketing-japanese-case-study-writer.md` | 導入事例、顧客 proof、公開許諾、営業活用へ特化 |
+| Community Manager | `marketing/marketing-japanese-community-manager.md` | user group、developer community、feedback loop へ特化 |
+| Customer Marketing Manager | `marketing/marketing-japanese-customer-marketing-manager.md` | 既存顧客 marketing、advocacy、更新 / 拡張支援へ特化 |
+| Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` | Instagram / Lemon8 の採用広報、event、導入事例展開へ特化 |
+| Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` | TikTok / short video の採用広報、event、認知拡大へ特化 |
 | Backend Architect | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ、運用を日本の業務 system 向けに調整 |
 | Data Engineer | `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality、個人情報へ特化 |
 | Frontend Engineer | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form/table、IME、検収しやすい UI へ調整 |
@@ -52,6 +58,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Proposal Writer | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提、保守運用へ調整 |
 | Sales Engineer | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility、RFP 質問回答へ特化 |
 | Account Strategist | `sales/sales-japanese-account-strategist.md` | 既存顧客の更新、拡張提案、stakeholder mapping へ特化 |
+| Partner Alliance Manager | `sales/sales-japanese-partner-alliance-manager.md` | partner alliance、co-marketing、共同提案、責任分界へ特化 |
 | Technical Writer | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、runbook、検収資料へ特化 |
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
 | Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
@@ -70,10 +77,8 @@ agency-agents-ja の agent 設計ロードマップです。
 
 | Reference Role | Japanese Agent Candidate |
 | --- | --- |
-| Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` |
-| Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` |
-| Community Manager | `marketing/marketing-japanese-community-manager.md` |
-| Case Study Writer | `marketing/marketing-japanese-case-study-writer.md` |
-| Partner Alliance Manager | `sales/sales-japanese-partner-alliance-manager.md` |
-| Customer Marketing Manager | `marketing/marketing-japanese-customer-marketing-manager.md` |
-| Product Marketing Manager | `marketing/marketing-japanese-product-marketing-manager.md` |
+| Market Researcher | `marketing/marketing-japanese-market-researcher.md` |
+| Pricing Strategist | `specialized/specialized-japanese-pricing-strategist.md` |
+| FinOps Analyst | `finance/finance-japanese-finops-analyst.md` |
+| Procurement Manager | `supply-chain/supply-chain-japanese-procurement-manager.md` |
+| Vendor Risk Manager | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` |

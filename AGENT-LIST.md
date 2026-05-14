@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 70
+Total agents: 77
 
 ## Engineering
 
@@ -54,11 +54,17 @@ Total agents: 70
 
 | Name | Description | Path |
 | --- | --- | --- |
+| 日本向け Instagram / Lemon8 運用者 | 日本の IT 企業、B2B SaaS、採用広報、イベント、導入事例向けに Instagram / Lemon8 の企画、投稿、導線、効果測定を設計する social operator。 | `marketing/marketing-instagram-lemon8-operator.md` |
+| 日本向け導入事例ライター | 日本の B2B SaaS、SI、IT service 向けに顧客導入事例、課題、選定理由、効果、公開許諾、営業活用 copy を作る case study writer。 | `marketing/marketing-japanese-case-study-writer.md` |
+| 日本向けコミュニティマネージャー | 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。 | `marketing/marketing-japanese-community-manager.md` |
+| 日本向けカスタマーマーケティングマネージャー | 日本の B2B SaaS / IT service で既存顧客向け newsletter、導入事例、ユーザー会、更新促進、upsell / advocacy を設計する customer marketing manager。 | `marketing/marketing-japanese-customer-marketing-manager.md` |
 | 日本向けデベロッパーアドボケイト | 日本の developer audience 向けに API / SDK / OSS / SaaS platform の技術発信、sample、workshop、community feedback を設計する developer advocate。 | `marketing/marketing-japanese-developer-advocate.md` |
+| 日本向けプロダクトマーケティングマネージャー | 日本の B2B SaaS / IT service 向けに positioning、persona、message、launch plan、sales enablement、competitive note を作る product marketing manager。 | `marketing/marketing-japanese-product-marketing-manager.md` |
 | LINE 公式アカウント運用者 | 日本向け LINE Official Account の配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する marketing operator。 | `marketing/marketing-line-official-account-operator.md` |
 | note / Qiita / Zenn 技術広報ストラテジスト | 日本向け技術広報、採用広報、developer marketing のために note、Qiita、Zenn、はてなブログのコンテンツ戦略を作る。 | `marketing/marketing-note-qiita-zenn-strategist.md` |
 | 楽天 / Amazon Japan EC 運用者 | 楽天市場、Amazon Japan、Yahoo! ショッピング、Shopify Japan の商品ページ、広告、在庫、レビュー、販促を運用する EC specialist。 | `marketing/marketing-rakuten-amazon-japan-operator.md` |
 | セミナー / ウェビナー企画者 | 日本の B2B SaaS / IT 企業向けに seminar、webinar、white paper、lead nurturing の企画を作る marketer。 | `marketing/marketing-seminar-webinar-planner.md` |
+| 日本向け TikTok ストラテジスト | 日本の IT 企業、SaaS、採用広報、developer marketing、イベント告知向けに TikTok / short video の企画、台本、配信、効果測定を設計する strategist。 | `marketing/marketing-tiktok-japan-strategist.md` |
 | Yahoo! JAPAN / Google SEO スペシャリスト | 日本語検索向け technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う specialist。 | `marketing/marketing-yahoo-google-japan-seo.md` |
 
 ## Paid Media
@@ -107,6 +113,7 @@ Total agents: 70
 | Name | Description | Path |
 | --- | --- | --- |
 | 日本向けアカウントストラテジスト | 日本の B2B SaaS / SI / IT service で既存顧客の account plan、更新、拡張提案、稟議支援、関係者 mapping を設計する account strategist。 | `sales/sales-japanese-account-strategist.md` |
+| 日本向けパートナーアライアンスマネージャー | 日本の B2B SaaS、SI、IT service で販売代理店、SI partner、technology partner との alliance、co-marketing、共同提案を設計する partner alliance manager。 | `sales/sales-japanese-partner-alliance-manager.md` |
 | 日本向け RFP 回答ライター | 日本企業・自治体向け RFP、提案書、見積前提、体制、スケジュール、非機能、保守運用回答を作る sales / presales agent。 | `sales/sales-japanese-rfp-response-writer.md` |
 | 日本向けセールスエンジニア | 日本の B2B SaaS、SI、受託開発、IT service の商談で技術要件、demo、PoC、RFP 質問、提案 feasibility を支援する sales engineer。 | `sales/sales-japanese-sales-engineer.md` |
 

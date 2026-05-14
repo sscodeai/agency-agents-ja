@@ -1,0 +1,42 @@
+name: japan-go-to-market-campaign
+agents_dir: "."
+inputs:
+  - name: offer
+    required: true
+  - name: target_segment
+    required: true
+steps:
+  - id: product_marketing
+    role: "marketing/marketing-japanese-product-marketing-manager"
+    task: "Offer {{offer}} と target segment {{target_segment}} をもとに、日本市場向け ICP、positioning、message、launch plan を作ってください。"
+    output: product_marketing
+  - id: case_study
+    role: "marketing/marketing-japanese-case-study-writer"
+    task: "Product marketing brief {{product_marketing}} をもとに、導入事例で訴求すべき課題、選定理由、成果、公開許諾の確認事項を整理してください。"
+    depends_on: [product_marketing]
+    output: case_study
+  - id: developer
+    role: "marketing/marketing-japanese-developer-advocate"
+    task: "Product marketing brief {{product_marketing}} をもとに、developer audience 向け sample、article、workshop、feedback loop を設計してください。"
+    depends_on: [product_marketing]
+    output: developer
+  - id: community
+    role: "marketing/marketing-japanese-community-manager"
+    task: "Developer advocacy plan {{developer}} と case study plan {{case_study}} をもとに、community event、user group、feedback loop を設計してください。"
+    depends_on: [developer, case_study]
+    output: community
+  - id: social
+    role: "marketing/marketing-tiktok-japan-strategist"
+    task: "Product marketing brief {{product_marketing}} と community plan {{community}} をもとに、short video creative angles、script、CTA を作ってください。"
+    depends_on: [product_marketing, community]
+    output: social
+  - id: partner
+    role: "sales/sales-japanese-partner-alliance-manager"
+    task: "Product marketing brief {{product_marketing}}、case study plan {{case_study}}、community plan {{community}} をもとに、partner alliance と co-marketing plan を作ってください。"
+    depends_on: [product_marketing, case_study, community]
+    output: partner
+  - id: paid_media
+    role: "paid-media/paid-media-japan-search-social-strategist"
+    task: "Product marketing brief {{product_marketing}}、social plan {{social}}、partner plan {{partner}} をもとに、search / social ads の distribution plan を作ってください。"
+    depends_on: [product_marketing, social, partner]
+    output: summary
