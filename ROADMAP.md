@@ -17,6 +17,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | Reference Role | Japanese Agent | 方針 |
 | --- | --- | --- |
 | Project Manager | `project-management/project-management-japanese-pm.md` | 日本の WBS、課題管理、進捗会議、議事録、検収へ再設計 |
+| Business Analyst | `project-management/project-management-japanese-business-analyst.md` | 現行業務、業務 flow、要件差分、受入条件へ特化 |
+| Release Manager | `project-management/project-management-japanese-release-manager.md` | release 判定、作業手順、切り戻し、顧客通知へ特化 |
 | Software Architect | `engineering/engineering-japanese-sier-architect.md` | SIer / 受託開発の基本設計、詳細設計、非機能、移行へ特化 |
 | Code Reviewer | `engineering/engineering-japanese-code-reviewer.md` | 日本語レビュー、重大度、証跡、承認条件へ調整 |
 | Requirements Engineer | `engineering/engineering-japanese-requirements-engineer.md` | 要件定義、受入条件、仕様確認へ特化 |
@@ -24,6 +26,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Collaboration Integration Engineer | `engineering/engineering-line-works-integration-developer.md` | LINE WORKS 連携へ特化 |
 | Business App Developer | `engineering/engineering-kintone-developer.md` | kintone 業務アプリ開発へ特化 |
 | Privacy / Compliance Reviewer | `legal/legal-japanese-privacy-compliance-reviewer.md` | 個人情報保護法、委託先管理、privacy review へ調整 |
+| Data Privacy Officer | `legal/legal-japanese-data-privacy-officer.md` | data inventory、委託先、保存期間、開示請求、漏えい対応へ特化 |
 | Policy Writer | `legal/legal-japanese-policy-writer.md` | IT、security、SaaS 利用、委託先向け社内 policy へ特化 |
 | AI Policy Writer | `legal/legal-japanese-ai-policy-writer.md` | 生成 AI / AI tool 利用 policy、禁止用途、承認 flow へ特化 |
 | Technical Content Strategist | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報へ特化 |
@@ -34,6 +37,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Mobile App Builder | `engineering/engineering-japanese-mobile-app-builder.md` | 日本向け mobile app、push、store release、support へ特化 |
 | Security Engineer | `engineering/engineering-japanese-security-engineer.md` | 個人情報、委託先、監査、社内 system risk を追加 |
 | SRE | `engineering/engineering-japanese-sre.md` | 障害報告、保守契約、顧客影響、runbook を日本運用向けに調整 |
+| Observability Engineer | `engineering/engineering-japanese-observability-engineer.md` | log、metrics、trace、dashboard、alert、監査 log へ特化 |
 | Database Optimizer | `engineering/engineering-japanese-database-optimizer.md` | 帳票、CSV、batch、migration、rollback を重視 |
 | Legacy Modernization Engineer | `engineering/engineering-japanese-legacy-modernization-engineer.md` | legacy system 調査と段階移行へ特化 |
 | Performance Engineer | `engineering/engineering-japanese-performance-engineer.md` | 業務 peak、batch、DB、frontend、外部連携の性能改善へ特化 |
@@ -44,6 +48,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | API Tester | `testing/testing-japanese-api-tester.md` | API contract、認証認可、異常系、検収 evidence へ特化 |
 | CSV / Excel Tester | `testing/testing-shift-jis-csv-tester.md` | 日本業務で頻出する CSV / Excel / 文字コード検証へ特化 |
 | Incident Report Writer | `support/support-japanese-incident-report-writer.md` | 障害報告書、時系列、再発防止へ特化 |
+| IT Asset Manager | `support/support-japanese-it-asset-manager.md` | PC、SaaS license、account、貸与品、入退社管理へ特化 |
 | Proposal Writer | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提、保守運用へ調整 |
 | Sales Engineer | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility、RFP 質問回答へ特化 |
 | Account Strategist | `sales/sales-japanese-account-strategist.md` | 既存顧客の更新、拡張提案、stakeholder mapping へ特化 |
@@ -67,8 +72,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | --- | --- |
 | Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` |
 | Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` |
-| Business Analyst | `project-management/project-management-japanese-business-analyst.md` |
-| Release Manager | `project-management/project-management-japanese-release-manager.md` |
-| Data Privacy Officer | `legal/legal-japanese-data-privacy-officer.md` |
-| Observability Engineer | `engineering/engineering-japanese-observability-engineer.md` |
-| IT Asset Manager | `support/support-japanese-it-asset-manager.md` |
+| Community Manager | `marketing/marketing-japanese-community-manager.md` |
+| Case Study Writer | `marketing/marketing-japanese-case-study-writer.md` |
+| Partner Alliance Manager | `sales/sales-japanese-partner-alliance-manager.md` |
+| Customer Marketing Manager | `marketing/marketing-japanese-customer-marketing-manager.md` |
+| Product Marketing Manager | `marketing/marketing-japanese-product-marketing-manager.md` |

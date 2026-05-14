@@ -24,6 +24,7 @@
 | `engineering/engineering-japanese-code-reviewer.md` | 日本語チーム向け code review |
 | `engineering/engineering-japanese-security-engineer.md` | 認証認可、個人情報、security review |
 | `engineering/engineering-japanese-sre.md` | SLO、監視、障害対応、runbook |
+| `engineering/engineering-japanese-observability-engineer.md` | log、metrics、trace、dashboard、alert |
 | `engineering/engineering-japanese-database-optimizer.md` | DB、query、index、migration |
 | `engineering/engineering-japanese-legacy-modernization-engineer.md` | legacy system modernization |
 | `engineering/engineering-japanese-mobile-app-builder.md` | iOS / Android / React Native / Flutter |
@@ -32,8 +33,10 @@
 | `engineering/engineering-kintone-developer.md` | Cybozu kintone 開発 |
 | `engineering/engineering-line-works-integration-developer.md` | LINE WORKS 連携 |
 | `project-management/project-management-japanese-pm.md` | WBS、課題、進捗、会議体 |
+| `project-management/project-management-japanese-business-analyst.md` | 業務分析、As-Is / To-Be、受入条件 |
 | `project-management/project-management-backlog-redmine-jira-steward.md` | ticket workflow 管理 |
 | `project-management/project-management-acceptance-criteria-writer.md` | 受入条件、検収条件 |
+| `project-management/project-management-japanese-release-manager.md` | release 判定、作業手順、切り戻し |
 | `testing/testing-japanese-qa-planner.md` | QA plan、test matrix |
 | `testing/testing-japanese-api-tester.md` | API contract、異常系、権限、検収 evidence |
 | `testing/testing-evidence-collector-ja.md` | テスト証跡、CI 結果、検収資料 |
@@ -45,6 +48,7 @@
 | `legal/legal-japanese-contract-reviewer.md` | 業務委託、NDA、SaaS 契約 review |
 | `legal/legal-japanese-policy-writer.md` | IT / security / SaaS 利用社内 policy |
 | `legal/legal-japanese-sla-maintenance-contract-reviewer.md` | SLA、保守契約、責任分界 |
+| `legal/legal-japanese-data-privacy-officer.md` | 個人情報、委託先、保存期間、漏えい対応 |
 | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
 | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS developer advocacy |
 | `marketing/marketing-line-official-account-operator.md` | LINE 公式アカウント運用 |
@@ -67,6 +71,7 @@
 | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
 | `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
 | `support/support-japanese-helpdesk-responder.md` | 日本語 helpdesk 一次対応 |
+| `support/support-japanese-it-asset-manager.md` | PC、SaaS license、account、貸与品管理 |
 | `support/support-release-note-writer-ja.md` | 日本語 release note |
 | `support/support-japanese-support-analytics-reporter.md` | 問い合わせ、SLA、FAQ、顧客影響分析 |
 | `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool 評価 |
@@ -146,6 +151,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 |
+| `workflows/release-readiness-review.yaml` | release 判定、observability、privacy、検収 evidence |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |
 
 ### Agent を探す

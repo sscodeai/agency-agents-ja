@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 65
+Total agents: 70
 
 ## Engineering
 
@@ -13,6 +13,7 @@ Total agents: 65
 | 日本向けフロントエンドエンジニア | 日本の業務画面、管理画面、SaaS UI 向けに React/Vue、form、table、accessibility、入力補助、検証しやすい UI を実装する frontend engineer。 | `engineering/engineering-japanese-frontend-engineer.md` |
 | レガシーモダナイゼーションエンジニア | 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。 | `engineering/engineering-japanese-legacy-modernization-engineer.md` |
 | 日本向けモバイルアプリエンジニア | 日本向け iOS / Android / React Native / Flutter app の業務要件、push 通知、認証、審査、運用、障害対応を考慮して実装する mobile app builder。 | `engineering/engineering-japanese-mobile-app-builder.md` |
+| 日本向けオブザーバビリティエンジニア | 日本の SaaS / 業務システム運用に合わせて log、metrics、trace、dashboard、alert、SLO、監査 log を設計する observability engineer。 | `engineering/engineering-japanese-observability-engineer.md` |
 | 日本向けパフォーマンスエンジニア | 日本の業務システム、SaaS、EC における response time、batch、DB、frontend、外部連携の性能課題を調査し改善計画を作る performance engineer。 | `engineering/engineering-japanese-performance-engineer.md` |
 | 要件定義エンジニア | 日本の受託開発、SI、SaaS 開発で要件定義、受入条件、仕様確認、未決事項整理を行う専門家。曖昧な依頼を実装可能な要件へ落とし込む。 | `engineering/engineering-japanese-requirements-engineer.md` |
 | 日本向けセキュリティエンジニア | 日本企業の web application、業務システム、SaaS に対して threat modeling、認証認可、個人情報、監査ログ、脆弱性対応を review する。 | `engineering/engineering-japanese-security-engineer.md` |
@@ -28,7 +29,9 @@ Total agents: 65
 | --- | --- | --- |
 | 受入条件ライター | 要件、仕様、顧客要望を testable な受入条件、検収条件、確認観点へ変換する専門家。 | `project-management/project-management-acceptance-criteria-writer.md` |
 | Backlog / Redmine / Jira 運用管理者 | Backlog、Redmine、Jira の ticket workflow、status、priority、label、release、運用ルールを整備する project workflow steward。 | `project-management/project-management-backlog-redmine-jira-steward.md` |
+| 日本向けビジネスアナリスト | 日本の IT / SI / SaaS 開発で現行業務、業務フロー、要件差分、関係者、受入条件を整理する business analyst。 | `project-management/project-management-japanese-business-analyst.md` |
 | 日本 IT プロジェクトマネージャー | 日本の IT / SI / 受託開発で WBS、課題管理、進捗会議、議事録、リスク、検収を管理する PM。 | `project-management/project-management-japanese-pm.md` |
+| 日本向けリリースマネージャー | 日本の IT / SaaS / 受託開発で release 判定、作業手順、切り戻し、顧客通知、検収 evidence、関係者承認を管理する release manager。 | `project-management/project-management-japanese-release-manager.md` |
 
 ## Testing
 
@@ -94,6 +97,7 @@ Total agents: 65
 | --- | --- | --- |
 | 日本向け AI 利用ポリシーライター | 日本企業の生成 AI / AI tool 利用について、個人情報、機密情報、著作権、review、禁止用途、承認 flow を含む AI policy を作る specialist。 | `legal/legal-japanese-ai-policy-writer.md` |
 | 日本向け契約レビュアー | 業務委託契約、NDA、利用規約、SaaS 契約の risk、責任範囲、知財、個人情報、解除、損害賠償を整理する reviewer。 | `legal/legal-japanese-contract-reviewer.md` |
+| 日本向けデータプライバシーオフィサー | 日本企業の個人情報、委託先、第三者提供、保存期間、開示請求、漏えい対応、DPIA / privacy governance を整理する data privacy officer。 | `legal/legal-japanese-data-privacy-officer.md` |
 | 日本向け社内ポリシーライター | 日本企業の IT、security、個人情報、SaaS 利用、業務委託、開発運用に関する社内 policy、rule、guideline を分かりやすく整える policy writer。 | `legal/legal-japanese-policy-writer.md` |
 | 個人情報保護レビュアー | 日本の個人情報保護法、privacy policy、委託先管理、ログ出力、データ保持を review する compliance agent。 | `legal/legal-japanese-privacy-compliance-reviewer.md` |
 | SLA / 保守契約レビュアー | 日本の IT 保守契約、SLA、障害対応、サポート時間、責任分界、変更対応を review する specialist。 | `legal/legal-japanese-sla-maintenance-contract-reviewer.md` |
@@ -113,6 +117,7 @@ Total agents: 65
 | 日本 B2B カスタマーサクセスマネージャー | 日本の B2B SaaS / IT service で onboarding、定着、活用促進、QBR、解約防止を支援する CSM。 | `support/support-japanese-customer-success-manager.md` |
 | 日本語ヘルプデスク対応者 | 日本語の問い合わせ、障害一次受付、操作案内、FAQ、エスカレーションを丁寧かつ正確に行う support responder。 | `support/support-japanese-helpdesk-responder.md` |
 | 障害報告書ライター | 日本の顧客・社内向け障害報告書、時系列、影響範囲、原因、暫定対応、恒久対応、再発防止策を整理する。 | `support/support-japanese-incident-report-writer.md` |
+| 日本 IT 資産管理担当 | 日本企業の PC、端末、SaaS license、account、貸与品、棚卸し、入退社 / 契約終了時の回収と権限削除を管理する IT asset manager。 | `support/support-japanese-it-asset-manager.md` |
 | 日本向けサポート分析レポーター | 日本の B2B SaaS / IT service の問い合わせ、障害、FAQ、SLA、顧客満足度を分析し、改善 action と定例 report を作る support analytics reporter。 | `support/support-japanese-support-analytics-reporter.md` |
 | 日本語リリースノートライター | 日本語の release note、顧客向け変更案内、社内共有、影響範囲、注意事項を分かりやすく書く writer。 | `support/support-release-note-writer-ja.md` |
 

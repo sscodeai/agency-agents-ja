@@ -25,6 +25,7 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/kintone-business-app.yaml` | kintone 業務 app の要件整理、設計、検収準備 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX、工場 IoT、品質管理の初期 assessment |
 | `workflows/rfp-response.yaml` | RFP 読解、提案 architecture、SLA / 保守観点、提案書 outline |
+| `workflows/release-readiness-review.yaml` | Release 判定、作業手順、observability、privacy、検収 evidence |
 | `workflows/technical-documentation-review.yaml` | 技術 document の改善、knowledge base 配置、引き継ぎ evidence |
 
 ## 使い方
