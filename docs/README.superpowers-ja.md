@@ -16,6 +16,7 @@ Machine-readable workflow は `workflows/` に置きます。
 | Workflow | 用途 |
 | --- | --- |
 | `workflows/japanese-sier-requirements-review.yaml` | Backlog / Redmine / Jira ticket と仕様書の要件整理、設計、検収準備 |
+| `workflows/ai-governance-rollout.yaml` | 社内 AI 利用 policy、prompt template、automation governance、研修、risk |
 | `workflows/api-integration-delivery.yaml` | API 連携の要件整理、backend design、API test、技術 document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS の release scope、QA、release note、CS 案内 |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation の SEO、検索 / SNS 広告、webinar、営業 follow-up |

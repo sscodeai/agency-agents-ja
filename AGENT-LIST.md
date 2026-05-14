@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 60
+Total agents: 65
 
 ## Engineering
 
@@ -51,6 +51,7 @@ Total agents: 60
 
 | Name | Description | Path |
 | --- | --- | --- |
+| 日本向けデベロッパーアドボケイト | 日本の developer audience 向けに API / SDK / OSS / SaaS platform の技術発信、sample、workshop、community feedback を設計する developer advocate。 | `marketing/marketing-japanese-developer-advocate.md` |
 | LINE 公式アカウント運用者 | 日本向け LINE Official Account の配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する marketing operator。 | `marketing/marketing-line-official-account-operator.md` |
 | note / Qiita / Zenn 技術広報ストラテジスト | 日本向け技術広報、採用広報、developer marketing のために note、Qiita、Zenn、はてなブログのコンテンツ戦略を作る。 | `marketing/marketing-note-qiita-zenn-strategist.md` |
 | 楽天 / Amazon Japan EC 運用者 | 楽天市場、Amazon Japan、Yahoo! ショッピング、Shopify Japan の商品ページ、広告、在庫、レビュー、販促を運用する EC specialist。 | `marketing/marketing-rakuten-amazon-japan-operator.md` |
@@ -74,6 +75,7 @@ Total agents: 60
 
 | Name | Description | Path |
 | --- | --- | --- |
+| 日本 IT 企業研修デザイナー | 日本の IT 組織向けに security、AI 活用、開発 process、onboarding、CS / sales enablement の研修設計、教材、演習、理解度確認を作る training designer。 | `hr/hr-japanese-corporate-training-designer.md` |
 | 日本 IT 採用担当 | 日本の IT エンジニア採用、職務要件、スカウト、カジュアル面談、選考設計、採用広報を支援する recruiter。 | `hr/hr-japanese-it-recruiter.md` |
 | 日本 IT オンボーディング担当 | 日本の IT 組織で新入社員・業務委託・協力会社メンバーの onboarding、権限、環境構築、業務理解を支援する specialist。 | `hr/hr-japanese-onboarding-specialist.md` |
 | 日本 IT 人事評価ファシリテーター | 日本の IT 組織で engineer / designer / PM / support 職の目標設定、評価観点、1on1、昇格判断、フィードバック文面を整える facilitator。 | `hr/hr-japanese-performance-review-facilitator.md` |
@@ -90,7 +92,9 @@ Total agents: 60
 
 | Name | Description | Path |
 | --- | --- | --- |
+| 日本向け AI 利用ポリシーライター | 日本企業の生成 AI / AI tool 利用について、個人情報、機密情報、著作権、review、禁止用途、承認 flow を含む AI policy を作る specialist。 | `legal/legal-japanese-ai-policy-writer.md` |
 | 日本向け契約レビュアー | 業務委託契約、NDA、利用規約、SaaS 契約の risk、責任範囲、知財、個人情報、解除、損害賠償を整理する reviewer。 | `legal/legal-japanese-contract-reviewer.md` |
+| 日本向け社内ポリシーライター | 日本企業の IT、security、個人情報、SaaS 利用、業務委託、開発運用に関する社内 policy、rule、guideline を分かりやすく整える policy writer。 | `legal/legal-japanese-policy-writer.md` |
 | 個人情報保護レビュアー | 日本の個人情報保護法、privacy policy、委託先管理、ログ出力、データ保持を review する compliance agent。 | `legal/legal-japanese-privacy-compliance-reviewer.md` |
 | SLA / 保守契約レビュアー | 日本の IT 保守契約、SLA、障害対応、サポート時間、責任分界、変更対応を review する specialist。 | `legal/legal-japanese-sla-maintenance-contract-reviewer.md` |
 
@@ -125,6 +129,7 @@ Total agents: 60
 | --- | --- | --- |
 | 自治体 DX コンサルタント | 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。 | `specialized/japanese-public-sector-dx-consultant.md` |
 | 工場 IoT プランナー | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
+| 日本 IT 自動化ガバナンスアーキテクト | 日本企業の RPA、workflow automation、AI agent、batch、integration automation に対して権限、監査、例外処理、運用責任を設計する automation governance architect。 | `specialized/specialized-japanese-automation-governance-architect.md` |
 | 日本 IT ナレッジベース管理者 | 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。 | `specialized/specialized-japanese-knowledge-base-steward.md` |
 | 製造業 DX コンサルタント | 日本の製造業向けに現場業務、品質、在庫、原価、設備、IoT、MES、traceability を踏まえた DX 提案を行う consultant。 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` |
 | 日本 IT 会議アシスタント | 日本の IT プロジェクト、SI、SaaS、顧客定例で agenda、議事録、決定事項、課題、宿題、次回 action を整理する meeting assistant。 | `specialized/specialized-japanese-meeting-assistant.md` |

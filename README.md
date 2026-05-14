@@ -41,9 +41,12 @@
 | `product/product-japanese-product-manager.md` | 日本市場向け product planning |
 | `product/product-japanese-b2b-saas-planner.md` | B2B SaaS、契約、権限、CS |
 | `legal/legal-japanese-privacy-compliance-reviewer.md` | 個人情報保護法、privacy review |
+| `legal/legal-japanese-ai-policy-writer.md` | 生成 AI / AI tool 利用 policy |
 | `legal/legal-japanese-contract-reviewer.md` | 業務委託、NDA、SaaS 契約 review |
+| `legal/legal-japanese-policy-writer.md` | IT / security / SaaS 利用社内 policy |
 | `legal/legal-japanese-sla-maintenance-contract-reviewer.md` | SLA、保守契約、責任分界 |
 | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
+| `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS developer advocacy |
 | `marketing/marketing-line-official-account-operator.md` | LINE 公式アカウント運用 |
 | `marketing/marketing-rakuten-amazon-japan-operator.md` | 楽天 / Amazon Japan EC 運用 |
 | `marketing/marketing-yahoo-google-japan-seo.md` | Yahoo! JAPAN / Google SEO |
@@ -54,6 +57,7 @@
 | `hr/hr-japanese-it-recruiter.md` | IT 採用、職務要件、面談設計 |
 | `hr/hr-japanese-onboarding-specialist.md` | 新メンバー onboarding |
 | `hr/hr-japanese-performance-review-facilitator.md` | IT 人事評価、1on1、昇格判断 |
+| `hr/hr-japanese-corporate-training-designer.md` | security、AI 活用、開発 process 研修 |
 | `design/design-japanese-business-ui-designer.md` | 日本の業務 UI / 管理画面 |
 | `design/design-accessibility-auditor-ja.md` | 日本語 UI accessibility audit |
 | `design/design-japanese-design-system-maintainer.md` | 業務 UI design system 運用 |
@@ -67,6 +71,7 @@
 | `support/support-japanese-support-analytics-reporter.md` | 問い合わせ、SLA、FAQ、顧客影響分析 |
 | `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool 評価 |
 | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共 sector |
+| `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、automation governance |
 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` | 製造業 DX |
 | `specialized/specialized-factory-iot-planner.md` | 工場 IoT plan |
 | `specialized/specialized-quality-control-kaizen-advisor.md` | 品質管理、カイゼン |
@@ -132,6 +137,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | Workflow | 用途 |
 | --- | --- |
 | `workflows/japanese-sier-requirements-review.yaml` | SIer / 受託開発の要件、設計、検収準備 |
+| `workflows/ai-governance-rollout.yaml` | 社内 AI 利用 policy、prompt、automation governance、training |
 | `workflows/api-integration-delivery.yaml` | API 連携の要件、backend design、API test、document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |

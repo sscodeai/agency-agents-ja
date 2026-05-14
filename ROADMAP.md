@@ -24,7 +24,10 @@ agency-agents-ja の agent 設計ロードマップです。
 | Collaboration Integration Engineer | `engineering/engineering-line-works-integration-developer.md` | LINE WORKS 連携へ特化 |
 | Business App Developer | `engineering/engineering-kintone-developer.md` | kintone 業務アプリ開発へ特化 |
 | Privacy / Compliance Reviewer | `legal/legal-japanese-privacy-compliance-reviewer.md` | 個人情報保護法、委託先管理、privacy review へ調整 |
+| Policy Writer | `legal/legal-japanese-policy-writer.md` | IT、security、SaaS 利用、委託先向け社内 policy へ特化 |
+| AI Policy Writer | `legal/legal-japanese-ai-policy-writer.md` | 生成 AI / AI tool 利用 policy、禁止用途、承認 flow へ特化 |
 | Technical Content Strategist | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報へ特化 |
+| Developer Advocate | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS の sample、workshop、developer feedback へ特化 |
 | Backend Architect | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ、運用を日本の業務 system 向けに調整 |
 | Data Engineer | `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality、個人情報へ特化 |
 | Frontend Engineer | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form/table、IME、検収しやすい UI へ調整 |
@@ -48,6 +51,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
 | Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
 | HR Performance Reviewer | `hr/hr-japanese-performance-review-facilitator.md` | IT 職種の目標設定、1on1、評価 feedback へ特化 |
+| Corporate Training Designer | `hr/hr-japanese-corporate-training-designer.md` | security、AI 活用、開発 process、enablement 研修へ特化 |
 | Design System Maintainer | `design/design-japanese-design-system-maintainer.md` | 業務 UI の component、文言、accessibility、実装連携へ特化 |
 | Tool Evaluator | `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool の導入評価へ特化 |
 | Knowledge Base Steward | `specialized/specialized-japanese-knowledge-base-steward.md` | 社内 wiki、runbook、FAQ、document governance へ特化 |
@@ -55,6 +59,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Prompt Engineer | `specialized/specialized-japanese-prompt-engineer.md` | 社内 AI 活用 prompt、評価、guardrail へ特化 |
 | Meeting Assistant | `specialized/specialized-japanese-meeting-assistant.md` | 顧客定例、議事録、決定事項、課題管理へ特化 |
 | Risk Assessor | `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用の risk assessment へ特化 |
+| Automation Governance Architect | `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、bot、workflow automation の governance へ特化 |
 
 ## Backlog
 
@@ -62,8 +67,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | --- | --- |
 | Lifestyle Social Operator | `marketing/marketing-instagram-lemon8-operator.md` |
 | Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` |
-| Policy Writer | `legal/legal-japanese-policy-writer.md` |
-| Corporate Training Designer | `hr/hr-japanese-corporate-training-designer.md` |
-| Developer Advocate | `marketing/marketing-japanese-developer-advocate.md` |
-| AI Policy Writer | `legal/legal-japanese-ai-policy-writer.md` |
-| Automation Governance Architect | `specialized/specialized-japanese-automation-governance-architect.md` |
+| Business Analyst | `project-management/project-management-japanese-business-analyst.md` |
+| Release Manager | `project-management/project-management-japanese-release-manager.md` |
+| Data Privacy Officer | `legal/legal-japanese-data-privacy-officer.md` |
+| Observability Engineer | `engineering/engineering-japanese-observability-engineer.md` |
+| IT Asset Manager | `support/support-japanese-it-asset-manager.md` |
