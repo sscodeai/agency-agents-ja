@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 82
+Total agents: 87
 
 ## Engineering
 
@@ -9,6 +9,7 @@ Total agents: 82
 | 日本向けバックエンドアーキテクト | 日本の業務システム、SaaS、受託開発向けに API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。 | `engineering/engineering-japanese-backend-architect.md` |
 | 日本語コードレビュアー | 日本語チーム向け code review 専門家。丁寧な表現、明確な重大度、証跡、受入条件、保守運用リスクを重視する。 | `engineering/engineering-japanese-code-reviewer.md` |
 | 日本向けデータエンジニア | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する data engineer。 | `engineering/engineering-japanese-data-engineer.md` |
+| 日本向けデータガバナンス管理者 | 日本企業の SaaS / 業務システム / DWH で data owner、data catalog、品質、権限、個人情報、監査、利用 rule を整える data governance steward。 | `engineering/engineering-japanese-data-governance-steward.md` |
 | 日本向けデータベース最適化エンジニア | 業務システムの database schema、query、index、migration、帳票・CSV・batch workload を最適化する専門家。 | `engineering/engineering-japanese-database-optimizer.md` |
 | 日本向けフロントエンドエンジニア | 日本の業務画面、管理画面、SaaS UI 向けに React/Vue、form、table、accessibility、入力補助、検証しやすい UI を実装する frontend engineer。 | `engineering/engineering-japanese-frontend-engineer.md` |
 | レガシーモダナイゼーションエンジニア | 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。 | `engineering/engineering-japanese-legacy-modernization-engineer.md` |
@@ -80,6 +81,7 @@ Total agents: 82
 | --- | --- | --- |
 | 電子帳簿保存法レビュアー | 電子帳簿保存法に関する電子取引データ保存、検索要件、改ざん防止、運用ルールを review する finance / compliance agent。 | `finance/finance-electronic-bookkeeping-reviewer.md` |
 | 日本向け FinOps アナリスト | 日本の SaaS / 業務システムで cloud cost、SaaS cost、unit economics、予算、配賦、削減施策を分析する FinOps analyst。 | `finance/finance-japanese-finops-analyst.md` |
+| 日本向け内部監査コーディネーター | 日本企業の IT 統制、SaaS 利用、権限管理、委託先管理、変更管理、証跡、監査対応を整理する internal audit coordinator。 | `finance/finance-japanese-internal-audit-coordinator.md` |
 | インボイス制度アドバイザー | 日本のインボイス制度に関する請求書、適格請求書発行事業者番号、取引先確認、会計 system 要件を整理する finance advisor。 | `finance/finance-japanese-invoice-system-advisor.md` |
 
 ## HR
@@ -116,8 +118,10 @@ Total agents: 82
 | --- | --- | --- |
 | 日本向けアカウントストラテジスト | 日本の B2B SaaS / SI / IT service で既存顧客の account plan、更新、拡張提案、稟議支援、関係者 mapping を設計する account strategist。 | `sales/sales-japanese-account-strategist.md` |
 | 日本向けパートナーアライアンスマネージャー | 日本の B2B SaaS、SI、IT service で販売代理店、SI partner、technology partner との alliance、co-marketing、共同提案を設計する partner alliance manager。 | `sales/sales-japanese-partner-alliance-manager.md` |
+| 日本向け Revenue Operations マネージャー | 日本の B2B SaaS / IT service で marketing、sales、CS、finance をまたいだ funnel、契約、請求、更新、拡張の revenue process を整える RevOps manager。 | `sales/sales-japanese-revenue-operations-manager.md` |
 | 日本向け RFP 回答ライター | 日本企業・自治体向け RFP、提案書、見積前提、体制、スケジュール、非機能、保守運用回答を作る sales / presales agent。 | `sales/sales-japanese-rfp-response-writer.md` |
 | 日本向けセールスエンジニア | 日本の B2B SaaS、SI、受託開発、IT service の商談で技術要件、demo、PoC、RFP 質問、提案 feasibility を支援する sales engineer。 | `sales/sales-japanese-sales-engineer.md` |
+| 日本向けセールスオペレーションアナリスト | 日本の B2B SaaS / IT service で pipeline、forecast、CRM hygiene、商談 stage、営業 KPI、見積 / 稟議 process を分析する sales operations analyst。 | `sales/sales-japanese-sales-operations-analyst.md` |
 
 ## Support
 
@@ -146,6 +150,7 @@ Total agents: 82
 | 自治体 DX コンサルタント | 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。 | `specialized/japanese-public-sector-dx-consultant.md` |
 | 工場 IoT プランナー | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
 | 日本 IT 自動化ガバナンスアーキテクト | 日本企業の RPA、workflow automation、AI agent、batch、integration automation に対して権限、監査、例外処理、運用責任を設計する automation governance architect。 | `specialized/specialized-japanese-automation-governance-architect.md` |
+| 日本向け事業継続プランナー | 日本企業の SaaS / 業務システム / IT 運用における BCP、DR、災害対応、代替運用、連絡網、復旧目標、訓練 plan を作る business continuity planner。 | `specialized/specialized-japanese-business-continuity-planner.md` |
 | 日本 IT ナレッジベース管理者 | 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。 | `specialized/specialized-japanese-knowledge-base-steward.md` |
 | 製造業 DX コンサルタント | 日本の製造業向けに現場業務、品質、在庫、原価、設備、IoT、MES、traceability を踏まえた DX 提案を行う consultant。 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` |
 | 日本 IT 会議アシスタント | 日本の IT プロジェクト、SI、SaaS、顧客定例で agenda、議事録、決定事項、課題、宿題、次回 action を整理する meeting assistant。 | `specialized/specialized-japanese-meeting-assistant.md` |

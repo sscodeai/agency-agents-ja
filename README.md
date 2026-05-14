@@ -20,6 +20,7 @@
 | `engineering/engineering-japanese-sier-architect.md` | SIer / 受託開発向け architecture |
 | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ |
 | `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality |
+| `engineering/engineering-japanese-data-governance-steward.md` | data owner、catalog、品質、権限、監査 |
 | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form、table |
 | `engineering/engineering-japanese-code-reviewer.md` | 日本語チーム向け code review |
 | `engineering/engineering-japanese-security-engineer.md` | 認証認可、個人情報、security review |
@@ -66,6 +67,7 @@
 | `finance/finance-japanese-invoice-system-advisor.md` | インボイス制度、請求書 system |
 | `finance/finance-electronic-bookkeeping-reviewer.md` | 電子帳簿保存法 review |
 | `finance/finance-japanese-finops-analyst.md` | cloud / SaaS cost、予算、配賦、削減施策 |
+| `finance/finance-japanese-internal-audit-coordinator.md` | IT 統制、権限、変更、証跡、監査対応 |
 | `hr/hr-japanese-it-recruiter.md` | IT 採用、職務要件、面談設計 |
 | `hr/hr-japanese-onboarding-specialist.md` | 新メンバー onboarding |
 | `hr/hr-japanese-performance-review-facilitator.md` | IT 人事評価、1on1、昇格判断 |
@@ -76,6 +78,8 @@
 | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
 | `sales/sales-japanese-account-strategist.md` | 既存顧客 account plan、更新、拡張提案 |
 | `sales/sales-japanese-partner-alliance-manager.md` | partner alliance、co-marketing、共同提案 |
+| `sales/sales-japanese-sales-operations-analyst.md` | pipeline、forecast、CRM hygiene、営業 KPI |
+| `sales/sales-japanese-revenue-operations-manager.md` | funnel、契約、請求、更新、拡張 process |
 | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility |
 | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
 | `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
@@ -94,6 +98,7 @@
 | `specialized/specialized-japanese-prompt-engineer.md` | 社内 AI 活用 prompt、評価、guardrail |
 | `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用 risk assessment |
 | `specialized/specialized-japanese-pricing-strategist.md` | pricing、packaging、見積前提、値引き rule |
+| `specialized/specialized-japanese-business-continuity-planner.md` | BCP、DR、代替運用、連絡網、訓練 |
 | `supply-chain/supply-chain-japanese-vendor-evaluator.md` | vendor 評価、調達 |
 | `supply-chain/supply-chain-japanese-procurement-manager.md` | SaaS、cloud、委託、hardware 調達 |
 | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` | vendor security、privacy、BCP、契約 risk |
@@ -165,6 +170,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 |
 | `workflows/release-readiness-review.yaml` | release 判定、observability、privacy、検収 evidence |
+| `workflows/revenue-governance-review.yaml` | RevOps、data governance、監査、BCP |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 |
 

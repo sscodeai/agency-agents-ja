@@ -40,6 +40,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Short Video Strategist | `marketing/marketing-tiktok-japan-strategist.md` | TikTok / short video の採用広報、event、認知拡大へ特化 |
 | Backend Architect | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ、運用を日本の業務 system 向けに調整 |
 | Data Engineer | `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality、個人情報へ特化 |
+| Data Governance Steward | `engineering/engineering-japanese-data-governance-steward.md` | data owner、catalog、quality、access、retention rule へ特化 |
 | Frontend Engineer | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form/table、IME、検収しやすい UI へ調整 |
 | Mobile App Builder | `engineering/engineering-japanese-mobile-app-builder.md` | 日本向け mobile app、push、store release、support へ特化 |
 | Security Engineer | `engineering/engineering-japanese-security-engineer.md` | 個人情報、委託先、監査、社内 system risk を追加 |
@@ -60,6 +61,8 @@ agency-agents-ja の agent 設計ロードマップです。
 | Sales Engineer | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility、RFP 質問回答へ特化 |
 | Account Strategist | `sales/sales-japanese-account-strategist.md` | 既存顧客の更新、拡張提案、stakeholder mapping へ特化 |
 | Partner Alliance Manager | `sales/sales-japanese-partner-alliance-manager.md` | partner alliance、co-marketing、共同提案、責任分界へ特化 |
+| Sales Operations Analyst | `sales/sales-japanese-sales-operations-analyst.md` | pipeline、forecast、CRM hygiene、sales KPI へ特化 |
+| Revenue Operations Manager | `sales/sales-japanese-revenue-operations-manager.md` | marketing / sales / CS / finance の revenue lifecycle へ特化 |
 | Technical Writer | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、runbook、検収資料へ特化 |
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
 | Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
@@ -75,15 +78,17 @@ agency-agents-ja の agent 設計ロードマップです。
 | Risk Assessor | `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用の risk assessment へ特化 |
 | Automation Governance Architect | `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、bot、workflow automation の governance へ特化 |
 | FinOps Analyst | `finance/finance-japanese-finops-analyst.md` | cloud / SaaS cost、unit economics、配賦、削減施策へ特化 |
+| Internal Audit Coordinator | `finance/finance-japanese-internal-audit-coordinator.md` | IT 統制、権限、変更管理、証跡、監査対応へ特化 |
 | Procurement Manager | `supply-chain/supply-chain-japanese-procurement-manager.md` | SaaS、cloud、開発委託、hardware の調達 process へ特化 |
 | Vendor Risk Manager | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` | vendor security、privacy、BCP、契約、exit risk へ特化 |
+| Business Continuity Planner | `specialized/specialized-japanese-business-continuity-planner.md` | BCP、DR、災害対応、代替運用、訓練 plan へ特化 |
 
 ## Backlog
 
 | Reference Role | Japanese Agent Candidate |
 | --- | --- |
-| Sales Operations Analyst | `sales/sales-japanese-sales-operations-analyst.md` |
-| Revenue Operations Manager | `sales/sales-japanese-revenue-operations-manager.md` |
-| Data Governance Steward | `engineering/engineering-japanese-data-governance-steward.md` |
-| Internal Audit Coordinator | `finance/finance-japanese-internal-audit-coordinator.md` |
-| Business Continuity Planner | `specialized/specialized-japanese-business-continuity-planner.md` |
+| Quality Assurance Manager | `testing/testing-japanese-quality-assurance-manager.md` |
+| Change Management Lead | `project-management/project-management-japanese-change-management-lead.md` |
+| Service Delivery Manager | `support/support-japanese-service-delivery-manager.md` |
+| Enterprise Architect | `engineering/engineering-japanese-enterprise-architect.md` |
+| Knowledge Commerce Strategist | `marketing/marketing-japanese-knowledge-commerce-strategist.md` |

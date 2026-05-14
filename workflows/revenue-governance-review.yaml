@@ -1,0 +1,32 @@
+name: revenue-governance-review
+agents_dir: "."
+inputs:
+  - name: revenue_context
+    required: true
+  - name: system_context
+    required: true
+steps:
+  - id: sales_ops
+    role: "sales/sales-japanese-sales-operations-analyst"
+    task: "Revenue context {{revenue_context}} をもとに、pipeline、forecast、CRM hygiene、stage、営業 process の課題を整理してください。"
+    output: sales_ops
+  - id: revops
+    role: "sales/sales-japanese-revenue-operations-manager"
+    task: "Sales ops review {{sales_ops}} と system context {{system_context}} をもとに、marketing / sales / CS / finance の revenue lifecycle、handoff、KPI を設計してください。"
+    depends_on: [sales_ops]
+    output: revops
+  - id: data_governance
+    role: "engineering/engineering-japanese-data-governance-steward"
+    task: "RevOps plan {{revops}} をもとに、revenue data の owner、source of truth、quality rule、access rule を整理してください。"
+    depends_on: [revops]
+    output: data_governance
+  - id: audit
+    role: "finance/finance-japanese-internal-audit-coordinator"
+    task: "RevOps plan {{revops}} と data governance {{data_governance}} をもとに、権限、変更、証跡、監査対応の確認事項を整理してください。"
+    depends_on: [revops, data_governance]
+    output: audit
+  - id: bcp
+    role: "specialized/specialized-japanese-business-continuity-planner"
+    task: "System context {{system_context}}、data governance {{data_governance}}、audit review {{audit}} をもとに、revenue operation の BCP / DR / 代替運用 plan を作ってください。"
+    depends_on: [data_governance, audit]
+    output: summary
