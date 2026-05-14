@@ -52,6 +52,7 @@
 | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
 | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS developer advocacy |
 | `marketing/marketing-japanese-product-marketing-manager.md` | positioning、message、launch、sales enablement |
+| `marketing/marketing-japanese-market-researcher.md` | 市場規模、競合、顧客課題、購買 process |
 | `marketing/marketing-japanese-case-study-writer.md` | 導入事例、顧客 proof、公開許諾 |
 | `marketing/marketing-japanese-community-manager.md` | user group、developer community、feedback loop |
 | `marketing/marketing-japanese-customer-marketing-manager.md` | 既存顧客 marketing、advocacy、user group |
@@ -64,6 +65,7 @@
 | `paid-media/paid-media-japan-search-social-strategist.md` | 日本向け検索広告 / SNS 広告 |
 | `finance/finance-japanese-invoice-system-advisor.md` | インボイス制度、請求書 system |
 | `finance/finance-electronic-bookkeeping-reviewer.md` | 電子帳簿保存法 review |
+| `finance/finance-japanese-finops-analyst.md` | cloud / SaaS cost、予算、配賦、削減施策 |
 | `hr/hr-japanese-it-recruiter.md` | IT 採用、職務要件、面談設計 |
 | `hr/hr-japanese-onboarding-specialist.md` | 新メンバー onboarding |
 | `hr/hr-japanese-performance-review-facilitator.md` | IT 人事評価、1on1、昇格判断 |
@@ -91,7 +93,10 @@
 | `specialized/specialized-japanese-meeting-assistant.md` | 議事録、決定事項、課題、次 action |
 | `specialized/specialized-japanese-prompt-engineer.md` | 社内 AI 活用 prompt、評価、guardrail |
 | `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用 risk assessment |
+| `specialized/specialized-japanese-pricing-strategist.md` | pricing、packaging、見積前提、値引き rule |
 | `supply-chain/supply-chain-japanese-vendor-evaluator.md` | vendor 評価、調達 |
+| `supply-chain/supply-chain-japanese-procurement-manager.md` | SaaS、cloud、委託、hardware 調達 |
+| `supply-chain/supply-chain-japanese-vendor-risk-manager.md` | vendor security、privacy、BCP、契約 risk |
 | `supply-chain/supply-chain-inventory-forecasting-ja.md` | 在庫予測、安全在庫 |
 
 ## Agent 形式
@@ -161,6 +166,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 |
 | `workflows/release-readiness-review.yaml` | release 判定、observability、privacy、検収 evidence |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |
+| `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 |
 
 ### Agent を探す
 

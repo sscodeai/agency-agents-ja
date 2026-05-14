@@ -32,6 +32,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Technical Content Strategist | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報へ特化 |
 | Developer Advocate | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS の sample、workshop、developer feedback へ特化 |
 | Product Marketing Manager | `marketing/marketing-japanese-product-marketing-manager.md` | 日本市場向け positioning、message、launch、sales enablement へ特化 |
+| Market Researcher | `marketing/marketing-japanese-market-researcher.md` | 日本市場の市場規模、競合、購買 process、検証論点へ特化 |
 | Case Study Writer | `marketing/marketing-japanese-case-study-writer.md` | 導入事例、顧客 proof、公開許諾、営業活用へ特化 |
 | Community Manager | `marketing/marketing-japanese-community-manager.md` | user group、developer community、feedback loop へ特化 |
 | Customer Marketing Manager | `marketing/marketing-japanese-customer-marketing-manager.md` | 既存顧客 marketing、advocacy、更新 / 拡張支援へ特化 |
@@ -62,6 +63,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Technical Writer | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、runbook、検収資料へ特化 |
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
 | Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
+| Pricing Strategist | `specialized/specialized-japanese-pricing-strategist.md` | pricing、packaging、見積前提、discount rule へ特化 |
 | HR Performance Reviewer | `hr/hr-japanese-performance-review-facilitator.md` | IT 職種の目標設定、1on1、評価 feedback へ特化 |
 | Corporate Training Designer | `hr/hr-japanese-corporate-training-designer.md` | security、AI 活用、開発 process、enablement 研修へ特化 |
 | Design System Maintainer | `design/design-japanese-design-system-maintainer.md` | 業務 UI の component、文言、accessibility、実装連携へ特化 |
@@ -72,13 +74,16 @@ agency-agents-ja の agent 設計ロードマップです。
 | Meeting Assistant | `specialized/specialized-japanese-meeting-assistant.md` | 顧客定例、議事録、決定事項、課題管理へ特化 |
 | Risk Assessor | `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用の risk assessment へ特化 |
 | Automation Governance Architect | `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、bot、workflow automation の governance へ特化 |
+| FinOps Analyst | `finance/finance-japanese-finops-analyst.md` | cloud / SaaS cost、unit economics、配賦、削減施策へ特化 |
+| Procurement Manager | `supply-chain/supply-chain-japanese-procurement-manager.md` | SaaS、cloud、開発委託、hardware の調達 process へ特化 |
+| Vendor Risk Manager | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` | vendor security、privacy、BCP、契約、exit risk へ特化 |
 
 ## Backlog
 
 | Reference Role | Japanese Agent Candidate |
 | --- | --- |
-| Market Researcher | `marketing/marketing-japanese-market-researcher.md` |
-| Pricing Strategist | `specialized/specialized-japanese-pricing-strategist.md` |
-| FinOps Analyst | `finance/finance-japanese-finops-analyst.md` |
-| Procurement Manager | `supply-chain/supply-chain-japanese-procurement-manager.md` |
-| Vendor Risk Manager | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` |
+| Sales Operations Analyst | `sales/sales-japanese-sales-operations-analyst.md` |
+| Revenue Operations Manager | `sales/sales-japanese-revenue-operations-manager.md` |
+| Data Governance Steward | `engineering/engineering-japanese-data-governance-steward.md` |
+| Internal Audit Coordinator | `finance/finance-japanese-internal-audit-coordinator.md` |
+| Business Continuity Planner | `specialized/specialized-japanese-business-continuity-planner.md` |

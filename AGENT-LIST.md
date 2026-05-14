@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 77
+Total agents: 82
 
 ## Engineering
 
@@ -59,6 +59,7 @@ Total agents: 77
 | 日本向けコミュニティマネージャー | 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。 | `marketing/marketing-japanese-community-manager.md` |
 | 日本向けカスタマーマーケティングマネージャー | 日本の B2B SaaS / IT service で既存顧客向け newsletter、導入事例、ユーザー会、更新促進、upsell / advocacy を設計する customer marketing manager。 | `marketing/marketing-japanese-customer-marketing-manager.md` |
 | 日本向けデベロッパーアドボケイト | 日本の developer audience 向けに API / SDK / OSS / SaaS platform の技術発信、sample、workshop、community feedback を設計する developer advocate。 | `marketing/marketing-japanese-developer-advocate.md` |
+| 日本市場リサーチャー | 日本の B2B SaaS、IT service、SI、EC、製造業 DX 向けに市場規模、競合、顧客課題、購入プロセス、参入機会を整理する market researcher。 | `marketing/marketing-japanese-market-researcher.md` |
 | 日本向けプロダクトマーケティングマネージャー | 日本の B2B SaaS / IT service 向けに positioning、persona、message、launch plan、sales enablement、competitive note を作る product marketing manager。 | `marketing/marketing-japanese-product-marketing-manager.md` |
 | LINE 公式アカウント運用者 | 日本向け LINE Official Account の配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する marketing operator。 | `marketing/marketing-line-official-account-operator.md` |
 | note / Qiita / Zenn 技術広報ストラテジスト | 日本向け技術広報、採用広報、developer marketing のために note、Qiita、Zenn、はてなブログのコンテンツ戦略を作る。 | `marketing/marketing-note-qiita-zenn-strategist.md` |
@@ -78,6 +79,7 @@ Total agents: 77
 | Name | Description | Path |
 | --- | --- | --- |
 | 電子帳簿保存法レビュアー | 電子帳簿保存法に関する電子取引データ保存、検索要件、改ざん防止、運用ルールを review する finance / compliance agent。 | `finance/finance-electronic-bookkeeping-reviewer.md` |
+| 日本向け FinOps アナリスト | 日本の SaaS / 業務システムで cloud cost、SaaS cost、unit economics、予算、配賦、削減施策を分析する FinOps analyst。 | `finance/finance-japanese-finops-analyst.md` |
 | インボイス制度アドバイザー | 日本のインボイス制度に関する請求書、適格請求書発行事業者番号、取引先確認、会計 system 要件を整理する finance advisor。 | `finance/finance-japanese-invoice-system-advisor.md` |
 
 ## HR
@@ -133,7 +135,9 @@ Total agents: 77
 | Name | Description | Path |
 | --- | --- | --- |
 | 日本向け在庫予測担当 | 日本の小売、EC、製造業向けに需要予測、安全在庫、欠品、過剰在庫、リードタイムを分析する supply chain specialist。 | `supply-chain/supply-chain-inventory-forecasting-ja.md` |
+| 日本向け IT 調達マネージャー | 日本企業の SaaS、cloud、開発委託、業務委託、hardware 調達について RFP、見積比較、稟議、契約、発注、検収を管理する procurement manager。 | `supply-chain/supply-chain-japanese-procurement-manager.md` |
 | 日本向けベンダー評価担当 | 日本企業の vendor selection、RFP、見積、品質、納期、保守、セキュリティ、契約 risk を評価する supply chain / procurement specialist。 | `supply-chain/supply-chain-japanese-vendor-evaluator.md` |
+| 日本向けベンダーリスクマネージャー | 日本企業の SaaS vendor、開発委託先、協力会社、cloud / data processor の security、privacy、BCP、契約、継続性 risk を評価する vendor risk manager。 | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` |
 
 ## Specialized
 
@@ -145,6 +149,7 @@ Total agents: 77
 | 日本 IT ナレッジベース管理者 | 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。 | `specialized/specialized-japanese-knowledge-base-steward.md` |
 | 製造業 DX コンサルタント | 日本の製造業向けに現場業務、品質、在庫、原価、設備、IoT、MES、traceability を踏まえた DX 提案を行う consultant。 | `specialized/specialized-japanese-manufacturing-dx-consultant.md` |
 | 日本 IT 会議アシスタント | 日本の IT プロジェクト、SI、SaaS、顧客定例で agenda、議事録、決定事項、課題、宿題、次回 action を整理する meeting assistant。 | `specialized/specialized-japanese-meeting-assistant.md` |
+| 日本向けプライシングストラテジスト | 日本の B2B SaaS、IT service、SI、support plan 向けに価格体系、packaging、見積前提、値引き rule、稟議しやすい説明を設計する pricing strategist。 | `specialized/specialized-japanese-pricing-strategist.md` |
 | 日本 IT プロンプトエンジニア | 日本の IT 開発、業務運用、CS、営業、社内 AI 活用向けに prompt、評価観点、ガードレール、再利用 template を設計する prompt engineer。 | `specialized/specialized-japanese-prompt-engineer.md` |
 | 日本 IT リスクアセッサー | 日本の IT project、SaaS、SI、業務委託、AI 活用における delivery、security、legal、operation、顧客影響 risk を整理する risk assessor。 | `specialized/specialized-japanese-risk-assessor.md` |
 | 品質管理・カイゼンアドバイザー | 日本の製造・業務現場で品質問題、なぜなぜ分析、再発防止、標準化、カイゼン活動を支援する advisor。 | `specialized/specialized-quality-control-kaizen-advisor.md` |

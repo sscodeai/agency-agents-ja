@@ -28,6 +28,7 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/rfp-response.yaml` | RFP 読解、提案 architecture、SLA / 保守観点、提案書 outline |
 | `workflows/release-readiness-review.yaml` | Release 判定、作業手順、observability、privacy、検収 evidence |
 | `workflows/technical-documentation-review.yaml` | 技術 document の改善、knowledge base 配置、引き継ぎ evidence |
+| `workflows/vendor-cost-review.yaml` | Vendor 調達、risk、FinOps、pricing、契約単位 review |
 
 ## 使い方
 

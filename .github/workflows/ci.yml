@@ -24,4 +24,4 @@ jobs:
         run: |
           TOTAL=$(find engineering project-management testing product marketing paid-media finance hr design legal sales support supply-chain specialized -name '*.md' -type f | wc -l)
           echo "Total agents: $TOTAL"
-          test "$TOTAL" -ge 77
+          test "$TOTAL" -ge 82
