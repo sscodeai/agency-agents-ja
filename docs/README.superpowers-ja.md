@@ -20,14 +20,18 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/api-integration-delivery.yaml` | API 連携の要件整理、backend design、API test、技術 document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS の release scope、QA、release note、CS 案内 |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation の SEO、検索 / SNS 広告、webinar、営業 follow-up |
+| `workflows/change-management-review.yaml` | 仕様変更、業務影響、承認、architecture impact、release 準備 |
 | `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、契約更新 risk |
+| `workflows/enterprise-architecture-roadmap.yaml` | 全社 architecture、data governance、security、legacy modernization |
 | `workflows/incident-report.yaml` | 障害時系列、security / privacy 確認、顧客向け障害報告書 |
 | `workflows/japan-go-to-market-campaign.yaml` | 日本市場向け GTM、導入事例、developer community、SNS、partner、広告 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app の要件整理、設計、検収準備 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX、工場 IoT、品質管理の初期 assessment |
+| `workflows/quality-governance-review.yaml` | 品質方針、QA gate、不具合傾向、release / 検収 risk |
 | `workflows/rfp-response.yaml` | RFP 読解、提案 architecture、SLA / 保守観点、提案書 outline |
 | `workflows/release-readiness-review.yaml` | Release 判定、作業手順、observability、privacy、検収 evidence |
 | `workflows/revenue-governance-review.yaml` | RevOps、revenue data governance、内部監査、BCP / DR |
+| `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action |
 | `workflows/technical-documentation-review.yaml` | 技術 document の改善、knowledge base 配置、引き継ぎ evidence |
 | `workflows/vendor-cost-review.yaml` | Vendor 調達、risk、FinOps、pricing、契約単位 review |
 

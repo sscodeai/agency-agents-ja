@@ -168,14 +168,18 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/api-integration-delivery.yaml` | API 連携の要件、backend design、API test、document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |
+| `workflows/change-management-review.yaml` | 仕様変更、影響分析、承認、release 準備 |
 | `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk |
+| `workflows/enterprise-architecture-roadmap.yaml` | 全社 architecture、data governance、security、legacy modernization |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 |
 | `workflows/japan-go-to-market-campaign.yaml` | 日本市場 GTM、導入事例、community、SNS、partner、広告 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |
+| `workflows/quality-governance-review.yaml` | 品質方針、QA gate、不具合傾向、検収 readiness |
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 |
 | `workflows/release-readiness-review.yaml` | release 判定、observability、privacy、検収 evidence |
 | `workflows/revenue-governance-review.yaml` | RevOps、data governance、監査、BCP |
+| `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 |
 
