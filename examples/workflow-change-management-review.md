@@ -1,0 +1,32 @@
+# Workflow: Change Management Review
+
+```yaml
+name: change-management-review
+agents_dir: "."
+inputs:
+  - name: change_request
+    required: true
+  - name: project_context
+    required: true
+steps:
+  - id: business
+    role: "project-management/project-management-japanese-business-analyst"
+    task: "Change request {{change_request}} と project context {{project_context}} をもとに、業務影響、関係者、受入条件、未決事項を整理してください。"
+    output: business
+  - id: change
+    role: "project-management/project-management-japanese-change-management-lead"
+    task: "Business analysis {{business}} をもとに、scope、cost、schedule、quality、security への影響、承認 plan、周知 / training plan を作ってください。"
+    depends_on: [business]
+    output: change
+  - id: architect
+    role: "engineering/engineering-japanese-sier-architect"
+    task: "Change management plan {{change}} と project context {{project_context}} をもとに、architecture impact、外部連携、migration / rollback、運用影響を確認してください。"
+    depends_on: [change]
+    output: architect
+  - id: release
+    role: "project-management/project-management-japanese-release-manager"
+    task: "Change plan {{change}} と architecture review {{architect}} をもとに、実施手順、Go / No-Go、rollback、顧客通知を整理してください。"
+    depends_on: [change, architect]
+    output: summary
+```
+```

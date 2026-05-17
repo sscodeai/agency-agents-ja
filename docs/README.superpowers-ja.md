@@ -66,6 +66,7 @@ agency-agents-ja/testing/testing-evidence-collector-ja.md を使って、この 
 ## メンテナンス
 
 Workflow を追加したら、以下で role path と `depends_on` を確認します。
+`examples/workflow-*.md` に workflow YAML を載せる場合は、実体の `workflows/*.yaml` と同期していることも検証されます。
 
 ```bash
 npm run validate:workflows

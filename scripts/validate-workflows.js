@@ -4,6 +4,7 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const workflowDir = path.join(root, "workflows");
+const examplesDir = path.join(root, "examples");
 
 let errors = 0;
 
@@ -41,6 +42,64 @@ function parseSteps(text) {
     });
 }
 
+function validateWorkflowText(relativeFile, text) {
+  const name = text.match(/^name:\s*([A-Za-z0-9_-]+)\s*$/m);
+  if (!name) {
+    fail(relativeFile, "missing simple name field");
+  }
+
+  if (!/^agents_dir:\s*["']?\.[/"']?\s*$/m.test(text)) {
+    fail(relativeFile, 'agents_dir must be "."');
+  }
+
+  const steps = parseSteps(text);
+  if (steps.length === 0) {
+    fail(relativeFile, "steps must contain at least one step");
+    return { name: name && name[1], steps };
+  }
+
+  const ids = new Set();
+  for (const step of steps) {
+    if (!step.id) {
+      fail(relativeFile, "step is missing id");
+      continue;
+    }
+    if (ids.has(step.id)) {
+      fail(relativeFile, `duplicate step id: ${step.id}`);
+    }
+    ids.add(step.id);
+  }
+
+  for (const step of steps) {
+    if (!step.role) {
+      fail(relativeFile, `step ${step.id || "(unknown)"} is missing role`);
+      continue;
+    }
+
+    const agentFile = path.join(root, `${step.role}.md`);
+    if (!fs.existsSync(agentFile)) {
+      fail(relativeFile, `step ${step.id} references missing agent: ${step.role}.md`);
+    }
+
+    for (const dependency of step.dependsOn) {
+      if (!ids.has(dependency)) {
+        fail(relativeFile, `step ${step.id} depends on missing step: ${dependency}`);
+      }
+    }
+  }
+
+  return { name: name && name[1], steps };
+}
+
+function extractFirstYamlBlock(text) {
+  const match = text.match(/```ya?ml\n([\s\S]*?)\n```/);
+  return match && match[1];
+}
+
+function normalizeText(text) {
+  return text.trim().replace(/\r\n/g, "\n");
+}
+
 if (!fs.existsSync(workflowDir)) {
   fail("workflows", "directory is missing");
 } else {
@@ -56,49 +115,41 @@ if (!fs.existsSync(workflowDir)) {
   for (const filename of files) {
     const relativeFile = path.join("workflows", filename);
     const text = fs.readFileSync(path.join(workflowDir, filename), "utf8");
+    validateWorkflowText(relativeFile, text);
+  }
+}
 
-    if (!/^name:\s*[A-Za-z0-9_-]+\s*$/m.test(text)) {
-      fail(relativeFile, "missing simple name field");
+if (fs.existsSync(examplesDir)) {
+  const workflowsByName = new Map();
+  if (fs.existsSync(workflowDir)) {
+    for (const filename of fs.readdirSync(workflowDir)) {
+      if (!filename.endsWith(".yaml") && !filename.endsWith(".yml")) continue;
+      const text = fs.readFileSync(path.join(workflowDir, filename), "utf8");
+      const match = text.match(/^name:\s*([A-Za-z0-9_-]+)\s*$/m);
+      if (match) workflowsByName.set(match[1], normalizeText(text));
     }
+  }
 
-    if (!/^agents_dir:\s*["']?\.[/"']?\s*$/m.test(text)) {
-      fail(relativeFile, 'agents_dir must be "."');
-    }
+  const exampleFiles = fs
+    .readdirSync(examplesDir)
+    .filter((file) => file.startsWith("workflow-") && file.endsWith(".md"))
+    .sort();
 
-    const steps = parseSteps(text);
-    if (steps.length === 0) {
-      fail(relativeFile, "steps must contain at least one step");
+  for (const filename of exampleFiles) {
+    const relativeFile = path.join("examples", filename);
+    const text = fs.readFileSync(path.join(examplesDir, filename), "utf8");
+    const yaml = extractFirstYamlBlock(text);
+
+    if (!yaml) {
+      fail(relativeFile, "missing YAML code block");
       continue;
     }
 
-    const ids = new Set();
-    for (const step of steps) {
-      if (!step.id) {
-        fail(relativeFile, "step is missing id");
-        continue;
-      }
-      if (ids.has(step.id)) {
-        fail(relativeFile, `duplicate step id: ${step.id}`);
-      }
-      ids.add(step.id);
-    }
-
-    for (const step of steps) {
-      if (!step.role) {
-        fail(relativeFile, `step ${step.id || "(unknown)"} is missing role`);
-        continue;
-      }
-
-      const agentFile = path.join(root, `${step.role}.md`);
-      if (!fs.existsSync(agentFile)) {
-        fail(relativeFile, `step ${step.id} references missing agent: ${step.role}.md`);
-      }
-
-      for (const dependency of step.dependsOn) {
-        if (!ids.has(dependency)) {
-          fail(relativeFile, `step ${step.id} depends on missing step: ${dependency}`);
-        }
-      }
+    const { name } = validateWorkflowText(relativeFile, yaml);
+    if (name && !workflowsByName.has(name)) {
+      fail(relativeFile, `example references missing workflow: ${name}`);
+    } else if (name && normalizeText(yaml) !== workflowsByName.get(name)) {
+      fail(relativeFile, `example YAML is out of sync with workflow: ${name}`);
     }
   }
 }
