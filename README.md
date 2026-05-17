@@ -165,24 +165,24 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | Workflow | 用途 | Example |
 | --- | --- | --- |
 | `workflows/japanese-sier-requirements-review.yaml` | SIer / 受託開発の要件、設計、検収準備 | `examples/workflow-japanese-sier-requirements.md` |
-| `workflows/ai-governance-rollout.yaml` | 社内 AI 利用 policy、prompt、automation governance、training |  |
-| `workflows/api-integration-delivery.yaml` | API 連携の要件、backend design、API test、document |  |
+| `workflows/ai-governance-rollout.yaml` | 社内 AI 利用 policy、prompt、automation governance、training | `examples/workflow-ai-governance-rollout.md` |
+| `workflows/api-integration-delivery.yaml` | API 連携の要件、backend design、API test、document | `examples/workflow-api-integration-delivery.md` |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS | `examples/workflow-b2b-saas-release.md` |
-| `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |  |
+| `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up | `examples/workflow-b2b-lead-generation.md` |
 | `workflows/change-management-review.yaml` | 仕様変更、影響分析、承認、release 準備 | `examples/workflow-change-management-review.md` |
-| `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk |  |
+| `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk | `examples/workflow-customer-health-review.md` |
 | `workflows/enterprise-architecture-roadmap.yaml` | 全社 architecture、data governance、security、legacy modernization | `examples/workflow-enterprise-architecture-roadmap.md` |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 | `examples/workflow-incident-report.md` |
-| `workflows/japan-go-to-market-campaign.yaml` | 日本市場 GTM、導入事例、community、SNS、partner、広告 |  |
+| `workflows/japan-go-to-market-campaign.yaml` | 日本市場 GTM、導入事例、community、SNS、partner、広告 | `examples/workflow-japan-go-to-market-campaign.md` |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 | `examples/workflow-kintone-business-app.md` |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment | `examples/workflow-manufacturing-dx-assessment.md` |
 | `workflows/quality-governance-review.yaml` | 品質方針、QA gate、不具合傾向、検収 readiness | `examples/workflow-quality-governance-review.md` |
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 | `examples/workflow-rfp-response.md` |
-| `workflows/release-readiness-review.yaml` | release 判定、observability、privacy、検収 evidence |  |
-| `workflows/revenue-governance-review.yaml` | RevOps、data governance、監査、BCP |  |
+| `workflows/release-readiness-review.yaml` | release 判定、observability、privacy、検収 evidence | `examples/workflow-release-readiness-review.md` |
+| `workflows/revenue-governance-review.yaml` | RevOps、data governance、監査、BCP | `examples/workflow-revenue-governance-review.md` |
 | `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action | `examples/workflow-service-delivery-review.md` |
-| `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |  |
-| `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 |  |
+| `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence | `examples/workflow-technical-documentation-review.md` |
+| `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 | `examples/workflow-vendor-cost-review.md` |
 
 ### Agent を探す
 

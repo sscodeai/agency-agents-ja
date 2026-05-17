@@ -1,0 +1,37 @@
+# Workflow: AI Governance Rollout
+
+```yaml
+name: ai-governance-rollout
+agents_dir: "."
+inputs:
+  - name: ai_use_cases
+    required: true
+  - name: organization_context
+    required: true
+steps:
+  - id: ai_policy
+    role: "legal/legal-japanese-ai-policy-writer"
+    task: "Organization context {{organization_context}} と AI use cases {{ai_use_cases}} をもとに、社内 AI 利用 policy の draft を作ってください。"
+    output: ai_policy
+  - id: prompt
+    role: "specialized/specialized-japanese-prompt-engineer"
+    task: "AI policy {{ai_policy}} を踏まえ、業務で再利用できる prompt template、guardrail、evaluation case を設計してください。"
+    depends_on: [ai_policy]
+    output: prompt
+  - id: automation
+    role: "specialized/specialized-japanese-automation-governance-architect"
+    task: "AI policy {{ai_policy}} と prompt design {{prompt}} をもとに、AI agent / bot / automation の governance plan を作ってください。"
+    depends_on: [ai_policy, prompt]
+    output: automation
+  - id: training
+    role: "hr/hr-japanese-corporate-training-designer"
+    task: "AI policy {{ai_policy}}、prompt design {{prompt}}、automation governance {{automation}} をもとに、社内 AI 活用研修 plan を作ってください。"
+    depends_on: [ai_policy, prompt, automation]
+    output: training
+  - id: risk
+    role: "specialized/specialized-japanese-risk-assessor"
+    task: "AI policy {{ai_policy}}、automation governance {{automation}}、training plan {{training}} をもとに、rollout risk と decision needed を整理してください。"
+    depends_on: [ai_policy, automation, training]
+    output: summary
+```
+```
