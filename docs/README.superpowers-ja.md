@@ -26,6 +26,7 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk |
 | `workflows/enterprise-architecture-roadmap.yaml` | 全社 architecture、data governance、security、legacy modernization |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 |
+| `workflows/it-onboarding-offboarding.yaml` | 入退社、協力会社参画、権限、貸与品、研修、監査証跡の joiner / mover / leaver 管理 |
 | `workflows/japan-go-to-market-campaign.yaml` | 日本市場 GTM、導入事例、community、SNS、partner、広告 |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment |

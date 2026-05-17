@@ -20,6 +20,7 @@ const ORDER = [
   "customer-health-review",
   "enterprise-architecture-roadmap",
   "incident-report",
+  "it-onboarding-offboarding",
   "japan-go-to-market-campaign",
   "kintone-business-app",
   "manufacturing-dx-assessment",

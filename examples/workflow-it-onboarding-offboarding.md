@@ -1,0 +1,33 @@
+# Workflow: IT Onboarding Offboarding
+
+```yaml
+name: it-onboarding-offboarding
+description: 入退社、協力会社参画、権限、貸与品、研修、監査証跡の joiner / mover / leaver 管理
+agents_dir: "."
+inputs:
+  - name: member_context
+    required: true
+  - name: access_policy
+    required: true
+steps:
+  - id: onboarding
+    role: "hr/hr-japanese-onboarding-specialist"
+    task: "Member context {{member_context}} と access policy {{access_policy}} をもとに、新メンバー / 協力会社メンバーの onboarding plan、初週 / 初月 plan、必要 account、mentor / buddy を整理してください。"
+    output: onboarding
+  - id: asset
+    role: "support/support-japanese-it-asset-manager"
+    task: "Onboarding plan {{onboarding}} をもとに、端末、SaaS license、account、貸与品、契約終了時の回収 / 権限削除 checklist を作ってください。"
+    depends_on: [onboarding]
+    output: asset
+  - id: training
+    role: "hr/hr-japanese-corporate-training-designer"
+    task: "Onboarding plan {{onboarding}} と asset checklist {{asset}} をもとに、security、privacy、開発 process、情報持ち出し禁止、理解度確認の研修 plan を作ってください。"
+    depends_on: [onboarding, asset]
+    output: training
+  - id: audit
+    role: "finance/finance-japanese-internal-audit-coordinator"
+    task: "Onboarding plan {{onboarding}}、asset checklist {{asset}}、training plan {{training}} をもとに、権限付与、承認、研修受講、貸与品、契約終了対応の監査 evidence tracker を作ってください。"
+    depends_on: [onboarding, asset, training]
+    output: summary
+```
+```

@@ -175,6 +175,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk | `examples/workflow-customer-health-review.md` |
 | `workflows/enterprise-architecture-roadmap.yaml` | 全社 architecture、data governance、security、legacy modernization | `examples/workflow-enterprise-architecture-roadmap.md` |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 | `examples/workflow-incident-report.md` |
+| `workflows/it-onboarding-offboarding.yaml` | 入退社、協力会社参画、権限、貸与品、研修、監査証跡の joiner / mover / leaver 管理 | `examples/workflow-it-onboarding-offboarding.md` |
 | `workflows/japan-go-to-market-campaign.yaml` | 日本市場 GTM、導入事例、community、SNS、partner、広告 | `examples/workflow-japan-go-to-market-campaign.md` |
 | `workflows/kintone-business-app.yaml` | kintone 業務 app 設計 | `examples/workflow-kintone-business-app.md` |
 | `workflows/manufacturing-dx-assessment.yaml` | 製造業 DX / 工場 IoT assessment | `examples/workflow-manufacturing-dx-assessment.md` |
