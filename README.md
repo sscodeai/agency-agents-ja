@@ -171,6 +171,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS | `examples/workflow-b2b-saas-release.md` |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up | `examples/workflow-b2b-lead-generation.md` |
 | `workflows/change-management-review.yaml` | 仕様変更、影響分析、承認、release 準備 | `examples/workflow-change-management-review.md` |
+| `workflows/csv-data-migration-readiness.yaml` | CSV / Excel / Shift_JIS 取込、データ移行、DB 反映、検収 evidence | `examples/workflow-csv-data-migration-readiness.md` |
 | `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk | `examples/workflow-customer-health-review.md` |
 | `workflows/enterprise-architecture-roadmap.yaml` | 全社 architecture、data governance、security、legacy modernization | `examples/workflow-enterprise-architecture-roadmap.md` |
 | `workflows/incident-report.yaml` | 障害整理、security review、顧客向け報告 | `examples/workflow-incident-report.md` |

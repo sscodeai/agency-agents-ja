@@ -16,6 +16,7 @@ const ORDER = [
   "b2b-saas-release",
   "b2b-lead-generation",
   "change-management-review",
+  "csv-data-migration-readiness",
   "customer-health-review",
   "enterprise-architecture-roadmap",
   "incident-report",

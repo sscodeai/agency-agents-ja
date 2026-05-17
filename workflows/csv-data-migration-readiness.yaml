@@ -1,0 +1,33 @@
+name: csv-data-migration-readiness
+description: CSV / Excel / Shift_JIS 取込、データ移行、DB 反映、検収 evidence
+agents_dir: "."
+inputs:
+  - name: data_migration_scope
+    required: true
+  - name: csv_spec
+    required: true
+steps:
+  - id: data_engineering
+    role: "engineering/engineering-japanese-data-engineer"
+    task: "Data migration scope {{data_migration_scope}} と CSV spec {{csv_spec}} をもとに、source / destination、変換 rule、data quality check、再実行、エラー通知を設計してください。"
+    output: data_engineering
+  - id: csv_test
+    role: "testing/testing-shift-jis-csv-tester"
+    task: "CSV spec {{csv_spec}} と data engineering plan {{data_engineering}} をもとに、Shift_JIS、UTF-8 BOM、CRLF、先頭ゼロ、日付、Excel 自動変換の test matrix を作ってください。"
+    depends_on: [data_engineering]
+    output: csv_test
+  - id: database
+    role: "engineering/engineering-japanese-database-optimizer"
+    task: "Data engineering plan {{data_engineering}} と CSV test matrix {{csv_test}} をもとに、DB schema、index、migration SQL、backup、rollback、lock risk を確認してください。"
+    depends_on: [data_engineering, csv_test]
+    output: database
+  - id: qa
+    role: "testing/testing-japanese-qa-planner"
+    task: "CSV test matrix {{csv_test}} と DB migration review {{database}} をもとに、単体、結合、総合、受入、回帰の test plan と entry / exit criteria を作ってください。"
+    depends_on: [csv_test, database]
+    output: qa
+  - id: evidence
+    role: "testing/testing-evidence-collector-ja"
+    task: "Data engineering plan {{data_engineering}}、CSV test matrix {{csv_test}}、DB review {{database}}、QA plan {{qa}} をもとに、検収提出用の evidence checklist、実行結果、未確認項目を整理してください。"
+    depends_on: [data_engineering, csv_test, database, qa]
+    output: summary
