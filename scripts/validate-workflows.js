@@ -48,6 +48,10 @@ function validateWorkflowText(relativeFile, text) {
     fail(relativeFile, "missing simple name field");
   }
 
+  if (!/^description:\s*.+\s*$/m.test(text)) {
+    fail(relativeFile, "missing description field");
+  }
+
   if (!/^agents_dir:\s*["']?\.[/"']?\s*$/m.test(text)) {
     fail(relativeFile, 'agents_dir must be "."');
   }

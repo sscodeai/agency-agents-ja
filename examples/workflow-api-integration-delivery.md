@@ -2,6 +2,7 @@
 
 ```yaml
 name: api-integration-delivery
+description: API 連携の要件、backend design、API test、document
 agents_dir: "."
 inputs:
   - name: integration_request

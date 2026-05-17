@@ -2,6 +2,7 @@
 
 ```yaml
 name: manufacturing-dx-assessment
+description: 製造業 DX / 工場 IoT assessment
 agents_dir: "."
 inputs:
   - name: factory_context

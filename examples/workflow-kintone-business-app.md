@@ -2,6 +2,7 @@
 
 ```yaml
 name: kintone-business-app
+description: kintone 業務 app 設計
 agents_dir: "."
 inputs:
   - name: business_request

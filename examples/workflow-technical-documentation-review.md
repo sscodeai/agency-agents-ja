@@ -2,6 +2,7 @@
 
 ```yaml
 name: technical-documentation-review
+description: 技術 document、knowledge base、引き継ぎ evidence
 agents_dir: "."
 inputs:
   - name: document

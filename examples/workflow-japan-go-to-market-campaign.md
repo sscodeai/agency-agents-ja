@@ -2,6 +2,7 @@
 
 ```yaml
 name: japan-go-to-market-campaign
+description: 日本市場 GTM、導入事例、community、SNS、partner、広告
 agents_dir: "."
 inputs:
   - name: offer

@@ -2,6 +2,7 @@
 
 ```yaml
 name: ai-governance-rollout
+description: 社内 AI 利用 policy、prompt、automation governance、training
 agents_dir: "."
 inputs:
   - name: ai_use_cases

@@ -2,6 +2,7 @@
 
 ```yaml
 name: vendor-cost-review
+description: vendor 調達、risk、FinOps、pricing、契約単位
 agents_dir: "."
 inputs:
   - name: purchase_context

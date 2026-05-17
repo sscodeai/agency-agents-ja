@@ -2,6 +2,7 @@
 
 ```yaml
 name: japanese-sier-requirements-review
+description: SIer / 受託開発の要件、設計、検収準備
 agents_dir: "."
 inputs:
   - name: ticket

@@ -2,6 +2,7 @@
 
 ```yaml
 name: revenue-governance-review
+description: RevOps、data governance、監査、BCP
 agents_dir: "."
 inputs:
   - name: revenue_context

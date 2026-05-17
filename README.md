@@ -191,12 +191,13 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 ## メンテナンス
 
 ```bash
-node scripts/generate-agent-list.js
-node scripts/validate-workflows.js
-scripts/validate.sh
+npm run generate
+npm run validate:workflows
+npm run validate
 ```
 
 CI では `scripts/validate.sh` を実行し、frontmatter、命名、禁止語、`AGENT-LIST.md` の同期、workflow の role path と依存関係を確認します。
+README と `docs/README.superpowers-ja.md` の workflow table は `scripts/generate-workflow-table.js` で同期します。
 `examples/workflow-*.md` に YAML block を置く場合は、同名 workflow と内容が同期していることも確認します。
 
 ## Roadmap

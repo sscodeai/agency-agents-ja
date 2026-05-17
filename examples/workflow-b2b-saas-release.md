@@ -2,6 +2,7 @@
 
 ```yaml
 name: b2b-saas-release
+description: B2B SaaS release、QA、release note、CS
 agents_dir: "."
 inputs:
   - name: release_scope

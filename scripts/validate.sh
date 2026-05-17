@@ -50,6 +50,10 @@ if ! node scripts/generate-agent-list.js --check; then
   errors=$((errors + 1))
 fi
 
+if ! node scripts/generate-workflow-table.js --check; then
+  errors=$((errors + 1))
+fi
+
 if ! node scripts/validate-workflows.js; then
   errors=$((errors + 1))
 fi

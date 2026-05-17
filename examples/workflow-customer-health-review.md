@@ -2,6 +2,7 @@
 
 ```yaml
 name: customer-health-review
+description: 顧客 health、support analytics、account strategy、risk
 agents_dir: "."
 inputs:
   - name: account_notes

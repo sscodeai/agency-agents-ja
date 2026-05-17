@@ -2,6 +2,7 @@
 
 ```yaml
 name: incident-report
+description: 障害整理、security review、顧客向け報告
 agents_dir: "."
 inputs:
   - name: incident_notes

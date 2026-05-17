@@ -2,6 +2,7 @@
 
 ```yaml
 name: enterprise-architecture-roadmap
+description: 全社 architecture、data governance、security、legacy modernization
 agents_dir: "."
 inputs:
   - name: business_context

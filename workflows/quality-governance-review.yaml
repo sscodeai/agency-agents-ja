@@ -1,4 +1,5 @@
 name: quality-governance-review
+description: 品質方針、QA gate、不具合傾向、検収 readiness
 agents_dir: "."
 inputs:
   - name: quality_context

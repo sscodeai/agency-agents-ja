@@ -2,6 +2,7 @@
 
 ```yaml
 name: b2b-lead-generation
+description: B2B lead generation、SEO、広告、webinar、営業 follow-up
 agents_dir: "."
 inputs:
   - name: offer

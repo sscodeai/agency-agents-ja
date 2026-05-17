@@ -2,6 +2,7 @@
 
 ```yaml
 name: rfp-response
+description: RFP 回答、提案、SLA / 保守観点
 agents_dir: "."
 inputs:
   - name: rfp

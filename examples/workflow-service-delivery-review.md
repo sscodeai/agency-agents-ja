@@ -2,6 +2,7 @@
 
 ```yaml
 name: service-delivery-review
+description: SLA、問い合わせ、障害、service review、CS action
 agents_dir: "."
 inputs:
   - name: service_context

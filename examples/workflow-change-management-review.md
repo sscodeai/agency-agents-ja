@@ -2,6 +2,7 @@
 
 ```yaml
 name: change-management-review
+description: 仕様変更、影響分析、承認、release 準備
 agents_dir: "."
 inputs:
   - name: change_request

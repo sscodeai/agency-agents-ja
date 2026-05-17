@@ -2,6 +2,7 @@
 
 ```yaml
 name: release-readiness-review
+description: release 判定、observability、privacy、検収 evidence
 agents_dir: "."
 inputs:
   - name: release_scope
