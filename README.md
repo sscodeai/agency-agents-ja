@@ -155,7 +155,7 @@ superpowers-ja の workflow-runner を使って agency-agents-ja/workflows/japan
 ticket は PROJ-1234、spec は docs/spec.md です。
 ```
 
-workflow 内の `agents_dir` はこの repository root を基準にします。詳しい連携方法は [docs/README.superpowers-ja.md](docs/README.superpowers-ja.md) を参照してください。
+workflow 内の `agents_dir` はこの repository root を基準にします。詳しい連携方法は [docs/superpowers-ja-integration.md](docs/superpowers-ja-integration.md) を参照してください。
 
 ### Workflow YAML
 
@@ -200,7 +200,7 @@ npm run validate
 ```
 
 CI では `scripts/validate.sh` を実行し、frontmatter、命名、禁止語、`AGENT-LIST.md` の同期、workflow の role path と依存関係を確認します。
-README と `docs/README.superpowers-ja.md` の workflow table は `scripts/generate-workflow-table.js` で同期します。
+README と `docs/superpowers-ja-integration.md` の workflow table は `scripts/generate-workflow-table.js` で同期します。
 `examples/workflow-*.md` に YAML block を置く場合は、同名 workflow と内容が同期していることも確認します。
 
 ## Roadmap

@@ -4,7 +4,7 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const readmePath = path.join(root, "README.md");
-const superpowersReadmePath = path.join(root, "docs", "README.superpowers-ja.md");
+const superpowersIntegrationPath = path.join(root, "docs", "superpowers-ja-integration.md");
 const workflowDir = path.join(root, "workflows");
 const examplesDir = path.join(root, "examples");
 
@@ -144,8 +144,8 @@ const targets = [
     endMarker: "\n### Agent を探す",
   },
   {
-    path: superpowersReadmePath,
-    label: "docs/README.superpowers-ja.md workflow table",
+    path: superpowersIntegrationPath,
+    label: "docs/superpowers-ja-integration.md workflow table",
     table: renderDocsTable(),
     startMarker: "## Workflow",
     tableHeader: "| Workflow | 用途 |",
