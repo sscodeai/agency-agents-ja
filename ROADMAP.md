@@ -19,7 +19,9 @@ agency-agents-ja の agent 設計ロードマップです。
 | Project Manager | `project-management/project-management-japanese-pm.md` | 日本の WBS、課題管理、進捗会議、議事録、検収へ再設計 |
 | Business Analyst | `project-management/project-management-japanese-business-analyst.md` | 現行業務、業務 flow、要件差分、受入条件へ特化 |
 | Release Manager | `project-management/project-management-japanese-release-manager.md` | release 判定、作業手順、切り戻し、顧客通知へ特化 |
+| Change Management Lead | `project-management/project-management-japanese-change-management-lead.md` | 仕様変更、scope change、影響分析、承認、周知へ特化 |
 | Software Architect | `engineering/engineering-japanese-sier-architect.md` | SIer / 受託開発の基本設計、詳細設計、非機能、移行へ特化 |
+| Enterprise Architect | `engineering/engineering-japanese-enterprise-architect.md` | 全社 system、data、integration、governance、移行 roadmap へ特化 |
 | Code Reviewer | `engineering/engineering-japanese-code-reviewer.md` | 日本語レビュー、重大度、証跡、承認条件へ調整 |
 | Requirements Engineer | `engineering/engineering-japanese-requirements-engineer.md` | 要件定義、受入条件、仕様確認へ特化 |
 | Test Evidence Collector | `testing/testing-evidence-collector-ja.md` | テスト証跡、検収、CI、スクリーンショット整理へ日本化 |
@@ -32,6 +34,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Technical Content Strategist | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報へ特化 |
 | Developer Advocate | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS の sample、workshop、developer feedback へ特化 |
 | Product Marketing Manager | `marketing/marketing-japanese-product-marketing-manager.md` | 日本市場向け positioning、message、launch、sales enablement へ特化 |
+| Knowledge Commerce Strategist | `marketing/marketing-japanese-knowledge-commerce-strategist.md` | 有料 content、講座、template、community、法人研修の商品化へ特化 |
 | Market Researcher | `marketing/marketing-japanese-market-researcher.md` | 日本市場の市場規模、競合、購買 process、検証論点へ特化 |
 | Case Study Writer | `marketing/marketing-japanese-case-study-writer.md` | 導入事例、顧客 proof、公開許諾、営業活用へ特化 |
 | Community Manager | `marketing/marketing-japanese-community-manager.md` | user group、developer community、feedback loop へ特化 |
@@ -53,10 +56,12 @@ agency-agents-ja の agent 設計ロードマップです。
 | Product Manager | `product/product-japanese-product-manager.md` | 日本市場、顧客要望、受入条件、業務 impact を重視 |
 | B2B SaaS Planner | `product/product-japanese-b2b-saas-planner.md` | B2B SaaS の契約、権限、CS、onboarding へ特化 |
 | QA Planner | `testing/testing-japanese-qa-planner.md` | 単体、結合、総合、受入、回帰の QA 計画へ拡張 |
+| Quality Assurance Manager | `testing/testing-japanese-quality-assurance-manager.md` | 品質方針、QA gate、不具合傾向、検収 readiness、改善計画へ特化 |
 | API Tester | `testing/testing-japanese-api-tester.md` | API contract、認証認可、異常系、検収 evidence へ特化 |
 | CSV / Excel Tester | `testing/testing-shift-jis-csv-tester.md` | 日本業務で頻出する CSV / Excel / 文字コード検証へ特化 |
 | Incident Report Writer | `support/support-japanese-incident-report-writer.md` | 障害報告書、時系列、再発防止へ特化 |
 | IT Asset Manager | `support/support-japanese-it-asset-manager.md` | PC、SaaS license、account、貸与品、入退社管理へ特化 |
+| Service Delivery Manager | `support/support-japanese-service-delivery-manager.md` | SLA、問い合わせ、障害、service review、改善計画へ特化 |
 | Proposal Writer | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提、保守運用へ調整 |
 | Sales Engineer | `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility、RFP 質問回答へ特化 |
 | Account Strategist | `sales/sales-japanese-account-strategist.md` | 既存顧客の更新、拡張提案、stakeholder mapping へ特化 |
@@ -85,10 +90,4 @@ agency-agents-ja の agent 設計ロードマップです。
 
 ## Backlog
 
-| Reference Role | Japanese Agent Candidate |
-| --- | --- |
-| Quality Assurance Manager | `testing/testing-japanese-quality-assurance-manager.md` |
-| Change Management Lead | `project-management/project-management-japanese-change-management-lead.md` |
-| Service Delivery Manager | `support/support-japanese-service-delivery-manager.md` |
-| Enterprise Architect | `engineering/engineering-japanese-enterprise-architect.md` |
-| Knowledge Commerce Strategist | `marketing/marketing-japanese-knowledge-commerce-strategist.md` |
+現時点の Backlog candidate はありません。次の追加候補が出たらここに記録します。

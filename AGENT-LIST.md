@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 87
+Total agents: 92
 
 ## Engineering
 
@@ -11,6 +11,7 @@ Total agents: 87
 | 日本向けデータエンジニア | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する data engineer。 | `engineering/engineering-japanese-data-engineer.md` |
 | 日本向けデータガバナンス管理者 | 日本企業の SaaS / 業務システム / DWH で data owner、data catalog、品質、権限、個人情報、監査、利用 rule を整える data governance steward。 | `engineering/engineering-japanese-data-governance-steward.md` |
 | 日本向けデータベース最適化エンジニア | 業務システムの database schema、query、index、migration、帳票・CSV・batch workload を最適化する専門家。 | `engineering/engineering-japanese-database-optimizer.md` |
+| 日本向けエンタープライズアーキテクト | 日本企業の複数 system、業務、data、security、cloud、integration、governance を横断して target architecture と移行 roadmap を設計する enterprise architect。 | `engineering/engineering-japanese-enterprise-architect.md` |
 | 日本向けフロントエンドエンジニア | 日本の業務画面、管理画面、SaaS UI 向けに React/Vue、form、table、accessibility、入力補助、検証しやすい UI を実装する frontend engineer。 | `engineering/engineering-japanese-frontend-engineer.md` |
 | レガシーモダナイゼーションエンジニア | 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。 | `engineering/engineering-japanese-legacy-modernization-engineer.md` |
 | 日本向けモバイルアプリエンジニア | 日本向け iOS / Android / React Native / Flutter app の業務要件、push 通知、認証、審査、運用、障害対応を考慮して実装する mobile app builder。 | `engineering/engineering-japanese-mobile-app-builder.md` |
@@ -31,6 +32,7 @@ Total agents: 87
 | 受入条件ライター | 要件、仕様、顧客要望を testable な受入条件、検収条件、確認観点へ変換する専門家。 | `project-management/project-management-acceptance-criteria-writer.md` |
 | Backlog / Redmine / Jira 運用管理者 | Backlog、Redmine、Jira の ticket workflow、status、priority、label、release、運用ルールを整備する project workflow steward。 | `project-management/project-management-backlog-redmine-jira-steward.md` |
 | 日本向けビジネスアナリスト | 日本の IT / SI / SaaS 開発で現行業務、業務フロー、要件差分、関係者、受入条件を整理する business analyst。 | `project-management/project-management-japanese-business-analyst.md` |
+| 日本向け変更管理リード | 日本の IT project / SaaS 運用で scope change、仕様変更、影響分析、承認、周知、移行を管理する change management lead。 | `project-management/project-management-japanese-change-management-lead.md` |
 | 日本 IT プロジェクトマネージャー | 日本の IT / SI / 受託開発で WBS、課題管理、進捗会議、議事録、リスク、検収を管理する PM。 | `project-management/project-management-japanese-pm.md` |
 | 日本向けリリースマネージャー | 日本の IT / SaaS / 受託開発で release 判定、作業手順、切り戻し、顧客通知、検収 evidence、関係者承認を管理する release manager。 | `project-management/project-management-japanese-release-manager.md` |
 
@@ -41,6 +43,7 @@ Total agents: 87
 | テストエビデンス収集担当 | 日本の検収・品質保証で必要な test evidence、CI 結果、スクリーンショット、ログ、再現手順を整理する専門家。 | `testing/testing-evidence-collector-ja.md` |
 | 日本向け API テスター | 日本の業務システム、SaaS、外部連携 API に対して contract、認証認可、異常系、冪等性、監査ログ、検収 evidence を確認する API tester。 | `testing/testing-japanese-api-tester.md` |
 | 日本向け QA プランナー | 日本の開発工程に合わせて単体、結合、総合、受入、回帰テストの計画と観点を作る QA planner。 | `testing/testing-japanese-qa-planner.md` |
+| 日本向け品質保証マネージャー | 日本の IT / SaaS / 受託開発で品質方針、QA gate、不具合傾向、検収 readiness、改善計画を管理する quality assurance manager。 | `testing/testing-japanese-quality-assurance-manager.md` |
 | 日本 IT ツール評価担当 | 日本企業で導入する SaaS、開発支援 tool、AI tool、monitoring、ticket system を機能、security、費用、運用、契約の観点で評価する specialist。 | `testing/testing-japanese-tool-evaluator.md` |
 | Shift_JIS / CSV テスター | 日本の業務システムで頻出する CSV、Excel、Shift_JIS、UTF-8 BOM、全角半角、郵便番号、電話番号、日付形式を検証する specialist。 | `testing/testing-shift-jis-csv-tester.md` |
 
@@ -60,6 +63,7 @@ Total agents: 87
 | 日本向けコミュニティマネージャー | 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。 | `marketing/marketing-japanese-community-manager.md` |
 | 日本向けカスタマーマーケティングマネージャー | 日本の B2B SaaS / IT service で既存顧客向け newsletter、導入事例、ユーザー会、更新促進、upsell / advocacy を設計する customer marketing manager。 | `marketing/marketing-japanese-customer-marketing-manager.md` |
 | 日本向けデベロッパーアドボケイト | 日本の developer audience 向けに API / SDK / OSS / SaaS platform の技術発信、sample、workshop、community feedback を設計する developer advocate。 | `marketing/marketing-japanese-developer-advocate.md` |
+| 日本向けナレッジコマース戦略家 | 日本市場向けに有料 newsletter、講座、template、community、法人研修などの knowledge commerce 商品を設計する strategist。 | `marketing/marketing-japanese-knowledge-commerce-strategist.md` |
 | 日本市場リサーチャー | 日本の B2B SaaS、IT service、SI、EC、製造業 DX 向けに市場規模、競合、顧客課題、購入プロセス、参入機会を整理する market researcher。 | `marketing/marketing-japanese-market-researcher.md` |
 | 日本向けプロダクトマーケティングマネージャー | 日本の B2B SaaS / IT service 向けに positioning、persona、message、launch plan、sales enablement、competitive note を作る product marketing manager。 | `marketing/marketing-japanese-product-marketing-manager.md` |
 | LINE 公式アカウント運用者 | 日本向け LINE Official Account の配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する marketing operator。 | `marketing/marketing-line-official-account-operator.md` |
@@ -131,6 +135,7 @@ Total agents: 87
 | 日本語ヘルプデスク対応者 | 日本語の問い合わせ、障害一次受付、操作案内、FAQ、エスカレーションを丁寧かつ正確に行う support responder。 | `support/support-japanese-helpdesk-responder.md` |
 | 障害報告書ライター | 日本の顧客・社内向け障害報告書、時系列、影響範囲、原因、暫定対応、恒久対応、再発防止策を整理する。 | `support/support-japanese-incident-report-writer.md` |
 | 日本 IT 資産管理担当 | 日本企業の PC、端末、SaaS license、account、貸与品、棚卸し、入退社 / 契約終了時の回収と権限削除を管理する IT asset manager。 | `support/support-japanese-it-asset-manager.md` |
+| 日本向けサービスデリバリーマネージャー | 日本の IT service / B2B SaaS / 保守運用で SLA、問い合わせ、障害、運用品質、顧客報告を管理する service delivery manager。 | `support/support-japanese-service-delivery-manager.md` |
 | 日本向けサポート分析レポーター | 日本の B2B SaaS / IT service の問い合わせ、障害、FAQ、SLA、顧客満足度を分析し、改善 action と定例 report を作る support analytics reporter。 | `support/support-japanese-support-analytics-reporter.md` |
 | 日本語リリースノートライター | 日本語の release note、顧客向け変更案内、社内共有、影響範囲、注意事項を分かりやすく書く writer。 | `support/support-release-note-writer-ja.md` |
 

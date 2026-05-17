@@ -18,6 +18,7 @@
 | --- | --- |
 | `engineering/engineering-japanese-requirements-engineer.md` | 要件定義、受入条件、仕様確認 |
 | `engineering/engineering-japanese-sier-architect.md` | SIer / 受託開発向け architecture |
+| `engineering/engineering-japanese-enterprise-architect.md` | 全社 system、data、integration、governance、移行 roadmap |
 | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ |
 | `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality |
 | `engineering/engineering-japanese-data-governance-steward.md` | data owner、catalog、品質、権限、監査 |
@@ -38,7 +39,9 @@
 | `project-management/project-management-backlog-redmine-jira-steward.md` | ticket workflow 管理 |
 | `project-management/project-management-acceptance-criteria-writer.md` | 受入条件、検収条件 |
 | `project-management/project-management-japanese-release-manager.md` | release 判定、作業手順、切り戻し |
+| `project-management/project-management-japanese-change-management-lead.md` | 仕様変更、影響分析、承認、周知 |
 | `testing/testing-japanese-qa-planner.md` | QA plan、test matrix |
+| `testing/testing-japanese-quality-assurance-manager.md` | 品質方針、QA gate、不具合傾向、検収 readiness |
 | `testing/testing-japanese-api-tester.md` | API contract、異常系、権限、検収 evidence |
 | `testing/testing-evidence-collector-ja.md` | テスト証跡、CI 結果、検収資料 |
 | `testing/testing-shift-jis-csv-tester.md` | Shift_JIS、CSV、Excel 検証 |
@@ -63,6 +66,7 @@
 | `marketing/marketing-rakuten-amazon-japan-operator.md` | 楽天 / Amazon Japan EC 運用 |
 | `marketing/marketing-yahoo-google-japan-seo.md` | Yahoo! JAPAN / Google SEO |
 | `marketing/marketing-seminar-webinar-planner.md` | B2B セミナー / ウェビナー |
+| `marketing/marketing-japanese-knowledge-commerce-strategist.md` | 有料 newsletter、講座、template、community |
 | `paid-media/paid-media-japan-search-social-strategist.md` | 日本向け検索広告 / SNS 広告 |
 | `finance/finance-japanese-invoice-system-advisor.md` | インボイス制度、請求書 system |
 | `finance/finance-electronic-bookkeeping-reviewer.md` | 電子帳簿保存法 review |
@@ -87,6 +91,7 @@
 | `support/support-japanese-it-asset-manager.md` | PC、SaaS license、account、貸与品管理 |
 | `support/support-release-note-writer-ja.md` | 日本語 release note |
 | `support/support-japanese-support-analytics-reporter.md` | 問い合わせ、SLA、FAQ、顧客影響分析 |
+| `support/support-japanese-service-delivery-manager.md` | SLA、問い合わせ、障害、顧客報告、改善計画 |
 | `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool 評価 |
 | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共 sector |
 | `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、automation governance |
