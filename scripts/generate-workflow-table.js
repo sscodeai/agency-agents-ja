@@ -10,6 +10,7 @@ const examplesDir = path.join(root, "examples");
 
 const ORDER = [
   "japanese-sier-requirements-review",
+  "acceptance-readiness-review",
   "ai-governance-rollout",
   "api-integration-delivery",
   "b2b-saas-release",
