@@ -1,0 +1,28 @@
+name: saas-contract-privacy-billing-review
+description: SaaS / 業務委託契約、個人情報、インボイス、電子帳簿保存法の導入前 review
+agents_dir: "."
+inputs:
+  - name: contract_context
+    required: true
+  - name: service_context
+    required: true
+steps:
+  - id: contract
+    role: "legal/legal-japanese-contract-reviewer"
+    task: "Contract context {{contract_context}} と service context {{service_context}} をもとに、業務範囲、成果物、検収、知財、再委託、解除、責任制限、損害賠償の risk と確認事項を整理してください。"
+    output: contract
+  - id: privacy
+    role: "legal/legal-japanese-privacy-compliance-reviewer"
+    task: "Contract review {{contract}} と service context {{service_context}} をもとに、取得する個人情報、利用目的、委託 / 第三者提供、保存期間、アクセス権限、ログ出力、breach 対応を review してください。"
+    depends_on: [contract]
+    output: privacy
+  - id: invoice
+    role: "finance/finance-japanese-invoice-system-advisor"
+    task: "Contract review {{contract}} をもとに、請求書、適格請求書発行事業者番号、税率別金額、消費税額、端数処理、取引先 master、会計 system 連携の確認事項を整理してください。"
+    depends_on: [contract]
+    output: invoice
+  - id: bookkeeping
+    role: "finance/finance-electronic-bookkeeping-reviewer"
+    task: "Contract review {{contract}}、privacy review {{privacy}}、invoice requirements {{invoice}} をもとに、電子取引データ保存、検索要件、改ざん防止、access control、backup、audit response の確認事項を整理してください。"
+    depends_on: [contract, privacy, invoice]
+    output: summary

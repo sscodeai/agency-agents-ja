@@ -184,6 +184,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/rfp-response.yaml` | RFP 回答、提案、SLA / 保守観点 | `examples/workflow-rfp-response.md` |
 | `workflows/release-readiness-review.yaml` | release 判定、observability、privacy、検収 evidence | `examples/workflow-release-readiness-review.md` |
 | `workflows/revenue-governance-review.yaml` | RevOps、data governance、監査、BCP | `examples/workflow-revenue-governance-review.md` |
+| `workflows/saas-contract-privacy-billing-review.yaml` | SaaS / 業務委託契約、個人情報、インボイス、電子帳簿保存法の導入前 review | `examples/workflow-saas-contract-privacy-billing-review.md` |
 | `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action | `examples/workflow-service-delivery-review.md` |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence | `examples/workflow-technical-documentation-review.md` |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 | `examples/workflow-vendor-cost-review.md` |

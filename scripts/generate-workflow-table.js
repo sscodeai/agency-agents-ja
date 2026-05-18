@@ -29,6 +29,7 @@ const ORDER = [
   "rfp-response",
   "release-readiness-review",
   "revenue-governance-review",
+  "saas-contract-privacy-billing-review",
   "service-delivery-review",
   "technical-documentation-review",
   "vendor-cost-review",
