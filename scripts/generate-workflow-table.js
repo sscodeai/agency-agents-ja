@@ -15,6 +15,7 @@ const ORDER = [
   "api-integration-delivery",
   "b2b-saas-release",
   "b2b-lead-generation",
+  "business-ui-readiness-review",
   "change-management-review",
   "csv-data-migration-readiness",
   "customer-health-review",

@@ -1,0 +1,28 @@
+name: business-ui-readiness-review
+description: 業務画面、管理画面、form / table、accessibility、design system、frontend 実装 readiness
+agents_dir: "."
+inputs:
+  - name: ui_scope
+    required: true
+  - name: user_context
+    required: true
+steps:
+  - id: ui_design
+    role: "design/design-japanese-business-ui-designer"
+    task: "UI scope {{ui_scope}} と user context {{user_context}} をもとに、業務画面 / 管理画面の screen structure、form / table、error state、権限別 UI、検収しやすい acceptance notes を作ってください。"
+    output: ui_design
+  - id: design_system
+    role: "design/design-japanese-design-system-maintainer"
+    task: "UI design plan {{ui_design}} をもとに、component rule、文言、validation、empty state、実装 component との差分、implementation backlog を整理してください。"
+    depends_on: [ui_design]
+    output: design_system
+  - id: accessibility
+    role: "design/design-accessibility-auditor-ja"
+    task: "UI design plan {{ui_design}} と design system review {{design_system}} をもとに、keyboard、focus order、contrast、label / aria、error message、日本語文言の accessibility audit を行ってください。"
+    depends_on: [ui_design, design_system]
+    output: accessibility
+  - id: frontend
+    role: "engineering/engineering-japanese-frontend-engineer"
+    task: "UI design plan {{ui_design}}、design system review {{design_system}}、accessibility audit {{accessibility}} をもとに、component structure、form validation、state / API、test cases、screenshot evidence を取りやすい実装 plan を作ってください。"
+    depends_on: [ui_design, design_system, accessibility]
+    output: summary

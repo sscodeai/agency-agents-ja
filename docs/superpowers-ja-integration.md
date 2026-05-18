@@ -21,6 +21,7 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/api-integration-delivery.yaml` | API 連携の要件、backend design、API test、document |
 | `workflows/b2b-saas-release.yaml` | B2B SaaS release、QA、release note、CS |
 | `workflows/b2b-lead-generation.yaml` | B2B lead generation、SEO、広告、webinar、営業 follow-up |
+| `workflows/business-ui-readiness-review.yaml` | 業務画面、管理画面、form / table、accessibility、design system、frontend 実装 readiness |
 | `workflows/change-management-review.yaml` | 仕様変更、影響分析、承認、release 準備 |
 | `workflows/csv-data-migration-readiness.yaml` | CSV / Excel / Shift_JIS 取込、データ移行、DB 反映、検収 evidence |
 | `workflows/customer-health-review.yaml` | 顧客 health、support analytics、account strategy、risk |
