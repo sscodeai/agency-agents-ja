@@ -25,6 +25,7 @@
 | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form、table |
 | `engineering/engineering-japanese-code-reviewer.md` | 日本語チーム向け code review |
 | `engineering/engineering-japanese-security-engineer.md` | 認証認可、個人情報、security review |
+| `engineering/engineering-japanese-software-supply-chain-engineer.md` | npm / PyPI / OSS license / CVE / SBOM / provenance / 委託先承認 |
 | `engineering/engineering-japanese-sre.md` | SLO、監視、障害対応、runbook |
 | `engineering/engineering-japanese-observability-engineer.md` | log、metrics、trace、dashboard、alert |
 | `engineering/engineering-japanese-database-optimizer.md` | DB、query、index、migration |
@@ -188,6 +189,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action | `examples/workflow-service-delivery-review.md` |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence | `examples/workflow-technical-documentation-review.md` |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 | `examples/workflow-vendor-cost-review.md` |
+| `workflows/software-supply-chain-review.yaml` | npm / PyPI / Maven などソフトウェア依存、OSS license、CVE、SBOM、provenance、委託先承認、incident readiness を日本 IT 現場向けに review | `examples/workflow-software-supply-chain-review.md` |
 
 ### Agent を探す
 

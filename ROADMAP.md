@@ -47,6 +47,7 @@ agency-agents-ja の agent 設計ロードマップです。
 | Frontend Engineer | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form/table、IME、検収しやすい UI へ調整 |
 | Mobile App Builder | `engineering/engineering-japanese-mobile-app-builder.md` | 日本向け mobile app、push、store release、support へ特化 |
 | Security Engineer | `engineering/engineering-japanese-security-engineer.md` | 個人情報、委託先、監査、社内 system risk を追加 |
+| Software Supply Chain Engineer | `engineering/engineering-japanese-software-supply-chain-engineer.md` | npm / PyPI / OSS license / CVE / SBOM / provenance / 委託先承認、Shai-Hulud 型 worm 対策へ特化 |
 | SRE | `engineering/engineering-japanese-sre.md` | 障害報告、保守契約、顧客影響、runbook を日本運用向けに調整 |
 | Observability Engineer | `engineering/engineering-japanese-observability-engineer.md` | log、metrics、trace、dashboard、alert、監査 log へ特化 |
 | Database Optimizer | `engineering/engineering-japanese-database-optimizer.md` | 帳票、CSV、batch、migration、rollback を重視 |

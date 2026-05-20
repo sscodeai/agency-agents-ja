@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 92
+Total agents: 93
 
 ## Engineering
 
@@ -20,6 +20,7 @@ Total agents: 92
 | 要件定義エンジニア | 日本の受託開発、SI、SaaS 開発で要件定義、受入条件、仕様確認、未決事項整理を行う専門家。曖昧な依頼を実装可能な要件へ落とし込む。 | `engineering/engineering-japanese-requirements-engineer.md` |
 | 日本向けセキュリティエンジニア | 日本企業の web application、業務システム、SaaS に対して threat modeling、認証認可、個人情報、監査ログ、脆弱性対応を review する。 | `engineering/engineering-japanese-security-engineer.md` |
 | 日本 SIer アーキテクト | SIer / 受託開発向けの architecture 専門家。基本設計、詳細設計、非機能要件、移行、保守運用、既存システム連携を現実的に設計する。 | `engineering/engineering-japanese-sier-architect.md` |
+| 日本向けソフトウェアサプライチェーンエンジニア | npm / PyPI / Maven などの外部依存、OSS license、SBOM、CVE、lockfile、cooldown、provenance、委託先が入れた package、自社 publish 時の security を日本の IT 開発現場向けに review する。情シス承認、監査証跡、Backlog / Redmine / Jira と紐づく形で整理する。 | `engineering/engineering-japanese-software-supply-chain-engineer.md` |
 | 日本向け SRE | 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE。 | `engineering/engineering-japanese-sre.md` |
 | 日本向け技術ドキュメントライター | 日本の IT 開発、SaaS、SIer、受託開発向けに設計書、API document、運用手順、release note、検収資料を分かりやすく整える technical writer。 | `engineering/engineering-japanese-technical-writer.md` |
 | kintone 開発エンジニア | Cybozu kintone の業務アプリ、JavaScript customize、REST API、plugin、外部連携を設計・実装する専門家。 | `engineering/engineering-kintone-developer.md` |

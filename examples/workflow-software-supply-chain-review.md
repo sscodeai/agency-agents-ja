@@ -1,0 +1,42 @@
+# Workflow: Software Supply Chain Review
+
+```yaml
+name: software-supply-chain-review
+description: npm / PyPI / Maven などソフトウェア依存、OSS license、CVE、SBOM、provenance、委託先承認、incident readiness を日本 IT 現場向けに review
+agents_dir: "."
+inputs:
+  - name: review_scope
+    required: true
+  - name: business_context
+    required: true
+steps:
+  - id: supply_chain
+    role: "engineering/engineering-japanese-software-supply-chain-engineer"
+    task: "Review scope {{review_scope}} と business context {{business_context}} をもとに、依存関係の信頼性、CVE、lockfile、cooldown、install script、provenance、SBOM 観点で技術 risk を整理してください。重大度 [must] [should] [nits] [question] で分類してください。"
+    output: supply_chain
+  - id: security
+    role: "engineering/engineering-japanese-security-engineer"
+    task: "Supply chain review {{supply_chain}} をもとに、自社 system 側で連動して確認すべき認証情報の漏洩可能性、監査ログへの影響、運用面の risk を整理してください。"
+    depends_on: [supply_chain]
+    output: security
+  - id: legal
+    role: "legal/legal-japanese-contract-reviewer"
+    task: "Supply chain review {{supply_chain}} をもとに、OSS license 合規（copyleft、商用利用、dual license、輸出管制）、貢献者契約、委託契約上の OSS 条項を確認してください。法務として可否判定と追加確認事項を出してください。"
+    depends_on: [supply_chain]
+    output: legal
+  - id: vendor
+    role: "supply-chain/supply-chain-japanese-vendor-risk-manager"
+    task: "Supply chain review {{supply_chain}} と business context {{business_context}} をもとに、外部 SI / 業務委託先が入れた package の承認 process、委託先管理、退場時の引き継ぎ証跡を確認してください。"
+    depends_on: [supply_chain]
+    output: vendor
+  - id: bcp
+    role: "specialized/specialized-japanese-business-continuity-planner"
+    task: "Supply chain review {{supply_chain}} と security review {{security}} をもとに、Shai-Hulud 型 npm worm / 主要 OSS の供給停止 / 重大 CVE 報道時の incident playbook を作ってください。影響範囲特定、緊急 rollback、顧客 / 取引先報告、事業継続観点で整理してください。"
+    depends_on: [supply_chain, security]
+    output: bcp
+  - id: release
+    role: "project-management/project-management-japanese-release-manager"
+    task: "Supply chain review {{supply_chain}}、security review {{security}}、legal review {{legal}}、vendor review {{vendor}}、BCP plan {{bcp}} をまとめ、release Go / No-Go 判定、対応 priority、Backlog / Redmine / Jira ticket 化、四半期 OSS 棚卸し schedule、監査証跡 checklist を整理してください。"
+    depends_on: [supply_chain, security, legal, vendor, bcp]
+    output: summary
+```

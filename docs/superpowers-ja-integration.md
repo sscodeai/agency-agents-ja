@@ -39,6 +39,7 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 |
+| `workflows/software-supply-chain-review.yaml` | npm / PyPI / Maven などソフトウェア依存、OSS license、CVE、SBOM、provenance、委託先承認、incident readiness を日本 IT 現場向けに review |
 
 ## 使い方
 
