@@ -70,6 +70,9 @@ agency-agents-ja の agent 設計ロードマップです。
 | Sales Operations Analyst | `sales/sales-japanese-sales-operations-analyst.md` | pipeline、forecast、CRM hygiene、sales KPI へ特化 |
 | Revenue Operations Manager | `sales/sales-japanese-revenue-operations-manager.md` | marketing / sales / CS / finance の revenue lifecycle へ特化 |
 | Technical Writer | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、runbook、検収資料へ特化 |
+| OSS Localization Engineer | `engineering/engineering-japanese-oss-localization-engineer.md` | OSS の README / docs / CONTRIBUTING / CLI message 自然な日本語化、構造保持、upstream 追従へ特化 |
+| OSS Positioning Writer | `marketing/marketing-japanese-oss-positioning-writer.md` | 上流 OSS の README を日本市場向けに positioning し直す、launch / 比較 / 検索文脈設計へ特化 |
+| Upstream Sync Coordinator | `project-management/project-management-japanese-upstream-sync-coordinator.md` | 上流 OSS の更新 watch、fork 追従、翻訳追従、追従 PR / ticket 化、四半期 sync 健全性 review へ特化 |
 | Public Sector DX Consultant | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共調達、アクセシビリティへ特化 |
 | Paid Media Strategist | `paid-media/paid-media-japan-search-social-strategist.md` | 日本 B2B / EC 向け検索・SNS広告運用へ特化 |
 | Pricing Strategist | `specialized/specialized-japanese-pricing-strategist.md` | pricing、packaging、見積前提、discount rule へ特化 |

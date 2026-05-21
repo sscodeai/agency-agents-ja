@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 93
+Total agents: 96
 
 ## Engineering
 
@@ -16,6 +16,7 @@ Total agents: 93
 | レガシーモダナイゼーションエンジニア | 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。 | `engineering/engineering-japanese-legacy-modernization-engineer.md` |
 | 日本向けモバイルアプリエンジニア | 日本向け iOS / Android / React Native / Flutter app の業務要件、push 通知、認証、審査、運用、障害対応を考慮して実装する mobile app builder。 | `engineering/engineering-japanese-mobile-app-builder.md` |
 | 日本向けオブザーバビリティエンジニア | 日本の SaaS / 業務システム運用に合わせて log、metrics、trace、dashboard、alert、SLO、監査 log を設計する observability engineer。 | `engineering/engineering-japanese-observability-engineer.md` |
+| 日本向け OSS ローカライゼーションエンジニア | GitHub の OSS project（README、docs、CONTRIBUTING、issue / PR template、release notes、CLI message）を、日本の開発者が違和感なく読める日本語に翻訳・適配する。直訳ではなく、用語集、code block / link / image alt / heading anchor の保持、docs/ja 構造、CI translation diff、upstream 追従の運用までを含めて担当する。 | `engineering/engineering-japanese-oss-localization-engineer.md` |
 | 日本向けパフォーマンスエンジニア | 日本の業務システム、SaaS、EC における response time、batch、DB、frontend、外部連携の性能課題を調査し改善計画を作る performance engineer。 | `engineering/engineering-japanese-performance-engineer.md` |
 | 要件定義エンジニア | 日本の受託開発、SI、SaaS 開発で要件定義、受入条件、仕様確認、未決事項整理を行う専門家。曖昧な依頼を実装可能な要件へ落とし込む。 | `engineering/engineering-japanese-requirements-engineer.md` |
 | 日本向けセキュリティエンジニア | 日本企業の web application、業務システム、SaaS に対して threat modeling、認証認可、個人情報、監査ログ、脆弱性対応を review する。 | `engineering/engineering-japanese-security-engineer.md` |
@@ -36,6 +37,7 @@ Total agents: 93
 | 日本向け変更管理リード | 日本の IT project / SaaS 運用で scope change、仕様変更、影響分析、承認、周知、移行を管理する change management lead。 | `project-management/project-management-japanese-change-management-lead.md` |
 | 日本 IT プロジェクトマネージャー | 日本の IT / SI / 受託開発で WBS、課題管理、進捗会議、議事録、リスク、検収を管理する PM。 | `project-management/project-management-japanese-pm.md` |
 | 日本向けリリースマネージャー | 日本の IT / SaaS / 受託開発で release 判定、作業手順、切り戻し、顧客通知、検収 evidence、関係者承認を管理する release manager。 | `project-management/project-management-japanese-release-manager.md` |
+| 日本向け上流追従コーディネーター | 上流 OSS の更新を watch し、fork 側の追従計画を立てる project coordinator。upstream commit / release の分類（feature / breaking / docs / security）、fork 独自改修との衝突確認、翻訳追従、release note への反映、追従 PR の Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを担当する。 | `project-management/project-management-japanese-upstream-sync-coordinator.md` |
 
 ## Testing
 
@@ -66,6 +68,7 @@ Total agents: 93
 | 日本向けデベロッパーアドボケイト | 日本の developer audience 向けに API / SDK / OSS / SaaS platform の技術発信、sample、workshop、community feedback を設計する developer advocate。 | `marketing/marketing-japanese-developer-advocate.md` |
 | 日本向けナレッジコマース戦略家 | 日本市場向けに有料 newsletter、講座、template、community、法人研修などの knowledge commerce 商品を設計する strategist。 | `marketing/marketing-japanese-knowledge-commerce-strategist.md` |
 | 日本市場リサーチャー | 日本の B2B SaaS、IT service、SI、EC、製造業 DX 向けに市場規模、競合、顧客課題、購入プロセス、参入機会を整理する market researcher。 | `marketing/marketing-japanese-market-researcher.md` |
+| 日本向け OSS ポジショニングライター | 上流 OSS の README / docs を「翻訳」ではなく日本市場向けに「ポジショニングし直す」writer。日本の開発者が「なぜ使うのか」「自分の状況にどう効くか」を 30 秒で理解できる構造に書き換える。SIer / 受託 / 自社サービス / 情シスのどれに刺すかを意識し、Qiita / Zenn / note / X / GitHub Discussions への導線も設計する。 | `marketing/marketing-japanese-oss-positioning-writer.md` |
 | 日本向けプロダクトマーケティングマネージャー | 日本の B2B SaaS / IT service 向けに positioning、persona、message、launch plan、sales enablement、competitive note を作る product marketing manager。 | `marketing/marketing-japanese-product-marketing-manager.md` |
 | LINE 公式アカウント運用者 | 日本向け LINE Official Account の配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する marketing operator。 | `marketing/marketing-line-official-account-operator.md` |
 | note / Qiita / Zenn 技術広報ストラテジスト | 日本向け技術広報、採用広報、developer marketing のために note、Qiita、Zenn、はてなブログのコンテンツ戦略を作る。 | `marketing/marketing-note-qiita-zenn-strategist.md` |

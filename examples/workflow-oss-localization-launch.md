@@ -1,0 +1,37 @@
+# Workflow: OSS Localization Launch
+
+```yaml
+name: oss-localization-launch
+description: 上流 OSS project を日本市場向けに初回ローカライズして公開するための workflow。翻訳、用語集、positioning、license / 商標確認、公開 plan、Backlog / Redmine / Jira ticket、初週 KPI までを日本 IT 現場向けに整える
+agents_dir: "."
+inputs:
+  - name: target_repo
+    required: true
+  - name: launch_context
+    required: true
+steps:
+  - id: localization
+    role: "engineering/engineering-japanese-oss-localization-engineer"
+    task: "対象 repo {{target_repo}} と launch context {{launch_context}} をもとに、翻訳 / 改稿 / 英語維持の file 別方針、用語集、構造保持 checklist、upstream-ref 記録方針、CI 翻訳カバレッジ計測、自動 sync PR の運用設計を整理してください。重大度 [must] [should] [nits] [question] で分類してください。"
+    output: localization
+  - id: technical_writing
+    role: "engineering/engineering-japanese-technical-writer"
+    task: "Localization plan {{localization}} をもとに、日本 SI / 受託 / 自社サービス読者向けに、設計書 / 運用手順 / FAQ など自社 document 側で補う必要がある項目を整理してください。「上流 docs には無いが日本読者には必須」な観点を明示してください。"
+    depends_on: [localization]
+    output: technical_writing
+  - id: positioning
+    role: "marketing/marketing-japanese-oss-positioning-writer"
+    task: "Localization plan {{localization}} と launch context {{launch_context}} をもとに、README.ja.md / landing page の冒頭 200 字、想定読者、tagline、構造、既存日本 SaaS / OSS との比較 positioning、Qiita / Zenn / note / X 公開記事、launch 同時投下 plan を設計してください。"
+    depends_on: [localization]
+    output: positioning
+  - id: legal
+    role: "legal/legal-japanese-contract-reviewer"
+    task: "対象 repo {{target_repo}} と localization plan {{localization}} をもとに、上流 OSS license（MIT / Apache-2.0 / GPL / dual license など）の継承可否、商標 / logo の日本市場での利用条件、貢献者契約（CLA / DCO）、fork 明示文言、翻訳成果物の権利帰属を確認してください。法務として可否判定と追加確認事項を出してください。"
+    depends_on: [localization]
+    output: legal
+  - id: release
+    role: "project-management/project-management-japanese-release-manager"
+    task: "Localization plan {{localization}}、technical writing plan {{technical_writing}}、positioning plan {{positioning}}、legal review {{legal}} をまとめ、公開 Go / No-Go 判定、公開作業手順、切り戻し条件、Backlog / Redmine / Jira ticket 化、初週 KPI（star、Qiita LGTM、issue、PR、community 流入）、公開後 1 ヶ月の追従 schedule、監査証跡 checklist を整理してください。"
+    depends_on: [localization, technical_writing, positioning, legal]
+    output: summary
+```

@@ -39,6 +39,8 @@ Machine-readable workflow は `workflows/` に置きます。
 | `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 |
+| `workflows/oss-localization-launch.yaml` | 上流 OSS project を日本市場向けに初回ローカライズして公開するための workflow。翻訳、用語集、positioning、license / 商標確認、公開 plan、Backlog / Redmine / Jira ticket、初週 KPI までを日本 IT 現場向けに整える |
+| `workflows/oss-upstream-sync.yaml` | fork 後の OSS project を継続的に上流追従するための workflow。upstream release / commit の分類、fork 独自改修との衝突確認、翻訳追従、release note への反映、Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを日本 IT 現場向けに整える |
 | `workflows/software-supply-chain-review.yaml` | npm / PyPI / Maven などソフトウェア依存、OSS license、CVE、SBOM、provenance、委託先承認、incident readiness を日本 IT 現場向けに review |
 
 ## 使い方

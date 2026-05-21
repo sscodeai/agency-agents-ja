@@ -33,6 +33,7 @@
 | `engineering/engineering-japanese-mobile-app-builder.md` | iOS / Android / React Native / Flutter |
 | `engineering/engineering-japanese-performance-engineer.md` | response time、batch、DB、frontend 性能改善 |
 | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、運用手順 |
+| `engineering/engineering-japanese-oss-localization-engineer.md` | OSS の README / docs / CONTRIBUTING / CLI message 自然な日本語化、upstream 追従 |
 | `engineering/engineering-kintone-developer.md` | Cybozu kintone 開発 |
 | `engineering/engineering-line-works-integration-developer.md` | LINE WORKS 連携 |
 | `project-management/project-management-japanese-pm.md` | WBS、課題、進捗、会議体 |
@@ -41,6 +42,7 @@
 | `project-management/project-management-acceptance-criteria-writer.md` | 受入条件、検収条件 |
 | `project-management/project-management-japanese-release-manager.md` | release 判定、作業手順、切り戻し |
 | `project-management/project-management-japanese-change-management-lead.md` | 仕様変更、影響分析、承認、周知 |
+| `project-management/project-management-japanese-upstream-sync-coordinator.md` | 上流 OSS の更新を watch、fork 追従、翻訳追従、追従 PR / ticket 化 |
 | `testing/testing-japanese-qa-planner.md` | QA plan、test matrix |
 | `testing/testing-japanese-quality-assurance-manager.md` | 品質方針、QA gate、不具合傾向、検収 readiness |
 | `testing/testing-japanese-api-tester.md` | API contract、異常系、権限、検収 evidence |
@@ -55,6 +57,7 @@
 | `legal/legal-japanese-sla-maintenance-contract-reviewer.md` | SLA、保守契約、責任分界 |
 | `legal/legal-japanese-data-privacy-officer.md` | 個人情報、委託先、保存期間、漏えい対応 |
 | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
+| `marketing/marketing-japanese-oss-positioning-writer.md` | 上流 OSS の README / docs を日本市場向けに positioning し直す |
 | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS developer advocacy |
 | `marketing/marketing-japanese-product-marketing-manager.md` | positioning、message、launch、sales enablement |
 | `marketing/marketing-japanese-market-researcher.md` | 市場規模、競合、顧客課題、購買 process |
@@ -189,6 +192,8 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action | `examples/workflow-service-delivery-review.md` |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence | `examples/workflow-technical-documentation-review.md` |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 | `examples/workflow-vendor-cost-review.md` |
+| `workflows/oss-localization-launch.yaml` | 上流 OSS project を日本市場向けに初回ローカライズして公開するための workflow。翻訳、用語集、positioning、license / 商標確認、公開 plan、Backlog / Redmine / Jira ticket、初週 KPI までを日本 IT 現場向けに整える | `examples/workflow-oss-localization-launch.md` |
+| `workflows/oss-upstream-sync.yaml` | fork 後の OSS project を継続的に上流追従するための workflow。upstream release / commit の分類、fork 独自改修との衝突確認、翻訳追従、release note への反映、Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを日本 IT 現場向けに整える | `examples/workflow-oss-upstream-sync.md` |
 | `workflows/software-supply-chain-review.yaml` | npm / PyPI / Maven などソフトウェア依存、OSS license、CVE、SBOM、provenance、委託先承認、incident readiness を日本 IT 現場向けに review | `examples/workflow-software-supply-chain-review.md` |
 
 ### Agent を探す
