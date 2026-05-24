@@ -58,6 +58,7 @@
 | `legal/legal-japanese-data-privacy-officer.md` | 個人情報、委託先、保存期間、漏えい対応 |
 | `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
 | `marketing/marketing-japanese-oss-positioning-writer.md` | 上流 OSS の README / docs を日本市場向けに positioning し直す |
+| `marketing/marketing-japanese-ai-citation-strategist.md` | 生成 AI / answer engine での引用・推薦可視性、AEO / GEO 改善 |
 | `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS developer advocacy |
 | `marketing/marketing-japanese-product-marketing-manager.md` | positioning、message、launch、sales enablement |
 | `marketing/marketing-japanese-market-researcher.md` | 市場規模、競合、顧客課題、購買 process |

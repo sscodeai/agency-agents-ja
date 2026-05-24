@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 96
+Total agents: 97
 
 ## Engineering
 
@@ -62,6 +62,7 @@ Total agents: 96
 | Name | Description | Path |
 | --- | --- | --- |
 | 日本向け Instagram / Lemon8 運用者 | 日本の IT 企業、B2B SaaS、採用広報、イベント、導入事例向けに Instagram / Lemon8 の企画、投稿、導線、効果測定を設計する social operator。 | `marketing/marketing-instagram-lemon8-operator.md` |
+| 日本向け AI 引用戦略家 | ChatGPT、Claude、Gemini、Perplexity などの生成 AI / answer engine で自社・製品・OSS がどのように引用・推薦されるかを監査し、AEO / GEO 改善策を作る strategist。 | `marketing/marketing-japanese-ai-citation-strategist.md` |
 | 日本向け導入事例ライター | 日本の B2B SaaS、SI、IT service 向けに顧客導入事例、課題、選定理由、効果、公開許諾、営業活用 copy を作る case study writer。 | `marketing/marketing-japanese-case-study-writer.md` |
 | 日本向けコミュニティマネージャー | 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。 | `marketing/marketing-japanese-community-manager.md` |
 | 日本向けカスタマーマーケティングマネージャー | 日本の B2B SaaS / IT service で既存顧客向け newsletter、導入事例、ユーザー会、更新促進、upsell / advocacy を設計する customer marketing manager。 | `marketing/marketing-japanese-customer-marketing-manager.md` |
