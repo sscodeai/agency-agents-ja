@@ -48,29 +48,59 @@ function listAgents() {
     const rows = files.map(name => {
       const path = `${dir}/${name}`;
       const fm = parseFrontmatter(path);
-      return { name: fm.name || name, description: fm.description || '', path };
+      return {
+        name: fm.name || name,
+        description: fm.description || '',
+        path,
+        source: fm.source || 'unknown',
+      };
     });
-    sections.push({ title, rows });
+    sections.push({ dir, title, rows });
   }
   return sections;
 }
 
+function countBySource(sections) {
+  let upstream = 0;
+  let japan = 0;
+  let unknown = 0;
+  for (const section of sections) {
+    for (const row of section.rows) {
+      if (row.source === 'upstream') upstream++;
+      else if (row.source === 'japan-original') japan++;
+      else unknown++;
+    }
+  }
+  return { upstream, japan, unknown, total: upstream + japan + unknown };
+}
+
 function render() {
   const sections = listAgents();
-  const total = sections.reduce((sum, section) => sum + section.rows.length, 0);
+  const counts = countBySource(sections);
+
   const lines = [
     '# Agent List',
     '',
-    `Total agents: ${total}`,
+    `Total agents: ${counts.total} (⭐ ${counts.japan} japan-original + ${counts.upstream} upstream-translated${counts.unknown ? ` + ${counts.unknown} unclassified` : ''})`,
+    '',
+    '⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).',
+    'Other rows = translated/adapted from upstream [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents).',
     '',
   ];
 
   for (const section of sections) {
+    const japanRows = section.rows.filter(r => r.source === 'japan-original');
+    const upstreamRows = section.rows.filter(r => r.source !== 'japan-original');
+    const total = section.rows.length;
     lines.push(`## ${section.title}`, '');
-    lines.push('| Name | Description | Path |');
-    lines.push('| --- | --- | --- |');
-    for (const row of section.rows) {
-      lines.push(`| ${row.name} | ${row.description} | \`${row.path}\` |`);
+    lines.push(`Total: ${total} (⭐ ${japanRows.length} japan-original + ${upstreamRows.length} upstream-translated)`, '');
+    lines.push('| | Name | Description | Path |');
+    lines.push('| --- | --- | --- | --- |');
+    for (const row of japanRows) {
+      lines.push(`| ⭐ | ${row.name} | ${row.description} | \`${row.path}\` |`);
+    }
+    for (const row of upstreamRows) {
+      lines.push(`|  | ${row.name} | ${row.description} | \`${row.path}\` |`);
     }
     lines.push('');
   }

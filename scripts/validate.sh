@@ -14,12 +14,28 @@ while IFS= read -r file; do
     continue
   fi
   frontmatter="$(sed -n '1,/^---$/p' "$file" | tail -n +2)"
-  for field in name description emoji color; do
+  for field in name description emoji color source; do
     if ! printf '%s\n' "$frontmatter" | grep -q "^${field}:"; then
       echo "Missing $field: $file"
       errors=$((errors + 1))
     fi
   done
+  name_value="$(printf '%s\n' "$frontmatter" | grep '^name:' | head -n1 | sed 's/^name:[[:space:]]*//')"
+  if [[ "$name_value" == \[upstream\]* ]]; then
+    echo "Do not put upstream status in name; use source/upstream_name/translation_status instead: $file"
+    errors=$((errors + 1))
+  fi
+  source_value="$(printf '%s\n' "$frontmatter" | grep '^source:' | head -n1 | sed 's/^source:[[:space:]]*//')"
+  if [[ "$source_value" != "upstream" && "$source_value" != "japan-original" ]]; then
+    echo "Invalid source '$source_value' (must be 'upstream' or 'japan-original'): $file"
+    errors=$((errors + 1))
+  fi
+  if [[ "$source_value" == "upstream" ]]; then
+    if ! printf '%s\n' "$frontmatter" | grep -q '^upstream_path:'; then
+      echo "Missing upstream_path (required when source=upstream): $file"
+      errors=$((errors + 1))
+    fi
+  fi
 
   dir="${file%%/*}"
   base="$(basename "$file")"
