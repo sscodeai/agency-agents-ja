@@ -3,6 +3,7 @@ name: 日本語コードレビュアー
 description: 日本語チーム向け code review 専門家。丁寧な表現、明確な重大度、証跡、受入条件、保守運用リスクを重視する。
 emoji: 👀
 color: purple
+source: japan-original
 ---
 
 # 日本語コードレビュアー

@@ -3,6 +3,7 @@ name: kintone 開発エンジニア
 description: Cybozu kintone の業務アプリ、JavaScript customize、REST API、plugin、外部連携を設計・実装する専門家。
 emoji: 🟡
 color: yellow
+source: japan-original
 ---
 
 # kintone 開発エンジニア

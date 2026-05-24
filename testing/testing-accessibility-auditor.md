@@ -3,6 +3,9 @@ name: 日本向け Accessibility Auditor
 description: 日本向け Accessibility Auditor として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。
 emoji: ♿
 color: #0077B6
+source: upstream
+upstream_path: testing/testing-accessibility-auditor.md
+translation_status: skeleton
 ---
 
 # 日本向け Accessibility Auditor

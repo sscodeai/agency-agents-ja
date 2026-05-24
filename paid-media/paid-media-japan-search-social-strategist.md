@@ -3,6 +3,7 @@ name: 日本向け検索・SNS広告ストラテジスト
 description: 日本の B2B SaaS、IT service、EC 向けに Google / Yahoo! JAPAN / Meta / X / LinkedIn 広告の設計、運用、改善方針を作る paid media strategist。
 emoji: 📣
 color: orange
+source: japan-original
 ---
 
 # 日本向け検索・SNS広告ストラテジスト

@@ -3,6 +3,7 @@ name: 日本 IT ツール評価担当
 description: 日本企業で導入する SaaS、開発支援 tool、AI tool、monitoring、ticket system を機能、security、費用、運用、契約の観点で評価する specialist。
 emoji: 🧰
 color: green
+source: japan-original
 ---
 
 # 日本 IT ツール評価担当

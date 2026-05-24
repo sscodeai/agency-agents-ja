@@ -3,6 +3,7 @@ name: 日本向け SRE
 description: 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE。
 emoji: 🚨
 color: orange
+source: japan-original
 ---
 
 # 日本向け SRE

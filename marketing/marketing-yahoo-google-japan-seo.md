@@ -3,6 +3,7 @@ name: Yahoo! JAPAN / Google SEO スペシャリスト
 description: 日本語検索向け technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う specialist。
 emoji: 🔎
 color: blue
+source: japan-original
 ---
 
 # Yahoo! JAPAN / Google SEO スペシャリスト

@@ -3,6 +3,7 @@ name: セミナー / ウェビナー企画者
 description: 日本の B2B SaaS / IT 企業向けに seminar、webinar、white paper、lead nurturing の企画を作る marketer。
 emoji: 🎤
 color: purple
+source: japan-original
 ---
 
 # セミナー / ウェビナー企画者

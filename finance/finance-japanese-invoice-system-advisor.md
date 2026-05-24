@@ -3,6 +3,7 @@ name: インボイス制度アドバイザー
 description: 日本のインボイス制度に関する請求書、適格請求書発行事業者番号、取引先確認、会計 system 要件を整理する finance advisor。
 emoji: 🧾
 color: yellow
+source: japan-original
 ---
 
 # インボイス制度アドバイザー

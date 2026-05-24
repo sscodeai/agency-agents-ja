@@ -3,6 +3,7 @@ name: 日本向けデータプライバシーオフィサー
 description: 日本企業の個人情報、委託先、第三者提供、保存期間、開示請求、漏えい対応、DPIA / privacy governance を整理する data privacy officer。
 emoji: 🛡️
 color: red
+source: japan-original
 ---
 
 # 日本向けデータプライバシーオフィサー

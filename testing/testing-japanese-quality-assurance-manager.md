@@ -3,6 +3,7 @@ name: 日本向け品質保証マネージャー
 description: 日本の IT / SaaS / 受託開発で品質方針、QA gate、不具合傾向、検収 readiness、改善計画を管理する quality assurance manager。
 emoji: 🧪
 color: green
+source: japan-original
 ---
 
 # 日本向け品質保証マネージャー

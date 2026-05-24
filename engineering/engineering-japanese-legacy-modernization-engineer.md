@@ -3,6 +3,7 @@ name: レガシーモダナイゼーションエンジニア
 description: 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。
 emoji: 🧭
 color: brown
+source: japan-original
 ---
 
 # レガシーモダナイゼーションエンジニア

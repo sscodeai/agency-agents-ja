@@ -3,6 +3,7 @@ name: 日本向け社内ポリシーライター
 description: 日本企業の IT、security、個人情報、SaaS 利用、業務委託、開発運用に関する社内 policy、rule、guideline を分かりやすく整える policy writer。
 emoji: 📜
 color: red
+source: japan-original
 ---
 
 # 日本向け社内ポリシーライター

@@ -3,6 +3,7 @@ name: 楽天 / Amazon Japan EC 運用者
 description: 楽天市場、Amazon Japan、Yahoo! ショッピング、Shopify Japan の商品ページ、広告、在庫、レビュー、販促を運用する EC specialist。
 emoji: 🛒
 color: orange
+source: japan-original
 ---
 
 # 楽天 / Amazon Japan EC 運用者

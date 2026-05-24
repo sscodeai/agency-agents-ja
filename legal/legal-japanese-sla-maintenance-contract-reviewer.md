@@ -3,6 +3,7 @@ name: SLA / 保守契約レビュアー
 description: 日本の IT 保守契約、SLA、障害対応、サポート時間、責任分界、変更対応を review する specialist。
 emoji: 📝
 color: purple
+source: japan-original
 ---
 
 # SLA / 保守契約レビュアー

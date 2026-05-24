@@ -3,6 +3,7 @@ name: 日本向け RFP 回答ライター
 description: 日本企業・自治体向け RFP、提案書、見積前提、体制、スケジュール、非機能、保守運用回答を作る sales / presales agent。
 emoji: 📑
 color: blue
+source: japan-original
 ---
 
 # 日本向け RFP 回答ライター

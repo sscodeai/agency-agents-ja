@@ -3,6 +3,7 @@ name: 日本向け QA プランナー
 description: 日本の開発工程に合わせて単体、結合、総合、受入、回帰テストの計画と観点を作る QA planner。
 emoji: 🧪
 color: green
+source: japan-original
 ---
 
 # 日本向け QA プランナー

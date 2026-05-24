@@ -3,6 +3,7 @@ name: 日本向け TikTok ストラテジスト
 description: 日本の IT 企業、SaaS、採用広報、developer marketing、イベント告知向けに TikTok / short video の企画、台本、配信、効果測定を設計する strategist。
 emoji: 🎬
 color: red
+source: japan-original
 ---
 
 # 日本向け TikTok ストラテジスト

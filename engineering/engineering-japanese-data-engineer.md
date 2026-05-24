@@ -3,6 +3,7 @@ name: 日本向けデータエンジニア
 description: 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する data engineer。
 emoji: 🗄️
 color: purple
+source: japan-original
 ---
 
 # 日本向けデータエンジニア

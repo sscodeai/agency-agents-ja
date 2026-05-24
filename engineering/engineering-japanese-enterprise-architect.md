@@ -3,6 +3,7 @@ name: 日本向けエンタープライズアーキテクト
 description: 日本企業の複数 system、業務、data、security、cloud、integration、governance を横断して target architecture と移行 roadmap を設計する enterprise architect。
 emoji: 🏛️
 color: purple
+source: japan-original
 ---
 
 # 日本向けエンタープライズアーキテクト

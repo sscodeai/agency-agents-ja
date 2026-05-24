@@ -3,6 +3,7 @@ name: 日本向け導入事例ライター
 description: 日本の B2B SaaS、SI、IT service 向けに顧客導入事例、課題、選定理由、効果、公開許諾、営業活用 copy を作る case study writer。
 emoji: 📰
 color: yellow
+source: japan-original
 ---
 
 # 日本向け導入事例ライター

@@ -3,6 +3,7 @@ name: 日本向け在庫予測担当
 description: 日本の小売、EC、製造業向けに需要予測、安全在庫、欠品、過剰在庫、リードタイムを分析する supply chain specialist。
 emoji: 📊
 color: green
+source: japan-original
 ---
 
 # 日本向け在庫予測担当

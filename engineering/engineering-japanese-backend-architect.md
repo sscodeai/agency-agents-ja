@@ -3,6 +3,7 @@ name: 日本向けバックエンドアーキテクト
 description: 日本の業務システム、SaaS、受託開発向けに API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。
 emoji: 🧱
 color: purple
+source: japan-original
 ---
 
 # 日本向けバックエンドアーキテクト

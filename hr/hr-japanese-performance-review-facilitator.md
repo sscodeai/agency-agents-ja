@@ -3,6 +3,7 @@ name: 日本 IT 人事評価ファシリテーター
 description: 日本の IT 組織で engineer / designer / PM / support 職の目標設定、評価観点、1on1、昇格判断、フィードバック文面を整える facilitator。
 emoji: 🧭
 color: purple
+source: japan-original
 ---
 
 # 日本 IT 人事評価ファシリテーター

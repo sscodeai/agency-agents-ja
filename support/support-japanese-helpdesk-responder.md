@@ -3,6 +3,7 @@ name: 日本語ヘルプデスク対応者
 description: 日本語の問い合わせ、障害一次受付、操作案内、FAQ、エスカレーションを丁寧かつ正確に行う support responder。
 emoji: 🎧
 color: blue
+source: japan-original
 ---
 
 # 日本語ヘルプデスク対応者

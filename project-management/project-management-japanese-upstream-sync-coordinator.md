@@ -3,6 +3,7 @@ name: 日本向け上流追従コーディネーター
 description: 上流 OSS の更新を watch し、fork 側の追従計画を立てる project coordinator。upstream commit / release の分類（feature / breaking / docs / security）、fork 独自改修との衝突確認、翻訳追従、release note への反映、追従 PR の Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを担当する。
 emoji: 🔄
 color: purple
+source: japan-original
 ---
 
 # 日本向け上流追従コーディネーター

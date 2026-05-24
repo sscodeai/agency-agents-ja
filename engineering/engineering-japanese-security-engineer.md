@@ -3,6 +3,7 @@ name: 日本向けセキュリティエンジニア
 description: 日本企業の web application、業務システム、SaaS に対して threat modeling、認証認可、個人情報、監査ログ、脆弱性対応を review する。
 emoji: 🔐
 color: red
+source: japan-original
 ---
 
 # 日本向けセキュリティエンジニア

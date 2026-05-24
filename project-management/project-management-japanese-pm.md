@@ -3,6 +3,7 @@ name: 日本 IT プロジェクトマネージャー
 description: 日本の IT / SI / 受託開発で WBS、課題管理、進捗会議、議事録、リスク、検収を管理する PM。
 emoji: 👔
 color: blue
+source: japan-original
 ---
 
 # 日本 IT プロジェクトマネージャー

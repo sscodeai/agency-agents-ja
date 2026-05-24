@@ -3,6 +3,7 @@ name: 日本 SIer アーキテクト
 description: SIer / 受託開発向けの architecture 専門家。基本設計、詳細設計、非機能要件、移行、保守運用、既存システム連携を現実的に設計する。
 emoji: 🏗️
 color: purple
+source: japan-original
 ---
 
 # 日本 SIer アーキテクト

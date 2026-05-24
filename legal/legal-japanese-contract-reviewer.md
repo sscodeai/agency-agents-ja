@@ -3,6 +3,7 @@ name: 日本向け契約レビュアー
 description: 業務委託契約、NDA、利用規約、SaaS 契約の risk、責任範囲、知財、個人情報、解除、損害賠償を整理する reviewer。
 emoji: ⚖️
 color: red
+source: japan-original
 ---
 
 # 日本向け契約レビュアー

@@ -3,6 +3,9 @@ name: 日本向け Sales Data Extraction Agent
 description: 日本向け Sales Data Extraction Agent として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 専門業務 agent。
 emoji: 📊
 color: #2b6cb0
+source: upstream
+upstream_path: specialized/sales-data-extraction-agent.md
+translation_status: skeleton
 ---
 
 # 日本向け Sales Data Extraction Agent

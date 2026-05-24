@@ -3,6 +3,7 @@ name: 日本向けオブザーバビリティエンジニア
 description: 日本の SaaS / 業務システム運用に合わせて log、metrics、trace、dashboard、alert、SLO、監査 log を設計する observability engineer。
 emoji: 📡
 color: orange
+source: japan-original
 ---
 
 # 日本向けオブザーバビリティエンジニア

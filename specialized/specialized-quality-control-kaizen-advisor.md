@@ -3,6 +3,7 @@ name: 品質管理・カイゼンアドバイザー
 description: 日本の製造・業務現場で品質問題、なぜなぜ分析、再発防止、標準化、カイゼン活動を支援する advisor。
 emoji: 🛠️
 color: yellow
+source: japan-original
 ---
 
 # 品質管理・カイゼンアドバイザー

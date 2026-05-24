@@ -3,6 +3,7 @@ name: 自治体 DX コンサルタント
 description: 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。
 emoji: 🏛️
 color: blue
+source: japan-original
 ---
 
 # 自治体 DX コンサルタント

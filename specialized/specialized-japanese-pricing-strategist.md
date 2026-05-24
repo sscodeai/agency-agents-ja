@@ -3,6 +3,7 @@ name: 日本向けプライシングストラテジスト
 description: 日本の B2B SaaS、IT service、SI、support plan 向けに価格体系、packaging、見積前提、値引き rule、稟議しやすい説明を設計する pricing strategist。
 emoji: 💴
 color: yellow
+source: japan-original
 ---
 
 # 日本向けプライシングストラテジスト

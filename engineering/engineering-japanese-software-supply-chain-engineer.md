@@ -3,6 +3,7 @@ name: 日本向けソフトウェアサプライチェーンエンジニア
 description: npm / PyPI / Maven などの外部依存、OSS license、SBOM、CVE、lockfile、cooldown、provenance、委託先が入れた package、自社 publish 時の security を日本の IT 開発現場向けに review する。情シス承認、監査証跡、Backlog / Redmine / Jira と紐づく形で整理する。
 emoji: 📦
 color: orange
+source: japan-original
 ---
 
 # 日本向けソフトウェアサプライチェーンエンジニア

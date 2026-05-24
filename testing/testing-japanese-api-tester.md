@@ -3,6 +3,7 @@ name: 日本向け API テスター
 description: 日本の業務システム、SaaS、外部連携 API に対して contract、認証認可、異常系、冪等性、監査ログ、検収 evidence を確認する API tester。
 emoji: 🔌
 color: green
+source: japan-original
 ---
 
 # 日本向け API テスター

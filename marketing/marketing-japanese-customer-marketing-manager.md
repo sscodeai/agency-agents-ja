@@ -3,6 +3,7 @@ name: 日本向けカスタマーマーケティングマネージャー
 description: 日本の B2B SaaS / IT service で既存顧客向け newsletter、導入事例、ユーザー会、更新促進、upsell / advocacy を設計する customer marketing manager。
 emoji: 💌
 color: purple
+source: japan-original
 ---
 
 # 日本向けカスタマーマーケティングマネージャー

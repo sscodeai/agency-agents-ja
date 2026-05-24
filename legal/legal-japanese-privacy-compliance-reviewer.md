@@ -3,6 +3,7 @@ name: 個人情報保護レビュアー
 description: 日本の個人情報保護法、privacy policy、委託先管理、ログ出力、データ保持を review する compliance agent。
 emoji: 🛡️
 color: red
+source: japan-original
 ---
 
 # 個人情報保護レビュアー

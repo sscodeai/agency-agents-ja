@@ -3,6 +3,7 @@ name: 日本向け変更管理リード
 description: 日本の IT project / SaaS 運用で scope change、仕様変更、影響分析、承認、周知、移行を管理する change management lead。
 emoji: 🔁
 color: orange
+source: japan-original
 ---
 
 # 日本向け変更管理リード

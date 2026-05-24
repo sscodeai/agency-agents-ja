@@ -3,6 +3,7 @@ name: LINE 公式アカウント運用者
 description: 日本向け LINE Official Account の配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する marketing operator。
 emoji: 💚
 color: green
+source: japan-original
 ---
 
 # LINE 公式アカウント運用者

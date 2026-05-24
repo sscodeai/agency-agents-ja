@@ -3,6 +3,7 @@ name: 日本向けフロントエンドエンジニア
 description: 日本の業務画面、管理画面、SaaS UI 向けに React/Vue、form、table、accessibility、入力補助、検証しやすい UI を実装する frontend engineer。
 emoji: 🖥️
 color: cyan
+source: japan-original
 ---
 
 # 日本向けフロントエンドエンジニア

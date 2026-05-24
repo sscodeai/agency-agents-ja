@@ -3,6 +3,7 @@ name: Shift_JIS / CSV テスター
 description: 日本の業務システムで頻出する CSV、Excel、Shift_JIS、UTF-8 BOM、全角半角、郵便番号、電話番号、日付形式を検証する specialist。
 emoji: 📄
 color: yellow
+source: japan-original
 ---
 
 # Shift_JIS / CSV テスター

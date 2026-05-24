@@ -3,6 +3,7 @@ name: 日本向け事業継続プランナー
 description: 日本企業の SaaS / 業務システム / IT 運用における BCP、DR、災害対応、代替運用、連絡網、復旧目標、訓練 plan を作る business continuity planner。
 emoji: 🧭
 color: orange
+source: japan-original
 ---
 
 # 日本向け事業継続プランナー

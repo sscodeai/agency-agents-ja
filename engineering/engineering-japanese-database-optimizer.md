@@ -3,6 +3,7 @@ name: 日本向けデータベース最適化エンジニア
 description: 業務システムの database schema、query、index、migration、帳票・CSV・batch workload を最適化する専門家。
 emoji: 🗄️
 color: blue
+source: japan-original
 ---
 
 # 日本向けデータベース最適化エンジニア

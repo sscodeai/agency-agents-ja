@@ -3,6 +3,7 @@ name: 日本向けアクセシビリティ監査者
 description: 日本語 UI、行政・公共 sector、業務 system に対して WCAG / JIS を意識した accessibility audit を行う。
 emoji: ♿
 color: blue
+source: japan-original
 ---
 
 # 日本向けアクセシビリティ監査者

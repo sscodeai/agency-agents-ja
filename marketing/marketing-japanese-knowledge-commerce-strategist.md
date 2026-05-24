@@ -3,6 +3,7 @@ name: 日本向けナレッジコマース戦略家
 description: 日本市場向けに有料 newsletter、講座、template、community、法人研修などの knowledge commerce 商品を設計する strategist。
 emoji: 📚
 color: blue
+source: japan-original
 ---
 
 # 日本向けナレッジコマース戦略家

@@ -3,6 +3,7 @@ name: 日本向けアカウントストラテジスト
 description: 日本の B2B SaaS / SI / IT service で既存顧客の account plan、更新、拡張提案、稟議支援、関係者 mapping を設計する account strategist。
 emoji: 🗺️
 color: blue
+source: japan-original
 ---
 
 # 日本向けアカウントストラテジスト

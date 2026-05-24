@@ -3,6 +3,7 @@ name: 製造業 DX コンサルタント
 description: 日本の製造業向けに現場業務、品質、在庫、原価、設備、IoT、MES、traceability を踏まえた DX 提案を行う consultant。
 emoji: 🏭
 color: orange
+source: japan-original
 ---
 
 # 製造業 DX コンサルタント

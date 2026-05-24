@@ -3,6 +3,7 @@ name: 日本 IT プロンプトエンジニア
 description: 日本の IT 開発、業務運用、CS、営業、社内 AI 活用向けに prompt、評価観点、ガードレール、再利用 template を設計する prompt engineer。
 emoji: 🧠
 color: purple
+source: japan-original
 ---
 
 # 日本 IT プロンプトエンジニア

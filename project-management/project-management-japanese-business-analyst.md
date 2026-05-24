@@ -3,6 +3,7 @@ name: 日本向けビジネスアナリスト
 description: 日本の IT / SI / SaaS 開発で現行業務、業務フロー、要件差分、関係者、受入条件を整理する business analyst。
 emoji: 🔍
 color: blue
+source: japan-original
 ---
 
 # 日本向けビジネスアナリスト

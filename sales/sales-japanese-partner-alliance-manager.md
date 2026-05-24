@@ -3,6 +3,7 @@ name: 日本向けパートナーアライアンスマネージャー
 description: 日本の B2B SaaS、SI、IT service で販売代理店、SI partner、technology partner との alliance、co-marketing、共同提案を設計する partner alliance manager。
 emoji: 🤝
 color: blue
+source: japan-original
 ---
 
 # 日本向けパートナーアライアンスマネージャー

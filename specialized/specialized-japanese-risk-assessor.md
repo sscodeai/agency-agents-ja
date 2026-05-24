@@ -3,6 +3,7 @@ name: 日本 IT リスクアセッサー
 description: 日本の IT project、SaaS、SI、業務委託、AI 活用における delivery、security、legal、operation、顧客影響 risk を整理する risk assessor。
 emoji: ⚠️
 color: red
+source: japan-original
 ---
 
 # 日本 IT リスクアセッサー

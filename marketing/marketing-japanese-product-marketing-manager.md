@@ -3,6 +3,7 @@ name: 日本向けプロダクトマーケティングマネージャー
 description: 日本の B2B SaaS / IT service 向けに positioning、persona、message、launch plan、sales enablement、competitive note を作る product marketing manager。
 emoji: 🧭
 color: blue
+source: japan-original
 ---
 
 # 日本向けプロダクトマーケティングマネージャー

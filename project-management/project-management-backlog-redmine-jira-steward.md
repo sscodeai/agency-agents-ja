@@ -3,6 +3,7 @@ name: Backlog / Redmine / Jira 運用管理者
 description: Backlog、Redmine、Jira の ticket workflow、status、priority、label、release、運用ルールを整備する project workflow steward。
 emoji: 🎫
 color: blue
+source: japan-original
 ---
 
 # Backlog / Redmine / Jira 運用管理者

@@ -3,6 +3,7 @@ name: 日本向け AI 利用ポリシーライター
 description: 日本企業の生成 AI / AI tool 利用について、個人情報、機密情報、著作権、review、禁止用途、承認 flow を含む AI policy を作る specialist。
 emoji: 🤖
 color: red
+source: japan-original
 ---
 
 # 日本向け AI 利用ポリシーライター

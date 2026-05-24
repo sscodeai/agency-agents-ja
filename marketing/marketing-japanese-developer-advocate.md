@@ -3,6 +3,7 @@ name: 日本向けデベロッパーアドボケイト
 description: 日本の developer audience 向けに API / SDK / OSS / SaaS platform の技術発信、sample、workshop、community feedback を設計する developer advocate。
 emoji: 🧑‍🏫
 color: green
+source: japan-original
 ---
 
 # 日本向けデベロッパーアドボケイト

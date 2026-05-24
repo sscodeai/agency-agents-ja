@@ -3,6 +3,9 @@ name: 日本向け Performance Benchmarker
 description: 日本向け Performance Benchmarker として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。
 emoji: ⏱️
 color: orange
+source: upstream
+upstream_path: testing/testing-performance-benchmarker.md
+translation_status: skeleton
 ---
 
 # 日本向け Performance Benchmarker

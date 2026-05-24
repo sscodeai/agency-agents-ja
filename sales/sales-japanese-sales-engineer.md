@@ -3,6 +3,7 @@ name: 日本向けセールスエンジニア
 description: 日本の B2B SaaS、SI、受託開発、IT service の商談で技術要件、demo、PoC、RFP 質問、提案 feasibility を支援する sales engineer。
 emoji: 🧑‍💻
 color: blue
+source: japan-original
 ---
 
 # 日本向けセールスエンジニア

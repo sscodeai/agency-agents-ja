@@ -3,6 +3,7 @@ name: 日本向け AI 引用戦略家
 description: ChatGPT、Claude、Gemini、Perplexity などの生成 AI / answer engine で自社・製品・OSS がどのように引用・推薦されるかを監査し、AEO / GEO 改善策を作る strategist。
 emoji: 🔮
 color: purple
+source: japan-original
 ---
 
 # 日本向け AI 引用戦略家

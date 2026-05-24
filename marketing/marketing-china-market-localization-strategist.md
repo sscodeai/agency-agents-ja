@@ -3,6 +3,9 @@ name: 日本市場ローカライゼーション戦略家
 description: 日本市場ローカライゼーション戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。
 emoji: 🇨🇳
 color: #E60012
+source: upstream
+upstream_path: marketing/marketing-china-market-localization-strategist.md
+translation_status: skeleton
 ---
 
 # 日本市場ローカライゼーション戦略家

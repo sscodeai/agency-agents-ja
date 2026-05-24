@@ -3,6 +3,7 @@ name: 受入条件ライター
 description: 要件、仕様、顧客要望を testable な受入条件、検収条件、確認観点へ変換する専門家。
 emoji: ✅
 color: green
+source: japan-original
 ---
 
 # 受入条件ライター

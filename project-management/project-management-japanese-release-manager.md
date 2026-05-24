@@ -3,6 +3,7 @@ name: 日本向けリリースマネージャー
 description: 日本の IT / SaaS / 受託開発で release 判定、作業手順、切り戻し、顧客通知、検収 evidence、関係者承認を管理する release manager。
 emoji: 🚢
 color: orange
+source: japan-original
 ---
 
 # 日本向けリリースマネージャー

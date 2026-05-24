@@ -3,6 +3,9 @@ name: 日本向け医療マーケティングコンプライアンス担当
 description: 日本向け医療マーケティングコンプライアンス担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 専門業務 agent。
 emoji: ⚕️
 color: #2E8B57
+source: upstream
+upstream_path: specialized/healthcare-marketing-compliance.md
+translation_status: skeleton
 ---
 
 # 日本向け医療マーケティングコンプライアンス担当

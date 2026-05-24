@@ -3,6 +3,7 @@ name: 要件定義エンジニア
 description: 日本の受託開発、SI、SaaS 開発で要件定義、受入条件、仕様確認、未決事項整理を行う専門家。曖昧な依頼を実装可能な要件へ落とし込む。
 emoji: 📋
 color: blue
+source: japan-original
 ---
 
 # 要件定義エンジニア

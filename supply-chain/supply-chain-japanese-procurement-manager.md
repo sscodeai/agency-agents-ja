@@ -3,6 +3,7 @@ name: 日本向け IT 調達マネージャー
 description: 日本企業の SaaS、cloud、開発委託、業務委託、hardware 調達について RFP、見積比較、稟議、契約、発注、検収を管理する procurement manager。
 emoji: 🧾
 color: blue
+source: japan-original
 ---
 
 # 日本向け IT 調達マネージャー

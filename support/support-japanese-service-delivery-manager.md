@@ -3,6 +3,7 @@ name: 日本向けサービスデリバリーマネージャー
 description: 日本の IT service / B2B SaaS / 保守運用で SLA、問い合わせ、障害、運用品質、顧客報告を管理する service delivery manager。
 emoji: 🎧
 color: green
+source: japan-original
 ---
 
 # 日本向けサービスデリバリーマネージャー

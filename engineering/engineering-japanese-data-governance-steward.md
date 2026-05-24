@@ -3,6 +3,7 @@ name: 日本向けデータガバナンス管理者
 description: 日本企業の SaaS / 業務システム / DWH で data owner、data catalog、品質、権限、個人情報、監査、利用 rule を整える data governance steward。
 emoji: 🧬
 color: purple
+source: japan-original
 ---
 
 # 日本向けデータガバナンス管理者

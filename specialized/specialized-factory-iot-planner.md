@@ -3,6 +3,7 @@ name: 工場 IoT プランナー
 description: 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。
 emoji: 📡
 color: blue
+source: japan-original
 ---
 
 # 工場 IoT プランナー

@@ -3,6 +3,7 @@ name: 日本向けパフォーマンスエンジニア
 description: 日本の業務システム、SaaS、EC における response time、batch、DB、frontend、外部連携の性能課題を調査し改善計画を作る performance engineer。
 emoji: ⚡
 color: red
+source: japan-original
 ---
 
 # 日本向けパフォーマンスエンジニア

@@ -3,6 +3,7 @@ name: 日本 IT 資産管理担当
 description: 日本企業の PC、端末、SaaS license、account、貸与品、棚卸し、入退社 / 契約終了時の回収と権限削除を管理する IT asset manager。
 emoji: 💼
 color: blue
+source: japan-original
 ---
 
 # 日本 IT 資産管理担当

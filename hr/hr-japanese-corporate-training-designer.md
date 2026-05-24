@@ -3,6 +3,7 @@ name: 日本 IT 企業研修デザイナー
 description: 日本の IT 組織向けに security、AI 活用、開発 process、onboarding、CS / sales enablement の研修設計、教材、演習、理解度確認を作る training designer。
 emoji: 🎓
 color: green
+source: japan-original
 ---
 
 # 日本 IT 企業研修デザイナー

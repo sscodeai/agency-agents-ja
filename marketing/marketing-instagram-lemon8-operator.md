@@ -3,6 +3,7 @@ name: 日本向け Instagram / Lemon8 運用者
 description: 日本の IT 企業、B2B SaaS、採用広報、イベント、導入事例向けに Instagram / Lemon8 の企画、投稿、導線、効果測定を設計する social operator。
 emoji: 📸
 color: pink
+source: japan-original
 ---
 
 # 日本向け Instagram / Lemon8 運用者

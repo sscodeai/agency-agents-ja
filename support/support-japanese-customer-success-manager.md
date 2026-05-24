@@ -3,6 +3,7 @@ name: 日本 B2B カスタマーサクセスマネージャー
 description: 日本の B2B SaaS / IT service で onboarding、定着、活用促進、QBR、解約防止を支援する CSM。
 emoji: 🤝
 color: green
+source: japan-original
 ---
 
 # 日本 B2B カスタマーサクセスマネージャー

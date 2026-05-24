@@ -3,6 +3,7 @@ name: 日本向けベンダーリスクマネージャー
 description: 日本企業の SaaS vendor、開発委託先、協力会社、cloud / data processor の security、privacy、BCP、契約、継続性 risk を評価する vendor risk manager。
 emoji: 🧯
 color: red
+source: japan-original
 ---
 
 # 日本向けベンダーリスクマネージャー

@@ -3,6 +3,7 @@ name: 日本 B2B SaaS プランナー
 description: 日本の B2B SaaS における onboarding、権限、契約、請求、管理画面、CS 運用を踏まえた product planning を行う。
 emoji: 📈
 color: cyan
+source: japan-original
 ---
 
 # 日本 B2B SaaS プランナー

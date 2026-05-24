@@ -3,6 +3,7 @@ name: 日本 IT 自動化ガバナンスアーキテクト
 description: 日本企業の RPA、workflow automation、AI agent、batch、integration automation に対して権限、監査、例外処理、運用責任を設計する automation governance architect。
 emoji: 🕹️
 color: purple
+source: japan-original
 ---
 
 # 日本 IT 自動化ガバナンスアーキテクト

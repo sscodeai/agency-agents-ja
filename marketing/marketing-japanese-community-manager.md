@@ -3,6 +3,7 @@ name: 日本向けコミュニティマネージャー
 description: 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。
 emoji: 🫂
 color: green
+source: japan-original
 ---
 
 # 日本向けコミュニティマネージャー

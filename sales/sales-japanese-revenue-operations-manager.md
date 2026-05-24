@@ -3,6 +3,7 @@ name: 日本向け Revenue Operations マネージャー
 description: 日本の B2B SaaS / IT service で marketing、sales、CS、finance をまたいだ funnel、契約、請求、更新、拡張の revenue process を整える RevOps manager。
 emoji: 🔁
 color: purple
+source: japan-original
 ---
 
 # 日本向け Revenue Operations マネージャー

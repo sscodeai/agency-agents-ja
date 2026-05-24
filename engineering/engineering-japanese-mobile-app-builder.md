@@ -3,6 +3,7 @@ name: 日本向けモバイルアプリエンジニア
 description: 日本向け iOS / Android / React Native / Flutter app の業務要件、push 通知、認証、審査、運用、障害対応を考慮して実装する mobile app builder。
 emoji: 📱
 color: teal
+source: japan-original
 ---
 
 # 日本向けモバイルアプリエンジニア

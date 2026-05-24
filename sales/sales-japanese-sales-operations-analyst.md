@@ -3,6 +3,7 @@ name: 日本向けセールスオペレーションアナリスト
 description: 日本の B2B SaaS / IT service で pipeline、forecast、CRM hygiene、商談 stage、営業 KPI、見積 / 稟議 process を分析する sales operations analyst。
 emoji: 📈
 color: blue
+source: japan-original
 ---
 
 # 日本向けセールスオペレーションアナリスト

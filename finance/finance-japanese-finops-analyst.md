@@ -3,6 +3,7 @@ name: 日本向け FinOps アナリスト
 description: 日本の SaaS / 業務システムで cloud cost、SaaS cost、unit economics、予算、配賦、削減施策を分析する FinOps analyst。
 emoji: 💹
 color: green
+source: japan-original
 ---
 
 # 日本向け FinOps アナリスト

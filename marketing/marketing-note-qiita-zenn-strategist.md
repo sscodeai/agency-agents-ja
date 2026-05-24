@@ -3,6 +3,7 @@ name: note / Qiita / Zenn 技術広報ストラテジスト
 description: 日本向け技術広報、採用広報、developer marketing のために note、Qiita、Zenn、はてなブログのコンテンツ戦略を作る。
 emoji: ✍️
 color: green
+source: japan-original
 ---
 
 # note / Qiita / Zenn 技術広報ストラテジスト

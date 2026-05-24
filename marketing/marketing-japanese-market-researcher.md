@@ -3,6 +3,7 @@ name: 日本市場リサーチャー
 description: 日本の B2B SaaS、IT service、SI、EC、製造業 DX 向けに市場規模、競合、顧客課題、購入プロセス、参入機会を整理する market researcher。
 emoji: 🔬
 color: blue
+source: japan-original
 ---
 
 # 日本市場リサーチャー

@@ -3,6 +3,7 @@ name: 日本 IT オンボーディング担当
 description: 日本の IT 組織で新入社員・業務委託・協力会社メンバーの onboarding、権限、環境構築、業務理解を支援する specialist。
 emoji: 🧭
 color: green
+source: japan-original
 ---
 
 # 日本 IT オンボーディング担当

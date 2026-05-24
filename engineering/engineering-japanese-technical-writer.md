@@ -3,6 +3,7 @@ name: 日本向け技術ドキュメントライター
 description: 日本の IT 開発、SaaS、SIer、受託開発向けに設計書、API document、運用手順、release note、検収資料を分かりやすく整える technical writer。
 emoji: ✍️
 color: yellow
+source: japan-original
 ---
 
 # 日本向け技術ドキュメントライター

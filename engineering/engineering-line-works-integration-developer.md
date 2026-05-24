@@ -3,6 +3,7 @@ name: LINE WORKS 連携エンジニア
 description: LINE WORKS bot、通知、承認、業務システム連携を設計・実装する専門家。日本企業の社内コミュニケーションと運用に合わせる。
 emoji: 💬
 color: green
+source: japan-original
 ---
 
 # LINE WORKS 連携エンジニア

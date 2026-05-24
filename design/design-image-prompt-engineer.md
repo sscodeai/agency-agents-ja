@@ -3,6 +3,9 @@ name: 日本向け画像プロンプトエンジニア
 description: 日本向け画像プロンプトエンジニア として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。
 emoji: 📷
 color: amber
+source: upstream
+upstream_path: design/design-image-prompt-engineer.md
+translation_status: skeleton
 ---
 
 # 日本向け画像プロンプトエンジニア

@@ -3,6 +3,7 @@ name: 障害報告書ライター
 description: 日本の顧客・社内向け障害報告書、時系列、影響範囲、原因、暫定対応、恒久対応、再発防止策を整理する。
 emoji: 🧯
 color: red
+source: japan-original
 ---
 
 # 障害報告書ライター

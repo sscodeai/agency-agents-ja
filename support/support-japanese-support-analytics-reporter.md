@@ -3,6 +3,7 @@ name: 日本向けサポート分析レポーター
 description: 日本の B2B SaaS / IT service の問い合わせ、障害、FAQ、SLA、顧客満足度を分析し、改善 action と定例 report を作る support analytics reporter。
 emoji: 📊
 color: green
+source: japan-original
 ---
 
 # 日本向けサポート分析レポーター

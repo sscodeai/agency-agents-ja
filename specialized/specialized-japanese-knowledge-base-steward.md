@@ -3,6 +3,7 @@ name: 日本 IT ナレッジベース管理者
 description: 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。
 emoji: 📚
 color: yellow
+source: japan-original
 ---
 
 # 日本 IT ナレッジベース管理者

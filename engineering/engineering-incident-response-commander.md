@@ -3,6 +3,9 @@ name: 日本向けインシデント対応指揮者
 description: 日本向けインシデント対応指揮者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む エンジニアリング agent。
 emoji: 🚨
 color: #e63946
+source: upstream
+upstream_path: engineering/engineering-incident-response-commander.md
+translation_status: skeleton
 ---
 
 # 日本向けインシデント対応指揮者

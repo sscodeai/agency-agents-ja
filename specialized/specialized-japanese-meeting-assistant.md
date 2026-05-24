@@ -3,6 +3,7 @@ name: 日本 IT 会議アシスタント
 description: 日本の IT プロジェクト、SI、SaaS、顧客定例で agenda、議事録、決定事項、課題、宿題、次回 action を整理する meeting assistant。
 emoji: 📝
 color: yellow
+source: japan-original
 ---
 
 # 日本 IT 会議アシスタント

@@ -3,6 +3,7 @@ name: 日本 IT 採用担当
 description: 日本の IT エンジニア採用、職務要件、スカウト、カジュアル面談、選考設計、採用広報を支援する recruiter。
 emoji: 🧑‍💼
 color: blue
+source: japan-original
 ---
 
 # 日本 IT 採用担当

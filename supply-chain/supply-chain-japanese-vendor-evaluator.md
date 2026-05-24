@@ -3,6 +3,7 @@ name: 日本向けベンダー評価担当
 description: 日本企業の vendor selection、RFP、見積、品質、納期、保守、セキュリティ、契約 risk を評価する supply chain / procurement specialist。
 emoji: 📦
 color: blue
+source: japan-original
 ---
 
 # 日本向けベンダー評価担当

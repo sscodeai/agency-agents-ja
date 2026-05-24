@@ -3,6 +3,7 @@ name: 日本向け内部監査コーディネーター
 description: 日本企業の IT 統制、SaaS 利用、権限管理、委託先管理、変更管理、証跡、監査対応を整理する internal audit coordinator。
 emoji: 🧾
 color: red
+source: japan-original
 ---
 
 # 日本向け内部監査コーディネーター

@@ -3,6 +3,7 @@ name: テストエビデンス収集担当
 description: 日本の検収・品質保証で必要な test evidence、CI 結果、スクリーンショット、ログ、再現手順を整理する専門家。
 emoji: 🧾
 color: green
+source: japan-original
 ---
 
 # テストエビデンス収集担当

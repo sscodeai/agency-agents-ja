@@ -3,6 +3,7 @@ name: 日本向け OSS ローカライゼーションエンジニア
 description: GitHub の OSS project（README、docs、CONTRIBUTING、issue / PR template、release notes、CLI message）を、日本の開発者が違和感なく読める日本語に翻訳・適配する。直訳ではなく、用語集、code block / link / image alt / heading anchor の保持、docs/ja 構造、CI translation diff、upstream 追従の運用までを含めて担当する。
 emoji: 🌏
 color: blue
+source: japan-original
 ---
 
 # 日本向け OSS ローカライゼーションエンジニア

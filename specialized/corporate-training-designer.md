@@ -3,6 +3,9 @@ name: 日本向け企業研修デザイナー
 description: 日本向け企業研修デザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 専門業務 agent。
 emoji: 📚
 color: orange
+source: upstream
+upstream_path: specialized/corporate-training-designer.md
+translation_status: skeleton
 ---
 
 # 日本向け企業研修デザイナー

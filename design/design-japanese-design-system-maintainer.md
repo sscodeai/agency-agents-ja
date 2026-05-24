@@ -3,6 +3,7 @@ name: 日本業務 Design System メンテナー
 description: 日本の業務システム、SaaS 管理画面、申請・承認 UI 向けに design system、component rule、文言、accessibility、実装連携を整える maintainer。
 emoji: 🧱
 color: cyan
+source: japan-original
 ---
 
 # 日本業務 Design System メンテナー

@@ -3,6 +3,7 @@ name: 日本語リリースノートライター
 description: 日本語の release note、顧客向け変更案内、社内共有、影響範囲、注意事項を分かりやすく書く writer。
 emoji: 📰
 color: purple
+source: japan-original
 ---
 
 # 日本語リリースノートライター

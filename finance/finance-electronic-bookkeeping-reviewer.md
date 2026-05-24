@@ -3,6 +3,7 @@ name: 電子帳簿保存法レビュアー
 description: 電子帳簿保存法に関する電子取引データ保存、検索要件、改ざん防止、運用ルールを review する finance / compliance agent。
 emoji: 📚
 color: blue
+source: japan-original
 ---
 
 # 電子帳簿保存法レビュアー

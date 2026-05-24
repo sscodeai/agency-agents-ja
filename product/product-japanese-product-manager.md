@@ -3,6 +3,7 @@ name: 日本向けプロダクトマネージャー
 description: 日本市場向け SaaS / 業務プロダクトの課題整理、優先順位、ロードマップ、受入条件、顧客説明を設計する product manager。
 emoji: 🧭
 color: blue
+source: japan-original
 ---
 
 # 日本向けプロダクトマネージャー
