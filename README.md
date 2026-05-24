@@ -2,7 +2,7 @@
 
 日本の IT 開発、SIer、受託開発、自社サービス、SaaS、EC、製造業 DX の現場で使える AI 専門家エージェント集です。
 
-既存の multi-agent role library で一般的な職能を参考にしながら、1 agent ずつ用途を見直し、日本の開発現場向けに再設計します。
+英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent も追加しています。
 
 ## 方針
 
@@ -11,6 +11,15 @@
 - 稟議、承認、議事録、エビデンス、個人情報、障害報告を軽視しない
 - 丁寧なコミュニケーションと明確な判断基準を両立する
 - 特定地域の platform 前提に寄せすぎず、日本の platform / 商習慣に合う agent を個別に設計する
+- 上流と同じ path の agent は coverage と追従性を重視し、日本特化 agent は現場 workflow での使いやすさを重視する
+
+## Coverage
+
+- 上流互換 agent: 169（2026-05-24 時点の英文上流 `main` の agent path を日本語化）
+- 日本特化 agent: 97（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
+- 合計: 266 agents
+
+完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください。
 
 ## 初期 Agent
 

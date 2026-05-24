@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 errors=0
-AGENT_DIRS="engineering project-management testing product marketing paid-media finance hr design legal sales support supply-chain specialized"
+AGENT_DIRS="academic engineering project-management testing product marketing paid-media finance game-development hr design legal sales spatial-computing support supply-chain specialized"
 
 while IFS= read -r file; do
   if ! head -n 1 "$file" | grep -q '^---$'; then
@@ -34,7 +34,7 @@ while IFS= read -r file; do
       expected="${dir}-"
       ;;
   esac
-  if [[ "$base" != "$expected"* && "$dir" != "specialized" ]]; then
+  if [[ "$base" != "$expected"* && "$dir" != "specialized" && "$dir" != "game-development" && "$dir" != "spatial-computing" && "$base" != "project-manager-senior.md" ]]; then
     echo "Filename prefix mismatch: $file (expected prefix: $expected)"
     errors=$((errors + 1))
   fi

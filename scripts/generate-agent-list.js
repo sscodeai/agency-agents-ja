@@ -3,6 +3,7 @@
 const { existsSync, readdirSync, readFileSync, writeFileSync } = require('fs');
 
 const CATEGORIES = [
+  ['academic', 'Academic'],
   ['engineering', 'Engineering'],
   ['project-management', 'Project Management'],
   ['testing', 'Testing'],
@@ -10,10 +11,12 @@ const CATEGORIES = [
   ['marketing', 'Marketing'],
   ['paid-media', 'Paid Media'],
   ['finance', 'Finance'],
+  ['game-development', 'Game Development'],
   ['hr', 'HR'],
   ['design', 'Design'],
   ['legal', 'Legal'],
   ['sales', 'Sales'],
+  ['spatial-computing', 'Spatial Computing'],
   ['support', 'Support'],
   ['supply-chain', 'Supply Chain'],
   ['specialized', 'Specialized'],
