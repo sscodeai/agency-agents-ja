@@ -1,5 +1,100 @@
 # agency-agents-ja
 
+**Language**: [English](#english) | [日本語](#日本語)
+
+---
+
+## English
+
+Japanese community edition of [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents).
+
+A library of AI specialist agents and workflows for Japanese IT delivery — SIer (system integrator) work, custom development, in-house SaaS, EC, manufacturing DX, and public-sector projects. Built on top of the upstream `agency-agents` inventory, with substantial Japan-market originals layered on top.
+
+### Stats
+
+| Metric | Count |
+| --- | --- |
+| Total agents | 266 |
+| ⭐ Japan-market originals | 97 |
+| Upstream-derived agents | 169 |
+| Workflows (`workflows/`) | 27 |
+| Categories | 17 |
+| Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-05-24 |
+
+The `source:` frontmatter field on every agent file marks whether it is `japan-original` (independently designed for the Japanese market) or `upstream` (derived from the upstream agent inventory; see [Translation status](#translation-status) below). [AGENT-LIST.md](AGENT-LIST.md) renders ⭐ for Japan originals.
+
+### What is Japan-specific here
+
+The 97 ⭐ Japan-market originals cover scenarios upstream does not address:
+
+- **SIer / 受託開発**: requirements engineering, basic/detailed design, acceptance review (検収), change management, release sign-off, RFP response
+- **Compliance**: 個人情報保護法 (APPI), インボイス制度 (invoice system), 電子帳簿保存法 (electronic bookkeeping), AI usage policy
+- **Japanese platforms**: kintone, LINE WORKS, Backlog / Redmine / Jira, Rakuten / Amazon Japan, note / Qiita / Zenn, Yahoo! JAPAN SEO, LINE Official Account
+- **Manufacturing DX / public sector**: 工場 IoT, 自治体 DX, BCP, 内部統制
+- **Workflows**: 27 end-to-end workflows that chain agents together (e.g. `japanese-sier-requirements-review`, `acceptance-readiness-review`, `csv-data-migration-readiness`, `oss-localization-launch`, `oss-upstream-sync`)
+
+### Translation status
+
+The 169 `source: upstream` agents currently provide a Japan-context skeleton (Japanese persona + Japanese workflow framing) rather than a full literal translation of each upstream agent's prompt. Full upstream-prompt translation is in progress; see [ROADMAP.md](ROADMAP.md) and the `upstream_path:` frontmatter field on each upstream agent (it points back to the original file in `msitarzewski/agency-agents@main`).
+
+When upstream `main` adds or revises an agent, we treat that as a translation task in this repo. Until full translation is complete, the upstream skeleton agents are most useful as Japan-context personas rather than as drop-in equivalents of the English originals.
+
+You can query translation progress directly:
+
+```bash
+# How many upstream agents are still in skeleton stage
+grep -rl '^translation_status: skeleton' . | wc -l
+
+# How many have been fully translated
+grep -rl '^translation_status: translated' . | wc -l
+```
+
+### Frontmatter schema
+
+Every agent file has this frontmatter:
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `name` | yes | Display name (Japanese) |
+| `description` | yes | One-line summary |
+| `emoji` | yes | Display metadata |
+| `color` | yes | Display metadata |
+| `source` | yes | `japan-original` or `upstream` |
+| `upstream_path` | when `source: upstream` | Path of the corresponding file in [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) |
+| `upstream_name` | optional | Original English name. Useful when the Japanese `name` diverges from the upstream concept (e.g. the upstream `Douyin Strategist` is repurposed as a Japan-market `TikTok Japan 戦略家` here). |
+| `translation_status` | recommended when `source: upstream` | `skeleton` = Japan-context placeholder, upstream prompt not yet translated. `translated` = full upstream prompt translated. `adapted` = translated then materially diverged from upstream. Absent on `japan-original`. |
+
+`scripts/validate.sh` enforces all required fields, value constraints, and disallows `[upstream]`-prefixed `name` values (use the schema fields above instead).
+
+### Quick start
+
+Point any agent file at your AI coding tool:
+
+```text
+Use engineering/engineering-japanese-requirements-engineer.md to extract requirements
+and acceptance criteria from this Backlog ticket.
+```
+
+Or run a multi-agent workflow via [`superpowers-ja`](docs/superpowers-ja-integration.md):
+
+```text
+Use superpowers-ja workflow-runner to execute
+agency-agents-ja/workflows/japanese-sier-requirements-review.yaml.
+ticket: PROJ-1234, spec: docs/spec.md
+```
+
+### Acknowledgments
+
+This repository is derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT licensed). All upstream agent paths are preserved 1:1 under their original directories so the two repos can be compared file-by-file. We thank the upstream maintainers and contributors.
+
+### License
+
+MIT
+
+---
+
+## 日本語
+
 日本の IT 開発、SIer、受託開発、自社サービス、SaaS、EC、製造業 DX の現場で使える AI 専門家エージェント集です。
 
 英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent も追加しています。
@@ -15,11 +110,12 @@
 
 ## Coverage
 
-- 上流互換 agent: 169（2026-05-24 時点の英文上流 `main` の agent path を日本語化）
-- 日本特化 agent: 97（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
+- 日本特化 agent (⭐ `source: japan-original`): 97（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
+- 上流由来 agent (`source: upstream`): 169（2026-05-24 時点の英文上流 `main` の agent path に対応。現状は日本 context の skeleton。上流 prompt の本翻訳は進行中。`upstream_path:` で対応関係を保持）
 - 合計: 266 agents
+- Workflow: 27
 
-完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください。
+完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
 
 ## 初期 Agent
 
@@ -131,6 +227,10 @@ name: 日本語名
 description: 呼び出す場面、専門性、成果物
 emoji: 🧩
 color: blue
+source: japan-original    # または upstream
+# upstream_path: <dir>/<base>.md         # source: upstream のときに必須
+# upstream_name: Original English Name   # source: upstream のとき推奨
+# translation_status: skeleton           # skeleton | translated | adapted
 ---
 
 # 日本語名
@@ -210,6 +310,31 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 
 [AGENT-LIST.md](AGENT-LIST.md) から用途に近い agent を探してください。一覧は `scripts/generate-agent-list.js` で自動生成します。
 
+## 上流との関係
+
+- 169 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応する placeholder です（現状は日本 context の skeleton。frontmatter の `upstream_path:` で対応関係を保持）
+- 97 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
+- 上流 prompt の本翻訳は順次進めます。状況は [ROADMAP.md](ROADMAP.md) を参照してください
+
+### Frontmatter schema
+
+| Field | 必須 | 内容 |
+| --- | --- | --- |
+| `name` | yes | 表示名（日本語） |
+| `description` | yes | 1 行概要 |
+| `emoji` / `color` | yes | 表示用 |
+| `source` | yes | `japan-original` か `upstream` |
+| `upstream_path` | `source: upstream` のとき必須 | 上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) 内の対応 file path |
+| `upstream_name` | optional | 上流 agent の英語名。日本市場向けに `name` が乖離した場合に保持（例：上流 `Douyin Strategist` → ja `TikTok Japan 戦略家`） |
+| `translation_status` | `source: upstream` のとき推奨 | `skeleton`（日本 context の placeholder、上流 prompt 未翻訳）／`translated`（上流 prompt を翻訳済み）／`adapted`（翻訳後に独自に乖離）。`japan-original` には付けない |
+
+翻訳進捗の確認:
+
+```bash
+grep -rl '^translation_status: skeleton' . | wc -l    # skeleton 段階の残数
+grep -rl '^translation_status: translated' . | wc -l  # 翻訳完了数
+```
+
 ## メンテナンス
 
 ```bash
@@ -218,7 +343,7 @@ npm run validate:workflows
 npm run validate
 ```
 
-CI では `scripts/validate.sh` を実行し、frontmatter、命名、禁止語、`AGENT-LIST.md` の同期、workflow の role path と依存関係を確認します。
+CI では `scripts/validate.sh` を実行し、frontmatter（`name`、`description`、`emoji`、`color`、`source`、`source: upstream` のときは `upstream_path` も必須）、命名、禁止語、`AGENT-LIST.md` の同期、workflow の role path と依存関係を確認します。
 README と `docs/superpowers-ja-integration.md` の workflow table は `scripts/generate-workflow-table.js` で同期します。
 `examples/workflow-*.md` に YAML block を置く場合は、同名 workflow と内容が同期していることも確認します。
 
