@@ -53,6 +53,9 @@ function listAgents() {
         description: fm.description || '',
         path,
         source: fm.source || 'unknown',
+        upstreamName: fm.upstream_name || '',
+        upstreamPath: fm.upstream_path || '',
+        translationStatus: fm.translation_status || '',
       };
     });
     sections.push({ dir, title, rows });
@@ -94,13 +97,13 @@ function render() {
     const total = section.rows.length;
     lines.push(`## ${section.title}`, '');
     lines.push(`Total: ${total} (⭐ ${japanRows.length} japan-original + ${upstreamRows.length} upstream-aligned)`, '');
-    lines.push('| | Name | Description | Path |');
-    lines.push('| --- | --- | --- | --- |');
+    lines.push('| | Name | Source | Status | Upstream | Description | Path |');
+    lines.push('| --- | --- | --- | --- | --- | --- | --- |');
     for (const row of japanRows) {
-      lines.push(`| ⭐ | ${row.name} | ${row.description} | \`${row.path}\` |`);
+      lines.push(`| ⭐ | ${row.name} | japan-original |  |  | ${row.description} | \`${row.path}\` |`);
     }
     for (const row of upstreamRows) {
-      lines.push(`|  | ${row.name} | ${row.description} | \`${row.path}\` |`);
+      lines.push(`|  | ${row.name} | upstream | ${row.translationStatus || 'unknown'} | ${row.upstreamName || row.upstreamPath || ''} | ${row.description} | \`${row.path}\` |`);
     }
     lines.push('');
   }

@@ -18,9 +18,11 @@
   "author": "SS",
   "license": "MIT",
   "scripts": {
-    "generate": "npm run generate:list && npm run generate:workflows",
+    "generate": "npm run generate:list && npm run generate:workflows && npm run generate:translation-progress && npm run check:upstream-coverage",
     "generate:list": "node scripts/generate-agent-list.js",
     "generate:workflows": "node scripts/generate-workflow-table.js",
+    "generate:translation-progress": "node scripts/generate-translation-progress.js",
+    "check:upstream-coverage": "node scripts/check-upstream-coverage.js",
     "validate:workflows": "node scripts/validate-workflows.js",
     "validate": "scripts/validate.sh"
   },
@@ -52,6 +54,10 @@
     "docs/",
     "README.md",
     "AGENT-LIST.md",
+    "TRANSLATION-PROGRESS.md",
+    "UPSTREAM-COVERAGE.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
     "ROADMAP.md",
     "LICENSE"
   ]

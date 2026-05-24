@@ -35,6 +35,20 @@ while IFS= read -r file; do
       echo "Missing upstream_path (required when source=upstream): $file"
       errors=$((errors + 1))
     fi
+    translation_status_value="$(printf '%s\n' "$frontmatter" | grep '^translation_status:' | head -n1 | sed 's/^translation_status:[[:space:]]*//')"
+    if [[ "$translation_status_value" != "skeleton" && "$translation_status_value" != "translated" && "$translation_status_value" != "adapted" ]]; then
+      echo "Invalid or missing translation_status '$translation_status_value' (must be skeleton, translated, or adapted when source=upstream): $file"
+      errors=$((errors + 1))
+    fi
+  else
+    if printf '%s\n' "$frontmatter" | grep -q '^translation_status:'; then
+      echo "translation_status is only for source=upstream: $file"
+      errors=$((errors + 1))
+    fi
+    if printf '%s\n' "$frontmatter" | grep -q '^upstream_path:'; then
+      echo "upstream_path is only for source=upstream: $file"
+      errors=$((errors + 1))
+    fi
   fi
 
   dir="${file%%/*}"
@@ -67,6 +81,14 @@ if ! node scripts/generate-agent-list.js --check; then
 fi
 
 if ! node scripts/generate-workflow-table.js --check; then
+  errors=$((errors + 1))
+fi
+
+if ! node scripts/generate-translation-progress.js --check; then
+  errors=$((errors + 1))
+fi
+
+if ! node scripts/check-upstream-coverage.js --check; then
   errors=$((errors + 1))
 fi
 

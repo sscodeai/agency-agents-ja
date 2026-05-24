@@ -62,7 +62,7 @@ Every agent file has this frontmatter:
 | `source` | yes | `japan-original` or `upstream` |
 | `upstream_path` | when `source: upstream` | Path of the corresponding file in [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) |
 | `upstream_name` | optional | Original English name. Useful when the Japanese `name` diverges from the upstream concept (e.g. the upstream `Douyin Strategist` is repurposed as a Japan-market `TikTok Japan 戦略家` here). |
-| `translation_status` | recommended when `source: upstream` | `skeleton` = Japan-context placeholder, upstream prompt not yet translated. `translated` = full upstream prompt translated. `adapted` = translated then materially diverged from upstream. Absent on `japan-original`. |
+| `translation_status` | when `source: upstream` | `skeleton` = Japan-context placeholder, upstream prompt not yet translated. `translated` = full upstream prompt translated. `adapted` = translated then materially diverged from upstream. Absent on `japan-original`. |
 
 `scripts/validate.sh` enforces all required fields, value constraints, and disallows `[upstream]`-prefixed `name` values (use the schema fields above instead).
 
@@ -116,6 +116,7 @@ MIT
 - Workflow: 27
 
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
+翻訳進捗は [TRANSLATION-PROGRESS.md](TRANSLATION-PROGRESS.md)、上流 path coverage は [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) で確認できます。
 
 ## 初期 Agent
 
@@ -326,7 +327,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `source` | yes | `japan-original` か `upstream` |
 | `upstream_path` | `source: upstream` のとき必須 | 上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) 内の対応 file path |
 | `upstream_name` | optional | 上流 agent の英語名。日本市場向けに `name` が乖離した場合に保持（例：上流 `Douyin Strategist` → ja `TikTok Japan 戦略家`） |
-| `translation_status` | `source: upstream` のとき推奨 | `skeleton`（日本 context の placeholder、上流 prompt 未翻訳）／`translated`（上流 prompt を翻訳済み）／`adapted`（翻訳後に独自に乖離）。`japan-original` には付けない |
+| `translation_status` | `source: upstream` のとき必須 | `skeleton`（日本 context の placeholder、上流 prompt 未翻訳）／`translated`（上流 prompt を翻訳済み）／`adapted`（翻訳後に独自に乖離）。`japan-original` には付けない |
 
 翻訳進捗の確認:
 
@@ -339,11 +340,13 @@ grep -rl '^translation_status: translated' . | wc -l  # 翻訳完了数
 
 ```bash
 npm run generate
+npm run generate:translation-progress
+npm run check:upstream-coverage
 npm run validate:workflows
 npm run validate
 ```
 
-CI では `scripts/validate.sh` を実行し、frontmatter（`name`、`description`、`emoji`、`color`、`source`、`source: upstream` のときは `upstream_path` も必須）、命名、禁止語、`AGENT-LIST.md` の同期、workflow の role path と依存関係を確認します。
+CI では `scripts/validate.sh` を実行し、frontmatter（`name`、`description`、`emoji`、`color`、`source`、`source: upstream` のときは `upstream_path` と `translation_status` も必須）、命名、禁止語、`AGENT-LIST.md` / `TRANSLATION-PROGRESS.md` / `UPSTREAM-COVERAGE.md` の同期、workflow の role path と依存関係を確認します。
 README と `docs/superpowers-ja-integration.md` の workflow table は `scripts/generate-workflow-table.js` で同期します。
 `examples/workflow-*.md` に YAML block を置く場合は、同名 workflow と内容が同期していることも確認します。
 
