@@ -8,7 +8,7 @@
 
 Japanese community edition of [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents).
 
-A library of AI specialist agents and workflows for Japanese IT delivery — SIer (system integrator) work, custom development, in-house SaaS, EC, manufacturing DX, and public-sector projects. Built on top of the upstream `agency-agents` inventory, with substantial Japan-market originals layered on top.
+A library of AI specialist agents and workflows for Japanese IT delivery: SIer (system integrator) work, custom development, in-house SaaS, EC, manufacturing DX, and public-sector projects. It preserves upstream agent paths for compatibility while adding Japan-market originals for SIer, SaaS, manufacturing DX, and public-sector workflows.
 
 ### Stats
 
@@ -16,7 +16,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery — SIe
 | --- | --- |
 | Total agents | 266 |
 | ⭐ Japan-market originals | 97 |
-| Upstream-derived agents | 169 |
+| Upstream-aligned skeleton agents | 169 |
 | Workflows (`workflows/`) | 27 |
 | Categories | 17 |
 | Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-05-24 |

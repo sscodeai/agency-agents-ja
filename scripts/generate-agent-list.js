@@ -81,10 +81,10 @@ function render() {
   const lines = [
     '# Agent List',
     '',
-    `Total agents: ${counts.total} (⭐ ${counts.japan} japan-original + ${counts.upstream} upstream-translated${counts.unknown ? ` + ${counts.unknown} unclassified` : ''})`,
+    `Total agents: ${counts.total} (⭐ ${counts.japan} japan-original + ${counts.upstream} upstream-aligned${counts.unknown ? ` + ${counts.unknown} unclassified` : ''})`,
     '',
     '⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).',
-    'Other rows = translated/adapted from upstream [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents).',
+    'Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.',
     '',
   ];
 
@@ -93,7 +93,7 @@ function render() {
     const upstreamRows = section.rows.filter(r => r.source !== 'japan-original');
     const total = section.rows.length;
     lines.push(`## ${section.title}`, '');
-    lines.push(`Total: ${total} (⭐ ${japanRows.length} japan-original + ${upstreamRows.length} upstream-translated)`, '');
+    lines.push(`Total: ${total} (⭐ ${japanRows.length} japan-original + ${upstreamRows.length} upstream-aligned)`, '');
     lines.push('| | Name | Description | Path |');
     lines.push('| --- | --- | --- | --- |');
     for (const row of japanRows) {

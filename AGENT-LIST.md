@@ -1,13 +1,13 @@
 # Agent List
 
-Total agents: 266 (⭐ 97 japan-original + 169 upstream-translated)
+Total agents: 266 (⭐ 97 japan-original + 169 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
-Other rows = translated/adapted from upstream [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents).
+Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
 
 ## Academic
 
-Total: 5 (⭐ 0 japan-original + 5 upstream-translated)
+Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ Total: 5 (⭐ 0 japan-original + 5 upstream-translated)
 
 ## Engineering
 
-Total: 49 (⭐ 20 japan-original + 29 upstream-translated)
+Total: 49 (⭐ 20 japan-original + 29 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -75,7 +75,7 @@ Total: 49 (⭐ 20 japan-original + 29 upstream-translated)
 
 ## Project Management
 
-Total: 13 (⭐ 7 japan-original + 6 upstream-translated)
+Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -95,7 +95,7 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-translated)
 
 ## Testing
 
-Total: 14 (⭐ 6 japan-original + 8 upstream-translated)
+Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -116,7 +116,7 @@ Total: 14 (⭐ 6 japan-original + 8 upstream-translated)
 
 ## Product
 
-Total: 7 (⭐ 2 japan-original + 5 upstream-translated)
+Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -130,7 +130,7 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-translated)
 
 ## Marketing
 
-Total: 46 (⭐ 16 japan-original + 30 upstream-translated)
+Total: 46 (⭐ 16 japan-original + 30 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -183,7 +183,7 @@ Total: 46 (⭐ 16 japan-original + 30 upstream-translated)
 
 ## Paid Media
 
-Total: 8 (⭐ 1 japan-original + 7 upstream-translated)
+Total: 8 (⭐ 1 japan-original + 7 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -198,7 +198,7 @@ Total: 8 (⭐ 1 japan-original + 7 upstream-translated)
 
 ## Finance
 
-Total: 9 (⭐ 4 japan-original + 5 upstream-translated)
+Total: 9 (⭐ 4 japan-original + 5 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -214,7 +214,7 @@ Total: 9 (⭐ 4 japan-original + 5 upstream-translated)
 
 ## Game Development
 
-Total: 5 (⭐ 0 japan-original + 5 upstream-translated)
+Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -226,7 +226,7 @@ Total: 5 (⭐ 0 japan-original + 5 upstream-translated)
 
 ## HR
 
-Total: 4 (⭐ 4 japan-original + 0 upstream-translated)
+Total: 4 (⭐ 4 japan-original + 0 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -237,7 +237,7 @@ Total: 4 (⭐ 4 japan-original + 0 upstream-translated)
 
 ## Design
 
-Total: 11 (⭐ 3 japan-original + 8 upstream-translated)
+Total: 11 (⭐ 3 japan-original + 8 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -255,7 +255,7 @@ Total: 11 (⭐ 3 japan-original + 8 upstream-translated)
 
 ## Legal
 
-Total: 6 (⭐ 6 japan-original + 0 upstream-translated)
+Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -268,7 +268,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-translated)
 
 ## Sales
 
-Total: 14 (⭐ 6 japan-original + 8 upstream-translated)
+Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -289,7 +289,7 @@ Total: 14 (⭐ 6 japan-original + 8 upstream-translated)
 
 ## Spatial Computing
 
-Total: 6 (⭐ 0 japan-original + 6 upstream-translated)
+Total: 6 (⭐ 0 japan-original + 6 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -302,7 +302,7 @@ Total: 6 (⭐ 0 japan-original + 6 upstream-translated)
 
 ## Support
 
-Total: 13 (⭐ 7 japan-original + 6 upstream-translated)
+Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -322,7 +322,7 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-translated)
 
 ## Supply Chain
 
-Total: 4 (⭐ 4 japan-original + 0 upstream-translated)
+Total: 4 (⭐ 4 japan-original + 0 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
@@ -333,7 +333,7 @@ Total: 4 (⭐ 4 japan-original + 0 upstream-translated)
 
 ## Specialized
 
-Total: 52 (⭐ 11 japan-original + 41 upstream-translated)
+Total: 52 (⭐ 11 japan-original + 41 upstream-aligned)
 
 | | Name | Description | Path |
 | --- | --- | --- | --- |
