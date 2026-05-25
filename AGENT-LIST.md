@@ -188,13 +188,13 @@ Total: 8 (⭐ 1 japan-original + 7 upstream-aligned)
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本向け検索・SNS広告ストラテジスト | japan-original |  |  | 日本の B2B SaaS、IT service、EC 向けに Google / Yahoo! JAPAN / Meta / X / LinkedIn 広告の設計、運用、改善方針を作る paid media strategist。 | `paid-media/paid-media-japan-search-social-strategist.md` |
-|  | 日本向け広告監査担当 | upstream | skeleton | paid-media/paid-media-auditor.md | 日本向け広告監査担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 広告運用 agent。 | `paid-media/paid-media-auditor.md` |
-|  | 日本向け広告クリエイティブ戦略家 | upstream | skeleton | paid-media/paid-media-creative-strategist.md | 日本向け広告クリエイティブ戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 広告運用 agent。 | `paid-media/paid-media-creative-strategist.md` |
-|  | 日本向け SNS 広告戦略家 | upstream | skeleton | paid-media/paid-media-paid-social-strategist.md | 日本向け SNS 広告戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 広告運用 agent。 | `paid-media/paid-media-paid-social-strategist.md` |
-|  | 日本向け PPC 戦略家 | upstream | skeleton | paid-media/paid-media-ppc-strategist.md | 日本向け PPC 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 広告運用 agent。 | `paid-media/paid-media-ppc-strategist.md` |
-|  | 日本向けプログラマティック広告バイヤー | upstream | skeleton | paid-media/paid-media-programmatic-buyer.md | 日本向けプログラマティック広告バイヤー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 広告運用 agent。 | `paid-media/paid-media-programmatic-buyer.md` |
-|  | 日本向け検索クエリアナリスト | upstream | skeleton | paid-media/paid-media-search-query-analyst.md | 日本向け検索クエリアナリスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 広告運用 agent。 | `paid-media/paid-media-search-query-analyst.md` |
-|  | 日本向け広告計測専門家 | upstream | skeleton | paid-media/paid-media-tracking-specialist.md | 日本向け広告計測専門家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 広告運用 agent。 | `paid-media/paid-media-tracking-specialist.md` |
+|  | 日本向け広告監査担当 | upstream | skeleton | Paid Media Auditor | Google、Yahoo! JAPAN、Meta、X、LinkedIn などの広告運用を、日本市場の規制・計測・予算・成果観点で監査する agent。 | `paid-media/paid-media-auditor.md` |
+|  | 日本向け広告クリエイティブ戦略家 | upstream | skeleton | Creative Strategist | 日本の媒体、商材、審査、顧客心理に合わせて広告クリエイティブ仮説、訴求軸、検証計画を設計する agent。 | `paid-media/paid-media-creative-strategist.md` |
+|  | 日本向け SNS 広告戦略家 | upstream | skeleton | Paid Social Strategist | Meta、X、TikTok、LINE、LinkedIn など日本で使われる SNS 広告の設計・改善・検証方針を作る agent。 | `paid-media/paid-media-paid-social-strategist.md` |
+|  | 日本向け PPC 戦略家 | upstream | skeleton | PPC Strategist | Google 広告と Yahoo! 広告を中心に、日本語検索行動、予算、CV 品質を踏まえた PPC 戦略を作る agent。 | `paid-media/paid-media-ppc-strategist.md` |
+|  | 日本向けプログラマティック広告バイヤー | upstream | skeleton | Programmatic Buyer | 日本の DSP、PMP、動画、ディスプレイ、ブランドセーフティを踏まえて programmatic buying を設計・改善する agent。 | `paid-media/paid-media-programmatic-buyer.md` |
+|  | 日本向け検索クエリアナリスト | upstream | skeleton | Search Query Analyst | 日本語の検索語句、表記ゆれ、購買意図を分析し、広告運用の除外・拡張・LP 改善につなげる agent。 | `paid-media/paid-media-search-query-analyst.md` |
+|  | 日本向け広告計測専門家 | upstream | skeleton | Tracking Specialist | GA4、GTM、媒体タグ、CAPI、オフライン CV を、日本の広告運用・個人情報・CRM 連携に合わせて設計する agent。 | `paid-media/paid-media-tracking-specialist.md` |
 
 ## Finance
 
@@ -293,14 +293,14 @@ Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
 | ⭐ | 日本向け RFP 回答ライター | japan-original |  |  | 日本企業・自治体向け RFP、提案書、見積前提、体制、スケジュール、非機能、保守運用回答を作る sales / presales agent。 | `sales/sales-japanese-rfp-response-writer.md` |
 | ⭐ | 日本向けセールスエンジニア | japan-original |  |  | 日本の B2B SaaS、SI、受託開発、IT service の商談で技術要件、demo、PoC、RFP 質問、提案 feasibility を支援する sales engineer。 | `sales/sales-japanese-sales-engineer.md` |
 | ⭐ | 日本向けセールスオペレーションアナリスト | japan-original |  |  | 日本の B2B SaaS / IT service で pipeline、forecast、CRM hygiene、商談 stage、営業 KPI、見積 / 稟議 process を分析する sales operations analyst。 | `sales/sales-japanese-sales-operations-analyst.md` |
-|  | 日本向け Account Strategist | upstream | skeleton | sales/sales-account-strategist.md | 日本向け Account Strategist として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-account-strategist.md` |
-|  | 日本向けセールスコーチ | upstream | skeleton | sales/sales-coach.md | 日本向けセールスコーチ として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-coach.md` |
-|  | 日本向け商談戦略家 | upstream | skeleton | sales/sales-deal-strategist.md | 日本向け商談戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-deal-strategist.md` |
-|  | 日本向けディスカバリーコーチ | upstream | skeleton | sales/sales-discovery-coach.md | 日本向けディスカバリーコーチ として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-discovery-coach.md` |
-|  | 日本向け Sales Engineer | upstream | skeleton | sales/sales-engineer.md | 日本向け Sales Engineer として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-engineer.md` |
-|  | 日本向けアウトバウンド戦略家 | upstream | skeleton | sales/sales-outbound-strategist.md | 日本向けアウトバウンド戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-outbound-strategist.md` |
-|  | 日本向けパイプライン分析担当 | upstream | skeleton | sales/sales-pipeline-analyst.md | 日本向けパイプライン分析担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-pipeline-analyst.md` |
-|  | 日本向け提案戦略家 | upstream | skeleton | sales/sales-proposal-strategist.md | 日本向け提案戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む セールス agent。 | `sales/sales-proposal-strategist.md` |
+|  | 日本向け Account Strategist | upstream | skeleton | Account Strategist | 日本の B2B SaaS、SI、IT サービスで既存顧客の account plan、更新、拡張提案、関係者 mapping を設計する agent。 | `sales/sales-account-strategist.md` |
+|  | 日本向けセールスコーチ | upstream | skeleton | Sales Coach | 日本の B2B 営業現場に合わせて商談準備、ヒアリング、提案、クロージング、振り返りを支援する coaching agent。 | `sales/sales-coach.md` |
+|  | 日本向け商談戦略家 | upstream | skeleton | Deal Strategist | 日本の B2B 商談で決裁構造、競合、稟議、価格交渉、導入リスクを整理し受注戦略を作る agent。 | `sales/sales-deal-strategist.md` |
+|  | 日本向けディスカバリーコーチ | upstream | skeleton | Discovery Coach | 日本の B2B 商談で顧客課題、現状業務、決裁条件、導入障壁を深掘りする discovery を支援する agent。 | `sales/sales-discovery-coach.md` |
+|  | 日本向け Sales Engineer | upstream | skeleton | Sales Engineer | 日本の B2B SaaS、SI、IT サービス商談で技術要件、demo、PoC、RFP、非機能、運用論点を支援する presales agent。 | `sales/sales-engineer.md` |
+|  | 日本向けアウトバウンド戦略家 | upstream | skeleton | Outbound Strategist | 日本の B2B 市場でターゲット企業選定、文面、架電、紹介、イベント follow-up を設計する outbound sales agent。 | `sales/sales-outbound-strategist.md` |
+|  | 日本向けパイプライン分析担当 | upstream | skeleton | Pipeline Analyst | 日本の B2B 営業で CRM、forecast、商談 stage、受注確度、更新・拡張 pipeline を分析する RevOps 支援 agent。 | `sales/sales-pipeline-analyst.md` |
+|  | 日本向け提案戦略家 | upstream | skeleton | Proposal Strategist | 日本の B2B SaaS、SI、受託開発、IT サービス向けに稟議・RFP・比較検討に強い提案構成を設計する agent。 | `sales/sales-proposal-strategist.md` |
 
 ## Spatial Computing
 

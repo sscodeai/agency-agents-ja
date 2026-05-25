@@ -132,13 +132,13 @@ Adapted: 0
 | X / Threads Japan 戦略家 | marketing/marketing-weibo-strategist.md | `marketing/marketing-weibo-strategist.md` |
 | Instagram / Lemon8 戦略家 | marketing/marketing-xiaohongshu-specialist.md | `marketing/marketing-xiaohongshu-specialist.md` |
 | note / Qiita / Zenn 戦略家 | marketing/marketing-zhihu-strategist.md | `marketing/marketing-zhihu-strategist.md` |
-| 日本向け広告監査担当 | paid-media/paid-media-auditor.md | `paid-media/paid-media-auditor.md` |
-| 日本向け広告クリエイティブ戦略家 | paid-media/paid-media-creative-strategist.md | `paid-media/paid-media-creative-strategist.md` |
-| 日本向け SNS 広告戦略家 | paid-media/paid-media-paid-social-strategist.md | `paid-media/paid-media-paid-social-strategist.md` |
-| 日本向け PPC 戦略家 | paid-media/paid-media-ppc-strategist.md | `paid-media/paid-media-ppc-strategist.md` |
-| 日本向けプログラマティック広告バイヤー | paid-media/paid-media-programmatic-buyer.md | `paid-media/paid-media-programmatic-buyer.md` |
-| 日本向け検索クエリアナリスト | paid-media/paid-media-search-query-analyst.md | `paid-media/paid-media-search-query-analyst.md` |
-| 日本向け広告計測専門家 | paid-media/paid-media-tracking-specialist.md | `paid-media/paid-media-tracking-specialist.md` |
+| 日本向け広告監査担当 | Paid Media Auditor | `paid-media/paid-media-auditor.md` |
+| 日本向け広告クリエイティブ戦略家 | Creative Strategist | `paid-media/paid-media-creative-strategist.md` |
+| 日本向け SNS 広告戦略家 | Paid Social Strategist | `paid-media/paid-media-paid-social-strategist.md` |
+| 日本向け PPC 戦略家 | PPC Strategist | `paid-media/paid-media-ppc-strategist.md` |
+| 日本向けプログラマティック広告バイヤー | Programmatic Buyer | `paid-media/paid-media-programmatic-buyer.md` |
+| 日本向け検索クエリアナリスト | Search Query Analyst | `paid-media/paid-media-search-query-analyst.md` |
+| 日本向け広告計測専門家 | Tracking Specialist | `paid-media/paid-media-tracking-specialist.md` |
 | 日本向け行動ナッジ設計者 | Behavioral Nudge Engine | `product/product-behavioral-nudge-engine.md` |
 | 日本向けフィードバック統合担当 | Feedback Synthesizer | `product/product-feedback-synthesizer.md` |
 | 日本向け Product Manager | Product Manager | `product/product-manager.md` |
@@ -150,14 +150,14 @@ Adapted: 0
 | 日本向けスタジオ運営担当 | Studio Operations | `project-management/project-management-studio-operations.md` |
 | 日本向けスタジオプロデューサー | Studio Producer | `project-management/project-management-studio-producer.md` |
 | 日本向けシニアプロジェクトマネージャー | Senior Project Manager | `project-management/project-manager-senior.md` |
-| 日本向け Account Strategist | sales/sales-account-strategist.md | `sales/sales-account-strategist.md` |
-| 日本向けセールスコーチ | sales/sales-coach.md | `sales/sales-coach.md` |
-| 日本向け商談戦略家 | sales/sales-deal-strategist.md | `sales/sales-deal-strategist.md` |
-| 日本向けディスカバリーコーチ | sales/sales-discovery-coach.md | `sales/sales-discovery-coach.md` |
-| 日本向け Sales Engineer | sales/sales-engineer.md | `sales/sales-engineer.md` |
-| 日本向けアウトバウンド戦略家 | sales/sales-outbound-strategist.md | `sales/sales-outbound-strategist.md` |
-| 日本向けパイプライン分析担当 | sales/sales-pipeline-analyst.md | `sales/sales-pipeline-analyst.md` |
-| 日本向け提案戦略家 | sales/sales-proposal-strategist.md | `sales/sales-proposal-strategist.md` |
+| 日本向け Account Strategist | Account Strategist | `sales/sales-account-strategist.md` |
+| 日本向けセールスコーチ | Sales Coach | `sales/sales-coach.md` |
+| 日本向け商談戦略家 | Deal Strategist | `sales/sales-deal-strategist.md` |
+| 日本向けディスカバリーコーチ | Discovery Coach | `sales/sales-discovery-coach.md` |
+| 日本向け Sales Engineer | Sales Engineer | `sales/sales-engineer.md` |
+| 日本向けアウトバウンド戦略家 | Outbound Strategist | `sales/sales-outbound-strategist.md` |
+| 日本向けパイプライン分析担当 | Pipeline Analyst | `sales/sales-pipeline-analyst.md` |
+| 日本向け提案戦略家 | Proposal Strategist | `sales/sales-proposal-strategist.md` |
 | 日本向け macOS Spatial / Metal エンジニア | spatial-computing/macos-spatial-metal-engineer.md | `spatial-computing/macos-spatial-metal-engineer.md` |
 | 日本向けターミナル連携専門家 | spatial-computing/terminal-integration-specialist.md | `spatial-computing/terminal-integration-specialist.md` |
 | 日本向け visionOS 空間エンジニア | spatial-computing/visionos-spatial-engineer.md | `spatial-computing/visionos-spatial-engineer.md` |
