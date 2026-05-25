@@ -363,44 +363,44 @@ Total: 52 (⭐ 11 japan-original + 41 upstream-aligned)
 | ⭐ | 日本 IT プロンプトエンジニア | japan-original |  |  | 日本の IT 開発、業務運用、CS、営業、社内 AI 活用向けに prompt、評価観点、ガードレール、再利用 template を設計する prompt engineer。 | `specialized/specialized-japanese-prompt-engineer.md` |
 | ⭐ | 日本 IT リスクアセッサー | japan-original |  |  | 日本の IT project、SaaS、SI、業務委託、AI 活用における delivery、security、legal、operation、顧客影響 risk を整理する risk assessor。 | `specialized/specialized-japanese-risk-assessor.md` |
 | ⭐ | 品質管理・カイゼンアドバイザー | japan-original |  |  | 日本の製造・業務現場で品質問題、なぜなぜ分析、再発防止、標準化、カイゼン活動を支援する advisor。 | `specialized/specialized-quality-control-kaizen-advisor.md` |
-|  | 日本向け買掛金処理エージェント | upstream | skeleton | Accounts Payable Agent | 日本企業の請求書、発注書、検収、支払条件、消費税、承認、証憑管理を整理する accounts payable agent。 | `specialized/accounts-payable-agent.md` |
-|  | 日本向け AI エージェント ID / Trust 設計者 | upstream | skeleton | Agentic Identity & Trust | AI agent の本人性、権限、監査ログ、委任、停止条件を日本企業のガバナンスに合わせて設計する agent。 | `specialized/agentic-identity-trust.md` |
-|  | 日本向けエージェント編成オーケストレーター | upstream | skeleton | Agents Orchestrator | 複数 AI agent の役割分担、handoff、承認、監査、失敗時 fallback を日本の業務運用向けに設計する agent。 | `specialized/agents-orchestrator.md` |
-|  | 日本向け自動化ガバナンスアーキテクト | upstream | skeleton | Automation Governance Architect | RPA、workflow automation、AI agent、batch の権限、監査、例外処理、運用責任を設計する governance agent。 | `specialized/automation-governance-architect.md` |
-|  | 日本向けブロックチェーンセキュリティ監査者 | upstream | skeleton | Blockchain Security Auditor | Smart contract、wallet、key 管理、bridge、token operation を日本向けに監査する security agent。 | `specialized/blockchain-security-auditor.md` |
-|  | 日本向けコンプライアンス監査者 | upstream | skeleton | Compliance Auditor | 日本企業の法令、社内規程、委託先、個人情報、セキュリティ、運用証跡を確認する compliance audit agent。 | `specialized/compliance-auditor.md` |
-|  | 日本向け企業研修デザイナー | upstream | skeleton | Corporate Training Designer | 日本企業向けに IT、AI、セキュリティ、営業、CS、管理職研修の設計と教材化を行う training design agent。 | `specialized/corporate-training-designer.md` |
-|  | 日本向けカスタマーサービス担当 | upstream | skeleton | Customer Service | 日本の B2B / B2C サポートで問い合わせ分類、返信、SLA、エスカレーション、FAQ 改善を行う customer service agent。 | `specialized/customer-service.md` |
-|  | 日本向けデータ統合エージェント | upstream | skeleton | Data Consolidation Agent | CRM、SFA、会計、EC、CSV、Excel、DWH のデータを日本業務向けに統合・整形する agent。 | `specialized/data-consolidation-agent.md` |
-|  | 日本向け公共 DX プリセールスコンサルタント | upstream | skeleton | Government Digital Presales Consultant | 自治体・公共機関向け DX 提案で調達、要件、セキュリティ、アクセシビリティ、運用保守を整理する agent。 | `specialized/government-digital-presales-consultant.md` |
-|  | 日本向け医療カスタマーサービス担当 | upstream | skeleton | Healthcare Customer Service | 医療・ヘルスケア領域の問い合わせを、個人情報、医療広告、緊急性、専門家確認に配慮して整理する agent。 | `specialized/healthcare-customer-service.md` |
-|  | 日本向け医療マーケティングコンプライアンス担当 | upstream | skeleton | Healthcare Marketing Compliance | 医療・ヘルスケア広告、LP、SNS、導入事例を医療広告ガイドライン、薬機法、個人情報観点で確認する agent。 | `specialized/healthcare-marketing-compliance.md` |
-|  | 日本向け宿泊・観光ゲストサービス担当 | upstream | skeleton | Hospitality Guest Services | ホテル、旅館、観光施設の問い合わせ、予約、案内、多言語対応、クレーム対応を支援する guest services agent。 | `specialized/hospitality-guest-services.md` |
-|  | 日本向け HR オンボーディング担当 | upstream | skeleton | HR Onboarding | 日本企業の入社手続き、労務、IT 権限、研修、配属、試用期間 follow-up を整理する HR onboarding agent。 | `specialized/hr-onboarding.md` |
-|  | 日本向け ID グラフ運用者 | upstream | skeleton | Identity Graph Operator | 顧客 ID、会員 ID、広告 ID、CRM、CDP の名寄せ、同意、権限、削除を管理する identity graph agent。 | `specialized/identity-graph-operator.md` |
-|  | 日本向け言語翻訳者 | upstream | skeleton | Language Translator | 技術文書、営業資料、サポート文、契約周辺文書を日本市場向けに自然で実務的な翻訳へ整える agent。 | `specialized/language-translator.md` |
-|  | 日本向け法律事務請求・時間管理担当 | upstream | skeleton | Legal Billing & Time Tracking | 法律事務所・法務部の作業時間、請求、案件、証跡、顧客説明を整理する legal billing agent。 | `specialized/legal-billing-time-tracking.md` |
-|  | 日本向け法律相談受付担当 | upstream | skeleton | Legal Client Intake | 法律相談の初回受付で事実関係、当事者、期限、利益相反、必要資料を整理する intake agent。 | `specialized/legal-client-intake.md` |
-|  | 日本向け法務文書レビュー担当 | upstream | skeleton | Legal Document Review | 契約書、規約、NDA、業務委託、DPA、利用規約の確認事項と修正論点を整理する legal review agent。 | `specialized/legal-document-review.md` |
-|  | 日本向け融資担当アシスタント | upstream | skeleton | Loan Officer Assistant | 日本の融資審査で申込情報、本人確認、収入、担保、返済能力、必要書類を整理する finance support agent。 | `specialized/loan-officer-assistant.md` |
-|  | 日本向け LSP インデックスエンジニア | upstream | skeleton | LSP Index Engineer | 大規模 codebase の LSP、symbol index、検索、参照、AI coding 支援向け index を設計する agent。 | `specialized/lsp-index-engineer.md` |
-|  | 日本向け不動産売買サポート担当 | upstream | skeleton | Real Estate Buyer/Seller | 日本の不動産売買で物件情報、希望条件、資金計画、内見、重要事項、契約前確認を整理する agent。 | `specialized/real-estate-buyer-seller.md` |
-|  | 日本向け採用専門家 | upstream | skeleton | Recruitment Specialist | 日本の採用活動で求人票、候補者対応、面接設計、評価、オファー、入社 follow-up を支援する recruitment agent。 | `specialized/recruitment-specialist.md` |
-|  | 日本向けレポート配信エージェント | upstream | skeleton | Report Distribution Agent | 経営、営業、CS、運用、監査向け report の配信先、権限、形式、頻度、証跡を管理する agent。 | `specialized/report-distribution-agent.md` |
-|  | 日本向け小売返品対応担当 | upstream | skeleton | Retail Customer Returns | 日本の EC / 小売で返品、交換、返金、初期不良、配送事故、規約確認を支援する customer operations agent。 | `specialized/retail-customer-returns.md` |
-|  | 日本向け Sales Data Extraction Agent | upstream | skeleton | Sales Data Extraction Agent | 商談メモ、メール、議事録、名刺、CRM から日本の営業活動に必要な情報を抽出・整形する agent。 | `specialized/sales-data-extraction-agent.md` |
-|  | 日本向け Sales Outreach | upstream | skeleton | Sales Outreach | 日本の B2B 営業向けに個社仮説、メール、電話、紹介、イベント follow-up の outreach を設計する agent。 | `specialized/sales-outreach.md` |
-|  | 日本向け Chief of Staff | upstream | skeleton | Chief of Staff | 日本企業の経営・事業責任者を支援し、会議、意思決定、横断課題、KPI、実行管理を整理する agent。 | `specialized/specialized-chief-of-staff.md` |
-|  | 日本向け土木エンジニア | upstream | skeleton | Civil Engineer | 日本の土木・建設 project で設計条件、施工、維持管理、安全、発注者説明を整理する civil engineering agent。 | `specialized/specialized-civil-engineer.md` |
-|  | 日本向け文化インテリジェンス戦略家 | upstream | skeleton | Cultural Intelligence Strategist | 日本市場・海外市場間の文化、商習慣、表現、交渉、ローカライズリスクを読み解く strategist agent。 | `specialized/specialized-cultural-intelligence-strategist.md` |
-|  | 日本向けデベロッパーアドボケイト | upstream | skeleton | Developer Advocate | 日本向けデベロッパーアドボケイト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 専門業務 agent。 | `specialized/specialized-developer-advocate.md` |
-|  | 日本向け文書生成担当 | upstream | skeleton | Document Generator | 稟議書、議事録、提案書、報告書、手順書、FAQ など日本企業で使う文書を構造化して生成する agent。 | `specialized/specialized-document-generator.md` |
-|  | 日本向けフランス市場コンサルティング担当 | upstream | skeleton | French Consulting Market | 日本企業のフランス市場進出、現地 partner、商習慣、言語、規制、提案資料を支援する market consulting agent。 | `specialized/specialized-french-consulting-market.md` |
-|  | 日本向け韓国ビジネスナビゲーター | upstream | skeleton | Korean Business Navigator | 日本企業と韓国市場・韓国企業の商談、提携、ローカライズ、文化差、資料作成を支援する agent。 | `specialized/specialized-korean-business-navigator.md` |
+|  | 日本向け買掛金処理エージェント | upstream | adapted | Accounts Payable Agent | 日本企業の請求書、発注書、検収、支払条件、消費税、承認、証憑管理を整理する accounts payable agent。 | `specialized/accounts-payable-agent.md` |
+|  | 日本向け AI エージェント ID / Trust 設計者 | upstream | adapted | Agentic Identity & Trust | AI agent の本人性、権限、監査ログ、委任、停止条件を日本企業のガバナンスに合わせて設計する agent。 | `specialized/agentic-identity-trust.md` |
+|  | 日本向けエージェント編成オーケストレーター | upstream | adapted | Agents Orchestrator | 複数 AI agent の役割分担、handoff、承認、監査、失敗時 fallback を日本の業務運用向けに設計する agent。 | `specialized/agents-orchestrator.md` |
+|  | 日本向け自動化ガバナンスアーキテクト | upstream | adapted | Automation Governance Architect | RPA、workflow automation、AI agent、batch の権限、監査、例外処理、運用責任を設計する governance agent。 | `specialized/automation-governance-architect.md` |
+|  | 日本向けブロックチェーンセキュリティ監査者 | upstream | adapted | Blockchain Security Auditor | Smart contract、wallet、key 管理、bridge、token operation を日本向けに監査する security agent。 | `specialized/blockchain-security-auditor.md` |
+|  | 日本向けコンプライアンス監査者 | upstream | adapted | Compliance Auditor | 日本企業の法令、社内規程、委託先、個人情報、セキュリティ、運用証跡を確認する compliance audit agent。 | `specialized/compliance-auditor.md` |
+|  | 日本向け企業研修デザイナー | upstream | adapted | Corporate Training Designer | 日本企業向けに IT、AI、セキュリティ、営業、CS、管理職研修の設計と教材化を行う training design agent。 | `specialized/corporate-training-designer.md` |
+|  | 日本向けカスタマーサービス担当 | upstream | adapted | Customer Service | 日本の B2B / B2C サポートで問い合わせ分類、返信、SLA、エスカレーション、FAQ 改善を行う customer service agent。 | `specialized/customer-service.md` |
+|  | 日本向けデータ統合エージェント | upstream | adapted | Data Consolidation Agent | CRM、SFA、会計、EC、CSV、Excel、DWH のデータを日本業務向けに統合・整形する agent。 | `specialized/data-consolidation-agent.md` |
+|  | 日本向け公共 DX プリセールスコンサルタント | upstream | adapted | Government Digital Presales Consultant | 自治体・公共機関向け DX 提案で調達、要件、セキュリティ、アクセシビリティ、運用保守を整理する agent。 | `specialized/government-digital-presales-consultant.md` |
+|  | 日本向け医療カスタマーサービス担当 | upstream | adapted | Healthcare Customer Service | 医療・ヘルスケア領域の問い合わせを、個人情報、医療広告、緊急性、専門家確認に配慮して整理する agent。 | `specialized/healthcare-customer-service.md` |
+|  | 日本向け医療マーケティングコンプライアンス担当 | upstream | adapted | Healthcare Marketing Compliance | 医療・ヘルスケア広告、LP、SNS、導入事例を医療広告ガイドライン、薬機法、個人情報観点で確認する agent。 | `specialized/healthcare-marketing-compliance.md` |
+|  | 日本向け宿泊・観光ゲストサービス担当 | upstream | adapted | Hospitality Guest Services | ホテル、旅館、観光施設の問い合わせ、予約、案内、多言語対応、クレーム対応を支援する guest services agent。 | `specialized/hospitality-guest-services.md` |
+|  | 日本向け HR オンボーディング担当 | upstream | adapted | HR Onboarding | 日本企業の入社手続き、労務、IT 権限、研修、配属、試用期間 follow-up を整理する HR onboarding agent。 | `specialized/hr-onboarding.md` |
+|  | 日本向け ID グラフ運用者 | upstream | adapted | Identity Graph Operator | 顧客 ID、会員 ID、広告 ID、CRM、CDP の名寄せ、同意、権限、削除を管理する identity graph agent。 | `specialized/identity-graph-operator.md` |
+|  | 日本向け言語翻訳者 | upstream | adapted | Language Translator | 技術文書、営業資料、サポート文、契約周辺文書を日本市場向けに自然で実務的な翻訳へ整える agent。 | `specialized/language-translator.md` |
+|  | 日本向け法律事務請求・時間管理担当 | upstream | adapted | Legal Billing & Time Tracking | 法律事務所・法務部の作業時間、請求、案件、証跡、顧客説明を整理する legal billing agent。 | `specialized/legal-billing-time-tracking.md` |
+|  | 日本向け法律相談受付担当 | upstream | adapted | Legal Client Intake | 法律相談の初回受付で事実関係、当事者、期限、利益相反、必要資料を整理する intake agent。 | `specialized/legal-client-intake.md` |
+|  | 日本向け法務文書レビュー担当 | upstream | adapted | Legal Document Review | 契約書、規約、NDA、業務委託、DPA、利用規約の確認事項と修正論点を整理する legal review agent。 | `specialized/legal-document-review.md` |
+|  | 日本向け融資担当アシスタント | upstream | adapted | Loan Officer Assistant | 日本の融資審査で申込情報、本人確認、収入、担保、返済能力、必要書類を整理する finance support agent。 | `specialized/loan-officer-assistant.md` |
+|  | 日本向け LSP インデックスエンジニア | upstream | adapted | LSP Index Engineer | 大規模 codebase の LSP、symbol index、検索、参照、AI coding 支援向け index を設計する agent。 | `specialized/lsp-index-engineer.md` |
+|  | 日本向け不動産売買サポート担当 | upstream | adapted | Real Estate Buyer/Seller | 日本の不動産売買で物件情報、希望条件、資金計画、内見、重要事項、契約前確認を整理する agent。 | `specialized/real-estate-buyer-seller.md` |
+|  | 日本向け採用専門家 | upstream | adapted | Recruitment Specialist | 日本の採用活動で求人票、候補者対応、面接設計、評価、オファー、入社 follow-up を支援する recruitment agent。 | `specialized/recruitment-specialist.md` |
+|  | 日本向けレポート配信エージェント | upstream | adapted | Report Distribution Agent | 経営、営業、CS、運用、監査向け report の配信先、権限、形式、頻度、証跡を管理する agent。 | `specialized/report-distribution-agent.md` |
+|  | 日本向け小売返品対応担当 | upstream | adapted | Retail Customer Returns | 日本の EC / 小売で返品、交換、返金、初期不良、配送事故、規約確認を支援する customer operations agent。 | `specialized/retail-customer-returns.md` |
+|  | 日本向け Sales Data Extraction Agent | upstream | adapted | Sales Data Extraction Agent | 商談メモ、メール、議事録、名刺、CRM から日本の営業活動に必要な情報を抽出・整形する agent。 | `specialized/sales-data-extraction-agent.md` |
+|  | 日本向け Sales Outreach | upstream | adapted | Sales Outreach | 日本の B2B 営業向けに個社仮説、メール、電話、紹介、イベント follow-up の outreach を設計する agent。 | `specialized/sales-outreach.md` |
+|  | 日本向け Chief of Staff | upstream | adapted | Chief of Staff | 日本企業の経営・事業責任者を支援し、会議、意思決定、横断課題、KPI、実行管理を整理する agent。 | `specialized/specialized-chief-of-staff.md` |
+|  | 日本向け土木エンジニア | upstream | adapted | Civil Engineer | 日本の土木・建設 project で設計条件、施工、維持管理、安全、発注者説明を整理する civil engineering agent。 | `specialized/specialized-civil-engineer.md` |
+|  | 日本向け文化インテリジェンス戦略家 | upstream | adapted | Cultural Intelligence Strategist | 日本市場・海外市場間の文化、商習慣、表現、交渉、ローカライズリスクを読み解く strategist agent。 | `specialized/specialized-cultural-intelligence-strategist.md` |
+|  | 日本向けデベロッパーアドボケイト | upstream | adapted | Developer Advocate | 日本向けデベロッパーアドボケイト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 専門業務 agent。 | `specialized/specialized-developer-advocate.md` |
+|  | 日本向け文書生成担当 | upstream | adapted | Document Generator | 稟議書、議事録、提案書、報告書、手順書、FAQ など日本企業で使う文書を構造化して生成する agent。 | `specialized/specialized-document-generator.md` |
+|  | 日本向けフランス市場コンサルティング担当 | upstream | adapted | French Consulting Market | 日本企業のフランス市場進出、現地 partner、商習慣、言語、規制、提案資料を支援する market consulting agent。 | `specialized/specialized-french-consulting-market.md` |
+|  | 日本向け韓国ビジネスナビゲーター | upstream | adapted | Korean Business Navigator | 日本企業と韓国市場・韓国企業の商談、提携、ローカライズ、文化差、資料作成を支援する agent。 | `specialized/specialized-korean-business-navigator.md` |
 |  | 日本向け MCP ビルダー | upstream | adapted | MCP Builder | 日本企業の社内 tools、SaaS、DB、業務 API を安全に AI へ接続する MCP server / tool builder agent。 | `specialized/specialized-mcp-builder.md` |
 |  | 日本向けモデル QA 担当 | upstream | adapted | Model QA | 日本語 AI model / RAG / agent の評価、回帰試験、安全性、業務適合性を検証する QA agent。 | `specialized/specialized-model-qa.md` |
-|  | 日本向け Salesforce アーキテクト | upstream | skeleton | Salesforce Architect | 日本企業向けに Salesforce のデータ model、権限、Flow、外部連携、営業・CS 運用を設計する agent。 | `specialized/specialized-salesforce-architect.md` |
-|  | 日本向けワークフローアーキテクト | upstream | skeleton | Workflow Architect | 日本企業の申請、承認、通知、例外処理、監査証跡を含む業務 workflow を設計する agent。 | `specialized/specialized-workflow-architect.md` |
-|  | 日本向け留学アドバイザー | upstream | skeleton | Study Abroad Advisor | 日本からの留学希望者向けに国、学校、費用、ビザ、語学、生活準備、申請 schedule を整理する agent。 | `specialized/study-abroad-advisor.md` |
-|  | 日本向けサプライチェーン戦略家 | upstream | skeleton | Supply Chain Strategist | 日本の製造・小売・EC 向けに調達、生産、在庫、物流、BCP、リードタイム改善を設計する agent。 | `specialized/supply-chain-strategist.md` |
-|  | 日本向けゼロ知識証明スチュワード | upstream | skeleton | ZK Steward | ZK proof、privacy-preserving identity、検証、鍵管理、利用者説明を日本向けに整理する cryptography agent。 | `specialized/zk-steward.md` |
+|  | 日本向け Salesforce アーキテクト | upstream | adapted | Salesforce Architect | 日本企業向けに Salesforce のデータ model、権限、Flow、外部連携、営業・CS 運用を設計する agent。 | `specialized/specialized-salesforce-architect.md` |
+|  | 日本向けワークフローアーキテクト | upstream | adapted | Workflow Architect | 日本企業の申請、承認、通知、例外処理、監査証跡を含む業務 workflow を設計する agent。 | `specialized/specialized-workflow-architect.md` |
+|  | 日本向け留学アドバイザー | upstream | adapted | Study Abroad Advisor | 日本からの留学希望者向けに国、学校、費用、ビザ、語学、生活準備、申請 schedule を整理する agent。 | `specialized/study-abroad-advisor.md` |
+|  | 日本向けサプライチェーン戦略家 | upstream | adapted | Supply Chain Strategist | 日本の製造・小売・EC 向けに調達、生産、在庫、物流、BCP、リードタイム改善を設計する agent。 | `specialized/supply-chain-strategist.md` |
+|  | 日本向けゼロ知識証明スチュワード | upstream | adapted | ZK Steward | ZK proof、privacy-preserving identity、検証、鍵管理、利用者説明を日本向けに整理する cryptography agent。 | `specialized/zk-steward.md` |
