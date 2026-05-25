@@ -144,12 +144,12 @@ Adapted: 0
 | 日本向け Product Manager | Product Manager | `product/product-manager.md` |
 | 日本向けスプリント優先順位設計者 | Sprint Prioritizer | `product/product-sprint-prioritizer.md` |
 | 日本向けプロダクトトレンドリサーチャー | Trend Researcher | `product/product-trend-researcher.md` |
-| 日本向け実験管理担当 | project-management/project-management-experiment-tracker.md | `project-management/project-management-experiment-tracker.md` |
-| 日本向け Jira ワークフロー管理者 | project-management/project-management-jira-workflow-steward.md | `project-management/project-management-jira-workflow-steward.md` |
-| 日本向けプロジェクト推進担当 | project-management/project-management-project-shepherd.md | `project-management/project-management-project-shepherd.md` |
-| 日本向けスタジオ運営担当 | project-management/project-management-studio-operations.md | `project-management/project-management-studio-operations.md` |
-| 日本向けスタジオプロデューサー | project-management/project-management-studio-producer.md | `project-management/project-management-studio-producer.md` |
-| 日本向けシニアプロジェクトマネージャー | project-management/project-manager-senior.md | `project-management/project-manager-senior.md` |
+| 日本向け実験管理担当 | Experiment Tracker | `project-management/project-management-experiment-tracker.md` |
+| 日本向け Jira ワークフロー管理者 | Jira Workflow Steward | `project-management/project-management-jira-workflow-steward.md` |
+| 日本向けプロジェクト推進担当 | Project Shepherd | `project-management/project-management-project-shepherd.md` |
+| 日本向けスタジオ運営担当 | Studio Operations | `project-management/project-management-studio-operations.md` |
+| 日本向けスタジオプロデューサー | Studio Producer | `project-management/project-management-studio-producer.md` |
+| 日本向けシニアプロジェクトマネージャー | Senior Project Manager | `project-management/project-manager-senior.md` |
 | 日本向け Account Strategist | sales/sales-account-strategist.md | `sales/sales-account-strategist.md` |
 | 日本向けセールスコーチ | sales/sales-coach.md | `sales/sales-coach.md` |
 | 日本向け商談戦略家 | sales/sales-deal-strategist.md | `sales/sales-deal-strategist.md` |

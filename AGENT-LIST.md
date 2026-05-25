@@ -86,12 +86,12 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 | ⭐ | 日本 IT プロジェクトマネージャー | japan-original |  |  | 日本の IT / SI / 受託開発で WBS、課題管理、進捗会議、議事録、リスク、検収を管理する PM。 | `project-management/project-management-japanese-pm.md` |
 | ⭐ | 日本向けリリースマネージャー | japan-original |  |  | 日本の IT / SaaS / 受託開発で release 判定、作業手順、切り戻し、顧客通知、検収 evidence、関係者承認を管理する release manager。 | `project-management/project-management-japanese-release-manager.md` |
 | ⭐ | 日本向け上流追従コーディネーター | japan-original |  |  | 上流 OSS の更新を watch し、fork 側の追従計画を立てる project coordinator。upstream commit / release の分類（feature / breaking / docs / security）、fork 独自改修との衝突確認、翻訳追従、release note への反映、追従 PR の Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを担当する。 | `project-management/project-management-japanese-upstream-sync-coordinator.md` |
-|  | 日本向け実験管理担当 | upstream | skeleton | project-management/project-management-experiment-tracker.md | 日本向け実験管理担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロジェクト管理 agent。 | `project-management/project-management-experiment-tracker.md` |
-|  | 日本向け Jira ワークフロー管理者 | upstream | skeleton | project-management/project-management-jira-workflow-steward.md | 日本向け Jira ワークフロー管理者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロジェクト管理 agent。 | `project-management/project-management-jira-workflow-steward.md` |
-|  | 日本向けプロジェクト推進担当 | upstream | skeleton | project-management/project-management-project-shepherd.md | 日本向けプロジェクト推進担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロジェクト管理 agent。 | `project-management/project-management-project-shepherd.md` |
-|  | 日本向けスタジオ運営担当 | upstream | skeleton | project-management/project-management-studio-operations.md | 日本向けスタジオ運営担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロジェクト管理 agent。 | `project-management/project-management-studio-operations.md` |
-|  | 日本向けスタジオプロデューサー | upstream | skeleton | project-management/project-management-studio-producer.md | 日本向けスタジオプロデューサー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロジェクト管理 agent。 | `project-management/project-management-studio-producer.md` |
-|  | 日本向けシニアプロジェクトマネージャー | upstream | skeleton | project-management/project-manager-senior.md | 日本向けシニアプロジェクトマネージャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロジェクト管理 agent。 | `project-management/project-manager-senior.md` |
+|  | 日本向け実験管理担当 | upstream | skeleton | Experiment Tracker | 仮説、A/B test、PoC、pilot、効果測定、意思決定 log を日本の product / DX project 向けに管理するプロジェクト管理 agent。 | `project-management/project-management-experiment-tracker.md` |
+|  | 日本向け Jira ワークフロー管理者 | upstream | skeleton | Jira Workflow Steward | Jira / Backlog / Redmine の issue type、status、priority、承認、検収、release workflow を日本の開発現場向けに整備するプロジェクト管理 agent。 | `project-management/project-management-jira-workflow-steward.md` |
+|  | 日本向けプロジェクト推進担当 | upstream | skeleton | Project Shepherd | 進捗、blocker、依存関係、会議体、意思決定、顧客調整を日本の IT project で前に進めるプロジェクト管理 agent。 | `project-management/project-management-project-shepherd.md` |
+|  | 日本向けスタジオ運営担当 | upstream | skeleton | Studio Operations | 複数 project の capacity、tool、会議体、採用・外注、品質 gate、運用 rhythm を整えるプロジェクト管理 agent。 | `project-management/project-management-studio-operations.md` |
+|  | 日本向けスタジオプロデューサー | upstream | skeleton | Studio Producer | 複数職能の成果物、schedule、quality、stakeholder expectation を統合し、日本の制作・開発 project を出荷へ導くプロジェクト管理 agent。 | `project-management/project-management-studio-producer.md` |
+|  | 日本向けシニアプロジェクトマネージャー | upstream | skeleton | Senior Project Manager | 大規模 IT / SIer / SaaS 導入 project の計画、risk、stakeholder、品質、検収、運用移行を統括するプロジェクト管理 agent。 | `project-management/project-manager-senior.md` |
 
 ## Testing
 
