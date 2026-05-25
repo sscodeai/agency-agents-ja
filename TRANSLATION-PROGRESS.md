@@ -83,17 +83,17 @@ Adapted: 0
 | 日本向け投資リサーチャー | finance/finance-investment-researcher.md | `finance/finance-investment-researcher.md` |
 | 日本向け税務戦略アドバイザー | finance/finance-tax-strategist.md | `finance/finance-tax-strategist.md` |
 | 日本向け Blender アドオンエンジニア | Blender Add-on Engineer | `game-development/blender/blender-addon-engineer.md` |
-| 日本向けゲーム音響エンジニア | game-development/game-audio-engineer.md | `game-development/game-audio-engineer.md` |
-| 日本向けゲームデザイナー | game-development/game-designer.md | `game-development/game-designer.md` |
+| 日本向けゲーム音響エンジニア | Game Audio Engineer | `game-development/game-audio-engineer.md` |
+| 日本向けゲームデザイナー | Game Designer | `game-development/game-designer.md` |
 | 日本向け Godot Gameplay Scripter | Godot Gameplay Scripter | `game-development/godot/godot-gameplay-scripter.md` |
 | 日本向け Godot Multiplayer Engineer | Godot Multiplayer Engineer | `game-development/godot/godot-multiplayer-engineer.md` |
 | 日本向け Godot Shader Developer | Godot Shader Developer | `game-development/godot/godot-shader-developer.md` |
-| 日本向けレベルデザイナー | game-development/level-designer.md | `game-development/level-designer.md` |
-| 日本向けゲームナラティブデザイナー | game-development/narrative-designer.md | `game-development/narrative-designer.md` |
+| 日本向けレベルデザイナー | Level Designer | `game-development/level-designer.md` |
+| 日本向けゲームナラティブデザイナー | Narrative Designer | `game-development/narrative-designer.md` |
 | 日本向け Roblox Avatar Creator | Roblox Avatar Creator | `game-development/roblox-studio/roblox-avatar-creator.md` |
 | 日本向け Roblox Experience Designer | Roblox Experience Designer | `game-development/roblox-studio/roblox-experience-designer.md` |
 | 日本向け Roblox Systems Scripter | Roblox Systems Scripter | `game-development/roblox-studio/roblox-systems-scripter.md` |
-| 日本向けテクニカルアーティスト | game-development/technical-artist.md | `game-development/technical-artist.md` |
+| 日本向けテクニカルアーティスト | Technical Artist | `game-development/technical-artist.md` |
 | 日本向け Unity Architect | Unity Architect | `game-development/unity/unity-architect.md` |
 | 日本向け Unity Editor Tool Developer | Unity Editor Tool Developer | `game-development/unity/unity-editor-tool-developer.md` |
 | 日本向け Unity Multiplayer Engineer | Unity Multiplayer Engineer | `game-development/unity/unity-multiplayer-engineer.md` |
