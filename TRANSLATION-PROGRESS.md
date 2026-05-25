@@ -102,36 +102,36 @@ Adapted: 0
 | 日本向け Unreal Systems Engineer | Unreal Systems Engineer | `game-development/unreal-engine/unreal-systems-engineer.md` |
 | 日本向け Unreal Technical Artist | Unreal Technical Artist | `game-development/unreal-engine/unreal-technical-artist.md` |
 | 日本向け Unreal World Builder | Unreal World Builder | `game-development/unreal-engine/unreal-world-builder.md` |
-| 日本向けエージェント検索最適化担当 | marketing/marketing-agentic-search-optimizer.md | `marketing/marketing-agentic-search-optimizer.md` |
-| 日本向け AI Citation Strategist | marketing/marketing-ai-citation-strategist.md | `marketing/marketing-ai-citation-strategist.md` |
-| 日本向けアプリストア最適化担当 | marketing/marketing-app-store-optimizer.md | `marketing/marketing-app-store-optimizer.md` |
+| 日本向けエージェント検索最適化担当 | Agentic Search Optimizer | `marketing/marketing-agentic-search-optimizer.md` |
+| 日本向け AI Citation Strategist | AI Citation Strategist | `marketing/marketing-ai-citation-strategist.md` |
+| 日本向けアプリストア最適化担当 | App Store Optimizer | `marketing/marketing-app-store-optimizer.md` |
 | Yahoo! JAPAN / Google SEO スペシャリスト | Baidu SEO Specialist | `marketing/marketing-baidu-seo-specialist.md` |
-| YouTube / NicoNico コンテンツ戦略家 | marketing/marketing-bilibili-content-strategist.md | `marketing/marketing-bilibili-content-strategist.md` |
-| 日本向け書籍共同著者 | marketing/marketing-book-co-author.md | `marketing/marketing-book-co-author.md` |
-| 日本向けカルーセル投稿成長エンジン | marketing/marketing-carousel-growth-engine.md | `marketing/marketing-carousel-growth-engine.md` |
-| 日本向け EC 運用者 | marketing/marketing-china-ecommerce-operator.md | `marketing/marketing-china-ecommerce-operator.md` |
-| 日本市場ローカライゼーション戦略家 | marketing/marketing-china-market-localization-strategist.md | `marketing/marketing-china-market-localization-strategist.md` |
-| 日本向けコンテンツクリエイター | marketing/marketing-content-creator.md | `marketing/marketing-content-creator.md` |
-| 日本向け越境 EC 戦略家 | marketing/marketing-cross-border-ecommerce.md | `marketing/marketing-cross-border-ecommerce.md` |
+| YouTube / NicoNico コンテンツ戦略家 | Bilibili Content Strategist | `marketing/marketing-bilibili-content-strategist.md` |
+| 日本向け書籍共同著者 | Book Co-Author | `marketing/marketing-book-co-author.md` |
+| 日本向けカルーセル投稿成長エンジン | Carousel Growth Engine | `marketing/marketing-carousel-growth-engine.md` |
+| 日本向け EC 運用者 | China Ecommerce Operator | `marketing/marketing-china-ecommerce-operator.md` |
+| 日本市場ローカライゼーション戦略家 | China Market Localization Strategist | `marketing/marketing-china-market-localization-strategist.md` |
+| 日本向けコンテンツクリエイター | Content Creator | `marketing/marketing-content-creator.md` |
+| 日本向け越境 EC 戦略家 | Cross-Border Ecommerce | `marketing/marketing-cross-border-ecommerce.md` |
 | TikTok Japan 戦略家 | Douyin Strategist | `marketing/marketing-douyin-strategist.md` |
-| 日本向けグロースハッカー | marketing/marketing-growth-hacker.md | `marketing/marketing-growth-hacker.md` |
-| 日本向け Instagram キュレーター | marketing/marketing-instagram-curator.md | `marketing/marketing-instagram-curator.md` |
-| Short Video Japan 戦略家 | marketing/marketing-kuaishou-strategist.md | `marketing/marketing-kuaishou-strategist.md` |
-| LinkedIn Japan コンテンツ制作者 | marketing/marketing-linkedin-content-creator.md | `marketing/marketing-linkedin-content-creator.md` |
-| 日本向けライブコマースコーチ | marketing/marketing-livestream-commerce-coach.md | `marketing/marketing-livestream-commerce-coach.md` |
-| 日本向けポッドキャスト戦略家 | marketing/marketing-podcast-strategist.md | `marketing/marketing-podcast-strategist.md` |
-| 日本向け CRM / コミュニティ運用者 | marketing/marketing-private-domain-operator.md | `marketing/marketing-private-domain-operator.md` |
-| 日本向けオンラインコミュニティビルダー | marketing/marketing-reddit-community-builder.md | `marketing/marketing-reddit-community-builder.md` |
-| 日本向け SEO スペシャリスト | marketing/marketing-seo-specialist.md | `marketing/marketing-seo-specialist.md` |
-| 日本向けショート動画編集コーチ | marketing/marketing-short-video-editing-coach.md | `marketing/marketing-short-video-editing-coach.md` |
-| 日本向け SNS 戦略家 | marketing/marketing-social-media-strategist.md | `marketing/marketing-social-media-strategist.md` |
+| 日本向けグロースハッカー | Growth Hacker | `marketing/marketing-growth-hacker.md` |
+| 日本向け Instagram キュレーター | Instagram Curator | `marketing/marketing-instagram-curator.md` |
+| Short Video Japan 戦略家 | Kuaishou Strategist | `marketing/marketing-kuaishou-strategist.md` |
+| LinkedIn Japan コンテンツ制作者 | LinkedIn Content Creator | `marketing/marketing-linkedin-content-creator.md` |
+| 日本向けライブコマースコーチ | Livestream Commerce Coach | `marketing/marketing-livestream-commerce-coach.md` |
+| 日本向けポッドキャスト戦略家 | Podcast Strategist | `marketing/marketing-podcast-strategist.md` |
+| 日本向け CRM / コミュニティ運用者 | Private Domain Operator | `marketing/marketing-private-domain-operator.md` |
+| 日本向けオンラインコミュニティビルダー | Reddit Community Builder | `marketing/marketing-reddit-community-builder.md` |
+| 日本向け SEO スペシャリスト | SEO Specialist | `marketing/marketing-seo-specialist.md` |
+| 日本向けショート動画編集コーチ | Short Video Editing Coach | `marketing/marketing-short-video-editing-coach.md` |
+| 日本向け SNS 戦略家 | Social Media Strategist | `marketing/marketing-social-media-strategist.md` |
 | TikTok Japan 戦略家 | TikTok Strategist | `marketing/marketing-tiktok-strategist.md` |
-| X Japan エンゲージメント担当 | marketing/marketing-twitter-engager.md | `marketing/marketing-twitter-engager.md` |
-| 日本向け動画最適化専門家 | marketing/marketing-video-optimization-specialist.md | `marketing/marketing-video-optimization-specialist.md` |
-| LINE 公式アカウント戦略家 | marketing/marketing-wechat-official-account.md | `marketing/marketing-wechat-official-account.md` |
-| X / Threads Japan 戦略家 | marketing/marketing-weibo-strategist.md | `marketing/marketing-weibo-strategist.md` |
-| Instagram / Lemon8 戦略家 | marketing/marketing-xiaohongshu-specialist.md | `marketing/marketing-xiaohongshu-specialist.md` |
-| note / Qiita / Zenn 戦略家 | marketing/marketing-zhihu-strategist.md | `marketing/marketing-zhihu-strategist.md` |
+| X Japan エンゲージメント担当 | Twitter Engager | `marketing/marketing-twitter-engager.md` |
+| 日本向け動画最適化専門家 | Video Optimization Specialist | `marketing/marketing-video-optimization-specialist.md` |
+| LINE 公式アカウント戦略家 | WeChat Official Account | `marketing/marketing-wechat-official-account.md` |
+| X / Threads Japan 戦略家 | Weibo Strategist | `marketing/marketing-weibo-strategist.md` |
+| Instagram / Lemon8 戦略家 | Xiaohongshu Specialist | `marketing/marketing-xiaohongshu-specialist.md` |
+| note / Qiita / Zenn 戦略家 | Zhihu Strategist | `marketing/marketing-zhihu-strategist.md` |
 | 日本向け広告監査担当 | Paid Media Auditor | `paid-media/paid-media-auditor.md` |
 | 日本向け広告クリエイティブ戦略家 | Creative Strategist | `paid-media/paid-media-creative-strategist.md` |
 | 日本向け SNS 広告戦略家 | Paid Social Strategist | `paid-media/paid-media-paid-social-strategist.md` |
