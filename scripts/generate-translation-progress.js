@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { existsSync, readdirSync, readFileSync, writeFileSync } = require('fs');
+const { join } = require('path');
 
 const CATEGORIES = [
   ['academic', 'Academic'],
@@ -39,17 +40,29 @@ function parseFrontmatter(file) {
   return out;
 }
 
+function listMarkdownFiles(dir) {
+  const files = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...listMarkdownFiles(path));
+    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      files.push(path);
+    }
+  }
+  return files.sort();
+}
+
 function listAgents() {
   const rows = [];
   for (const [dir, title] of CATEGORIES) {
     if (!existsSync(dir)) continue;
-    for (const file of readdirSync(dir).filter(name => name.endsWith('.md')).sort()) {
-      const path = `${dir}/${file}`;
+    for (const path of listMarkdownFiles(dir)) {
       const fm = parseFrontmatter(path);
       rows.push({
         category: title,
         path,
-        name: fm.name || file,
+        name: fm.name || path,
         source: fm.source || 'unknown',
         upstreamName: fm.upstream_name || '',
         upstreamPath: fm.upstream_path || '',

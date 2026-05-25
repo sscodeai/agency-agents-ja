@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 266 (⭐ 97 japan-original + 169 upstream-aligned)
+Total agents: 281 (⭐ 97 japan-original + 184 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -11,11 +11,11 @@ Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
-|  | 日本向け文化人類学リサーチャー | upstream | skeleton | academic/academic-anthropologist.md | 日本向け文化人類学リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-anthropologist.md` |
-|  | 日本向け地理・地域分析リサーチャー | upstream | skeleton | academic/academic-geographer.md | 日本向け地理・地域分析リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-geographer.md` |
-|  | 日本向け歴史リサーチャー | upstream | skeleton | academic/academic-historian.md | 日本向け歴史リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-historian.md` |
-|  | 日本向けナラティブ分析者 | upstream | skeleton | academic/academic-narratologist.md | 日本向けナラティブ分析者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-narratologist.md` |
-|  | 日本向け心理リサーチャー | upstream | skeleton | academic/academic-psychologist.md | 日本向け心理リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-psychologist.md` |
+|  | 日本向け文化人類学リサーチャー | upstream | skeleton | Anthropologist | 日本の利用者文化、業務慣習、組織行動、地域差を ethnographic research として整理し、IT 企画・UX・市場参入に活かす学術・リサーチ agent。 | `academic/academic-anthropologist.md` |
+|  | 日本向け地理・地域分析リサーチャー | upstream | skeleton | Geographer | 地域差、商圏、移動、災害、自治体、インフラ制約を分析し、日本向け IT 企画・展開計画へ落とし込む学術・リサーチ agent。 | `academic/academic-geographer.md` |
+|  | 日本向け歴史リサーチャー | upstream | skeleton | Historian | 産業史、制度変遷、企業沿革、地域史を調査し、IT 企画・市場理解・ブランド narrative に活かす学術・リサーチ agent。 | `academic/academic-historian.md` |
+|  | 日本向けナラティブ分析者 | upstream | skeleton | Narratologist | 物語構造、語り口、ブランド narrative、政策・企業メッセージを分析し、日本向け IT 提案・UX・広報に活かす学術・リサーチ agent。 | `academic/academic-narratologist.md` |
+|  | 日本向け心理リサーチャー | upstream | skeleton | Psychologist | 行動心理、意思決定、motivation、認知負荷、組織心理を分析し、日本向け UX・導入定着・業務変革に活かす学術・リサーチ agent。 | `academic/academic-psychologist.md` |
 
 ## Engineering
 
@@ -206,23 +206,38 @@ Total: 9 (⭐ 4 japan-original + 5 upstream-aligned)
 | ⭐ | 日本向け FinOps アナリスト | japan-original |  |  | 日本の SaaS / 業務システムで cloud cost、SaaS cost、unit economics、予算、配賦、削減施策を分析する FinOps analyst。 | `finance/finance-japanese-finops-analyst.md` |
 | ⭐ | 日本向け内部監査コーディネーター | japan-original |  |  | 日本企業の IT 統制、SaaS 利用、権限管理、委託先管理、変更管理、証跡、監査対応を整理する internal audit coordinator。 | `finance/finance-japanese-internal-audit-coordinator.md` |
 | ⭐ | インボイス制度アドバイザー | japan-original |  |  | 日本のインボイス制度に関する請求書、適格請求書発行事業者番号、取引先確認、会計 system 要件を整理する finance advisor。 | `finance/finance-japanese-invoice-system-advisor.md` |
-|  | 日本向け経理・管理会計コントローラー | upstream | skeleton | finance/finance-bookkeeper-controller.md | 日本向け経理・管理会計コントローラー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-bookkeeper-controller.md` |
-|  | 日本向け財務分析担当 | upstream | skeleton | finance/finance-financial-analyst.md | 日本向け財務分析担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-financial-analyst.md` |
-|  | 日本向け FP&A アナリスト | upstream | skeleton | finance/finance-fpa-analyst.md | 日本向け FP&A アナリスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-fpa-analyst.md` |
-|  | 日本向け投資リサーチャー | upstream | skeleton | finance/finance-investment-researcher.md | 日本向け投資リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-investment-researcher.md` |
-|  | 日本向け税務戦略アドバイザー | upstream | skeleton | finance/finance-tax-strategist.md | 日本向け税務戦略アドバイザー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-tax-strategist.md` |
+|  | 日本向け経理・管理会計コントローラー | upstream | skeleton | Bookkeeper & Controller | 月次決算、請求、入出金、管理会計、証憑、内部統制を日本企業の IT / SaaS / 受託開発現場向けに整理するファイナンス agent。 | `finance/finance-bookkeeper-controller.md` |
+|  | 日本向け財務分析担当 | upstream | skeleton | Financial Analyst | 売上、粗利、原価、cash flow、予実、KPI を分析し、日本企業の経営会議・稟議・事業判断向けに整理するファイナンス agent。 | `finance/finance-financial-analyst.md` |
+|  | 日本向け FP&A アナリスト | upstream | skeleton | FP&A Analyst | 予算策定、forecast、予実管理、scenario planning、経営会議資料を日本企業の事業運営向けに整えるファイナンス agent。 | `finance/finance-fpa-analyst.md` |
+|  | 日本向け投資リサーチャー | upstream | skeleton | Investment Researcher | 市場、企業、競合、財務、事業リスクを調査し、日本企業の投資・M&A・新規事業判断向けに整理するファイナンス agent。 | `finance/finance-investment-researcher.md` |
+|  | 日本向け税務戦略アドバイザー | upstream | skeleton | Tax Strategist | 法人税、消費税、インボイス、電子帳簿、海外取引、税務論点を日本企業の IT / SaaS / 事業運営向けに整理するファイナンス agent。 | `finance/finance-tax-strategist.md` |
 
 ## Game Development
 
-Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
+Total: 20 (⭐ 0 japan-original + 20 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
-|  | 日本向けゲーム音響エンジニア | upstream | skeleton | game-development/game-audio-engineer.md | 日本向けゲーム音響エンジニア として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/game-audio-engineer.md` |
-|  | 日本向けゲームデザイナー | upstream | skeleton | game-development/game-designer.md | 日本向けゲームデザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/game-designer.md` |
-|  | 日本向けレベルデザイナー | upstream | skeleton | game-development/level-designer.md | 日本向けレベルデザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/level-designer.md` |
-|  | 日本向けゲームナラティブデザイナー | upstream | skeleton | game-development/narrative-designer.md | 日本向けゲームナラティブデザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/narrative-designer.md` |
-|  | 日本向けテクニカルアーティスト | upstream | skeleton | game-development/technical-artist.md | 日本向けテクニカルアーティスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/technical-artist.md` |
+|  | 日本向け Blender アドオンエンジニア | upstream | skeleton | Blender Add-on Engineer | Blender アドオン、asset validator、exporter、DCC pipeline automation を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/blender/blender-addon-engineer.md` |
+|  | 日本向けゲーム音響エンジニア | upstream | skeleton | Game Audio Engineer | FMOD/Wwise、adaptive music、spatial audio、audio budget を日本のゲーム制作現場向けに設計するゲーム開発 agent。 | `game-development/game-audio-engineer.md` |
+|  | 日本向けゲームデザイナー | upstream | skeleton | Game Designer | core loop、progression、economy、live ops、platform guideline を日本市場向けに設計するゲーム開発 agent。 | `game-development/game-designer.md` |
+|  | 日本向け Godot Gameplay Scripter | upstream | skeleton | Godot Gameplay Scripter | Godot 4 の GDScript、C# 連携、node composition、signal 設計を日本のゲーム制作向けに整理するゲーム開発 agent。 | `game-development/godot/godot-gameplay-scripter.md` |
+|  | 日本向け Godot Multiplayer Engineer | upstream | skeleton | Godot Multiplayer Engineer | Godot 4 MultiplayerAPI、RPC、authority model、scene replication を日本の multiplayer 制作向けに設計するゲーム開発 agent。 | `game-development/godot/godot-multiplayer-engineer.md` |
+|  | 日本向け Godot Shader Developer | upstream | skeleton | Godot Shader Developer | Godot shader language、VisualShader、CanvasItem / Spatial shader、post-processing を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/godot/godot-shader-developer.md` |
+|  | 日本向けレベルデザイナー | upstream | skeleton | Level Designer | layout、pacing、encounter、environmental storytelling、playtest feedback を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/level-designer.md` |
+|  | 日本向けゲームナラティブデザイナー | upstream | skeleton | Narrative Designer | dialogue、branching narrative、world bible、lore、localization、IP 監修を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/narrative-designer.md` |
+|  | 日本向け Roblox Avatar Creator | upstream | skeleton | Roblox Avatar Creator | Roblox UGC、avatar item、accessory rigging、Creator Marketplace submission を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/roblox-studio/roblox-avatar-creator.md` |
+|  | 日本向け Roblox Experience Designer | upstream | skeleton | Roblox Experience Designer | Roblox experience の engagement loop、progression、monetization、retention を日本市場向けに設計するゲーム開発 agent。 | `game-development/roblox-studio/roblox-experience-designer.md` |
+|  | 日本向け Roblox Systems Scripter | upstream | skeleton | Roblox Systems Scripter | Roblox Luau、client-server security、RemoteEvents、DataStore、module architecture を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/roblox-studio/roblox-systems-scripter.md` |
+|  | 日本向けテクニカルアーティスト | upstream | skeleton | Technical Artist | art pipeline、shader、rigging、VFX、asset validation、performance budget を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/technical-artist.md` |
+|  | 日本向け Unity Architect | upstream | skeleton | Unity Architect | Unity の ScriptableObject、component composition、data-driven architecture を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unity/unity-architect.md` |
+|  | 日本向け Unity Editor Tool Developer | upstream | skeleton | Unity Editor Tool Developer | Unity EditorWindow、PropertyDrawer、AssetPostprocessor、pipeline automation を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unity/unity-editor-tool-developer.md` |
+|  | 日本向け Unity Multiplayer Engineer | upstream | skeleton | Unity Multiplayer Engineer | Unity Netcode for GameObjects、UGS Relay/Lobby、server authority、lag compensation を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unity/unity-multiplayer-engineer.md` |
+|  | 日本向け Unity Shader Graph Artist | upstream | skeleton | Unity Shader Graph Artist | Unity Shader Graph、HLSL、URP/HDRP、custom render pass を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/unity/unity-shader-graph-artist.md` |
+|  | 日本向け Unreal Multiplayer Architect | upstream | skeleton | Unreal Multiplayer Architect | Unreal Engine 5 の replication、GameMode/GameState、server authority、network prediction を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unreal-engine/unreal-multiplayer-architect.md` |
+|  | 日本向け Unreal Systems Engineer | upstream | skeleton | Unreal Systems Engineer | Unreal Engine 5 の C++/Blueprint architecture、GAS、Nanite、Lumen、performance を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unreal-engine/unreal-systems-engineer.md` |
+|  | 日本向け Unreal Technical Artist | upstream | skeleton | Unreal Technical Artist | Unreal Engine 5 の Material Editor、Niagara、PCG、art-to-engine pipeline を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/unreal-engine/unreal-technical-artist.md` |
+|  | 日本向け Unreal World Builder | upstream | skeleton | Unreal World Builder | Unreal Engine 5 の World Partition、Landscape、procedural foliage、HLOD、streaming を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unreal-engine/unreal-world-builder.md` |
 
 ## HR
 
