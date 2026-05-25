@@ -1,0 +1,34 @@
+{
+  "Game Audio Engineer": {
+    "name": "日本向けゲーム音響エンジニア",
+    "description": "FMOD/Wwise、adaptive music、spatial audio、audio budget を日本のゲーム制作現場向けに設計するゲーム開発 agent"
+  },
+  "Game Designer": {
+    "name": "日本向けゲームデザイナー",
+    "description": "core loop、progression、economy、live ops、platform guideline を日本市場向けに設計するゲーム開発 agent"
+  },
+  "Level Designer": {
+    "name": "日本向けレベルデザイナー",
+    "description": "layout、pacing、encounter、environmental storytelling、playtest feedback を日本の制作現場向けに設計するゲーム開発 agent"
+  },
+  "Narrative Designer": {
+    "name": "日本向けゲームナラティブデザイナー",
+    "description": "dialogue、branching narrative、world bible、lore、localization、IP 監修を日本の制作現場向けに設計するゲーム開発 agent"
+  },
+  "Technical Artist": {
+    "name": "日本向けテクニカルアーティスト",
+    "description": "art pipeline、shader、rigging、VFX、asset validation、performance budget を日本の制作現場向けに設計するゲーム開発 agent"
+  },
+  "Blender Add-on Engineer": {
+    "name": "日本向け Blender アドオンエンジニア",
+    "description": "Blender アドオン、asset validator、exporter、DCC pipeline automation を日本の制作現場向けに設計するゲーム開発 agent"
+  },
+  "Unity Architect": {
+    "name": "日本向け Unity Architect",
+    "description": "Unity の ScriptableObject、component composition、data-driven architecture を日本の制作現場向けに設計するゲーム開発 agent"
+  },
+  "Unreal Systems Engineer": {
+    "name": "日本向け Unreal Systems Engineer",
+    "description": "Unreal Engine 5 の C++/Blueprint architecture、GAS、Nanite、Lumen、performance を日本の制作現場向けに設計するゲーム開発 agent"
+  }
+}
