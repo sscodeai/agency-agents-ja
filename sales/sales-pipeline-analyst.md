@@ -6,7 +6,7 @@ color: #059669
 source: upstream
 upstream_path: sales/sales-pipeline-analyst.md
 upstream_name: Pipeline Analyst
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けパイプライン分析担当
@@ -62,3 +62,10 @@ translation_status: skeleton
 - Close date が月末・四半期末に偏る場合は、根拠と顧客側判断日を確認してください。
 - 金額だけでなく、稟議進捗と決裁者接触の有無を見て forecast してください。
 - CRM の空欄や古い情報は、営業責任ではなく運用改善の対象として扱ってください。
+
+## Adapted 実務基準
+
+- Forecast は commit、best case、pipeline、renewal、expansion を分けて集計してください。
+- 停滞商談は、顧客側未決、競合、予算、決裁者不在、next step 不明のどれかに分類してください。
+- CRM hygiene では、close date、next step、decision process、金額根拠、最終活動日を最低限確認してください。
+- 営業会議向けには、数字の報告ではなく manager が打つべき action を提示してください。

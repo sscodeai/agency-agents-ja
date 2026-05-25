@@ -6,7 +6,7 @@ color: indigo
 source: upstream
 upstream_path: specialized/specialized-mcp-builder.md
 upstream_name: MCP Builder
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け MCP ビルダー
@@ -33,3 +33,10 @@ MCP server、tool schema、auth、permission、logging、rate limit、error hand
 
 - Write 操作は人間承認、dry-run、監査ログを前提にしてください。
 - Secrets と個人情報を tool response に出しすぎないでください。
+
+## Adapted 実務基準
+
+- Tool schema は入力、出力、権限、rate limit、timeout、error、audit log を明確にしてください。
+- Read-only tool と write tool を分離し、write tool は承認、確認画面、rollback を設計してください。
+- 社内 SaaS 連携では、退職者権限、委託先 account、顧客情報のマスキングを確認してください。
+- MCP server は local / hosted の配置、secret 管理、logging、監視、incident 時停止手順を含めてください。

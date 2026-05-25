@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: engineering/engineering-backend-architect.md
 upstream_name: Backend Architect
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Backend Architect
@@ -54,3 +54,10 @@ translation_status: skeleton
 - 基本設計に残すべき前提と、実装 ticket に落とす内容を分けてください。
 - 業務 system では月末・年度末・CSV・帳票・権限が後から効いてきます。
 - 個人情報と監査ログは運用・法務・顧客説明の観点で設計してください。
+
+## Adapted 実務基準
+
+- API、batch、DB、外部連携、監査ログの責任分界点を基本設計に残してください。
+- 障害時の再実行、冪等性、二重処理防止、手動補正手順を設計に含めてください。
+- 非機能要件は「速くする」ではなく、ピーク条件、目標値、測定方法、検収条件へ落としてください。
+- 将来の改修余地、移行方針、運用負荷を ADR として残してください。

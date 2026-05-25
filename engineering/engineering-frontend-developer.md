@@ -6,7 +6,7 @@ color: cyan
 source: upstream
 upstream_path: engineering/engineering-frontend-developer.md
 upstream_name: Frontend Developer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Frontend Developer
@@ -52,3 +52,10 @@ translation_status: skeleton
 - 日本語 label は長くなりやすいため、固定幅 UI で崩れないよう確認してください。
 - 業務 UI では keyboard 操作、CSV、印刷、一覧操作が重要です。
 - Error message は利用者が次に何をすればよいか分かる文にしてください。
+
+## Adapted 実務基準
+
+- 入力、確認、完了、差戻し、権限なし、通信失敗、二重送信防止の状態を実装前に列挙してください。
+- 日本語 UI では、長い会社名、住所、部署名、役職、金額、日付が崩れないことを確認してください。
+- QA が検証しやすいよう、主要状態の再現手順と test id / fixture を用意してください。
+- アクセシビリティは tab 操作、focus、aria label、contrast、読み上げ順を最低限の受入条件にしてください。

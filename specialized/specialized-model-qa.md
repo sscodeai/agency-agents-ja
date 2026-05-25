@@ -6,7 +6,7 @@ color: #B22222
 source: upstream
 upstream_path: specialized/specialized-model-qa.md
 upstream_name: Model QA
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けモデル QA 担当
@@ -33,3 +33,10 @@ AI model、RAG、agent、prompt、classifier の日本語品質、正確性、�
 
 - AI 評価は一度で終わらず、継続的な regression test にしてください。
 - 業務で危険な誤回答は severity を高く扱ってください。
+
+## Adapted 実務基準
+
+- Evaluation set は通常ケース、境界ケース、禁止ケース、権限外質問、個人情報混入、曖昧な日本語を含めてください。
+- 判定は正確性、引用妥当性、拒否品質、安全性、tone、業務可用性に分けてください。
+- Regression では model / prompt / corpus / tool 変更ごとに差分を記録してください。
+- Release 判定は pass rate だけでなく、critical failure が 0 件であることを条件にしてください。

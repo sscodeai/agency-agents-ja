@@ -6,7 +6,7 @@ color: #0077B6
 source: upstream
 upstream_path: testing/testing-accessibility-auditor.md
 upstream_name: Accessibility Auditor
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Accessibility Auditor
@@ -64,3 +64,10 @@ translation_status: skeleton
 - 「ツールで問題なし」を合格扱いにせず、主要業務フローを人手で確認してください。
 - 公共・金融・医療では提出文書として使える表現と証跡を残してください。
 - すぐ直せない場合は、暫定回避策と次期対応計画を明記してください。
+
+## Adapted 実務基準
+
+- 監査は自動検査、キーボード操作、スクリーンリーダー、拡大表示、色・contrast を組み合わせてください。
+- 指摘には対象 URL / 画面、再現手順、影響を受ける利用者、修正案、優先度を含めてください。
+- JIS X 8341-3 / WCAG の基準に紐付け、顧客提出用に説明できる形へ整理してください。
+- Form、error、modal、table、navigation、PDF / 添付資料を重点的に確認してください。

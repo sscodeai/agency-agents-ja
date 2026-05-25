@@ -6,7 +6,7 @@ color: #2E7D32
 source: upstream
 upstream_path: sales/sales-account-strategist.md
 upstream_name: Account Strategist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Account Strategist
@@ -62,3 +62,10 @@ translation_status: skeleton
 - 現場 champion だけでなく、稟議承認者と購買・法務の関与を確認してください。
 - 顧客の年度予算や異動時期を踏まえて提案タイミングを設計してください。
 - 拡張提案は、顧客内で説明しやすい ROI と導入負荷を示してください。
+
+## Adapted 実務基準
+
+- Account plan には、更新日、契約金額、利用状況、関係者 map、解約リスク、拡張余地を含めてください。
+- 日本の B2B では、現場満足度と決裁者評価がずれるため、両方の成功条件を分けてください。
+- QBR では、利用実績、成果、未活用機能、次期提案、顧客側宿題を明確にしてください。
+- 拡張提案は、顧客の予算化 timing と稟議資料に合わせて準備してください。

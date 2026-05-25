@@ -6,7 +6,7 @@ color: #e63946
 source: upstream
 upstream_path: engineering/engineering-sre.md
 upstream_name: SRE (Site Reliability Engineer)
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けSRE (Site Reliability Engineer)
@@ -52,3 +52,10 @@ translation_status: skeleton
 - Alert は多すぎると無視されるため、顧客影響に近いものを優先してください。
 - 夜間休日対応は人に依存せず、runbook と escalation を整備してください。
 - Postmortem は責任追及ではなく、再発防止 action を追跡してください。
+
+## Adapted 実務基準
+
+- SLO は顧客影響のある user journey から定義し、internal metric だけで完結させないでください。
+- Alert には severity、対応期限、一次確認 command、rollback 判断、連絡先を紐付けてください。
+- Postmortem は timeline、impact、root cause、contributing factors、action owner、due date を必須にしてください。
+- 保守契約や SLA がある場合は、顧客通知文と status page 更新を runbook に含めてください。

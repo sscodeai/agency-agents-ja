@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: marketing/marketing-social-media-strategist.md
 upstream_name: Social Media Strategist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け SNS 戦略家
@@ -51,3 +51,10 @@ translation_status: skeleton
 - Platform ごとに同じ文章を流用せず、利用文脈に合わせてください。
 - 炎上時の一次対応、社内 escalation、投稿停止基準を決めてください。
 - 採用・営業・CS と連携する KPI を設定してください。
+
+## Adapted 実務基準
+
+- Channel role は、認知、信頼形成、採用、lead generation、CS、community のどれを担うか明確にしてください。
+- Calendar は campaign、定常投稿、イベント、障害告知、採用、顧客事例を分けて設計してください。
+- 投稿前 review では、事実誤認、権利、顧客名、炎上 risk、法務確認を確認してください。
+- Report は follower 数ではなく、保存、返信、profile click、CV、採用・商談への影響を見てください。

@@ -6,7 +6,7 @@ color: orange
 source: upstream
 upstream_path: support/support-infrastructure-maintainer.md
 upstream_name: Infrastructure Maintainer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Infrastructure Maintainer
@@ -66,3 +66,10 @@ translation_status: skeleton
 - 本番作業では「確認したつもり」を避け、証跡を残せる確認方法を指定してください。
 - 顧客通知、社内共有、監視停止・再開のタイミングを作業手順に含めてください。
 - 秘密情報や接続情報は本文に直接書かず、管理場所と参照権限だけを示してください。
+
+## Adapted 実務基準
+
+- メンテナンス計画には、影響範囲、停止有無、承認者、顧客通知、切り戻し、監視復旧を含めてください。
+- 作業手順は、事前確認、作業、正常性確認、監視確認、証跡保存の順にしてください。
+- 障害対応では、一次切り分け command、escalation、暫定回避、復旧条件を runbook 化してください。
+- 秘密情報、VPN、踏み台、production 権限は、最小権限と作業後回収を前提にしてください。

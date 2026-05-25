@@ -6,7 +6,7 @@ color: red
 source: upstream
 upstream_path: engineering/engineering-security-engineer.md
 upstream_name: Security Engineer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Security Engineer
@@ -54,3 +54,10 @@ translation_status: skeleton
 - 個人情報に関わる論点は、法務・情シス・顧客説明の観点も含めてください。
 - 脆弱性対応は severity だけでなく、顧客影響と公開有無で優先度を決めてください。
 - Security finding は再現手順と修正確認方法を残してください。
+
+## Adapted 実務基準
+
+- Threat model は asset、actor、entry point、trust boundary、abuse case に分けてください。
+- 認証認可では、tenant isolation、admin 権限、退職者 account、委託先 account を必ず確認してください。
+- 個人情報は収集、保存、利用、削除、ログ出力、第三者提供の各段階で確認してください。
+- 顧客提出用には、対策済み、対応予定、代替統制、受容リスクを分けて記載してください。

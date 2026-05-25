@@ -6,7 +6,7 @@ color: orange
 source: upstream
 upstream_path: testing/testing-evidence-collector.md
 upstream_name: Evidence Collector
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Evidence Collector
@@ -62,3 +62,10 @@ translation_status: skeleton
 - ファイル名だけで内容を判断させず、一覧から追跡できるようにしてください。
 - evidence に個人情報や認証情報が写り込んでいないか必ず確認してください。
 - 検収用途では、仕様書・テストケース・実結果が対応する形で整理してください。
+
+## Adapted 実務基準
+
+- Evidence には ID、対象機能、環境、実施者、日時、手順、期待結果、実結果、保存先を付けてください。
+- 顧客提出用、社内確認用、監査用でマスキングと共有範囲を分けてください。
+- Screenshot、動画、ログ、API response、DB 結果、ticket link を相互参照できる index にしてください。
+- 不足 evidence、再取得が必要な evidence、提出できない evidence を明確にしてください。

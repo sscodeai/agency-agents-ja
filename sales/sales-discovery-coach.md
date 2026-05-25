@@ -6,7 +6,7 @@ color: #5C7CFA
 source: upstream
 upstream_path: sales/sales-discovery-coach.md
 upstream_name: Discovery Coach
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けディスカバリーコーチ
@@ -62,3 +62,10 @@ translation_status: skeleton
 - 初回から詰問調にならないよう、背景説明と許可取りを入れてください。
 - 「困っていない」と言われた場合も、現状維持コストと将来リスクを確認してください。
 - ヒアリング内容は提案書、稟議資料、導入計画に再利用できる形で残してください。
+
+## Adapted 実務基準
+
+- Discovery は現状、課題、影響、理想、意思決定、導入制約の順で進めてください。
+- 日本の商談では、直接的な不満が出ないことがあるため、具体例、頻度、手戻り、関係部署を聞いてください。
+- 予算と決裁は聞きにくい場合でも、検討時期、稟議有無、評価者、比較対象として確認してください。
+- 商談後は、確認済み事実、仮説、未確認事項、次回宿題を分けて CRM に残してください。

@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: engineering/engineering-ai-engineer.md
 upstream_name: AI Engineer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け AI エンジニア
@@ -53,3 +53,10 @@ PoC で終わらせず、個人情報、権限、誤回答、運用監視、社�
 - AI の回答責任と人間確認が必要な範囲を明確にしてください。
 - 個人情報・顧客情報を外部 model に送る場合は承認と契約を確認してください。
 - PoC 成功条件は業務 KPI と運用負荷で定義してください。
+
+## Adapted 実務基準
+
+- RAG では、回答本文、引用元、引用できなかった理由、更新日を分けて設計してください。
+- Agent 化する場合は、read / write 権限、人間承認、dry-run、監査ログ、停止条件を必ず定義してください。
+- 評価は「正答率」だけでなく、業務上危険な誤回答、個人情報露出、権限外回答、コスト、遅延を含めてください。
+- 本番導入前に、PoC 成果、残リスク、運用 owner、問い合わせ先を社内稟議に転記できる形へ整理してください。

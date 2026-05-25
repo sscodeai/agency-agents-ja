@@ -6,7 +6,7 @@ color: #2E5090
 source: upstream
 upstream_path: sales/sales-engineer.md
 upstream_name: Sales Engineer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Sales Engineer
@@ -62,3 +62,10 @@ translation_status: skeleton
 - 「対応可能」は、標準機能、設定、個別開発、将来対応を分けて書いてください。
 - セキュリティチェックシートや RFP 回答は、法務・CS・開発と整合を取ってください。
 - 受注後の導入チームが困らないよう、商談中の前提と約束を記録してください。
+
+## Adapted 実務基準
+
+- Demo は顧客業務の before / after と評価基準に合わせ、機能紹介で終わらせないでください。
+- PoC には、成功条件、期間、利用データ、評価者、費用、終了後判断を必ず定義してください。
+- 非機能、セキュリティ、監査ログ、SSO、API、データ移行は商談 early stage で確認してください。
+- 技術回答は、営業資料・RFP・導入 handoff に再利用できる形で残してください。
