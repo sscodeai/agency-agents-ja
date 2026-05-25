@@ -35,11 +35,11 @@ Adapted: 0
 
 | Agent | Upstream | Path |
 | --- | --- | --- |
-| 日本向け文化人類学リサーチャー | academic/academic-anthropologist.md | `academic/academic-anthropologist.md` |
-| 日本向け地理・地域分析リサーチャー | academic/academic-geographer.md | `academic/academic-geographer.md` |
-| 日本向け歴史リサーチャー | academic/academic-historian.md | `academic/academic-historian.md` |
-| 日本向けナラティブ分析者 | academic/academic-narratologist.md | `academic/academic-narratologist.md` |
-| 日本向け心理リサーチャー | academic/academic-psychologist.md | `academic/academic-psychologist.md` |
+| 日本向け文化人類学リサーチャー | Anthropologist | `academic/academic-anthropologist.md` |
+| 日本向け地理・地域分析リサーチャー | Geographer | `academic/academic-geographer.md` |
+| 日本向け歴史リサーチャー | Historian | `academic/academic-historian.md` |
+| 日本向けナラティブ分析者 | Narratologist | `academic/academic-narratologist.md` |
+| 日本向け心理リサーチャー | Psychologist | `academic/academic-psychologist.md` |
 | 日本向けブランドガーディアン | design/design-brand-guardian.md | `design/design-brand-guardian.md` |
 | 日本向け画像プロンプトエンジニア | design/design-image-prompt-engineer.md | `design/design-image-prompt-engineer.md` |
 | 日本向けインクルーシブビジュアル専門家 | design/design-inclusive-visuals-specialist.md | `design/design-inclusive-visuals-specialist.md` |
@@ -77,11 +77,11 @@ Adapted: 0
 | 日本向け脅威検知エンジニア | engineering/engineering-threat-detection-engineer.md | `engineering/engineering-threat-detection-engineer.md` |
 | 日本向け音声 AI 連携エンジニア | engineering/engineering-voice-ai-integration-engineer.md | `engineering/engineering-voice-ai-integration-engineer.md` |
 | 日本向け LINE ミニアプリ開発者 | engineering/engineering-wechat-mini-program-developer.md | `engineering/engineering-wechat-mini-program-developer.md` |
-| 日本向け経理・管理会計コントローラー | finance/finance-bookkeeper-controller.md | `finance/finance-bookkeeper-controller.md` |
-| 日本向け財務分析担当 | finance/finance-financial-analyst.md | `finance/finance-financial-analyst.md` |
-| 日本向け FP&A アナリスト | finance/finance-fpa-analyst.md | `finance/finance-fpa-analyst.md` |
-| 日本向け投資リサーチャー | finance/finance-investment-researcher.md | `finance/finance-investment-researcher.md` |
-| 日本向け税務戦略アドバイザー | finance/finance-tax-strategist.md | `finance/finance-tax-strategist.md` |
+| 日本向け経理・管理会計コントローラー | Bookkeeper & Controller | `finance/finance-bookkeeper-controller.md` |
+| 日本向け財務分析担当 | Financial Analyst | `finance/finance-financial-analyst.md` |
+| 日本向け FP&A アナリスト | FP&A Analyst | `finance/finance-fpa-analyst.md` |
+| 日本向け投資リサーチャー | Investment Researcher | `finance/finance-investment-researcher.md` |
+| 日本向け税務戦略アドバイザー | Tax Strategist | `finance/finance-tax-strategist.md` |
 | 日本向け Blender アドオンエンジニア | Blender Add-on Engineer | `game-development/blender/blender-addon-engineer.md` |
 | 日本向けゲーム音響エンジニア | Game Audio Engineer | `game-development/game-audio-engineer.md` |
 | 日本向けゲームデザイナー | Game Designer | `game-development/game-designer.md` |

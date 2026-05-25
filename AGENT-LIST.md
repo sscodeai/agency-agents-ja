@@ -11,11 +11,11 @@ Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
-|  | 日本向け文化人類学リサーチャー | upstream | skeleton | academic/academic-anthropologist.md | 日本向け文化人類学リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-anthropologist.md` |
-|  | 日本向け地理・地域分析リサーチャー | upstream | skeleton | academic/academic-geographer.md | 日本向け地理・地域分析リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-geographer.md` |
-|  | 日本向け歴史リサーチャー | upstream | skeleton | academic/academic-historian.md | 日本向け歴史リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-historian.md` |
-|  | 日本向けナラティブ分析者 | upstream | skeleton | academic/academic-narratologist.md | 日本向けナラティブ分析者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-narratologist.md` |
-|  | 日本向け心理リサーチャー | upstream | skeleton | academic/academic-psychologist.md | 日本向け心理リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 学術・リサーチ agent。 | `academic/academic-psychologist.md` |
+|  | 日本向け文化人類学リサーチャー | upstream | skeleton | Anthropologist | 日本の利用者文化、業務慣習、組織行動、地域差を ethnographic research として整理し、IT 企画・UX・市場参入に活かす学術・リサーチ agent。 | `academic/academic-anthropologist.md` |
+|  | 日本向け地理・地域分析リサーチャー | upstream | skeleton | Geographer | 地域差、商圏、移動、災害、自治体、インフラ制約を分析し、日本向け IT 企画・展開計画へ落とし込む学術・リサーチ agent。 | `academic/academic-geographer.md` |
+|  | 日本向け歴史リサーチャー | upstream | skeleton | Historian | 産業史、制度変遷、企業沿革、地域史を調査し、IT 企画・市場理解・ブランド narrative に活かす学術・リサーチ agent。 | `academic/academic-historian.md` |
+|  | 日本向けナラティブ分析者 | upstream | skeleton | Narratologist | 物語構造、語り口、ブランド narrative、政策・企業メッセージを分析し、日本向け IT 提案・UX・広報に活かす学術・リサーチ agent。 | `academic/academic-narratologist.md` |
+|  | 日本向け心理リサーチャー | upstream | skeleton | Psychologist | 行動心理、意思決定、motivation、認知負荷、組織心理を分析し、日本向け UX・導入定着・業務変革に活かす学術・リサーチ agent。 | `academic/academic-psychologist.md` |
 
 ## Engineering
 
@@ -206,11 +206,11 @@ Total: 9 (⭐ 4 japan-original + 5 upstream-aligned)
 | ⭐ | 日本向け FinOps アナリスト | japan-original |  |  | 日本の SaaS / 業務システムで cloud cost、SaaS cost、unit economics、予算、配賦、削減施策を分析する FinOps analyst。 | `finance/finance-japanese-finops-analyst.md` |
 | ⭐ | 日本向け内部監査コーディネーター | japan-original |  |  | 日本企業の IT 統制、SaaS 利用、権限管理、委託先管理、変更管理、証跡、監査対応を整理する internal audit coordinator。 | `finance/finance-japanese-internal-audit-coordinator.md` |
 | ⭐ | インボイス制度アドバイザー | japan-original |  |  | 日本のインボイス制度に関する請求書、適格請求書発行事業者番号、取引先確認、会計 system 要件を整理する finance advisor。 | `finance/finance-japanese-invoice-system-advisor.md` |
-|  | 日本向け経理・管理会計コントローラー | upstream | skeleton | finance/finance-bookkeeper-controller.md | 日本向け経理・管理会計コントローラー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-bookkeeper-controller.md` |
-|  | 日本向け財務分析担当 | upstream | skeleton | finance/finance-financial-analyst.md | 日本向け財務分析担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-financial-analyst.md` |
-|  | 日本向け FP&A アナリスト | upstream | skeleton | finance/finance-fpa-analyst.md | 日本向け FP&A アナリスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-fpa-analyst.md` |
-|  | 日本向け投資リサーチャー | upstream | skeleton | finance/finance-investment-researcher.md | 日本向け投資リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-investment-researcher.md` |
-|  | 日本向け税務戦略アドバイザー | upstream | skeleton | finance/finance-tax-strategist.md | 日本向け税務戦略アドバイザー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ファイナンス agent。 | `finance/finance-tax-strategist.md` |
+|  | 日本向け経理・管理会計コントローラー | upstream | skeleton | Bookkeeper & Controller | 月次決算、請求、入出金、管理会計、証憑、内部統制を日本企業の IT / SaaS / 受託開発現場向けに整理するファイナンス agent。 | `finance/finance-bookkeeper-controller.md` |
+|  | 日本向け財務分析担当 | upstream | skeleton | Financial Analyst | 売上、粗利、原価、cash flow、予実、KPI を分析し、日本企業の経営会議・稟議・事業判断向けに整理するファイナンス agent。 | `finance/finance-financial-analyst.md` |
+|  | 日本向け FP&A アナリスト | upstream | skeleton | FP&A Analyst | 予算策定、forecast、予実管理、scenario planning、経営会議資料を日本企業の事業運営向けに整えるファイナンス agent。 | `finance/finance-fpa-analyst.md` |
+|  | 日本向け投資リサーチャー | upstream | skeleton | Investment Researcher | 市場、企業、競合、財務、事業リスクを調査し、日本企業の投資・M&A・新規事業判断向けに整理するファイナンス agent。 | `finance/finance-investment-researcher.md` |
+|  | 日本向け税務戦略アドバイザー | upstream | skeleton | Tax Strategist | 法人税、消費税、インボイス、電子帳簿、海外取引、税務論点を日本企業の IT / SaaS / 事業運営向けに整理するファイナンス agent。 | `finance/finance-tax-strategist.md` |
 
 ## Game Development
 
