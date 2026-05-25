@@ -5,20 +5,20 @@ This file is generated from agent frontmatter. Do not edit it manually.
 Total agents: 281
 Japan-original agents: 97
 Upstream-aligned agents: 184
-Skeleton: 96
+Skeleton: 65
 Translated: 0
-Adapted: 88
+Adapted: 119
 
 ## By Category
 
 | Category | Upstream | Skeleton | Translated | Adapted | Japan-original |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Academic | 5 | 5 | 0 | 0 | 0 |
+| Academic | 5 | 0 | 0 | 5 | 0 |
 | Engineering | 29 | 0 | 0 | 29 | 20 |
 | Project Management | 6 | 0 | 0 | 6 | 7 |
 | Testing | 8 | 0 | 0 | 8 | 6 |
 | Product | 5 | 0 | 0 | 5 | 2 |
-| Marketing | 30 | 26 | 0 | 4 | 16 |
+| Marketing | 30 | 0 | 0 | 30 | 16 |
 | Paid Media | 7 | 0 | 0 | 7 | 1 |
 | Finance | 5 | 0 | 0 | 5 | 4 |
 | Game Development | 20 | 20 | 0 | 0 | 0 |
@@ -35,11 +35,6 @@ Adapted: 88
 
 | Agent | Upstream | Path |
 | --- | --- | --- |
-| 日本向け文化人類学リサーチャー | Anthropologist | `academic/academic-anthropologist.md` |
-| 日本向け地理・地域分析リサーチャー | Geographer | `academic/academic-geographer.md` |
-| 日本向け歴史リサーチャー | Historian | `academic/academic-historian.md` |
-| 日本向けナラティブ分析者 | Narratologist | `academic/academic-narratologist.md` |
-| 日本向け心理リサーチャー | Psychologist | `academic/academic-psychologist.md` |
 | 日本向け Blender アドオンエンジニア | Blender Add-on Engineer | `game-development/blender/blender-addon-engineer.md` |
 | 日本向けゲーム音響エンジニア | Game Audio Engineer | `game-development/game-audio-engineer.md` |
 | 日本向けゲームデザイナー | Game Designer | `game-development/game-designer.md` |
@@ -60,32 +55,6 @@ Adapted: 88
 | 日本向け Unreal Systems Engineer | Unreal Systems Engineer | `game-development/unreal-engine/unreal-systems-engineer.md` |
 | 日本向け Unreal Technical Artist | Unreal Technical Artist | `game-development/unreal-engine/unreal-technical-artist.md` |
 | 日本向け Unreal World Builder | Unreal World Builder | `game-development/unreal-engine/unreal-world-builder.md` |
-| 日本向けエージェント検索最適化担当 | Agentic Search Optimizer | `marketing/marketing-agentic-search-optimizer.md` |
-| 日本向けアプリストア最適化担当 | App Store Optimizer | `marketing/marketing-app-store-optimizer.md` |
-| Yahoo! JAPAN / Google SEO スペシャリスト | Baidu SEO Specialist | `marketing/marketing-baidu-seo-specialist.md` |
-| YouTube / NicoNico コンテンツ戦略家 | Bilibili Content Strategist | `marketing/marketing-bilibili-content-strategist.md` |
-| 日本向け書籍共同著者 | Book Co-Author | `marketing/marketing-book-co-author.md` |
-| 日本向けカルーセル投稿成長エンジン | Carousel Growth Engine | `marketing/marketing-carousel-growth-engine.md` |
-| 日本向け EC 運用者 | China Ecommerce Operator | `marketing/marketing-china-ecommerce-operator.md` |
-| 日本市場ローカライゼーション戦略家 | China Market Localization Strategist | `marketing/marketing-china-market-localization-strategist.md` |
-| 日本向け越境 EC 戦略家 | Cross-Border Ecommerce | `marketing/marketing-cross-border-ecommerce.md` |
-| TikTok Japan 戦略家 | Douyin Strategist | `marketing/marketing-douyin-strategist.md` |
-| 日本向けグロースハッカー | Growth Hacker | `marketing/marketing-growth-hacker.md` |
-| 日本向け Instagram キュレーター | Instagram Curator | `marketing/marketing-instagram-curator.md` |
-| Short Video Japan 戦略家 | Kuaishou Strategist | `marketing/marketing-kuaishou-strategist.md` |
-| LinkedIn Japan コンテンツ制作者 | LinkedIn Content Creator | `marketing/marketing-linkedin-content-creator.md` |
-| 日本向けライブコマースコーチ | Livestream Commerce Coach | `marketing/marketing-livestream-commerce-coach.md` |
-| 日本向けポッドキャスト戦略家 | Podcast Strategist | `marketing/marketing-podcast-strategist.md` |
-| 日本向け CRM / コミュニティ運用者 | Private Domain Operator | `marketing/marketing-private-domain-operator.md` |
-| 日本向けオンラインコミュニティビルダー | Reddit Community Builder | `marketing/marketing-reddit-community-builder.md` |
-| 日本向けショート動画編集コーチ | Short Video Editing Coach | `marketing/marketing-short-video-editing-coach.md` |
-| TikTok Japan 戦略家 | TikTok Strategist | `marketing/marketing-tiktok-strategist.md` |
-| X Japan エンゲージメント担当 | Twitter Engager | `marketing/marketing-twitter-engager.md` |
-| 日本向け動画最適化専門家 | Video Optimization Specialist | `marketing/marketing-video-optimization-specialist.md` |
-| LINE 公式アカウント戦略家 | WeChat Official Account | `marketing/marketing-wechat-official-account.md` |
-| X / Threads Japan 戦略家 | Weibo Strategist | `marketing/marketing-weibo-strategist.md` |
-| Instagram / Lemon8 戦略家 | Xiaohongshu Specialist | `marketing/marketing-xiaohongshu-specialist.md` |
-| note / Qiita / Zenn 戦略家 | Zhihu Strategist | `marketing/marketing-zhihu-strategist.md` |
 | 日本向け macOS Spatial / Metal エンジニア | macOS Spatial / Metal Engineer | `spatial-computing/macos-spatial-metal-engineer.md` |
 | 日本向けターミナル連携専門家 | Terminal Integration Specialist | `spatial-computing/terminal-integration-specialist.md` |
 | 日本向け visionOS 空間エンジニア | visionOS Spatial Engineer | `spatial-computing/visionos-spatial-engineer.md` |

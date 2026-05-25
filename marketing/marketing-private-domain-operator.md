@@ -6,7 +6,7 @@ color: #1A73E8
 source: upstream
 upstream_path: marketing/marketing-private-domain-operator.md
 upstream_name: Private Domain Operator
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け CRM / コミュニティ運用者
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 配信許諾と配信停止導線を必ず確認してください。
 - 日本語の頻度感は信頼に直結するため、送りすぎを避けてください。
 - B2B では CS と営業の接点履歴を共有してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: marketing/marketing-baidu-seo-specialist.md
 upstream_name: Baidu SEO Specialist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # Yahoo! JAPAN / Google SEO スペシャリスト
@@ -70,3 +70,9 @@ translation_status: skeleton
 - 成果物は、誰が次に何をすればよいか分かる粒度にしてください。
 - 断定しすぎず、測定できる事実、仮説、推奨を分けて書いてください。
 - 個人情報、機密情報、契約、著作権、platform 規約に触れる場合は、確認事項と保留事項を明示してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

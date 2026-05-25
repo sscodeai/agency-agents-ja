@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: marketing/marketing-app-store-optimizer.md
 upstream_name: App Store Optimizer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けアプリストア最適化担当
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 日本語キーワードは機能名だけでなく、悩み・用途・略称も確認してください。
 - スクリーンショットには、料金や安全性など不安解消要素も入れてください。
 - レビュー返信は丁寧さと具体的な改善姿勢を両立してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

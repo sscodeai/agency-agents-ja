@@ -6,7 +6,7 @@ color: #FF4500
 source: upstream
 upstream_path: marketing/marketing-reddit-community-builder.md
 upstream_name: Reddit Community Builder
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けオンラインコミュニティビルダー
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 初期メンバーが発言しやすいよう、自己紹介と質問 template を用意してください。
 - Support channel と community discussion の責任範囲を分けてください。
 - 行動規範と moderation 方針を公開前に決めてください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

@@ -11,11 +11,11 @@ Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
-|  | 日本向け文化人類学リサーチャー | upstream | skeleton | Anthropologist | 日本の利用者文化、業務慣習、組織行動、地域差を ethnographic research として整理し、IT 企画・UX・市場参入に活かす学術・リサーチ agent。 | `academic/academic-anthropologist.md` |
-|  | 日本向け地理・地域分析リサーチャー | upstream | skeleton | Geographer | 地域差、商圏、移動、災害、自治体、インフラ制約を分析し、日本向け IT 企画・展開計画へ落とし込む学術・リサーチ agent。 | `academic/academic-geographer.md` |
-|  | 日本向け歴史リサーチャー | upstream | skeleton | Historian | 産業史、制度変遷、企業沿革、地域史を調査し、IT 企画・市場理解・ブランド narrative に活かす学術・リサーチ agent。 | `academic/academic-historian.md` |
-|  | 日本向けナラティブ分析者 | upstream | skeleton | Narratologist | 物語構造、語り口、ブランド narrative、政策・企業メッセージを分析し、日本向け IT 提案・UX・広報に活かす学術・リサーチ agent。 | `academic/academic-narratologist.md` |
-|  | 日本向け心理リサーチャー | upstream | skeleton | Psychologist | 行動心理、意思決定、motivation、認知負荷、組織心理を分析し、日本向け UX・導入定着・業務変革に活かす学術・リサーチ agent。 | `academic/academic-psychologist.md` |
+|  | 日本向け文化人類学リサーチャー | upstream | adapted | Anthropologist | 日本の利用者文化、業務慣習、組織行動、地域差を ethnographic research として整理し、IT 企画・UX・市場参入に活かす学術・リサーチ agent。 | `academic/academic-anthropologist.md` |
+|  | 日本向け地理・地域分析リサーチャー | upstream | adapted | Geographer | 地域差、商圏、移動、災害、自治体、インフラ制約を分析し、日本向け IT 企画・展開計画へ落とし込む学術・リサーチ agent。 | `academic/academic-geographer.md` |
+|  | 日本向け歴史リサーチャー | upstream | adapted | Historian | 産業史、制度変遷、企業沿革、地域史を調査し、IT 企画・市場理解・ブランド narrative に活かす学術・リサーチ agent。 | `academic/academic-historian.md` |
+|  | 日本向けナラティブ分析者 | upstream | adapted | Narratologist | 物語構造、語り口、ブランド narrative、政策・企業メッセージを分析し、日本向け IT 提案・UX・広報に活かす学術・リサーチ agent。 | `academic/academic-narratologist.md` |
+|  | 日本向け心理リサーチャー | upstream | adapted | Psychologist | 行動心理、意思決定、motivation、認知負荷、組織心理を分析し、日本向け UX・導入定着・業務変革に活かす学術・リサーチ agent。 | `academic/academic-psychologist.md` |
 
 ## Engineering
 
@@ -150,36 +150,36 @@ Total: 46 (⭐ 16 japan-original + 30 upstream-aligned)
 | ⭐ | セミナー / ウェビナー企画者 | japan-original |  |  | 日本の B2B SaaS / IT 企業向けに seminar、webinar、white paper、lead nurturing の企画を作る marketer。 | `marketing/marketing-seminar-webinar-planner.md` |
 | ⭐ | 日本向け TikTok ストラテジスト | japan-original |  |  | 日本の IT 企業、SaaS、採用広報、developer marketing、イベント告知向けに TikTok / short video の企画、台本、配信、効果測定を設計する strategist。 | `marketing/marketing-tiktok-japan-strategist.md` |
 | ⭐ | Yahoo! JAPAN / Google SEO スペシャリスト | japan-original |  |  | 日本語検索向け technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う specialist。 | `marketing/marketing-yahoo-google-japan-seo.md` |
-|  | 日本向けエージェント検索最適化担当 | upstream | skeleton | Agentic Search Optimizer | ChatGPT、Perplexity、Gemini などの AI agent / answer engine に日本語で発見・引用されやすい情報設計を行う marketing agent。 | `marketing/marketing-agentic-search-optimizer.md` |
+|  | 日本向けエージェント検索最適化担当 | upstream | adapted | Agentic Search Optimizer | ChatGPT、Perplexity、Gemini などの AI agent / answer engine に日本語で発見・引用されやすい情報設計を行う marketing agent。 | `marketing/marketing-agentic-search-optimizer.md` |
 |  | 日本向け AI Citation Strategist | upstream | adapted | AI Citation Strategist | 生成 AI / answer engine で日本語ユーザーに正しく引用・推薦されるための AEO / GEO 戦略を設計する marketing agent。 | `marketing/marketing-ai-citation-strategist.md` |
-|  | 日本向けアプリストア最適化担当 | upstream | skeleton | App Store Optimizer | App Store / Google Play で日本語キーワード、説明文、スクリーンショット、レビュー改善を行う ASO agent。 | `marketing/marketing-app-store-optimizer.md` |
-|  | Yahoo! JAPAN / Google SEO スペシャリスト | upstream | skeleton | Baidu SEO Specialist | Yahoo! JAPAN / Google SEO スペシャリスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-baidu-seo-specialist.md` |
-|  | YouTube / NicoNico コンテンツ戦略家 | upstream | skeleton | Bilibili Content Strategist | 日本向けに YouTube、NicoNico、技術動画、採用広報動画、製品解説動画の企画・改善を行う marketing agent。 | `marketing/marketing-bilibili-content-strategist.md` |
-|  | 日本向け書籍共同著者 | upstream | skeleton | Book Co-Author | 日本語のビジネス書、技術書、Zenn Book、同人誌、ホワイトペーパーを企画・構成・執筆支援する marketing agent。 | `marketing/marketing-book-co-author.md` |
-|  | 日本向けカルーセル投稿成長エンジン | upstream | skeleton | Carousel Growth Engine | Instagram、LinkedIn、X、note 連携向けに日本語カルーセル投稿の企画・構成・改善を行う marketing agent。 | `marketing/marketing-carousel-growth-engine.md` |
-|  | 日本向け EC 運用者 | upstream | skeleton | China Ecommerce Operator | 楽天市場、Amazon Japan、Yahoo! ショッピング、Shopify Japan の商品ページ、広告、レビュー、在庫、販促を運用する agent。 | `marketing/marketing-china-ecommerce-operator.md` |
-|  | 日本市場ローカライゼーション戦略家 | upstream | skeleton | China Market Localization Strategist | 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。 | `marketing/marketing-china-market-localization-strategist.md` |
+|  | 日本向けアプリストア最適化担当 | upstream | adapted | App Store Optimizer | App Store / Google Play で日本語キーワード、説明文、スクリーンショット、レビュー改善を行う ASO agent。 | `marketing/marketing-app-store-optimizer.md` |
+|  | Yahoo! JAPAN / Google SEO スペシャリスト | upstream | adapted | Baidu SEO Specialist | Yahoo! JAPAN / Google SEO スペシャリスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-baidu-seo-specialist.md` |
+|  | YouTube / NicoNico コンテンツ戦略家 | upstream | adapted | Bilibili Content Strategist | 日本向けに YouTube、NicoNico、技術動画、採用広報動画、製品解説動画の企画・改善を行う marketing agent。 | `marketing/marketing-bilibili-content-strategist.md` |
+|  | 日本向け書籍共同著者 | upstream | adapted | Book Co-Author | 日本語のビジネス書、技術書、Zenn Book、同人誌、ホワイトペーパーを企画・構成・執筆支援する marketing agent。 | `marketing/marketing-book-co-author.md` |
+|  | 日本向けカルーセル投稿成長エンジン | upstream | adapted | Carousel Growth Engine | Instagram、LinkedIn、X、note 連携向けに日本語カルーセル投稿の企画・構成・改善を行う marketing agent。 | `marketing/marketing-carousel-growth-engine.md` |
+|  | 日本向け EC 運用者 | upstream | adapted | China Ecommerce Operator | 楽天市場、Amazon Japan、Yahoo! ショッピング、Shopify Japan の商品ページ、広告、レビュー、在庫、販促を運用する agent。 | `marketing/marketing-china-ecommerce-operator.md` |
+|  | 日本市場ローカライゼーション戦略家 | upstream | adapted | China Market Localization Strategist | 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。 | `marketing/marketing-china-market-localization-strategist.md` |
 |  | 日本向けコンテンツクリエイター | upstream | adapted | Content Creator | 日本の B2B / B2C マーケティング向けに記事、SNS、LP、メール、導入事例、技術解説を作る content agent。 | `marketing/marketing-content-creator.md` |
-|  | 日本向け越境 EC 戦略家 | upstream | skeleton | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
-|  | TikTok Japan 戦略家 | upstream | skeleton | Douyin Strategist | TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-douyin-strategist.md` |
-|  | 日本向けグロースハッカー | upstream | skeleton | Growth Hacker | 日本の SaaS、アプリ、EC、メディアで acquisition、activation、retention、referral、revenue を実験改善する agent。 | `marketing/marketing-growth-hacker.md` |
-|  | 日本向け Instagram キュレーター | upstream | skeleton | Instagram Curator | 日本向け Instagram の投稿、リール、ストーリーズ、プロフィール、ハイライト、導線を設計・改善する marketing agent。 | `marketing/marketing-instagram-curator.md` |
-|  | Short Video Japan 戦略家 | upstream | skeleton | Kuaishou Strategist | TikTok、YouTube Shorts、Instagram Reels 向けに日本市場の短尺動画企画・改善を行う marketing agent。 | `marketing/marketing-kuaishou-strategist.md` |
-|  | LinkedIn Japan コンテンツ制作者 | upstream | skeleton | LinkedIn Content Creator | 日本の B2B、採用、経営者発信、海外展開向けに LinkedIn 投稿と thought leadership を作る agent。 | `marketing/marketing-linkedin-content-creator.md` |
-|  | 日本向けライブコマースコーチ | upstream | skeleton | Livestream Commerce Coach | 日本の EC、店舗、D2C、SNS 販売向けにライブ配信の台本、商品訴求、導線、運営を支援する agent。 | `marketing/marketing-livestream-commerce-coach.md` |
-|  | 日本向けポッドキャスト戦略家 | upstream | skeleton | Podcast Strategist | 日本の B2B、採用、技術広報、コミュニティ向けに podcast 企画、構成、配信、再利用を設計する agent。 | `marketing/marketing-podcast-strategist.md` |
-|  | 日本向け CRM / コミュニティ運用者 | upstream | skeleton | Private Domain Operator | LINE、メール、会員サイト、ユーザー会、Slack / Discord などの CRM / community 運用を設計する marketing agent。 | `marketing/marketing-private-domain-operator.md` |
-|  | 日本向けオンラインコミュニティビルダー | upstream | skeleton | Reddit Community Builder | Discord、Slack、X、Qiita、Zenn、connpass などで日本向けオンラインコミュニティを育てる agent。 | `marketing/marketing-reddit-community-builder.md` |
+|  | 日本向け越境 EC 戦略家 | upstream | adapted | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
+|  | TikTok Japan 戦略家 | upstream | adapted | Douyin Strategist | TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-douyin-strategist.md` |
+|  | 日本向けグロースハッカー | upstream | adapted | Growth Hacker | 日本の SaaS、アプリ、EC、メディアで acquisition、activation、retention、referral、revenue を実験改善する agent。 | `marketing/marketing-growth-hacker.md` |
+|  | 日本向け Instagram キュレーター | upstream | adapted | Instagram Curator | 日本向け Instagram の投稿、リール、ストーリーズ、プロフィール、ハイライト、導線を設計・改善する marketing agent。 | `marketing/marketing-instagram-curator.md` |
+|  | Short Video Japan 戦略家 | upstream | adapted | Kuaishou Strategist | TikTok、YouTube Shorts、Instagram Reels 向けに日本市場の短尺動画企画・改善を行う marketing agent。 | `marketing/marketing-kuaishou-strategist.md` |
+|  | LinkedIn Japan コンテンツ制作者 | upstream | adapted | LinkedIn Content Creator | 日本の B2B、採用、経営者発信、海外展開向けに LinkedIn 投稿と thought leadership を作る agent。 | `marketing/marketing-linkedin-content-creator.md` |
+|  | 日本向けライブコマースコーチ | upstream | adapted | Livestream Commerce Coach | 日本の EC、店舗、D2C、SNS 販売向けにライブ配信の台本、商品訴求、導線、運営を支援する agent。 | `marketing/marketing-livestream-commerce-coach.md` |
+|  | 日本向けポッドキャスト戦略家 | upstream | adapted | Podcast Strategist | 日本の B2B、採用、技術広報、コミュニティ向けに podcast 企画、構成、配信、再利用を設計する agent。 | `marketing/marketing-podcast-strategist.md` |
+|  | 日本向け CRM / コミュニティ運用者 | upstream | adapted | Private Domain Operator | LINE、メール、会員サイト、ユーザー会、Slack / Discord などの CRM / community 運用を設計する marketing agent。 | `marketing/marketing-private-domain-operator.md` |
+|  | 日本向けオンラインコミュニティビルダー | upstream | adapted | Reddit Community Builder | Discord、Slack、X、Qiita、Zenn、connpass などで日本向けオンラインコミュニティを育てる agent。 | `marketing/marketing-reddit-community-builder.md` |
 |  | 日本向け SEO スペシャリスト | upstream | adapted | SEO Specialist | 日本語検索向けに technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う marketing agent。 | `marketing/marketing-seo-specialist.md` |
-|  | 日本向けショート動画編集コーチ | upstream | skeleton | Short Video Editing Coach | TikTok、YouTube Shorts、Instagram Reels 向けに日本語字幕、テンポ、構成、CTA を改善する editing coach。 | `marketing/marketing-short-video-editing-coach.md` |
+|  | 日本向けショート動画編集コーチ | upstream | adapted | Short Video Editing Coach | TikTok、YouTube Shorts、Instagram Reels 向けに日本語字幕、テンポ、構成、CTA を改善する editing coach。 | `marketing/marketing-short-video-editing-coach.md` |
 |  | 日本向け SNS 戦略家 | upstream | adapted | Social Media Strategist | X、Instagram、TikTok、YouTube、LINE、LinkedIn などを日本市場向けに統合設計する social media strategist。 | `marketing/marketing-social-media-strategist.md` |
-|  | TikTok Japan 戦略家 | upstream | skeleton | TikTok Strategist | TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-tiktok-strategist.md` |
-|  | X Japan エンゲージメント担当 | upstream | skeleton | Twitter Engager | 日本向け X の投稿、返信、引用、スペース、コミュニティ参加を通じて信頼と接点を作る marketing agent。 | `marketing/marketing-twitter-engager.md` |
-|  | 日本向け動画最適化専門家 | upstream | skeleton | Video Optimization Specialist | YouTube、Shorts、ウェビナー、製品 demo 動画を、日本語 title、thumbnail、構成、配信導線で最適化する agent。 | `marketing/marketing-video-optimization-specialist.md` |
-|  | LINE 公式アカウント戦略家 | upstream | skeleton | WeChat Official Account | 日本向け LINE 公式アカウントの配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する agent。 | `marketing/marketing-wechat-official-account.md` |
-|  | X / Threads Japan 戦略家 | upstream | skeleton | Weibo Strategist | 日本向けに X、Threads、Bluesky などの短文 SNS 発信、会話、キャンペーン、リスク対応を設計する agent。 | `marketing/marketing-weibo-strategist.md` |
-|  | Instagram / Lemon8 戦略家 | upstream | skeleton | Xiaohongshu Specialist | 日本向けに Instagram、Lemon8、Pinterest など visual discovery platform の投稿・保存・購買導線を設計する agent。 | `marketing/marketing-xiaohongshu-specialist.md` |
-|  | note / Qiita / Zenn 戦略家 | upstream | skeleton | Zhihu Strategist | 日本向けに note、Qiita、Zenn、はてなブログを使った技術広報、採用広報、SEO、コミュニティ発信を設計する agent。 | `marketing/marketing-zhihu-strategist.md` |
+|  | TikTok Japan 戦略家 | upstream | adapted | TikTok Strategist | TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-tiktok-strategist.md` |
+|  | X Japan エンゲージメント担当 | upstream | adapted | Twitter Engager | 日本向け X の投稿、返信、引用、スペース、コミュニティ参加を通じて信頼と接点を作る marketing agent。 | `marketing/marketing-twitter-engager.md` |
+|  | 日本向け動画最適化専門家 | upstream | adapted | Video Optimization Specialist | YouTube、Shorts、ウェビナー、製品 demo 動画を、日本語 title、thumbnail、構成、配信導線で最適化する agent。 | `marketing/marketing-video-optimization-specialist.md` |
+|  | LINE 公式アカウント戦略家 | upstream | adapted | WeChat Official Account | 日本向け LINE 公式アカウントの配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する agent。 | `marketing/marketing-wechat-official-account.md` |
+|  | X / Threads Japan 戦略家 | upstream | adapted | Weibo Strategist | 日本向けに X、Threads、Bluesky などの短文 SNS 発信、会話、キャンペーン、リスク対応を設計する agent。 | `marketing/marketing-weibo-strategist.md` |
+|  | Instagram / Lemon8 戦略家 | upstream | adapted | Xiaohongshu Specialist | 日本向けに Instagram、Lemon8、Pinterest など visual discovery platform の投稿・保存・購買導線を設計する agent。 | `marketing/marketing-xiaohongshu-specialist.md` |
+|  | note / Qiita / Zenn 戦略家 | upstream | adapted | Zhihu Strategist | 日本向けに note、Qiita、Zenn、はてなブログを使った技術広報、採用広報、SEO、コミュニティ発信を設計する agent。 | `marketing/marketing-zhihu-strategist.md` |
 
 ## Paid Media
 

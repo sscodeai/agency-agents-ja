@@ -6,7 +6,7 @@ color: #0084FF
 source: upstream
 upstream_path: marketing/marketing-zhihu-strategist.md
 upstream_name: Zhihu Strategist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # note / Qiita / Zenn 戦略家
@@ -51,3 +51,9 @@ translation_status: skeleton
 - Qiita / Zenn では実装の再現性と技術的正確性が信頼に直結します。
 - 採用広報では、会社の宣伝よりも現場の学びや意思決定を見せてください。
 - セキュリティや顧客情報を含む記事は公開前 review を必ず入れてください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

@@ -6,7 +6,7 @@ color: #8B5E3C
 source: upstream
 upstream_path: marketing/marketing-book-co-author.md
 upstream_name: Book Co-Author
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け書籍共同著者
@@ -53,3 +53,9 @@ translation_status: skeleton
 - 日本語書籍では、導入で読者の状況と読む価値を明確にしてください。
 - 技術内容は再現性を重視し、環境や version を明記してください。
 - 顧客事例や社内情報は公開許諾を確認してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

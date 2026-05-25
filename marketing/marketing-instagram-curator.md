@@ -6,7 +6,7 @@ color: #E4405F
 source: upstream
 upstream_path: marketing/marketing-instagram-curator.md
 upstream_name: Instagram Curator
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Instagram キュレーター
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 日本語 caption は丁寧さと読みやすさを優先してください。
 - 写真や人物の公開許諾を必ず確認してください。
 - B2B では派手さよりも信頼感と採用・営業への接続を重視してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

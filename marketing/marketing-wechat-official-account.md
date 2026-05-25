@@ -6,7 +6,7 @@ color: #09B83E
 source: upstream
 upstream_path: marketing/marketing-wechat-official-account.md
 upstream_name: WeChat Official Account
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # LINE 公式アカウント戦略家
@@ -51,3 +51,9 @@ translation_status: skeleton
 - ブロック率を悪化させない配信頻度と価値提供を設計してください。
 - 個人情報と配信同意の管理を明確にしてください。
 - 店舗や CS が対応できる問い合わせ導線にしてください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

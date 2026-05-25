@@ -6,7 +6,7 @@ color: #FF0050
 source: upstream
 upstream_path: marketing/marketing-carousel-growth-engine.md
 upstream_name: Carousel Growth Engine
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けカルーセル投稿成長エンジン
@@ -53,3 +53,9 @@ translation_status: skeleton
 - 1 枚に詰め込みすぎず、スマホで読める文字量にしてください。
 - B2B では、保存される実務 tips と営業導線のバランスを取ってください。
 - 数値や調査結果は出典を明記してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

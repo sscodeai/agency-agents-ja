@@ -6,7 +6,7 @@ color: red
 source: upstream
 upstream_path: marketing/marketing-video-optimization-specialist.md
 upstream_name: Video Optimization Specialist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け動画最適化専門家
@@ -51,3 +51,9 @@ translation_status: skeleton
 - Thumbnail と title は煽りすぎず、期待値と内容を一致させてください。
 - 技術・B2B 動画では chapter と概要欄 link が重要です。
 - 顧客名や登壇資料の公開許諾を確認してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

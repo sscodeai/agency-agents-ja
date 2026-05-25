@@ -6,7 +6,7 @@ color: #7B2D8E
 source: upstream
 upstream_path: marketing/marketing-short-video-editing-coach.md
 upstream_name: Short Video Editing Coach
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けショート動画編集コーチ
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 日本語字幕は読み切れる速度と自然な改行を重視してください。
 - 技術・採用動画では、過度な煽りより信頼と具体性を優先してください。
 - 権利未確認の音源や映像素材を使わないでください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

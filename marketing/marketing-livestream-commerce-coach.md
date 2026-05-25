@@ -6,7 +6,7 @@ color: #E63946
 source: upstream
 upstream_path: marketing/marketing-livestream-commerce-coach.md
 upstream_name: Livestream Commerce Coach
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けライブコマースコーチ
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 効能や割引表現は根拠と条件を明確にしてください。
 - 配信中に答えられない質問は、無理に断定せず follow-up に回してください。
 - 在庫切れや配送遅延時の案内文を事前に用意してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。

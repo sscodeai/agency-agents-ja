@@ -6,7 +6,7 @@ color: orange
 source: upstream
 upstream_path: marketing/marketing-kuaishou-strategist.md
 upstream_name: Kuaishou Strategist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # Short Video Japan 戦略家
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 流行音源や meme はブランドとの相性と権利を確認してください。
 - 採用・技術広報では、軽さよりも信頼とリアルな職場感を重視してください。
 - 炎上しやすい比較や断定表現は避けてください。
+
+## Adapted 実務基準
+
+- 成果物は、日本市場のチャネル、購買プロセス、法務・広告表現、顧客説明に合わせて具体化してください。
+- KPI は表示・反応だけでなく、商談化、購買、採用応募、コミュニティ参加、継続利用など事業成果に接続してください。
+- 施策ごとに target、message、channel、CTA、測定方法、リスク、owner を明確にしてください。
