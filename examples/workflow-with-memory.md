@@ -1,0 +1,35 @@
+# Workflow Example: With Memory
+
+> agency-agents-ja では、上流 memory example の構造対応として、fork の上流追従 context を保持する OSS upstream sync workflow を示します。
+
+```yaml
+name: oss-upstream-sync
+description: fork 後の OSS project を継続的に上流追従するための workflow。upstream release / commit の分類、fork 独自改修との衝突確認、翻訳追従、release note への反映、Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを日本 IT 現場向けに整える
+agents_dir: "."
+inputs:
+  - name: upstream_diff
+    required: true
+  - name: fork_context
+    required: true
+steps:
+  - id: sync_plan
+    role: "project-management/project-management-japanese-upstream-sync-coordinator"
+    task: "Upstream diff {{upstream_diff}} と fork context {{fork_context}} をもとに、upstream 変更を Security / Breaking / Feature / Fix / Docs / Internal / fork に不要、で分類し、fork 独自改修との衝突有無、翻訳追従の優先度、追従 PR 粒度、SLA（security 24h / breaking 1 週間 / feature 1 ヶ月 / docs 四半期）を整理してください。重大度 [must] [should] [nits] [question] で分類してください。"
+    output: sync_plan
+  - id: localization
+    role: "engineering/engineering-japanese-oss-localization-engineer"
+    task: "Sync plan {{sync_plan}} をもとに、翻訳済み file の upstream-ref と最新 upstream の diff、翻訳追従対象 file、用語集の更新点、構造保持 checklist、breaking change 時に翻訳より先に出す「お知らせ」文案を整理してください。"
+    depends_on: [sync_plan]
+    output: localization
+  - id: release
+    role: "project-management/project-management-japanese-release-manager"
+    task: "Sync plan {{sync_plan}} と localization plan {{localization}} をもとに、上流取り込み版の fork 側 release Go / No-Go 判定、作業手順、切り戻し条件、Backlog / Redmine / Jira ticket 化、監査証跡 checklist を整理してください。"
+    depends_on: [sync_plan, localization]
+    output: release
+  - id: release_note
+    role: "support/support-release-note-writer-ja"
+    task: "Sync plan {{sync_plan}}、localization plan {{localization}}、release plan {{release}} をまとめ、fork 側日本語 release note を作成してください。「上流 vX.Y.Z を取り込んだ」section、利用者向け重要事項、breaking change の日本語注意書き、移行手順、Qiita / Zenn / X への周知文案を含めてください。"
+    depends_on: [sync_plan, localization, release]
+    output: summary
+
+```
