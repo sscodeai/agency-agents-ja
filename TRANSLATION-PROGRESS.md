@@ -48,35 +48,35 @@ Adapted: 0
 | 日本向け UX リサーチャー | UX Researcher | `design/design-ux-researcher.md` |
 | 日本向けビジュアルストーリーテラー | Visual Storyteller | `design/design-visual-storyteller.md` |
 | 日本向け遊び心デザインアドバイザー | Whimsy Injector | `design/design-whimsy-injector.md` |
-| 日本向け AI データ修復エンジニア | engineering/engineering-ai-data-remediation-engineer.md | `engineering/engineering-ai-data-remediation-engineer.md` |
-| 日本向け AI エンジニア | engineering/engineering-ai-engineer.md | `engineering/engineering-ai-engineer.md` |
-| 日本向け自律最適化アーキテクト | engineering/engineering-autonomous-optimization-architect.md | `engineering/engineering-autonomous-optimization-architect.md` |
-| 日本向け Backend Architect | engineering/engineering-backend-architect.md | `engineering/engineering-backend-architect.md` |
-| 日本向け CMS 開発者 | engineering/engineering-cms-developer.md | `engineering/engineering-cms-developer.md` |
-| 日本向け Code Reviewer | engineering/engineering-code-reviewer.md | `engineering/engineering-code-reviewer.md` |
-| 日本向けコードベースオンボーディングエンジニア | engineering/engineering-codebase-onboarding-engineer.md | `engineering/engineering-codebase-onboarding-engineer.md` |
-| 日本向け Data Engineer | engineering/engineering-data-engineer.md | `engineering/engineering-data-engineer.md` |
-| 日本向け Database Optimizer | engineering/engineering-database-optimizer.md | `engineering/engineering-database-optimizer.md` |
-| 日本向け DevOps 自動化エンジニア | engineering/engineering-devops-automator.md | `engineering/engineering-devops-automator.md` |
-| 日本向けメールインテリジェンスエンジニア | engineering/engineering-email-intelligence-engineer.md | `engineering/engineering-email-intelligence-engineer.md` |
-| 日本向け組み込みファームウェアエンジニア | engineering/engineering-embedded-firmware-engineer.md | `engineering/engineering-embedded-firmware-engineer.md` |
-| 日本向け LINE WORKS / Slack 連携開発者 | engineering/engineering-feishu-integration-developer.md | `engineering/engineering-feishu-integration-developer.md` |
-| 日本向け 3D プリンタ材料最適化専門家 | engineering/engineering-filament-optimization-specialist.md | `engineering/engineering-filament-optimization-specialist.md` |
-| 日本向け Frontend Developer | engineering/engineering-frontend-developer.md | `engineering/engineering-frontend-developer.md` |
-| 日本向け Git ワークフローマスター | engineering/engineering-git-workflow-master.md | `engineering/engineering-git-workflow-master.md` |
-| 日本向けインシデント対応指揮者 | engineering/engineering-incident-response-commander.md | `engineering/engineering-incident-response-commander.md` |
-| 日本向け最小変更エンジニア | engineering/engineering-minimal-change-engineer.md | `engineering/engineering-minimal-change-engineer.md` |
-| 日本向け Mobile App Builder | engineering/engineering-mobile-app-builder.md | `engineering/engineering-mobile-app-builder.md` |
-| 日本向け高速プロトタイピングエンジニア | engineering/engineering-rapid-prototyper.md | `engineering/engineering-rapid-prototyper.md` |
-| 日本向け Security Engineer | engineering/engineering-security-engineer.md | `engineering/engineering-security-engineer.md` |
-| 日本向けシニア開発者 | engineering/engineering-senior-developer.md | `engineering/engineering-senior-developer.md` |
-| 日本向けソフトウェアアーキテクト | engineering/engineering-software-architect.md | `engineering/engineering-software-architect.md` |
-| 日本向け Solidity スマートコントラクトエンジニア | engineering/engineering-solidity-smart-contract-engineer.md | `engineering/engineering-solidity-smart-contract-engineer.md` |
-| 日本向けSRE (Site Reliability Engineer) | engineering/engineering-sre.md | `engineering/engineering-sre.md` |
-| 日本向け Technical Writer | engineering/engineering-technical-writer.md | `engineering/engineering-technical-writer.md` |
-| 日本向け脅威検知エンジニア | engineering/engineering-threat-detection-engineer.md | `engineering/engineering-threat-detection-engineer.md` |
-| 日本向け音声 AI 連携エンジニア | engineering/engineering-voice-ai-integration-engineer.md | `engineering/engineering-voice-ai-integration-engineer.md` |
-| 日本向け LINE ミニアプリ開発者 | engineering/engineering-wechat-mini-program-developer.md | `engineering/engineering-wechat-mini-program-developer.md` |
+| 日本向け AI データ修復エンジニア | AI Data Remediation Engineer | `engineering/engineering-ai-data-remediation-engineer.md` |
+| 日本向け AI エンジニア | AI Engineer | `engineering/engineering-ai-engineer.md` |
+| 日本向け自律最適化アーキテクト | Autonomous Optimization Architect | `engineering/engineering-autonomous-optimization-architect.md` |
+| 日本向け Backend Architect | Backend Architect | `engineering/engineering-backend-architect.md` |
+| 日本向け CMS 開発者 | CMS Developer | `engineering/engineering-cms-developer.md` |
+| 日本向け Code Reviewer | Code Reviewer | `engineering/engineering-code-reviewer.md` |
+| 日本向けコードベースオンボーディングエンジニア | Codebase Onboarding Engineer | `engineering/engineering-codebase-onboarding-engineer.md` |
+| 日本向け Data Engineer | Data Engineer | `engineering/engineering-data-engineer.md` |
+| 日本向け Database Optimizer | Database Optimizer | `engineering/engineering-database-optimizer.md` |
+| 日本向け DevOps 自動化エンジニア | DevOps Automator | `engineering/engineering-devops-automator.md` |
+| 日本向けメールインテリジェンスエンジニア | Email Intelligence Engineer | `engineering/engineering-email-intelligence-engineer.md` |
+| 日本向け組み込みファームウェアエンジニア | Embedded Firmware Engineer | `engineering/engineering-embedded-firmware-engineer.md` |
+| 日本向け LINE WORKS / Slack 連携開発者 | Feishu Integration Developer | `engineering/engineering-feishu-integration-developer.md` |
+| 日本向け 3D プリンタ材料最適化専門家 | Filament Optimization Specialist | `engineering/engineering-filament-optimization-specialist.md` |
+| 日本向け Frontend Developer | Frontend Developer | `engineering/engineering-frontend-developer.md` |
+| 日本向け Git ワークフローマスター | Git Workflow Master | `engineering/engineering-git-workflow-master.md` |
+| 日本向けインシデント対応指揮者 | Incident Response Commander | `engineering/engineering-incident-response-commander.md` |
+| 日本向け最小変更エンジニア | Minimal Change Engineer | `engineering/engineering-minimal-change-engineer.md` |
+| 日本向け Mobile App Builder | Mobile App Builder | `engineering/engineering-mobile-app-builder.md` |
+| 日本向け高速プロトタイピングエンジニア | Rapid Prototyper | `engineering/engineering-rapid-prototyper.md` |
+| 日本向け Security Engineer | Security Engineer | `engineering/engineering-security-engineer.md` |
+| 日本向けシニア開発者 | Senior Developer | `engineering/engineering-senior-developer.md` |
+| 日本向けソフトウェアアーキテクト | Software Architect | `engineering/engineering-software-architect.md` |
+| 日本向け Solidity スマートコントラクトエンジニア | Solidity Smart Contract Engineer | `engineering/engineering-solidity-smart-contract-engineer.md` |
+| 日本向けSRE (Site Reliability Engineer) | SRE (Site Reliability Engineer) | `engineering/engineering-sre.md` |
+| 日本向け Technical Writer | Technical Writer | `engineering/engineering-technical-writer.md` |
+| 日本向け脅威検知エンジニア | Threat Detection Engineer | `engineering/engineering-threat-detection-engineer.md` |
+| 日本向け音声 AI 連携エンジニア | Voice AI Integration Engineer | `engineering/engineering-voice-ai-integration-engineer.md` |
+| 日本向け LINE ミニアプリ開発者 | WeChat Mini Program Developer | `engineering/engineering-wechat-mini-program-developer.md` |
 | 日本向け経理・管理会計コントローラー | Bookkeeper & Controller | `finance/finance-bookkeeper-controller.md` |
 | 日本向け財務分析担当 | Financial Analyst | `finance/finance-financial-analyst.md` |
 | 日本向け FP&A アナリスト | FP&A Analyst | `finance/finance-fpa-analyst.md` |
