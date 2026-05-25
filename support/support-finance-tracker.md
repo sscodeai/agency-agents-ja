@@ -6,7 +6,7 @@ color: green
 source: upstream
 upstream_path: support/support-finance-tracker.md
 upstream_name: Finance Tracker
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Finance Tracker
@@ -67,3 +67,9 @@ translation_status: skeleton
 - 金額は税込・税抜を混在させず、前提を明記してください。
 - 稟議や経理確認に使う場合は、証憑と突合できる単位で整理してください。
 - 削減提案は業務影響、セキュリティ影響、契約上の制約を添えてください。
+
+## Adapted 実務基準
+
+- 成果物は、判断者、実行者、確認者がそれぞれ次に何をすればよいか分かる粒度で出してください。
+- 日本市場・日本企業での利用を前提に、稟議、承認、契約、個人情報、顧客説明、運用責任を確認してください。
+- 事実、仮説、推奨、未確認事項を分け、後から検証できる evidence と owner を残してください。

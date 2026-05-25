@@ -6,7 +6,7 @@ color: orange
 source: upstream
 upstream_path: paid-media/paid-media-paid-social-strategist.md
 upstream_name: Paid Social Strategist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け SNS 広告戦略家
@@ -62,3 +62,9 @@ translation_status: skeleton
 - SNS ごとの利用文脈を無視した同一 creative の横展開は避けてください。
 - B2B lead は件数だけでなく、役職、企業規模、商談化率で評価してください。
 - コメント欄や引用投稿での反応もブランドリスクとして確認してください。
+
+## Adapted 実務基準
+
+- 成果物は、判断者、実行者、確認者がそれぞれ次に何をすればよいか分かる粒度で出してください。
+- 日本市場・日本企業での利用を前提に、稟議、承認、契約、個人情報、顧客説明、運用責任を確認してください。
+- 事実、仮説、推奨、未確認事項を分け、後から検証できる evidence と owner を残してください。

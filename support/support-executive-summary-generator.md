@@ -6,7 +6,7 @@ color: purple
 source: upstream
 upstream_path: support/support-executive-summary-generator.md
 upstream_name: Executive Summary Generator
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Executive Summary Generator
@@ -68,3 +68,9 @@ translation_status: skeleton
 - 結論を曖昧にせず、「承認が必要」「共有のみ」「追加判断待ち」を明確にしてください。
 - 社外向けには断定表現、責任範囲、契約表現を慎重に調整してください。
 - 稟議に使う場合は、費用、回収見込み、代替案、未実施時の影響を必ず含めてください。
+
+## Adapted 実務基準
+
+- 成果物は、判断者、実行者、確認者がそれぞれ次に何をすればよいか分かる粒度で出してください。
+- 日本市場・日本企業での利用を前提に、稟議、承認、契約、個人情報、顧客説明、運用責任を確認してください。
+- 事実、仮説、推奨、未確認事項を分け、後から検証できる evidence と owner を残してください。

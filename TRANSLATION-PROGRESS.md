@@ -5,9 +5,9 @@ This file is generated from agent frontmatter. Do not edit it manually.
 Total agents: 281
 Japan-original agents: 97
 Upstream-aligned agents: 184
-Skeleton: 124
+Skeleton: 96
 Translated: 0
-Adapted: 60
+Adapted: 88
 
 ## By Category
 
@@ -16,18 +16,18 @@ Adapted: 60
 | Academic | 5 | 5 | 0 | 0 | 0 |
 | Engineering | 29 | 0 | 0 | 29 | 20 |
 | Project Management | 6 | 0 | 0 | 6 | 7 |
-| Testing | 8 | 3 | 0 | 5 | 6 |
+| Testing | 8 | 0 | 0 | 8 | 6 |
 | Product | 5 | 0 | 0 | 5 | 2 |
 | Marketing | 30 | 26 | 0 | 4 | 16 |
-| Paid Media | 7 | 7 | 0 | 0 | 1 |
-| Finance | 5 | 5 | 0 | 0 | 4 |
+| Paid Media | 7 | 0 | 0 | 7 | 1 |
+| Finance | 5 | 0 | 0 | 5 | 4 |
 | Game Development | 20 | 20 | 0 | 0 | 0 |
 | HR | 0 | 0 | 0 | 0 | 4 |
-| Design | 8 | 8 | 0 | 0 | 3 |
+| Design | 8 | 0 | 0 | 8 | 3 |
 | Legal | 0 | 0 | 0 | 0 | 6 |
-| Sales | 8 | 3 | 0 | 5 | 6 |
+| Sales | 8 | 0 | 0 | 8 | 6 |
 | Spatial Computing | 6 | 6 | 0 | 0 | 0 |
-| Support | 6 | 2 | 0 | 4 | 7 |
+| Support | 6 | 0 | 0 | 6 | 7 |
 | Supply Chain | 0 | 0 | 0 | 0 | 4 |
 | Specialized | 41 | 39 | 0 | 2 | 11 |
 
@@ -40,19 +40,6 @@ Adapted: 60
 | 日本向け歴史リサーチャー | Historian | `academic/academic-historian.md` |
 | 日本向けナラティブ分析者 | Narratologist | `academic/academic-narratologist.md` |
 | 日本向け心理リサーチャー | Psychologist | `academic/academic-psychologist.md` |
-| 日本向けブランドガーディアン | Brand Guardian | `design/design-brand-guardian.md` |
-| 日本向け画像プロンプトエンジニア | Image Prompt Engineer | `design/design-image-prompt-engineer.md` |
-| 日本向けインクルーシブビジュアル専門家 | Inclusive Visuals Specialist | `design/design-inclusive-visuals-specialist.md` |
-| 日本向け UI デザイナー | UI Designer | `design/design-ui-designer.md` |
-| 日本向け UX アーキテクト | UX Architect | `design/design-ux-architect.md` |
-| 日本向け UX リサーチャー | UX Researcher | `design/design-ux-researcher.md` |
-| 日本向けビジュアルストーリーテラー | Visual Storyteller | `design/design-visual-storyteller.md` |
-| 日本向け遊び心デザインアドバイザー | Whimsy Injector | `design/design-whimsy-injector.md` |
-| 日本向け経理・管理会計コントローラー | Bookkeeper & Controller | `finance/finance-bookkeeper-controller.md` |
-| 日本向け財務分析担当 | Financial Analyst | `finance/finance-financial-analyst.md` |
-| 日本向け FP&A アナリスト | FP&A Analyst | `finance/finance-fpa-analyst.md` |
-| 日本向け投資リサーチャー | Investment Researcher | `finance/finance-investment-researcher.md` |
-| 日本向け税務戦略アドバイザー | Tax Strategist | `finance/finance-tax-strategist.md` |
 | 日本向け Blender アドオンエンジニア | Blender Add-on Engineer | `game-development/blender/blender-addon-engineer.md` |
 | 日本向けゲーム音響エンジニア | Game Audio Engineer | `game-development/game-audio-engineer.md` |
 | 日本向けゲームデザイナー | Game Designer | `game-development/game-designer.md` |
@@ -99,16 +86,6 @@ Adapted: 60
 | X / Threads Japan 戦略家 | Weibo Strategist | `marketing/marketing-weibo-strategist.md` |
 | Instagram / Lemon8 戦略家 | Xiaohongshu Specialist | `marketing/marketing-xiaohongshu-specialist.md` |
 | note / Qiita / Zenn 戦略家 | Zhihu Strategist | `marketing/marketing-zhihu-strategist.md` |
-| 日本向け広告監査担当 | Paid Media Auditor | `paid-media/paid-media-auditor.md` |
-| 日本向け広告クリエイティブ戦略家 | Creative Strategist | `paid-media/paid-media-creative-strategist.md` |
-| 日本向け SNS 広告戦略家 | Paid Social Strategist | `paid-media/paid-media-paid-social-strategist.md` |
-| 日本向け PPC 戦略家 | PPC Strategist | `paid-media/paid-media-ppc-strategist.md` |
-| 日本向けプログラマティック広告バイヤー | Programmatic Buyer | `paid-media/paid-media-programmatic-buyer.md` |
-| 日本向け検索クエリアナリスト | Search Query Analyst | `paid-media/paid-media-search-query-analyst.md` |
-| 日本向け広告計測専門家 | Tracking Specialist | `paid-media/paid-media-tracking-specialist.md` |
-| 日本向けセールスコーチ | Sales Coach | `sales/sales-coach.md` |
-| 日本向け商談戦略家 | Deal Strategist | `sales/sales-deal-strategist.md` |
-| 日本向けアウトバウンド戦略家 | Outbound Strategist | `sales/sales-outbound-strategist.md` |
 | 日本向け macOS Spatial / Metal エンジニア | macOS Spatial / Metal Engineer | `spatial-computing/macos-spatial-metal-engineer.md` |
 | 日本向けターミナル連携専門家 | Terminal Integration Specialist | `spatial-computing/terminal-integration-specialist.md` |
 | 日本向け visionOS 空間エンジニア | visionOS Spatial Engineer | `spatial-computing/visionos-spatial-engineer.md` |
@@ -154,8 +131,3 @@ Adapted: 60
 | 日本向け留学アドバイザー | Study Abroad Advisor | `specialized/study-abroad-advisor.md` |
 | 日本向けサプライチェーン戦略家 | Supply Chain Strategist | `specialized/supply-chain-strategist.md` |
 | 日本向けゼロ知識証明スチュワード | ZK Steward | `specialized/zk-steward.md` |
-| 日本向け Executive Summary Generator | Executive Summary Generator | `support/support-executive-summary-generator.md` |
-| 日本向け Finance Tracker | Finance Tracker | `support/support-finance-tracker.md` |
-| 日本向け Reality Checker | Reality Checker | `testing/testing-reality-checker.md` |
-| 日本向け Tool Evaluator | Tool Evaluator | `testing/testing-tool-evaluator.md` |
-| 日本向け Workflow Optimizer | Workflow Optimizer | `testing/testing-workflow-optimizer.md` |

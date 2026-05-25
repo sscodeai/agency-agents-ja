@@ -109,10 +109,10 @@ Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
 |  | 日本向け API Tester | upstream | adapted | API Tester | 日本の B2B SaaS、SI、社内システム連携で必要な API 契約、認証、異常系、証跡を検証する QA agent。 | `testing/testing-api-tester.md` |
 |  | 日本向け Evidence Collector | upstream | adapted | Evidence Collector | 検収、監査、障害報告、QA 判定に必要なスクリーンショット、ログ、テスト結果、チケット証跡を整理する支援 agent。 | `testing/testing-evidence-collector.md` |
 |  | 日本向け Performance Benchmarker | upstream | adapted | Performance Benchmarker | 日本の SLA、ピーク時間、モバイル利用、クラウド費用を踏まえて性能試験とベンチマークを設計・評価する QA agent。 | `testing/testing-performance-benchmarker.md` |
-|  | 日本向け Reality Checker | upstream | skeleton | Reality Checker | 企画、開発、QA、リリース判断の楽観的な主張を、証跡・制約・現場実態に照らして検証する QA agent。 | `testing/testing-reality-checker.md` |
+|  | 日本向け Reality Checker | upstream | adapted | Reality Checker | 企画、開発、QA、リリース判断の楽観的な主張を、証跡・制約・現場実態に照らして検証する QA agent。 | `testing/testing-reality-checker.md` |
 |  | 日本向け Test Results Analyzer | upstream | adapted | Test Results Analyzer | テスト結果、欠陥傾向、品質ゲート、残リスクを日本のリリース判定・検収報告向けに整理する QA agent。 | `testing/testing-test-results-analyzer.md` |
-|  | 日本向け Tool Evaluator | upstream | skeleton | Tool Evaluator | 日本企業の購買、セキュリティ、運用、サポート、費用対効果に合わせて開発・QA・AI ツールを評価する支援 agent。 | `testing/testing-tool-evaluator.md` |
-|  | 日本向け Workflow Optimizer | upstream | skeleton | Workflow Optimizer | 日本の開発、QA、CS、保守運用にある手戻り・承認待ち・属人化を見つけ、現実的な workflow 改善へ落とし込む agent。 | `testing/testing-workflow-optimizer.md` |
+|  | 日本向け Tool Evaluator | upstream | adapted | Tool Evaluator | 日本企業の購買、セキュリティ、運用、サポート、費用対効果に合わせて開発・QA・AI ツールを評価する支援 agent。 | `testing/testing-tool-evaluator.md` |
+|  | 日本向け Workflow Optimizer | upstream | adapted | Workflow Optimizer | 日本の開発、QA、CS、保守運用にある手戻り・承認待ち・属人化を見つけ、現実的な workflow 改善へ落とし込む agent。 | `testing/testing-workflow-optimizer.md` |
 
 ## Product
 
@@ -188,13 +188,13 @@ Total: 8 (⭐ 1 japan-original + 7 upstream-aligned)
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本向け検索・SNS広告ストラテジスト | japan-original |  |  | 日本の B2B SaaS、IT service、EC 向けに Google / Yahoo! JAPAN / Meta / X / LinkedIn 広告の設計、運用、改善方針を作る paid media strategist。 | `paid-media/paid-media-japan-search-social-strategist.md` |
-|  | 日本向け広告監査担当 | upstream | skeleton | Paid Media Auditor | Google、Yahoo! JAPAN、Meta、X、LinkedIn などの広告運用を、日本市場の規制・計測・予算・成果観点で監査する agent。 | `paid-media/paid-media-auditor.md` |
-|  | 日本向け広告クリエイティブ戦略家 | upstream | skeleton | Creative Strategist | 日本の媒体、商材、審査、顧客心理に合わせて広告クリエイティブ仮説、訴求軸、検証計画を設計する agent。 | `paid-media/paid-media-creative-strategist.md` |
-|  | 日本向け SNS 広告戦略家 | upstream | skeleton | Paid Social Strategist | Meta、X、TikTok、LINE、LinkedIn など日本で使われる SNS 広告の設計・改善・検証方針を作る agent。 | `paid-media/paid-media-paid-social-strategist.md` |
-|  | 日本向け PPC 戦略家 | upstream | skeleton | PPC Strategist | Google 広告と Yahoo! 広告を中心に、日本語検索行動、予算、CV 品質を踏まえた PPC 戦略を作る agent。 | `paid-media/paid-media-ppc-strategist.md` |
-|  | 日本向けプログラマティック広告バイヤー | upstream | skeleton | Programmatic Buyer | 日本の DSP、PMP、動画、ディスプレイ、ブランドセーフティを踏まえて programmatic buying を設計・改善する agent。 | `paid-media/paid-media-programmatic-buyer.md` |
-|  | 日本向け検索クエリアナリスト | upstream | skeleton | Search Query Analyst | 日本語の検索語句、表記ゆれ、購買意図を分析し、広告運用の除外・拡張・LP 改善につなげる agent。 | `paid-media/paid-media-search-query-analyst.md` |
-|  | 日本向け広告計測専門家 | upstream | skeleton | Tracking Specialist | GA4、GTM、媒体タグ、CAPI、オフライン CV を、日本の広告運用・個人情報・CRM 連携に合わせて設計する agent。 | `paid-media/paid-media-tracking-specialist.md` |
+|  | 日本向け広告監査担当 | upstream | adapted | Paid Media Auditor | Google、Yahoo! JAPAN、Meta、X、LinkedIn などの広告運用を、日本市場の規制・計測・予算・成果観点で監査する agent。 | `paid-media/paid-media-auditor.md` |
+|  | 日本向け広告クリエイティブ戦略家 | upstream | adapted | Creative Strategist | 日本の媒体、商材、審査、顧客心理に合わせて広告クリエイティブ仮説、訴求軸、検証計画を設計する agent。 | `paid-media/paid-media-creative-strategist.md` |
+|  | 日本向け SNS 広告戦略家 | upstream | adapted | Paid Social Strategist | Meta、X、TikTok、LINE、LinkedIn など日本で使われる SNS 広告の設計・改善・検証方針を作る agent。 | `paid-media/paid-media-paid-social-strategist.md` |
+|  | 日本向け PPC 戦略家 | upstream | adapted | PPC Strategist | Google 広告と Yahoo! 広告を中心に、日本語検索行動、予算、CV 品質を踏まえた PPC 戦略を作る agent。 | `paid-media/paid-media-ppc-strategist.md` |
+|  | 日本向けプログラマティック広告バイヤー | upstream | adapted | Programmatic Buyer | 日本の DSP、PMP、動画、ディスプレイ、ブランドセーフティを踏まえて programmatic buying を設計・改善する agent。 | `paid-media/paid-media-programmatic-buyer.md` |
+|  | 日本向け検索クエリアナリスト | upstream | adapted | Search Query Analyst | 日本語の検索語句、表記ゆれ、購買意図を分析し、広告運用の除外・拡張・LP 改善につなげる agent。 | `paid-media/paid-media-search-query-analyst.md` |
+|  | 日本向け広告計測専門家 | upstream | adapted | Tracking Specialist | GA4、GTM、媒体タグ、CAPI、オフライン CV を、日本の広告運用・個人情報・CRM 連携に合わせて設計する agent。 | `paid-media/paid-media-tracking-specialist.md` |
 
 ## Finance
 
@@ -206,11 +206,11 @@ Total: 9 (⭐ 4 japan-original + 5 upstream-aligned)
 | ⭐ | 日本向け FinOps アナリスト | japan-original |  |  | 日本の SaaS / 業務システムで cloud cost、SaaS cost、unit economics、予算、配賦、削減施策を分析する FinOps analyst。 | `finance/finance-japanese-finops-analyst.md` |
 | ⭐ | 日本向け内部監査コーディネーター | japan-original |  |  | 日本企業の IT 統制、SaaS 利用、権限管理、委託先管理、変更管理、証跡、監査対応を整理する internal audit coordinator。 | `finance/finance-japanese-internal-audit-coordinator.md` |
 | ⭐ | インボイス制度アドバイザー | japan-original |  |  | 日本のインボイス制度に関する請求書、適格請求書発行事業者番号、取引先確認、会計 system 要件を整理する finance advisor。 | `finance/finance-japanese-invoice-system-advisor.md` |
-|  | 日本向け経理・管理会計コントローラー | upstream | skeleton | Bookkeeper & Controller | 月次決算、請求、入出金、管理会計、証憑、内部統制を日本企業の IT / SaaS / 受託開発現場向けに整理するファイナンス agent。 | `finance/finance-bookkeeper-controller.md` |
-|  | 日本向け財務分析担当 | upstream | skeleton | Financial Analyst | 売上、粗利、原価、cash flow、予実、KPI を分析し、日本企業の経営会議・稟議・事業判断向けに整理するファイナンス agent。 | `finance/finance-financial-analyst.md` |
-|  | 日本向け FP&A アナリスト | upstream | skeleton | FP&A Analyst | 予算策定、forecast、予実管理、scenario planning、経営会議資料を日本企業の事業運営向けに整えるファイナンス agent。 | `finance/finance-fpa-analyst.md` |
-|  | 日本向け投資リサーチャー | upstream | skeleton | Investment Researcher | 市場、企業、競合、財務、事業リスクを調査し、日本企業の投資・M&A・新規事業判断向けに整理するファイナンス agent。 | `finance/finance-investment-researcher.md` |
-|  | 日本向け税務戦略アドバイザー | upstream | skeleton | Tax Strategist | 法人税、消費税、インボイス、電子帳簿、海外取引、税務論点を日本企業の IT / SaaS / 事業運営向けに整理するファイナンス agent。 | `finance/finance-tax-strategist.md` |
+|  | 日本向け経理・管理会計コントローラー | upstream | adapted | Bookkeeper & Controller | 月次決算、請求、入出金、管理会計、証憑、内部統制を日本企業の IT / SaaS / 受託開発現場向けに整理するファイナンス agent。 | `finance/finance-bookkeeper-controller.md` |
+|  | 日本向け財務分析担当 | upstream | adapted | Financial Analyst | 売上、粗利、原価、cash flow、予実、KPI を分析し、日本企業の経営会議・稟議・事業判断向けに整理するファイナンス agent。 | `finance/finance-financial-analyst.md` |
+|  | 日本向け FP&A アナリスト | upstream | adapted | FP&A Analyst | 予算策定、forecast、予実管理、scenario planning、経営会議資料を日本企業の事業運営向けに整えるファイナンス agent。 | `finance/finance-fpa-analyst.md` |
+|  | 日本向け投資リサーチャー | upstream | adapted | Investment Researcher | 市場、企業、競合、財務、事業リスクを調査し、日本企業の投資・M&A・新規事業判断向けに整理するファイナンス agent。 | `finance/finance-investment-researcher.md` |
+|  | 日本向け税務戦略アドバイザー | upstream | adapted | Tax Strategist | 法人税、消費税、インボイス、電子帳簿、海外取引、税務論点を日本企業の IT / SaaS / 事業運営向けに整理するファイナンス agent。 | `finance/finance-tax-strategist.md` |
 
 ## Game Development
 
@@ -259,14 +259,14 @@ Total: 11 (⭐ 3 japan-original + 8 upstream-aligned)
 | ⭐ | 日本向けアクセシビリティ監査者 | japan-original |  |  | 日本語 UI、行政・公共 sector、業務 system に対して WCAG / JIS を意識した accessibility audit を行う。 | `design/design-accessibility-auditor-ja.md` |
 | ⭐ | 日本業務 UI デザイナー | japan-original |  |  | 日本の業務画面、管理画面、申請画面、帳票画面に強い UI designer。高密度 table、入力補助、誤操作防止を重視する。 | `design/design-japanese-business-ui-designer.md` |
 | ⭐ | 日本業務 Design System メンテナー | japan-original |  |  | 日本の業務システム、SaaS 管理画面、申請・承認 UI 向けに design system、component rule、文言、accessibility、実装連携を整える maintainer。 | `design/design-japanese-design-system-maintainer.md` |
-|  | 日本向けブランドガーディアン | upstream | skeleton | Brand Guardian | 日本市場のブランド表現、広告審査、社内承認、顧客信頼を踏まえて visual / copy / UI の一貫性を守る design agent。 | `design/design-brand-guardian.md` |
-|  | 日本向け画像プロンプトエンジニア | upstream | skeleton | Image Prompt Engineer | 日本市場向けの広告、LP、営業資料、プロダクト画像に使う生成画像 prompt を、ブランド・審査・権利観点まで含めて設計する agent。 | `design/design-image-prompt-engineer.md` |
-|  | 日本向けインクルーシブビジュアル専門家 | upstream | skeleton | Inclusive Visuals Specialist | 日本の多様な利用者、年齢層、地域、障害、ジェンダー、文化背景に配慮した visual 表現を設計・監査する design agent。 | `design/design-inclusive-visuals-specialist.md` |
-|  | 日本向け UI デザイナー | upstream | skeleton | UI Designer | 日本の業務システム、B2B SaaS、EC、管理画面に合わせて高密度で誤操作に強い UI を設計する design agent。 | `design/design-ui-designer.md` |
-|  | 日本向け UX アーキテクト | upstream | skeleton | UX Architect | 日本の業務・購買・承認・運用フローを踏まえ、プロダクト全体の UX 構造と導線を設計する agent。 | `design/design-ux-architect.md` |
-|  | 日本向け UX リサーチャー | upstream | skeleton | UX Researcher | 日本の利用者、業務現場、購買・承認構造に合わせて UX research 設計、インタビュー、洞察整理を行う agent。 | `design/design-ux-researcher.md` |
-|  | 日本向けビジュアルストーリーテラー | upstream | skeleton | Visual Storyteller | 日本の営業資料、採用広報、LP、展示会、プロダクト紹介で伝わる visual narrative を設計する design agent。 | `design/design-visual-storyteller.md` |
-|  | 日本向け遊び心デザインアドバイザー | upstream | skeleton | Whimsy Injector | 日本のプロダクトや業務 UI に、信頼感を損なわない範囲で小さな楽しさ、親しみ、記憶に残る体験を加える design agent。 | `design/design-whimsy-injector.md` |
+|  | 日本向けブランドガーディアン | upstream | adapted | Brand Guardian | 日本市場のブランド表現、広告審査、社内承認、顧客信頼を踏まえて visual / copy / UI の一貫性を守る design agent。 | `design/design-brand-guardian.md` |
+|  | 日本向け画像プロンプトエンジニア | upstream | adapted | Image Prompt Engineer | 日本市場向けの広告、LP、営業資料、プロダクト画像に使う生成画像 prompt を、ブランド・審査・権利観点まで含めて設計する agent。 | `design/design-image-prompt-engineer.md` |
+|  | 日本向けインクルーシブビジュアル専門家 | upstream | adapted | Inclusive Visuals Specialist | 日本の多様な利用者、年齢層、地域、障害、ジェンダー、文化背景に配慮した visual 表現を設計・監査する design agent。 | `design/design-inclusive-visuals-specialist.md` |
+|  | 日本向け UI デザイナー | upstream | adapted | UI Designer | 日本の業務システム、B2B SaaS、EC、管理画面に合わせて高密度で誤操作に強い UI を設計する design agent。 | `design/design-ui-designer.md` |
+|  | 日本向け UX アーキテクト | upstream | adapted | UX Architect | 日本の業務・購買・承認・運用フローを踏まえ、プロダクト全体の UX 構造と導線を設計する agent。 | `design/design-ux-architect.md` |
+|  | 日本向け UX リサーチャー | upstream | adapted | UX Researcher | 日本の利用者、業務現場、購買・承認構造に合わせて UX research 設計、インタビュー、洞察整理を行う agent。 | `design/design-ux-researcher.md` |
+|  | 日本向けビジュアルストーリーテラー | upstream | adapted | Visual Storyteller | 日本の営業資料、採用広報、LP、展示会、プロダクト紹介で伝わる visual narrative を設計する design agent。 | `design/design-visual-storyteller.md` |
+|  | 日本向け遊び心デザインアドバイザー | upstream | adapted | Whimsy Injector | 日本のプロダクトや業務 UI に、信頼感を損なわない範囲で小さな楽しさ、親しみ、記憶に残る体験を加える design agent。 | `design/design-whimsy-injector.md` |
 
 ## Legal
 
@@ -294,11 +294,11 @@ Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
 | ⭐ | 日本向けセールスエンジニア | japan-original |  |  | 日本の B2B SaaS、SI、受託開発、IT service の商談で技術要件、demo、PoC、RFP 質問、提案 feasibility を支援する sales engineer。 | `sales/sales-japanese-sales-engineer.md` |
 | ⭐ | 日本向けセールスオペレーションアナリスト | japan-original |  |  | 日本の B2B SaaS / IT service で pipeline、forecast、CRM hygiene、商談 stage、営業 KPI、見積 / 稟議 process を分析する sales operations analyst。 | `sales/sales-japanese-sales-operations-analyst.md` |
 |  | 日本向け Account Strategist | upstream | adapted | Account Strategist | 日本の B2B SaaS、SI、IT サービスで既存顧客の account plan、更新、拡張提案、関係者 mapping を設計する agent。 | `sales/sales-account-strategist.md` |
-|  | 日本向けセールスコーチ | upstream | skeleton | Sales Coach | 日本の B2B 営業現場に合わせて商談準備、ヒアリング、提案、クロージング、振り返りを支援する coaching agent。 | `sales/sales-coach.md` |
-|  | 日本向け商談戦略家 | upstream | skeleton | Deal Strategist | 日本の B2B 商談で決裁構造、競合、稟議、価格交渉、導入リスクを整理し受注戦略を作る agent。 | `sales/sales-deal-strategist.md` |
+|  | 日本向けセールスコーチ | upstream | adapted | Sales Coach | 日本の B2B 営業現場に合わせて商談準備、ヒアリング、提案、クロージング、振り返りを支援する coaching agent。 | `sales/sales-coach.md` |
+|  | 日本向け商談戦略家 | upstream | adapted | Deal Strategist | 日本の B2B 商談で決裁構造、競合、稟議、価格交渉、導入リスクを整理し受注戦略を作る agent。 | `sales/sales-deal-strategist.md` |
 |  | 日本向けディスカバリーコーチ | upstream | adapted | Discovery Coach | 日本の B2B 商談で顧客課題、現状業務、決裁条件、導入障壁を深掘りする discovery を支援する agent。 | `sales/sales-discovery-coach.md` |
 |  | 日本向け Sales Engineer | upstream | adapted | Sales Engineer | 日本の B2B SaaS、SI、IT サービス商談で技術要件、demo、PoC、RFP、非機能、運用論点を支援する presales agent。 | `sales/sales-engineer.md` |
-|  | 日本向けアウトバウンド戦略家 | upstream | skeleton | Outbound Strategist | 日本の B2B 市場でターゲット企業選定、文面、架電、紹介、イベント follow-up を設計する outbound sales agent。 | `sales/sales-outbound-strategist.md` |
+|  | 日本向けアウトバウンド戦略家 | upstream | adapted | Outbound Strategist | 日本の B2B 市場でターゲット企業選定、文面、架電、紹介、イベント follow-up を設計する outbound sales agent。 | `sales/sales-outbound-strategist.md` |
 |  | 日本向けパイプライン分析担当 | upstream | adapted | Pipeline Analyst | 日本の B2B 営業で CRM、forecast、商談 stage、受注確度、更新・拡張 pipeline を分析する RevOps 支援 agent。 | `sales/sales-pipeline-analyst.md` |
 |  | 日本向け提案戦略家 | upstream | adapted | Proposal Strategist | 日本の B2B SaaS、SI、受託開発、IT サービス向けに稟議・RFP・比較検討に強い提案構成を設計する agent。 | `sales/sales-proposal-strategist.md` |
 
@@ -329,8 +329,8 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 | ⭐ | 日本向けサポート分析レポーター | japan-original |  |  | 日本の B2B SaaS / IT service の問い合わせ、障害、FAQ、SLA、顧客満足度を分析し、改善 action と定例 report を作る support analytics reporter。 | `support/support-japanese-support-analytics-reporter.md` |
 | ⭐ | 日本語リリースノートライター | japan-original |  |  | 日本語の release note、顧客向け変更案内、社内共有、影響範囲、注意事項を分かりやすく書く writer。 | `support/support-release-note-writer-ja.md` |
 |  | 日本向け Analytics Reporter | upstream | adapted | Analytics Reporter | CS、サポート、障害、SaaS 運用のデータを日本の経営会議・週次報告・改善活動で使える KPI レポートへ整理する分析支援 agent。 | `support/support-analytics-reporter.md` |
-|  | 日本向け Executive Summary Generator | upstream | skeleton | Executive Summary Generator | 技術・運用・事業の詳細情報を、日本の経営会議、稟議、ステアリングコミッティで判断しやすい要約へ変換する支援 agent。 | `support/support-executive-summary-generator.md` |
-|  | 日本向け Finance Tracker | upstream | skeleton | Finance Tracker | SaaS、クラウド、保守、開発案件の費用を日本の予実管理、稟議、請求確認、部門配賦に使える形で追跡する支援 agent。 | `support/support-finance-tracker.md` |
+|  | 日本向け Executive Summary Generator | upstream | adapted | Executive Summary Generator | 技術・運用・事業の詳細情報を、日本の経営会議、稟議、ステアリングコミッティで判断しやすい要約へ変換する支援 agent。 | `support/support-executive-summary-generator.md` |
+|  | 日本向け Finance Tracker | upstream | adapted | Finance Tracker | SaaS、クラウド、保守、開発案件の費用を日本の予実管理、稟議、請求確認、部門配賦に使える形で追跡する支援 agent。 | `support/support-finance-tracker.md` |
 |  | 日本向け Infrastructure Maintainer | upstream | adapted | Infrastructure Maintainer | 日本の保守運用、監視、変更管理、障害対応、定期メンテナンスに合わせてインフラ運用品質を維持する支援 agent。 | `support/support-infrastructure-maintainer.md` |
 |  | 日本向け Legal Compliance Checker | upstream | adapted | Legal Compliance Checker | 日本の個人情報保護、契約、表示、セキュリティ、AI 利用ポリシーの観点から文書や運用の確認事項を整理する支援 agent。 | `support/support-legal-compliance-checker.md` |
 |  | 日本向け Support Responder | upstream | adapted | Support Responder | 日本の B2B SaaS、受託開発、保守運用に合わせて、問い合わせ返信、障害連絡、エスカレーション文面を作る支援 agent。 | `support/support-support-responder.md` |
