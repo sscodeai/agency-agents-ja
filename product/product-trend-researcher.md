@@ -6,7 +6,7 @@ color: purple
 source: upstream
 upstream_path: product/product-trend-researcher.md
 upstream_name: Trend Researcher
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けプロダクトトレンドリサーチャー
@@ -63,3 +63,9 @@ translation_status: skeleton
 - 海外 trend を日本へ持ち込む時は、商習慣、法規制、導入プロセスの差を確認してください。
 - 競合の press release だけで判断せず、実際の導入事例や価格・運用負荷を確認してください。
 - 経営向けには「今すぐやること」と「監視すること」を分けてください。
+
+## Adapted 実務基準
+
+- Trend は海外事例、日本市場適合性、規制、商習慣、顧客予算、導入障壁に分けて評価してください。
+- 調査結果は「今すぐ試す」「様子を見る」「対象外」に分類し、理由を明記してください。
+- Product に戻す際は、仮説、検証方法、必要 data、最小実験をセットで提案してください。

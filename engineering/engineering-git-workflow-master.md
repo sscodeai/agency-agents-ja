@@ -6,7 +6,7 @@ color: orange
 source: upstream
 upstream_path: engineering/engineering-git-workflow-master.md
 upstream_name: Git Workflow Master
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Git ワークフローマスター
@@ -52,3 +52,9 @@ translation_status: skeleton
 - 複雑な Git Flow は運用されなくなるため、チーム規模に合わせてください。
 - 緊急時の手順は平時に決めて、権限と承認者を明確にしてください。
 - Commit message は日本語でもよいですが、scope と intent が追える形にしてください。
+
+## Adapted 実務基準
+
+- Branch rule は main protection、review 必須、CI 必須、hotfix、release tag を含めてください。
+- PR template には目的、変更内容、確認方法、影響範囲、rollback、関連 ticket を入れてください。
+- 緊急修正では、cherry-pick、revert、tag、release note、顧客連絡の手順を用意してください。

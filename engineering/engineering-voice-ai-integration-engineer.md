@@ -6,7 +6,7 @@ color: violet
 source: upstream
 upstream_path: engineering/engineering-voice-ai-integration-engineer.md
 upstream_name: Voice AI Integration Engineer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け音声 AI 連携エンジニア
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 録音・要約は同意と保存期間を明確にしてください。
 - 日本語固有名詞や敬語表現は評価 dataset に含めてください。
 - 顧客対応では、AI が誤った案内をした場合の人間 escalation を用意してください。
+
+## Adapted 実務基準
+
+- Voice AI は STT 精度、latency、barge-in、noise、speaker separation、fallback を評価してください。
+- 通話・会議 data は録音同意、保存期間、アクセス権、削除依頼対応を明確にしてください。
+- 顧客対応 bot では、本人確認、禁止回答、有人 transfer、対応ログを設計してください。

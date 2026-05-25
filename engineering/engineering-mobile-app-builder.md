@@ -6,7 +6,7 @@ color: purple
 source: upstream
 upstream_path: engineering/engineering-mobile-app-builder.md
 upstream_name: Mobile App Builder
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Mobile App Builder
@@ -51,3 +51,9 @@ Store 公開だけでなく、個人情報、解約、問い合わせ、機種�
 - Push 通知は配信頻度と同意を慎重に扱ってください。
 - 解約・退会・問い合わせ導線は審査と顧客信頼に影響します。
 - 日本語 UI は長文や端末文字サイズで崩れやすい点を確認してください。
+
+## Adapted 実務基準
+
+- Mobile release では store 審査、privacy label、crash、analytics、rollback / forced update を確認してください。
+- 認証、push、決済、退会、問い合わせ、権限 request は日本語 copy と例外処理を重点確認してください。
+- 端末差分、OS version、文字サイズ、通信不安定、offline を test plan に含めてください。

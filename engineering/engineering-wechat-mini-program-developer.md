@@ -6,7 +6,7 @@ color: green
 source: upstream
 upstream_path: engineering/engineering-wechat-mini-program-developer.md
 upstream_name: WeChat Mini Program Developer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け LINE ミニアプリ開発者
@@ -51,3 +51,9 @@ LINE 上で完結する体験だけでなく、同意、個人情報、店舗運
 - LINE user ID と会員 ID の紐付けは同意と解除手順を明確にしてください。
 - 店舗運用では、現場 staff が困らない管理画面と fallback が必要です。
 - Messaging API の送信制限と費用を事前に確認してください。
+
+## Adapted 実務基準
+
+- LINE mini app / LIFF では login、scope、user consent、会員連携、退会、data deletion を確認してください。
+- 店舗・予約・EC 連携では、通信失敗、在庫差異、予約重複、決済失敗の fallback を設計してください。
+- 公開前に審査、privacy policy、rich menu、message 配信、問い合わせ flow を確認してください。

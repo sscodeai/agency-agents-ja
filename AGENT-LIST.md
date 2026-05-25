@@ -43,35 +43,35 @@ Total: 49 (⭐ 20 japan-original + 29 upstream-aligned)
 | ⭐ | 日本向け技術ドキュメントライター | japan-original |  |  | 日本の IT 開発、SaaS、SIer、受託開発向けに設計書、API document、運用手順、release note、検収資料を分かりやすく整える technical writer。 | `engineering/engineering-japanese-technical-writer.md` |
 | ⭐ | kintone 開発エンジニア | japan-original |  |  | Cybozu kintone の業務アプリ、JavaScript customize、REST API、plugin、外部連携を設計・実装する専門家。 | `engineering/engineering-kintone-developer.md` |
 | ⭐ | LINE WORKS 連携エンジニア | japan-original |  |  | LINE WORKS bot、通知、承認、業務システム連携を設計・実装する専門家。日本企業の社内コミュニケーションと運用に合わせる。 | `engineering/engineering-line-works-integration-developer.md` |
-|  | 日本向け AI データ修復エンジニア | upstream | skeleton | AI Data Remediation Engineer | 日本語データ、個人情報、業務 CSV、FAQ、RAG corpus の品質問題を検出・修復する AI / data engineering agent。 | `engineering/engineering-ai-data-remediation-engineer.md` |
+|  | 日本向け AI データ修復エンジニア | upstream | adapted | AI Data Remediation Engineer | 日本語データ、個人情報、業務 CSV、FAQ、RAG corpus の品質問題を検出・修復する AI / data engineering agent。 | `engineering/engineering-ai-data-remediation-engineer.md` |
 |  | 日本向け AI エンジニア | upstream | adapted | AI Engineer | 日本企業向けに LLM、RAG、agent、評価、セキュリティ、運用を実装する AI engineering agent。 | `engineering/engineering-ai-engineer.md` |
-|  | 日本向け自律最適化アーキテクト | upstream | skeleton | Autonomous Optimization Architect | 日本企業向けに AI agent、optimization loop、human approval、monitoring を組み込んだ自律改善 system を設計する agent。 | `engineering/engineering-autonomous-optimization-architect.md` |
+|  | 日本向け自律最適化アーキテクト | upstream | adapted | Autonomous Optimization Architect | 日本企業向けに AI agent、optimization loop、human approval、monitoring を組み込んだ自律改善 system を設計する agent。 | `engineering/engineering-autonomous-optimization-architect.md` |
 |  | 日本向け Backend Architect | upstream | adapted | Backend Architect | 日本の業務システム、SaaS、受託開発で API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。 | `engineering/engineering-backend-architect.md` |
-|  | 日本向け CMS 開発者 | upstream | skeleton | CMS Developer | 日本の企業サイト、自治体、EC、オウンドメディア向けに CMS 設計、運用、権限、SEO、公開承認を実装する agent。 | `engineering/engineering-cms-developer.md` |
+|  | 日本向け CMS 開発者 | upstream | adapted | CMS Developer | 日本の企業サイト、自治体、EC、オウンドメディア向けに CMS 設計、運用、権限、SEO、公開承認を実装する agent。 | `engineering/engineering-cms-developer.md` |
 |  | 日本向け Code Reviewer | upstream | adapted | Code Reviewer | 日本の開発チーム向けに、重大度、根拠、保守運用リスク、受入条件を明確にした code review を行う agent。 | `engineering/engineering-code-reviewer.md` |
-|  | 日本向けコードベースオンボーディングエンジニア | upstream | skeleton | Codebase Onboarding Engineer | 日本の開発チーム向けに既存 codebase の構造、開発手順、設計意図、初回 task を整理する onboarding agent。 | `engineering/engineering-codebase-onboarding-engineer.md` |
+|  | 日本向けコードベースオンボーディングエンジニア | upstream | adapted | Codebase Onboarding Engineer | 日本の開発チーム向けに既存 codebase の構造、開発手順、設計意図、初回 task を整理する onboarding agent。 | `engineering/engineering-codebase-onboarding-engineer.md` |
 |  | 日本向け Data Engineer | upstream | adapted | Data Engineer | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する agent。 | `engineering/engineering-data-engineer.md` |
 |  | 日本向け Database Optimizer | upstream | adapted | Database Optimizer | 日本の業務システムで query、index、schema、migration、batch、帳票、CSV workload を最適化する database agent。 | `engineering/engineering-database-optimizer.md` |
 |  | 日本向け DevOps 自動化エンジニア | upstream | adapted | DevOps Automator | 日本の開発・運用現場に合わせて CI/CD、IaC、release、監視、rollback、権限管理を自動化する agent。 | `engineering/engineering-devops-automator.md` |
-|  | 日本向けメールインテリジェンスエンジニア | upstream | skeleton | Email Intelligence Engineer | 日本語メール、問い合わせ、営業返信、CS 対応を分類・要約・自動化する email intelligence agent。 | `engineering/engineering-email-intelligence-engineer.md` |
-|  | 日本向け組み込みファームウェアエンジニア | upstream | skeleton | Embedded Firmware Engineer | 日本の製造、IoT、ロボット、医療・産業機器向けに firmware、通信、更新、検査、保守を設計する agent。 | `engineering/engineering-embedded-firmware-engineer.md` |
-|  | 日本向け LINE WORKS / Slack 連携開発者 | upstream | skeleton | Feishu Integration Developer | 日本企業の LINE WORKS、Slack、Teams、kintone、承認・通知業務を連携する integration agent。 | `engineering/engineering-feishu-integration-developer.md` |
-|  | 日本向け 3D プリンタ材料最適化専門家 | upstream | skeleton | Filament Optimization Specialist | 日本の試作、製造、教育現場向けに 3D printer filament、造形条件、品質、検査、材料選定を最適化する agent。 | `engineering/engineering-filament-optimization-specialist.md` |
+|  | 日本向けメールインテリジェンスエンジニア | upstream | adapted | Email Intelligence Engineer | 日本語メール、問い合わせ、営業返信、CS 対応を分類・要約・自動化する email intelligence agent。 | `engineering/engineering-email-intelligence-engineer.md` |
+|  | 日本向け組み込みファームウェアエンジニア | upstream | adapted | Embedded Firmware Engineer | 日本の製造、IoT、ロボット、医療・産業機器向けに firmware、通信、更新、検査、保守を設計する agent。 | `engineering/engineering-embedded-firmware-engineer.md` |
+|  | 日本向け LINE WORKS / Slack 連携開発者 | upstream | adapted | Feishu Integration Developer | 日本企業の LINE WORKS、Slack、Teams、kintone、承認・通知業務を連携する integration agent。 | `engineering/engineering-feishu-integration-developer.md` |
+|  | 日本向け 3D プリンタ材料最適化専門家 | upstream | adapted | Filament Optimization Specialist | 日本の試作、製造、教育現場向けに 3D printer filament、造形条件、品質、検査、材料選定を最適化する agent。 | `engineering/engineering-filament-optimization-specialist.md` |
 |  | 日本向け Frontend Developer | upstream | adapted | Frontend Developer | 日本の業務画面、SaaS、EC、管理画面向けに React / Vue、form、table、アクセシビリティ、入力補助を実装する frontend agent。 | `engineering/engineering-frontend-developer.md` |
-|  | 日本向け Git ワークフローマスター | upstream | skeleton | Git Workflow Master | 日本の開発チーム向けに branch、PR、commit、release、hotfix、権限、レビュー運用を整える Git workflow agent。 | `engineering/engineering-git-workflow-master.md` |
-|  | 日本向けインシデント対応指揮者 | upstream | skeleton | Incident Response Commander | 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。 | `engineering/engineering-incident-response-commander.md` |
-|  | 日本向け最小変更エンジニア | upstream | skeleton | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
-|  | 日本向け Mobile App Builder | upstream | skeleton | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
-|  | 日本向け高速プロトタイピングエンジニア | upstream | skeleton | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |
+|  | 日本向け Git ワークフローマスター | upstream | adapted | Git Workflow Master | 日本の開発チーム向けに branch、PR、commit、release、hotfix、権限、レビュー運用を整える Git workflow agent。 | `engineering/engineering-git-workflow-master.md` |
+|  | 日本向けインシデント対応指揮者 | upstream | adapted | Incident Response Commander | 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。 | `engineering/engineering-incident-response-commander.md` |
+|  | 日本向け最小変更エンジニア | upstream | adapted | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
+|  | 日本向け Mobile App Builder | upstream | adapted | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
+|  | 日本向け高速プロトタイピングエンジニア | upstream | adapted | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |
 |  | 日本向け Security Engineer | upstream | adapted | Security Engineer | 日本企業の Web / SaaS / 業務システムに対して脅威モデリング、認証認可、個人情報、脆弱性対応を支援する agent。 | `engineering/engineering-security-engineer.md` |
-|  | 日本向けシニア開発者 | upstream | skeleton | Senior Developer | 日本の開発現場で設計、実装、レビュー、障害対応、育成、技術的意思決定をリードする senior developer agent。 | `engineering/engineering-senior-developer.md` |
-|  | 日本向けソフトウェアアーキテクト | upstream | skeleton | Software Architect | 日本の SaaS、SI、受託開発、業務システム向けに全体設計、非機能、移行、運用保守を設計する agent。 | `engineering/engineering-software-architect.md` |
-|  | 日本向け Solidity スマートコントラクトエンジニア | upstream | skeleton | Solidity Smart Contract Engineer | 日本向け Web3 / blockchain project の Solidity contract、監査、運用、法務・セキュリティ論点を整理する agent。 | `engineering/engineering-solidity-smart-contract-engineer.md` |
+|  | 日本向けシニア開発者 | upstream | adapted | Senior Developer | 日本の開発現場で設計、実装、レビュー、障害対応、育成、技術的意思決定をリードする senior developer agent。 | `engineering/engineering-senior-developer.md` |
+|  | 日本向けソフトウェアアーキテクト | upstream | adapted | Software Architect | 日本の SaaS、SI、受託開発、業務システム向けに全体設計、非機能、移行、運用保守を設計する agent。 | `engineering/engineering-software-architect.md` |
+|  | 日本向け Solidity スマートコントラクトエンジニア | upstream | adapted | Solidity Smart Contract Engineer | 日本向け Web3 / blockchain project の Solidity contract、監査、運用、法務・セキュリティ論点を整理する agent。 | `engineering/engineering-solidity-smart-contract-engineer.md` |
 |  | 日本向けSRE (Site Reliability Engineer) | upstream | adapted | SRE (Site Reliability Engineer) | 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE agent。 | `engineering/engineering-sre.md` |
 |  | 日本向け Technical Writer | upstream | adapted | Technical Writer | 日本の IT 開発、SaaS、SI、受託開発向けに設計書、API docs、運用手順、release note、検収資料を整える agent。 | `engineering/engineering-technical-writer.md` |
-|  | 日本向け脅威検知エンジニア | upstream | skeleton | Threat Detection Engineer | 日本企業の cloud、SaaS、endpoint、認証ログから脅威を検知し、SOC / CSIRT 連携を設計する security agent。 | `engineering/engineering-threat-detection-engineer.md` |
-|  | 日本向け音声 AI 連携エンジニア | upstream | skeleton | Voice AI Integration Engineer | 日本語音声認識、音声合成、電話、コールセンター、会議要約、voice bot を連携する AI engineering agent。 | `engineering/engineering-voice-ai-integration-engineer.md` |
-|  | 日本向け LINE ミニアプリ開発者 | upstream | skeleton | WeChat Mini Program Developer | 日本向け LINE ミニアプリ / LIFF、予約、会員証、EC、CRM、店舗導線を実装する agent。 | `engineering/engineering-wechat-mini-program-developer.md` |
+|  | 日本向け脅威検知エンジニア | upstream | adapted | Threat Detection Engineer | 日本企業の cloud、SaaS、endpoint、認証ログから脅威を検知し、SOC / CSIRT 連携を設計する security agent。 | `engineering/engineering-threat-detection-engineer.md` |
+|  | 日本向け音声 AI 連携エンジニア | upstream | adapted | Voice AI Integration Engineer | 日本語音声認識、音声合成、電話、コールセンター、会議要約、voice bot を連携する AI engineering agent。 | `engineering/engineering-voice-ai-integration-engineer.md` |
+|  | 日本向け LINE ミニアプリ開発者 | upstream | adapted | WeChat Mini Program Developer | 日本向け LINE ミニアプリ / LIFF、予約、会員証、EC、CRM、店舗導線を実装する agent。 | `engineering/engineering-wechat-mini-program-developer.md` |
 
 ## Project Management
 
@@ -86,12 +86,12 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 | ⭐ | 日本 IT プロジェクトマネージャー | japan-original |  |  | 日本の IT / SI / 受託開発で WBS、課題管理、進捗会議、議事録、リスク、検収を管理する PM。 | `project-management/project-management-japanese-pm.md` |
 | ⭐ | 日本向けリリースマネージャー | japan-original |  |  | 日本の IT / SaaS / 受託開発で release 判定、作業手順、切り戻し、顧客通知、検収 evidence、関係者承認を管理する release manager。 | `project-management/project-management-japanese-release-manager.md` |
 | ⭐ | 日本向け上流追従コーディネーター | japan-original |  |  | 上流 OSS の更新を watch し、fork 側の追従計画を立てる project coordinator。upstream commit / release の分類（feature / breaking / docs / security）、fork 独自改修との衝突確認、翻訳追従、release note への反映、追従 PR の Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを担当する。 | `project-management/project-management-japanese-upstream-sync-coordinator.md` |
-|  | 日本向け実験管理担当 | upstream | skeleton | Experiment Tracker | 仮説、A/B test、PoC、pilot、効果測定、意思決定 log を日本の product / DX project 向けに管理するプロジェクト管理 agent。 | `project-management/project-management-experiment-tracker.md` |
-|  | 日本向け Jira ワークフロー管理者 | upstream | skeleton | Jira Workflow Steward | Jira / Backlog / Redmine の issue type、status、priority、承認、検収、release workflow を日本の開発現場向けに整備するプロジェクト管理 agent。 | `project-management/project-management-jira-workflow-steward.md` |
-|  | 日本向けプロジェクト推進担当 | upstream | skeleton | Project Shepherd | 進捗、blocker、依存関係、会議体、意思決定、顧客調整を日本の IT project で前に進めるプロジェクト管理 agent。 | `project-management/project-management-project-shepherd.md` |
-|  | 日本向けスタジオ運営担当 | upstream | skeleton | Studio Operations | 複数 project の capacity、tool、会議体、採用・外注、品質 gate、運用 rhythm を整えるプロジェクト管理 agent。 | `project-management/project-management-studio-operations.md` |
-|  | 日本向けスタジオプロデューサー | upstream | skeleton | Studio Producer | 複数職能の成果物、schedule、quality、stakeholder expectation を統合し、日本の制作・開発 project を出荷へ導くプロジェクト管理 agent。 | `project-management/project-management-studio-producer.md` |
-|  | 日本向けシニアプロジェクトマネージャー | upstream | skeleton | Senior Project Manager | 大規模 IT / SIer / SaaS 導入 project の計画、risk、stakeholder、品質、検収、運用移行を統括するプロジェクト管理 agent。 | `project-management/project-manager-senior.md` |
+|  | 日本向け実験管理担当 | upstream | adapted | Experiment Tracker | 仮説、A/B test、PoC、pilot、効果測定、意思決定 log を日本の product / DX project 向けに管理するプロジェクト管理 agent。 | `project-management/project-management-experiment-tracker.md` |
+|  | 日本向け Jira ワークフロー管理者 | upstream | adapted | Jira Workflow Steward | Jira / Backlog / Redmine の issue type、status、priority、承認、検収、release workflow を日本の開発現場向けに整備するプロジェクト管理 agent。 | `project-management/project-management-jira-workflow-steward.md` |
+|  | 日本向けプロジェクト推進担当 | upstream | adapted | Project Shepherd | 進捗、blocker、依存関係、会議体、意思決定、顧客調整を日本の IT project で前に進めるプロジェクト管理 agent。 | `project-management/project-management-project-shepherd.md` |
+|  | 日本向けスタジオ運営担当 | upstream | adapted | Studio Operations | 複数 project の capacity、tool、会議体、採用・外注、品質 gate、運用 rhythm を整えるプロジェクト管理 agent。 | `project-management/project-management-studio-operations.md` |
+|  | 日本向けスタジオプロデューサー | upstream | adapted | Studio Producer | 複数職能の成果物、schedule、quality、stakeholder expectation を統合し、日本の制作・開発 project を出荷へ導くプロジェクト管理 agent。 | `project-management/project-management-studio-producer.md` |
+|  | 日本向けシニアプロジェクトマネージャー | upstream | adapted | Senior Project Manager | 大規模 IT / SIer / SaaS 導入 project の計画、risk、stakeholder、品質、検収、運用移行を統括するプロジェクト管理 agent。 | `project-management/project-manager-senior.md` |
 
 ## Testing
 
@@ -122,11 +122,11 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本 B2B SaaS プランナー | japan-original |  |  | 日本の B2B SaaS における onboarding、権限、契約、請求、管理画面、CS 運用を踏まえた product planning を行う。 | `product/product-japanese-b2b-saas-planner.md` |
 | ⭐ | 日本向けプロダクトマネージャー | japan-original |  |  | 日本市場向け SaaS / 業務プロダクトの課題整理、優先順位、ロードマップ、受入条件、顧客説明を設計する product manager。 | `product/product-japanese-product-manager.md` |
-|  | 日本向け行動ナッジ設計者 | upstream | skeleton | Behavioral Nudge Engine | 行動科学、認知負荷、choice architecture を使い、日本の B2B SaaS / 業務 UI / 公共 DX の利用定着を倫理的に改善するプロダクト agent。 | `product/product-behavioral-nudge-engine.md` |
-|  | 日本向けフィードバック統合担当 | upstream | skeleton | Feedback Synthesizer | 営業、CS、support、NPS、商談、解約理由、問い合わせを統合し、日本の product decision に使える insight へ変換するプロダクト agent。 | `product/product-feedback-synthesizer.md` |
-|  | 日本向け Product Manager | upstream | skeleton | Product Manager | 日本の B2B SaaS / 業務 system / SIer 開発で、課題、価値、roadmap、受入条件、顧客説明を統合するプロダクト agent。 | `product/product-manager.md` |
-|  | 日本向けスプリント優先順位設計者 | upstream | skeleton | Sprint Prioritizer | 顧客影響、売上、保守負債、障害 risk、依存関係を踏まえ、日本の開発 sprint backlog を優先順位付けするプロダクト agent。 | `product/product-sprint-prioritizer.md` |
-|  | 日本向けプロダクトトレンドリサーチャー | upstream | skeleton | Trend Researcher | 日本市場、業界規制、競合、技術潮流、顧客行動を調査し、product strategy と roadmap に活かすプロダクト agent。 | `product/product-trend-researcher.md` |
+|  | 日本向け行動ナッジ設計者 | upstream | adapted | Behavioral Nudge Engine | 行動科学、認知負荷、choice architecture を使い、日本の B2B SaaS / 業務 UI / 公共 DX の利用定着を倫理的に改善するプロダクト agent。 | `product/product-behavioral-nudge-engine.md` |
+|  | 日本向けフィードバック統合担当 | upstream | adapted | Feedback Synthesizer | 営業、CS、support、NPS、商談、解約理由、問い合わせを統合し、日本の product decision に使える insight へ変換するプロダクト agent。 | `product/product-feedback-synthesizer.md` |
+|  | 日本向け Product Manager | upstream | adapted | Product Manager | 日本の B2B SaaS / 業務 system / SIer 開発で、課題、価値、roadmap、受入条件、顧客説明を統合するプロダクト agent。 | `product/product-manager.md` |
+|  | 日本向けスプリント優先順位設計者 | upstream | adapted | Sprint Prioritizer | 顧客影響、売上、保守負債、障害 risk、依存関係を踏まえ、日本の開発 sprint backlog を優先順位付けするプロダクト agent。 | `product/product-sprint-prioritizer.md` |
+|  | 日本向けプロダクトトレンドリサーチャー | upstream | adapted | Trend Researcher | 日本市場、業界規制、競合、技術潮流、顧客行動を調査し、product strategy と roadmap に活かすプロダクト agent。 | `product/product-trend-researcher.md` |
 
 ## Marketing
 

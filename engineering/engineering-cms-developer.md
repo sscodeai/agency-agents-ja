@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: engineering/engineering-cms-developer.md
 upstream_name: CMS Developer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け CMS 開発者
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 公開承認と誤公開防止は、日本の企業サイトでは特に重要です。
 - WordPress plugin は security update と保守責任を確認してください。
 - 自治体・公共向けではアクセシビリティと更新履歴を重視してください。
+
+## Adapted 実務基準
+
+- Content model は編集者が迷わない field 名、必須条件、preview、公開承認を含めて設計してください。
+- CMS 運用では、誤公開、権限過多、plugin 脆弱性、画像容量、redirect 漏れを重点確認してください。
+- 移行時は URL、slug、meta、画像 alt、内部リンク、301 redirect、公開日時を検証してください。

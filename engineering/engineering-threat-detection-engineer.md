@@ -6,7 +6,7 @@ color: #7b2d8e
 source: upstream
 upstream_path: engineering/engineering-threat-detection-engineer.md
 upstream_name: Threat Detection Engineer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け脅威検知エンジニア
@@ -51,3 +51,9 @@ translation_status: skeleton
 - Alert は運用できる数に絞り、一次対応手順を必ず添えてください。
 - 従業員監視に見える領域は、社内規程と説明責任を確認してください。
 - 重大 incident は証跡保全と報告経路を優先してください。
+
+## Adapted 実務基準
+
+- Detection use case は asset、log source、logic、severity、false positive、response を含めてください。
+- Identity、cloud、endpoint、GitHub、SaaS audit log を横断して相関できる設計にしてください。
+- Alert tuning は SOC / 情シスが対応できる件数と時間帯に合わせてください。

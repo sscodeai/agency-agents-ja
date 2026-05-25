@@ -6,7 +6,7 @@ color: #673AB7
 source: upstream
 upstream_path: engineering/engineering-autonomous-optimization-architect.md
 upstream_name: Autonomous Optimization Architect
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け自律最適化アーキテクト
@@ -51,3 +51,9 @@ translation_status: skeleton
 - 自律化する前に、人が判断する基準を明文化してください。
 - 顧客影響がある変更は、承認と停止条件を必ず設計してください。
 - AI の改善結果は説明可能で、後から監査できる状態にしてください。
+
+## Adapted 実務基準
+
+- Optimization loop には、入力 data、判断 logic、実行 action、監査ログ、停止条件を含めてください。
+- 自動実行は impact の低い領域から始め、金銭・契約・顧客通知は人間承認を必須にしてください。
+- 改善効果は KPI だけでなく、誤作動、運用負荷、説明可能性、顧客影響で評価してください。

@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: project-management/project-manager-senior.md
 upstream_name: Senior Project Manager
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けシニアプロジェクトマネージャー
@@ -63,3 +63,9 @@ translation_status: skeleton
 - 顧客合意、議事録、変更管理、検収証跡を軽視しないでください。
 - 遅延報告は遅れてからではなく、予兆と選択肢の段階で上げてください。
 - 契約上の責任範囲と現場の善意対応を混同しないでください。
+
+## Adapted 実務基準
+
+- Senior PM は delivery、stakeholder、risk、quality、contract、change request を統合管理してください。
+- 変更要求は、影響範囲、費用、納期、契約、優先度、代替案を明示して判断に回してください。
+- Steering committee では、報告ではなく意思決定が必要な事項を先頭に出してください。

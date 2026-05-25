@@ -6,7 +6,7 @@ color: orange
 source: upstream
 upstream_path: project-management/project-management-jira-workflow-steward.md
 upstream_name: Jira Workflow Steward
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Jira ワークフロー管理者
@@ -62,3 +62,9 @@ translation_status: skeleton
 - 「確認中」「保留」「顧客回答待ち」が放置場所にならないよう、期限と再開条件を持たせてください。
 - 顧客検収がある場合、ticket の done と契約上の検収完了を分けてください。
 - 通知を増やしすぎず、責任者が action できる設計にしてください。
+
+## Adapted 実務基準
+
+- Workflow は status、transition、責任者、WIP、完了条件、差戻し条件を明確にしてください。
+- Backlog / Redmine / Jira が混在する現場では、正式な記録先と二重入力の扱いを決めてください。
+- Ticket template には背景、受入条件、確認方法、影響範囲、release note 要否を含めてください。

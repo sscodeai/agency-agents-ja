@@ -5,19 +5,19 @@ This file is generated from agent frontmatter. Do not edit it manually.
 Total agents: 281
 Japan-original agents: 97
 Upstream-aligned agents: 184
-Skeleton: 154
+Skeleton: 124
 Translated: 0
-Adapted: 30
+Adapted: 60
 
 ## By Category
 
 | Category | Upstream | Skeleton | Translated | Adapted | Japan-original |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Academic | 5 | 5 | 0 | 0 | 0 |
-| Engineering | 29 | 19 | 0 | 10 | 20 |
-| Project Management | 6 | 6 | 0 | 0 | 7 |
+| Engineering | 29 | 0 | 0 | 29 | 20 |
+| Project Management | 6 | 0 | 0 | 6 | 7 |
 | Testing | 8 | 3 | 0 | 5 | 6 |
-| Product | 5 | 5 | 0 | 0 | 2 |
+| Product | 5 | 0 | 0 | 5 | 2 |
 | Marketing | 30 | 26 | 0 | 4 | 16 |
 | Paid Media | 7 | 7 | 0 | 0 | 1 |
 | Finance | 5 | 5 | 0 | 0 | 4 |
@@ -48,25 +48,6 @@ Adapted: 30
 | 日本向け UX リサーチャー | UX Researcher | `design/design-ux-researcher.md` |
 | 日本向けビジュアルストーリーテラー | Visual Storyteller | `design/design-visual-storyteller.md` |
 | 日本向け遊び心デザインアドバイザー | Whimsy Injector | `design/design-whimsy-injector.md` |
-| 日本向け AI データ修復エンジニア | AI Data Remediation Engineer | `engineering/engineering-ai-data-remediation-engineer.md` |
-| 日本向け自律最適化アーキテクト | Autonomous Optimization Architect | `engineering/engineering-autonomous-optimization-architect.md` |
-| 日本向け CMS 開発者 | CMS Developer | `engineering/engineering-cms-developer.md` |
-| 日本向けコードベースオンボーディングエンジニア | Codebase Onboarding Engineer | `engineering/engineering-codebase-onboarding-engineer.md` |
-| 日本向けメールインテリジェンスエンジニア | Email Intelligence Engineer | `engineering/engineering-email-intelligence-engineer.md` |
-| 日本向け組み込みファームウェアエンジニア | Embedded Firmware Engineer | `engineering/engineering-embedded-firmware-engineer.md` |
-| 日本向け LINE WORKS / Slack 連携開発者 | Feishu Integration Developer | `engineering/engineering-feishu-integration-developer.md` |
-| 日本向け 3D プリンタ材料最適化専門家 | Filament Optimization Specialist | `engineering/engineering-filament-optimization-specialist.md` |
-| 日本向け Git ワークフローマスター | Git Workflow Master | `engineering/engineering-git-workflow-master.md` |
-| 日本向けインシデント対応指揮者 | Incident Response Commander | `engineering/engineering-incident-response-commander.md` |
-| 日本向け最小変更エンジニア | Minimal Change Engineer | `engineering/engineering-minimal-change-engineer.md` |
-| 日本向け Mobile App Builder | Mobile App Builder | `engineering/engineering-mobile-app-builder.md` |
-| 日本向け高速プロトタイピングエンジニア | Rapid Prototyper | `engineering/engineering-rapid-prototyper.md` |
-| 日本向けシニア開発者 | Senior Developer | `engineering/engineering-senior-developer.md` |
-| 日本向けソフトウェアアーキテクト | Software Architect | `engineering/engineering-software-architect.md` |
-| 日本向け Solidity スマートコントラクトエンジニア | Solidity Smart Contract Engineer | `engineering/engineering-solidity-smart-contract-engineer.md` |
-| 日本向け脅威検知エンジニア | Threat Detection Engineer | `engineering/engineering-threat-detection-engineer.md` |
-| 日本向け音声 AI 連携エンジニア | Voice AI Integration Engineer | `engineering/engineering-voice-ai-integration-engineer.md` |
-| 日本向け LINE ミニアプリ開発者 | WeChat Mini Program Developer | `engineering/engineering-wechat-mini-program-developer.md` |
 | 日本向け経理・管理会計コントローラー | Bookkeeper & Controller | `finance/finance-bookkeeper-controller.md` |
 | 日本向け財務分析担当 | Financial Analyst | `finance/finance-financial-analyst.md` |
 | 日本向け FP&A アナリスト | FP&A Analyst | `finance/finance-fpa-analyst.md` |
@@ -125,17 +106,6 @@ Adapted: 30
 | 日本向けプログラマティック広告バイヤー | Programmatic Buyer | `paid-media/paid-media-programmatic-buyer.md` |
 | 日本向け検索クエリアナリスト | Search Query Analyst | `paid-media/paid-media-search-query-analyst.md` |
 | 日本向け広告計測専門家 | Tracking Specialist | `paid-media/paid-media-tracking-specialist.md` |
-| 日本向け行動ナッジ設計者 | Behavioral Nudge Engine | `product/product-behavioral-nudge-engine.md` |
-| 日本向けフィードバック統合担当 | Feedback Synthesizer | `product/product-feedback-synthesizer.md` |
-| 日本向け Product Manager | Product Manager | `product/product-manager.md` |
-| 日本向けスプリント優先順位設計者 | Sprint Prioritizer | `product/product-sprint-prioritizer.md` |
-| 日本向けプロダクトトレンドリサーチャー | Trend Researcher | `product/product-trend-researcher.md` |
-| 日本向け実験管理担当 | Experiment Tracker | `project-management/project-management-experiment-tracker.md` |
-| 日本向け Jira ワークフロー管理者 | Jira Workflow Steward | `project-management/project-management-jira-workflow-steward.md` |
-| 日本向けプロジェクト推進担当 | Project Shepherd | `project-management/project-management-project-shepherd.md` |
-| 日本向けスタジオ運営担当 | Studio Operations | `project-management/project-management-studio-operations.md` |
-| 日本向けスタジオプロデューサー | Studio Producer | `project-management/project-management-studio-producer.md` |
-| 日本向けシニアプロジェクトマネージャー | Senior Project Manager | `project-management/project-manager-senior.md` |
 | 日本向けセールスコーチ | Sales Coach | `sales/sales-coach.md` |
 | 日本向け商談戦略家 | Deal Strategist | `sales/sales-deal-strategist.md` |
 | 日本向けアウトバウンド戦略家 | Outbound Strategist | `sales/sales-outbound-strategist.md` |

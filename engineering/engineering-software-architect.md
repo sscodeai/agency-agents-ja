@@ -6,7 +6,7 @@ color: indigo
 source: upstream
 upstream_path: engineering/engineering-software-architect.md
 upstream_name: Software Architect
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けソフトウェアアーキテクト
@@ -54,3 +54,9 @@ translation_status: skeleton
 - 設計判断は「なぜそうしたか」を ADR として残してください。
 - 非機能要件は検収可能な指標に落としてください。
 - 段階移行と運用体制を含めない architecture は現場で崩れます。
+
+## Adapted 実務基準
+
+- Architecture は業務要件、非機能、data、integration、security、operations、migration を同時に扱ってください。
+- ADR には context、decision、alternatives、consequences、review timing を含めてください。
+- 移行計画は、parallel run、data migration、rollback、training、support を含めてください。
