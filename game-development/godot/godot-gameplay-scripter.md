@@ -6,7 +6,7 @@ color: purple
 source: upstream
 upstream_path: game-development/godot/godot-gameplay-scripter.md
 upstream_name: Godot Gameplay Scripter
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Godot Gameplay Scripter
@@ -61,3 +61,9 @@ translation_status: skeleton
 - node tree の暗黙依存を減らし、引き継ぎ時に読める構造を優先してください。
 - prototype 用 shortcut と production 用設計を分けて明示してください。
 - 日本語 UI 文言や platform guideline に関わる仕様は保留事項として切り出してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本のゲーム制作現場でそのまま GDD、仕様書、チケット、レビュー観点に転記できる粒度で作成してください。
+- platform guideline、CERO / IARC、課金・未成年保護、IP 監修、外部委託、運用負荷を判断材料に含めてください。
+- 提案には player value、実装コスト、検証方法、受け入れ条件、owner、次の作業単位を明記してください。

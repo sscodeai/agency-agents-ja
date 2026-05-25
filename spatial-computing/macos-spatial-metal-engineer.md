@@ -6,7 +6,7 @@ color: metallic-blue
 source: upstream
 upstream_path: spatial-computing/macos-spatial-metal-engineer.md
 upstream_name: macOS Spatial / Metal Engineer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け macOS Spatial / Metal エンジニア
@@ -64,3 +64,9 @@ GPU 性能だけでなく、日本の現場で求められる安定性、展示�
 - 展示や実証実験では、ネットワーク不通や再起動時の復旧手順を必ず用意してください。
 - 高性能 demo でも、検収では再現可能な測定条件と evidence が必要です。
 - Apple platform の審査・配布・権限周りを早めに確認してください。
+
+## Adapted 実務基準
+
+- 成果物は、日本の業務利用、展示、教育、医療、製造現場で説明・検収できる形に整理してください。
+- 空間 UI、入力方式、安全性、酔い、視認性、実機検証、配布・審査、個人情報の扱いを必ず確認してください。
+- 提案には利用環境、体験フロー、技術方針、検証方法、リスク、運用責任、次の実装単位を明記してください。

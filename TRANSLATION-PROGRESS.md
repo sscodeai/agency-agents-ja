@@ -5,9 +5,9 @@ This file is generated from agent frontmatter. Do not edit it manually.
 Total agents: 281
 Japan-original agents: 97
 Upstream-aligned agents: 184
-Skeleton: 65
+Skeleton: 39
 Translated: 0
-Adapted: 119
+Adapted: 145
 
 ## By Category
 
@@ -21,12 +21,12 @@ Adapted: 119
 | Marketing | 30 | 0 | 0 | 30 | 16 |
 | Paid Media | 7 | 0 | 0 | 7 | 1 |
 | Finance | 5 | 0 | 0 | 5 | 4 |
-| Game Development | 20 | 20 | 0 | 0 | 0 |
+| Game Development | 20 | 0 | 0 | 20 | 0 |
 | HR | 0 | 0 | 0 | 0 | 4 |
 | Design | 8 | 0 | 0 | 8 | 3 |
 | Legal | 0 | 0 | 0 | 0 | 6 |
 | Sales | 8 | 0 | 0 | 8 | 6 |
-| Spatial Computing | 6 | 6 | 0 | 0 | 0 |
+| Spatial Computing | 6 | 0 | 0 | 6 | 0 |
 | Support | 6 | 0 | 0 | 6 | 7 |
 | Supply Chain | 0 | 0 | 0 | 0 | 4 |
 | Specialized | 41 | 39 | 0 | 2 | 11 |
@@ -35,32 +35,6 @@ Adapted: 119
 
 | Agent | Upstream | Path |
 | --- | --- | --- |
-| 日本向け Blender アドオンエンジニア | Blender Add-on Engineer | `game-development/blender/blender-addon-engineer.md` |
-| 日本向けゲーム音響エンジニア | Game Audio Engineer | `game-development/game-audio-engineer.md` |
-| 日本向けゲームデザイナー | Game Designer | `game-development/game-designer.md` |
-| 日本向け Godot Gameplay Scripter | Godot Gameplay Scripter | `game-development/godot/godot-gameplay-scripter.md` |
-| 日本向け Godot Multiplayer Engineer | Godot Multiplayer Engineer | `game-development/godot/godot-multiplayer-engineer.md` |
-| 日本向け Godot Shader Developer | Godot Shader Developer | `game-development/godot/godot-shader-developer.md` |
-| 日本向けレベルデザイナー | Level Designer | `game-development/level-designer.md` |
-| 日本向けゲームナラティブデザイナー | Narrative Designer | `game-development/narrative-designer.md` |
-| 日本向け Roblox Avatar Creator | Roblox Avatar Creator | `game-development/roblox-studio/roblox-avatar-creator.md` |
-| 日本向け Roblox Experience Designer | Roblox Experience Designer | `game-development/roblox-studio/roblox-experience-designer.md` |
-| 日本向け Roblox Systems Scripter | Roblox Systems Scripter | `game-development/roblox-studio/roblox-systems-scripter.md` |
-| 日本向けテクニカルアーティスト | Technical Artist | `game-development/technical-artist.md` |
-| 日本向け Unity Architect | Unity Architect | `game-development/unity/unity-architect.md` |
-| 日本向け Unity Editor Tool Developer | Unity Editor Tool Developer | `game-development/unity/unity-editor-tool-developer.md` |
-| 日本向け Unity Multiplayer Engineer | Unity Multiplayer Engineer | `game-development/unity/unity-multiplayer-engineer.md` |
-| 日本向け Unity Shader Graph Artist | Unity Shader Graph Artist | `game-development/unity/unity-shader-graph-artist.md` |
-| 日本向け Unreal Multiplayer Architect | Unreal Multiplayer Architect | `game-development/unreal-engine/unreal-multiplayer-architect.md` |
-| 日本向け Unreal Systems Engineer | Unreal Systems Engineer | `game-development/unreal-engine/unreal-systems-engineer.md` |
-| 日本向け Unreal Technical Artist | Unreal Technical Artist | `game-development/unreal-engine/unreal-technical-artist.md` |
-| 日本向け Unreal World Builder | Unreal World Builder | `game-development/unreal-engine/unreal-world-builder.md` |
-| 日本向け macOS Spatial / Metal エンジニア | macOS Spatial / Metal Engineer | `spatial-computing/macos-spatial-metal-engineer.md` |
-| 日本向けターミナル連携専門家 | Terminal Integration Specialist | `spatial-computing/terminal-integration-specialist.md` |
-| 日本向け visionOS 空間エンジニア | visionOS Spatial Engineer | `spatial-computing/visionos-spatial-engineer.md` |
-| 日本向け XR コックピット操作設計者 | XR Cockpit Interaction Specialist | `spatial-computing/xr-cockpit-interaction-specialist.md` |
-| 日本向け XR 没入体験開発者 | XR Immersive Developer | `spatial-computing/xr-immersive-developer.md` |
-| 日本向け XR インターフェースアーキテクト | XR Interface Architect | `spatial-computing/xr-interface-architect.md` |
 | 日本向け買掛金処理エージェント | Accounts Payable Agent | `specialized/accounts-payable-agent.md` |
 | 日本向け AI エージェント ID / Trust 設計者 | Agentic Identity & Trust | `specialized/agentic-identity-trust.md` |
 | 日本向けエージェント編成オーケストレーター | Agents Orchestrator | `specialized/agents-orchestrator.md` |

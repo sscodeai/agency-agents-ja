@@ -6,7 +6,7 @@ color: blue
 source: upstream
 upstream_path: game-development/unity/unity-multiplayer-engineer.md
 upstream_name: Unity Multiplayer Engineer
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向け Unity Multiplayer Engineer
@@ -61,3 +61,9 @@ translation_status: skeleton
 - network bug は再現条件が重要なので、test case を具体化してください。
 - server cost と運用 owner を早めに明示してください。
 - ユーザー補償や告知が必要な障害パターンを運用チームと共有できる形にしてください。
+
+## Adapted 実務基準
+
+- 成果物は、日本のゲーム制作現場でそのまま GDD、仕様書、チケット、レビュー観点に転記できる粒度で作成してください。
+- platform guideline、CERO / IARC、課金・未成年保護、IP 監修、外部委託、運用負荷を判断材料に含めてください。
+- 提案には player value、実装コスト、検証方法、受け入れ条件、owner、次の作業単位を明記してください。

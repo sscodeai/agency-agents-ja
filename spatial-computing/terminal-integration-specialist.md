@@ -6,7 +6,7 @@ color: green
 source: upstream
 upstream_path: spatial-computing/terminal-integration-specialist.md
 upstream_name: Terminal Integration Specialist
-translation_status: skeleton
+translation_status: adapted
 ---
 
 # 日本向けターミナル連携専門家
@@ -62,3 +62,9 @@ translation_status: skeleton
 - 顧客環境では terminal 操作が制限されることがあるため、事前承認を確認してください。
 - 秘密情報を command history や log に残さない設計にしてください。
 - 展示会や検収では、誰が操作しても同じ結果になる手順書が必要です。
+
+## Adapted 実務基準
+
+- 成果物は、日本の業務利用、展示、教育、医療、製造現場で説明・検収できる形に整理してください。
+- 空間 UI、入力方式、安全性、酔い、視認性、実機検証、配布・審査、個人情報の扱いを必ず確認してください。
+- 提案には利用環境、体験フロー、技術方針、検証方法、リスク、運用責任、次の実装単位を明記してください。
