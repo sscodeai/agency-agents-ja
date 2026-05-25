@@ -40,14 +40,14 @@ Adapted: 0
 | 日本向け歴史リサーチャー | Historian | `academic/academic-historian.md` |
 | 日本向けナラティブ分析者 | Narratologist | `academic/academic-narratologist.md` |
 | 日本向け心理リサーチャー | Psychologist | `academic/academic-psychologist.md` |
-| 日本向けブランドガーディアン | design/design-brand-guardian.md | `design/design-brand-guardian.md` |
-| 日本向け画像プロンプトエンジニア | design/design-image-prompt-engineer.md | `design/design-image-prompt-engineer.md` |
-| 日本向けインクルーシブビジュアル専門家 | design/design-inclusive-visuals-specialist.md | `design/design-inclusive-visuals-specialist.md` |
-| 日本向け UI デザイナー | design/design-ui-designer.md | `design/design-ui-designer.md` |
-| 日本向け UX アーキテクト | design/design-ux-architect.md | `design/design-ux-architect.md` |
-| 日本向け UX リサーチャー | design/design-ux-researcher.md | `design/design-ux-researcher.md` |
-| 日本向けビジュアルストーリーテラー | design/design-visual-storyteller.md | `design/design-visual-storyteller.md` |
-| 日本向け遊び心デザインアドバイザー | design/design-whimsy-injector.md | `design/design-whimsy-injector.md` |
+| 日本向けブランドガーディアン | Brand Guardian | `design/design-brand-guardian.md` |
+| 日本向け画像プロンプトエンジニア | Image Prompt Engineer | `design/design-image-prompt-engineer.md` |
+| 日本向けインクルーシブビジュアル専門家 | Inclusive Visuals Specialist | `design/design-inclusive-visuals-specialist.md` |
+| 日本向け UI デザイナー | UI Designer | `design/design-ui-designer.md` |
+| 日本向け UX アーキテクト | UX Architect | `design/design-ux-architect.md` |
+| 日本向け UX リサーチャー | UX Researcher | `design/design-ux-researcher.md` |
+| 日本向けビジュアルストーリーテラー | Visual Storyteller | `design/design-visual-storyteller.md` |
+| 日本向け遊び心デザインアドバイザー | Whimsy Injector | `design/design-whimsy-injector.md` |
 | 日本向け AI データ修復エンジニア | engineering/engineering-ai-data-remediation-engineer.md | `engineering/engineering-ai-data-remediation-engineer.md` |
 | 日本向け AI エンジニア | engineering/engineering-ai-engineer.md | `engineering/engineering-ai-engineer.md` |
 | 日本向け自律最適化アーキテクト | engineering/engineering-autonomous-optimization-architect.md | `engineering/engineering-autonomous-optimization-architect.md` |
@@ -158,12 +158,12 @@ Adapted: 0
 | 日本向けアウトバウンド戦略家 | Outbound Strategist | `sales/sales-outbound-strategist.md` |
 | 日本向けパイプライン分析担当 | Pipeline Analyst | `sales/sales-pipeline-analyst.md` |
 | 日本向け提案戦略家 | Proposal Strategist | `sales/sales-proposal-strategist.md` |
-| 日本向け macOS Spatial / Metal エンジニア | spatial-computing/macos-spatial-metal-engineer.md | `spatial-computing/macos-spatial-metal-engineer.md` |
-| 日本向けターミナル連携専門家 | spatial-computing/terminal-integration-specialist.md | `spatial-computing/terminal-integration-specialist.md` |
-| 日本向け visionOS 空間エンジニア | spatial-computing/visionos-spatial-engineer.md | `spatial-computing/visionos-spatial-engineer.md` |
-| 日本向け XR コックピット操作設計者 | spatial-computing/xr-cockpit-interaction-specialist.md | `spatial-computing/xr-cockpit-interaction-specialist.md` |
-| 日本向け XR 没入体験開発者 | spatial-computing/xr-immersive-developer.md | `spatial-computing/xr-immersive-developer.md` |
-| 日本向け XR インターフェースアーキテクト | spatial-computing/xr-interface-architect.md | `spatial-computing/xr-interface-architect.md` |
+| 日本向け macOS Spatial / Metal エンジニア | macOS Spatial / Metal Engineer | `spatial-computing/macos-spatial-metal-engineer.md` |
+| 日本向けターミナル連携専門家 | Terminal Integration Specialist | `spatial-computing/terminal-integration-specialist.md` |
+| 日本向け visionOS 空間エンジニア | visionOS Spatial Engineer | `spatial-computing/visionos-spatial-engineer.md` |
+| 日本向け XR コックピット操作設計者 | XR Cockpit Interaction Specialist | `spatial-computing/xr-cockpit-interaction-specialist.md` |
+| 日本向け XR 没入体験開発者 | XR Immersive Developer | `spatial-computing/xr-immersive-developer.md` |
+| 日本向け XR インターフェースアーキテクト | XR Interface Architect | `spatial-computing/xr-interface-architect.md` |
 | 日本向け買掛金処理エージェント | specialized/accounts-payable-agent.md | `specialized/accounts-payable-agent.md` |
 | 日本向け AI エージェント ID / Trust 設計者 | specialized/agentic-identity-trust.md | `specialized/agentic-identity-trust.md` |
 | 日本向けエージェント編成オーケストレーター | specialized/agents-orchestrator.md | `specialized/agents-orchestrator.md` |

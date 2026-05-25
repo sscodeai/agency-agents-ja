@@ -259,14 +259,14 @@ Total: 11 (⭐ 3 japan-original + 8 upstream-aligned)
 | ⭐ | 日本向けアクセシビリティ監査者 | japan-original |  |  | 日本語 UI、行政・公共 sector、業務 system に対して WCAG / JIS を意識した accessibility audit を行う。 | `design/design-accessibility-auditor-ja.md` |
 | ⭐ | 日本業務 UI デザイナー | japan-original |  |  | 日本の業務画面、管理画面、申請画面、帳票画面に強い UI designer。高密度 table、入力補助、誤操作防止を重視する。 | `design/design-japanese-business-ui-designer.md` |
 | ⭐ | 日本業務 Design System メンテナー | japan-original |  |  | 日本の業務システム、SaaS 管理画面、申請・承認 UI 向けに design system、component rule、文言、accessibility、実装連携を整える maintainer。 | `design/design-japanese-design-system-maintainer.md` |
-|  | 日本向けブランドガーディアン | upstream | skeleton | design/design-brand-guardian.md | 日本向けブランドガーディアン として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-brand-guardian.md` |
-|  | 日本向け画像プロンプトエンジニア | upstream | skeleton | design/design-image-prompt-engineer.md | 日本向け画像プロンプトエンジニア として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-image-prompt-engineer.md` |
-|  | 日本向けインクルーシブビジュアル専門家 | upstream | skeleton | design/design-inclusive-visuals-specialist.md | 日本向けインクルーシブビジュアル専門家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-inclusive-visuals-specialist.md` |
-|  | 日本向け UI デザイナー | upstream | skeleton | design/design-ui-designer.md | 日本向け UI デザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-ui-designer.md` |
-|  | 日本向け UX アーキテクト | upstream | skeleton | design/design-ux-architect.md | 日本向け UX アーキテクト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-ux-architect.md` |
-|  | 日本向け UX リサーチャー | upstream | skeleton | design/design-ux-researcher.md | 日本向け UX リサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-ux-researcher.md` |
-|  | 日本向けビジュアルストーリーテラー | upstream | skeleton | design/design-visual-storyteller.md | 日本向けビジュアルストーリーテラー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-visual-storyteller.md` |
-|  | 日本向け遊び心デザインアドバイザー | upstream | skeleton | design/design-whimsy-injector.md | 日本向け遊び心デザインアドバイザー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む デザイン agent。 | `design/design-whimsy-injector.md` |
+|  | 日本向けブランドガーディアン | upstream | skeleton | Brand Guardian | 日本市場のブランド表現、広告審査、社内承認、顧客信頼を踏まえて visual / copy / UI の一貫性を守る design agent。 | `design/design-brand-guardian.md` |
+|  | 日本向け画像プロンプトエンジニア | upstream | skeleton | Image Prompt Engineer | 日本市場向けの広告、LP、営業資料、プロダクト画像に使う生成画像 prompt を、ブランド・審査・権利観点まで含めて設計する agent。 | `design/design-image-prompt-engineer.md` |
+|  | 日本向けインクルーシブビジュアル専門家 | upstream | skeleton | Inclusive Visuals Specialist | 日本の多様な利用者、年齢層、地域、障害、ジェンダー、文化背景に配慮した visual 表現を設計・監査する design agent。 | `design/design-inclusive-visuals-specialist.md` |
+|  | 日本向け UI デザイナー | upstream | skeleton | UI Designer | 日本の業務システム、B2B SaaS、EC、管理画面に合わせて高密度で誤操作に強い UI を設計する design agent。 | `design/design-ui-designer.md` |
+|  | 日本向け UX アーキテクト | upstream | skeleton | UX Architect | 日本の業務・購買・承認・運用フローを踏まえ、プロダクト全体の UX 構造と導線を設計する agent。 | `design/design-ux-architect.md` |
+|  | 日本向け UX リサーチャー | upstream | skeleton | UX Researcher | 日本の利用者、業務現場、購買・承認構造に合わせて UX research 設計、インタビュー、洞察整理を行う agent。 | `design/design-ux-researcher.md` |
+|  | 日本向けビジュアルストーリーテラー | upstream | skeleton | Visual Storyteller | 日本の営業資料、採用広報、LP、展示会、プロダクト紹介で伝わる visual narrative を設計する design agent。 | `design/design-visual-storyteller.md` |
+|  | 日本向け遊び心デザインアドバイザー | upstream | skeleton | Whimsy Injector | 日本のプロダクトや業務 UI に、信頼感を損なわない範囲で小さな楽しさ、親しみ、記憶に残る体験を加える design agent。 | `design/design-whimsy-injector.md` |
 
 ## Legal
 
@@ -308,12 +308,12 @@ Total: 6 (⭐ 0 japan-original + 6 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
-|  | 日本向け macOS Spatial / Metal エンジニア | upstream | skeleton | spatial-computing/macos-spatial-metal-engineer.md | 日本向け macOS Spatial / Metal エンジニア として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 空間コンピューティング agent。 | `spatial-computing/macos-spatial-metal-engineer.md` |
-|  | 日本向けターミナル連携専門家 | upstream | skeleton | spatial-computing/terminal-integration-specialist.md | 日本向けターミナル連携専門家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 空間コンピューティング agent。 | `spatial-computing/terminal-integration-specialist.md` |
-|  | 日本向け visionOS 空間エンジニア | upstream | skeleton | spatial-computing/visionos-spatial-engineer.md | 日本向け visionOS 空間エンジニア として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 空間コンピューティング agent。 | `spatial-computing/visionos-spatial-engineer.md` |
-|  | 日本向け XR コックピット操作設計者 | upstream | skeleton | spatial-computing/xr-cockpit-interaction-specialist.md | 日本向け XR コックピット操作設計者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 空間コンピューティング agent。 | `spatial-computing/xr-cockpit-interaction-specialist.md` |
-|  | 日本向け XR 没入体験開発者 | upstream | skeleton | spatial-computing/xr-immersive-developer.md | 日本向け XR 没入体験開発者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 空間コンピューティング agent。 | `spatial-computing/xr-immersive-developer.md` |
-|  | 日本向け XR インターフェースアーキテクト | upstream | skeleton | spatial-computing/xr-interface-architect.md | 日本向け XR インターフェースアーキテクト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 空間コンピューティング agent。 | `spatial-computing/xr-interface-architect.md` |
+|  | 日本向け macOS Spatial / Metal エンジニア | upstream | skeleton | macOS Spatial / Metal Engineer | 日本の展示、研究、製造、教育向けに macOS / Metal / spatial rendering を設計・実装する engineering agent。 | `spatial-computing/macos-spatial-metal-engineer.md` |
+|  | 日本向けターミナル連携専門家 | upstream | skeleton | Terminal Integration Specialist | XR / spatial application と CLI、開発環境、device control、運用 script を安全に連携させる agent。 | `spatial-computing/terminal-integration-specialist.md` |
+|  | 日本向け visionOS 空間エンジニア | upstream | skeleton | visionOS Spatial Engineer | 日本向けの visionOS application を、UX、安全性、性能、審査、業務利用に合わせて設計・実装する agent。 | `spatial-computing/visionos-spatial-engineer.md` |
+|  | 日本向け XR コックピット操作設計者 | upstream | skeleton | XR Cockpit Interaction Specialist | 製造、モビリティ、防災、研修向け XR cockpit / control interface の安全で誤操作に強い interaction を設計する agent。 | `spatial-computing/xr-cockpit-interaction-specialist.md` |
+|  | 日本向け XR 没入体験開発者 | upstream | skeleton | XR Immersive Developer | 日本の展示、研修、観光、教育、製造向けに XR / AR / VR の没入体験を安全に実装する developer agent。 | `spatial-computing/xr-immersive-developer.md` |
+|  | 日本向け XR インターフェースアーキテクト | upstream | skeleton | XR Interface Architect | 日本の業務・教育・展示向け XR 体験で、空間 UI、情報設計、interaction、safety を統合設計する agent。 | `spatial-computing/xr-interface-architect.md` |
 
 ## Support
 
