@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 266 (⭐ 97 japan-original + 169 upstream-aligned)
+Total agents: 281 (⭐ 97 japan-original + 184 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -214,15 +214,30 @@ Total: 9 (⭐ 4 japan-original + 5 upstream-aligned)
 
 ## Game Development
 
-Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
+Total: 20 (⭐ 0 japan-original + 20 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
-|  | 日本向けゲーム音響エンジニア | upstream | skeleton | game-development/game-audio-engineer.md | 日本向けゲーム音響エンジニア として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/game-audio-engineer.md` |
-|  | 日本向けゲームデザイナー | upstream | skeleton | game-development/game-designer.md | 日本向けゲームデザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/game-designer.md` |
-|  | 日本向けレベルデザイナー | upstream | skeleton | game-development/level-designer.md | 日本向けレベルデザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/level-designer.md` |
-|  | 日本向けゲームナラティブデザイナー | upstream | skeleton | game-development/narrative-designer.md | 日本向けゲームナラティブデザイナー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/narrative-designer.md` |
-|  | 日本向けテクニカルアーティスト | upstream | skeleton | game-development/technical-artist.md | 日本向けテクニカルアーティスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む ゲーム開発 agent。 | `game-development/technical-artist.md` |
+|  | 日本向け Blender アドオンエンジニア | upstream | skeleton | Blender Add-on Engineer | Blender アドオン、asset validator、exporter、DCC pipeline automation を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/blender/blender-addon-engineer.md` |
+|  | 日本向けゲーム音響エンジニア | upstream | skeleton | Game Audio Engineer | FMOD/Wwise、adaptive music、spatial audio、audio budget を日本のゲーム制作現場向けに設計するゲーム開発 agent。 | `game-development/game-audio-engineer.md` |
+|  | 日本向けゲームデザイナー | upstream | skeleton | Game Designer | core loop、progression、economy、live ops、platform guideline を日本市場向けに設計するゲーム開発 agent。 | `game-development/game-designer.md` |
+|  | 日本向け Godot Gameplay Scripter | upstream | skeleton | Godot Gameplay Scripter | Godot 4 の GDScript、C# 連携、node composition、signal 設計を日本のゲーム制作向けに整理するゲーム開発 agent。 | `game-development/godot/godot-gameplay-scripter.md` |
+|  | 日本向け Godot Multiplayer Engineer | upstream | skeleton | Godot Multiplayer Engineer | Godot 4 MultiplayerAPI、RPC、authority model、scene replication を日本の multiplayer 制作向けに設計するゲーム開発 agent。 | `game-development/godot/godot-multiplayer-engineer.md` |
+|  | 日本向け Godot Shader Developer | upstream | skeleton | Godot Shader Developer | Godot shader language、VisualShader、CanvasItem / Spatial shader、post-processing を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/godot/godot-shader-developer.md` |
+|  | 日本向けレベルデザイナー | upstream | skeleton | Level Designer | layout、pacing、encounter、environmental storytelling、playtest feedback を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/level-designer.md` |
+|  | 日本向けゲームナラティブデザイナー | upstream | skeleton | Narrative Designer | dialogue、branching narrative、world bible、lore、localization、IP 監修を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/narrative-designer.md` |
+|  | 日本向け Roblox Avatar Creator | upstream | skeleton | Roblox Avatar Creator | Roblox UGC、avatar item、accessory rigging、Creator Marketplace submission を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/roblox-studio/roblox-avatar-creator.md` |
+|  | 日本向け Roblox Experience Designer | upstream | skeleton | Roblox Experience Designer | Roblox experience の engagement loop、progression、monetization、retention を日本市場向けに設計するゲーム開発 agent。 | `game-development/roblox-studio/roblox-experience-designer.md` |
+|  | 日本向け Roblox Systems Scripter | upstream | skeleton | Roblox Systems Scripter | Roblox Luau、client-server security、RemoteEvents、DataStore、module architecture を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/roblox-studio/roblox-systems-scripter.md` |
+|  | 日本向けテクニカルアーティスト | upstream | skeleton | Technical Artist | art pipeline、shader、rigging、VFX、asset validation、performance budget を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/technical-artist.md` |
+|  | 日本向け Unity Architect | upstream | skeleton | Unity Architect | Unity の ScriptableObject、component composition、data-driven architecture を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unity/unity-architect.md` |
+|  | 日本向け Unity Editor Tool Developer | upstream | skeleton | Unity Editor Tool Developer | Unity EditorWindow、PropertyDrawer、AssetPostprocessor、pipeline automation を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unity/unity-editor-tool-developer.md` |
+|  | 日本向け Unity Multiplayer Engineer | upstream | skeleton | Unity Multiplayer Engineer | Unity Netcode for GameObjects、UGS Relay/Lobby、server authority、lag compensation を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unity/unity-multiplayer-engineer.md` |
+|  | 日本向け Unity Shader Graph Artist | upstream | skeleton | Unity Shader Graph Artist | Unity Shader Graph、HLSL、URP/HDRP、custom render pass を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/unity/unity-shader-graph-artist.md` |
+|  | 日本向け Unreal Multiplayer Architect | upstream | skeleton | Unreal Multiplayer Architect | Unreal Engine 5 の replication、GameMode/GameState、server authority、network prediction を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unreal-engine/unreal-multiplayer-architect.md` |
+|  | 日本向け Unreal Systems Engineer | upstream | skeleton | Unreal Systems Engineer | Unreal Engine 5 の C++/Blueprint architecture、GAS、Nanite、Lumen、performance を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unreal-engine/unreal-systems-engineer.md` |
+|  | 日本向け Unreal Technical Artist | upstream | skeleton | Unreal Technical Artist | Unreal Engine 5 の Material Editor、Niagara、PCG、art-to-engine pipeline を日本の制作現場向けに整理するゲーム開発 agent。 | `game-development/unreal-engine/unreal-technical-artist.md` |
+|  | 日本向け Unreal World Builder | upstream | skeleton | Unreal World Builder | Unreal Engine 5 の World Partition、Landscape、procedural foliage、HLOD、streaming を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/unreal-engine/unreal-world-builder.md` |
 
 ## HR
 

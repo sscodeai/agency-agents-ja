@@ -14,9 +14,9 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 
 | Metric | Count |
 | --- | --- |
-| Total agents | 266 |
+| Total agents | 281 |
 | ⭐ Japan-market originals | 97 |
-| Upstream-aligned skeleton agents | 169 |
+| Upstream-aligned skeleton agents | 184 |
 | Workflows (`workflows/`) | 27 |
 | Categories | 17 |
 | Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-05-24 |
@@ -35,7 +35,7 @@ The 97 ⭐ Japan-market originals cover scenarios upstream does not address:
 
 ### Translation status
 
-The 169 `source: upstream` agents currently provide a Japan-context skeleton (Japanese persona + Japanese workflow framing) rather than a full literal translation of each upstream agent's prompt. Full upstream-prompt translation is in progress; see [ROADMAP.md](ROADMAP.md) and the `upstream_path:` frontmatter field on each upstream agent (it points back to the original file in `msitarzewski/agency-agents@main`).
+The 184 `source: upstream` agents currently provide a Japan-context skeleton (Japanese persona + Japanese workflow framing) rather than a full literal translation of each upstream agent's prompt. Full upstream-prompt translation is in progress; see [ROADMAP.md](ROADMAP.md) and the `upstream_path:` frontmatter field on each upstream agent (it points back to the original file in `msitarzewski/agency-agents@main`).
 
 When upstream `main` adds or revises an agent, we treat that as a translation task in this repo. Until full translation is complete, the upstream skeleton agents are most useful as Japan-context personas rather than as drop-in equivalents of the English originals.
 
@@ -111,8 +111,8 @@ MIT
 ## Coverage
 
 - 日本特化 agent (⭐ `source: japan-original`): 97（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
-- 上流由来 agent (`source: upstream`): 169（2026-05-24 時点の英文上流 `main` の agent path に対応。現状は日本 context の skeleton。上流 prompt の本翻訳は進行中。`upstream_path:` で対応関係を保持）
-- 合計: 266 agents
+- 上流由来 agent (`source: upstream`): 184（2026-05-24 時点の英文上流 `main` の agent path に対応。現状は日本 context の skeleton。上流 prompt の本翻訳は進行中。`upstream_path:` で対応関係を保持）
+- 合計: 281 agents
 - Workflow: 27
 
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
@@ -313,7 +313,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 
 ## 上流との関係
 
-- 169 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応する placeholder です（現状は日本 context の skeleton。frontmatter の `upstream_path:` で対応関係を保持）
+- 184 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応する placeholder です（現状は日本 context の skeleton。frontmatter の `upstream_path:` で対応関係を保持）
 - 97 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
 - 上流 prompt の本翻訳は順次進めます。状況は [ROADMAP.md](ROADMAP.md) を参照してください
 
