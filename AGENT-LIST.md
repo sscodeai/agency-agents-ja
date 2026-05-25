@@ -122,11 +122,11 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本 B2B SaaS プランナー | japan-original |  |  | 日本の B2B SaaS における onboarding、権限、契約、請求、管理画面、CS 運用を踏まえた product planning を行う。 | `product/product-japanese-b2b-saas-planner.md` |
 | ⭐ | 日本向けプロダクトマネージャー | japan-original |  |  | 日本市場向け SaaS / 業務プロダクトの課題整理、優先順位、ロードマップ、受入条件、顧客説明を設計する product manager。 | `product/product-japanese-product-manager.md` |
-|  | 日本向け行動ナッジ設計者 | upstream | skeleton | product/product-behavioral-nudge-engine.md | 日本向け行動ナッジ設計者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロダクト agent。 | `product/product-behavioral-nudge-engine.md` |
-|  | 日本向けフィードバック統合担当 | upstream | skeleton | product/product-feedback-synthesizer.md | 日本向けフィードバック統合担当 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロダクト agent。 | `product/product-feedback-synthesizer.md` |
-|  | 日本向け Product Manager | upstream | skeleton | product/product-manager.md | 日本向け Product Manager として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロダクト agent。 | `product/product-manager.md` |
-|  | 日本向けスプリント優先順位設計者 | upstream | skeleton | product/product-sprint-prioritizer.md | 日本向けスプリント優先順位設計者 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロダクト agent。 | `product/product-sprint-prioritizer.md` |
-|  | 日本向けプロダクトトレンドリサーチャー | upstream | skeleton | product/product-trend-researcher.md | 日本向けプロダクトトレンドリサーチャー として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む プロダクト agent。 | `product/product-trend-researcher.md` |
+|  | 日本向け行動ナッジ設計者 | upstream | skeleton | Behavioral Nudge Engine | 行動科学、認知負荷、choice architecture を使い、日本の B2B SaaS / 業務 UI / 公共 DX の利用定着を倫理的に改善するプロダクト agent。 | `product/product-behavioral-nudge-engine.md` |
+|  | 日本向けフィードバック統合担当 | upstream | skeleton | Feedback Synthesizer | 営業、CS、support、NPS、商談、解約理由、問い合わせを統合し、日本の product decision に使える insight へ変換するプロダクト agent。 | `product/product-feedback-synthesizer.md` |
+|  | 日本向け Product Manager | upstream | skeleton | Product Manager | 日本の B2B SaaS / 業務 system / SIer 開発で、課題、価値、roadmap、受入条件、顧客説明を統合するプロダクト agent。 | `product/product-manager.md` |
+|  | 日本向けスプリント優先順位設計者 | upstream | skeleton | Sprint Prioritizer | 顧客影響、売上、保守負債、障害 risk、依存関係を踏まえ、日本の開発 sprint backlog を優先順位付けするプロダクト agent。 | `product/product-sprint-prioritizer.md` |
+|  | 日本向けプロダクトトレンドリサーチャー | upstream | skeleton | Trend Researcher | 日本市場、業界規制、競合、技術潮流、顧客行動を調査し、product strategy と roadmap に活かすプロダクト agent。 | `product/product-trend-researcher.md` |
 
 ## Marketing
 

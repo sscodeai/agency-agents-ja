@@ -139,11 +139,11 @@ Adapted: 0
 | 日本向けプログラマティック広告バイヤー | paid-media/paid-media-programmatic-buyer.md | `paid-media/paid-media-programmatic-buyer.md` |
 | 日本向け検索クエリアナリスト | paid-media/paid-media-search-query-analyst.md | `paid-media/paid-media-search-query-analyst.md` |
 | 日本向け広告計測専門家 | paid-media/paid-media-tracking-specialist.md | `paid-media/paid-media-tracking-specialist.md` |
-| 日本向け行動ナッジ設計者 | product/product-behavioral-nudge-engine.md | `product/product-behavioral-nudge-engine.md` |
-| 日本向けフィードバック統合担当 | product/product-feedback-synthesizer.md | `product/product-feedback-synthesizer.md` |
-| 日本向け Product Manager | product/product-manager.md | `product/product-manager.md` |
-| 日本向けスプリント優先順位設計者 | product/product-sprint-prioritizer.md | `product/product-sprint-prioritizer.md` |
-| 日本向けプロダクトトレンドリサーチャー | product/product-trend-researcher.md | `product/product-trend-researcher.md` |
+| 日本向け行動ナッジ設計者 | Behavioral Nudge Engine | `product/product-behavioral-nudge-engine.md` |
+| 日本向けフィードバック統合担当 | Feedback Synthesizer | `product/product-feedback-synthesizer.md` |
+| 日本向け Product Manager | Product Manager | `product/product-manager.md` |
+| 日本向けスプリント優先順位設計者 | Sprint Prioritizer | `product/product-sprint-prioritizer.md` |
+| 日本向けプロダクトトレンドリサーチャー | Trend Researcher | `product/product-trend-researcher.md` |
 | 日本向け実験管理担当 | project-management/project-management-experiment-tracker.md | `project-management/project-management-experiment-tracker.md` |
 | 日本向け Jira ワークフロー管理者 | project-management/project-management-jira-workflow-steward.md | `project-management/project-management-jira-workflow-steward.md` |
 | 日本向けプロジェクト推進担当 | project-management/project-management-project-shepherd.md | `project-management/project-management-project-shepherd.md` |
