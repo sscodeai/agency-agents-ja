@@ -105,14 +105,14 @@ Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
 | ⭐ | 日本向け品質保証マネージャー | japan-original |  |  | 日本の IT / SaaS / 受託開発で品質方針、QA gate、不具合傾向、検収 readiness、改善計画を管理する quality assurance manager。 | `testing/testing-japanese-quality-assurance-manager.md` |
 | ⭐ | 日本 IT ツール評価担当 | japan-original |  |  | 日本企業で導入する SaaS、開発支援 tool、AI tool、monitoring、ticket system を機能、security、費用、運用、契約の観点で評価する specialist。 | `testing/testing-japanese-tool-evaluator.md` |
 | ⭐ | Shift_JIS / CSV テスター | japan-original |  |  | 日本の業務システムで頻出する CSV、Excel、Shift_JIS、UTF-8 BOM、全角半角、郵便番号、電話番号、日付形式を検証する specialist。 | `testing/testing-shift-jis-csv-tester.md` |
-|  | 日本向け Accessibility Auditor | upstream | skeleton | testing/testing-accessibility-auditor.md | 日本向け Accessibility Auditor として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-accessibility-auditor.md` |
-|  | 日本向け API Tester | upstream | skeleton | testing/testing-api-tester.md | 日本向け API Tester として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-api-tester.md` |
-|  | 日本向け Evidence Collector | upstream | skeleton | testing/testing-evidence-collector.md | 日本向け Evidence Collector として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-evidence-collector.md` |
-|  | 日本向け Performance Benchmarker | upstream | skeleton | testing/testing-performance-benchmarker.md | 日本向け Performance Benchmarker として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-performance-benchmarker.md` |
-|  | 日本向け Reality Checker | upstream | skeleton | testing/testing-reality-checker.md | 日本向け Reality Checker として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-reality-checker.md` |
-|  | 日本向け Test Results Analyzer | upstream | skeleton | testing/testing-test-results-analyzer.md | 日本向け Test Results Analyzer として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-test-results-analyzer.md` |
-|  | 日本向け Tool Evaluator | upstream | skeleton | testing/testing-tool-evaluator.md | 日本向け Tool Evaluator として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-tool-evaluator.md` |
-|  | 日本向け Workflow Optimizer | upstream | skeleton | testing/testing-workflow-optimizer.md | 日本向け Workflow Optimizer として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む テスト・QA agent。 | `testing/testing-workflow-optimizer.md` |
+|  | 日本向け Accessibility Auditor | upstream | skeleton | Accessibility Auditor | JIS X 8341-3、WCAG、日本語 UI、公共・企業サイトの要件に合わせてアクセシビリティ監査観点を整理する QA agent。 | `testing/testing-accessibility-auditor.md` |
+|  | 日本向け API Tester | upstream | skeleton | API Tester | 日本の B2B SaaS、SI、社内システム連携で必要な API 契約、認証、異常系、証跡を検証する QA agent。 | `testing/testing-api-tester.md` |
+|  | 日本向け Evidence Collector | upstream | skeleton | Evidence Collector | 検収、監査、障害報告、QA 判定に必要なスクリーンショット、ログ、テスト結果、チケット証跡を整理する支援 agent。 | `testing/testing-evidence-collector.md` |
+|  | 日本向け Performance Benchmarker | upstream | skeleton | Performance Benchmarker | 日本の SLA、ピーク時間、モバイル利用、クラウド費用を踏まえて性能試験とベンチマークを設計・評価する QA agent。 | `testing/testing-performance-benchmarker.md` |
+|  | 日本向け Reality Checker | upstream | skeleton | Reality Checker | 企画、開発、QA、リリース判断の楽観的な主張を、証跡・制約・現場実態に照らして検証する QA agent。 | `testing/testing-reality-checker.md` |
+|  | 日本向け Test Results Analyzer | upstream | skeleton | Test Results Analyzer | テスト結果、欠陥傾向、品質ゲート、残リスクを日本のリリース判定・検収報告向けに整理する QA agent。 | `testing/testing-test-results-analyzer.md` |
+|  | 日本向け Tool Evaluator | upstream | skeleton | Tool Evaluator | 日本企業の購買、セキュリティ、運用、サポート、費用対効果に合わせて開発・QA・AI ツールを評価する支援 agent。 | `testing/testing-tool-evaluator.md` |
+|  | 日本向け Workflow Optimizer | upstream | skeleton | Workflow Optimizer | 日本の開発、QA、CS、保守運用にある手戻り・承認待ち・属人化を見つけ、現実的な workflow 改善へ落とし込む agent。 | `testing/testing-workflow-optimizer.md` |
 
 ## Product
 
@@ -328,12 +328,12 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 | ⭐ | 日本向けサービスデリバリーマネージャー | japan-original |  |  | 日本の IT service / B2B SaaS / 保守運用で SLA、問い合わせ、障害、運用品質、顧客報告を管理する service delivery manager。 | `support/support-japanese-service-delivery-manager.md` |
 | ⭐ | 日本向けサポート分析レポーター | japan-original |  |  | 日本の B2B SaaS / IT service の問い合わせ、障害、FAQ、SLA、顧客満足度を分析し、改善 action と定例 report を作る support analytics reporter。 | `support/support-japanese-support-analytics-reporter.md` |
 | ⭐ | 日本語リリースノートライター | japan-original |  |  | 日本語の release note、顧客向け変更案内、社内共有、影響範囲、注意事項を分かりやすく書く writer。 | `support/support-release-note-writer-ja.md` |
-|  | 日本向け Analytics Reporter | upstream | skeleton | support/support-analytics-reporter.md | 日本向け Analytics Reporter として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む サポート agent。 | `support/support-analytics-reporter.md` |
-|  | 日本向け Executive Summary Generator | upstream | skeleton | support/support-executive-summary-generator.md | 日本向け Executive Summary Generator として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む サポート agent。 | `support/support-executive-summary-generator.md` |
-|  | 日本向け Finance Tracker | upstream | skeleton | support/support-finance-tracker.md | 日本向け Finance Tracker として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む サポート agent。 | `support/support-finance-tracker.md` |
-|  | 日本向け Infrastructure Maintainer | upstream | skeleton | support/support-infrastructure-maintainer.md | 日本向け Infrastructure Maintainer として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む サポート agent。 | `support/support-infrastructure-maintainer.md` |
-|  | 日本向け Legal Compliance Checker | upstream | skeleton | support/support-legal-compliance-checker.md | 日本向け Legal Compliance Checker として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む サポート agent。 | `support/support-legal-compliance-checker.md` |
-|  | 日本向け Support Responder | upstream | skeleton | support/support-support-responder.md | 日本向け Support Responder として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む サポート agent。 | `support/support-support-responder.md` |
+|  | 日本向け Analytics Reporter | upstream | skeleton | Analytics Reporter | CS、サポート、障害、SaaS 運用のデータを日本の経営会議・週次報告・改善活動で使える KPI レポートへ整理する分析支援 agent。 | `support/support-analytics-reporter.md` |
+|  | 日本向け Executive Summary Generator | upstream | skeleton | Executive Summary Generator | 技術・運用・事業の詳細情報を、日本の経営会議、稟議、ステアリングコミッティで判断しやすい要約へ変換する支援 agent。 | `support/support-executive-summary-generator.md` |
+|  | 日本向け Finance Tracker | upstream | skeleton | Finance Tracker | SaaS、クラウド、保守、開発案件の費用を日本の予実管理、稟議、請求確認、部門配賦に使える形で追跡する支援 agent。 | `support/support-finance-tracker.md` |
+|  | 日本向け Infrastructure Maintainer | upstream | skeleton | Infrastructure Maintainer | 日本の保守運用、監視、変更管理、障害対応、定期メンテナンスに合わせてインフラ運用品質を維持する支援 agent。 | `support/support-infrastructure-maintainer.md` |
+|  | 日本向け Legal Compliance Checker | upstream | skeleton | Legal Compliance Checker | 日本の個人情報保護、契約、表示、セキュリティ、AI 利用ポリシーの観点から文書や運用の確認事項を整理する支援 agent。 | `support/support-legal-compliance-checker.md` |
+|  | 日本向け Support Responder | upstream | skeleton | Support Responder | 日本の B2B SaaS、受託開発、保守運用に合わせて、問い合わせ返信、障害連絡、エスカレーション文面を作る支援 agent。 | `support/support-support-responder.md` |
 
 ## Supply Chain
 

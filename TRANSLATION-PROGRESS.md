@@ -205,17 +205,17 @@ Adapted: 0
 | 日本向け留学アドバイザー | specialized/study-abroad-advisor.md | `specialized/study-abroad-advisor.md` |
 | 日本向けサプライチェーン戦略家 | specialized/supply-chain-strategist.md | `specialized/supply-chain-strategist.md` |
 | 日本向けゼロ知識証明スチュワード | specialized/zk-steward.md | `specialized/zk-steward.md` |
-| 日本向け Analytics Reporter | support/support-analytics-reporter.md | `support/support-analytics-reporter.md` |
-| 日本向け Executive Summary Generator | support/support-executive-summary-generator.md | `support/support-executive-summary-generator.md` |
-| 日本向け Finance Tracker | support/support-finance-tracker.md | `support/support-finance-tracker.md` |
-| 日本向け Infrastructure Maintainer | support/support-infrastructure-maintainer.md | `support/support-infrastructure-maintainer.md` |
-| 日本向け Legal Compliance Checker | support/support-legal-compliance-checker.md | `support/support-legal-compliance-checker.md` |
-| 日本向け Support Responder | support/support-support-responder.md | `support/support-support-responder.md` |
-| 日本向け Accessibility Auditor | testing/testing-accessibility-auditor.md | `testing/testing-accessibility-auditor.md` |
-| 日本向け API Tester | testing/testing-api-tester.md | `testing/testing-api-tester.md` |
-| 日本向け Evidence Collector | testing/testing-evidence-collector.md | `testing/testing-evidence-collector.md` |
-| 日本向け Performance Benchmarker | testing/testing-performance-benchmarker.md | `testing/testing-performance-benchmarker.md` |
-| 日本向け Reality Checker | testing/testing-reality-checker.md | `testing/testing-reality-checker.md` |
-| 日本向け Test Results Analyzer | testing/testing-test-results-analyzer.md | `testing/testing-test-results-analyzer.md` |
-| 日本向け Tool Evaluator | testing/testing-tool-evaluator.md | `testing/testing-tool-evaluator.md` |
-| 日本向け Workflow Optimizer | testing/testing-workflow-optimizer.md | `testing/testing-workflow-optimizer.md` |
+| 日本向け Analytics Reporter | Analytics Reporter | `support/support-analytics-reporter.md` |
+| 日本向け Executive Summary Generator | Executive Summary Generator | `support/support-executive-summary-generator.md` |
+| 日本向け Finance Tracker | Finance Tracker | `support/support-finance-tracker.md` |
+| 日本向け Infrastructure Maintainer | Infrastructure Maintainer | `support/support-infrastructure-maintainer.md` |
+| 日本向け Legal Compliance Checker | Legal Compliance Checker | `support/support-legal-compliance-checker.md` |
+| 日本向け Support Responder | Support Responder | `support/support-support-responder.md` |
+| 日本向け Accessibility Auditor | Accessibility Auditor | `testing/testing-accessibility-auditor.md` |
+| 日本向け API Tester | API Tester | `testing/testing-api-tester.md` |
+| 日本向け Evidence Collector | Evidence Collector | `testing/testing-evidence-collector.md` |
+| 日本向け Performance Benchmarker | Performance Benchmarker | `testing/testing-performance-benchmarker.md` |
+| 日本向け Reality Checker | Reality Checker | `testing/testing-reality-checker.md` |
+| 日本向け Test Results Analyzer | Test Results Analyzer | `testing/testing-test-results-analyzer.md` |
+| 日本向け Tool Evaluator | Tool Evaluator | `testing/testing-tool-evaluator.md` |
+| 日本向け Workflow Optimizer | Workflow Optimizer | `testing/testing-workflow-optimizer.md` |
