@@ -16,7 +16,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | --- | --- |
 | Total agents | 281 |
 | ⭐ Japan-market originals | 97 |
-| Upstream-aligned skeleton agents | 184 |
+| Upstream-aligned (adapted to Japan) | 184 |
 | Workflows (`workflows/`) | 27 |
 | Categories | 17 |
 | Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-05-24 |
@@ -35,18 +35,26 @@ The 97 ⭐ Japan-market originals cover scenarios upstream does not address:
 
 ### Translation status
 
-The 184 `source: upstream` agents currently provide a Japan-context skeleton (Japanese persona + Japanese workflow framing) rather than a full literal translation of each upstream agent's prompt. Full upstream-prompt translation is in progress; see [ROADMAP.md](ROADMAP.md) and the `upstream_path:` frontmatter field on each upstream agent (it points back to the original file in `msitarzewski/agency-agents@main`).
+The 184 `source: upstream` agents are currently `translation_status: adapted` — derived from the upstream agent inventory but **rewritten** for the Japanese market rather than translated literally. Each one has a Japanese-language `description`, `役割`, `想定シーン`, and `必ず確認すること` tuned to SIer / SaaS / 受託 / 製造業 DX / 公共 sector contexts, plus the `upstream_path:` frontmatter pointing back to the upstream original for compatibility and audit.
 
-When upstream `main` adds or revises an agent, we treat that as a translation task in this repo. Until full translation is complete, the upstream skeleton agents are most useful as Japan-context personas rather than as drop-in equivalents of the English originals.
+We deliberately chose "adapted" over "literal translation":
+- Literal translation of every upstream English prompt would be slower to produce and less useful for Japanese teams (English-centric examples, US-centric platforms, no 稟議/検収 framing).
+- Adapted agents preserve the role-level intent (e.g. "Backend Architect") while replacing examples and workflow framing with Japanese equivalents.
+- The upstream English prompt remains the source of truth for `role-level intent`; this repo is the source of truth for `Japanese-market execution`.
 
-You can query translation progress directly:
+When upstream `main` adds or revises an agent, we treat that as an adaptation task in this repo. `translation_status` will move to `translated` only if we ever produce a literal translation in addition to the adaptation.
+
+You can query the breakdown directly:
 
 ```bash
-# How many upstream agents are still in skeleton stage
-grep -rl '^translation_status: skeleton' . | wc -l
+# Adapted (rewritten for Japan): currently 184
+grep -rl '^translation_status: adapted'    . | wc -l
 
-# How many have been fully translated
+# Literal translation of upstream prompt: currently 0
 grep -rl '^translation_status: translated' . | wc -l
+
+# Untouched Japan-context placeholders: currently 0
+grep -rl '^translation_status: skeleton'   . | wc -l
 ```
 
 ### Frontmatter schema
@@ -62,7 +70,7 @@ Every agent file has this frontmatter:
 | `source` | yes | `japan-original` or `upstream` |
 | `upstream_path` | when `source: upstream` | Path of the corresponding file in [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) |
 | `upstream_name` | optional | Original English name. Useful when the Japanese `name` diverges from the upstream concept (e.g. the upstream `Douyin Strategist` is repurposed as a Japan-market `TikTok Japan 戦略家` here). |
-| `translation_status` | when `source: upstream` | `skeleton` = Japan-context placeholder, upstream prompt not yet translated. `translated` = full upstream prompt translated. `adapted` = translated then materially diverged from upstream. Absent on `japan-original`. |
+| `translation_status` | when `source: upstream` | `adapted` = role rewritten for Japanese market (most upstream agents in this repo). `translated` = literal translation of upstream prompt. `skeleton` = Japan-context placeholder, upstream prompt not yet translated or adapted. Absent on `japan-original`. |
 
 `scripts/validate.sh` enforces all required fields, value constraints, and disallows `[upstream]`-prefixed `name` values (use the schema fields above instead).
 
@@ -82,6 +90,15 @@ Use superpowers-ja workflow-runner to execute
 agency-agents-ja/workflows/japanese-sier-requirements-review.yaml.
 ticket: PROJ-1234, spec: docs/spec.md
 ```
+
+### Upstream framework docs (not yet localized)
+
+In addition to agent files, this repo mirrors two upstream documentation directories verbatim in English:
+
+- [`strategy/`](strategy/) — upstream's executive brief, playbooks, runbooks, coordination templates (16 files)
+- [`integrations/`](integrations/) — upstream's integration guides for Claude Code, Cursor, Gemini CLI, GitHub Copilot, MCP memory, etc. (14 files)
+
+These are **not** in scope of `scripts/validate.sh` (the agent CI) and **do not** carry `source:` frontmatter. They are kept in English at upstream parity so the two repos can be synced cleanly. Japanese-language adaptation of these framework docs is on the roadmap but not in this release.
 
 ### Acknowledgments
 
@@ -111,7 +128,7 @@ MIT
 ## Coverage
 
 - 日本特化 agent (⭐ `source: japan-original`): 97（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
-- 上流由来 agent (`source: upstream`): 184（2026-05-24 時点の英文上流 `main` の agent path に対応。現状は日本 context の skeleton。上流 prompt の本翻訳は進行中。`upstream_path:` で対応関係を保持）
+- 上流由来 agent (`source: upstream`): 184（2026-05-24 時点の英文上流 `main` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 合計: 281 agents
 - Workflow: 27
 
@@ -231,7 +248,7 @@ color: blue
 source: japan-original    # または upstream
 # upstream_path: <dir>/<base>.md         # source: upstream のときに必須
 # upstream_name: Original English Name   # source: upstream のとき推奨
-# translation_status: skeleton           # skeleton | translated | adapted
+# translation_status: adapted            # adapted | translated | skeleton
 ---
 
 # 日本語名
@@ -313,9 +330,10 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 
 ## 上流との関係
 
-- 184 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応する placeholder です（現状は日本 context の skeleton。frontmatter の `upstream_path:` で対応関係を保持）
+- 184 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応します。現在は `translation_status: adapted`（直訳ではなく、日本市場向けに役割を書き直し済み）。frontmatter の `upstream_path:` で 1:1 対応関係を保持
 - 97 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
-- 上流 prompt の本翻訳は順次進めます。状況は [ROADMAP.md](ROADMAP.md) を参照してください
+- 上流の framework 文書（[`strategy/`](strategy/) 16 ファイル、[`integrations/`](integrations/) 14 ファイル）は現状そのまま英語で保持しています。これらは `source:` frontmatter を持たず、`scripts/validate.sh` の対象外です。日本語化は roadmap 上の項目です
+- 上流 `main` への追従と本翻訳の方針は [ROADMAP.md](ROADMAP.md) を参照してください
 
 ### Frontmatter schema
 
@@ -327,13 +345,14 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `source` | yes | `japan-original` か `upstream` |
 | `upstream_path` | `source: upstream` のとき必須 | 上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) 内の対応 file path |
 | `upstream_name` | optional | 上流 agent の英語名。日本市場向けに `name` が乖離した場合に保持（例：上流 `Douyin Strategist` → ja `TikTok Japan 戦略家`） |
-| `translation_status` | `source: upstream` のとき必須 | `skeleton`（日本 context の placeholder、上流 prompt 未翻訳）／`translated`（上流 prompt を翻訳済み）／`adapted`（翻訳後に独自に乖離）。`japan-original` には付けない |
+| `translation_status` | `source: upstream` のとき必須 | `adapted`（上流 role を日本市場向けに書き直し済み。本 repo の標準）／`translated`（上流 prompt の直訳）／`skeleton`（未着手の placeholder）。`japan-original` には付けない |
 
 翻訳進捗の確認:
 
 ```bash
-grep -rl '^translation_status: skeleton' . | wc -l    # skeleton 段階の残数
-grep -rl '^translation_status: translated' . | wc -l  # 翻訳完了数
+grep -rl '^translation_status: adapted'    . | wc -l  # 適応済み (日本市場向けに書き直し)
+grep -rl '^translation_status: translated' . | wc -l  # 直訳
+grep -rl '^translation_status: skeleton'   . | wc -l  # 未着手 placeholder
 ```
 
 ## メンテナンス
