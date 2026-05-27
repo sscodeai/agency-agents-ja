@@ -71,6 +71,7 @@ For ongoing maintenance, run:
 ```bash
 npm run generate
 npm run validate
+npm run check:adapted-quality
 npm run check:upstream-parity
 ```
 

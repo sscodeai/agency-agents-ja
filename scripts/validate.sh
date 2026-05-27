@@ -92,6 +92,10 @@ if ! node scripts/check-upstream-coverage.js --check; then
   errors=$((errors + 1))
 fi
 
+if ! node scripts/check-adapted-quality.js; then
+  errors=$((errors + 1))
+fi
+
 if ! node scripts/validate-workflows.js; then
   errors=$((errors + 1))
 fi
