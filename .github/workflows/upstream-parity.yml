@@ -1,0 +1,25 @@
+name: Upstream Parity
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * 1"
+
+jobs:
+  check:
+    name: Check upstream agent coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch upstream main
+        run: |
+          git remote add upstream https://github.com/msitarzewski/agency-agents.git || git remote set-url upstream https://github.com/msitarzewski/agency-agents.git
+          git fetch --depth=1 upstream main:refs/remotes/upstream/main
+
+      - name: Compare upstream agent paths
+        run: npm run check:upstream-parity

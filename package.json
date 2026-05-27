@@ -23,6 +23,7 @@
     "generate:workflows": "node scripts/generate-workflow-table.js",
     "generate:translation-progress": "node scripts/generate-translation-progress.js",
     "check:upstream-coverage": "node scripts/check-upstream-coverage.js",
+    "check:upstream-parity": "node scripts/check-upstream-parity.js",
     "validate:workflows": "node scripts/validate-workflows.js",
     "validate": "scripts/validate.sh"
   },

@@ -16,12 +16,19 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | --- | --- |
 | Total agents | 281 |
 | ⭐ Japan-market originals | 97 |
-| Upstream-aligned (adapted to Japan) | 184 |
+| Upstream-aligned (adapted to Japan) | 184 / 184 |
+| Upstream skeleton backlog | 0 |
 | Workflows (`workflows/`) | 27 |
 | Categories | 17 |
 | Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-05-24 |
 
 The `source:` frontmatter field on every agent file marks whether it is `japan-original` (independently designed for the Japanese market) or `upstream` (derived from the upstream agent inventory; see [Translation status](#translation-status) below). [AGENT-LIST.md](AGENT-LIST.md) renders ⭐ for Japan originals.
+
+Maintenance references:
+- [TRANSLATION-PROGRESS.md](TRANSLATION-PROGRESS.md) tracks adapted / translated / skeleton counts.
+- [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) checks local frontmatter coverage.
+- [docs/localization-review-checklist-ja.md](docs/localization-review-checklist-ja.md) defines the Japanese `adapted` quality bar.
+- The scheduled `Upstream Parity` workflow compares this repo against upstream `main` and flags new upstream agent paths.
 
 ### What is Japan-specific here
 
@@ -47,14 +54,24 @@ When upstream `main` adds or revises an agent, we treat that as an adaptation ta
 You can query the breakdown directly:
 
 ```bash
+AGENT_DIRS="academic engineering project-management testing product marketing paid-media finance game-development hr design legal sales spatial-computing support supply-chain specialized"
+
 # Adapted (rewritten for Japan): currently 184
-grep -rl '^translation_status: adapted'    . | wc -l
+grep -rl '^translation_status: adapted'    $AGENT_DIRS | wc -l
 
 # Literal translation of upstream prompt: currently 0
-grep -rl '^translation_status: translated' . | wc -l
+grep -rl '^translation_status: translated' $AGENT_DIRS | wc -l
 
 # Untouched Japan-context placeholders: currently 0
-grep -rl '^translation_status: skeleton'   . | wc -l
+grep -rl '^translation_status: skeleton'   $AGENT_DIRS | wc -l
+```
+
+For ongoing maintenance, run:
+
+```bash
+npm run generate
+npm run validate
+npm run check:upstream-parity
 ```
 
 ### Frontmatter schema
@@ -129,11 +146,13 @@ MIT
 
 - 日本特化 agent (⭐ `source: japan-original`): 97（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
 - 上流由来 agent (`source: upstream`): 184（2026-05-24 時点の英文上流 `main` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
+- 上流由来 agent の skeleton backlog: 0
 - 合計: 281 agents
 - Workflow: 27
 
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
 翻訳進捗は [TRANSLATION-PROGRESS.md](TRANSLATION-PROGRESS.md)、上流 path coverage は [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) で確認できます。
+`adapted` の品質基準は [docs/localization-review-checklist-ja.md](docs/localization-review-checklist-ja.md) を参照してください。
 
 ## 初期 Agent
 
