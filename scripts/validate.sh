@@ -96,6 +96,10 @@ if ! node scripts/check-adapted-quality.js; then
   errors=$((errors + 1))
 fi
 
+if ! node scripts/test-maintenance-scripts.js; then
+  errors=$((errors + 1))
+fi
+
 if ! node scripts/validate-workflows.js; then
   errors=$((errors + 1))
 fi

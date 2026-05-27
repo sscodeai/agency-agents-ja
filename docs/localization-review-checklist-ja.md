@@ -38,5 +38,6 @@
 npm run generate
 npm run validate
 npm run check:adapted-quality
+npm run test:maintenance
 npm run check:upstream-parity
 ```
