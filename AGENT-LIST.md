@@ -1,16 +1,17 @@
 # Agent List
 
-Total agents: 281 (⭐ 97 japan-original + 184 upstream-aligned)
+Total agents: 293 (⭐ 109 japan-original + 184 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
 
 ## Academic
 
-Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
+Total: 6 (⭐ 1 japan-original + 5 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
+| ⭐ | 学習計画プランナー | japan-original |  |  | 日本の学生、社会人、資格学習、研究準備向けに目標、教材、schedule、復習、進捗確認を設計する academic agent。 | `academic/academic-japanese-study-planner.md` |
 |  | 日本向け文化人類学リサーチャー | upstream | adapted | Anthropologist | 日本の利用者文化、業務慣習、組織行動、地域差を ethnographic research として整理し、IT 企画・UX・市場参入に活かす学術・リサーチ agent。 | `academic/academic-anthropologist.md` |
 |  | 日本向け地理・地域分析リサーチャー | upstream | adapted | Geographer | 地域差、商圏、移動、災害、自治体、インフラ制約を分析し、日本向け IT 企画・展開計画へ落とし込む学術・リサーチ agent。 | `academic/academic-geographer.md` |
 |  | 日本向け歴史リサーチャー | upstream | adapted | Historian | 産業史、制度変遷、企業沿革、地域史を調査し、IT 企画・市場理解・ブランド narrative に活かす学術・リサーチ agent。 | `academic/academic-historian.md` |
@@ -19,10 +20,12 @@ Total: 5 (⭐ 0 japan-original + 5 upstream-aligned)
 
 ## Engineering
 
-Total: 49 (⭐ 20 japan-original + 29 upstream-aligned)
+Total: 54 (⭐ 25 japan-original + 29 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
+| ⭐ | 組み込み Linux ドライバエンジニア | japan-original |  |  | 日本の産業機器、IoT gateway、検査装置向けに Linux kernel、device tree、driver、BSP、bring-up を設計する agent。 | `engineering/engineering-embedded-linux-driver-engineer.md` |
+| ⭐ | FPGA デジタル設計エンジニア | japan-original |  |  | 日本の通信、画像処理、産業機器、検査装置向けに FPGA / RTL / timing / verification を設計する agent。 | `engineering/engineering-fpga-digital-design-engineer.md` |
 | ⭐ | 日本向けバックエンドアーキテクト | japan-original |  |  | 日本の業務システム、SaaS、受託開発向けに API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。 | `engineering/engineering-japanese-backend-architect.md` |
 | ⭐ | 日本語コードレビュアー | japan-original |  |  | 日本語チーム向け code review 専門家。丁寧な表現、明確な重大度、証跡、受入条件、保守運用リスクを重視する。 | `engineering/engineering-japanese-code-reviewer.md` |
 | ⭐ | 日本向けデータエンジニア | japan-original |  |  | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する data engineer。 | `engineering/engineering-japanese-data-engineer.md` |
@@ -30,6 +33,7 @@ Total: 49 (⭐ 20 japan-original + 29 upstream-aligned)
 | ⭐ | 日本向けデータベース最適化エンジニア | japan-original |  |  | 業務システムの database schema、query、index、migration、帳票・CSV・batch workload を最適化する専門家。 | `engineering/engineering-japanese-database-optimizer.md` |
 | ⭐ | 日本向けエンタープライズアーキテクト | japan-original |  |  | 日本企業の複数 system、業務、data、security、cloud、integration、governance を横断して target architecture と移行 roadmap を設計する enterprise architect。 | `engineering/engineering-japanese-enterprise-architect.md` |
 | ⭐ | 日本向けフロントエンドエンジニア | japan-original |  |  | 日本の業務画面、管理画面、SaaS UI 向けに React/Vue、form、table、accessibility、入力補助、検証しやすい UI を実装する frontend engineer。 | `engineering/engineering-japanese-frontend-engineer.md` |
+| ⭐ | 日本 IoT ソリューションアーキテクト | japan-original |  |  | 日本の製造、物流、施設、ヘルスケア向けに device、edge、network、cloud、data platform、運用をつなぐ IoT architecture を設計する agent。 | `engineering/engineering-japanese-iot-solution-architect.md` |
 | ⭐ | レガシーモダナイゼーションエンジニア | japan-original |  |  | 旧 Java、COBOL、VB、Access、Excel VBA、on-prem system を段階的に modernize する専門家。現行業務を止めずに移行計画を作る。 | `engineering/engineering-japanese-legacy-modernization-engineer.md` |
 | ⭐ | 日本向けモバイルアプリエンジニア | japan-original |  |  | 日本向け iOS / Android / React Native / Flutter app の業務要件、push 通知、認証、審査、運用、障害対応を考慮して実装する mobile app builder。 | `engineering/engineering-japanese-mobile-app-builder.md` |
 | ⭐ | 日本向けオブザーバビリティエンジニア | japan-original |  |  | 日本の SaaS / 業務システム運用に合わせて log、metrics、trace、dashboard、alert、SLO、監査 log を設計する observability engineer。 | `engineering/engineering-japanese-observability-engineer.md` |
@@ -43,6 +47,8 @@ Total: 49 (⭐ 20 japan-original + 29 upstream-aligned)
 | ⭐ | 日本向け技術ドキュメントライター | japan-original |  |  | 日本の IT 開発、SaaS、SIer、受託開発向けに設計書、API document、運用手順、release note、検収資料を分かりやすく整える technical writer。 | `engineering/engineering-japanese-technical-writer.md` |
 | ⭐ | kintone 開発エンジニア | japan-original |  |  | Cybozu kintone の業務アプリ、JavaScript customize、REST API、plugin、外部連携を設計・実装する専門家。 | `engineering/engineering-kintone-developer.md` |
 | ⭐ | LINE WORKS 連携エンジニア | japan-original |  |  | LINE WORKS bot、通知、承認、業務システム連携を設計・実装する専門家。日本企業の社内コミュニケーションと運用に合わせる。 | `engineering/engineering-line-works-integration-developer.md` |
+| ⭐ | 機械設計エンジニア | japan-original |  |  | 日本の装置、筐体、治具、量産部品向けに機構、材料、公差、熱、組立、保守性を設計する agent。 | `engineering/engineering-mechanical-design-engineer.md` |
+| ⭐ | PC 上位機アプリケーションエンジニア | japan-original |  |  | 日本の検査装置、産業機器、IoT gateway 向けに PC 上位機、HMI、device control、data logging を設計する agent。 | `engineering/engineering-pc-host-application-engineer.md` |
 |  | 日本向け AI データ修復エンジニア | upstream | adapted | AI Data Remediation Engineer | 日本語データ、個人情報、業務 CSV、FAQ、RAG corpus の品質問題を検出・修復する AI / data engineering agent。 | `engineering/engineering-ai-data-remediation-engineer.md` |
 |  | 日本向け AI エンジニア | upstream | adapted | AI Engineer | 日本企業向けに LLM、RAG、agent、評価、セキュリティ、運用を実装する AI engineering agent。 | `engineering/engineering-ai-engineer.md` |
 |  | 日本向け自律最適化アーキテクト | upstream | adapted | Autonomous Optimization Architect | 日本企業向けに AI agent、optimization loop、human approval、monitoring を組み込んだ自律改善 system を設計する agent。 | `engineering/engineering-autonomous-optimization-architect.md` |
@@ -95,10 +101,11 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 
 ## Testing
 
-Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
+Total: 15 (⭐ 7 japan-original + 8 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
+| ⭐ | 組み込み QA エンジニア | japan-original |  |  | 日本の IoT、産業機器、医療・介護機器、検査装置向けに firmware、device、hardware-in-loop、量産検査の QA を設計する agent。 | `testing/testing-embedded-qa-engineer.md` |
 | ⭐ | テストエビデンス収集担当 | japan-original |  |  | 日本の検収・品質保証で必要な test evidence、CI 結果、スクリーンショット、ログ、再現手順を整理する専門家。 | `testing/testing-evidence-collector-ja.md` |
 | ⭐ | 日本向け API テスター | japan-original |  |  | 日本の業務システム、SaaS、外部連携 API に対して contract、認証認可、異常系、冪等性、監査ログ、検収 evidence を確認する API tester。 | `testing/testing-japanese-api-tester.md` |
 | ⭐ | 日本向け QA プランナー | japan-original |  |  | 日本の開発工程に合わせて単体、結合、総合、受入、回帰テストの計画と観点を作る QA planner。 | `testing/testing-japanese-qa-planner.md` |
@@ -130,7 +137,7 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 
 ## Marketing
 
-Total: 46 (⭐ 16 japan-original + 30 upstream-aligned)
+Total: 47 (⭐ 17 japan-original + 30 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -139,6 +146,7 @@ Total: 46 (⭐ 16 japan-original + 30 upstream-aligned)
 | ⭐ | 日本向け導入事例ライター | japan-original |  |  | 日本の B2B SaaS、SI、IT service 向けに顧客導入事例、課題、選定理由、効果、公開許諾、営業活用 copy を作る case study writer。 | `marketing/marketing-japanese-case-study-writer.md` |
 | ⭐ | 日本向けコミュニティマネージャー | japan-original |  |  | 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。 | `marketing/marketing-japanese-community-manager.md` |
 | ⭐ | 日本向けカスタマーマーケティングマネージャー | japan-original |  |  | 日本の B2B SaaS / IT service で既存顧客向け newsletter、導入事例、ユーザー会、更新促進、upsell / advocacy を設計する customer marketing manager。 | `marketing/marketing-japanese-customer-marketing-manager.md` |
+| ⭐ | 日本向け日次ニュースブリーフィング編集者 | japan-original |  |  | 日本市場、業界、競合、政策、技術 trend を短く整理し、経営・marketing・product team 向け daily briefing を作る agent。 | `marketing/marketing-japanese-daily-news-briefing.md` |
 | ⭐ | 日本向けデベロッパーアドボケイト | japan-original |  |  | 日本の developer audience 向けに API / SDK / OSS / SaaS platform の技術発信、sample、workshop、community feedback を設計する developer advocate。 | `marketing/marketing-japanese-developer-advocate.md` |
 | ⭐ | 日本向けナレッジコマース戦略家 | japan-original |  |  | 日本市場向けに有料 newsletter、講座、template、community、法人研修などの knowledge commerce 商品を設計する strategist。 | `marketing/marketing-japanese-knowledge-commerce-strategist.md` |
 | ⭐ | 日本市場リサーチャー | japan-original |  |  | 日本の B2B SaaS、IT service、SI、EC、製造業 DX 向けに市場規模、競合、顧客課題、購入プロセス、参入機会を整理する market researcher。 | `marketing/marketing-japanese-market-researcher.md` |
@@ -198,12 +206,14 @@ Total: 8 (⭐ 1 japan-original + 7 upstream-aligned)
 
 ## Finance
 
-Total: 9 (⭐ 4 japan-original + 5 upstream-aligned)
+Total: 11 (⭐ 6 japan-original + 5 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 電子帳簿保存法レビュアー | japan-original |  |  | 電子帳簿保存法に関する電子取引データ保存、検索要件、改ざん防止、運用ルールを review する finance / compliance agent。 | `finance/finance-electronic-bookkeeping-reviewer.md` |
+| ⭐ | 日本向け財務予測アナリスト | japan-original |  |  | 日本企業の売上、粗利、cash flow、資金繰り、採用、広告、為替、原価をもとに forecast と scenario を作る finance agent。 | `finance/finance-japanese-financial-forecaster.md` |
 | ⭐ | 日本向け FinOps アナリスト | japan-original |  |  | 日本の SaaS / 業務システムで cloud cost、SaaS cost、unit economics、予算、配賦、削減施策を分析する FinOps analyst。 | `finance/finance-japanese-finops-analyst.md` |
+| ⭐ | 金融不正検知アナリスト | japan-original |  |  | 日本の決済、送金、EC、FinTech 向けに不正取引、AML、KYC、チャージバック、アカウント乗っ取り risk を分析する finance risk agent。 | `finance/finance-japanese-fraud-risk-analyst.md` |
 | ⭐ | 日本向け内部監査コーディネーター | japan-original |  |  | 日本企業の IT 統制、SaaS 利用、権限管理、委託先管理、変更管理、証跡、監査対応を整理する internal audit coordinator。 | `finance/finance-japanese-internal-audit-coordinator.md` |
 | ⭐ | インボイス制度アドバイザー | japan-original |  |  | 日本のインボイス制度に関する請求書、適格請求書発行事業者番号、取引先確認、会計 system 要件を整理する finance advisor。 | `finance/finance-japanese-invoice-system-advisor.md` |
 |  | 日本向け経理・管理会計コントローラー | upstream | adapted | Bookkeeper & Controller | 月次決算、請求、入出金、管理会計、証憑、内部統制を日本企業の IT / SaaS / 受託開発現場向けに整理するファイナンス agent。 | `finance/finance-bookkeeper-controller.md` |
@@ -337,18 +347,19 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 
 ## Supply Chain
 
-Total: 4 (⭐ 4 japan-original + 0 upstream-aligned)
+Total: 5 (⭐ 5 japan-original + 0 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本向け在庫予測担当 | japan-original |  |  | 日本の小売、EC、製造業向けに需要予測、安全在庫、欠品、過剰在庫、リードタイムを分析する supply chain specialist。 | `supply-chain/supply-chain-inventory-forecasting-ja.md` |
 | ⭐ | 日本向け IT 調達マネージャー | japan-original |  |  | 日本企業の SaaS、cloud、開発委託、業務委託、hardware 調達について RFP、見積比較、稟議、契約、発注、検収を管理する procurement manager。 | `supply-chain/supply-chain-japanese-procurement-manager.md` |
+| ⭐ | 日本物流ルート最適化プランナー | japan-original |  |  | 日本の配送、共同配送、倉庫出荷、ラストワンマイル向けに route、積載、時間指定、driver 制約、cost を最適化する agent。 | `supply-chain/supply-chain-japanese-route-optimizer.md` |
 | ⭐ | 日本向けベンダー評価担当 | japan-original |  |  | 日本企業の vendor selection、RFP、見積、品質、納期、保守、セキュリティ、契約 risk を評価する supply chain / procurement specialist。 | `supply-chain/supply-chain-japanese-vendor-evaluator.md` |
 | ⭐ | 日本向けベンダーリスクマネージャー | japan-original |  |  | 日本企業の SaaS vendor、開発委託先、協力会社、cloud / data processor の security、privacy、BCP、契約、継続性 risk を評価する vendor risk manager。 | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` |
 
 ## Specialized
 
-Total: 52 (⭐ 11 japan-original + 41 upstream-aligned)
+Total: 53 (⭐ 12 japan-original + 41 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -363,6 +374,7 @@ Total: 52 (⭐ 11 japan-original + 41 upstream-aligned)
 | ⭐ | 日本 IT プロンプトエンジニア | japan-original |  |  | 日本の IT 開発、業務運用、CS、営業、社内 AI 活用向けに prompt、評価観点、ガードレール、再利用 template を設計する prompt engineer。 | `specialized/specialized-japanese-prompt-engineer.md` |
 | ⭐ | 日本 IT リスクアセッサー | japan-original |  |  | 日本の IT project、SaaS、SI、業務委託、AI 活用における delivery、security、legal、operation、顧客影響 risk を整理する risk assessor。 | `specialized/specialized-japanese-risk-assessor.md` |
 | ⭐ | 品質管理・カイゼンアドバイザー | japan-original |  |  | 日本の製造・業務現場で品質問題、なぜなぜ分析、再発防止、標準化、カイゼン活動を支援する advisor。 | `specialized/specialized-quality-control-kaizen-advisor.md` |
+| ⭐ | 技術翻訳エージェント | japan-original |  |  | 日本語と英語の間で technical docs、API docs、spec、release notes、support article を正確に翻訳・ローカライズする agent。 | `specialized/technical-translator-agent.md` |
 |  | 日本向け買掛金処理エージェント | upstream | adapted | Accounts Payable Agent | 日本企業の請求書、発注書、検収、支払条件、消費税、承認、証憑管理を整理する accounts payable agent。 | `specialized/accounts-payable-agent.md` |
 |  | 日本向け AI エージェント ID / Trust 設計者 | upstream | adapted | Agentic Identity & Trust | AI agent の本人性、権限、監査ログ、委任、停止条件を日本企業のガバナンスに合わせて設計する agent。 | `specialized/agentic-identity-trust.md` |
 |  | 日本向けエージェント編成オーケストレーター | upstream | adapted | Agents Orchestrator | 複数 AI agent の役割分担、handoff、承認、監査、失敗時 fallback を日本の業務運用向けに設計する agent。 | `specialized/agents-orchestrator.md` |
