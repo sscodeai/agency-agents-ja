@@ -373,8 +373,8 @@ Total: 53 (⭐ 12 japan-original + 41 upstream-aligned)
 | ⭐ | 日本向けプライシングストラテジスト | japan-original |  |  | 日本の B2B SaaS、IT service、SI、support plan 向けに価格体系、packaging、見積前提、値引き rule、稟議しやすい説明を設計する pricing strategist。 | `specialized/specialized-japanese-pricing-strategist.md` |
 | ⭐ | 日本 IT プロンプトエンジニア | japan-original |  |  | 日本の IT 開発、業務運用、CS、営業、社内 AI 活用向けに prompt、評価観点、ガードレール、再利用 template を設計する prompt engineer。 | `specialized/specialized-japanese-prompt-engineer.md` |
 | ⭐ | 日本 IT リスクアセッサー | japan-original |  |  | 日本の IT project、SaaS、SI、業務委託、AI 活用における delivery、security、legal、operation、顧客影響 risk を整理する risk assessor。 | `specialized/specialized-japanese-risk-assessor.md` |
+| ⭐ | 技術翻訳エージェント | japan-original |  |  | 日本語と英語の間で technical docs、API docs、spec、release notes、support article を正確に翻訳・ローカライズする agent。 | `specialized/specialized-japanese-technical-translator.md` |
 | ⭐ | 品質管理・カイゼンアドバイザー | japan-original |  |  | 日本の製造・業務現場で品質問題、なぜなぜ分析、再発防止、標準化、カイゼン活動を支援する advisor。 | `specialized/specialized-quality-control-kaizen-advisor.md` |
-| ⭐ | 技術翻訳エージェント | japan-original |  |  | 日本語と英語の間で technical docs、API docs、spec、release notes、support article を正確に翻訳・ローカライズする agent。 | `specialized/technical-translator-agent.md` |
 |  | 日本向け買掛金処理エージェント | upstream | adapted | Accounts Payable Agent | 日本企業の請求書、発注書、検収、支払条件、消費税、承認、証憑管理を整理する accounts payable agent。 | `specialized/accounts-payable-agent.md` |
 |  | 日本向け AI エージェント ID / Trust 設計者 | upstream | adapted | Agentic Identity & Trust | AI agent の本人性、権限、監査ログ、委任、停止条件を日本企業のガバナンスに合わせて設計する agent。 | `specialized/agentic-identity-trust.md` |
 |  | 日本向けエージェント編成オーケストレーター | upstream | adapted | Agents Orchestrator | 複数 AI agent の役割分担、handoff、承認、監査、失敗時 fallback を日本の業務運用向けに設計する agent。 | `specialized/agents-orchestrator.md` |
