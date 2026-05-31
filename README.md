@@ -28,6 +28,7 @@ Maintenance references:
 - [TRANSLATION-PROGRESS.md](TRANSLATION-PROGRESS.md) tracks adapted / translated / skeleton counts.
 - [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) checks local frontmatter coverage.
 - [docs/localization-review-checklist-ja.md](docs/localization-review-checklist-ja.md) defines the Japanese `adapted` quality bar.
+- [docs/sscodeai-articles.md](docs/sscodeai-articles.md) links SSCodeAI blog / docs pages about this project.
 - The scheduled `Upstream Parity` workflow compares this repo against upstream `main` and flags new upstream agent paths.
 
 ### What is Japan-specific here
@@ -157,6 +158,7 @@ MIT
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
 翻訳進捗は [TRANSLATION-PROGRESS.md](TRANSLATION-PROGRESS.md)、上流 path coverage は [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) で確認できます。
 `adapted` の品質基準は [docs/localization-review-checklist-ja.md](docs/localization-review-checklist-ja.md) を参照してください。
+設計背景と関連記事は [docs/sscodeai-articles.md](docs/sscodeai-articles.md) にまとめています。
 
 ## 初期 Agent
 

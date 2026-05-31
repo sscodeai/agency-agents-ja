@@ -102,7 +102,7 @@ function render() {
     '',
     'This file is generated from agent frontmatter. Do not edit it manually.',
     '',
-    'Baseline: `msitarzewski/agency-agents@main` as of 2026-05-24 (declared in README.md).',
+    'Baseline: `msitarzewski/agency-agents@main` as of 2026-05-31 (declared in README.md).',
     '',
     `Total local agents: ${rows.length}`,
     `Japan-original agents: ${japanRows.length}`,
