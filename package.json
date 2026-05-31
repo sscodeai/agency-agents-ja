@@ -18,10 +18,11 @@
   "author": "SS",
   "license": "MIT",
   "scripts": {
-    "generate": "npm run generate:list && npm run generate:workflows && npm run generate:translation-progress && npm run check:upstream-coverage",
+    "generate": "npm run generate:list && npm run generate:workflows && npm run generate:translation-progress && npm run generate:readme-stats && npm run check:upstream-coverage",
     "generate:list": "node scripts/generate-agent-list.js",
     "generate:workflows": "node scripts/generate-workflow-table.js",
     "generate:translation-progress": "node scripts/generate-translation-progress.js",
+    "generate:readme-stats": "node scripts/sync-readme-stats.js",
     "check:upstream-coverage": "node scripts/check-upstream-coverage.js",
     "check:adapted-quality": "node scripts/check-adapted-quality.js",
     "check:upstream-parity": "node scripts/check-upstream-parity.js",
