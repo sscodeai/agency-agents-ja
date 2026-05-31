@@ -14,13 +14,13 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 
 | Metric | Count |
 | --- | --- |
-| Total agents | 281 |
-| ⭐ Japan-market originals | 97 |
+| Total agents | 293 |
+| ⭐ Japan-market originals | 109 |
 | Upstream-aligned (adapted to Japan) | 184 / 184 |
 | Upstream skeleton backlog | 0 |
 | Workflows (`workflows/`) | 27 |
 | Categories | 17 |
-| Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-05-24 |
+| Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-05-31 |
 
 The `source:` frontmatter field on every agent file marks whether it is `japan-original` (independently designed for the Japanese market) or `upstream` (derived from the upstream agent inventory; see [Translation status](#translation-status) below). [AGENT-LIST.md](AGENT-LIST.md) renders ⭐ for Japan originals.
 
@@ -32,7 +32,7 @@ Maintenance references:
 
 ### What is Japan-specific here
 
-The 97 ⭐ Japan-market originals cover scenarios upstream does not address:
+The 109 ⭐ Japan-market originals cover scenarios upstream does not address:
 
 - **SIer / 受託開発**: requirements engineering, basic/detailed design, acceptance review (検収), change management, release sign-off, RFP response
 - **Compliance**: 個人情報保護法 (APPI), インボイス制度 (invoice system), 電子帳簿保存法 (electronic bookkeeping), AI usage policy
@@ -123,6 +123,8 @@ These are **not** in scope of `scripts/validate.sh` (the agent CI) and **do not*
 
 This repository is derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT licensed). All upstream agent paths are preserved 1:1 under their original directories so the two repos can be compared file-by-file. We thank the upstream maintainers and contributors.
 
+Some Japan-market originals were also informed by ideas and coverage gaps explored in the Chinese community edition, [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh). Those concepts were not copied as-is; they were rewritten and localized for Japanese business, platforms, regulations, and delivery workflows. We thank the `agency-agents-zh` maintainers and contributors for their community work and inspiration.
+
 ### License
 
 MIT
@@ -133,7 +135,7 @@ MIT
 
 日本の IT 開発、SIer、受託開発、自社サービス、SaaS、EC、製造業 DX の現場で使える AI 専門家エージェント集です。
 
-英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent も追加しています。
+英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、中国語コミュニティ版 [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の取り組みからも一部の領域設計や coverage gap の示唆を得て、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent として本土化しています。
 
 ## 方針
 
@@ -146,10 +148,10 @@ MIT
 
 ## Coverage
 
-- 日本特化 agent (⭐ `source: japan-original`): 97（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
-- 上流由来 agent (`source: upstream`): 184（2026-05-24 時点の英文上流 `main` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
+- 日本特化 agent (⭐ `source: japan-original`): 109（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
+- 上流由来 agent (`source: upstream`): 184（2026-05-31 時点の英文上流 `main` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 上流由来 agent の skeleton backlog: 0
-- 合計: 281 agents
+- 合計: 293 agents
 - Workflow: 27
 
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
@@ -352,7 +354,8 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 ## 上流との関係
 
 - 184 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応します。現在は `translation_status: adapted`（直訳ではなく、日本市場向けに役割を書き直し済み）。frontmatter の `upstream_path:` で 1:1 対応関係を保持
-- 97 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
+- 109 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
+- 一部の日本特化 agent は、中国語コミュニティ版 [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の agent coverage や実務領域の切り口を参考にし、日本の業務、platform、法規制、商習慣に合わせて再設計・本土化しています。英文上流と中国語コミュニティ版の maintainers / contributors に感謝します
 - 上流の framework 文書（[`strategy/`](strategy/) 16 ファイル、[`integrations/`](integrations/) 14 ファイル）は現状そのまま英語で保持しています。これらは `source:` frontmatter を持たず、`scripts/validate.sh` の対象外です。日本語化は roadmap 上の項目です
 - 上流 `main` への追従と本翻訳の方針は [ROADMAP.md](ROADMAP.md) を参照してください
 

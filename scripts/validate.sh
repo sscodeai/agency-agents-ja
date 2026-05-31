@@ -70,8 +70,14 @@ while IFS= read -r file; do
   fi
 done < <(find $AGENT_DIRS -name '*.md' -type f | sort)
 
-if grep -R -n -E 'agency-agents-zh|jnMetaCode|小红书|抖音|微信|飞书|钉钉|百度|淘宝|拼多多|京东' \
+if grep -R -n -E '小红书|抖音|微信|飞书|钉钉|百度|淘宝|拼多多|京东' \
   README.md ROADMAP.md AGENT-LIST.md $AGENT_DIRS >/tmp/agency-agents-ja-forbidden.txt; then
+  cat /tmp/agency-agents-ja-forbidden.txt
+  errors=$((errors + 1))
+fi
+
+if grep -R -n -E 'agency-agents-zh|jnMetaCode' \
+  ROADMAP.md AGENT-LIST.md $AGENT_DIRS >/tmp/agency-agents-ja-forbidden.txt; then
   cat /tmp/agency-agents-ja-forbidden.txt
   errors=$((errors + 1))
 fi
