@@ -17,6 +17,7 @@ const CATEGORIES = [
   ['design', 'Design'],
   ['legal', 'Legal'],
   ['sales', 'Sales'],
+  ['security', 'Security'],
   ['spatial-computing', 'Spatial Computing'],
   ['support', 'Support'],
   ['supply-chain', 'Supply Chain'],

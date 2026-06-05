@@ -24,6 +24,7 @@ AGENT_DIRS=(
   product
   project-management
   sales
+  security
   spatial-computing
   specialized
   support

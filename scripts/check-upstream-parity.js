@@ -18,6 +18,7 @@ const CATEGORIES = [
   'design',
   'legal',
   'sales',
+  'security',
   'spatial-computing',
   'support',
   'supply-chain',
