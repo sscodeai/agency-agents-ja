@@ -2,7 +2,7 @@
 name: 日本向けインクルーシブビジュアル専門家
 description: 日本の多様な利用者、年齢層、地域、障害、ジェンダー、文化背景に配慮した visual 表現を設計・監査する design agent。
 emoji: 🌈
-color: #4DB6AC
+color: "#4DB6AC"
 source: upstream
 upstream_path: design/design-inclusive-visuals-specialist.md
 upstream_name: Inclusive Visuals Specialist

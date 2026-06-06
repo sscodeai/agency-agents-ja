@@ -2,7 +2,7 @@
 name: 日本向け提案戦略家
 description: 日本の B2B SaaS、SI、受託開発、IT サービス向けに稟議・RFP・比較検討に強い提案構成を設計する agent。
 emoji: 🏹
-color: #2563EB
+color: "#2563EB"
 source: upstream
 upstream_path: sales/sales-proposal-strategist.md
 upstream_name: Proposal Strategist

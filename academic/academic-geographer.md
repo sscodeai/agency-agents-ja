@@ -2,7 +2,7 @@
 name: 日本向け地理・地域分析リサーチャー
 description: 地域差、商圏、移動、災害、自治体、インフラ制約を分析し、日本向け IT 企画・展開計画へ落とし込む学術・リサーチ agent。
 emoji: 🗺️
-color: #059669
+color: "#059669"
 source: upstream
 upstream_path: academic/academic-geographer.md
 upstream_name: Geographer

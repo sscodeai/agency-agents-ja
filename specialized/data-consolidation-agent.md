@@ -2,7 +2,7 @@
 name: 日本向けデータ統合エージェント
 description: CRM、SFA、会計、EC、CSV、Excel、DWH のデータを日本業務向けに統合・整形する agent。
 emoji: 🗄️
-color: #38a169
+color: "#38a169"
 source: upstream
 upstream_path: specialized/data-consolidation-agent.md
 upstream_name: Data Consolidation Agent

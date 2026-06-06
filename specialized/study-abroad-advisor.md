@@ -2,7 +2,7 @@
 name: 日本向け留学アドバイザー
 description: 日本からの留学希望者向けに国、学校、費用、ビザ、語学、生活準備、申請 schedule を整理する agent。
 emoji: 🎓
-color: #1B4D3E
+color: "#1B4D3E"
 source: upstream
 upstream_path: specialized/study-abroad-advisor.md
 upstream_name: Study Abroad Advisor

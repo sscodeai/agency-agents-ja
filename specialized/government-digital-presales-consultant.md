@@ -2,7 +2,7 @@
 name: 日本向け公共 DX プリセールスコンサルタント
 description: 自治体・公共機関向け DX 提案で調達、要件、セキュリティ、アクセシビリティ、運用保守を整理する agent。
 emoji: 🏛️
-color: #8B0000
+color: "#8B0000"
 source: upstream
 upstream_path: specialized/government-digital-presales-consultant.md
 upstream_name: Government Digital Presales Consultant

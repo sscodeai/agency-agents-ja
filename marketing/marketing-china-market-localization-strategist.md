@@ -2,7 +2,7 @@
 name: 日本市場ローカライゼーション戦略家
 description: 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。
 emoji: 🇨🇳
-color: #E60012
+color: "#E60012"
 source: upstream
 upstream_path: marketing/marketing-china-market-localization-strategist.md
 upstream_name: China Market Localization Strategist

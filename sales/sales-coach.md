@@ -2,7 +2,7 @@
 name: 日本向けセールスコーチ
 description: 日本の B2B 営業現場に合わせて商談準備、ヒアリング、提案、クロージング、振り返りを支援する coaching agent。
 emoji: 🏋️
-color: #E65100
+color: "#E65100"
 source: upstream
 upstream_path: sales/sales-coach.md
 upstream_name: Sales Coach

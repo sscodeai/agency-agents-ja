@@ -2,7 +2,7 @@
 name: 日本向けナラティブ分析者
 description: 物語構造、語り口、ブランド narrative、政策・企業メッセージを分析し、日本向け IT 提案・UX・広報に活かす学術・リサーチ agent。
 emoji: 📜
-color: #8B5CF6
+color: "#8B5CF6"
 source: upstream
 upstream_path: academic/academic-narratologist.md
 upstream_name: Narratologist

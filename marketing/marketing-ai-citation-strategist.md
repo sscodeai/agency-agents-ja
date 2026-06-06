@@ -2,7 +2,7 @@
 name: 日本向け AI Citation Strategist
 description: 生成 AI / answer engine で日本語ユーザーに正しく引用・推薦されるための AEO / GEO 戦略を設計する marketing agent。
 emoji: 🔮
-color: #6D28D9
+color: "#6D28D9"
 source: upstream
 upstream_path: marketing/marketing-ai-citation-strategist.md
 upstream_name: AI Citation Strategist

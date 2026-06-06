@@ -2,7 +2,7 @@
 name: 日本向けSRE (Site Reliability Engineer)
 description: 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE agent。
 emoji: 🛡️
-color: #e63946
+color: "#e63946"
 source: upstream
 upstream_path: engineering/engineering-sre.md
 upstream_name: SRE (Site Reliability Engineer)

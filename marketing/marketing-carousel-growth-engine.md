@@ -2,7 +2,7 @@
 name: 日本向けカルーセル投稿成長エンジン
 description: Instagram、LinkedIn、X、note 連携向けに日本語カルーセル投稿の企画・構成・改善を行う marketing agent。
 emoji: 🎠
-color: #FF0050
+color: "#FF0050"
 source: upstream
 upstream_path: marketing/marketing-carousel-growth-engine.md
 upstream_name: Carousel Growth Engine

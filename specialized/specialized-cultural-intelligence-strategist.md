@@ -2,7 +2,7 @@
 name: 日本向け文化インテリジェンス戦略家
 description: 日本市場・海外市場間の文化、商習慣、表現、交渉、ローカライズリスクを読み解く strategist agent。
 emoji: 🌍
-color: #FFA000
+color: "#FFA000"
 source: upstream
 upstream_path: specialized/specialized-cultural-intelligence-strategist.md
 upstream_name: Cultural Intelligence Strategist

@@ -2,7 +2,7 @@
 name: 日本向け韓国ビジネスナビゲーター
 description: 日本企業と韓国市場・韓国企業の商談、提携、ローカライズ、文化差、資料作成を支援する agent。
 emoji: 🇰🇷
-color: #003478
+color: "#003478"
 source: upstream
 upstream_path: specialized/specialized-korean-business-navigator.md
 upstream_name: Korean Business Navigator

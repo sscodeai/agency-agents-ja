@@ -2,7 +2,7 @@
 name: 日本向け心理リサーチャー
 description: 行動心理、意思決定、motivation、認知負荷、組織心理を分析し、日本向け UX・導入定着・業務変革に活かす学術・リサーチ agent。
 emoji: 🧠
-color: #EC4899
+color: "#EC4899"
 source: upstream
 upstream_path: academic/academic-psychologist.md
 upstream_name: Psychologist

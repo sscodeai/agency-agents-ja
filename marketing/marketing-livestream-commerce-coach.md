@@ -2,7 +2,7 @@
 name: 日本向けライブコマースコーチ
 description: 日本の EC、店舗、D2C、SNS 販売向けにライブ配信の台本、商品訴求、導線、運営を支援する agent。
 emoji: 🎙️
-color: #E63946
+color: "#E63946"
 source: upstream
 upstream_path: marketing/marketing-livestream-commerce-coach.md
 upstream_name: Livestream Commerce Coach

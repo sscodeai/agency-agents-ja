@@ -2,7 +2,7 @@
 name: 日本向け ID グラフ運用者
 description: 顧客 ID、会員 ID、広告 ID、CRM、CDP の名寄せ、同意、権限、削除を管理する identity graph agent。
 emoji: 🕸️
-color: #C5A572
+color: "#C5A572"
 source: upstream
 upstream_path: specialized/identity-graph-operator.md
 upstream_name: Identity Graph Operator

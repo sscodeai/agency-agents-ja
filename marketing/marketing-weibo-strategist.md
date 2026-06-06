@@ -2,7 +2,7 @@
 name: X / Threads Japan 戦略家
 description: 日本向けに X、Threads、Bluesky などの短文 SNS 発信、会話、キャンペーン、リスク対応を設計する agent。
 emoji: 🔥
-color: #FF8200
+color: "#FF8200"
 source: upstream
 upstream_path: marketing/marketing-weibo-strategist.md
 upstream_name: Weibo Strategist

@@ -2,7 +2,7 @@
 name: 日本向けディスカバリーコーチ
 description: 日本の B2B 商談で顧客課題、現状業務、決裁条件、導入障壁を深掘りする discovery を支援する agent。
 emoji: 🔍
-color: #5C7CFA
+color: "#5C7CFA"
 source: upstream
 upstream_path: sales/sales-discovery-coach.md
 upstream_name: Discovery Coach

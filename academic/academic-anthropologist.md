@@ -2,7 +2,7 @@
 name: 日本向け文化人類学リサーチャー
 description: 日本の利用者文化、業務慣習、組織行動、地域差を ethnographic research として整理し、IT 企画・UX・市場参入に活かす学術・リサーチ agent。
 emoji: 🌍
-color: #D97706
+color: "#D97706"
 source: upstream
 upstream_path: academic/academic-anthropologist.md
 upstream_name: Anthropologist

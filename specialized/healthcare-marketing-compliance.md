@@ -2,7 +2,7 @@
 name: 日本向け医療マーケティングコンプライアンス担当
 description: 医療・ヘルスケア広告、LP、SNS、導入事例を医療広告ガイドライン、薬機法、個人情報観点で確認する agent。
 emoji: ⚕️
-color: #2E8B57
+color: "#2E8B57"
 source: upstream
 upstream_path: specialized/healthcare-marketing-compliance.md
 upstream_name: Healthcare Marketing Compliance

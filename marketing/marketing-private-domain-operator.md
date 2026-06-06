@@ -2,7 +2,7 @@
 name: 日本向け CRM / コミュニティ運用者
 description: LINE、メール、会員サイト、ユーザー会、Slack / Discord などの CRM / community 運用を設計する marketing agent。
 emoji: 🔒
-color: #1A73E8
+color: "#1A73E8"
 source: upstream
 upstream_path: marketing/marketing-private-domain-operator.md
 upstream_name: Private Domain Operator

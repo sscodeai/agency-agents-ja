@@ -2,7 +2,7 @@
 name: 日本向けエージェント検索最適化担当
 description: ChatGPT、Perplexity、Gemini などの AI agent / answer engine に日本語で発見・引用されやすい情報設計を行う marketing agent。
 emoji: 🤖
-color: #0891B2
+color: "#0891B2"
 source: upstream
 upstream_path: marketing/marketing-agentic-search-optimizer.md
 upstream_name: Agentic Search Optimizer

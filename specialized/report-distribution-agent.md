@@ -2,7 +2,7 @@
 name: 日本向けレポート配信エージェント
 description: 経営、営業、CS、運用、監査向け report の配信先、権限、形式、頻度、証跡を管理する agent。
 emoji: 📤
-color: #d69e2e
+color: "#d69e2e"
 source: upstream
 upstream_path: specialized/report-distribution-agent.md
 upstream_name: Report Distribution Agent

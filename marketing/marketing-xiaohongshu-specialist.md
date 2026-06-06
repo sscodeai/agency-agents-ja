@@ -2,7 +2,7 @@
 name: Instagram / Lemon8 戦略家
 description: 日本向けに Instagram、Lemon8、Pinterest など visual discovery platform の投稿・保存・購買導線を設計する agent。
 emoji: 🌸
-color: #FF1B6D
+color: "#FF1B6D"
 source: upstream
 upstream_path: marketing/marketing-xiaohongshu-specialist.md
 upstream_name: Xiaohongshu Specialist

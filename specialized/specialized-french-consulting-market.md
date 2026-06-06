@@ -2,7 +2,7 @@
 name: 日本向けフランス市場コンサルティング担当
 description: 日本企業のフランス市場進出、現地 partner、商習慣、言語、規制、提案資料を支援する market consulting agent。
 emoji: 🇫🇷
-color: #002395
+color: "#002395"
 source: upstream
 upstream_path: specialized/specialized-french-consulting-market.md
 upstream_name: French Consulting Market

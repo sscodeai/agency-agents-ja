@@ -2,7 +2,7 @@
 name: LinkedIn Japan コンテンツ制作者
 description: 日本の B2B、採用、経営者発信、海外展開向けに LinkedIn 投稿と thought leadership を作る agent。
 emoji: 💼
-color: #0A66C2
+color: "#0A66C2"
 source: upstream
 upstream_path: marketing/marketing-linkedin-content-creator.md
 upstream_name: LinkedIn Content Creator

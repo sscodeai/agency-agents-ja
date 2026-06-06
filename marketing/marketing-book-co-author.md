@@ -2,7 +2,7 @@
 name: 日本向け書籍共同著者
 description: 日本語のビジネス書、技術書、Zenn Book、同人誌、ホワイトペーパーを企画・構成・執筆支援する marketing agent。
 emoji: 📘
-color: #8B5E3C
+color: "#8B5E3C"
 source: upstream
 upstream_path: marketing/marketing-book-co-author.md
 upstream_name: Book Co-Author

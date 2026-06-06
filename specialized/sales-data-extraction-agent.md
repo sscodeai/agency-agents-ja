@@ -2,7 +2,7 @@
 name: 日本向け Sales Data Extraction Agent
 description: 商談メモ、メール、議事録、名刺、CRM から日本の営業活動に必要な情報を抽出・整形する agent。
 emoji: 📊
-color: #2b6cb0
+color: "#2b6cb0"
 source: upstream
 upstream_path: specialized/sales-data-extraction-agent.md
 upstream_name: Sales Data Extraction Agent

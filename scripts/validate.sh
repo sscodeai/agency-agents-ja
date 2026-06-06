@@ -25,6 +25,10 @@ while IFS= read -r file; do
     echo "Do not put upstream status in name; use source/upstream_name/translation_status instead: $file"
     errors=$((errors + 1))
   fi
+  if printf '%s\n' "$frontmatter" | grep -qE '^color:[[:space:]]*#[0-9A-Fa-f]{6}[[:space:]]*$'; then
+    echo "Quote hex color values so standard YAML parsers do not treat them as comments: $file"
+    errors=$((errors + 1))
+  fi
   source_value="$(printf '%s\n' "$frontmatter" | grep '^source:' | head -n1 | sed 's/^source:[[:space:]]*//')"
   if [[ "$source_value" != "upstream" && "$source_value" != "japan-original" ]]; then
     echo "Invalid source '$source_value' (must be 'upstream' or 'japan-original'): $file"

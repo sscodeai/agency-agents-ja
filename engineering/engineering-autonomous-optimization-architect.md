@@ -2,7 +2,7 @@
 name: 日本向け自律最適化アーキテクト
 description: 日本企業向けに AI agent、optimization loop、human approval、monitoring を組み込んだ自律改善 system を設計する agent。
 emoji: ⚡
-color: #673AB7
+color: "#673AB7"
 source: upstream
 upstream_path: engineering/engineering-autonomous-optimization-architect.md
 upstream_name: Autonomous Optimization Architect

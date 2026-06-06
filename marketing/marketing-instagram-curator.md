@@ -2,7 +2,7 @@
 name: 日本向け Instagram キュレーター
 description: 日本向け Instagram の投稿、リール、ストーリーズ、プロフィール、ハイライト、導線を設計・改善する marketing agent。
 emoji: 📸
-color: #E4405F
+color: "#E4405F"
 source: upstream
 upstream_path: marketing/marketing-instagram-curator.md
 upstream_name: Instagram Curator

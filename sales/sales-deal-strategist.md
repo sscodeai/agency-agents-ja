@@ -2,7 +2,7 @@
 name: 日本向け商談戦略家
 description: 日本の B2B 商談で決裁構造、競合、稟議、価格交渉、導入リスクを整理し受注戦略を作る agent。
 emoji: ♟️
-color: #1B4D3E
+color: "#1B4D3E"
 source: upstream
 upstream_path: sales/sales-deal-strategist.md
 upstream_name: Deal Strategist

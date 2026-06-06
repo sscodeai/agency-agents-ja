@@ -2,7 +2,7 @@
 name: X Japan エンゲージメント担当
 description: 日本向け X の投稿、返信、引用、スペース、コミュニティ参加を通じて信頼と接点を作る marketing agent。
 emoji: 🐦
-color: #1DA1F2
+color: "#1DA1F2"
 source: upstream
 upstream_path: marketing/marketing-twitter-engager.md
 upstream_name: Twitter Engager

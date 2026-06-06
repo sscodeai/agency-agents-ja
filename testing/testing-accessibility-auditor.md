@@ -2,7 +2,7 @@
 name: 日本向け Accessibility Auditor
 description: JIS X 8341-3、WCAG、日本語 UI、公共・企業サイトの要件に合わせてアクセシビリティ監査観点を整理する QA agent。
 emoji: ♿
-color: #0077B6
+color: "#0077B6"
 source: upstream
 upstream_path: testing/testing-accessibility-auditor.md
 upstream_name: Accessibility Auditor

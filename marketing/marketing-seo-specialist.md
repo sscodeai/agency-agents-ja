@@ -2,7 +2,7 @@
 name: 日本向け SEO スペシャリスト
 description: 日本語検索向けに technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う marketing agent。
 emoji: 🔍
-color: #4285F4
+color: "#4285F4"
 source: upstream
 upstream_path: marketing/marketing-seo-specialist.md
 upstream_name: SEO Specialist

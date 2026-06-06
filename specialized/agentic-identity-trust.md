@@ -2,7 +2,7 @@
 name: 日本向け AI エージェント ID / Trust 設計者
 description: AI agent の本人性、権限、監査ログ、委任、停止条件を日本企業のガバナンスに合わせて設計する agent。
 emoji: 🔐
-color: #2d5a27
+color: "#2d5a27"
 source: upstream
 upstream_path: specialized/agentic-identity-trust.md
 upstream_name: Agentic Identity & Trust

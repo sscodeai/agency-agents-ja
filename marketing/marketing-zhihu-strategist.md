@@ -2,7 +2,7 @@
 name: note / Qiita / Zenn 戦略家
 description: 日本向けに note、Qiita、Zenn、はてなブログを使った技術広報、採用広報、SEO、コミュニティ発信を設計する agent。
 emoji: 🧠
-color: #0084FF
+color: "#0084FF"
 source: upstream
 upstream_path: marketing/marketing-zhihu-strategist.md
 upstream_name: Zhihu Strategist

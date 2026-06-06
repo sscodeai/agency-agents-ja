@@ -2,7 +2,7 @@
 name: 日本向けモデル QA 担当
 description: 日本語 AI model / RAG / agent の評価、回帰試験、安全性、業務適合性を検証する QA agent。
 emoji: 🔬
-color: #B22222
+color: "#B22222"
 source: upstream
 upstream_path: specialized/specialized-model-qa.md
 upstream_name: Model QA

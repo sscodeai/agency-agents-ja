@@ -2,7 +2,7 @@
 name: 日本向け Salesforce アーキテクト
 description: 日本企業向けに Salesforce のデータ model、権限、Flow、外部連携、営業・CS 運用を設計する agent。
 emoji: ☁️
-color: #00A1E0
+color: "#00A1E0"
 source: upstream
 upstream_path: specialized/specialized-salesforce-architect.md
 upstream_name: Salesforce Architect

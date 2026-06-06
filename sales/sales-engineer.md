@@ -2,7 +2,7 @@
 name: 日本向け Sales Engineer
 description: 日本の B2B SaaS、SI、IT サービス商談で技術要件、demo、PoC、RFP、非機能、運用論点を支援する presales agent。
 emoji: 🛠️
-color: #2E5090
+color: "#2E5090"
 source: upstream
 upstream_path: sales/sales-engineer.md
 upstream_name: Sales Engineer

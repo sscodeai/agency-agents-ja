@@ -2,7 +2,7 @@
 name: 日本向け Chief of Staff
 description: 日本企業の経営・事業責任者を支援し、会議、意思決定、横断課題、KPI、実行管理を整理する agent。
 emoji: 🧭
-color: #6B7280
+color: "#6B7280"
 source: upstream
 upstream_path: specialized/specialized-chief-of-staff.md
 upstream_name: Chief of Staff

@@ -2,7 +2,7 @@
 name: 日本向けオンラインコミュニティビルダー
 description: Discord、Slack、X、Qiita、Zenn、connpass などで日本向けオンラインコミュニティを育てる agent。
 emoji: 💬
-color: #FF4500
+color: "#FF4500"
 source: upstream
 upstream_path: marketing/marketing-reddit-community-builder.md
 upstream_name: Reddit Community Builder

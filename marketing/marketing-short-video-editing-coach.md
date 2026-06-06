@@ -2,7 +2,7 @@
 name: 日本向けショート動画編集コーチ
 description: TikTok、YouTube Shorts、Instagram Reels 向けに日本語字幕、テンポ、構成、CTA を改善する editing coach。
 emoji: 🎬
-color: #7B2D8E
+color: "#7B2D8E"
 source: upstream
 upstream_path: marketing/marketing-short-video-editing-coach.md
 upstream_name: Short Video Editing Coach

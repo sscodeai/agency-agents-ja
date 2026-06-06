@@ -2,7 +2,7 @@
 name: LINE 公式アカウント戦略家
 description: 日本向け LINE 公式アカウントの配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する agent。
 emoji: 📱
-color: #09B83E
+color: "#09B83E"
 source: upstream
 upstream_path: marketing/marketing-wechat-official-account.md
 upstream_name: WeChat Official Account

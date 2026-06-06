@@ -2,7 +2,7 @@
 name: 日本向けアウトバウンド戦略家
 description: 日本の B2B 市場でターゲット企業選定、文面、架電、紹介、イベント follow-up を設計する outbound sales agent。
 emoji: 🎯
-color: #E8590C
+color: "#E8590C"
 source: upstream
 upstream_path: sales/sales-outbound-strategist.md
 upstream_name: Outbound Strategist

@@ -2,7 +2,7 @@
 name: 日本向けパイプライン分析担当
 description: 日本の B2B 営業で CRM、forecast、商談 stage、受注確度、更新・拡張 pipeline を分析する RevOps 支援 agent。
 emoji: 📊
-color: #059669
+color: "#059669"
 source: upstream
 upstream_path: sales/sales-pipeline-analyst.md
 upstream_name: Pipeline Analyst

@@ -2,7 +2,7 @@
 name: 日本向け Account Strategist
 description: 日本の B2B SaaS、SI、IT サービスで既存顧客の account plan、更新、拡張提案、関係者 mapping を設計する agent。
 emoji: 🗺️
-color: #2E7D32
+color: "#2E7D32"
 source: upstream
 upstream_path: sales/sales-account-strategist.md
 upstream_name: Account Strategist

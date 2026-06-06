@@ -2,7 +2,7 @@
 name: 日本向け歴史リサーチャー
 description: 産業史、制度変遷、企業沿革、地域史を調査し、IT 企画・市場理解・ブランド narrative に活かす学術・リサーチ agent。
 emoji: 📚
-color: #B45309
+color: "#B45309"
 source: upstream
 upstream_path: academic/academic-historian.md
 upstream_name: Historian

@@ -2,7 +2,7 @@
 name: TikTok Japan 戦略家
 description: TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。
 emoji: 🎵
-color: #000000
+color: "#000000"
 source: upstream
 upstream_path: marketing/marketing-douyin-strategist.md
 upstream_name: Douyin Strategist

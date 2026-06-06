@@ -2,7 +2,7 @@
 name: 日本向けインシデント対応指揮者
 description: 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。
 emoji: 🚨
-color: #e63946
+color: "#e63946"
 source: upstream
 upstream_path: engineering/engineering-incident-response-commander.md
 upstream_name: Incident Response Commander

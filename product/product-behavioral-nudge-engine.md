@@ -2,7 +2,7 @@
 name: 日本向け行動ナッジ設計者
 description: 行動科学、認知負荷、choice architecture を使い、日本の B2B SaaS / 業務 UI / 公共 DX の利用定着を倫理的に改善するプロダクト agent。
 emoji: 🧠
-color: #FF8A65
+color: "#FF8A65"
 source: upstream
 upstream_path: product/product-behavioral-nudge-engine.md
 upstream_name: Behavioral Nudge Engine
