@@ -150,7 +150,7 @@ MIT
 ## Coverage
 
 - 日本特化 agent (⭐ `source: japan-original`): <!-- AUTOGEN:JAPAN -->114<!-- /AUTOGEN:JAPAN -->（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
-- 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->209<!-- /AUTOGEN:UPSTREAM -->（2026-05-31 時点の英文上流 `main` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
+- 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->209<!-- /AUTOGEN:UPSTREAM -->（2026-06-06 時点の英文上流 `main` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 上流由来 agent の skeleton backlog: <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON -->
 - 合計: <!-- AUTOGEN:TOTAL -->323<!-- /AUTOGEN:TOTAL --> agents
 - Workflow: 27

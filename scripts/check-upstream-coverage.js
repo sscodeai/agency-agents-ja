@@ -3,6 +3,8 @@
 const { existsSync, readdirSync, readFileSync, writeFileSync } = require('fs');
 const { join } = require('path');
 
+const UPSTREAM_BASELINE_DATE = '2026-06-06';
+
 const CATEGORIES = [
   'academic',
   'engineering',
@@ -103,7 +105,7 @@ function render() {
     '',
     'This file is generated from agent frontmatter. Do not edit it manually.',
     '',
-    'Baseline: `msitarzewski/agency-agents@main` as of 2026-05-31 (declared in README.md).',
+    `Baseline: \`msitarzewski/agency-agents@main\` as of ${UPSTREAM_BASELINE_DATE} (declared in README.md).`,
     '',
     `Total local agents: ${rows.length}`,
     `Japan-original agents: ${japanRows.length}`,
