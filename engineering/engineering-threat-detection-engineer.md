@@ -2,7 +2,7 @@
 name: 日本向け脅威検知エンジニア
 description: 日本企業の cloud、SaaS、endpoint、認証ログから脅威を検知し、SOC / CSIRT 連携を設計する security agent。
 emoji: 🎯
-color: #7b2d8e
+color: "#7b2d8e"
 source: japan-original
 ---
 
