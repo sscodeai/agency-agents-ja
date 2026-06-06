@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 293 (⭐ 109 japan-original + 184 upstream-aligned)
+Total agents: 323 (⭐ 114 japan-original + 209 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -20,7 +20,7 @@ Total: 6 (⭐ 1 japan-original + 5 upstream-aligned)
 
 ## Engineering
 
-Total: 54 (⭐ 25 japan-original + 29 upstream-aligned)
+Total: 57 (⭐ 27 japan-original + 30 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -49,6 +49,8 @@ Total: 54 (⭐ 25 japan-original + 29 upstream-aligned)
 | ⭐ | LINE WORKS 連携エンジニア | japan-original |  |  | LINE WORKS bot、通知、承認、業務システム連携を設計・実装する専門家。日本企業の社内コミュニケーションと運用に合わせる。 | `engineering/engineering-line-works-integration-developer.md` |
 | ⭐ | 機械設計エンジニア | japan-original |  |  | 日本の装置、筐体、治具、量産部品向けに機構、材料、公差、熱、組立、保守性を設計する agent。 | `engineering/engineering-mechanical-design-engineer.md` |
 | ⭐ | PC 上位機アプリケーションエンジニア | japan-original |  |  | 日本の検査装置、産業機器、IoT gateway 向けに PC 上位機、HMI、device control、data logging を設計する agent。 | `engineering/engineering-pc-host-application-engineer.md` |
+| ⭐ | 日本向け Security Engineer | japan-original |  |  | 日本企業の Web / SaaS / 業務システムに対して脅威モデリング、認証認可、個人情報、脆弱性対応を支援する agent。 | `engineering/engineering-security-engineer.md` |
+| ⭐ | 日本向け脅威検知エンジニア | japan-original |  |  | 日本企業の cloud、SaaS、endpoint、認証ログから脅威を検知し、SOC / CSIRT 連携を設計する security agent。 | `engineering/engineering-threat-detection-engineer.md` |
 |  | 日本向け AI データ修復エンジニア | upstream | adapted | AI Data Remediation Engineer | 日本語データ、個人情報、業務 CSV、FAQ、RAG corpus の品質問題を検出・修復する AI / data engineering agent。 | `engineering/engineering-ai-data-remediation-engineer.md` |
 |  | 日本向け AI エンジニア | upstream | adapted | AI Engineer | 日本企業向けに LLM、RAG、agent、評価、セキュリティ、運用を実装する AI engineering agent。 | `engineering/engineering-ai-engineer.md` |
 |  | 日本向け自律最適化アーキテクト | upstream | adapted | Autonomous Optimization Architect | 日本企業向けに AI agent、optimization loop、human approval、monitoring を組み込んだ自律改善 system を設計する agent。 | `engineering/engineering-autonomous-optimization-architect.md` |
@@ -66,22 +68,23 @@ Total: 54 (⭐ 25 japan-original + 29 upstream-aligned)
 |  | 日本向け Frontend Developer | upstream | adapted | Frontend Developer | 日本の業務画面、SaaS、EC、管理画面向けに React / Vue、form、table、アクセシビリティ、入力補助を実装する frontend agent。 | `engineering/engineering-frontend-developer.md` |
 |  | 日本向け Git ワークフローマスター | upstream | adapted | Git Workflow Master | 日本の開発チーム向けに branch、PR、commit、release、hotfix、権限、レビュー運用を整える Git workflow agent。 | `engineering/engineering-git-workflow-master.md` |
 |  | 日本向けインシデント対応指揮者 | upstream | adapted | Incident Response Commander | 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。 | `engineering/engineering-incident-response-commander.md` |
+|  | 日本向け IT Service Manager | upstream | adapted | IT Service Manager | ITIL 4 を軸に service catalog、incident / problem / change、SLA、CMDB、継続改善を日本企業の情シス・運用保守に合わせて設計する agent。 | `engineering/engineering-it-service-manager.md` |
 |  | 日本向け最小変更エンジニア | upstream | adapted | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
 |  | 日本向け Mobile App Builder | upstream | adapted | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
+|  | 日本向け OrgScript Engineer | upstream | adapted | OrgScript Engineer | OrgScript の grammar、AST、validation、business logic modeling を使い、日本企業の業務手順や承認 flow を machine-readable に整理する DSL engineer。 | `engineering/engineering-orgscript-engineer.md` |
+|  | 日本向け Prompt Engineer | upstream | adapted | Prompt Engineer | 日本語 LLM / agent / RAG の system prompt、評価 case、出力 format、guardrail を設計し、曖昧な依頼を再現性のある AI behavior に変える agent。 | `engineering/engineering-prompt-engineer.md` |
 |  | 日本向け高速プロトタイピングエンジニア | upstream | adapted | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |
-|  | 日本向け Security Engineer | upstream | adapted | Security Engineer | 日本企業の Web / SaaS / 業務システムに対して脅威モデリング、認証認可、個人情報、脆弱性対応を支援する agent。 | `engineering/engineering-security-engineer.md` |
 |  | 日本向けシニア開発者 | upstream | adapted | Senior Developer | 日本の開発現場で設計、実装、レビュー、障害対応、育成、技術的意思決定をリードする senior developer agent。 | `engineering/engineering-senior-developer.md` |
 |  | 日本向けソフトウェアアーキテクト | upstream | adapted | Software Architect | 日本の SaaS、SI、受託開発、業務システム向けに全体設計、非機能、移行、運用保守を設計する agent。 | `engineering/engineering-software-architect.md` |
 |  | 日本向け Solidity スマートコントラクトエンジニア | upstream | adapted | Solidity Smart Contract Engineer | 日本向け Web3 / blockchain project の Solidity contract、監査、運用、法務・セキュリティ論点を整理する agent。 | `engineering/engineering-solidity-smart-contract-engineer.md` |
 |  | 日本向けSRE (Site Reliability Engineer) | upstream | adapted | SRE (Site Reliability Engineer) | 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE agent。 | `engineering/engineering-sre.md` |
 |  | 日本向け Technical Writer | upstream | adapted | Technical Writer | 日本の IT 開発、SaaS、SI、受託開発向けに設計書、API docs、運用手順、release note、検収資料を整える agent。 | `engineering/engineering-technical-writer.md` |
-|  | 日本向け脅威検知エンジニア | upstream | adapted | Threat Detection Engineer | 日本企業の cloud、SaaS、endpoint、認証ログから脅威を検知し、SOC / CSIRT 連携を設計する security agent。 | `engineering/engineering-threat-detection-engineer.md` |
 |  | 日本向け音声 AI 連携エンジニア | upstream | adapted | Voice AI Integration Engineer | 日本語音声認識、音声合成、電話、コールセンター、会議要約、voice bot を連携する AI engineering agent。 | `engineering/engineering-voice-ai-integration-engineer.md` |
 |  | 日本向け LINE ミニアプリ開発者 | upstream | adapted | WeChat Mini Program Developer | 日本向け LINE ミニアプリ / LIFF、予約、会員証、EC、CRM、店舗導線を実装する agent。 | `engineering/engineering-wechat-mini-program-developer.md` |
 
 ## Project Management
 
-Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
+Total: 14 (⭐ 7 japan-original + 7 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -94,6 +97,7 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 | ⭐ | 日本向け上流追従コーディネーター | japan-original |  |  | 上流 OSS の更新を watch し、fork 側の追従計画を立てる project coordinator。upstream commit / release の分類（feature / breaking / docs / security）、fork 独自改修との衝突確認、翻訳追従、release note への反映、追従 PR の Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを担当する。 | `project-management/project-management-japanese-upstream-sync-coordinator.md` |
 |  | 日本向け実験管理担当 | upstream | adapted | Experiment Tracker | 仮説、A/B test、PoC、pilot、効果測定、意思決定 log を日本の product / DX project 向けに管理するプロジェクト管理 agent。 | `project-management/project-management-experiment-tracker.md` |
 |  | 日本向け Jira ワークフロー管理者 | upstream | adapted | Jira Workflow Steward | Jira / Backlog / Redmine の issue type、status、priority、承認、検収、release workflow を日本の開発現場向けに整備するプロジェクト管理 agent。 | `project-management/project-management-jira-workflow-steward.md` |
+|  | 日本向け Meeting Notes Specialist | upstream | adapted | Meeting Notes Specialist | 会議の agenda、議事録、決定事項、宿題、未決事項、次回確認を整理し、日本の IT / SI / SaaS 現場で使える記録にする agent。 | `project-management/project-management-meeting-notes-specialist.md` |
 |  | 日本向けプロジェクト推進担当 | upstream | adapted | Project Shepherd | 進捗、blocker、依存関係、会議体、意思決定、顧客調整を日本の IT project で前に進めるプロジェクト管理 agent。 | `project-management/project-management-project-shepherd.md` |
 |  | 日本向けスタジオ運営担当 | upstream | adapted | Studio Operations | 複数 project の capacity、tool、会議体、採用・外注、品質 gate、運用 rhythm を整えるプロジェクト管理 agent。 | `project-management/project-management-studio-operations.md` |
 |  | 日本向けスタジオプロデューサー | upstream | adapted | Studio Producer | 複数職能の成果物、schedule、quality、stakeholder expectation を統合し、日本の制作・開発 project を出荷へ導くプロジェクト管理 agent。 | `project-management/project-management-studio-producer.md` |
@@ -137,7 +141,7 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 
 ## Marketing
 
-Total: 47 (⭐ 17 japan-original + 30 upstream-aligned)
+Total: 53 (⭐ 17 japan-original + 36 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -158,6 +162,7 @@ Total: 47 (⭐ 17 japan-original + 30 upstream-aligned)
 | ⭐ | セミナー / ウェビナー企画者 | japan-original |  |  | 日本の B2B SaaS / IT 企業向けに seminar、webinar、white paper、lead nurturing の企画を作る marketer。 | `marketing/marketing-seminar-webinar-planner.md` |
 | ⭐ | 日本向け TikTok ストラテジスト | japan-original |  |  | 日本の IT 企業、SaaS、採用広報、developer marketing、イベント告知向けに TikTok / short video の企画、台本、配信、効果測定を設計する strategist。 | `marketing/marketing-tiktok-japan-strategist.md` |
 | ⭐ | Yahoo! JAPAN / Google SEO スペシャリスト | japan-original |  |  | 日本語検索向け technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う specialist。 | `marketing/marketing-yahoo-google-japan-seo.md` |
+|  | 日本向け AEO Foundations Architect | upstream | adapted | AEO Foundations Architect | llms.txt、AI crawler 対応、structured Markdown、robots.txt、agent discovery を整え、日本語 site を AI に見つけられ読まれる状態にする agent。 | `marketing/marketing-aeo-foundations.md` |
 |  | 日本向けエージェント検索最適化担当 | upstream | adapted | Agentic Search Optimizer | ChatGPT、Perplexity、Gemini などの AI agent / answer engine に日本語で発見・引用されやすい情報設計を行う marketing agent。 | `marketing/marketing-agentic-search-optimizer.md` |
 |  | 日本向け AI Citation Strategist | upstream | adapted | AI Citation Strategist | 生成 AI / answer engine で日本語ユーザーに正しく引用・推薦されるための AEO / GEO 戦略を設計する marketing agent。 | `marketing/marketing-ai-citation-strategist.md` |
 |  | 日本向けアプリストア最適化担当 | upstream | adapted | App Store Optimizer | App Store / Google Play で日本語キーワード、説明文、スクリーンショット、レビュー改善を行う ASO agent。 | `marketing/marketing-app-store-optimizer.md` |
@@ -170,12 +175,16 @@ Total: 47 (⭐ 17 japan-original + 30 upstream-aligned)
 |  | 日本向けコンテンツクリエイター | upstream | adapted | Content Creator | 日本の B2B / B2C マーケティング向けに記事、SNS、LP、メール、導入事例、技術解説を作る content agent。 | `marketing/marketing-content-creator.md` |
 |  | 日本向け越境 EC 戦略家 | upstream | adapted | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
 |  | TikTok Japan 戦略家 | upstream | adapted | Douyin Strategist | TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-douyin-strategist.md` |
+|  | 日本向け Email Marketing Strategist | upstream | adapted | Email Marketing Strategist | CRM segment、lifecycle automation、deliverability、法令・同意管理を踏まえて、日本向け email / newsletter / nurture campaign を設計する agent。 | `marketing/marketing-email-strategist.md` |
+|  | 日本向け Global Podcast Strategist | upstream | adapted | Global Podcast Strategist | Podcast の positioning、episode format、配信導線、clip 展開、monetization を設計し、日本語・海外向け音声 brand を育てる agent。 | `marketing/marketing-global-podcast-strategist.md` |
 |  | 日本向けグロースハッカー | upstream | adapted | Growth Hacker | 日本の SaaS、アプリ、EC、メディアで acquisition、activation、retention、referral、revenue を実験改善する agent。 | `marketing/marketing-growth-hacker.md` |
 |  | 日本向け Instagram キュレーター | upstream | adapted | Instagram Curator | 日本向け Instagram の投稿、リール、ストーリーズ、プロフィール、ハイライト、導線を設計・改善する marketing agent。 | `marketing/marketing-instagram-curator.md` |
 |  | Short Video Japan 戦略家 | upstream | adapted | Kuaishou Strategist | TikTok、YouTube Shorts、Instagram Reels 向けに日本市場の短尺動画企画・改善を行う marketing agent。 | `marketing/marketing-kuaishou-strategist.md` |
 |  | LinkedIn Japan コンテンツ制作者 | upstream | adapted | LinkedIn Content Creator | 日本の B2B、採用、経営者発信、海外展開向けに LinkedIn 投稿と thought leadership を作る agent。 | `marketing/marketing-linkedin-content-creator.md` |
 |  | 日本向けライブコマースコーチ | upstream | adapted | Livestream Commerce Coach | 日本の EC、店舗、D2C、SNS 販売向けにライブ配信の台本、商品訴求、導線、運営を支援する agent。 | `marketing/marketing-livestream-commerce-coach.md` |
+|  | 日本向け Multi-Platform Publisher | upstream | adapted | Multi-Platform Publisher | 一つの企画を X、LinkedIn、note、Qiita、Zenn、YouTube、newsletter など複数 platform に合わせて展開する publishing agent。 | `marketing/marketing-multi-platform-publisher.md` |
 |  | 日本向けポッドキャスト戦略家 | upstream | adapted | Podcast Strategist | 日本の B2B、採用、技術広報、コミュニティ向けに podcast 企画、構成、配信、再利用を設計する agent。 | `marketing/marketing-podcast-strategist.md` |
+|  | 日本向け PR Communications Manager | upstream | adapted | PR Communications Manager | Press release、メディア pitch、危機対応、社内外 communication を日本市場の広報実務に合わせて設計する PR agent。 | `marketing/marketing-pr-communications-manager.md` |
 |  | 日本向け CRM / コミュニティ運用者 | upstream | adapted | Private Domain Operator | LINE、メール、会員サイト、ユーザー会、Slack / Discord などの CRM / community 運用を設計する marketing agent。 | `marketing/marketing-private-domain-operator.md` |
 |  | 日本向けオンラインコミュニティビルダー | upstream | adapted | Reddit Community Builder | Discord、Slack、X、Qiita、Zenn、connpass などで日本向けオンラインコミュニティを育てる agent。 | `marketing/marketing-reddit-community-builder.md` |
 |  | 日本向け SEO スペシャリスト | upstream | adapted | SEO Specialist | 日本語検索向けに technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う marketing agent。 | `marketing/marketing-seo-specialist.md` |
@@ -186,6 +195,7 @@ Total: 47 (⭐ 17 japan-original + 30 upstream-aligned)
 |  | 日本向け動画最適化専門家 | upstream | adapted | Video Optimization Specialist | YouTube、Shorts、ウェビナー、製品 demo 動画を、日本語 title、thumbnail、構成、配信導線で最適化する agent。 | `marketing/marketing-video-optimization-specialist.md` |
 |  | LINE 公式アカウント戦略家 | upstream | adapted | WeChat Official Account | 日本向け LINE 公式アカウントの配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する agent。 | `marketing/marketing-wechat-official-account.md` |
 |  | X / Threads Japan 戦略家 | upstream | adapted | Weibo Strategist | 日本向けに X、Threads、Bluesky などの短文 SNS 発信、会話、キャンペーン、リスク対応を設計する agent。 | `marketing/marketing-weibo-strategist.md` |
+|  | 日本向け X / Twitter Intelligence Analyst | upstream | adapted | X / Twitter Intelligence Analyst | X 上の話題、競合、顧客の声、炎上兆候、creator network を分析し、日本市場向けの insight と action を出す social intelligence agent。 | `marketing/marketing-x-twitter-intelligence-analyst.md` |
 |  | Instagram / Lemon8 戦略家 | upstream | adapted | Xiaohongshu Specialist | 日本向けに Instagram、Lemon8、Pinterest など visual discovery platform の投稿・保存・購買導線を設計する agent。 | `marketing/marketing-xiaohongshu-specialist.md` |
 |  | note / Qiita / Zenn 戦略家 | upstream | adapted | Zhihu Strategist | 日本向けに note、Qiita、Zenn、はてなブログを使った技術広報、採用広報、SEO、コミュニティ発信を設計する agent。 | `marketing/marketing-zhihu-strategist.md` |
 
@@ -262,7 +272,7 @@ Total: 4 (⭐ 4 japan-original + 0 upstream-aligned)
 
 ## Design
 
-Total: 11 (⭐ 3 japan-original + 8 upstream-aligned)
+Total: 12 (⭐ 3 japan-original + 9 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -272,6 +282,7 @@ Total: 11 (⭐ 3 japan-original + 8 upstream-aligned)
 |  | 日本向けブランドガーディアン | upstream | adapted | Brand Guardian | 日本市場のブランド表現、広告審査、社内承認、顧客信頼を踏まえて visual / copy / UI の一貫性を守る design agent。 | `design/design-brand-guardian.md` |
 |  | 日本向け画像プロンプトエンジニア | upstream | adapted | Image Prompt Engineer | 日本市場向けの広告、LP、営業資料、プロダクト画像に使う生成画像 prompt を、ブランド・審査・権利観点まで含めて設計する agent。 | `design/design-image-prompt-engineer.md` |
 |  | 日本向けインクルーシブビジュアル専門家 | upstream | adapted | Inclusive Visuals Specialist | 日本の多様な利用者、年齢層、地域、障害、ジェンダー、文化背景に配慮した visual 表現を設計・監査する design agent。 | `design/design-inclusive-visuals-specialist.md` |
+|  | 日本向け Persona Walkthrough Specialist | upstream | adapted | Persona Walkthrough Specialist | 定義した persona の心理、期待、不安、文化的前提に入り込み、LP や Web page を scroll ごとに体験して CVR 改善点を整理する UX / CRO agent。 | `design/design-persona-walkthrough.md` |
 |  | 日本向け UI デザイナー | upstream | adapted | UI Designer | 日本の業務システム、B2B SaaS、EC、管理画面に合わせて高密度で誤操作に強い UI を設計する design agent。 | `design/design-ui-designer.md` |
 |  | 日本向け UX アーキテクト | upstream | adapted | UX Architect | 日本の業務・購買・承認・運用フローを踏まえ、プロダクト全体の UX 構造と導線を設計する agent。 | `design/design-ux-architect.md` |
 |  | 日本向け UX リサーチャー | upstream | adapted | UX Researcher | 日本の利用者、業務現場、購買・承認構造に合わせて UX research 設計、インタビュー、洞察整理を行う agent。 | `design/design-ux-researcher.md` |
@@ -293,7 +304,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Sales
 
-Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
+Total: 15 (⭐ 6 japan-original + 9 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -308,9 +319,27 @@ Total: 14 (⭐ 6 japan-original + 8 upstream-aligned)
 |  | 日本向け商談戦略家 | upstream | adapted | Deal Strategist | 日本の B2B 商談で決裁構造、競合、稟議、価格交渉、導入リスクを整理し受注戦略を作る agent。 | `sales/sales-deal-strategist.md` |
 |  | 日本向けディスカバリーコーチ | upstream | adapted | Discovery Coach | 日本の B2B 商談で顧客課題、現状業務、決裁条件、導入障壁を深掘りする discovery を支援する agent。 | `sales/sales-discovery-coach.md` |
 |  | 日本向け Sales Engineer | upstream | adapted | Sales Engineer | 日本の B2B SaaS、SI、IT サービス商談で技術要件、demo、PoC、RFP、非機能、運用論点を支援する presales agent。 | `sales/sales-engineer.md` |
+|  | 日本向け Offer Lead Gen Strategist | upstream | adapted | Offer Lead Gen Strategist | 日本の B2B / service / SaaS 向けに offer、lead magnet、LP、資料請求、商談化導線を設計する lead generation agent。 | `sales/sales-offer-lead-gen-strategist.md` |
 |  | 日本向けアウトバウンド戦略家 | upstream | adapted | Outbound Strategist | 日本の B2B 市場でターゲット企業選定、文面、架電、紹介、イベント follow-up を設計する outbound sales agent。 | `sales/sales-outbound-strategist.md` |
 |  | 日本向けパイプライン分析担当 | upstream | adapted | Pipeline Analyst | 日本の B2B 営業で CRM、forecast、商談 stage、受注確度、更新・拡張 pipeline を分析する RevOps 支援 agent。 | `sales/sales-pipeline-analyst.md` |
 |  | 日本向け提案戦略家 | upstream | adapted | Proposal Strategist | 日本の B2B SaaS、SI、受託開発、IT サービス向けに稟議・RFP・比較検討に強い提案構成を設計する agent。 | `sales/sales-proposal-strategist.md` |
+
+## Security
+
+Total: 10 (⭐ 0 japan-original + 10 upstream-aligned)
+
+| | Name | Source | Status | Upstream | Description | Path |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 日本向け Application Security Engineer | upstream | adapted | Application Security Engineer | Threat modeling、secure code review、SAST / DAST、developer enablement を通じて、日本の開発現場に secure SDLC を組み込む AppSec agent。 | `security/security-appsec-engineer.md` |
+|  | 日本向け Security Architect | upstream | adapted | Security Architect | Trust boundary、zero trust、defense-in-depth、risk-based review を用いて、日本の SaaS / 業務 system の security architecture を設計する agent。 | `security/security-architect.md` |
+|  | 日本向け Blockchain Security Auditor | upstream | adapted | Blockchain Security Auditor | Smart contract、wallet、bridge、oracle、token operation を監査し、資産流出 risk と運用 control を日本向けに整理する security agent。 | `security/security-blockchain-security-auditor.md` |
+|  | 日本向け Cloud Security Architect | upstream | adapted | Cloud Security Architect | AWS / Azure / GCP の IAM、network、IaC、logging、compliance automation を設計し、日本企業の cloud security を標準化する agent。 | `security/security-cloud-security-architect.md` |
+|  | 日本向け Security Compliance Auditor | upstream | adapted | Compliance Auditor | SOC 2、ISO 27001、ISMS、個人情報、PCI / HIPAA 周辺の technical control と evidence を整理する compliance audit agent。 | `security/security-compliance-auditor.md` |
+|  | 日本向け Incident Responder | upstream | adapted | Incident Responder | Security incident の triage、containment、forensics、communication、postmortem を日本企業向けに指揮する DFIR agent。 | `security/security-incident-responder.md` |
+|  | 日本向け Penetration Tester | upstream | adapted | Penetration Tester | 許可された範囲で Web、network、cloud、API の penetration test を行い、攻撃 chain と business impact を防御目的で示す agent。 | `security/security-penetration-tester.md` |
+|  | 日本向け Senior SecOps Engineer | upstream | adapted | Senior SecOps Engineer | Secret scan、security control、PR review、logging、rate limit、CORS、CSP、認証認可を厳格に確認する defensive SecOps agent。 | `security/security-senior-secops.md` |
+|  | 日本向け Threat Detection Engineer | upstream | adapted | Threat Detection Engineer | SIEM rule、Sigma / KQL / SPL、MITRE ATT&CK coverage、threat hunting、alert tuning を設計する detection engineering agent。 | `security/security-threat-detection-engineer.md` |
+|  | 日本向け Threat Intelligence Analyst | upstream | adapted | Threat Intelligence Analyst | Threat actor、campaign、IOC、MITRE ATT&CK、vulnerability exploitation を分析し、日本企業向けの defensive action に変換する CTI agent。 | `security/security-threat-intelligence-analyst.md` |
 
 ## Spatial Computing
 
@@ -347,10 +376,11 @@ Total: 13 (⭐ 7 japan-original + 6 upstream-aligned)
 
 ## Supply Chain
 
-Total: 5 (⭐ 5 japan-original + 0 upstream-aligned)
+Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
+| ⭐ | 日本向けアパレル工場計画エンジニア | japan-original |  |  | アパレル工場の layout、工程設計、設備選定、標準工時、ラインバランス、海外生産拠点比較を日本企業向けに整理する manufacturing planning agent。 | `supply-chain/supply-chain-garment-factory-planning-engineer.md` |
 | ⭐ | 日本向け在庫予測担当 | japan-original |  |  | 日本の小売、EC、製造業向けに需要予測、安全在庫、欠品、過剰在庫、リードタイムを分析する supply chain specialist。 | `supply-chain/supply-chain-inventory-forecasting-ja.md` |
 | ⭐ | 日本向け IT 調達マネージャー | japan-original |  |  | 日本企業の SaaS、cloud、開発委託、業務委託、hardware 調達について RFP、見積比較、稟議、契約、発注、検収を管理する procurement manager。 | `supply-chain/supply-chain-japanese-procurement-manager.md` |
 | ⭐ | 日本物流ルート最適化プランナー | japan-original |  |  | 日本の配送、共同配送、倉庫出荷、ラストワンマイル向けに route、積載、時間指定、driver 制約、cost を最適化する agent。 | `supply-chain/supply-chain-japanese-route-optimizer.md` |
@@ -359,10 +389,12 @@ Total: 5 (⭐ 5 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 53 (⭐ 12 japan-original + 41 upstream-aligned)
+Total: 60 (⭐ 14 japan-original + 46 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
+| ⭐ | 日本向けブロックチェーンセキュリティ監査者 | japan-original |  |  | Smart contract、wallet、key 管理、bridge、token operation を日本向けに監査する security agent。 | `specialized/blockchain-security-auditor.md` |
+| ⭐ | 日本向けコンプライアンス監査者 | japan-original |  |  | 日本企業の法令、社内規程、委託先、個人情報、セキュリティ、運用証跡を確認する compliance audit agent。 | `specialized/compliance-auditor.md` |
 | ⭐ | 自治体 DX コンサルタント | japan-original |  |  | 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。 | `specialized/japanese-public-sector-dx-consultant.md` |
 | ⭐ | 工場 IoT プランナー | japan-original |  |  | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
 | ⭐ | 日本 IT 自動化ガバナンスアーキテクト | japan-original |  |  | 日本企業の RPA、workflow automation、AI agent、batch、integration automation に対して権限、監査、例外処理、運用責任を設計する automation governance architect。 | `specialized/specialized-japanese-automation-governance-architect.md` |
@@ -379,12 +411,14 @@ Total: 53 (⭐ 12 japan-original + 41 upstream-aligned)
 |  | 日本向け AI エージェント ID / Trust 設計者 | upstream | adapted | Agentic Identity & Trust | AI agent の本人性、権限、監査ログ、委任、停止条件を日本企業のガバナンスに合わせて設計する agent。 | `specialized/agentic-identity-trust.md` |
 |  | 日本向けエージェント編成オーケストレーター | upstream | adapted | Agents Orchestrator | 複数 AI agent の役割分担、handoff、承認、監査、失敗時 fallback を日本の業務運用向けに設計する agent。 | `specialized/agents-orchestrator.md` |
 |  | 日本向け自動化ガバナンスアーキテクト | upstream | adapted | Automation Governance Architect | RPA、workflow automation、AI agent、batch の権限、監査、例外処理、運用責任を設計する governance agent。 | `specialized/automation-governance-architect.md` |
-|  | 日本向けブロックチェーンセキュリティ監査者 | upstream | adapted | Blockchain Security Auditor | Smart contract、wallet、key 管理、bridge、token operation を日本向けに監査する security agent。 | `specialized/blockchain-security-auditor.md` |
-|  | 日本向けコンプライアンス監査者 | upstream | adapted | Compliance Auditor | 日本企業の法令、社内規程、委託先、個人情報、セキュリティ、運用証跡を確認する compliance audit agent。 | `specialized/compliance-auditor.md` |
+|  | 日本向け Business Strategist | upstream | adapted | Business Strategist | 市場参入、競争分析、事業 model、成長戦略、組織戦略を日本企業の意思決定・稟議・実行制約に合わせて整理する strategy agent。 | `specialized/business-strategist.md` |
+|  | 日本向け Change Management Consultant | upstream | adapted | Change Management Consultant | ADKAR / Kotter / Prosci を参考に、システム導入、業務改革、組織変更の定着・抵抗対応・教育を日本企業向けに設計する agent。 | `specialized/change-management-consultant.md` |
 |  | 日本向け企業研修デザイナー | upstream | adapted | Corporate Training Designer | 日本企業向けに IT、AI、セキュリティ、営業、CS、管理職研修の設計と教材化を行う training design agent。 | `specialized/corporate-training-designer.md` |
 |  | 日本向けカスタマーサービス担当 | upstream | adapted | Customer Service | 日本の B2B / B2C サポートで問い合わせ分類、返信、SLA、エスカレーション、FAQ 改善を行う customer service agent。 | `specialized/customer-service.md` |
+|  | 日本向け Customer Success Manager | upstream | adapted | Customer Success Manager | Onboarding、health score、QBR、churn prevention、renewal、expansion を日本の B2B SaaS / service business 向けに運用する CS agent。 | `specialized/customer-success-manager.md` |
 |  | 日本向けデータ統合エージェント | upstream | adapted | Data Consolidation Agent | CRM、SFA、会計、EC、CSV、Excel、DWH のデータを日本業務向けに統合・整形する agent。 | `specialized/data-consolidation-agent.md` |
 |  | 日本向け公共 DX プリセールスコンサルタント | upstream | adapted | Government Digital Presales Consultant | 自治体・公共機関向け DX 提案で調達、要件、セキュリティ、アクセシビリティ、運用保守を整理する agent。 | `specialized/government-digital-presales-consultant.md` |
+|  | 日本向け Grant Writer | upstream | adapted | Grant Writer | 補助金、助成金、公募、研究費、自治体・財団 funding に対して、要件確認、申請書、予算、実績報告を支援する agent。 | `specialized/grant-writer.md` |
 |  | 日本向け医療カスタマーサービス担当 | upstream | adapted | Healthcare Customer Service | 医療・ヘルスケア領域の問い合わせを、個人情報、医療広告、緊急性、専門家確認に配慮して整理する agent。 | `specialized/healthcare-customer-service.md` |
 |  | 日本向け医療マーケティングコンプライアンス担当 | upstream | adapted | Healthcare Marketing Compliance | 医療・ヘルスケア広告、LP、SNS、導入事例を医療広告ガイドライン、薬機法、個人情報観点で確認する agent。 | `specialized/healthcare-marketing-compliance.md` |
 |  | 日本向け宿泊・観光ゲストサービス担当 | upstream | adapted | Hospitality Guest Services | ホテル、旅館、観光施設の問い合わせ、予約、案内、多言語対応、クレーム対応を支援する guest services agent。 | `specialized/hospitality-guest-services.md` |
@@ -396,6 +430,8 @@ Total: 53 (⭐ 12 japan-original + 41 upstream-aligned)
 |  | 日本向け法務文書レビュー担当 | upstream | adapted | Legal Document Review | 契約書、規約、NDA、業務委託、DPA、利用規約の確認事項と修正論点を整理する legal review agent。 | `specialized/legal-document-review.md` |
 |  | 日本向け融資担当アシスタント | upstream | adapted | Loan Officer Assistant | 日本の融資審査で申込情報、本人確認、収入、担保、返済能力、必要書類を整理する finance support agent。 | `specialized/loan-officer-assistant.md` |
 |  | 日本向け LSP インデックスエンジニア | upstream | adapted | LSP Index Engineer | 大規模 codebase の LSP、symbol index、検索、参照、AI coding 支援向け index を設計する agent。 | `specialized/lsp-index-engineer.md` |
+|  | 日本向け Medical Billing & Coding Specialist | upstream | adapted | Medical Billing & Coding Specialist | 医療請求、診療報酬、レセプト、返戻・査定、収益 cycle、監査準備を日本の医療機関向けに整理する agent。 | `specialized/medical-billing-coding-specialist.md` |
+|  | 日本向け Personal Growth Mentor | upstream | adapted | Personal Growth Mentor | Career、学習、習慣、意思決定、時間管理を、精神論ではなく system と accountability に落とす personal growth agent。 | `specialized/personal-growth-mentor.md` |
 |  | 日本向け不動産売買サポート担当 | upstream | adapted | Real Estate Buyer/Seller | 日本の不動産売買で物件情報、希望条件、資金計画、内見、重要事項、契約前確認を整理する agent。 | `specialized/real-estate-buyer-seller.md` |
 |  | 日本向け採用専門家 | upstream | adapted | Recruitment Specialist | 日本の採用活動で求人票、候補者対応、面接設計、評価、オファー、入社 follow-up を支援する recruitment agent。 | `specialized/recruitment-specialist.md` |
 |  | 日本向けレポート配信エージェント | upstream | adapted | Report Distribution Agent | 経営、営業、CS、運用、監査向け report の配信先、権限、形式、頻度、証跡を管理する agent。 | `specialized/report-distribution-agent.md` |
@@ -411,6 +447,7 @@ Total: 53 (⭐ 12 japan-original + 41 upstream-aligned)
 |  | 日本向け韓国ビジネスナビゲーター | upstream | adapted | Korean Business Navigator | 日本企業と韓国市場・韓国企業の商談、提携、ローカライズ、文化差、資料作成を支援する agent。 | `specialized/specialized-korean-business-navigator.md` |
 |  | 日本向け MCP ビルダー | upstream | adapted | MCP Builder | 日本企業の社内 tools、SaaS、DB、業務 API を安全に AI へ接続する MCP server / tool builder agent。 | `specialized/specialized-mcp-builder.md` |
 |  | 日本向けモデル QA 担当 | upstream | adapted | Model QA | 日本語 AI model / RAG / agent の評価、回帰試験、安全性、業務適合性を検証する QA agent。 | `specialized/specialized-model-qa.md` |
+|  | 日本向け Pricing Analyst | upstream | adapted | Pricing Analyst | 価格、packaging、値引き、見積、margin、競合比較を分析し、日本市場向けの pricing decision を数値で支える agent。 | `specialized/specialized-pricing-analyst.md` |
 |  | 日本向け Salesforce アーキテクト | upstream | adapted | Salesforce Architect | 日本企業向けに Salesforce のデータ model、権限、Flow、外部連携、営業・CS 運用を設計する agent。 | `specialized/specialized-salesforce-architect.md` |
 |  | 日本向けワークフローアーキテクト | upstream | adapted | Workflow Architect | 日本企業の申請、承認、通知、例外処理、監査証跡を含む業務 workflow を設計する agent。 | `specialized/specialized-workflow-architect.md` |
 |  | 日本向け留学アドバイザー | upstream | adapted | Study Abroad Advisor | 日本からの留学希望者向けに国、学校、費用、ビザ、語学、生活準備、申請 schedule を整理する agent。 | `specialized/study-abroad-advisor.md` |
