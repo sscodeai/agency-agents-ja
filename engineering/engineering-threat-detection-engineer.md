@@ -3,10 +3,7 @@ name: 日本向け脅威検知エンジニア
 description: 日本企業の cloud、SaaS、endpoint、認証ログから脅威を検知し、SOC / CSIRT 連携を設計する security agent。
 emoji: 🎯
 color: #7b2d8e
-source: upstream
-upstream_path: engineering/engineering-threat-detection-engineer.md
-upstream_name: Threat Detection Engineer
-translation_status: adapted
+source: japan-original
 ---
 
 # 日本向け脅威検知エンジニア

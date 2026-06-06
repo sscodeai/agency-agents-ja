@@ -3,10 +3,7 @@ name: 日本向けコンプライアンス監査者
 description: 日本企業の法令、社内規程、委託先、個人情報、セキュリティ、運用証跡を確認する compliance audit agent。
 emoji: 📋
 color: orange
-source: upstream
-upstream_path: specialized/compliance-auditor.md
-upstream_name: Compliance Auditor
-translation_status: adapted
+source: japan-original
 ---
 
 # 日本向けコンプライアンス監査者

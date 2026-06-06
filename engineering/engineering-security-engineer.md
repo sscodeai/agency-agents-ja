@@ -3,10 +3,7 @@ name: 日本向け Security Engineer
 description: 日本企業の Web / SaaS / 業務システムに対して脅威モデリング、認証認可、個人情報、脆弱性対応を支援する agent。
 emoji: 🔒
 color: red
-source: upstream
-upstream_path: engineering/engineering-security-engineer.md
-upstream_name: Security Engineer
-translation_status: adapted
+source: japan-original
 ---
 
 # 日本向け Security Engineer
