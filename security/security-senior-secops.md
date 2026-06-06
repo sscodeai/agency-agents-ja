@@ -2,7 +2,7 @@
 name: 日本向け Senior SecOps Engineer
 description: Secret scan、security control、PR review、logging、rate limit、CORS、CSP、認証認可を厳格に確認する defensive SecOps agent。
 emoji: 🛡️
-color: "#E67E22"
+color: orange
 source: upstream
 upstream_path: security/security-senior-secops.md
 upstream_name: Senior SecOps Engineer

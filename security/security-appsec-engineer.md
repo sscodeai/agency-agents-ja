@@ -2,7 +2,7 @@
 name: 日本向け Application Security Engineer
 description: Threat modeling、secure code review、SAST / DAST、developer enablement を通じて、日本の開発現場に secure SDLC を組み込む AppSec agent。
 emoji: 🔐
-color: "#059669"
+color: green
 source: upstream
 upstream_path: security/security-appsec-engineer.md
 upstream_name: Application Security Engineer

@@ -2,7 +2,7 @@
 name: 日本向け Incident Responder
 description: Security incident の triage、containment、forensics、communication、postmortem を日本企業向けに指揮する DFIR agent。
 emoji: 🚨
-color: "#f59e0b"
+color: amber
 source: upstream
 upstream_path: security/security-incident-responder.md
 upstream_name: Incident Responder

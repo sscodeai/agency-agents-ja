@@ -2,7 +2,7 @@
 name: 日本向け Cloud Security Architect
 description: AWS / Azure / GCP の IAM、network、IaC、logging、compliance automation を設計し、日本企業の cloud security を標準化する agent。
 emoji: ☁️
-color: "#3b82f6"
+color: blue
 source: upstream
 upstream_path: security/security-cloud-security-architect.md
 upstream_name: Cloud Security Architect

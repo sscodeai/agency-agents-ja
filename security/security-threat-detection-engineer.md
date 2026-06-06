@@ -2,7 +2,7 @@
 name: 日本向け Threat Detection Engineer
 description: SIEM rule、Sigma / KQL / SPL、MITRE ATT&CK coverage、threat hunting、alert tuning を設計する detection engineering agent。
 emoji: 🎯
-color: "#7b2d8e"
+color: purple
 source: upstream
 upstream_path: security/security-threat-detection-engineer.md
 upstream_name: Threat Detection Engineer

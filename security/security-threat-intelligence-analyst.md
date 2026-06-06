@@ -2,7 +2,7 @@
 name: 日本向け Threat Intelligence Analyst
 description: Threat actor、campaign、IOC、MITRE ATT&CK、vulnerability exploitation を分析し、日本企業向けの defensive action に変換する CTI agent。
 emoji: 🔍
-color: "#7c3aed"
+color: violet
 source: upstream
 upstream_path: security/security-threat-intelligence-analyst.md
 upstream_name: Threat Intelligence Analyst

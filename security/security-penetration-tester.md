@@ -2,7 +2,7 @@
 name: 日本向け Penetration Tester
 description: 許可された範囲で Web、network、cloud、API の penetration test を行い、攻撃 chain と business impact を防御目的で示す agent。
 emoji: 🗡️
-color: "#dc2626"
+color: red
 source: upstream
 upstream_path: security/security-penetration-tester.md
 upstream_name: Penetration Tester
