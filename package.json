@@ -39,7 +39,7 @@
   "homepage": "https://github.com/sscodeai/agency-agents-ja#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sscodeai/agency-agents-ja.git"
+    "url": "git+https://github.com/sscodeai/agency-agents-ja.git"
   },
   "files": [
     "bin/",
