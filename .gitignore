@@ -8,11 +8,13 @@
 # tracked な README.md は !exception で残す
 integrations/aider/CONVENTIONS.md
 integrations/antigravity/agency-*/
-integrations/cursor/.cursor/
+integrations/cursor/rules/
 integrations/gemini-cli/skills/
 integrations/gemini-cli/gemini-extension.json
-integrations/kimi/agents/
-integrations/opencode/.opencode/
-integrations/openclaw/agency-*/
-integrations/qwen/.qwen/
+integrations/kimi/*
+!integrations/kimi/README.md
+integrations/opencode/agents/
+integrations/openclaw/*
+!integrations/openclaw/README.md
+integrations/qwen/agents/
 integrations/windsurf/.windsurfrules

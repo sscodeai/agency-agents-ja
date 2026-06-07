@@ -31,18 +31,6 @@ function runScript(scriptName, args) {
     process.exit(1);
   }
 
-  if (process.platform === 'win32') {
-    console.error(`agency-agents-ja の ${scriptName} は bash script のため、`);
-    console.error(`Windows の cmd / PowerShell からは直接実行できません。`);
-    console.error(``);
-    console.error(`次のいずれかの環境で実行してください:`);
-    console.error(`  - WSL2 (Ubuntu などの Linux distro)`);
-    console.error(`  - Git for Windows に同梱の Git Bash`);
-    console.error(``);
-    console.error(`参考: README.md "Quick Start" / "対応 tool" 節`);
-    process.exit(1);
-  }
-
   const result = spawnSync('bash', [script, ...args], {
     cwd: process.cwd(),
     stdio: 'inherit',
@@ -50,7 +38,14 @@ function runScript(scriptName, args) {
 
   if (result.error) {
     if (result.error.code === 'ENOENT') {
-      console.error(`bash command が見つかりません。bash 4.x 以上を install してください。`);
+      console.error(`bash command が見つからないため、agency-agents-ja の ${scriptName} を実行できません。`);
+      if (process.platform === 'win32') {
+        console.error(`Windows では次のいずれかの環境で実行してください:`);
+        console.error(`  - WSL2 (Ubuntu などの Linux distro)`);
+        console.error(`  - Git for Windows に同梱の Git Bash`);
+      } else {
+        console.error(`bash 4.x 以上を install してください。`);
+      }
     } else {
       console.error(result.error.message);
     }
