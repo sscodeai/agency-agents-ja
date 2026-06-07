@@ -27,6 +27,10 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 ### Quick install
 
 ```bash
+# npm / npx
+npx agency-agents-ja install
+npx agency-agents-ja install --tool claude-code
+
 # Auto-detect installed tools and install matching agents
 ./scripts/install.sh
 
@@ -199,6 +203,10 @@ MIT
 ### 方式 1: AI tool に一括 install
 
 ```bash
+# npm / npx
+npx agency-agents-ja install
+npx agency-agents-ja install --tool claude-code
+
 # install 済み tool を自動検出して入れる
 ./scripts/install.sh
 
