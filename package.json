@@ -41,6 +41,10 @@
     "type": "git",
     "url": "git+https://github.com/sscodeai/agency-agents-ja.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "files": [
     "bin/",
     "scripts/",
