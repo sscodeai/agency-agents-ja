@@ -22,6 +22,39 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | Categories | 18 |
 | Upstream baseline | `msitarzewski/agency-agents@main` as of 2026-06-06 |
 
+> **323 ready-to-use AI specialist agents** for Japanese IT delivery — engineering, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
+
+### Quick install
+
+```bash
+# Auto-detect installed tools and install matching agents
+./scripts/install.sh
+
+# Or install for a specific tool
+./scripts/install.sh --tool claude-code
+./scripts/install.sh --tool copilot
+./scripts/install.sh --tool openclaw
+./scripts/install.sh --tool cursor
+./scripts/install.sh --tool opencode
+./scripts/install.sh --tool gemini-cli
+./scripts/install.sh --tool qwen
+./scripts/install.sh --tool kimi
+```
+
+Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, and Qwen Code. Some tools need generated integration files first:
+
+```bash
+./scripts/convert.sh
+```
+
+For OpenClaw, agents are converted into `SOUL.md` + `AGENTS.md` + `IDENTITY.md` workspaces:
+
+```bash
+./scripts/convert.sh --tool openclaw
+./scripts/install.sh --tool openclaw
+openclaw gateway restart
+```
+
 The `source:` frontmatter field on every agent file marks whether it is `japan-original` (independently designed for the Japanese market) or `upstream` (derived from the upstream agent inventory; see [Translation status](#translation-status) below). [AGENT-LIST.md](AGENT-LIST.md) renders ⭐ for Japan originals.
 
 Maintenance references:
@@ -137,6 +170,117 @@ MIT
 日本の IT 開発、SIer、受託開発、自社サービス、SaaS、EC、製造業 DX の現場で使える AI 専門家エージェント集です。
 
 英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、中国語コミュニティ版 [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の取り組みからも一部の領域設計や coverage gap の示唆を得て、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent として本土化しています。
+
+> **323 個の即戦力 AI 専門家 agent** — 工程、設計、QA、product、marketing、sales、support、legal、finance、security、製造業 DX、公共 sector など 18 category を収録。単なる「あなたは専門家です」prompt ではなく、各 agent に役割、確認観点、作業手順、成果物、運用 guardrail を持たせています。
+
+## プロジェクト規模
+
+| AI agent | 上流由来 adapted | 日本市場 original | 対応 tool | Category | Workflow |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| **<!-- AUTOGEN:TOTAL -->323<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->209<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->114<!-- /AUTOGEN:JAPAN -->** | **11** | **18** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
+
+## これは何か
+
+`agency-agents-ja` は、AI coding tool に読み込ませて使う**専門 role library** です。agent file には、identity、想定シーン、必ず確認すること、成果物、実務上の注意点がまとまっています。
+
+普通の prompt との違い:
+
+- 普通の prompt: 「あなたは backend expert です」と役割だけを指定する
+- この repo の agent: **何を確認し、どの順序で考え、何を成果物として出すか**まで定義する
+
+例:
+
+- `security/security-appsec-engineer.md` は threat modeling、secure code review、SAST / DAST、developer enablement を扱う
+- `project-management/project-management-meeting-notes-specialist.md` は議事録、決定事項、未決事項、action owner を日本の会議向けに整理する
+- `supply-chain/supply-chain-garment-factory-planning-engineer.md` はアパレル工場の layout、capacity、設備、compliance を整理する
+
+## Quick Start
+
+### 方式 1: AI tool に一括 install
+
+```bash
+# install 済み tool を自動検出して入れる
+./scripts/install.sh
+
+# tool を指定して install
+./scripts/install.sh --tool claude-code
+./scripts/install.sh --tool copilot
+./scripts/install.sh --tool openclaw
+./scripts/install.sh --tool cursor
+./scripts/install.sh --tool opencode
+./scripts/install.sh --tool aider
+./scripts/install.sh --tool windsurf
+./scripts/install.sh --tool antigravity
+./scripts/install.sh --tool gemini-cli
+./scripts/install.sh --tool qwen
+./scripts/install.sh --tool kimi
+```
+
+対応 tool:
+
+| Tool | 形式 | 備考 |
+| --- | --- | --- |
+| Claude Code | native `.md` agents | 直接 install |
+| GitHub Copilot | native `.md` agents | 直接 install |
+| Antigravity | `SKILL.md` | install script 対応 |
+| Gemini CLI | extension + `SKILL.md` | `convert.sh` 後に install |
+| OpenCode | `.md` agents | project-scoped |
+| OpenClaw | `SOUL.md` + `AGENTS.md` + `IDENTITY.md` | multi-agent workspace |
+| Cursor | `.mdc` rules | project-scoped |
+| Aider | `CONVENTIONS.md` | project-scoped |
+| Windsurf | `.windsurfrules` | project-scoped |
+| Kimi Code | YAML specs | `convert.sh` 後に install |
+| Qwen Code | `.qwen/agents/` subagents | project-scoped |
+
+変換 file が必要な tool では先に実行します:
+
+```bash
+./scripts/convert.sh
+```
+
+### OpenClaw で使う
+
+OpenClaw では各 agent を `SOUL.md`（identity）+ `AGENTS.md`（業務能力）+ `IDENTITY.md`（概要）に分割して使えます。
+
+```bash
+./scripts/convert.sh --tool openclaw
+./scripts/install.sh --tool openclaw
+openclaw gateway restart
+```
+
+### 方式 2: Agent file を直接指定
+
+```text
+engineering/engineering-japanese-requirements-engineer.md を使って、
+この Backlog ticket の要件と受入条件を整理してください。
+```
+
+```text
+security/security-appsec-engineer.md を使って、
+この PR の認証認可と個人情報処理を review してください。
+```
+
+### 方式 3: superpowers-ja workflow-runner と使う
+
+複数 role を順番に使う場合は、`superpowers-ja` の `workflow-runner` skill と `workflows/` を組み合わせます。
+
+```text
+superpowers-ja の workflow-runner を使って
+agency-agents-ja/workflows/japanese-sier-requirements-review.yaml を実行してください。
+ticket は PROJ-1234、spec は docs/spec.md です。
+```
+
+## 代表的な利用シーン
+
+| シーン | 使う agent / workflow |
+| --- | --- |
+| SIer / 受託開発の要件整理 | `engineering/engineering-japanese-requirements-engineer.md`, `workflows/japanese-sier-requirements-review.yaml` |
+| 検収 readiness | `project-management/project-management-acceptance-criteria-writer.md`, `testing/testing-evidence-collector-ja.md`, `workflows/acceptance-readiness-review.yaml` |
+| Security review | `security/security-appsec-engineer.md`, `security/security-architect.md`, `security/security-threat-detection-engineer.md` |
+| SaaS release | `project-management/project-management-japanese-release-manager.md`, `support/support-release-note-writer-ja.md`, `workflows/b2b-saas-release.yaml` |
+| 日本市場 GTM | `marketing/marketing-japanese-product-marketing-manager.md`, `marketing/marketing-seminar-webinar-planner.md`, `workflows/japan-go-to-market-campaign.yaml` |
+| 製造業 DX | `specialized/specialized-japanese-manufacturing-dx-consultant.md`, `specialized/specialized-factory-iot-planner.md`, `workflows/manufacturing-dx-assessment.yaml` |
+| Vendor / cost review | `supply-chain/supply-chain-japanese-vendor-risk-manager.md`, `finance/finance-japanese-finops-analyst.md`, `workflows/vendor-cost-review.yaml` |
 
 ## 方針
 
