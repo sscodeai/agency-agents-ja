@@ -3,3 +3,16 @@
 .claude/sessions/
 .claude/shell-snapshots/
 .claude/file-history/
+
+# convert.sh で生成される tool-specific integration files
+# tracked な README.md は !exception で残す
+integrations/aider/CONVENTIONS.md
+integrations/antigravity/agency-*/
+integrations/cursor/.cursor/
+integrations/gemini-cli/skills/
+integrations/gemini-cli/gemini-extension.json
+integrations/kimi/agents/
+integrations/opencode/.opencode/
+integrations/openclaw/agency-*/
+integrations/qwen/.qwen/
+integrations/windsurf/.windsurfrules
