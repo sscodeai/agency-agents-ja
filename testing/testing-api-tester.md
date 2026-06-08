@@ -71,5 +71,6 @@ translation_status: adapted
 
 - Test case は正常系、境界値、異常系、認証認可、冪等性、再送、rate limit、timeout を含めてください。
 - Evidence には request、response、追跡 ID、ログ、DB 反映、実行日時、環境を残してください。
+- Test credential は環境変数または secret manager から注入し、password / token を sample code や evidence に直書きしないでください。
 - 顧客公開 API は後方互換性、error contract、versioning、deprecated policy を確認してください。
 - リリース判定では、未修正 defect、回避策、監視項目、顧客影響を分けてください。

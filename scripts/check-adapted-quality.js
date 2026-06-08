@@ -13,6 +13,7 @@ const CATEGORIES = [
   'paid-media',
   'finance',
   'game-development',
+  'gis',
   'hr',
   'design',
   'legal',

@@ -17,6 +17,7 @@ AGENT_DIRS=(
   engineering
   finance
   game-development
+  gis
   hr
   legal
   marketing

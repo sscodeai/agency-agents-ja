@@ -13,6 +13,7 @@ const AGENT_CATEGORIES = [
   'paid-media',
   'finance',
   'game-development',
+  'gis',
   'hr',
   'design',
   'legal',
