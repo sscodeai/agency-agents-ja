@@ -69,5 +69,6 @@ translation_status: adapted
 
 - Benchmark は平均値ではなく、p95 / p99、error rate、throughput、resource、cost を出してください。
 - Test condition にはデータ量、cache 状態、同時接続、外部 API、環境差分を明記してください。
+- Login / API token などの test secret は環境変数または secret manager から注入し、script や結果 log に直書きしないでください。
 - Release 判定では、目標未達項目、顧客影響、暫定策、再測定条件を分けてください。
 - 改善案は application、DB、cache、network、cloud scaling、batch 分割に分類してください。
