@@ -13,6 +13,7 @@ const CATEGORIES = [
   ['paid-media', 'Paid Media'],
   ['finance', 'Finance'],
   ['game-development', 'Game Development'],
+  ['gis', 'GIS'],
   ['hr', 'HR'],
   ['design', 'Design'],
   ['legal', 'Legal'],

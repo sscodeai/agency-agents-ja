@@ -92,7 +92,7 @@ When upstream `main` adds or revises an agent, we treat that as an adaptation ta
 You can query the breakdown directly:
 
 ```bash
-AGENT_DIRS="academic engineering project-management testing product marketing paid-media finance game-development hr design legal sales security spatial-computing support supply-chain specialized"
+AGENT_DIRS="academic engineering project-management testing product marketing paid-media finance game-development gis hr design legal sales security spatial-computing support supply-chain specialized"
 
 # Adapted (rewritten for Japan): currently <!-- AUTOGEN:ADAPTED -->209<!-- /AUTOGEN:ADAPTED -->
 grep -rl '^translation_status: adapted'    $AGENT_DIRS | wc -l
