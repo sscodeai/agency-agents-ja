@@ -163,6 +163,10 @@ This repository is derived from [msitarzewski/agency-agents](https://github.com/
 
 Some Japan-market originals were also informed by ideas and coverage gaps explored in the Chinese community edition, [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh). Those concepts were not copied as-is; they were rewritten and localized for Japanese business, platforms, regulations, and delivery workflows. We thank the `agency-agents-zh` maintainers and contributors for their community work and inspiration.
 
+### Related tools
+
+- [`local-agent-toolkit`](https://github.com/jnMetaCode/local-agent-toolkit) — local-first memory, skill management, and run tracing for agents. `skillet` can help organize agent / skill installation flows alongside this library.
+
 ### License
 
 MIT
@@ -512,6 +516,10 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 - 一部の日本特化 agent は、中国語コミュニティ版 [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の agent coverage や実務領域の切り口を参考にし、日本の業務、platform、法規制、商習慣に合わせて再設計・本土化しています。英文上流と中国語コミュニティ版の maintainers / contributors に感謝します
 - 上流の framework 文書（[`strategy/`](strategy/) 16 ファイル、[`integrations/`](integrations/) 14 ファイル）は現状そのまま英語で保持しています。これらは `source:` frontmatter を持たず、`scripts/validate.sh` の対象外です。日本語化は roadmap 上の項目です
 - 上流 `main` への追従と本翻訳の方針は [ROADMAP.md](ROADMAP.md) を参照してください
+
+## 関連ツール
+
+- [`local-agent-toolkit`](https://github.com/jnMetaCode/local-agent-toolkit) — agent の memory, skill 管理, 実行 trace を local-first に扱う toolkit. `skillet` は本 library のような agent / skill 群の導入フロー整理に使えます.
 
 ### Frontmatter schema
 
