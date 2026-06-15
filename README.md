@@ -165,7 +165,7 @@ Some Japan-market originals were also informed by ideas and coverage gaps explor
 
 ### Related tools
 
-- [`local-agent-toolkit`](https://github.com/jnMetaCode/local-agent-toolkit) — local-first memory, skill management, and run tracing for agents. `skillet` can help organize agent / skill installation flows alongside this library.
+- [`local-agent-toolkit`](https://github.com/jnMetaCode/local-agent-toolkit) — local-first memory, skill management, and run tracing for agents. Its `skillet` CLI can help organize agent / skill installation flows alongside this library.
 
 ### License
 
@@ -519,7 +519,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 
 ## 関連ツール
 
-- [`local-agent-toolkit`](https://github.com/jnMetaCode/local-agent-toolkit) — agent の memory, skill 管理, 実行 trace を local-first に扱う toolkit. `skillet` は本 library のような agent / skill 群の導入フロー整理に使えます.
+- [`local-agent-toolkit`](https://github.com/jnMetaCode/local-agent-toolkit) — agent の memory, skill 管理, 実行 trace を local-first に扱う toolkit. 付属の `skillet` CLI は本 library のような agent / skill 群の導入フロー整理に使えます.
 
 ### Frontmatter schema
 
