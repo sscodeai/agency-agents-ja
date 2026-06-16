@@ -118,6 +118,10 @@ if ! node scripts/validate-workflows.js; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/check-divisions.sh; then
+  errors=$((errors + 1))
+fi
+
 if [ "$errors" -gt 0 ]; then
   exit 1
 fi
