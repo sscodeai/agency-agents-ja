@@ -1,5 +1,5 @@
 {
-  "_note": "Source of truth for agency-agents-ja source agent divisions. These are the top-level directories scanned by validation, catalog generation, conversion, and lint workflows. Framework/documentation directories such as strategy/, integrations/, examples/, docs/, workflows/, bin/, and scripts/ are intentionally not divisions.",
+  "_note": "Source of truth for agency-agents-ja source agent divisions. These are the top-level directories scanned by validation, catalog generation, conversion, and lint workflows. Framework/documentation directories such as strategy/, integrations/, examples/, docs/, workflows/, bin/, and scripts/ are intentionally not divisions. Each division must contain at least one .md agent file with YAML frontmatter.",
   "divisions": {
     "academic": { "label": "Academic", "icon": "GraduationCap", "color": "#8B5CF6" },
     "design": { "label": "Design", "icon": "PenTool", "color": "#EC4899" },

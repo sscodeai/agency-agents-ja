@@ -2,13 +2,14 @@
 #
 # check-divisions.sh - enforce a single source of truth for source agent divisions.
 #
-# divisions.json is canonical. This script fails if it disagrees with:
-#   1. The actual top-level source agent directories on disk
+# divisions.json (repo root) is canonical. This script fails if it disagrees with:
+#   1. The actual top-level source agent directories tracked by git
 #   2. AGENT_DIRS in scripts/convert.sh
 #   3. AGENT_DIRS in scripts/install.sh
 #   4. AGENT_DIRS in scripts/lint-agents.sh
 #   5. AGENT_DIRS in scripts/validate.sh
 #   6. The path filters in .github/workflows/lint-agents.yml
+#   7. Every divisions.json entry has at least one frontmatter agent file
 #
 # Usage: ./scripts/check-divisions.sh
 
@@ -41,13 +42,12 @@ canonical() {
 }
 
 actual_dirs() {
-  local d base
-  for d in */; do
-    base="${d%/}"
+  local base
+  git ls-files | awk -F/ 'NF > 1 {print $1}' | sort -u | while IFS= read -r base; do
     [[ "$base" == .* ]] && continue
     case " ${NON_DIVISION_DIRS[*]} " in *" $base "*) continue ;; esac
     echo "$base"
-  done | sort -u
+  done
 }
 
 agent_dirs_array() {
@@ -100,6 +100,23 @@ while IFS= read -r div; do
     echo "$block" | grep -qE "\"$field\"[[:space:]]*:" \
       || fail "division '$div' in $JSON is missing \"$field\""
   done
+done < <(canonical)
+
+has_agent_file() {
+  local f first
+  while IFS= read -r f; do
+    first="$(head -1 "$f" | tr -d '\r')"
+    [[ "$first" == "---" ]] && return 0
+  done < <(find "$1" -name '*.md' -type f 2>/dev/null)
+  return 1
+}
+
+while IFS= read -r div; do
+  if [[ ! -d "$div" ]]; then
+    fail "division '$div' has no directory on disk"
+  elif ! has_agent_file "$div"; then
+    fail "division '$div' has no agent files (.md with '---' frontmatter)"
+  fi
 done < <(canonical)
 
 count="$(canonical | wc -l | tr -d ' ')"

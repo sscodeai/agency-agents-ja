@@ -1,5 +1,7 @@
 name: Check Divisions Consistency
 
+# Runs on every PR: a new division directory must trip this check even when
+# nobody touched divisions.json or the lint config.
 on:
   pull_request:
   push:
