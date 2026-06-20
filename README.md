@@ -51,6 +51,13 @@ Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCo
 ./scripts/convert.sh
 ```
 
+Tool notes:
+- **Claude Code / GitHub Copilot**: copy native `.md` agent files directly.
+- **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped installs. Run the installer from the target project directory.
+- **Antigravity / Gemini CLI / OpenClaw / Kimi Code**: require generated files under `integrations/`; run `./scripts/convert.sh` before installing.
+- **OpenClaw**: recommended when you want multi-agent workspaces with explicit identity, capability, and summary files.
+- **Qwen Code**: after install, run `/agents manage` or restart the session so new subagents are picked up.
+
 For OpenClaw, agents are converted into `SOUL.md` + `AGENTS.md` + `IDENTITY.md` workspaces:
 
 ```bash
@@ -249,6 +256,14 @@ npx agency-agents-ja install --tool claude-code
 ```bash
 ./scripts/convert.sh
 ```
+
+ツール別の注意:
+
+- **Claude Code / GitHub Copilot**: native `.md` agent を直接 copy します。
+- **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped です。導入したい project directory で install script を実行してください。
+- **Antigravity / Gemini CLI / OpenClaw / Kimi Code**: `integrations/` 配下の変換済み file が必要です。先に `./scripts/convert.sh` を実行してください。
+- **OpenClaw**: identity、業務能力、概要を分けた multi-agent workspace として使いたい場合に向いています。
+- **Qwen Code**: install 後に `/agents manage` を実行するか session を再起動すると、新しい subagent を認識しやすくなります。
 
 ### OpenClaw で使う
 
