@@ -20,6 +20,8 @@
 #   windsurf     -- Copy .windsurfrules to current directory
 #   openclaw     -- Copy workspaces to ~/.openclaw/agency-agents/
 #   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
+#   codex        -- Copy custom agent TOML files to ~/.codex/agents/
+#   osaurus      -- Copy skills to ~/.osaurus/skills/
 #   all          -- Install for all detected tools (default)
 #
 # Flags:
@@ -101,7 +103,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex osaurus)
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
@@ -149,6 +151,8 @@ detect_openclaw()     { command -v openclaw >/dev/null 2>&1 || [[ -d "${HOME}/.o
 detect_windsurf()     { command -v windsurf >/dev/null 2>&1 || [[ -d "${HOME}/.codeium" ]]; }
 detect_qwen()         { command -v qwen >/dev/null 2>&1 || [[ -d "${HOME}/.qwen" ]]; }
 detect_kimi()         { command -v kimi >/dev/null 2>&1; }
+detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -d "${HOME}/.codex" ]]; }
+detect_osaurus()      { command -v osaurus >/dev/null 2>&1 || [[ -d "${HOME}/.osaurus" ]]; }
 
 is_detected() {
   case "$1" in
@@ -163,6 +167,8 @@ is_detected() {
     windsurf)    detect_windsurf    ;;
     qwen)        detect_qwen        ;;
     kimi)        detect_kimi        ;;
+    codex)       detect_codex       ;;
+    osaurus)     detect_osaurus     ;;
     *)           return 1 ;;
   esac
 }
@@ -181,6 +187,8 @@ tool_label() {
     windsurf)    printf "%-14s  %s" "Windsurf"     "(.windsurfrules)"        ;;
     qwen)        printf "%-14s  %s" "Qwen Code"    "(~/.qwen/agents)"        ;;
     kimi)        printf "%-14s  %s" "Kimi Code"    "(~/.config/kimi/agents)" ;;
+    codex)       printf "%-14s  %s" "Codex"        "(~/.codex/agents)"       ;;
+    osaurus)     printf "%-14s  %s" "Osaurus"      "(~/.osaurus/skills)"     ;;
   esac
 }
 
@@ -357,6 +365,22 @@ install_antigravity() {
   ok "Antigravity: $count skills -> $dest"
 }
 
+install_osaurus() {
+  local src="$INTEGRATIONS/osaurus"
+  local dest="${HOME}/.osaurus/skills"
+  local count=0
+  [[ -d "$src" ]] || { err "integrations/osaurus missing. Run convert.sh first."; return 1; }
+  mkdir -p "$dest"
+  local d
+  while IFS= read -r -d '' d; do
+    local name; name="$(basename "$d")"
+    mkdir -p "$dest/$name"
+    cp "$d/SKILL.md" "$dest/$name/SKILL.md"
+    (( count++ )) || true
+  done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
+  ok "Osaurus: $count skills -> $dest"
+}
+
 install_gemini_cli() {
   local src="$INTEGRATIONS/gemini-cli"
   local dest="${HOME}/.gemini/extensions/agency-agents"
@@ -518,6 +542,24 @@ install_kimi() {
   ok "Usage: kimi --agent-file ~/.config/kimi/agents/<agent-name>/agent.yaml"
 }
 
+install_codex() {
+  local src="$INTEGRATIONS/codex/agents"
+  local dest="${HOME}/.codex/agents"
+  local count=0
+
+  [[ -d "$src" ]] || { err "integrations/codex missing. Run convert.sh first."; return 1; }
+
+  mkdir -p "$dest"
+
+  local f
+  while IFS= read -r -d '' f; do
+    cp "$f" "$dest/"
+    (( count++ )) || true
+  done < <(find "$src" -maxdepth 1 -name "*.toml" -print0)
+
+  ok "Codex: $count agents -> $dest"
+}
+
 install_tool() {
   case "$1" in
     claude-code) install_claude_code ;;
@@ -531,6 +573,8 @@ install_tool() {
     windsurf)    install_windsurf    ;;
     qwen)        install_qwen        ;;
     kimi)        install_kimi        ;;
+    codex)       install_codex       ;;
+    osaurus)     install_osaurus     ;;
   esac
 }
 

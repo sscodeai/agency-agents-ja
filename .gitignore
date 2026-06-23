@@ -9,6 +9,7 @@
 integrations/aider/CONVENTIONS.md
 integrations/antigravity/agency-*/
 integrations/cursor/rules/
+integrations/codex/agents/
 integrations/gemini-cli/skills/
 integrations/gemini-cli/gemini-extension.json
 integrations/kimi/*
@@ -16,5 +17,6 @@ integrations/kimi/*
 integrations/opencode/agents/
 integrations/openclaw/*
 !integrations/openclaw/README.md
+integrations/osaurus/agency-*/
 integrations/qwen/agents/
 integrations/windsurf/.windsurfrules

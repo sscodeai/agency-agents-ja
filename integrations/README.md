@@ -16,6 +16,8 @@ supported agentic coding tools.
 - **[Windsurf](#windsurf)** — `.windsurfrules` in `windsurf/`
 - **[Kimi Code](#kimi-code)** — YAML agent specs in `kimi/`
 - **[Qwen Code](#qwen-code)** — project-scoped `.md` SubAgents in `.qwen/agents/`
+- **[Codex](codex/README.md)** — `.toml` custom agents in `codex/`
+- **[Osaurus](osaurus/README.md)** — `SKILL.md` skills in `osaurus/`
 
 ## Quick Install
 
@@ -36,6 +38,12 @@ supported agentic coding tools.
 # Qwen Code also needs generated SubAgent files on a fresh clone
 ./scripts/convert.sh --tool qwen
 ./scripts/install.sh --tool qwen
+
+# Codex and Osaurus also use generated integration files
+./scripts/convert.sh --tool codex
+./scripts/install.sh --tool codex
+./scripts/convert.sh --tool osaurus
+./scripts/install.sh --tool osaurus
 ```
 
 If you install OpenClaw and the gateway is already running, restart it after installation:

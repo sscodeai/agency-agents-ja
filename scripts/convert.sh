@@ -19,6 +19,8 @@
 #   openclaw     — OpenClaw workspaces (integrations/openclaw/<agent>/SOUL.md)
 #   qwen         — Qwen Code SubAgent files (~/.qwen/agents/*.md)
 #   kimi         — Kimi Code CLI agent files (~/.config/kimi/agents/)
+#   codex        — Codex custom agent TOML files (~/.codex/agents/*.toml)
+#   osaurus      — Osaurus skill files (~/.osaurus/skills/<name>/SKILL.md)
 #   all          — All tools (default)
 #
 # Output is written to integrations/<tool>/ relative to the repo root.
@@ -60,6 +62,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OUT_DIR="$REPO_ROOT/integrations"
 TODAY="$(date +%Y-%m-%d)"
+ANTIGRAVITY_DATE_ADDED="2026-03-08"
 
 AGENT_DIRS=(
   academic design engineering finance game-development gis hr legal marketing paid-media product project-management
@@ -104,6 +107,23 @@ slugify() {
   echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//'
 }
 
+agent_file_slug() {
+  basename "$1" .md
+}
+
+toml_escape_string() {
+  printf '%s' "$1" | perl -0pe '
+    s/\\/\\\\/g;
+    s/"/\\"/g;
+    s/\n/\\n/g;
+    s/\r/\\r/g;
+    s/\t/\\t/g;
+    s/\f/\\f/g;
+    s/\x08/\\b/g;
+    s/([\x00-\x07\x0B\x0E-\x1F\x7F])/sprintf("\\u%04X", ord($1))/ge;
+  '
+}
+
 # --- Per-tool converters ---
 
 convert_antigravity() {
@@ -112,7 +132,7 @@ convert_antigravity() {
 
   name="$(get_field "name" "$file")"
   description="$(get_field "description" "$file")"
-  slug="agency-$(slugify "$name")"
+  slug="agency-$(agent_file_slug "$file")"
   body="$(get_body "$file")"
 
   outdir="$OUT_DIR/antigravity/$slug"
@@ -126,9 +146,50 @@ name: ${slug}
 description: ${description}
 risk: low
 source: community
-date_added: '${TODAY}'
+date_added: '${ANTIGRAVITY_DATE_ADDED}'
 ---
 ${body}
+HEREDOC
+}
+
+convert_osaurus() {
+  local file="$1"
+  local name description slug outdir outfile body
+
+  name="$(get_field "name" "$file")"
+  description="$(get_field "description" "$file")"
+  slug="agency-$(agent_file_slug "$file")"
+  body="$(get_body "$file")"
+
+  outdir="$OUT_DIR/osaurus/$slug"
+  outfile="$outdir/SKILL.md"
+  mkdir -p "$outdir"
+
+  cat > "$outfile" <<HEREDOC
+---
+name: ${slug}
+description: ${description}
+---
+${body}
+HEREDOC
+}
+
+convert_codex() {
+  local file="$1"
+  local name description slug outfile body
+
+  name="$(get_field "name" "$file")"
+  description="$(get_field "description" "$file")"
+  slug="$(agent_file_slug "$file")"
+  body="$(get_body "$file")"
+
+  outfile="$OUT_DIR/codex/agents/${slug}.toml"
+  mkdir -p "$(dirname "$outfile")"
+
+  cat > "$outfile" <<HEREDOC
+name = "$(toml_escape_string "$name")"
+description = "$(toml_escape_string "$description")"
+developer_instructions = "$(toml_escape_string "$body")"
 HEREDOC
 }
 
@@ -138,7 +199,7 @@ convert_gemini_cli() {
 
   name="$(get_field "name" "$file")"
   description="$(get_field "description" "$file")"
-  slug="$(slugify "$name")"
+  slug="$(agent_file_slug "$file")"
   body="$(get_body "$file")"
 
   outdir="$OUT_DIR/gemini-cli/skills/$slug"
@@ -206,7 +267,7 @@ convert_opencode() {
   name="$(get_field "name" "$file")"
   description="$(get_field "description" "$file")"
   color="$(resolve_opencode_color "$(get_field "color" "$file")")"
-  slug="$(slugify "$name")"
+  slug="$(agent_file_slug "$file")"
   body="$(get_body "$file")"
 
   outfile="$OUT_DIR/opencode/agents/${slug}.md"
@@ -231,7 +292,7 @@ convert_cursor() {
 
   name="$(get_field "name" "$file")"
   description="$(get_field "description" "$file")"
-  slug="$(slugify "$name")"
+  slug="$(agent_file_slug "$file")"
   body="$(get_body "$file")"
 
   outfile="$OUT_DIR/cursor/rules/${slug}.mdc"
@@ -255,7 +316,7 @@ convert_openclaw() {
 
   name="$(get_field "name" "$file")"
   description="$(get_field "description" "$file")"
-  slug="$(slugify "$name")"
+  slug="$(agent_file_slug "$file")"
   body="$(get_body "$file")"
 
   outdir="$OUT_DIR/openclaw/$slug"
@@ -347,7 +408,7 @@ convert_qwen() {
   name="$(get_field "name" "$file")"
   description="$(get_field "description" "$file")"
   tools="$(get_field "tools" "$file")"
-  slug="$(slugify "$name")"
+  slug="$(agent_file_slug "$file")"
   body="$(get_body "$file")"
 
   outfile="$OUT_DIR/qwen/agents/${slug}.md"
@@ -381,7 +442,7 @@ convert_kimi() {
 
   name="$(get_field "name" "$file")"
   description="$(get_field "description" "$file")"
-  slug="$(slugify "$name")"
+  slug="$(agent_file_slug "$file")"
   body="$(get_body "$file")"
 
   outdir="$OUT_DIR/kimi/$slug"
@@ -480,9 +541,17 @@ HEREDOC
 
 # --- Main loop ---
 
+clean_tool_output() {
+  local dir="$OUT_DIR/$1"
+  [[ -d "$dir" ]] || return 0
+  find "$dir" -mindepth 1 -maxdepth 1 ! -name 'README.md' -exec rm -rf {} +
+}
+
 run_conversions() {
   local tool="$1"
   local count=0
+
+  clean_tool_output "$tool"
 
   for dir in "${AGENT_DIRS[@]}"; do
     local dirpath="$REPO_ROOT/$dir"
@@ -500,12 +569,14 @@ run_conversions() {
 
       case "$tool" in
         antigravity) convert_antigravity "$file" ;;
+        codex)       convert_codex       "$file" ;;
         gemini-cli)  convert_gemini_cli  "$file" ;;
         opencode)    convert_opencode    "$file" ;;
         cursor)      convert_cursor      "$file" ;;
         openclaw)    convert_openclaw    "$file" ;;
         qwen)        convert_qwen        "$file" ;;
         kimi)        convert_kimi        "$file" ;;
+        osaurus)     convert_osaurus     "$file" ;;
         aider)       accumulate_aider    "$file" ;;
         windsurf)    accumulate_windsurf "$file" ;;
       esac
@@ -536,7 +607,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
@@ -555,7 +626,7 @@ main() {
 
   local tools_to_run=()
   if [[ "$tool" == "all" ]]; then
-    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi")
+    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus")
   else
     tools_to_run=("$tool")
   fi
@@ -566,7 +637,7 @@ main() {
 
   if $use_parallel && [[ "$tool" == "all" ]]; then
     # Tools that write to separate dirs can run in parallel; buffer output so each tool's output stays together
-    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen)
+    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen kimi codex osaurus)
     local parallel_out_dir
     parallel_out_dir="$(mktemp -d)"
     info "Converting: ${#parallel_tools[@]}/${n_tools} tools in parallel (output buffered per tool)..."
@@ -578,7 +649,7 @@ main() {
       [[ -f "$parallel_out_dir/$t" ]] && cat "$parallel_out_dir/$t"
     done
     rm -rf "$parallel_out_dir"
-    local idx=7
+    local idx=10
     for t in aider windsurf; do
       progress_bar "$idx" "$n_tools"
       printf "\n"

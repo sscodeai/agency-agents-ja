@@ -73,6 +73,8 @@
     "examples/",
     "workflows/",
     "docs/",
+    "divisions.json",
+    "tools.json",
     "README.md",
     "AGENT-LIST.md",
     "TRANSLATION-PROGRESS.md",
