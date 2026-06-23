@@ -43,9 +43,11 @@ npx agency-agents-ja install --tool claude-code
 ./scripts/install.sh --tool gemini-cli
 ./scripts/install.sh --tool qwen
 ./scripts/install.sh --tool kimi
+./scripts/install.sh --tool codex
+./scripts/install.sh --tool osaurus
 ```
 
-Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, and Qwen Code. Some tools need generated integration files first:
+Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, Qwen Code, Codex, and Osaurus. Some tools need generated integration files first:
 
 ```bash
 ./scripts/convert.sh
@@ -54,7 +56,7 @@ Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCo
 Tool notes:
 - **Claude Code / GitHub Copilot**: copy native `.md` agent files directly.
 - **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped installs. Run the installer from the target project directory.
-- **Antigravity / Gemini CLI / OpenClaw / Kimi Code**: require generated files under `integrations/`; run `./scripts/convert.sh` before installing.
+- **Antigravity / Gemini CLI / OpenClaw / Kimi Code / Codex / Osaurus**: require generated files under `integrations/`; run `./scripts/convert.sh` before installing.
 - **OpenClaw**: recommended when you want multi-agent workspaces with explicit identity, capability, and summary files.
 - **Qwen Code**: after install, run `/agents manage` or restart the session so new subagents are picked up.
 
@@ -160,7 +162,7 @@ ticket: PROJ-1234, spec: docs/spec.md
 In addition to agent files, this repo mirrors two upstream documentation directories verbatim in English:
 
 - [`strategy/`](strategy/) — upstream's executive brief, playbooks, runbooks, coordination templates (16 files)
-- [`integrations/`](integrations/) — upstream's integration guides for Claude Code, Cursor, Gemini CLI, GitHub Copilot, MCP memory, etc. (14 files)
+- [`integrations/`](integrations/) — upstream's integration guides for Claude Code, Cursor, Gemini CLI, GitHub Copilot, MCP memory, etc. (17 files)
 
 These are **not** in scope of `scripts/validate.sh` (the agent CI) and **do not** carry `source:` frontmatter. They are kept in English at upstream parity so the two repos can be synced cleanly. Japanese-language adaptation of these framework docs is on the roadmap but not in this release.
 
@@ -192,7 +194,7 @@ MIT
 
 | AI agent | 上流由来 adapted | 日本市場 original | 対応 tool | Category | Workflow |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| **<!-- AUTOGEN:TOTAL -->346<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->232<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->114<!-- /AUTOGEN:JAPAN -->** | **11** | **19** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
+| **<!-- AUTOGEN:TOTAL -->346<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->232<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->114<!-- /AUTOGEN:JAPAN -->** | **13** | **19** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
 
 ## これは何か
 
@@ -233,6 +235,8 @@ npx agency-agents-ja install --tool claude-code
 ./scripts/install.sh --tool gemini-cli
 ./scripts/install.sh --tool qwen
 ./scripts/install.sh --tool kimi
+./scripts/install.sh --tool codex
+./scripts/install.sh --tool osaurus
 ```
 
 対応 tool:
@@ -250,6 +254,8 @@ npx agency-agents-ja install --tool claude-code
 | Windsurf | `.windsurfrules` | project-scoped |
 | Kimi Code | YAML specs | `convert.sh` 後に install |
 | Qwen Code | `.qwen/agents/` subagents | project-scoped |
+| Codex | `.toml` custom agents | `convert.sh` 後に install |
+| Osaurus | `SKILL.md` | `convert.sh` 後に install |
 
 変換 file が必要な tool では先に実行します:
 
@@ -261,7 +267,7 @@ npx agency-agents-ja install --tool claude-code
 
 - **Claude Code / GitHub Copilot**: native `.md` agent を直接 copy します。
 - **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped です。導入したい project directory で install script を実行してください。
-- **Antigravity / Gemini CLI / OpenClaw / Kimi Code**: `integrations/` 配下の変換済み file が必要です。先に `./scripts/convert.sh` を実行してください。
+- **Antigravity / Gemini CLI / OpenClaw / Kimi Code / Codex / Osaurus**: `integrations/` 配下の変換済み file が必要です。先に `./scripts/convert.sh` を実行してください。
 - **OpenClaw**: identity、業務能力、概要を分けた multi-agent workspace として使いたい場合に向いています。
 - **Qwen Code**: install 後に `/agents manage` を実行するか session を再起動すると、新しい subagent を認識しやすくなります。
 
@@ -529,7 +535,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 - <!-- AUTOGEN:UPSTREAM -->232<!-- /AUTOGEN:UPSTREAM --> 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応します。現在は `translation_status: adapted`（直訳ではなく、日本市場向けに役割を書き直し済み）。frontmatter の `upstream_path:` で 1:1 対応関係を保持
 - <!-- AUTOGEN:JAPAN -->114<!-- /AUTOGEN:JAPAN --> 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
 - 一部の日本特化 agent は、中国語コミュニティ版 [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の agent coverage や実務領域の切り口を参考にし、日本の業務、platform、法規制、商習慣に合わせて再設計・本土化しています。英文上流と中国語コミュニティ版の maintainers / contributors に感謝します
-- 上流の framework 文書（[`strategy/`](strategy/) 16 ファイル、[`integrations/`](integrations/) 14 ファイル）は現状そのまま英語で保持しています。これらは `source:` frontmatter を持たず、`scripts/validate.sh` の対象外です。日本語化は roadmap 上の項目です
+- 上流の framework 文書（[`strategy/`](strategy/) 16 ファイル、[`integrations/`](integrations/) 17 ファイル）は現状そのまま英語で保持しています。これらは `source:` frontmatter を持たず、`scripts/validate.sh` の対象外です。日本語化は roadmap 上の項目です
 - 上流 `main` への追従と本翻訳の方針は [ROADMAP.md](ROADMAP.md) を参照してください
 
 ## 関連ツール
