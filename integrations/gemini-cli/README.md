@@ -1,7 +1,7 @@
 # Gemini CLI Integration
 
-Packages all 61 Agency agents as a Gemini CLI extension. The extension
-installs to `~/.gemini/extensions/agency-agents/`.
+Packages the generated `agency-agents-ja` agent set as a Gemini CLI extension.
+The extension installs to `~/.gemini/extensions/agency-agents/` by default.
 
 ## Install
 
@@ -15,7 +15,7 @@ installs to `~/.gemini/extensions/agency-agents/`.
 
 ## Activate a Skill
 
-In Gemini CLI, reference an agent by name:
+In Gemini CLI, reference an installed skill by name:
 
 ```
 Use the frontend-developer skill to help me build this UI.

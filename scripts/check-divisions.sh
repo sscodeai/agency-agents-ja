@@ -11,6 +11,12 @@
 #   6. The path filters in .github/workflows/lint-agents.yml
 #   7. Every divisions.json entry has at least one frontmatter agent file
 #
+# Add a division by creating its directory, adding it to divisions.json, and
+# updating AGENT_DIRS in the scripts listed above. Framework and generated
+# directories such as strategy/ and integrations/ are intentionally excluded:
+# they contain playbooks, runbooks, or converted tool output rather than source
+# agent files.
+#
 # Usage: ./scripts/check-divisions.sh
 
 set -euo pipefail
@@ -18,6 +24,10 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 JSON="divisions.json"
+# Top-level directories that are not source-agent divisions. actual_dirs()
+# enumerates git-tracked top-level directories, so these exclusions keep
+# generated integrations, workflow examples, and upstream strategy documents out
+# of the source-agent category contract.
 NON_DIVISION_DIRS=(
   bin
   docs
@@ -115,7 +125,7 @@ while IFS= read -r div; do
   if [[ ! -d "$div" ]]; then
     fail "division '$div' has no directory on disk"
   elif ! has_agent_file "$div"; then
-    fail "division '$div' has no agent files (.md with '---' frontmatter)"
+    fail "division '$div' has no agent files (.md with '---' frontmatter) - not a real source-agent division"
   fi
 done < <(canonical)
 
