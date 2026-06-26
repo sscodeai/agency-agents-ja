@@ -32,6 +32,12 @@
 #   --jobs N          Max parallel jobs when using --parallel (default: nproc or 4)
 #   --help            Show this help
 #
+# Env path overrides:
+#   CLAUDE_AGENTS_DIR, GITHUB_AGENT_DIR, COPILOT_AGENT_DIR,
+#   ANTIGRAVITY_SKILLS_DIR, GEMINI_EXTENSION_DIR, OPENCODE_AGENTS_DIR,
+#   OPENCLAW_DIR, CURSOR_RULES_DIR, QWEN_AGENTS_DIR, KIMI_AGENTS_DIR,
+#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR
+#
 # Platform support:
 #   Linux, macOS (requires bash 3.2+), Windows Git Bash / WSL
 
@@ -105,6 +111,16 @@ INTEGRATIONS="$REPO_ROOT/integrations"
 
 ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex osaurus)
 
+resolve_dest() {
+  local env_name="$1"
+  local default_path="$2"
+  if [[ -n "${!env_name:-}" ]]; then
+    printf '%s' "${!env_name}"
+  else
+    printf '%s' "$default_path"
+  fi
+}
+
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
   academic design engineering finance game-development gis hr legal marketing paid-media product project-management
@@ -140,19 +156,19 @@ check_integrations() {
 # ---------------------------------------------------------------------------
 # Tool detection
 # ---------------------------------------------------------------------------
-detect_claude_code() { [[ -d "${HOME}/.claude" ]]; }
-detect_copilot()      { command -v code >/dev/null 2>&1 || [[ -d "${HOME}/.github" || -d "${HOME}/.copilot" ]]; }
-detect_antigravity()  { [[ -d "${HOME}/.gemini/antigravity/skills" ]]; }
-detect_gemini_cli()   { command -v gemini >/dev/null 2>&1 || [[ -d "${HOME}/.gemini" ]]; }
-detect_cursor()       { command -v cursor >/dev/null 2>&1 || [[ -d "${HOME}/.cursor" ]]; }
-detect_opencode()     { command -v opencode >/dev/null 2>&1 || [[ -d "${HOME}/.config/opencode" ]]; }
+detect_claude_code() { [[ -n "${CLAUDE_AGENTS_DIR:-}" || -d "${HOME}/.claude" ]]; }
+detect_copilot()      { command -v code >/dev/null 2>&1 || [[ -n "${GITHUB_AGENT_DIR:-}${COPILOT_AGENT_DIR:-}" || -d "${HOME}/.github" || -d "${HOME}/.copilot" ]]; }
+detect_antigravity()  { [[ -n "${ANTIGRAVITY_SKILLS_DIR:-}" || -d "${HOME}/.gemini/antigravity/skills" ]]; }
+detect_gemini_cli()   { command -v gemini >/dev/null 2>&1 || [[ -n "${GEMINI_EXTENSION_DIR:-}" || -d "${HOME}/.gemini" ]]; }
+detect_cursor()       { command -v cursor >/dev/null 2>&1 || [[ -n "${CURSOR_RULES_DIR:-}" || -d "${HOME}/.cursor" ]]; }
+detect_opencode()     { command -v opencode >/dev/null 2>&1 || [[ -n "${OPENCODE_AGENTS_DIR:-}" || -d "${HOME}/.config/opencode" ]]; }
 detect_aider()        { command -v aider >/dev/null 2>&1; }
-detect_openclaw()     { command -v openclaw >/dev/null 2>&1 || [[ -d "${HOME}/.openclaw" ]]; }
+detect_openclaw()     { command -v openclaw >/dev/null 2>&1 || [[ -n "${OPENCLAW_DIR:-}" || -d "${HOME}/.openclaw" ]]; }
 detect_windsurf()     { command -v windsurf >/dev/null 2>&1 || [[ -d "${HOME}/.codeium" ]]; }
-detect_qwen()         { command -v qwen >/dev/null 2>&1 || [[ -d "${HOME}/.qwen" ]]; }
-detect_kimi()         { command -v kimi >/dev/null 2>&1; }
-detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -d "${HOME}/.codex" ]]; }
-detect_osaurus()      { command -v osaurus >/dev/null 2>&1 || [[ -d "${HOME}/.osaurus" ]]; }
+detect_qwen()         { command -v qwen >/dev/null 2>&1 || [[ -n "${QWEN_AGENTS_DIR:-}" || -d "${HOME}/.qwen" ]]; }
+detect_kimi()         { command -v kimi >/dev/null 2>&1 || [[ -n "${KIMI_AGENTS_DIR:-}" ]]; }
+detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -n "${CODEX_AGENTS_DIR:-}" || -d "${HOME}/.codex" ]]; }
+detect_osaurus()      { command -v osaurus >/dev/null 2>&1 || [[ -n "${OSAURUS_SKILLS_DIR:-}" || -d "${HOME}/.osaurus" ]]; }
 
 is_detected() {
   case "$1" in
@@ -311,7 +327,8 @@ interactive_select() {
 # ---------------------------------------------------------------------------
 
 install_claude_code() {
-  local dest="${HOME}/.claude/agents"
+  local dest
+  dest="$(resolve_dest CLAUDE_AGENTS_DIR "${HOME}/.claude/agents")"
   local count=0
   mkdir -p "$dest"
   local dir f first_line
@@ -328,8 +345,9 @@ install_claude_code() {
 }
 
 install_copilot() {
-  local dest_github="${HOME}/.github/agents"
-  local dest_copilot="${HOME}/.copilot/agents"
+  local dest_github dest_copilot
+  dest_github="$(resolve_dest GITHUB_AGENT_DIR "${HOME}/.github/agents")"
+  dest_copilot="$(resolve_dest COPILOT_AGENT_DIR "${HOME}/.copilot/agents")"
   local count=0
   mkdir -p "$dest_github" "$dest_copilot"
   local dir f first_line
@@ -351,7 +369,8 @@ install_copilot() {
 
 install_antigravity() {
   local src="$INTEGRATIONS/antigravity"
-  local dest="${HOME}/.gemini/antigravity/skills"
+  local dest
+  dest="$(resolve_dest ANTIGRAVITY_SKILLS_DIR "${HOME}/.gemini/antigravity/skills")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/antigravity missing. Run convert.sh first."; return 1; }
   mkdir -p "$dest"
@@ -367,7 +386,8 @@ install_antigravity() {
 
 install_osaurus() {
   local src="$INTEGRATIONS/osaurus"
-  local dest="${HOME}/.osaurus/skills"
+  local dest
+  dest="$(resolve_dest OSAURUS_SKILLS_DIR "${HOME}/.osaurus/skills")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/osaurus missing. Run convert.sh first."; return 1; }
   mkdir -p "$dest"
@@ -383,7 +403,8 @@ install_osaurus() {
 
 install_gemini_cli() {
   local src="$INTEGRATIONS/gemini-cli"
-  local dest="${HOME}/.gemini/extensions/agency-agents"
+  local dest
+  dest="$(resolve_dest GEMINI_EXTENSION_DIR "${HOME}/.gemini/extensions/agency-agents")"
   local count=0
   local manifest="$src/gemini-extension.json"
   local skills_dir="$src/skills"
@@ -404,7 +425,8 @@ install_gemini_cli() {
 
 install_opencode() {
   local src="$INTEGRATIONS/opencode"
-  local dest="${PWD}/.opencode/agents"
+  local dest
+  dest="$(resolve_dest OPENCODE_AGENTS_DIR "${PWD}/.opencode/agents")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/opencode missing. Run convert.sh first."; return 1; }
   # Support both flat layout (integrations/opencode/*.md) and nested (integrations/opencode/agents/*.md)
@@ -427,7 +449,8 @@ install_opencode() {
 
 install_openclaw() {
   local src="$INTEGRATIONS/openclaw"
-  local dest="${HOME}/.openclaw/agency-agents"
+  local dest
+  dest="$(resolve_dest OPENCLAW_DIR "${HOME}/.openclaw/agency-agents")"
   local count=0
   local existing_agents=""
   [[ -d "$src" ]] || { err "integrations/openclaw missing. Run convert.sh first."; return 1; }
@@ -462,7 +485,8 @@ install_openclaw() {
 
 install_cursor() {
   local src="$INTEGRATIONS/cursor/rules"
-  local dest="${PWD}/.cursor/rules"
+  local dest
+  dest="$(resolve_dest CURSOR_RULES_DIR "${PWD}/.cursor/rules")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/cursor missing. Run convert.sh first."; return 1; }
   mkdir -p "$dest"
@@ -502,7 +526,8 @@ install_windsurf() {
 
 install_qwen() {
   local src="$INTEGRATIONS/qwen/agents"
-  local dest="${PWD}/.qwen/agents"
+  local dest
+  dest="$(resolve_dest QWEN_AGENTS_DIR "${PWD}/.qwen/agents")"
   local count=0
 
   [[ -d "$src" ]] || { err "integrations/qwen missing. Run convert.sh first."; return 1; }
@@ -522,7 +547,8 @@ install_qwen() {
 
 install_kimi() {
   local src="$INTEGRATIONS/kimi"
-  local dest="${HOME}/.config/kimi/agents"
+  local dest
+  dest="$(resolve_dest KIMI_AGENTS_DIR "${HOME}/.config/kimi/agents")"
   local count=0
 
   [[ -d "$src" ]] || { err "integrations/kimi missing. Run convert.sh first."; return 1; }
@@ -544,7 +570,8 @@ install_kimi() {
 
 install_codex() {
   local src="$INTEGRATIONS/codex/agents"
-  local dest="${HOME}/.codex/agents"
+  local dest
+  dest="$(resolve_dest CODEX_AGENTS_DIR "${HOME}/.codex/agents")"
   local count=0
 
   [[ -d "$src" ]] || { err "integrations/codex missing. Run convert.sh first."; return 1; }

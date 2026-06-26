@@ -271,6 +271,22 @@ npx agency-agents-ja install --tool claude-code
 - **OpenClaw**: identity、業務能力、概要を分けた multi-agent workspace として使いたい場合に向いています。
 - **Qwen Code**: install 後に `/agents manage` を実行するか session を再起動すると、新しい subagent を認識しやすくなります。
 
+install 先を標準 path から変えたい場合は、次の環境変数で上書きできます:
+
+| Tool | 環境変数 | 既定 path |
+| --- | --- | --- |
+| Claude Code | `CLAUDE_AGENTS_DIR` | `~/.claude/agents` |
+| GitHub Copilot | `GITHUB_AGENT_DIR`, `COPILOT_AGENT_DIR` | `~/.github/agents`, `~/.copilot/agents` |
+| Antigravity | `ANTIGRAVITY_SKILLS_DIR` | `~/.gemini/antigravity/skills` |
+| Gemini CLI | `GEMINI_EXTENSION_DIR` | `~/.gemini/extensions/agency-agents` |
+| OpenCode | `OPENCODE_AGENTS_DIR` | `.opencode/agents` |
+| OpenClaw | `OPENCLAW_DIR` | `~/.openclaw/agency-agents` |
+| Cursor | `CURSOR_RULES_DIR` | `.cursor/rules` |
+| Qwen Code | `QWEN_AGENTS_DIR` | `.qwen/agents` |
+| Kimi Code | `KIMI_AGENTS_DIR` | `~/.config/kimi/agents` |
+| Codex | `CODEX_AGENTS_DIR` | `~/.codex/agents` |
+| Osaurus | `OSAURUS_SKILLS_DIR` | `~/.osaurus/skills` |
+
 ### OpenClaw で使う
 
 OpenClaw では各 agent を `SOUL.md`（identity）+ `AGENTS.md`（業務能力）+ `IDENTITY.md`（概要）に分割して使えます。
