@@ -18,6 +18,7 @@ supported agentic coding tools.
 - **[Qwen Code](#qwen-code)** — project-scoped `.md` SubAgents in `.qwen/agents/`
 - **[Codex](codex/README.md)** — `.toml` custom agents in `codex/`
 - **[Osaurus](osaurus/README.md)** — `SKILL.md` skills in `osaurus/`
+- **[Hermes](hermes/README.md)** — lazy-router plugin in `hermes/`
 
 ## Quick Install
 
@@ -44,6 +45,10 @@ supported agentic coding tools.
 ./scripts/install.sh --tool codex
 ./scripts/convert.sh --tool osaurus
 ./scripts/install.sh --tool osaurus
+
+# Hermes uses one generated lazy-router plugin
+./scripts/convert.sh --tool hermes
+./scripts/install.sh --tool hermes
 ```
 
 If you install OpenClaw and the gateway is already running, restart it after installation:
