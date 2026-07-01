@@ -12,6 +12,7 @@ integrations/cursor/rules/
 integrations/codex/agents/
 integrations/gemini-cli/skills/
 integrations/gemini-cli/gemini-extension.json
+integrations/hermes/agency-agents-router/
 integrations/kimi/*
 !integrations/kimi/README.md
 integrations/opencode/agents/

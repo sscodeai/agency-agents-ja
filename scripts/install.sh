@@ -22,6 +22,7 @@
 #   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
 #   codex        -- Copy custom agent TOML files to ~/.codex/agents/
 #   osaurus      -- Copy skills to ~/.osaurus/skills/
+#   hermes       -- Copy lazy-router plugin to ~/.hermes/plugins/
 #   all          -- Install for all detected tools (default)
 #
 # Flags:
@@ -36,7 +37,7 @@
 #   CLAUDE_AGENTS_DIR, GITHUB_AGENT_DIR, COPILOT_AGENT_DIR,
 #   ANTIGRAVITY_SKILLS_DIR, GEMINI_EXTENSION_DIR, OPENCODE_AGENTS_DIR,
 #   OPENCLAW_DIR, CURSOR_RULES_DIR, QWEN_AGENTS_DIR, KIMI_AGENTS_DIR,
-#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR
+#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR
 #
 # Platform support:
 #   Linux, macOS (requires bash 3.2+), Windows Git Bash / WSL
@@ -109,7 +110,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex osaurus)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex osaurus hermes)
 
 resolve_dest() {
   local env_name="$1"
@@ -169,6 +170,7 @@ detect_qwen()         { command -v qwen >/dev/null 2>&1 || [[ -n "${QWEN_AGENTS_
 detect_kimi()         { command -v kimi >/dev/null 2>&1 || [[ -n "${KIMI_AGENTS_DIR:-}" ]]; }
 detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -n "${CODEX_AGENTS_DIR:-}" || -d "${HOME}/.codex" ]]; }
 detect_osaurus()      { command -v osaurus >/dev/null 2>&1 || [[ -n "${OSAURUS_SKILLS_DIR:-}" || -d "${HOME}/.osaurus" ]]; }
+detect_hermes()       { command -v hermes >/dev/null 2>&1 || [[ -n "${HERMES_PLUGIN_DIR:-}" || -d "${HERMES_HOME:-${HOME}/.hermes}" ]]; }
 
 is_detected() {
   case "$1" in
@@ -185,6 +187,7 @@ is_detected() {
     kimi)        detect_kimi        ;;
     codex)       detect_codex       ;;
     osaurus)     detect_osaurus     ;;
+    hermes)      detect_hermes      ;;
     *)           return 1 ;;
   esac
 }
@@ -205,6 +208,7 @@ tool_label() {
     kimi)        printf "%-14s  %s" "Kimi Code"    "(~/.config/kimi/agents)" ;;
     codex)       printf "%-14s  %s" "Codex"        "(~/.codex/agents)"       ;;
     osaurus)     printf "%-14s  %s" "Osaurus"      "(~/.osaurus/skills)"     ;;
+    hermes)      printf "%-14s  %s" "Hermes"       "(~/.hermes/plugins)"     ;;
   esac
 }
 
@@ -587,6 +591,80 @@ install_codex() {
   ok "Codex: $count agents -> $dest"
 }
 
+hermes_home_dir() {
+  printf '%s\n' "${HERMES_HOME:-${HOME}/.hermes}"
+}
+
+ensure_hermes_plugin_enabled() {
+  local hermes_home config plugin
+  hermes_home="$(hermes_home_dir)"
+  config="${hermes_home}/config.yaml"
+  plugin="agency-agents-router"
+  mkdir -p "$hermes_home"
+  set +e
+  python3 - "$config" "$plugin" <<'PY'
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+config = Path(sys.argv[1])
+plugin = sys.argv[2]
+
+try:
+    import yaml
+except Exception:
+    raise SystemExit(2)
+
+data = {}
+if config.exists():
+    loaded = yaml.safe_load(config.read_text(encoding="utf-8")) or {}
+    if isinstance(loaded, dict):
+        data = loaded
+plugins = data.setdefault("plugins", {})
+if not isinstance(plugins, dict):
+    plugins = {}
+    data["plugins"] = plugins
+enabled = plugins.setdefault("enabled", [])
+if not isinstance(enabled, list):
+    enabled = []
+    plugins["enabled"] = enabled
+if plugin not in enabled:
+    enabled.append(plugin)
+config.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True), encoding="utf-8")
+PY
+  local rc=$?
+  set -e
+  case "$rc" in
+    0) ok "Hermes: enabled agency-agents-router in $config" ;;
+    2) warn "Hermes: PyYAML is unavailable; add 'agency-agents-router' to plugins.enabled in $config manually." ;;
+    *) warn "Hermes: plugin installed but $config was not updated." ;;
+  esac
+}
+
+install_hermes() {
+  local src="$INTEGRATIONS/hermes/agency-agents-router"
+  local hermes_home dest count
+  hermes_home="$(hermes_home_dir)"
+  dest="$(resolve_dest HERMES_PLUGIN_DIR "${hermes_home}/plugins/agency-agents-router")"
+  [[ -f "$src/plugin.yaml" && -f "$src/__init__.py" && -f "$src/data/agents.json" ]] || {
+    err "integrations/hermes/agency-agents-router missing. Run ./scripts/convert.sh --tool hermes first."
+    return 1
+  }
+  mkdir -p "$(dirname "$dest")"
+  rm -rf "$dest"
+  cp -R "$src" "$dest"
+  ensure_hermes_plugin_enabled
+  count="$(python3 - "$src/data/agents.json" <<'PY'
+import json
+import sys
+from pathlib import Path
+print(len(json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))))
+PY
+)"
+  ok "Hermes: installed agency-agents-router ($count agents) -> $dest"
+}
+
 install_tool() {
   case "$1" in
     claude-code) install_claude_code ;;
@@ -602,6 +680,7 @@ install_tool() {
     kimi)        install_kimi        ;;
     codex)       install_codex       ;;
     osaurus)     install_osaurus     ;;
+    hermes)      install_hermes      ;;
   esac
 }
 

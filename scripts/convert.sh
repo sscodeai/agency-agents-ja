@@ -21,6 +21,7 @@
 #   kimi         — Kimi Code CLI agent files (~/.config/kimi/agents/)
 #   codex        — Codex custom agent TOML files (~/.codex/agents/*.toml)
 #   osaurus      — Osaurus skill files (~/.osaurus/skills/<name>/SKILL.md)
+#   hermes       — Hermes lazy-router plugin (one plugin + on-disk agent index)
 #   all          — All tools (default)
 #
 # Output is written to integrations/<tool>/ relative to the repo root.
@@ -551,6 +552,12 @@ run_conversions() {
   local tool="$1"
   local count=0
 
+  if [[ "$tool" == "hermes" ]]; then
+    clean_tool_output "$tool"
+    python3 "$SCRIPT_DIR/build-hermes-plugin.py" --repo-root "$REPO_ROOT" --out "$OUT_DIR/hermes"
+    return
+  fi
+
   clean_tool_output "$tool"
 
   for dir in "${AGENT_DIRS[@]}"; do
@@ -607,7 +614,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "hermes" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
@@ -626,7 +633,7 @@ main() {
 
   local tools_to_run=()
   if [[ "$tool" == "all" ]]; then
-    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus")
+    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "hermes")
   else
     tools_to_run=("$tool")
   fi
@@ -637,7 +644,7 @@ main() {
 
   if $use_parallel && [[ "$tool" == "all" ]]; then
     # Tools that write to separate dirs can run in parallel; buffer output so each tool's output stays together
-    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen kimi codex osaurus)
+    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen kimi codex osaurus hermes)
     local parallel_out_dir
     parallel_out_dir="$(mktemp -d)"
     info "Converting: ${#parallel_tools[@]}/${n_tools} tools in parallel (output buffered per tool)..."
@@ -649,7 +656,7 @@ main() {
       [[ -f "$parallel_out_dir/$t" ]] && cat "$parallel_out_dir/$t"
     done
     rm -rf "$parallel_out_dir"
-    local idx=10
+    local idx=11
     for t in aider windsurf; do
       progress_bar "$idx" "$n_tools"
       printf "\n"
@@ -669,7 +676,9 @@ main() {
       header "Converting: $t ($i/$n_tools)"
       local count
       count="$(run_conversions "$t")"
-      total=$(( total + count ))
+      if [[ "$count" =~ ^[0-9]+$ ]]; then
+        total=$(( total + count ))
+      fi
 
       # Gemini CLI also needs the extension manifest (written by this process when --tool gemini-cli)
       if [[ "$t" == "gemini-cli" ]]; then
@@ -683,7 +692,11 @@ HEREDOC
         info "Wrote gemini-extension.json"
       fi
 
-      info "Converted $count agents for $t"
+      if [[ "$count" =~ ^[0-9]+$ ]]; then
+        info "Converted $count agents for $t"
+      else
+        info "Converted plugin for $t"
+      fi
     done
   fi
 

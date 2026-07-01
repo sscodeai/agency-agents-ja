@@ -5,7 +5,8 @@
 # tools.json is canonical. This script fails if any of the following disagree:
 #   1. ALL_TOOLS in scripts/install.sh
 #   2. valid_tools in scripts/convert.sh
-#   3. Every tools.json entry has id, label, kebab, format, and dest
+#   3. Every tools.json entry has id, label, kebab, format, installKind, and dest
+#      (installKind is one of: per-agent | roster | plugin)
 #
 # Usage: ./scripts/check-tools.sh
 
@@ -50,9 +51,13 @@ notin="$(comm -13 <(echo "$canon") <(echo "$conv"))"
 while IFS= read -r tool; do
   [[ -n "$tool" ]] || continue
   line="$(grep -E "^    \"$tool\"[[:space:]]*:" "$JSON")"
-  for field in id label kebab format dest; do
+  for field in id label kebab format installKind dest; do
     echo "$line" | grep -qE "\"$field\":" || fail "tool '$tool' in $JSON is missing \"$field\""
   done
+  if echo "$line" | grep -qE '"installKind":'; then
+    echo "$line" | grep -qE '"installKind":[[:space:]]*"(per-agent|roster|plugin)"' \
+      || fail "tool '$tool' in $JSON has an invalid installKind (must be per-agent|roster|plugin)"
+  fi
 done < <(echo "$canon")
 
 count="$(echo "$canon" | grep -c .)"
