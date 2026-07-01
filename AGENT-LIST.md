@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 346 (⭐ 114 japan-original + 232 upstream-aligned)
+Total agents: 347 (⭐ 114 japan-original + 233 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -20,7 +20,7 @@ Total: 6 (⭐ 1 japan-original + 5 upstream-aligned)
 
 ## Engineering
 
-Total: 60 (⭐ 27 japan-original + 33 upstream-aligned)
+Total: 61 (⭐ 27 japan-original + 34 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -73,6 +73,7 @@ Total: 60 (⭐ 27 japan-original + 33 upstream-aligned)
 |  | 日本向け最小変更エンジニア | upstream | adapted | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
 |  | 日本向け Mobile App Builder | upstream | adapted | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
 |  | 日本向け Multi-Agent Systems Architect | upstream | adapted | Multi-Agent Systems Architect | 複数 AI agent の topology、context、権限、失敗復旧、human-in-the-loop、observability、governance を設計する production-grade agent architecture 専門家。 | `engineering/engineering-multi-agent-systems-architect.md` |
+|  | 日本向けネットワークエンジニア | upstream | adapted | Network Engineer | Cisco / Juniper / Palo Alto などの enterprise network について、routing、switching、firewall、VPN、障害切り分け、変更計画を日本の運用現場向けに整理する agent。 | `engineering/engineering-network-engineer.md` |
 |  | 日本向け OrgScript Engineer | upstream | adapted | OrgScript Engineer | OrgScript の grammar、AST、validation、business logic modeling を使い、日本企業の業務手順や承認 flow を machine-readable に整理する DSL engineer。 | `engineering/engineering-orgscript-engineer.md` |
 |  | 日本向け Prompt Engineer | upstream | adapted | Prompt Engineer | 日本語 LLM / agent / RAG の system prompt、評価 case、出力 format、guardrail を設計し、曖昧な依頼を再現性のある AI behavior に変える agent。 | `engineering/engineering-prompt-engineer.md` |
 |  | 日本向け高速プロトタイピングエンジニア | upstream | adapted | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |

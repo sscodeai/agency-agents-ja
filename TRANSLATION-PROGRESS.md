@@ -2,19 +2,19 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Total agents: 346
+Total agents: 347
 Japan-original agents: 114
-Upstream-aligned agents: 232
+Upstream-aligned agents: 233
 Skeleton: 0
 Translated: 0
-Adapted: 232
+Adapted: 233
 
 ## By Category
 
 | Category | Upstream | Skeleton | Translated | Adapted | Japan-original |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Academic | 5 | 0 | 0 | 5 | 1 |
-| Engineering | 33 | 0 | 0 | 33 | 27 |
+| Engineering | 34 | 0 | 0 | 34 | 27 |
 | Project Management | 7 | 0 | 0 | 7 | 7 |
 | Testing | 8 | 0 | 0 | 8 | 7 |
 | Product | 5 | 0 | 0 | 5 | 2 |
