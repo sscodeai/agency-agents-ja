@@ -102,7 +102,8 @@ See [github-copilot/README.md](github-copilot/README.md) for details.
 
 ## Antigravity
 
-Skills are installed to `~/.gemini/antigravity/skills/`. Each agent becomes
+Skills are installed globally to `~/.gemini/config/skills/`. Antigravity also
+reads project-scoped skills from `<project>/.agents/skills/`. Each agent becomes
 a separate skill prefixed with `agency-` to avoid naming conflicts.
 
 ```bash

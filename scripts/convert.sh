@@ -10,7 +10,7 @@
 #   ./scripts/convert.sh [--tool <name>] [--out <dir>] [--parallel] [--jobs N] [--help]
 #
 # Tools:
-#   antigravity  — Antigravity skill files (~/.gemini/antigravity/skills/)
+#   antigravity  — Antigravity skill files (~/.gemini/config/skills/)
 #   gemini-cli   — Gemini CLI extension (skills/ + gemini-extension.json)
 #   opencode     — OpenCode agent files (.opencode/agents/*.md)
 #   cursor       — Cursor rule files (.cursor/rules/*.mdc)
@@ -63,7 +63,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OUT_DIR="$REPO_ROOT/integrations"
 TODAY="$(date +%Y-%m-%d)"
-ANTIGRAVITY_DATE_ADDED="2026-03-08"
 
 AGENT_DIRS=(
   academic design engineering finance game-development gis hr legal marketing paid-media product project-management
@@ -140,14 +139,13 @@ convert_antigravity() {
   outfile="$outdir/SKILL.md"
   mkdir -p "$outdir"
 
-  # Antigravity SKILL.md format mirrors community skills in ~/.gemini/antigravity/skills/
+  # Antigravity Agent-Skills SKILL.md: standard name + description frontmatter
+  # and the persona body. Installs globally to ~/.gemini/config/skills/ or
+  # project-scoped to <project>/.agents/skills/.
   cat > "$outfile" <<HEREDOC
 ---
 name: ${slug}
 description: ${description}
-risk: low
-source: community
-date_added: '${ANTIGRAVITY_DATE_ADDED}'
 ---
 ${body}
 HEREDOC

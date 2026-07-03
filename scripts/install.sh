@@ -12,7 +12,7 @@
 # Tools:
 #   claude-code  -- Copy agents to ~/.claude/agents/
 #   copilot      -- Copy agents to ~/.github/agents/ and ~/.copilot/agents/
-#   antigravity  -- Copy skills to ~/.gemini/antigravity/skills/
+#   antigravity  -- Copy skills to ~/.gemini/config/skills/
 #   gemini-cli   -- Install extension to ~/.gemini/extensions/agency-agents/
 #   opencode     -- Copy agents to .opencode/agents/ in current directory
 #   cursor       -- Copy rules to .cursor/rules/ in current directory
@@ -159,7 +159,7 @@ check_integrations() {
 # ---------------------------------------------------------------------------
 detect_claude_code() { [[ -n "${CLAUDE_AGENTS_DIR:-}" || -d "${HOME}/.claude" ]]; }
 detect_copilot()      { command -v code >/dev/null 2>&1 || [[ -n "${GITHUB_AGENT_DIR:-}${COPILOT_AGENT_DIR:-}" || -d "${HOME}/.github" || -d "${HOME}/.copilot" ]]; }
-detect_antigravity()  { [[ -n "${ANTIGRAVITY_SKILLS_DIR:-}" || -d "${HOME}/.gemini/antigravity/skills" ]]; }
+detect_antigravity()  { [[ -n "${ANTIGRAVITY_SKILLS_DIR:-}" || -d "${HOME}/.gemini/config/skills" || -d "${PWD}/.agents/skills" ]]; }
 detect_gemini_cli()   { command -v gemini >/dev/null 2>&1 || [[ -n "${GEMINI_EXTENSION_DIR:-}" || -d "${HOME}/.gemini" ]]; }
 detect_cursor()       { command -v cursor >/dev/null 2>&1 || [[ -n "${CURSOR_RULES_DIR:-}" || -d "${HOME}/.cursor" ]]; }
 detect_opencode()     { command -v opencode >/dev/null 2>&1 || [[ -n "${OPENCODE_AGENTS_DIR:-}" || -d "${HOME}/.config/opencode" ]]; }
@@ -197,7 +197,7 @@ tool_label() {
   case "$1" in
     claude-code) printf "%-14s  %s" "Claude Code"  "(claude.ai/code)"        ;;
     copilot)     printf "%-14s  %s" "Copilot"      "(~/.github + ~/.copilot)" ;;
-    antigravity) printf "%-14s  %s" "Antigravity"  "(~/.gemini/antigravity)" ;;
+    antigravity) printf "%-14s  %s" "Antigravity"  "(~/.gemini/config/skills)" ;;
     gemini-cli)  printf "%-14s  %s" "Gemini CLI"   "(gemini extension)"      ;;
     opencode)    printf "%-14s  %s" "OpenCode"     "(opencode.ai)"           ;;
     openclaw)    printf "%-14s  %s" "OpenClaw"     "(~/.openclaw/agency-agents)" ;;
@@ -374,7 +374,7 @@ install_copilot() {
 install_antigravity() {
   local src="$INTEGRATIONS/antigravity"
   local dest
-  dest="$(resolve_dest ANTIGRAVITY_SKILLS_DIR "${HOME}/.gemini/antigravity/skills")"
+  dest="$(resolve_dest ANTIGRAVITY_SKILLS_DIR "${HOME}/.gemini/config/skills")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/antigravity missing. Run convert.sh first."; return 1; }
   mkdir -p "$dest"

@@ -10,7 +10,8 @@ with `agency-` to avoid conflicts with existing skills.
 ```
 
 This copies files from `integrations/antigravity/` to
-`~/.gemini/antigravity/skills/`.
+`~/.gemini/config/skills/` (global). For project-scoped skills, Antigravity
+also reads `<project>/.agents/skills/`.
 
 ## Activate a Skill
 
@@ -42,8 +43,5 @@ Each skill is a `SKILL.md` file with Antigravity-compatible frontmatter:
 ---
 name: agency-frontend-developer
 description: Expert frontend developer specializing in...
-risk: low
-source: community
-date_added: '2026-03-08'
 ---
 ```

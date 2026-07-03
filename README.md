@@ -282,7 +282,7 @@ install 先を標準 path から変えたい場合は、次の環境変数で上
 | --- | --- | --- |
 | Claude Code | `CLAUDE_AGENTS_DIR` | `~/.claude/agents` |
 | GitHub Copilot | `GITHUB_AGENT_DIR`, `COPILOT_AGENT_DIR` | `~/.github/agents`, `~/.copilot/agents` |
-| Antigravity | `ANTIGRAVITY_SKILLS_DIR` | `~/.gemini/antigravity/skills` |
+| Antigravity | `ANTIGRAVITY_SKILLS_DIR` | `~/.gemini/config/skills` |
 | Gemini CLI | `GEMINI_EXTENSION_DIR` | `~/.gemini/extensions/agency-agents` |
 | OpenCode | `OPENCODE_AGENTS_DIR` | `.opencode/agents` |
 | OpenClaw | `OPENCLAW_DIR` | `~/.openclaw/agency-agents` |
