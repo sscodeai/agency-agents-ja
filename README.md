@@ -20,7 +20,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
 | Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
 | Categories | 19 |
-| Upstream baseline | `msitarzewski/agency-agents@7632f06` as of 2026-06-30 |
+| Upstream baseline | `msitarzewski/agency-agents@fc5a192` as of 2026-07-01 |
 
 > **347 ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
 
@@ -349,7 +349,7 @@ ticket は PROJ-1234、spec は docs/spec.md です。
 ## Coverage
 
 - 日本特化 agent (⭐ `source: japan-original`): <!-- AUTOGEN:JAPAN -->114<!-- /AUTOGEN:JAPAN -->（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
-- 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->233<!-- /AUTOGEN:UPSTREAM -->（2026-06-30 時点の英文上流 `7632f06` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
+- 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->233<!-- /AUTOGEN:UPSTREAM -->（2026-07-01 時点の英文上流 `fc5a192` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 上流由来 agent の skeleton backlog: <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON -->
 - 合計: <!-- AUTOGEN:TOTAL -->347<!-- /AUTOGEN:TOTAL --> agents
 - Workflow: 27

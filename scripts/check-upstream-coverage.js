@@ -3,8 +3,8 @@
 const { existsSync, readdirSync, readFileSync, writeFileSync } = require('fs');
 const { join } = require('path');
 
-const UPSTREAM_BASELINE_DATE = '2026-06-30';
-const UPSTREAM_BASELINE_REF = '7632f06';
+const UPSTREAM_BASELINE_DATE = '2026-07-01';
+const UPSTREAM_BASELINE_REF = 'fc5a192';
 
 const CATEGORIES = [
   'academic',
