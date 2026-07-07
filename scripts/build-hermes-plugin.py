@@ -9,29 +9,12 @@ import shutil
 import textwrap
 from pathlib import Path
 
-AGENT_DIRS = [
-    "academic",
-    "design",
-    "engineering",
-    "finance",
-    "game-development",
-    "gis",
-    "hr",
-    "legal",
-    "marketing",
-    "paid-media",
-    "product",
-    "project-management",
-    "sales",
-    "security",
-    "spatial-computing",
-    "specialized",
-    "support",
-    "supply-chain",
-    "testing",
-]
-
 PLUGIN_NAME = "agency-agents-router"
+
+
+def division_dirs(repo_root: Path) -> list[str]:
+    data = json.loads((repo_root / "divisions.json").read_text(encoding="utf-8"))
+    return sorted(data["divisions"].keys())
 
 
 def slugify(value: str) -> str:
@@ -78,7 +61,7 @@ def parse_agent(path: Path, repo_root: Path) -> dict[str, str] | None:
 
 def collect_agents(repo_root: Path) -> list[dict[str, str]]:
     agents: list[dict[str, str]] = []
-    for dirname in AGENT_DIRS:
+    for dirname in division_dirs(repo_root):
         base = repo_root / dirname
         if not base.is_dir():
             continue
@@ -150,6 +133,18 @@ def _agent_lookup(identifier: str) -> dict[str, Any] | None:
         if agent["slug"] == slug or agent["name"].lower() == needle:
             return agent
     return None
+
+
+def _identifier(args: dict[str, Any]) -> str:
+    return str(args.get("agent") or args.get("slug") or "").strip()
+
+
+def _not_found(identifier: str) -> str:
+    return _json({
+        "success": False,
+        "error": "agent not found" if identifier else "agent or slug is required",
+        "agent": identifier or None,
+    })
 
 
 def _score(agent: dict[str, Any], query_tokens: set[str], query_text: str) -> float:
@@ -233,10 +228,11 @@ def agency_agents_search(query: str, division: str = "", limit: int = 8) -> str:
     })
 
 
-def agency_agents_inspect(agent: str, include_body: bool = False) -> str:
-    found = _agent_lookup(agent)
+def agency_agents_inspect(agent: str = "", slug: str = "", include_body: bool = False) -> str:
+    identifier = _identifier({"agent": agent, "slug": slug})
+    found = _agent_lookup(identifier)
     if not found:
-        return _json({"error": "agent not found", "agent": agent})
+        return _not_found(identifier)
     payload = _summary(found)
     payload["upstream_path"] = found.get("upstream_path", "")
     if include_body:
@@ -244,17 +240,19 @@ def agency_agents_inspect(agent: str, include_body: bool = False) -> str:
     return _json(payload)
 
 
-def agency_agents_load(agent: str, task: str = "") -> str:
-    found = _agent_lookup(agent)
+def agency_agents_load(agent: str = "", slug: str = "", task: str = "") -> str:
+    identifier = _identifier({"agent": agent, "slug": slug})
+    found = _agent_lookup(identifier)
     if not found:
-        return _json({"error": "agent not found", "agent": agent})
+        return _not_found(identifier)
     return _specialist_prompt(found, task)
 
 
-def agency_agents_delegate(agent: str, task: str) -> str:
-    found = _agent_lookup(agent)
+def agency_agents_delegate(agent: str = "", slug: str = "", task: str = "") -> str:
+    identifier = _identifier({"agent": agent, "slug": slug})
+    found = _agent_lookup(identifier)
     if not found:
-        return _json({"error": "agent not found", "agent": agent})
+        return _not_found(identifier)
     prompt = _specialist_prompt(found, task)
     delegate = globals().get("delegate_task")
     if callable(delegate):

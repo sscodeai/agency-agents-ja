@@ -2,12 +2,12 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Total agents: 347
+Total agents: 349
 Japan-original agents: 114
-Upstream-aligned agents: 233
+Upstream-aligned agents: 235
 Skeleton: 0
 Translated: 0
-Adapted: 233
+Adapted: 235
 
 ## By Category
 
@@ -23,6 +23,7 @@ Adapted: 233
 | Finance | 5 | 0 | 0 | 5 | 6 |
 | Game Development | 20 | 0 | 0 | 20 | 0 |
 | GIS | 13 | 0 | 0 | 13 | 0 |
+| Healthcare | 2 | 0 | 0 | 2 | 0 |
 | HR | 0 | 0 | 0 | 0 | 4 |
 | Design | 9 | 0 | 0 | 9 | 3 |
 | Legal | 0 | 0 | 0 | 0 | 6 |

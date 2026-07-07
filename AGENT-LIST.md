@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 347 (⭐ 114 japan-original + 233 upstream-aligned)
+Total agents: 349 (⭐ 114 japan-original + 235 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -282,6 +282,15 @@ Total: 13 (⭐ 0 japan-original + 13 upstream-aligned)
 |  | 日本向け Spatial Data Scientist | upstream | adapted | Spatial Data Scientist | 商圏分析、需要予測、防災、交通、物流、公共施設配置に向けて空間統計、地理的特徴量、可視化、検証を行う GIS data science agent。 | `gis/gis-spatial-data-scientist.md` |
 |  | 日本向け GIS Technical Consultant | upstream | adapted | GIS Technical Consultant | GIS strategy、data governance、platform 選定、移行、運用設計、組織定着を支援する technical consulting agent。 | `gis/gis-technical-consultant.md` |
 |  | 日本向け Web GIS Developer | upstream | adapted | Web GIS Developer | MapLibre、Leaflet、ArcGIS Maps SDK、deck.gl、vector tile、PostGIS API を使い、日本の業務向け Web GIS を実装する frontend / backend agent。 | `gis/gis-web-gis-developer.md` |
+
+## Healthcare
+
+Total: 2 (⭐ 0 japan-original + 2 upstream-aligned)
+
+| | Name | Source | Status | Upstream | Description | Path |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 日本向け臨床エビデンス担当 | upstream | adapted | Clinical Evidence Agent | 医療 AI / ヘルスケア SaaS の臨床 claim、医師向け意思決定支援、投資家向け資料、薬機法・個人情報保護法まわりの表現を、根拠水準に合わせて整理する healthcare agent。 | `healthcare/healthcare-clinical-evidence-agent.md` |
+|  | 日本向け公的医療システム戦略担当 | upstream | adapted | Sovereign Health Systems Agent | 国民皆保険、自治体医療 DX、厚生労働省・保険者・医療機関との連携、海外公的医療市場への展開を整理する healthcare strategy agent。 | `healthcare/healthcare-sovereign-health-systems-agent.md` |
 
 ## HR
 

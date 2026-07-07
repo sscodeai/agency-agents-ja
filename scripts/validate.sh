@@ -5,7 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 errors=0
-AGENT_DIRS="academic engineering project-management testing product marketing paid-media finance game-development gis hr design legal sales security spatial-computing support supply-chain specialized"
+AGENT_DIRS="academic engineering project-management testing product marketing paid-media finance game-development gis healthcare hr design legal sales security spatial-computing support supply-chain specialized"
 
 while IFS= read -r file; do
   if ! head -n 1 "$file" | grep -q '^---$'; then
@@ -115,6 +115,10 @@ if ! node scripts/test-maintenance-scripts.js; then
 fi
 
 if ! node scripts/validate-workflows.js; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/check-runbooks.sh; then
   errors=$((errors + 1))
 fi
 

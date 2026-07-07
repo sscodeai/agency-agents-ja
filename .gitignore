@@ -20,4 +20,6 @@ integrations/openclaw/*
 !integrations/openclaw/README.md
 integrations/osaurus/agency-*/
 integrations/qwen/agents/
+integrations/vibe/agents/
+integrations/vibe/prompts/
 integrations/windsurf/.windsurfrules

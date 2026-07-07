@@ -23,6 +23,7 @@
 #   codex        -- Copy custom agent TOML files to ~/.codex/agents/
 #   osaurus      -- Copy skills to ~/.osaurus/skills/
 #   hermes       -- Copy lazy-router plugin to ~/.hermes/plugins/
+#   vibe         -- Copy agents and prompts to ~/.vibe/agents/ and ~/.vibe/prompts/
 #   all          -- Install for all detected tools (default)
 #
 # Flags:
@@ -37,7 +38,7 @@
 #   CLAUDE_AGENTS_DIR, GITHUB_AGENT_DIR, COPILOT_AGENT_DIR,
 #   ANTIGRAVITY_SKILLS_DIR, GEMINI_EXTENSION_DIR, OPENCODE_AGENTS_DIR,
 #   OPENCLAW_DIR, CURSOR_RULES_DIR, QWEN_AGENTS_DIR, KIMI_AGENTS_DIR,
-#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR
+#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME
 #
 # Platform support:
 #   Linux, macOS (requires bash 3.2+), Windows Git Bash / WSL
@@ -110,7 +111,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex osaurus hermes)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex osaurus hermes vibe)
 
 resolve_dest() {
   local env_name="$1"
@@ -124,7 +125,7 @@ resolve_dest() {
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
-  academic design engineering finance game-development gis hr legal marketing paid-media product project-management
+  academic design engineering finance game-development gis healthcare hr legal marketing paid-media product project-management
   sales security spatial-computing specialized support supply-chain testing
 )
 
@@ -171,6 +172,7 @@ detect_kimi()         { command -v kimi >/dev/null 2>&1 || [[ -n "${KIMI_AGENTS_
 detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -n "${CODEX_AGENTS_DIR:-}" || -d "${HOME}/.codex" ]]; }
 detect_osaurus()      { command -v osaurus >/dev/null 2>&1 || [[ -n "${OSAURUS_SKILLS_DIR:-}" || -d "${HOME}/.osaurus" ]]; }
 detect_hermes()       { command -v hermes >/dev/null 2>&1 || [[ -n "${HERMES_PLUGIN_DIR:-}" || -d "${HERMES_HOME:-${HOME}/.hermes}" ]]; }
+detect_vibe()         { command -v vibe >/dev/null 2>&1 || [[ -n "${VIBE_HOME:-}" || -d "${HOME}/.vibe" ]]; }
 
 is_detected() {
   case "$1" in
@@ -188,6 +190,7 @@ is_detected() {
     codex)       detect_codex       ;;
     osaurus)     detect_osaurus     ;;
     hermes)      detect_hermes      ;;
+    vibe)        detect_vibe        ;;
     *)           return 1 ;;
   esac
 }
@@ -209,6 +212,7 @@ tool_label() {
     codex)       printf "%-14s  %s" "Codex"        "(~/.codex/agents)"       ;;
     osaurus)     printf "%-14s  %s" "Osaurus"      "(~/.osaurus/skills)"     ;;
     hermes)      printf "%-14s  %s" "Hermes"       "(~/.hermes/plugins)"     ;;
+    vibe)        printf "%-14s  %s" "Mistral Vibe" "(~/.vibe/agents)"        ;;
   esac
 }
 
@@ -591,6 +595,30 @@ install_codex() {
   ok "Codex: $count agents -> $dest"
 }
 
+install_vibe() {
+  local src_agents="$INTEGRATIONS/vibe/agents"
+  local src_prompts="$INTEGRATIONS/vibe/prompts"
+  local dest
+  dest="$(resolve_dest VIBE_HOME "${HOME}/.vibe")"
+  local count=0
+
+  [[ -d "$src_agents" && -d "$src_prompts" ]] || { err "integrations/vibe missing. Run convert.sh first."; return 1; }
+
+  mkdir -p "$dest/agents" "$dest/prompts"
+
+  local agent_file prompt_file slug
+  while IFS= read -r -d '' agent_file; do
+    slug="$(basename "$agent_file" .toml)"
+    prompt_file="$src_prompts/$slug.md"
+    [[ -f "$prompt_file" ]] || continue
+    cp "$agent_file" "$dest/agents/"
+    cp "$prompt_file" "$dest/prompts/"
+    (( count++ )) || true
+  done < <(find "$src_agents" -maxdepth 1 -name "*.toml" -print0)
+
+  ok "Mistral Vibe: $count agents -> $dest/agents and $dest/prompts"
+}
+
 hermes_home_dir() {
   printf '%s\n' "${HERMES_HOME:-${HOME}/.hermes}"
 }
@@ -647,11 +675,18 @@ install_hermes() {
   local hermes_home dest count
   hermes_home="$(hermes_home_dir)"
   dest="$(resolve_dest HERMES_PLUGIN_DIR "${hermes_home}/plugins/agency-agents-router")"
+  if [[ "$(basename "$dest")" != "agency-agents-router" ]]; then
+    dest="${dest%/}/agency-agents-router"
+  fi
   [[ -f "$src/plugin.yaml" && -f "$src/__init__.py" && -f "$src/data/agents.json" ]] || {
     err "integrations/hermes/agency-agents-router missing. Run ./scripts/convert.sh --tool hermes first."
     return 1
   }
   mkdir -p "$(dirname "$dest")"
+  if [[ "$(basename "$dest")" != "agency-agents-router" ]]; then
+    err "Hermes: refusing to remove '$dest' — expected an agency-agents-router directory."
+    return 1
+  fi
   rm -rf "$dest"
   cp -R "$src" "$dest"
   ensure_hermes_plugin_enabled
@@ -681,6 +716,7 @@ install_tool() {
     codex)       install_codex       ;;
     osaurus)     install_osaurus     ;;
     hermes)      install_hermes      ;;
+    vibe)        install_vibe        ;;
   esac
 }
 
@@ -708,14 +744,25 @@ main() {
 
   check_integrations
 
-  # Validate explicit tool
+  # Validate explicit tool(s). --tool accepts comma-separated values, e.g.
+  # --tool claude-code,cursor.
+  local explicit_tools=()
   if [[ "$tool" != "all" ]]; then
-    local valid=false t
-    for t in "${ALL_TOOLS[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
-    if ! $valid; then
-      err "Unknown tool '$tool'. Valid: ${ALL_TOOLS[*]}"
-      exit 1
-    fi
+    local raw_tool t
+    IFS=',' read -ra explicit_tools <<< "$tool"
+    local cleaned=()
+    for raw_tool in "${explicit_tools[@]}"; do
+      t="$(printf '%s' "$raw_tool" | xargs)"
+      [[ -z "$t" ]] && continue
+      local valid=false candidate
+      for candidate in "${ALL_TOOLS[@]}"; do [[ "$candidate" == "$t" ]] && valid=true && break; done
+      if ! $valid; then
+        err "Unknown tool '$t'. Valid: ${ALL_TOOLS[*]}"
+        exit 1
+      fi
+      cleaned+=("$t")
+    done
+    explicit_tools=("${cleaned[@]}")
   fi
 
   # Decide whether to show interactive UI
@@ -732,7 +779,7 @@ main() {
     interactive_select
 
   elif [[ "$tool" != "all" ]]; then
-    SELECTED_TOOLS=("$tool")
+    SELECTED_TOOLS=("${explicit_tools[@]}")
 
   else
     # Non-interactive: auto-detect

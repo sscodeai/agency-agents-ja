@@ -22,6 +22,7 @@
 #   codex        — Codex custom agent TOML files (~/.codex/agents/*.toml)
 #   osaurus      — Osaurus skill files (~/.osaurus/skills/<name>/SKILL.md)
 #   hermes       — Hermes lazy-router plugin (one plugin + on-disk agent index)
+#   vibe         — Mistral Vibe agent TOML + prompt files (~/.vibe/agents/*.toml + ~/.vibe/prompts/*.md)
 #   all          — All tools (default)
 #
 # Output is written to integrations/<tool>/ relative to the repo root.
@@ -65,7 +66,7 @@ OUT_DIR="$REPO_ROOT/integrations"
 TODAY="$(date +%Y-%m-%d)"
 
 AGENT_DIRS=(
-  academic design engineering finance game-development gis hr legal marketing paid-media product project-management
+  academic design engineering finance game-development gis healthcare hr legal marketing paid-media product project-management
   sales security spatial-computing specialized support supply-chain testing
 )
 
@@ -468,6 +469,34 @@ ${body}
 HEREDOC
 }
 
+convert_vibe() {
+  local file="$1"
+  local name description slug outdir agent_file prompt_file body
+
+  name="$(get_field "name" "$file")"
+  description="$(get_field "description" "$file")"
+  slug="$(agent_file_slug "$file")"
+  body="$(get_body "$file")"
+
+  outdir="$OUT_DIR/vibe"
+  agent_file="$outdir/agents/${slug}.toml"
+  prompt_file="$outdir/prompts/${slug}.md"
+  mkdir -p "$outdir/agents" "$outdir/prompts"
+
+  cat > "$agent_file" <<HEREDOC
+agent_type = "agent"
+system_prompt_id = "${slug}"
+HEREDOC
+
+  cat > "$prompt_file" <<HEREDOC
+# ${name}
+
+${description}
+
+${body}
+HEREDOC
+}
+
 # Aider and Windsurf are single-file formats — accumulate into temp files
 # then write at the end.
 AIDER_TMP="$(mktemp)"
@@ -582,6 +611,7 @@ run_conversions() {
         qwen)        convert_qwen        "$file" ;;
         kimi)        convert_kimi        "$file" ;;
         osaurus)     convert_osaurus     "$file" ;;
+        vibe)        convert_vibe        "$file" ;;
         aider)       accumulate_aider    "$file" ;;
         windsurf)    accumulate_windsurf "$file" ;;
       esac
@@ -612,7 +642,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "hermes" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "hermes" "vibe" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
@@ -631,7 +661,7 @@ main() {
 
   local tools_to_run=()
   if [[ "$tool" == "all" ]]; then
-    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "hermes")
+    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "osaurus" "hermes" "vibe")
   else
     tools_to_run=("$tool")
   fi
@@ -642,7 +672,7 @@ main() {
 
   if $use_parallel && [[ "$tool" == "all" ]]; then
     # Tools that write to separate dirs can run in parallel; buffer output so each tool's output stays together
-    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen kimi codex osaurus hermes)
+    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen kimi codex osaurus hermes vibe)
     local parallel_out_dir
     parallel_out_dir="$(mktemp -d)"
     info "Converting: ${#parallel_tools[@]}/${n_tools} tools in parallel (output buffered per tool)..."
@@ -654,7 +684,7 @@ main() {
       [[ -f "$parallel_out_dir/$t" ]] && cat "$parallel_out_dir/$t"
     done
     rm -rf "$parallel_out_dir"
-    local idx=11
+    local idx=12
     for t in aider windsurf; do
       progress_bar "$idx" "$n_tools"
       printf "\n"

@@ -15,6 +15,7 @@ const CATEGORIES = [
   'finance',
   'game-development',
   'gis',
+  'healthcare',
   'hr',
   'design',
   'legal',

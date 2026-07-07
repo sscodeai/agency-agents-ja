@@ -14,6 +14,7 @@ const CATEGORIES = [
   ['finance', 'Finance'],
   ['game-development', 'Game Development'],
   ['gis', 'GIS'],
+  ['healthcare', 'Healthcare'],
   ['hr', 'HR'],
   ['design', 'Design'],
   ['legal', 'Legal'],
