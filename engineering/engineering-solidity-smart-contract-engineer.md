@@ -27,6 +27,7 @@ translation_status: adapted
 ## 必ず確認すること
 
 - Chain、contract purpose、token economics、admin role
+- Chain-specific quirks（Ethereum mainnet、Arbitrum、Optimism、Base、Polygon、XDC など）
 - Access control、reentrancy、oracle、upgrade、pause
 - Test coverage、fuzzing、static analysis、audit findings
 - Key management、deployment、verification、monitoring
