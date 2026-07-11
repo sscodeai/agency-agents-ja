@@ -1,13 +1,13 @@
 # Agent List
 
-Total agents: 357 (⭐ 114 japan-original + 243 upstream-aligned)
+Total agents: 368 (⭐ 114 japan-original + 254 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
 
 ## Academic
 
-Total: 6 (⭐ 1 japan-original + 5 upstream-aligned)
+Total: 7 (⭐ 1 japan-original + 6 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -17,10 +17,11 @@ Total: 6 (⭐ 1 japan-original + 5 upstream-aligned)
 |  | 日本向け歴史リサーチャー | upstream | adapted | Historian | 産業史、制度変遷、企業沿革、地域史を調査し、IT 企画・市場理解・ブランド narrative に活かす学術・リサーチ agent。 | `academic/academic-historian.md` |
 |  | 日本向けナラティブ分析者 | upstream | adapted | Narratologist | 物語構造、語り口、ブランド narrative、政策・企業メッセージを分析し、日本向け IT 提案・UX・広報に活かす学術・リサーチ agent。 | `academic/academic-narratologist.md` |
 |  | 日本向け心理リサーチャー | upstream | adapted | Psychologist | 行動心理、意思決定、motivation、認知負荷、組織心理を分析し、日本向け UX・導入定着・業務変革に活かす学術・リサーチ agent。 | `academic/academic-psychologist.md` |
+|  | 日本向け統計リサーチャー | upstream | adapted | Statistician | 実験設計、因果推論、統計的検定、効果量、信頼区間、バイアスを確認し、日本の調査・事業判断・政策検討で数字を過信しないための academic agent。 | `academic/academic-statistician.md` |
 
 ## Engineering
 
-Total: 67 (⭐ 27 japan-original + 40 upstream-aligned)
+Total: 76 (⭐ 27 japan-original + 49 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -53,6 +54,7 @@ Total: 67 (⭐ 27 japan-original + 40 upstream-aligned)
 | ⭐ | 日本向け脅威検知エンジニア | japan-original |  |  | 日本企業の cloud、SaaS、endpoint、認証ログから脅威を検知し、SOC / CSIRT 連携を設計する security agent。 | `engineering/engineering-threat-detection-engineer.md` |
 |  | 日本向け AI データ修復エンジニア | upstream | adapted | AI Data Remediation Engineer | 日本語データ、個人情報、業務 CSV、FAQ、RAG corpus の品質問題を検出・修復する AI / data engineering agent。 | `engineering/engineering-ai-data-remediation-engineer.md` |
 |  | 日本向け AI エンジニア | upstream | adapted | AI Engineer | 日本企業向けに LLM、RAG、agent、評価、セキュリティ、運用を実装する AI engineering agent。 | `engineering/engineering-ai-engineer.md` |
+|  | 日本向け API プラットフォームエンジニア | upstream | adapted | API Platform Engineer | OpenAPI / gRPC、versioning、deprecation、SDK 生成、API gateway、認証、rate limit、developer portal を日本の partner / public API 向けに設計する engineering agent。 | `engineering/engineering-api-platform-engineer.md` |
 |  | 日本向け自律最適化アーキテクト | upstream | adapted | Autonomous Optimization Architect | 日本企業向けに AI agent、optimization loop、human approval、monitoring を組み込んだ自律改善 system を設計する agent。 | `engineering/engineering-autonomous-optimization-architect.md` |
 |  | 日本向け Backend Architect | upstream | adapted | Backend Architect | 日本の業務システム、SaaS、受託開発で API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。 | `engineering/engineering-backend-architect.md` |
 |  | 日本向け CMS 開発者 | upstream | adapted | CMS Developer | 日本の企業サイト、自治体、EC、オウンドメディア向けに CMS 設計、運用、権限、SEO、公開承認を実装する agent。 | `engineering/engineering-cms-developer.md` |
@@ -60,6 +62,7 @@ Total: 67 (⭐ 27 japan-original + 40 upstream-aligned)
 |  | 日本向けコードベースオンボーディングエンジニア | upstream | adapted | Codebase Onboarding Engineer | 日本の開発チーム向けに既存 codebase の構造、開発手順、設計意図、初回 task を整理する onboarding agent。 | `engineering/engineering-codebase-onboarding-engineer.md` |
 |  | 日本向け Data Engineer | upstream | adapted | Data Engineer | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する agent。 | `engineering/engineering-data-engineer.md` |
 |  | 日本向け Database Optimizer | upstream | adapted | Database Optimizer | 日本の業務システムで query、index、schema、migration、batch、帳票、CSV workload を最適化する database agent。 | `engineering/engineering-database-optimizer.md` |
+|  | 日本向けデスクトップアプリエンジニア | upstream | adapted | Desktop App Engineer | Electron、Tauri、Qt、.NET、Swift / AppKit、Windows / macOS 配布、auto-update、署名、installer、offline operation を設計する desktop application engineering agent。 | `engineering/engineering-desktop-app-engineer.md` |
 |  | 日本向け DevOps 自動化エンジニア | upstream | adapted | DevOps Automator | 日本の開発・運用現場に合わせて CI/CD、IaC、release、監視、rollback、権限管理を自動化する agent。 | `engineering/engineering-devops-automator.md` |
 |  | 日本向け Drupal パフォーマンスエンジニア | upstream | adapted | Drupal Performance Engineer | Drupal 10 / 11 の Core Web Vitals、render cache、Dynamic Page Cache、BigPipe、Views、CDN、PHP-FPM / opcache を日本の公共・企業サイト向けに最適化する engineering agent。 | `engineering/engineering-drupal-performance.md` |
 |  | 日本向け Drupal Shopping Cart Engineer | upstream | adapted | Drupal Shopping Cart Engineer | Drupal Commerce の商品 catalog、cart、checkout、決済、税率、coupon、注文管理を日本 EC / B2B 受発注向けに設計・実装する agent。 | `engineering/engineering-drupal-shopping-cart.md` |
@@ -67,19 +70,24 @@ Total: 67 (⭐ 27 japan-original + 40 upstream-aligned)
 |  | 日本向け組み込みファームウェアエンジニア | upstream | adapted | Embedded Firmware Engineer | 日本の製造、IoT、ロボット、医療・産業機器向けに firmware、通信、更新、検査、保守を設計する agent。 | `engineering/engineering-embedded-firmware-engineer.md` |
 |  | 日本向け LINE WORKS / Slack 連携開発者 | upstream | adapted | Feishu Integration Developer | 日本企業の LINE WORKS、Slack、Teams、kintone、承認・通知業務を連携する integration agent。 | `engineering/engineering-feishu-integration-developer.md` |
 |  | 日本向け 3D プリンタ材料最適化専門家 | upstream | adapted | Filament Optimization Specialist | 日本の試作、製造、教育現場向けに 3D printer filament、造形条件、品質、検査、材料選定を最適化する agent。 | `engineering/engineering-filament-optimization-specialist.md` |
+|  | 日本向け FinOps エンジニア | upstream | adapted | FinOps Engineer | AWS / Azure / Google Cloud の cloud cost、unit economics、tagging、budget、rightsizing、reserved commitment、showback / chargeback を日本企業向けに最適化する engineering agent。 | `engineering/engineering-finops-engineer.md` |
 |  | 日本向け Frontend Developer | upstream | adapted | Frontend Developer | 日本の業務画面、SaaS、EC、管理画面向けに React / Vue、form、table、アクセシビリティ、入力補助を実装する frontend agent。 | `engineering/engineering-frontend-developer.md` |
 |  | 日本向け Git ワークフローマスター | upstream | adapted | Git Workflow Master | 日本の開発チーム向けに branch、PR、commit、release、hotfix、権限、レビュー運用を整える Git workflow agent。 | `engineering/engineering-git-workflow-master.md` |
 |  | 日本向け国際化エンジニア | upstream | adapted | Internationalization Engineer | ICU MessageFormat、CLDR、Intl、RTL / bidi、疑似翻訳、TMS、翻訳 workflow を使い、日本語・英語・多言語 product の国際化を設計する engineering agent。 | `engineering/engineering-i18n-engineer.md` |
+|  | 日本向け ID / アクセス管理エンジニア | upstream | adapted | Identity & Access Engineer | IAM、SSO、OIDC / SAML、MFA、SCIM、RBAC / ABAC、特権 ID、joiner / mover / leaver を日本企業向けに設計する identity and access engineering agent。 | `engineering/engineering-identity-access-engineer.md` |
 |  | 日本向けインシデント対応指揮者 | upstream | adapted | Incident Response Commander | 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。 | `engineering/engineering-incident-response-commander.md` |
 |  | 日本向け IT Service Manager | upstream | adapted | IT Service Manager | ITIL 4 を軸に service catalog、incident / problem / change、SLA、CMDB、継続改善を日本企業の情シス・運用保守に合わせて設計する agent。 | `engineering/engineering-it-service-manager.md` |
 |  | 日本向け最小変更エンジニア | upstream | adapted | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
 |  | 日本向け Mobile App Builder | upstream | adapted | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
+|  | 日本向けモバイルリリースエンジニア | upstream | adapted | Mobile Release Engineer | iOS / Android の app signing、store review、TestFlight / internal testing、phased rollout、crash monitoring、rollback、審査対応を設計する mobile release engineering agent。 | `engineering/engineering-mobile-release-engineer.md` |
 |  | 日本向け Multi-Agent Systems Architect | upstream | adapted | Multi-Agent Systems Architect | 複数 AI agent の topology、context、権限、失敗復旧、human-in-the-loop、observability、governance を設計する production-grade agent architecture 専門家。 | `engineering/engineering-multi-agent-systems-architect.md` |
 |  | 日本向けネットワークエンジニア | upstream | adapted | Network Engineer | Cisco / Juniper / Palo Alto などの enterprise network について、routing、switching、firewall、VPN、障害切り分け、変更計画を日本の運用現場向けに整理する agent。 | `engineering/engineering-network-engineer.md` |
 |  | 日本向け OrgScript Engineer | upstream | adapted | OrgScript Engineer | OrgScript の grammar、AST、validation、business logic modeling を使い、日本企業の業務手順や承認 flow を machine-readable に整理する DSL engineer。 | `engineering/engineering-orgscript-engineer.md` |
 |  | 日本向け決済・請求エンジニア | upstream | adapted | Payments & Billing Engineer | Stripe、Adyen、PayPal、日本国内 PSP、webhook、冪等性、subscription、3DS、PCI DSS、消費税・インボイス、入金消込を扱う payments / billing engineering agent。 | `engineering/engineering-payments-billing-engineer.md` |
 |  | 日本向け Prompt Engineer | upstream | adapted | Prompt Engineer | 日本語 LLM / agent / RAG の system prompt、評価 case、出力 format、guardrail を設計し、曖昧な依頼を再現性のある AI behavior に変える agent。 | `engineering/engineering-prompt-engineer.md` |
 |  | 日本向け高速プロトタイピングエンジニア | upstream | adapted | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |
+|  | 日本向けリアルタイム共同編集エンジニア | upstream | adapted | Realtime Collaboration Engineer | WebSocket、WebRTC、CRDT / OT、presence、conflict resolution、offline sync を使い、日本の SaaS / 業務 system 向け共同編集を設計する engineering agent。 | `engineering/engineering-realtime-collaboration-engineer.md` |
+|  | 日本向け検索関連性エンジニア | upstream | adapted | Search Relevance Engineer | 日本語検索、形態素解析、同義語、ranking、BM25 / vector search、query understanding、evaluation、検索ログ改善を扱う search relevance engineering agent。 | `engineering/engineering-search-relevance-engineer.md` |
 |  | 日本向け Section 508 / アクセシビリティ専門家 | upstream | adapted | Section 508 Accessibility Specialist | 米国 Section 508 / WCAG と、日本の JIS X 8341-3、公共・自治体アクセシビリティ要件、VPAT / ACR を橋渡しする accessibility specialist agent。 | `engineering/engineering-section-508-specialist.md` |
 |  | 日本向けシニア開発者 | upstream | adapted | Senior Developer | 日本の開発現場で設計、実装、レビュー、障害対応、育成、技術的意思決定をリードする senior developer agent。 | `engineering/engineering-senior-developer.md` |
 |  | 日本向けソフトウェアアーキテクト | upstream | adapted | Software Architect | 日本の SaaS、SI、受託開発、業務システム向けに全体設計、非機能、移行、運用保守を設計する agent。 | `engineering/engineering-software-architect.md` |
@@ -87,7 +95,9 @@ Total: 67 (⭐ 27 japan-original + 40 upstream-aligned)
 |  | 日本向けSRE (Site Reliability Engineer) | upstream | adapted | SRE (Site Reliability Engineer) | 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE agent。 | `engineering/engineering-sre.md` |
 |  | 日本向け Technical Writer | upstream | adapted | Technical Writer | 日本の IT 開発、SaaS、SI、受託開発向けに設計書、API docs、運用手順、release note、検収資料を整える agent。 | `engineering/engineering-technical-writer.md` |
 |  | 日本向け USWDS / 公共デザインシステム開発者 | upstream | adapted | USWDS Developer | USWDS、公共 sector design system、accessibility、content pattern、Drupal / WordPress 実装を、日本企業・公共案件向けに橋渡しする engineering agent。 | `engineering/engineering-uswds-developer.md` |
+|  | 日本向け動画配信エンジニア | upstream | adapted | Video Streaming Engineer | HLS / DASH、ABR、CMAF、encoding ladder、CDN、DRM、低遅延配信、QoE monitoring を日本向け video streaming service で設計する engineering agent。 | `engineering/engineering-video-streaming-engineer.md` |
 |  | 日本向け音声 AI 連携エンジニア | upstream | adapted | Voice AI Integration Engineer | 日本語音声認識、音声合成、電話、コールセンター、会議要約、voice bot を連携する AI engineering agent。 | `engineering/engineering-voice-ai-integration-engineer.md` |
+|  | 日本向け WebAssembly エンジニア | upstream | adapted | WebAssembly Engineer | Rust / C++ / Go からの Wasm、JS interop、WASI、Wasmtime / Wasmer、component model、binary size、sandbox、性能 tuning を扱う engineering agent。 | `engineering/engineering-webassembly-engineer.md` |
 |  | 日本向け LINE ミニアプリ開発者 | upstream | adapted | WeChat Mini Program Developer | 日本向け LINE ミニアプリ / LIFF、予約、会員証、EC、CRM、店舗導線を実装する agent。 | `engineering/engineering-wechat-mini-program-developer.md` |
 |  | 日本向け WordPress パフォーマンスエンジニア | upstream | adapted | WordPress Performance Engineer | WordPress / WooCommerce の Core Web Vitals、page cache、object cache、WP_Query、plugin 負荷、CDN、画像、PHP-FPM / opcache を最適化する engineering agent。 | `engineering/engineering-wordpress-performance.md` |
 |  | 日本向け WordPress Shopping Cart Engineer | upstream | adapted | WordPress Shopping Cart Engineer | WooCommerce の商品 catalog、cart、checkout、決済、税・送料、coupon、注文管理を日本 EC 向けに安全に custom 実装する agent。 | `engineering/engineering-wordpress-shopping-cart.md` |
@@ -292,11 +302,12 @@ Total: 13 (⭐ 0 japan-original + 13 upstream-aligned)
 
 ## Healthcare
 
-Total: 2 (⭐ 0 japan-original + 2 upstream-aligned)
+Total: 3 (⭐ 0 japan-original + 3 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 |  | 日本向け臨床エビデンス担当 | upstream | adapted | Clinical Evidence Agent | 医療 AI / ヘルスケア SaaS の臨床 claim、医師向け意思決定支援、投資家向け資料、薬機法・個人情報保護法まわりの表現を、根拠水準に合わせて整理する healthcare agent。 | `healthcare/healthcare-clinical-evidence-agent.md` |
+|  | 日本向けヘルスケアイノベーション戦略家 | upstream | adapted | Healthcare Innovation Strategist | 医療 startup、healthcare SaaS、医療 AI、地域医療・保険者・行政連携の narrative、臨床信頼性、規制・償還・導入戦略を整理する healthcare strategy agent。 | `healthcare/healthcare-innovation-strategist.md` |
 |  | 日本向け公的医療システム戦略担当 | upstream | adapted | Sovereign Health Systems Agent | 国民皆保険、自治体医療 DX、厚生労働省・保険者・医療機関との連携、海外公的医療市場への展開を整理する healthcare strategy agent。 | `healthcare/healthcare-sovereign-health-systems-agent.md` |
 
 ## HR
