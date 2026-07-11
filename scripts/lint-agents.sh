@@ -41,14 +41,19 @@ errors=0
 warnings=0
 
 classify_header_target() {
-  local header_lower="$1"
+  local header="$1"
+  local header_lower
+  header_lower=$(printf '%s' "$header" | tr '[:upper:]' '[:lower:]')
 
   if [[ "$header_lower" =~ identity ]] ||
      [[ "$header_lower" =~ learning.*memory ]] ||
      [[ "$header_lower" =~ communication ]] ||
      [[ "$header_lower" =~ style ]] ||
      [[ "$header_lower" =~ critical.rule ]] ||
-     [[ "$header_lower" =~ rules.you.must.follow ]]; then
+     [[ "$header_lower" =~ rules.you.must.follow ]] ||
+     [[ "$header" =~ 役割 ]] ||
+     [[ "$header" =~ 注意点 ]] ||
+     [[ "$header" =~ 高リスク運用ガードレール ]]; then
     printf 'soul'
   else
     printf 'agents'
@@ -114,10 +119,8 @@ lint_file() {
   local agents_headers=0
   while IFS= read -r line; do
     if [[ "$line" =~ ^##[[:space:]] ]]; then
-      local header_lower
-      header_lower=$(printf '%s' "$line" | tr '[:upper:]' '[:lower:]')
       local target
-      target=$(classify_header_target "$header_lower")
+      target=$(classify_header_target "$line")
       if [[ "$target" == "soul" ]]; then
         soul_headers=$((soul_headers + 1))
       else

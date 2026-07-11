@@ -326,7 +326,8 @@ convert_openclaw() {
   # by matching ## header keywords. Unmatched sections go to AGENTS.md.
   #
   # SOUL keywords: identity, learning & memory, communication, style,
-  #   critical rules, rules you must follow
+  #   critical rules, rules you must follow, plus Japanese identity/boundary
+  #   headings used by adapted agents.
   # AGENTS keywords: everything else (mission, deliverables, workflow, etc.)
 
   local current_target="agents"  # default bucket
@@ -354,7 +355,10 @@ convert_openclaw() {
          [[ "$header_lower" =~ communication ]] ||
          [[ "$header_lower" =~ style ]] ||
          [[ "$header_lower" =~ critical.rule ]] ||
-         [[ "$header_lower" =~ rules.you.must.follow ]]; then
+         [[ "$header_lower" =~ rules.you.must.follow ]] ||
+         [[ "$line" =~ 役割 ]] ||
+         [[ "$line" =~ 注意点 ]] ||
+         [[ "$line" =~ 高リスク運用ガードレール ]]; then
         current_target="soul"
       else
         current_target="agents"
