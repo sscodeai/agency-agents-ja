@@ -90,7 +90,7 @@ lint_file() {
 
   # 2. Check required frontmatter fields
   for field in "${REQUIRED_FRONTMATTER[@]}"; do
-    if ! echo "$frontmatter" | grep -qE "^${field}:"; then
+    if ! grep -qE -- "^${field}:" <<<"$frontmatter"; then
       echo "ERROR $file: missing frontmatter field '${field}'"
       errors=$((errors + 1))
     fi
@@ -100,8 +100,10 @@ lint_file() {
   local body
   body=$(awk 'BEGIN{n=0} /^---$/{n++; next} n>=2{print}' "$file")
 
+  # Feed grep from a herestring so grep -q cannot close a pipe early and
+  # turn a real match into a SIGPIPE-shaped false warning under pipefail.
   for section in "${RECOMMENDED_SECTIONS[@]}"; do
-    if ! echo "$body" | grep -qi "$section"; then
+    if ! grep -qi -- "$section" <<<"$body"; then
       echo "WARN  $file: missing recommended section '${section}'"
       warnings=$((warnings + 1))
     fi
