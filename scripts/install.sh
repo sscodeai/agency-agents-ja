@@ -156,6 +156,28 @@ check_integrations() {
   fi
 }
 
+source_agent_count() {
+  local count=0 dir f first_line
+  for dir in "${AGENT_DIRS[@]}"; do
+    [[ -d "$REPO_ROOT/$dir" ]] || continue
+    while IFS= read -r -d '' f; do
+      first_line="$(head -1 "$f")"
+      [[ "$first_line" == "---" ]] || continue
+      count=$((count + 1))
+    done < <(find "$REPO_ROOT/$dir" -name "*.md" -type f -print0)
+  done
+  printf '%s\n' "$count"
+}
+
+require_generated_count() {
+  local tool="$1" generated="$2" expected
+  expected="$(source_agent_count)"
+  if [[ "$generated" != "$expected" ]]; then
+    err "$tool: generated artifact count ($generated) does not match source agent count ($expected). Run ./scripts/convert.sh --tool $tool first."
+    return 1
+  fi
+}
+
 # ---------------------------------------------------------------------------
 # Tool detection
 # ---------------------------------------------------------------------------
@@ -385,6 +407,7 @@ install_antigravity() {
   dest="$(resolve_dest ANTIGRAVITY_SKILLS_DIR "${HOME}/.gemini/config/skills")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/antigravity missing. Run convert.sh first."; return 1; }
+  require_generated_count antigravity "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
   mkdir -p "$dest"
   local d
   while IFS= read -r -d '' d; do
@@ -402,6 +425,7 @@ install_osaurus() {
   dest="$(resolve_dest OSAURUS_SKILLS_DIR "${HOME}/.osaurus/skills")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/osaurus missing. Run convert.sh first."; return 1; }
+  require_generated_count osaurus "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
   mkdir -p "$dest"
   local d
   while IFS= read -r -d '' d; do
@@ -423,6 +447,7 @@ install_gemini_cli() {
   [[ -d "$src" ]] || { err "integrations/gemini-cli missing. Run ./scripts/convert.sh --tool gemini-cli first."; return 1; }
   [[ -f "$manifest" ]] || { err "integrations/gemini-cli/gemini-extension.json missing. Run ./scripts/convert.sh --tool gemini-cli first."; return 1; }
   [[ -d "$skills_dir" ]] || { err "integrations/gemini-cli/skills missing. Run ./scripts/convert.sh --tool gemini-cli first."; return 1; }
+  require_generated_count gemini-cli "$(find "$skills_dir" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
   mkdir -p "$dest/skills"
   cp "$manifest" "$dest/gemini-extension.json"
   local d
@@ -444,6 +469,7 @@ install_opencode() {
   # Support both flat layout (integrations/opencode/*.md) and nested (integrations/opencode/agents/*.md)
   local search_dir="$src"
   [[ -d "$src/agents" ]] && search_dir="$src/agents"
+  require_generated_count opencode "$(find "$search_dir" -maxdepth 1 -name "*.md" ! -name "README.md" | wc -l | tr -d ' ')" || return 1
   mkdir -p "$dest"
   local f
   while IFS= read -r -d '' f; do
@@ -466,6 +492,7 @@ install_openclaw() {
   local count=0
   local existing_agents=""
   [[ -d "$src" ]] || { err "integrations/openclaw missing. Run convert.sh first."; return 1; }
+  require_generated_count openclaw "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
   mkdir -p "$dest"
   if command -v openclaw >/dev/null 2>&1; then
     existing_agents=$'\n'"$(openclaw agents list --json 2>/dev/null | sed -n 's/^[[:space:]]*\"id\": \"\\([^\"]*\\)\".*/\\1/p')"$'\n'
@@ -501,6 +528,7 @@ install_cursor() {
   dest="$(resolve_dest CURSOR_RULES_DIR "${PWD}/.cursor/rules")"
   local count=0
   [[ -d "$src" ]] || { err "integrations/cursor missing. Run convert.sh first."; return 1; }
+  require_generated_count cursor "$(find "$src" -maxdepth 1 -name "*.mdc" | wc -l | tr -d ' ')" || return 1
   mkdir -p "$dest"
   local f
   while IFS= read -r -d '' f; do
@@ -543,6 +571,7 @@ install_qwen() {
   local count=0
 
   [[ -d "$src" ]] || { err "integrations/qwen missing. Run convert.sh first."; return 1; }
+  require_generated_count qwen "$(find "$src" -maxdepth 1 -name "*.md" | wc -l | tr -d ' ')" || return 1
 
   mkdir -p "$dest"
 
@@ -564,6 +593,7 @@ install_zcode() {
   local count=0
 
   [[ -d "$src" ]] || { err "integrations/zcode missing. Run convert.sh first."; return 1; }
+  require_generated_count zcode "$(find "$src" -maxdepth 1 -name "*.md" | wc -l | tr -d ' ')" || return 1
 
   mkdir -p "$dest"
 
@@ -584,6 +614,7 @@ install_kimi() {
   local count=0
 
   [[ -d "$src" ]] || { err "integrations/kimi missing. Run convert.sh first."; return 1; }
+  require_generated_count kimi "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
 
   mkdir -p "$dest"
 
@@ -607,6 +638,7 @@ install_codex() {
   local count=0
 
   [[ -d "$src" ]] || { err "integrations/codex missing. Run convert.sh first."; return 1; }
+  require_generated_count codex "$(find "$src" -maxdepth 1 -name "*.toml" | wc -l | tr -d ' ')" || return 1
 
   mkdir -p "$dest"
 
@@ -627,6 +659,8 @@ install_vibe() {
   local count=0
 
   [[ -d "$src_agents" && -d "$src_prompts" ]] || { err "integrations/vibe missing. Run convert.sh first."; return 1; }
+  require_generated_count vibe "$(find "$src_agents" -maxdepth 1 -name "*.toml" | wc -l | tr -d ' ')" || return 1
+  require_generated_count vibe "$(find "$src_prompts" -maxdepth 1 -name "*.md" | wc -l | tr -d ' ')" || return 1
 
   mkdir -p "$dest/agents" "$dest/prompts"
 
@@ -787,6 +821,10 @@ main() {
       fi
       cleaned+=("$t")
     done
+    if [[ ${#cleaned[@]} -eq 0 ]]; then
+      err "--tool requires at least one tool name. Valid: ${ALL_TOOLS[*]}"
+      exit 1
+    fi
     explicit_tools=("${cleaned[@]}")
   fi
 

@@ -130,6 +130,10 @@ if ! bash scripts/check-tools.sh; then
   errors=$((errors + 1))
 fi
 
+if ! node scripts/check-package-files.js; then
+  errors=$((errors + 1))
+fi
+
 if [ "$errors" -gt 0 ]; then
   exit 1
 fi
