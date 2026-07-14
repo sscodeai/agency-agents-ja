@@ -16,9 +16,11 @@ supported agentic coding tools.
 - **[Windsurf](#windsurf)** — `.windsurfrules` in `windsurf/`
 - **[Kimi Code](#kimi-code)** — YAML agent specs in `kimi/`
 - **[Qwen Code](#qwen-code)** — project-scoped `.md` SubAgents in `.qwen/agents/`
+- **[ZCode](zcode/README.md)** — `.md` agent files in `zcode/`
 - **[Codex](codex/README.md)** — `.toml` custom agents in `codex/`
 - **[Osaurus](osaurus/README.md)** — `SKILL.md` skills in `osaurus/`
 - **[Hermes](hermes/README.md)** — lazy-router plugin in `hermes/`
+- **[Mistral Vibe](vibe/README.md)** — TOML agents and Markdown prompts in `vibe/`
 
 ## Quick Install
 
@@ -40,6 +42,10 @@ supported agentic coding tools.
 ./scripts/convert.sh --tool qwen
 ./scripts/install.sh --tool qwen
 
+# ZCode also needs generated agent files on a fresh clone
+./scripts/convert.sh --tool zcode
+./scripts/install.sh --tool zcode
+
 # Codex and Osaurus also use generated integration files
 ./scripts/convert.sh --tool codex
 ./scripts/install.sh --tool codex
@@ -49,6 +55,10 @@ supported agentic coding tools.
 # Hermes uses one generated lazy-router plugin
 ./scripts/convert.sh --tool hermes
 ./scripts/install.sh --tool hermes
+
+# Mistral Vibe uses generated TOML agents and prompt files
+./scripts/convert.sh --tool vibe
+./scripts/install.sh --tool vibe
 ```
 
 If you install OpenClaw and the gateway is already running, restart it after installation:
@@ -58,9 +68,9 @@ openclaw gateway restart
 ```
 
 For project-scoped tools such as OpenCode, Cursor, Aider, Windsurf, and Qwen
-Code, run
-the installer from your target project root as shown in the tool-specific
-sections below.
+Code, run the installer from your target project root as shown in the
+tool-specific sections below. ZCode installs user-wide by default; set
+`ZCODE_AGENTS_DIR=.zcode/agents` for a project-scoped install.
 
 ## Regenerating Integration Files
 
@@ -135,7 +145,7 @@ See [gemini-cli/README.md](gemini-cli/README.md) for details.
 Each agent becomes a project-scoped `.md` file in `.opencode/agents/`.
 
 ```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool opencode
+cd /your/project && /path/to/agency-agents-ja/scripts/install.sh --tool opencode
 ```
 
 See [opencode/README.md](opencode/README.md) for details.
@@ -169,7 +179,7 @@ Each agent becomes a `.mdc` rule file. Rules are project-scoped — run the
 installer from your project root.
 
 ```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool cursor
+cd /your/project && /path/to/agency-agents-ja/scripts/install.sh --tool cursor
 ```
 
 See [cursor/README.md](cursor/README.md) for details.
@@ -182,7 +192,7 @@ All agents are consolidated into a single `CONVENTIONS.md` file that Aider
 reads automatically when present in your project root.
 
 ```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool aider
+cd /your/project && /path/to/agency-agents-ja/scripts/install.sh --tool aider
 ```
 
 See [aider/README.md](aider/README.md) for details.
@@ -195,7 +205,7 @@ All agents are consolidated into a single `.windsurfrules` file for your
 project root.
 
 ```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool windsurf
+cd /your/project && /path/to/agency-agents-ja/scripts/install.sh --tool windsurf
 ```
 
 See [windsurf/README.md](windsurf/README.md) for details.
@@ -248,7 +258,81 @@ From a fresh clone, generate the Qwen files first:
 Then install them from your project root:
 
 ```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool qwen
+cd /your/project && /path/to/agency-agents-ja/scripts/install.sh --tool qwen
 ```
 
 See [qwen/README.md](qwen/README.md) for details.
+
+---
+
+## ZCode
+
+Each agent becomes a Markdown agent file in `integrations/zcode/agents/`.
+From a fresh clone, generate the ZCode files before installing.
+
+```bash
+./scripts/convert.sh --tool zcode
+./scripts/install.sh --tool zcode
+```
+
+For a project-scoped install:
+
+```bash
+cd /your/project
+ZCODE_AGENTS_DIR=.zcode/agents /path/to/agency-agents-ja/scripts/install.sh --tool zcode
+```
+
+See [zcode/README.md](zcode/README.md) for details.
+
+---
+
+## Codex
+
+Each agent becomes a Codex custom agent TOML file.
+
+```bash
+./scripts/convert.sh --tool codex
+./scripts/install.sh --tool codex
+```
+
+See [codex/README.md](codex/README.md) for details.
+
+---
+
+## Osaurus
+
+Each agent becomes an Osaurus `SKILL.md` skill.
+
+```bash
+./scripts/convert.sh --tool osaurus
+./scripts/install.sh --tool osaurus
+```
+
+See [osaurus/README.md](osaurus/README.md) for details.
+
+---
+
+## Hermes
+
+Hermes installs one generated lazy-router plugin instead of preloading every
+agent.
+
+```bash
+./scripts/convert.sh --tool hermes
+./scripts/install.sh --tool hermes
+```
+
+See [hermes/README.md](hermes/README.md) for details.
+
+---
+
+## Mistral Vibe
+
+Each agent becomes a TOML agent file plus a Markdown prompt file.
+
+```bash
+./scripts/convert.sh --tool vibe
+./scripts/install.sh --tool vibe
+```
+
+See [vibe/README.md](vibe/README.md) for details.

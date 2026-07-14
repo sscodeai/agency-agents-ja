@@ -21,7 +21,7 @@ From the repository root:
 Run the installer from your target directory:
 
 ```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool vibe
+cd /your/project && /path/to/agency-agents-ja/scripts/install.sh --tool vibe
 ```
 
 This copies the generated files into:
@@ -73,18 +73,6 @@ After installation, reference agents in Mistral Vibe by their system prompt ID
 Example:
 ```text
 Use the Code Reviewer agent to analyze this pull request.
-```
-
-## Filtering
-
-Install only specific divisions or agents:
-
-```bash
-# Install only agents from Division 1
-./scripts/install.sh --tool vibe --division 1
-
-# Install only the code-reviewer agent
-./scripts/install.sh --tool vibe --agent code-reviewer
 ```
 
 ## Regenerate

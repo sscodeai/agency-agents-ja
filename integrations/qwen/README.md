@@ -18,7 +18,7 @@ From the repository root:
 Run the installer from your target project root:
 
 ```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool qwen
+cd /your/project && /path/to/agency-agents-ja/scripts/install.sh --tool qwen
 ```
 
 This copies the generated SubAgent files into:

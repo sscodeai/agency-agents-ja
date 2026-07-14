@@ -8,7 +8,7 @@ Aider reads this file automatically when it's present in your project root.
 ```bash
 # Run from your project root
 cd /your/project
-/path/to/agency-agents/scripts/install.sh --tool aider
+/path/to/agency-agents-ja/scripts/install.sh --tool aider
 ```
 
 ## Activate an Agent

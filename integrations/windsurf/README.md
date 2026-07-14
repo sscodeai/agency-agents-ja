@@ -8,7 +8,7 @@ Rules are **project-scoped** — install them from your project root.
 ```bash
 # Run from your project root
 cd /your/project
-/path/to/agency-agents/scripts/install.sh --tool windsurf
+/path/to/agency-agents-ja/scripts/install.sh --tool windsurf
 ```
 
 ## Activate an Agent

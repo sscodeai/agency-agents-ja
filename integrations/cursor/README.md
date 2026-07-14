@@ -8,7 +8,7 @@ Converts the full Agency roster into Cursor `.mdc` rule files. Rules are
 ```bash
 # Run from your project root
 cd /your/project
-/path/to/agency-agents/scripts/install.sh --tool cursor
+/path/to/agency-agents-ja/scripts/install.sh --tool cursor
 ```
 
 This creates `.cursor/rules/<agent-slug>.mdc` files in your project.

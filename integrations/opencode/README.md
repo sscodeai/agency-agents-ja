@@ -10,7 +10,7 @@ than cluttering the primary agent picker.
 ```bash
 # Run from your project root
 cd /your/project
-/path/to/agency-agents/scripts/install.sh --tool opencode
+/path/to/agency-agents-ja/scripts/install.sh --tool opencode
 ```
 
 This creates `.opencode/agents/<slug>.md` files in your project directory.
@@ -49,11 +49,11 @@ color: "#00FFFF"
 
 Agents in `.opencode/agents/` are **project-scoped**. To make them available
 globally across all projects, first generate the agent files, then install
-with `--path`:
+with `OPENCODE_AGENTS_DIR`:
 
 ```bash
 ./scripts/convert.sh --tool opencode
-./scripts/install.sh --tool opencode --path ~/.config/opencode/agents
+OPENCODE_AGENTS_DIR=~/.config/opencode/agents ./scripts/install.sh --tool opencode
 ```
 
 ## Regenerate
