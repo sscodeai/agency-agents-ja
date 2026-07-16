@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Build the Hermes lazy-router plugin for agency-agents-ja."""
+"""Build the Hermes lazy-router plugin for agency-agents-ja.
+
+The generated plugin exposes a small fixed tool surface to Hermes and keeps the
+large Japanese agent roster in an on-disk JSON data file. That avoids using
+skills.external_dirs, which advertises every Agency agent in Hermes' initial
+skill catalog.
+"""
 from __future__ import annotations
 
 import argparse
@@ -13,6 +19,7 @@ PLUGIN_NAME = "agency-agents-router"
 
 
 def division_dirs(repo_root: Path) -> list[str]:
+    # divisions.json is the single source of truth for the category set.
     data = json.loads((repo_root / "divisions.json").read_text(encoding="utf-8"))
     return sorted(data["divisions"].keys())
 
@@ -51,6 +58,7 @@ def parse_agent(path: Path, repo_root: Path) -> dict[str, str] | None:
         "division": division,
         "color": fields.get("color", "").strip(),
         "emoji": fields.get("emoji", "").strip(),
+        "vibe": fields.get("vibe", "").strip(),
         "source": fields.get("source", "").strip(),
         "translation_status": fields.get("translation_status", "").strip(),
         "upstream_path": fields.get("upstream_path", "").strip(),
@@ -110,6 +118,7 @@ from typing import Any
 
 _DATA_PATH = Path(__file__).parent / "data" / "agents.json"
 _AGENTS: list[dict[str, Any]] | None = None
+
 _WORD_RE = re.compile(r"[a-z0-9][a-z0-9+.#_-]*", re.I)
 
 
@@ -136,15 +145,17 @@ def _agent_lookup(identifier: str) -> dict[str, Any] | None:
 
 
 def _identifier(args: dict[str, Any]) -> str:
+    # Accept either "agent" or "slug": agency_agents_search returns slugs, so
+    # callers can naturally chain search -> inspect/load/delegate with slug=.
     return str(args.get("agent") or args.get("slug") or "").strip()
 
 
-def _not_found(identifier: str) -> str:
-    return _json({
+def _not_found(identifier: str) -> dict[str, Any]:
+    return {
         "success": False,
         "error": "agent not found" if identifier else "agent or slug is required",
         "agent": identifier or None,
-    })
+    }
 
 
 def _score(agent: dict[str, Any], query_tokens: set[str], query_text: str) -> float:
@@ -152,6 +163,7 @@ def _score(agent: dict[str, Any], query_tokens: set[str], query_text: str) -> fl
         agent.get("name", ""),
         agent.get("description", ""),
         agent.get("division", ""),
+        agent.get("vibe", ""),
         agent.get("source", ""),
         agent.get("translation_status", ""),
         agent.get("body", "")[:8000],
@@ -171,6 +183,7 @@ def _score(agent: dict[str, Any], query_tokens: set[str], query_text: str) -> fl
             score += 1.5
     if score == 0.0:
         return 0.0
+    # Slightly prefer focused descriptions over huge bodies when scores tie.
     return score + (1.0 / math.sqrt(max(len(haystack_tokens), 1)))
 
 
@@ -208,56 +221,191 @@ def _json(payload: dict[str, Any]) -> str:
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
-def agency_agents_search(query: str, division: str = "", limit: int = 8) -> str:
-    query_text = (query or "").strip().lower()
-    query_tokens = _tokens(query_text)
-    limit = max(1, min(int(limit or 8), 25))
-    candidates = []
-    for agent in _load_agents():
-        if division and agent.get("division") != division:
-            continue
-        score = _score(agent, query_tokens, query_text)
-        if score > 0:
-            candidates.append((score, agent))
-    candidates.sort(key=lambda item: item[0], reverse=True)
-    return _json({
-        "query": query,
-        "division": division or None,
-        "count": len(candidates),
-        "results": [_summary(agent, score) for score, agent in candidates[:limit]],
-    })
+SEARCH_DESCRIPTION = (
+    "Search the agency-agents-ja on-disk specialist roster without loading all "
+    "agents into the prompt. Use this when the user asks for a Japanese Agency "
+    "specialist, role, discipline, or wants help choosing the right agent."
+)
+SEARCH_SCHEMA = {
+    "name": "agency_agents_search",
+    "description": SEARCH_DESCRIPTION,
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {"type": "string", "description": "Natural-language search query."},
+            "division": {"type": "string", "description": "Optional division filter, e.g. engineering, marketing, testing."},
+            "limit": {"type": "integer", "description": "Maximum results, default 8, max 25."},
+        },
+        "required": ["query"],
+    },
+}
+
+READ_DESCRIPTION = (
+    "Read one agency-agents-ja specialist by slug or name. Returns metadata by "
+    "default and includes full specialist instructions only when include_body is true."
+)
+READ_SCHEMA = {
+    "name": "agency_agents_inspect",
+    "description": READ_DESCRIPTION,
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "agent": {"type": "string", "description": "Agent slug or exact display name."},
+            "slug": {"type": "string", "description": "Alias for agent. Pass the slug from agency_agents_search results."},
+            "include_body": {"type": "boolean", "description": "Include full specialist instructions."},
+        },
+        "required": [],
+    },
+}
+
+PROMPT_DESCRIPTION = (
+    "Load a selected agency-agents-ja specialist as a prompt block for the current task."
+)
+PROMPT_SCHEMA = {
+    "name": "agency_agents_load",
+    "description": PROMPT_DESCRIPTION,
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "agent": {"type": "string", "description": "Agent slug or exact display name."},
+            "slug": {"type": "string", "description": "Alias for agent. Pass the slug from agency_agents_search results."},
+            "task": {"type": "string", "description": "The user's task to pair with the specialist context."},
+        },
+        "required": [],
+    },
+}
+
+DELEGATE_DESCRIPTION = (
+    "Delegate a task to one selected agency-agents-ja specialist through Hermes' "
+    "delegate_task tool when available. Falls back to returning the composed prompt."
+)
+DELEGATE_SCHEMA = {
+    "name": "agency_agents_delegate",
+    "description": DELEGATE_DESCRIPTION,
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "agent": {"type": "string", "description": "Agent slug or exact display name."},
+            "slug": {"type": "string", "description": "Alias for agent. Pass the slug from agency_agents_search results."},
+            "task": {"type": "string", "description": "Concrete task for the specialist."},
+            "toolsets": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Optional Hermes toolsets for the delegated worker, e.g. ['terminal','file'].",
+            },
+        },
+        "required": ["task"],
+    },
+}
 
 
-def agency_agents_inspect(agent: str = "", slug: str = "", include_body: bool = False) -> str:
-    identifier = _identifier({"agent": agent, "slug": slug})
-    found = _agent_lookup(identifier)
-    if not found:
-        return _not_found(identifier)
-    payload = _summary(found)
-    payload["upstream_path"] = found.get("upstream_path", "")
-    if include_body:
-        payload["body"] = found.get("body", "")
-    return _json(payload)
+def register(ctx):
+    def search(args: dict[str, Any], **kwargs) -> str:
+        del kwargs
+        query = str(args.get("query", "")).strip()
+        if not query:
+            return _json({"success": False, "error": "query is required"})
+        division = str(args.get("division", "")).strip().lower()
+        try:
+            limit = min(max(int(args.get("limit", 8)), 1), 25)
+        except Exception:
+            limit = 8
+        query_tokens = _tokens(query)
+        query_text = query.lower()
+        matches: list[tuple[float, dict[str, Any]]] = []
+        for agent in _load_agents():
+            if division and agent.get("division", "").lower() != division:
+                continue
+            score = _score(agent, query_tokens, query_text)
+            if score > 0:
+                matches.append((score, agent))
+        matches.sort(key=lambda item: (-item[0], item[1]["division"], item[1]["slug"]))
+        return _json({
+            "success": True,
+            "query": query,
+            "division": division or None,
+            "count": len(matches),
+            "results": [_summary(agent, score) for score, agent in matches[:limit]],
+        })
 
+    def read(args: dict[str, Any], **kwargs) -> str:
+        del kwargs
+        identifier = _identifier(args)
+        agent = _agent_lookup(identifier)
+        if not agent:
+            return _json(_not_found(identifier))
+        payload = {"success": True, "agent": _summary(agent)}
+        payload["agent"]["upstream_path"] = agent.get("upstream_path", "")
+        if bool(args.get("include_body", False)):
+            payload["body"] = agent.get("body", "")
+        return _json(payload)
 
-def agency_agents_load(agent: str = "", slug: str = "", task: str = "") -> str:
-    identifier = _identifier({"agent": agent, "slug": slug})
-    found = _agent_lookup(identifier)
-    if not found:
-        return _not_found(identifier)
-    return _specialist_prompt(found, task)
+    def prompt(args: dict[str, Any], **kwargs) -> str:
+        del kwargs
+        identifier = _identifier(args)
+        agent = _agent_lookup(identifier)
+        if not agent:
+            return _json(_not_found(identifier))
+        return _json({
+            "success": True,
+            "agent": _summary(agent),
+            "prompt": _specialist_prompt(agent, str(args.get("task", ""))),
+        })
 
+    def delegate(args: dict[str, Any], **kwargs) -> str:
+        del kwargs
+        identifier = _identifier(args)
+        agent = _agent_lookup(identifier)
+        task = str(args.get("task", "")).strip()
+        if not agent:
+            return _json(_not_found(identifier))
+        if not task:
+            return _json({"success": False, "error": "task is required"})
+        composed = _specialist_prompt(agent, task)
+        delegate_args: dict[str, Any] = {"goal": task, "context": composed}
+        toolsets = args.get("toolsets")
+        if isinstance(toolsets, list) and toolsets:
+            delegate_args["toolsets"] = [str(item) for item in toolsets]
+        try:
+            result = ctx.dispatch_tool("delegate_task", delegate_args)
+            return _json({"success": True, "agent": _summary(agent), "delegated": True, "result": result})
+        except Exception as exc:  # pragma: no cover - depends on Hermes runtime
+            return _json({
+                "success": True,
+                "agent": _summary(agent),
+                "delegated": False,
+                "warning": f"delegate_task unavailable: {exc}",
+                "prompt": composed,
+            })
 
-def agency_agents_delegate(agent: str = "", slug: str = "", task: str = "") -> str:
-    identifier = _identifier({"agent": agent, "slug": slug})
-    found = _agent_lookup(identifier)
-    if not found:
-        return _not_found(identifier)
-    prompt = _specialist_prompt(found, task)
-    delegate = globals().get("delegate_task")
-    if callable(delegate):
-        return delegate(prompt)
-    return prompt
+    ctx.register_tool(
+        name="agency_agents_search",
+        toolset="agency_agents",
+        schema=SEARCH_SCHEMA,
+        handler=search,
+        description=SEARCH_DESCRIPTION,
+    )
+    ctx.register_tool(
+        name="agency_agents_inspect",
+        toolset="agency_agents",
+        schema=READ_SCHEMA,
+        handler=read,
+        description=READ_DESCRIPTION,
+    )
+    ctx.register_tool(
+        name="agency_agents_load",
+        toolset="agency_agents",
+        schema=PROMPT_SCHEMA,
+        handler=prompt,
+        description=PROMPT_DESCRIPTION,
+    )
+    ctx.register_tool(
+        name="agency_agents_delegate",
+        toolset="agency_agents",
+        schema=DELEGATE_SCHEMA,
+        handler=delegate,
+        description=DELEGATE_DESCRIPTION,
+    )
 '''
 
 
@@ -268,9 +416,9 @@ def readme(agent_count: int) -> str:
 
         Generated by `scripts/convert.sh --tool hermes`.
 
-        This integration installs one Hermes plugin named `agency-agents-router`
-        instead of preloading the full `agency-agents-ja` roster as skills.
-        Hermes sees a small fixed tool surface at startup, while the complete
+        This integration installs one Hermes plugin named `{PLUGIN_NAME}` instead
+        of adding hundreds of generated skills to `skills.external_dirs`. Hermes sees a
+        small fixed tool surface at startup, while the complete agency-agents-ja
         roster is stored on disk in `data/agents.json` and searched/loaded lazily.
 
         Generated agent count: {agent_count}
@@ -282,39 +430,90 @@ def readme(agent_count: int) -> str:
         - `agency_agents_load` — compose one specialist prompt for the current task.
         - `agency_agents_delegate` — delegate through Hermes `delegate_task` when available.
 
+        Each tool is registered with Hermes' complete function-tool schema, including
+        its name, description, and JSON `parameters`. The available arguments are:
+
+        | Tool | Arguments |
+        | --- | --- |
+        | `agency_agents_search` | `query` (required), optional `division` and `limit` |
+        | `agency_agents_inspect` | `agent` or `slug`, optional `include_body` |
+        | `agency_agents_load` | `agent` or `slug`, optional `task` |
+        | `agency_agents_delegate` | `agent` or `slug`, `task` (required), optional `toolsets` |
+
+        A normal flow is: search by capability, take a returned `slug`, then inspect,
+        load, or delegate to that specialist. You can ask Hermes to do this in natural
+        language; direct tool calls are not required.
+
+        ## Specialist usage instruction for Hermes
+
+        When a Hermes project needs agency-agents-ja specialists, explicitly ask
+        Hermes to use the `{PLUGIN_NAME}` plugin/router and load only the specialists
+        needed for the current phase. Do not ask Hermes to install or preload the full
+        agency-agents-ja roster as skills.
+
+        Recommended project instruction:
+
+        ```text
+        Use the agency-agents-router plugin. Search the agency-agents-ja roster
+        for the right specialists, then load or delegate only the specific agents
+        needed for each part of the project. For multi-discipline projects, use
+        multiple selected specialists across the project, but keep routing lazy:
+        do not preload the full roster and do not add agency-agents-ja to
+        skills.external_dirs.
+        ```
+
         ## Install
 
         ```bash
         ./scripts/convert.sh --tool hermes
         ./scripts/install.sh --tool hermes
         ```
+
+        The installer copies the generated plugin to:
+
+        ```text
+        ${{HERMES_HOME:-~/.hermes}}/plugins/{PLUGIN_NAME}
+        ```
+
+        It then enables `{PLUGIN_NAME}` under `plugins.enabled` in the Hermes
+        config. It does **not** write to `skills.external_dirs`.
+
+        Restart Hermes or start a new session after installing so the plugin and its
+        tool schemas are loaded. If Hermes displays these tools without their documented
+        arguments, regenerate and reinstall the plugin from the latest agency-agents-ja
+        checkout, then restart Hermes.
         """
     ).lstrip()
 
 
-def build(repo_root: Path, out_dir: Path) -> None:
+def build(repo_root: Path, out_dir: Path) -> int:
     agents = collect_agents(repo_root)
     plugin_dir = out_dir / PLUGIN_NAME
     if plugin_dir.exists():
         shutil.rmtree(plugin_dir)
-    (plugin_dir / "data").mkdir(parents=True)
+    (plugin_dir / "data").mkdir(parents=True, exist_ok=True)
     (plugin_dir / "plugin.yaml").write_text(plugin_yaml(), encoding="utf-8")
     (plugin_dir / "__init__.py").write_text(init_py(), encoding="utf-8")
-    (plugin_dir / "README.md").write_text(readme(len(agents)), encoding="utf-8")
     (plugin_dir / "data" / "agents.json").write_text(
-        json.dumps(agents, ensure_ascii=False, indent=2),
+        json.dumps(agents, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"Wrote {plugin_dir} ({len(agents)} agents)")
+    (out_dir / "README.md").write_text(readme(len(agents)), encoding="utf-8")
+    return len(agents)
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--repo-root", default=".")
-    parser.add_argument("--out", default="integrations/hermes")
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--out", type=Path, default=None, help="Output directory, default integrations/hermes")
     args = parser.parse_args()
-    build(Path(args.repo_root).resolve(), Path(args.out).resolve())
+    repo_root = args.repo_root.resolve()
+    out_dir = (args.out or (repo_root / "integrations" / "hermes")).resolve()
+    out_dir.mkdir(parents=True, exist_ok=True)
+    count = build(repo_root, out_dir)
+    print(count)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

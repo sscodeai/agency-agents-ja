@@ -2,19 +2,19 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Total agents: 368
+Total agents: 374
 Japan-original agents: 114
-Upstream-aligned agents: 254
+Upstream-aligned agents: 260
 Skeleton: 0
 Translated: 0
-Adapted: 254
+Adapted: 260
 
 ## By Category
 
 | Category | Upstream | Skeleton | Translated | Adapted | Japan-original |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Academic | 6 | 0 | 0 | 6 | 1 |
-| Engineering | 49 | 0 | 0 | 49 | 27 |
+| Engineering | 52 | 0 | 0 | 52 | 27 |
 | Project Management | 7 | 0 | 0 | 7 | 7 |
 | Testing | 9 | 0 | 0 | 9 | 7 |
 | Product | 5 | 0 | 0 | 5 | 2 |
@@ -28,11 +28,11 @@ Adapted: 254
 | Design | 9 | 0 | 0 | 9 | 3 |
 | Legal | 0 | 0 | 0 | 0 | 6 |
 | Sales | 9 | 0 | 0 | 9 | 6 |
-| Security | 10 | 0 | 0 | 10 | 0 |
+| Security | 12 | 0 | 0 | 12 | 0 |
 | Spatial Computing | 6 | 0 | 0 | 6 | 0 |
 | Support | 6 | 0 | 0 | 6 | 7 |
 | Supply Chain | 0 | 0 | 0 | 0 | 6 |
-| Specialized | 54 | 0 | 0 | 54 | 14 |
+| Specialized | 55 | 0 | 0 | 55 | 14 |
 
 ## Skeleton Backlog
 

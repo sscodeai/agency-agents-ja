@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 368 (⭐ 114 japan-original + 254 upstream-aligned)
+Total agents: 374 (⭐ 114 japan-original + 260 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -21,7 +21,7 @@ Total: 7 (⭐ 1 japan-original + 6 upstream-aligned)
 
 ## Engineering
 
-Total: 76 (⭐ 27 japan-original + 49 upstream-aligned)
+Total: 79 (⭐ 27 japan-original + 52 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -62,7 +62,9 @@ Total: 76 (⭐ 27 japan-original + 49 upstream-aligned)
 |  | 日本向けコードベースオンボーディングエンジニア | upstream | adapted | Codebase Onboarding Engineer | 日本の開発チーム向けに既存 codebase の構造、開発手順、設計意図、初回 task を整理する onboarding agent。 | `engineering/engineering-codebase-onboarding-engineer.md` |
 |  | 日本向け Data Engineer | upstream | adapted | Data Engineer | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する agent。 | `engineering/engineering-data-engineer.md` |
 |  | 日本向け Database Optimizer | upstream | adapted | Database Optimizer | 日本の業務システムで query、index、schema、migration、batch、帳票、CSV workload を最適化する database agent。 | `engineering/engineering-database-optimizer.md` |
+|  | 日本向け Database Reliability Engineer | upstream | adapted | Database Reliability Engineer | Database の高可用性、replication、failover、backup / PITR、zero-downtime migration、DR drill を日本の本番運用向けに設計する DBRE agent。 | `engineering/engineering-database-reliability-engineer.md` |
 |  | 日本向けデスクトップアプリエンジニア | upstream | adapted | Desktop App Engineer | Electron、Tauri、Qt、.NET、Swift / AppKit、Windows / macOS 配布、auto-update、署名、installer、offline operation を設計する desktop application engineering agent。 | `engineering/engineering-desktop-app-engineer.md` |
+|  | 日本向け Developer Tooling Engineer | upstream | adapted | Developer Tooling Engineer | CLI、internal developer platform、開発自動化、error UX、shell completion、cross-platform 配布を設計する developer tooling agent。 | `engineering/engineering-developer-tooling-engineer.md` |
 |  | 日本向け DevOps 自動化エンジニア | upstream | adapted | DevOps Automator | 日本の開発・運用現場に合わせて CI/CD、IaC、release、監視、rollback、権限管理を自動化する agent。 | `engineering/engineering-devops-automator.md` |
 |  | 日本向け Drupal パフォーマンスエンジニア | upstream | adapted | Drupal Performance Engineer | Drupal 10 / 11 の Core Web Vitals、render cache、Dynamic Page Cache、BigPipe、Views、CDN、PHP-FPM / opcache を日本の公共・企業サイト向けに最適化する engineering agent。 | `engineering/engineering-drupal-performance.md` |
 |  | 日本向け Drupal Shopping Cart Engineer | upstream | adapted | Drupal Shopping Cart Engineer | Drupal Commerce の商品 catalog、cart、checkout、決済、税率、coupon、注文管理を日本 EC / B2B 受発注向けに設計・実装する agent。 | `engineering/engineering-drupal-shopping-cart.md` |
@@ -76,6 +78,7 @@ Total: 76 (⭐ 27 japan-original + 49 upstream-aligned)
 |  | 日本向け国際化エンジニア | upstream | adapted | Internationalization Engineer | ICU MessageFormat、CLDR、Intl、RTL / bidi、疑似翻訳、TMS、翻訳 workflow を使い、日本語・英語・多言語 product の国際化を設計する engineering agent。 | `engineering/engineering-i18n-engineer.md` |
 |  | 日本向け ID / アクセス管理エンジニア | upstream | adapted | Identity & Access Engineer | IAM、SSO、OIDC / SAML、MFA、SCIM、RBAC / ABAC、特権 ID、joiner / mover / leaver を日本企業向けに設計する identity and access engineering agent。 | `engineering/engineering-identity-access-engineer.md` |
 |  | 日本向けインシデント対応指揮者 | upstream | adapted | Incident Response Commander | 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。 | `engineering/engineering-incident-response-commander.md` |
+|  | 日本向け IoT Fleet Engineer | upstream | adapted | IoT Fleet Engineer | IoT / edge device fleet の provisioning、device identity、MQTT telemetry、OTA firmware update、edge observability を安全に設計する agent。 | `engineering/engineering-iot-fleet-engineer.md` |
 |  | 日本向け IT Service Manager | upstream | adapted | IT Service Manager | ITIL 4 を軸に service catalog、incident / problem / change、SLA、CMDB、継続改善を日本企業の情シス・運用保守に合わせて設計する agent。 | `engineering/engineering-it-service-manager.md` |
 |  | 日本向け最小変更エンジニア | upstream | adapted | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
 |  | 日本向け Mobile App Builder | upstream | adapted | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
@@ -377,10 +380,11 @@ Total: 15 (⭐ 6 japan-original + 9 upstream-aligned)
 
 ## Security
 
-Total: 10 (⭐ 0 japan-original + 10 upstream-aligned)
+Total: 12 (⭐ 0 japan-original + 12 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
+|  | 日本向け AI 生成コード監査エンジニア | upstream | adapted | AI-Generated Code Auditor | AI が生成した code の secret leak、RLS / authorization hole、prompt injection、過剰権限、未検証修正を監査する security agent。 | `security/security-ai-generated-code-auditor.md` |
 |  | 日本向け Application Security Engineer | upstream | adapted | Application Security Engineer | Threat modeling、secure code review、SAST / DAST、developer enablement を通じて、日本の開発現場に secure SDLC を組み込む AppSec agent。 | `security/security-appsec-engineer.md` |
 |  | 日本向け Security Architect | upstream | adapted | Security Architect | Trust boundary、zero trust、defense-in-depth、risk-based review を用いて、日本の SaaS / 業務 system の security architecture を設計する agent。 | `security/security-architect.md` |
 |  | 日本向け Blockchain Security Auditor | upstream | adapted | Blockchain Security Auditor | Smart contract、wallet、bridge、oracle、token operation を監査し、資産流出 risk と運用 control を日本向けに整理する security agent。 | `security/security-blockchain-security-auditor.md` |
@@ -388,6 +392,7 @@ Total: 10 (⭐ 0 japan-original + 10 upstream-aligned)
 |  | 日本向け Security Compliance Auditor | upstream | adapted | Compliance Auditor | SOC 2、ISO 27001、ISMS、個人情報、PCI / HIPAA 周辺の technical control と evidence を整理する compliance audit agent。 | `security/security-compliance-auditor.md` |
 |  | 日本向け Incident Responder | upstream | adapted | Incident Responder | Security incident の triage、containment、forensics、communication、postmortem を日本企業向けに指揮する DFIR agent。 | `security/security-incident-responder.md` |
 |  | 日本向け Penetration Tester | upstream | adapted | Penetration Tester | 許可された範囲で Web、network、cloud、API の penetration test を行い、攻撃 chain と business impact を防御目的で示す agent。 | `security/security-penetration-tester.md` |
+|  | 日本向け Secrets & Credential Hygiene Engineer | upstream | adapted | Secrets & Credential Hygiene Engineer | Secret detection、vaulting、rotation、short-lived credential、leak response を設計し、credential lifecycle 全体を安全に保つ agent。 | `security/security-secrets-credential-engineer.md` |
 |  | 日本向け Senior SecOps Engineer | upstream | adapted | Senior SecOps Engineer | Secret scan、security control、PR review、logging、rate limit、CORS、CSP、認証認可を厳格に確認する defensive SecOps agent。 | `security/security-senior-secops.md` |
 |  | 日本向け Threat Detection Engineer | upstream | adapted | Threat Detection Engineer | SIEM rule、Sigma / KQL / SPL、MITRE ATT&CK coverage、threat hunting、alert tuning を設計する detection engineering agent。 | `security/security-threat-detection-engineer.md` |
 |  | 日本向け Threat Intelligence Analyst | upstream | adapted | Threat Intelligence Analyst | Threat actor、campaign、IOC、MITRE ATT&CK、vulnerability exploitation を分析し、日本企業向けの defensive action に変換する CTI agent。 | `security/security-threat-intelligence-analyst.md` |
@@ -440,7 +445,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 68 (⭐ 14 japan-original + 54 upstream-aligned)
+Total: 69 (⭐ 14 japan-original + 55 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -497,6 +502,7 @@ Total: 68 (⭐ 14 japan-original + 54 upstream-aligned)
 |  | 日本向け Sales Outreach | upstream | adapted | Sales Outreach | 日本の B2B 営業向けに個社仮説、メール、電話、紹介、イベント follow-up の outreach を設計する agent。 | `specialized/sales-outreach.md` |
 |  | 日本向け Chief of Staff | upstream | adapted | Chief of Staff | 日本企業の経営・事業責任者を支援し、会議、意思決定、横断課題、KPI、実行管理を整理する agent。 | `specialized/specialized-chief-of-staff.md` |
 |  | 日本向け土木エンジニア | upstream | adapted | Civil Engineer | 日本の土木・建設 project で設計条件、施工、維持管理、安全、発注者説明を整理する civil engineering agent。 | `specialized/specialized-civil-engineer.md` |
+|  | 日本向け Codebase Archaeologist | upstream | adapted | Codebase Archaeologist | 複数 AI tool / 複数 session が長期間触った codebase の drift、dead code、doc-code mismatch、重複実装、時代差を監査する agent。 | `specialized/specialized-codebase-archaeologist.md` |
 |  | 日本向け文化インテリジェンス戦略家 | upstream | adapted | Cultural Intelligence Strategist | 日本市場・海外市場間の文化、商習慣、表現、交渉、ローカライズリスクを読み解く strategist agent。 | `specialized/specialized-cultural-intelligence-strategist.md` |
 |  | 日本向けデベロッパーアドボケイト | upstream | adapted | Developer Advocate | 日本向けデベロッパーアドボケイト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 専門業務 agent。 | `specialized/specialized-developer-advocate.md` |
 |  | 日本向け文書生成担当 | upstream | adapted | Document Generator | 稟議書、議事録、提案書、報告書、手順書、FAQ など日本企業で使う文書を構造化して生成する agent。 | `specialized/specialized-document-generator.md` |

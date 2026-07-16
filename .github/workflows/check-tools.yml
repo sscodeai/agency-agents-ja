@@ -1,7 +1,7 @@
 name: Check Tools Consistency
 
-# Runs on every PR: a new or renamed tool must trip this check even when nobody
-# touched tools.json or the install/convert scripts.
+# Runs on every PR (no path filter on purpose): a new or renamed tool must trip
+# this check even when nobody touched tools.json or the install/convert scripts.
 on:
   pull_request:
   push:
@@ -18,3 +18,6 @@ jobs:
         run: |
           chmod +x scripts/check-tools.sh
           ./scripts/check-tools.sh
+
+      - name: Validate generated Hermes plugin
+        run: python3 scripts/check-hermes-plugin.py
