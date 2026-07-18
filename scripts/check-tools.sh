@@ -25,6 +25,14 @@ canonical() {
     | sort -u
 }
 
+convertible() {
+  awk '/"tools"[[:space:]]*:[[:space:]]*\{/{f=1; next} f' "$JSON" \
+    | grep -E '^    "[a-z0-9-]+"[[:space:]]*:' \
+    | grep -v '"format":"identity"' \
+    | sed -E 's/^    "([a-z0-9-]+)".*/\1/' \
+    | sort -u
+}
+
 bash_array() {
   grep -oE "$2=\([^)]*\)" "$1" | head -1 \
     | sed -E "s/^$2=\(//; s/\)\$//" \
@@ -37,6 +45,7 @@ bash_array() {
 [[ -f "$JSON" ]] || { echo "ERROR $JSON not found at repo root"; exit 1; }
 
 canon="$(canonical)"
+convertible_tools="$(convertible)"
 
 all_tools="$(bash_array scripts/install.sh ALL_TOOLS)"
 missing="$(comm -23 <(echo "$canon") <(echo "$all_tools"))"
@@ -45,7 +54,9 @@ extra="$(comm -13 <(echo "$canon") <(echo "$all_tools"))"
 [[ -n "$extra" ]] && fail "scripts/install.sh ALL_TOOLS has tool(s) not in $JSON: $(echo "$extra" | tr '\n' ' ')"
 
 conv="$(bash_array scripts/convert.sh valid_tools | grep -v '^all$' || true)"
-notin="$(comm -13 <(echo "$canon") <(echo "$conv"))"
+missing_conv="$(comm -23 <(echo "$convertible_tools") <(echo "$conv"))"
+notin="$(comm -13 <(echo "$convertible_tools") <(echo "$conv"))"
+[[ -n "$missing_conv" ]] && fail "scripts/convert.sh valid_tools is missing convertible tool(s) in $JSON: $(echo "$missing_conv" | tr '\n' ' ')"
 [[ -n "$notin" ]] && fail "scripts/convert.sh converts tool(s) absent from $JSON: $(echo "$notin" | tr '\n' ' ')"
 
 while IFS= read -r tool; do
