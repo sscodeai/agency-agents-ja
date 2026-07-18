@@ -22,7 +22,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | Categories | 20 |
 | Upstream baseline | `msitarzewski/agency-agents@9f3e401` as of 2026-07-09 |
 
-> **368 ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
+> **<!-- AUTOGEN:TOTAL -->374<!-- /AUTOGEN:TOTAL --> ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
 
 ### Quick install
 
@@ -193,7 +193,7 @@ MIT
 
 英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、中国語コミュニティ版 [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の取り組みからも一部の領域設計や coverage gap の示唆を得て、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent として本土化しています。
 
-> **368 個の即戦力 AI 専門家 agent** — 工程、設計、QA、GIS / 地図・空間データ、healthcare、product、marketing、sales、support、legal、finance、security、製造業 DX、公共 sector など 20 category を収録。単なる「あなたは専門家です」prompt ではなく、各 agent に役割、確認観点、作業手順、成果物、運用 guardrail を持たせています。
+> **<!-- AUTOGEN:TOTAL -->374<!-- /AUTOGEN:TOTAL --> 個の即戦力 AI 専門家 agent** — 工程、設計、QA、GIS / 地図・空間データ、healthcare、product、marketing、sales、support、legal、finance、security、製造業 DX、公共 sector など 20 category を収録。単なる「あなたは専門家です」prompt ではなく、各 agent に役割、確認観点、作業手順、成果物、運用 guardrail を持たせています。
 
 ## プロジェクト規模
 
