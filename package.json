@@ -20,6 +20,9 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "dependencies": {
+    "yaml": "^2.8.0"
+  },
   "bin": {
     "agency-agents-ja": "bin/agency-agents-ja.js"
   },

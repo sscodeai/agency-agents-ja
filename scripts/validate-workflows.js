@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
+const YAML = require('yaml');
 
-const root = path.resolve(__dirname, "..");
-const workflowDir = path.join(root, "workflows");
-const examplesDir = path.join(root, "examples");
+const root = process.cwd();
+const workflowDir = path.join(root, 'workflows');
+const examplesDir = path.join(root, 'examples');
 
 let errors = 0;
 
@@ -13,86 +14,21 @@ function fail(file, message) {
   errors += 1;
 }
 
-function parseInlineList(value) {
-  return value
-    .split(",")
-    .map((item) => item.trim().replace(/^["']|["']$/g, ""))
-    .filter(Boolean);
+function read(file) {
+  return fs.readFileSync(file, 'utf8');
 }
 
-function parseSteps(text) {
-  const stepsMatch = text.match(/^steps:\s*$(?<body>[\s\S]*)/m);
-  if (!stepsMatch || !stepsMatch.groups.body.trim()) {
-    return [];
-  }
-
-  return stepsMatch.groups.body
-    .split(/\n(?=  - id: )/)
-    .filter((block) => /^\s*-\s*id:\s*/m.test(block))
-    .map((block) => {
-      const id = block.match(/^\s*-\s*id:\s*([A-Za-z0-9_-]+)\s*$/m);
-      const role = block.match(/^\s*role:\s*["']?([^"'\n]+)["']?\s*$/m);
-      const dependsOn = block.match(/^\s*depends_on:\s*\[([^\]]*)\]\s*$/m);
-
-      return {
-        id: id && id[1],
-        role: role && role[1],
-        dependsOn: dependsOn ? parseInlineList(dependsOn[1]) : [],
-      };
-    });
+function normalizeText(text) {
+  return text.trim().replace(/\r\n/g, '\n');
 }
 
-function validateWorkflowText(relativeFile, text) {
-  const name = text.match(/^name:\s*([A-Za-z0-9_-]+)\s*$/m);
-  if (!name) {
-    fail(relativeFile, "missing simple name field");
+function parseYaml(relativeFile, text) {
+  try {
+    return YAML.parse(text);
+  } catch (error) {
+    fail(relativeFile, `invalid YAML: ${error.message}`);
+    return null;
   }
-
-  if (!/^description:\s*.+\s*$/m.test(text)) {
-    fail(relativeFile, "missing description field");
-  }
-
-  if (!/^agents_dir:\s*["']?\.[/"']?\s*$/m.test(text)) {
-    fail(relativeFile, 'agents_dir must be "."');
-  }
-
-  const steps = parseSteps(text);
-  if (steps.length === 0) {
-    fail(relativeFile, "steps must contain at least one step");
-    return { name: name && name[1], steps };
-  }
-
-  const ids = new Set();
-  for (const step of steps) {
-    if (!step.id) {
-      fail(relativeFile, "step is missing id");
-      continue;
-    }
-    if (ids.has(step.id)) {
-      fail(relativeFile, `duplicate step id: ${step.id}`);
-    }
-    ids.add(step.id);
-  }
-
-  for (const step of steps) {
-    if (!step.role) {
-      fail(relativeFile, `step ${step.id || "(unknown)"} is missing role`);
-      continue;
-    }
-
-    const agentFile = path.join(root, `${step.role}.md`);
-    if (!fs.existsSync(agentFile)) {
-      fail(relativeFile, `step ${step.id} references missing agent: ${step.role}.md`);
-    }
-
-    for (const dependency of step.dependsOn) {
-      if (!ids.has(dependency)) {
-        fail(relativeFile, `step ${step.id} depends on missing step: ${dependency}`);
-      }
-    }
-  }
-
-  return { name: name && name[1], steps };
 }
 
 function extractFirstYamlBlock(text) {
@@ -100,26 +36,184 @@ function extractFirstYamlBlock(text) {
   return match && match[1];
 }
 
-function normalizeText(text) {
-  return text.trim().replace(/\r\n/g, "\n");
+function assertString(file, workflow, key) {
+  if (typeof workflow[key] !== 'string' || workflow[key].trim() === '') {
+    fail(file, `missing or invalid ${key} field`);
+    return '';
+  }
+  return workflow[key].trim();
+}
+
+function inputNames(workflow) {
+  if (workflow.inputs === undefined) return new Set();
+  if (!Array.isArray(workflow.inputs)) return new Set();
+  return new Set(
+    workflow.inputs
+      .filter((input) => input && typeof input.name === 'string')
+      .map((input) => input.name),
+  );
+}
+
+function placeholders(value) {
+  if (typeof value !== 'string') return [];
+  return [...value.matchAll(/\{\{\s*([A-Za-z0-9_-]+)\s*\}\}/g)].map((match) => match[1]);
+}
+
+function validateWorkflowText(relativeFile, text) {
+  const workflow = parseYaml(relativeFile, text);
+  if (!workflow || typeof workflow !== 'object' || Array.isArray(workflow)) {
+    fail(relativeFile, 'workflow YAML must be a mapping');
+    return { name: '', steps: [] };
+  }
+
+  const name = assertString(relativeFile, workflow, 'name');
+  assertString(relativeFile, workflow, 'description');
+
+  if (workflow.agents_dir !== '.') {
+    fail(relativeFile, 'agents_dir must be "."');
+  }
+
+  if (workflow.inputs !== undefined && !Array.isArray(workflow.inputs)) {
+    fail(relativeFile, 'inputs must be a list when present');
+  }
+  if (Array.isArray(workflow.inputs)) {
+    const seenInputs = new Set();
+    for (const input of workflow.inputs) {
+      if (!input || typeof input !== 'object' || Array.isArray(input)) {
+        fail(relativeFile, 'input entries must be mappings');
+        continue;
+      }
+      if (typeof input.name !== 'string' || input.name.trim() === '') {
+        fail(relativeFile, 'input entry is missing name');
+        continue;
+      }
+      if (seenInputs.has(input.name)) {
+        fail(relativeFile, `duplicate input name: ${input.name}`);
+      }
+      seenInputs.add(input.name);
+    }
+  }
+
+  const steps = workflow.steps;
+  if (!Array.isArray(steps) || steps.length === 0) {
+    fail(relativeFile, 'steps must contain at least one step');
+    return { name, steps: [] };
+  }
+
+  const stepIds = new Set();
+  const outputToStepId = new Map();
+  for (const [index, step] of steps.entries()) {
+    if (!step || typeof step !== 'object' || Array.isArray(step)) {
+      fail(relativeFile, `step ${index + 1} must be a mapping`);
+      continue;
+    }
+    if (typeof step.id !== 'string' || step.id.trim() === '') {
+      fail(relativeFile, `step ${index + 1} is missing id`);
+      continue;
+    }
+    if (stepIds.has(step.id)) {
+      fail(relativeFile, `duplicate step id: ${step.id}`);
+    }
+    stepIds.add(step.id);
+
+    if (typeof step.output === 'string' && step.output.trim()) {
+      if (outputToStepId.has(step.output)) {
+        fail(relativeFile, `duplicate step output: ${step.output}`);
+      }
+      outputToStepId.set(step.output, step.id);
+    }
+  }
+
+  const seenStepIds = new Set();
+  const knownInputs = inputNames(workflow);
+  const graph = new Map();
+
+  for (const step of steps) {
+    if (!step || typeof step !== 'object' || Array.isArray(step)) continue;
+    const id = typeof step.id === 'string' ? step.id : '';
+    if (!id) continue;
+
+    if (typeof step.role !== 'string' || step.role.trim() === '') {
+      fail(relativeFile, `step ${id} is missing role`);
+    } else {
+      const agentFile = path.join(root, `${step.role}.md`);
+      if (!fs.existsSync(agentFile)) {
+        fail(relativeFile, `step ${id} references missing agent: ${step.role}.md`);
+      }
+    }
+
+    if (typeof step.task !== 'string' || step.task.trim() === '') {
+      fail(relativeFile, `step ${id} is missing task`);
+    }
+
+    const dependsOn = step.depends_on === undefined ? [] : step.depends_on;
+    if (!Array.isArray(dependsOn)) {
+      fail(relativeFile, `step ${id} depends_on must be a list`);
+      graph.set(id, []);
+    } else {
+      graph.set(id, dependsOn);
+      for (const dependency of dependsOn) {
+        if (typeof dependency !== 'string' || dependency.trim() === '') {
+          fail(relativeFile, `step ${id} has invalid depends_on entry`);
+          continue;
+        }
+        if (!stepIds.has(dependency)) {
+          fail(relativeFile, `step ${id} depends on missing step: ${dependency}`);
+        }
+        if (!seenStepIds.has(dependency)) {
+          fail(relativeFile, `step ${id} depends on non-prior step: ${dependency}`);
+        }
+      }
+    }
+
+    const availablePlaceholders = new Set(knownInputs);
+    for (const [output, producerId] of outputToStepId.entries()) {
+      if (seenStepIds.has(producerId)) availablePlaceholders.add(output);
+    }
+    for (const placeholder of placeholders(step.task)) {
+      if (!availablePlaceholders.has(placeholder)) {
+        fail(relativeFile, `step ${id} references unavailable placeholder: ${placeholder}`);
+      }
+    }
+
+    seenStepIds.add(id);
+  }
+
+  const visiting = new Set();
+  const visited = new Set();
+  function visit(id, trail = []) {
+    if (visiting.has(id)) {
+      fail(relativeFile, `steps contain a dependency cycle: ${[...trail, id].join(' -> ')}`);
+      return;
+    }
+    if (visited.has(id)) return;
+    visiting.add(id);
+    for (const dependency of graph.get(id) || []) {
+      if (stepIds.has(dependency)) visit(dependency, [...trail, id]);
+    }
+    visiting.delete(id);
+    visited.add(id);
+  }
+  for (const id of stepIds) visit(id);
+
+  return { name, steps };
 }
 
 if (!fs.existsSync(workflowDir)) {
-  fail("workflows", "directory is missing");
+  fail('workflows', 'directory is missing');
 } else {
   const files = fs
     .readdirSync(workflowDir)
-    .filter((file) => file.endsWith(".yaml") || file.endsWith(".yml"))
+    .filter((file) => file.endsWith('.yaml') || file.endsWith('.yml'))
     .sort();
 
   if (files.length === 0) {
-    fail("workflows", "no workflow YAML files found");
+    fail('workflows', 'no workflow YAML files found');
   }
 
   for (const filename of files) {
-    const relativeFile = path.join("workflows", filename);
-    const text = fs.readFileSync(path.join(workflowDir, filename), "utf8");
-    validateWorkflowText(relativeFile, text);
+    const relativeFile = path.join('workflows', filename);
+    validateWorkflowText(relativeFile, read(path.join(workflowDir, filename)));
   }
 }
 
@@ -127,25 +221,28 @@ if (fs.existsSync(examplesDir)) {
   const workflowsByName = new Map();
   if (fs.existsSync(workflowDir)) {
     for (const filename of fs.readdirSync(workflowDir)) {
-      if (!filename.endsWith(".yaml") && !filename.endsWith(".yml")) continue;
-      const text = fs.readFileSync(path.join(workflowDir, filename), "utf8");
-      const match = text.match(/^name:\s*([A-Za-z0-9_-]+)\s*$/m);
-      if (match) workflowsByName.set(match[1], normalizeText(text));
+      if (!filename.endsWith('.yaml') && !filename.endsWith('.yml')) continue;
+      const relativeFile = path.join('workflows', filename);
+      const text = read(path.join(workflowDir, filename));
+      const workflow = parseYaml(relativeFile, text);
+      if (workflow && typeof workflow.name === 'string') {
+        workflowsByName.set(workflow.name, normalizeText(text));
+      }
     }
   }
 
   const exampleFiles = fs
     .readdirSync(examplesDir)
-    .filter((file) => file.startsWith("workflow-") && file.endsWith(".md"))
+    .filter((file) => file.startsWith('workflow-') && file.endsWith('.md'))
     .sort();
 
   for (const filename of exampleFiles) {
-    const relativeFile = path.join("examples", filename);
-    const text = fs.readFileSync(path.join(examplesDir, filename), "utf8");
+    const relativeFile = path.join('examples', filename);
+    const text = read(path.join(examplesDir, filename));
     const yaml = extractFirstYamlBlock(text);
 
     if (!yaml) {
-      fail(relativeFile, "missing YAML code block");
+      fail(relativeFile, 'missing YAML code block');
       continue;
     }
 
@@ -162,4 +259,4 @@ if (errors > 0) {
   process.exit(1);
 }
 
-console.log("All workflow files are valid.");
+console.log('All workflow files are valid.');

@@ -84,6 +84,7 @@ expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/check-adapted-quality.js']);
   run('node', ['--check', 'scripts/check-package-files.js']);
   run('node', ['--check', 'scripts/check-upstream-parity.js']);
+  run('node', ['--check', 'scripts/validate-workflows.js']);
 });
 
 const fixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-maintenance-'));
@@ -110,6 +111,85 @@ try {
   }, 'upstream skeleton agents are not allowed');
 } finally {
   rmSync(fixture, { recursive: true, force: true });
+}
+
+function writeWorkflowFixture(baseDir, workflowText, exampleText = workflowText) {
+  mkdirSync(join(baseDir, 'workflows'), { recursive: true });
+  mkdirSync(join(baseDir, 'examples'), { recursive: true });
+  mkdirSync(join(baseDir, 'engineering'), { recursive: true });
+  writeFileSync(join(baseDir, 'engineering/test-agent.md'), minimalAgent(), 'utf8');
+  writeFileSync(join(baseDir, 'workflows/test-workflow.yaml'), workflowText, 'utf8');
+  writeFileSync(join(baseDir, 'examples/workflow-test.md'), [
+    '# Workflow Test',
+    '',
+    '```yaml',
+    exampleText.trim(),
+    '```',
+    '',
+  ].join('\n'), 'utf8');
+}
+
+const validWorkflow = `
+name: test-workflow
+description: Test workflow
+agents_dir: "."
+inputs:
+  - name: request
+    required: true
+steps:
+  - id: first
+    role: "engineering/test-agent"
+    task: "Review {{request}}."
+    output: first_output
+  - id: second
+    role: "engineering/test-agent"
+    task: "Use {{first_output}}."
+    depends_on: [first]
+    output: summary
+`;
+
+const workflowFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-workflows-'));
+
+try {
+  expectPass('workflow validator accepts structured YAML workflows', () => {
+    writeWorkflowFixture(workflowFixture, validWorkflow);
+    run('node', [join(root, 'scripts/validate-workflows.js')], { cwd: workflowFixture });
+  });
+
+  expectFail('workflow validator rejects non-prior dependencies', () => {
+    writeWorkflowFixture(workflowFixture, `
+name: test-workflow
+description: Test workflow
+agents_dir: "."
+steps:
+  - id: first
+    role: "engineering/test-agent"
+    task: "Use later."
+    depends_on: [second]
+    output: first_output
+  - id: second
+    role: "engineering/test-agent"
+    task: "Run second."
+    output: summary
+`);
+    run('node', [join(root, 'scripts/validate-workflows.js')], { cwd: workflowFixture });
+  }, 'depends on non-prior step');
+
+  expectFail('workflow validator rejects unavailable placeholders', () => {
+    writeWorkflowFixture(workflowFixture, `
+name: test-workflow
+description: Test workflow
+agents_dir: "."
+steps:
+  - id: first
+    role: "engineering/test-agent"
+    task: "Use {{missing_input}}."
+    output: summary
+`);
+    run('node', [join(root, 'scripts/validate-workflows.js')], { cwd: workflowFixture });
+  }, 'references unavailable placeholder');
+} finally {
+  rmSync(workflowFixture, { recursive: true, force: true });
 }
 
 console.log('Maintenance script tests passed.');

@@ -1,4 +1,5 @@
 # Added by code-review-graph
+node_modules/
 .code-review-graph/
 .claude/sessions/
 .claude/shell-snapshots/
