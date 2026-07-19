@@ -76,7 +76,7 @@ function listAgentFiles() {
 
 function isHighRisk(file) {
   const dir = file.split('/')[0];
-  return dir === 'legal' || dir === 'finance' || HIGH_RISK_SPECIALIZED.has(basename(file));
+  return dir === 'legal' || dir === 'finance' || dir === 'paid-media' || HIGH_RISK_SPECIALIZED.has(basename(file));
 }
 
 const issues = [];
