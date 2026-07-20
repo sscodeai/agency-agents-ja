@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 374 (⭐ 114 japan-original + 260 upstream-aligned)
+Total agents: 377 (⭐ 114 japan-original + 263 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -21,7 +21,7 @@ Total: 7 (⭐ 1 japan-original + 6 upstream-aligned)
 
 ## Engineering
 
-Total: 79 (⭐ 27 japan-original + 52 upstream-aligned)
+Total: 81 (⭐ 27 japan-original + 54 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -74,6 +74,7 @@ Total: 79 (⭐ 27 japan-original + 52 upstream-aligned)
 |  | 日本向け 3D プリンタ材料最適化専門家 | upstream | adapted | Filament Optimization Specialist | 日本の試作、製造、教育現場向けに 3D printer filament、造形条件、品質、検査、材料選定を最適化する agent。 | `engineering/engineering-filament-optimization-specialist.md` |
 |  | 日本向け FinOps エンジニア | upstream | adapted | FinOps Engineer | AWS / Azure / Google Cloud の cloud cost、unit economics、tagging、budget、rightsizing、reserved commitment、showback / chargeback を日本企業向けに最適化する engineering agent。 | `engineering/engineering-finops-engineer.md` |
 |  | 日本向け Frontend Developer | upstream | adapted | Frontend Developer | 日本の業務画面、SaaS、EC、管理画面向けに React / Vue、form、table、アクセシビリティ、入力補助を実装する frontend agent。 | `engineering/engineering-frontend-developer.md` |
+|  | 日本向け GaussDB Expert Engineer | upstream | adapted | GaussDB Expert Engineer | Huawei GaussDB OLTP の分散表設計、CN / DN 実行計画、UStore / AStore、性能 tuning、HA / DR を扱う database specialist agent。 | `engineering/engineering-gaussdb-expert.md` |
 |  | 日本向け Git ワークフローマスター | upstream | adapted | Git Workflow Master | 日本の開発チーム向けに branch、PR、commit、release、hotfix、権限、レビュー運用を整える Git workflow agent。 | `engineering/engineering-git-workflow-master.md` |
 |  | 日本向け国際化エンジニア | upstream | adapted | Internationalization Engineer | ICU MessageFormat、CLDR、Intl、RTL / bidi、疑似翻訳、TMS、翻訳 workflow を使い、日本語・英語・多言語 product の国際化を設計する engineering agent。 | `engineering/engineering-i18n-engineer.md` |
 |  | 日本向け ID / アクセス管理エンジニア | upstream | adapted | Identity & Access Engineer | IAM、SSO、OIDC / SAML、MFA、SCIM、RBAC / ABAC、特権 ID、joiner / mover / leaver を日本企業向けに設計する identity and access engineering agent。 | `engineering/engineering-identity-access-engineer.md` |
@@ -88,6 +89,7 @@ Total: 79 (⭐ 27 japan-original + 52 upstream-aligned)
 |  | 日本向け OrgScript Engineer | upstream | adapted | OrgScript Engineer | OrgScript の grammar、AST、validation、business logic modeling を使い、日本企業の業務手順や承認 flow を machine-readable に整理する DSL engineer。 | `engineering/engineering-orgscript-engineer.md` |
 |  | 日本向け決済・請求エンジニア | upstream | adapted | Payments & Billing Engineer | Stripe、Adyen、PayPal、日本国内 PSP、webhook、冪等性、subscription、3DS、PCI DSS、消費税・インボイス、入金消込を扱う payments / billing engineering agent。 | `engineering/engineering-payments-billing-engineer.md` |
 |  | 日本向け Prompt Engineer | upstream | adapted | Prompt Engineer | 日本語 LLM / agent / RAG の system prompt、評価 case、出力 format、guardrail を設計し、曖昧な依頼を再現性のある AI behavior に変える agent。 | `engineering/engineering-prompt-engineer.md` |
+|  | 日本向け RAG Pipeline Engineer | upstream | adapted | RAG Pipeline Engineer | RAG の chunking、embedding、hybrid search、metadata filtering、reranking、evaluation、production monitoring を設計する retrieval quality agent。 | `engineering/engineering-rag-pipeline-engineer.md` |
 |  | 日本向け高速プロトタイピングエンジニア | upstream | adapted | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |
 |  | 日本向けリアルタイム共同編集エンジニア | upstream | adapted | Realtime Collaboration Engineer | WebSocket、WebRTC、CRDT / OT、presence、conflict resolution、offline sync を使い、日本の SaaS / 業務 system 向け共同編集を設計する engineering agent。 | `engineering/engineering-realtime-collaboration-engineer.md` |
 |  | 日本向け検索関連性エンジニア | upstream | adapted | Search Relevance Engineer | 日本語検索、形態素解析、同義語、ranking、BM25 / vector search、query understanding、evaluation、検索ログ改善を扱う search relevance engineering agent。 | `engineering/engineering-search-relevance-engineer.md` |
@@ -445,7 +447,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 69 (⭐ 14 japan-original + 55 upstream-aligned)
+Total: 70 (⭐ 14 japan-original + 56 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -497,6 +499,7 @@ Total: 69 (⭐ 14 japan-original + 55 upstream-aligned)
 |  | 日本向け不動産売買サポート担当 | upstream | adapted | Real Estate Buyer/Seller | 日本の不動産売買で物件情報、希望条件、資金計画、内見、重要事項、契約前確認を整理する agent。 | `specialized/real-estate-buyer-seller.md` |
 |  | 日本向け採用専門家 | upstream | adapted | Recruitment Specialist | 日本の採用活動で求人票、候補者対応、面接設計、評価、オファー、入社 follow-up を支援する recruitment agent。 | `specialized/recruitment-specialist.md` |
 |  | 日本向けレポート配信エージェント | upstream | adapted | Report Distribution Agent | 経営、営業、CS、運用、監査向け report の配信先、権限、形式、頻度、証跡を管理する agent。 | `specialized/report-distribution-agent.md` |
+|  | 日本向け Resume Tailor | upstream | adapted | Resume Tailor | 求人票と実際の経験を照合し、ATS と採用担当者に伝わる履歴書・職務経歴書へ誠実に最適化する career application agent。 | `specialized/resume-tailor.md` |
 |  | 日本向け小売返品対応担当 | upstream | adapted | Retail Customer Returns | 日本の EC / 小売で返品、交換、返金、初期不良、配送事故、規約確認を支援する customer operations agent。 | `specialized/retail-customer-returns.md` |
 |  | 日本向け Sales Data Extraction Agent | upstream | adapted | Sales Data Extraction Agent | 商談メモ、メール、議事録、名刺、CRM から日本の営業活動に必要な情報を抽出・整形する agent。 | `specialized/sales-data-extraction-agent.md` |
 |  | 日本向け Sales Outreach | upstream | adapted | Sales Outreach | 日本の B2B 営業向けに個社仮説、メール、電話、紹介、イベント follow-up の outreach を設計する agent。 | `specialized/sales-outreach.md` |
