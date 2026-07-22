@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 377 (⭐ 114 japan-original + 263 upstream-aligned)
+Total agents: 379 (⭐ 114 japan-original + 265 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -21,7 +21,7 @@ Total: 7 (⭐ 1 japan-original + 6 upstream-aligned)
 
 ## Engineering
 
-Total: 81 (⭐ 27 japan-original + 54 upstream-aligned)
+Total: 82 (⭐ 27 japan-original + 55 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -88,6 +88,7 @@ Total: 81 (⭐ 27 japan-original + 54 upstream-aligned)
 |  | 日本向けネットワークエンジニア | upstream | adapted | Network Engineer | Cisco / Juniper / Palo Alto などの enterprise network について、routing、switching、firewall、VPN、障害切り分け、変更計画を日本の運用現場向けに整理する agent。 | `engineering/engineering-network-engineer.md` |
 |  | 日本向け OrgScript Engineer | upstream | adapted | OrgScript Engineer | OrgScript の grammar、AST、validation、business logic modeling を使い、日本企業の業務手順や承認 flow を machine-readable に整理する DSL engineer。 | `engineering/engineering-orgscript-engineer.md` |
 |  | 日本向け決済・請求エンジニア | upstream | adapted | Payments & Billing Engineer | Stripe、Adyen、PayPal、日本国内 PSP、webhook、冪等性、subscription、3DS、PCI DSS、消費税・インボイス、入金消込を扱う payments / billing engineering agent。 | `engineering/engineering-payments-billing-engineer.md` |
+|  | 日本向け Privacy Engineer | upstream | adapted | Privacy Engineer | 個人情報の発見・分類、同意 enforcement、DSAR / 削除 pipeline、仮名化・tokenization、保存期間 automation を実装する privacy engineering agent。 | `engineering/engineering-privacy-engineer.md` |
 |  | 日本向け Prompt Engineer | upstream | adapted | Prompt Engineer | 日本語 LLM / agent / RAG の system prompt、評価 case、出力 format、guardrail を設計し、曖昧な依頼を再現性のある AI behavior に変える agent。 | `engineering/engineering-prompt-engineer.md` |
 |  | 日本向け RAG Pipeline Engineer | upstream | adapted | RAG Pipeline Engineer | RAG の chunking、embedding、hybrid search、metadata filtering、reranking、evaluation、production monitoring を設計する retrieval quality agent。 | `engineering/engineering-rag-pipeline-engineer.md` |
 |  | 日本向け高速プロトタイピングエンジニア | upstream | adapted | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |
@@ -447,7 +448,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 70 (⭐ 14 japan-original + 56 upstream-aligned)
+Total: 71 (⭐ 14 japan-original + 57 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -480,6 +481,7 @@ Total: 70 (⭐ 14 japan-original + 56 upstream-aligned)
 |  | 日本向け ESG / Sustainability Officer | upstream | adapted | ESG & Sustainability Officer | ESG、サステナビリティ開示、GHG 排出量、人的資本、サプライチェーン、人権・環境対応を日本企業向けに整理する agent。 | `specialized/esg-sustainability-officer.md` |
 |  | 日本向け公共 DX プリセールスコンサルタント | upstream | adapted | Government Digital Presales Consultant | 自治体・公共機関向け DX 提案で調達、要件、セキュリティ、アクセシビリティ、運用保守を整理する agent。 | `specialized/government-digital-presales-consultant.md` |
 |  | 日本向け Grant Writer | upstream | adapted | Grant Writer | 補助金、助成金、公募、研究費、自治体・財団 funding に対して、要件確認、申請書、予算、実績報告を支援する agent。 | `specialized/grant-writer.md` |
+|  | 日本向け Aging Parent Care Companion | upstream | adapted | Aging Parent Care Companion | 高齢の親・家族を支える介護者向けに、服薬、通院、ケアチーム連携、緊急時判断、介護者自身の負担を整理する care coordination agent。 | `specialized/healthcare-aging-parent-care-companion.md` |
 |  | 日本向け医療カスタマーサービス担当 | upstream | adapted | Healthcare Customer Service | 医療・ヘルスケア領域の問い合わせを、個人情報、医療広告、緊急性、専門家確認に配慮して整理する agent。 | `specialized/healthcare-customer-service.md` |
 |  | 日本向け医療マーケティングコンプライアンス担当 | upstream | adapted | Healthcare Marketing Compliance | 医療・ヘルスケア広告、LP、SNS、導入事例を医療広告ガイドライン、薬機法、個人情報観点で確認する agent。 | `specialized/healthcare-marketing-compliance.md` |
 |  | 日本向け宿泊・観光ゲストサービス担当 | upstream | adapted | Hospitality Guest Services | ホテル、旅館、観光施設の問い合わせ、予約、案内、多言語対応、クレーム対応を支援する guest services agent。 | `specialized/hospitality-guest-services.md` |
