@@ -7,7 +7,7 @@ of adding hundreds of generated skills to `skills.external_dirs`. Hermes sees a
 small fixed tool surface at startup, while the complete agency-agents-ja
 roster is stored on disk in `data/agents.json` and searched/loaded lazily.
 
-Generated agent count: 379
+Generated agent count: 383
 
 ## Tools exposed to Hermes
 

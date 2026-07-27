@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 379 (⭐ 114 japan-original + 265 upstream-aligned)
+Total agents: 383 (⭐ 114 japan-original + 269 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -21,7 +21,7 @@ Total: 7 (⭐ 1 japan-original + 6 upstream-aligned)
 
 ## Engineering
 
-Total: 82 (⭐ 27 japan-original + 55 upstream-aligned)
+Total: 85 (⭐ 27 japan-original + 58 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -61,6 +61,7 @@ Total: 82 (⭐ 27 japan-original + 55 upstream-aligned)
 |  | 日本向け Code Reviewer | upstream | adapted | Code Reviewer | 日本の開発チーム向けに、重大度、根拠、保守運用リスク、受入条件を明確にした code review を行う agent。 | `engineering/engineering-code-reviewer.md` |
 |  | 日本向けコードベースオンボーディングエンジニア | upstream | adapted | Codebase Onboarding Engineer | 日本の開発チーム向けに既存 codebase の構造、開発手順、設計意図、初回 task を整理する onboarding agent。 | `engineering/engineering-codebase-onboarding-engineer.md` |
 |  | 日本向け Data Engineer | upstream | adapted | Data Engineer | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する agent。 | `engineering/engineering-data-engineer.md` |
+|  | 日本向け Data Visualization Engineer | upstream | adapted | Data Visualization Engineer | データの問いに合う chart type、知覚的に正直な encoding、colorblind-safe palette、accessible / performant な可視化を設計・実装する agent。 | `engineering/engineering-data-visualization-engineer.md` |
 |  | 日本向け Database Optimizer | upstream | adapted | Database Optimizer | 日本の業務システムで query、index、schema、migration、batch、帳票、CSV workload を最適化する database agent。 | `engineering/engineering-database-optimizer.md` |
 |  | 日本向け Database Reliability Engineer | upstream | adapted | Database Reliability Engineer | Database の高可用性、replication、failover、backup / PITR、zero-downtime migration、DR drill を日本の本番運用向けに設計する DBRE agent。 | `engineering/engineering-database-reliability-engineer.md` |
 |  | 日本向けデスクトップアプリエンジニア | upstream | adapted | Desktop App Engineer | Electron、Tauri、Qt、.NET、Swift / AppKit、Windows / macOS 配布、auto-update、署名、installer、offline operation を設計する desktop application engineering agent。 | `engineering/engineering-desktop-app-engineer.md` |
@@ -81,6 +82,7 @@ Total: 82 (⭐ 27 japan-original + 55 upstream-aligned)
 |  | 日本向けインシデント対応指揮者 | upstream | adapted | Incident Response Commander | 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。 | `engineering/engineering-incident-response-commander.md` |
 |  | 日本向け IoT Fleet Engineer | upstream | adapted | IoT Fleet Engineer | IoT / edge device fleet の provisioning、device identity、MQTT telemetry、OTA firmware update、edge observability を安全に設計する agent。 | `engineering/engineering-iot-fleet-engineer.md` |
 |  | 日本向け IT Service Manager | upstream | adapted | IT Service Manager | ITIL 4 を軸に service catalog、incident / problem / change、SLA、CMDB、継続改善を日本企業の情シス・運用保守に合わせて設計する agent。 | `engineering/engineering-it-service-manager.md` |
+|  | 日本向け LLM Post-Training Engineer | upstream | adapted | LLM Post-Training Engineer | SFT、preference optimization、RLHF / RLVR、MoE post-training、checkpoint integrity、release gate を evidence-driven に管理する agent。 | `engineering/engineering-llm-post-training-engineer.md` |
 |  | 日本向け最小変更エンジニア | upstream | adapted | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
 |  | 日本向け Mobile App Builder | upstream | adapted | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
 |  | 日本向けモバイルリリースエンジニア | upstream | adapted | Mobile Release Engineer | iOS / Android の app signing、store review、TestFlight / internal testing、phased rollout、crash monitoring、rollback、審査対応を設計する mobile release engineering agent。 | `engineering/engineering-mobile-release-engineer.md` |
@@ -93,6 +95,7 @@ Total: 82 (⭐ 27 japan-original + 55 upstream-aligned)
 |  | 日本向け RAG Pipeline Engineer | upstream | adapted | RAG Pipeline Engineer | RAG の chunking、embedding、hybrid search、metadata filtering、reranking、evaluation、production monitoring を設計する retrieval quality agent。 | `engineering/engineering-rag-pipeline-engineer.md` |
 |  | 日本向け高速プロトタイピングエンジニア | upstream | adapted | Rapid Prototyper | 日本の新規事業、PoC、営業 demo、社内検証向けに短期間で検証可能な prototype を作る engineering agent。 | `engineering/engineering-rapid-prototyper.md` |
 |  | 日本向けリアルタイム共同編集エンジニア | upstream | adapted | Realtime Collaboration Engineer | WebSocket、WebRTC、CRDT / OT、presence、conflict resolution、offline sync を使い、日本の SaaS / 業務 system 向け共同編集を設計する engineering agent。 | `engineering/engineering-realtime-collaboration-engineer.md` |
+|  | 日本向け Rust Refactoring Specialist | upstream | adapted | Rust Refactoring Specialist | Rust workspace の repository-scale refactoring、safe rename、module restructuring、panic hardening、ownership 改善、Clippy remediation を行う agent。 | `engineering/engineering-rust-refactoring-specialist.md` |
 |  | 日本向け検索関連性エンジニア | upstream | adapted | Search Relevance Engineer | 日本語検索、形態素解析、同義語、ranking、BM25 / vector search、query understanding、evaluation、検索ログ改善を扱う search relevance engineering agent。 | `engineering/engineering-search-relevance-engineer.md` |
 |  | 日本向け Section 508 / アクセシビリティ専門家 | upstream | adapted | Section 508 Accessibility Specialist | 米国 Section 508 / WCAG と、日本の JIS X 8341-3、公共・自治体アクセシビリティ要件、VPAT / ACR を橋渡しする accessibility specialist agent。 | `engineering/engineering-section-508-specialist.md` |
 |  | 日本向けシニア開発者 | upstream | adapted | Senior Developer | 日本の開発現場で設計、実装、レビュー、障害対応、育成、技術的意思決定をリードする senior developer agent。 | `engineering/engineering-senior-developer.md` |
@@ -329,7 +332,7 @@ Total: 4 (⭐ 4 japan-original + 0 upstream-aligned)
 
 ## Design
 
-Total: 12 (⭐ 3 japan-original + 9 upstream-aligned)
+Total: 13 (⭐ 3 japan-original + 10 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -341,6 +344,7 @@ Total: 12 (⭐ 3 japan-original + 9 upstream-aligned)
 |  | 日本向けインクルーシブビジュアル専門家 | upstream | adapted | Inclusive Visuals Specialist | 日本の多様な利用者、年齢層、地域、障害、ジェンダー、文化背景に配慮した visual 表現を設計・監査する design agent。 | `design/design-inclusive-visuals-specialist.md` |
 |  | 日本向け Persona Walkthrough Specialist | upstream | adapted | Persona Walkthrough Specialist | 定義した persona の心理、期待、不安、文化的前提に入り込み、LP や Web page を scroll ごとに体験して CVR 改善点を整理する UX / CRO agent。 | `design/design-persona-walkthrough.md` |
 |  | 日本向け UI デザイナー | upstream | adapted | UI Designer | 日本の業務システム、B2B SaaS、EC、管理画面に合わせて高密度で誤操作に強い UI を設計する design agent。 | `design/design-ui-designer.md` |
+|  | 日本向け UI Finish-Gate Reviewer | upstream | adapted | UI Finish-Gate Reviewer | 出荷前の Web / iOS 画面を、実装 evidence、product lens、design contract に基づいて generic UI かどうか判定する finish gate reviewer。 | `design/design-ui-finish-gate-reviewer.md` |
 |  | 日本向け UX アーキテクト | upstream | adapted | UX Architect | 日本の業務・購買・承認・運用フローを踏まえ、プロダクト全体の UX 構造と導線を設計する agent。 | `design/design-ux-architect.md` |
 |  | 日本向け UX リサーチャー | upstream | adapted | UX Researcher | 日本の利用者、業務現場、購買・承認構造に合わせて UX research 設計、インタビュー、洞察整理を行う agent。 | `design/design-ux-researcher.md` |
 |  | 日本向けビジュアルストーリーテラー | upstream | adapted | Visual Storyteller | 日本の営業資料、採用広報、LP、展示会、プロダクト紹介で伝わる visual narrative を設計する design agent。 | `design/design-visual-storyteller.md` |
