@@ -72,6 +72,8 @@ function isAgentFile(rel) {
 
 const sourceAgents = agentDirs.flatMap((dir) => listFiles(dir, isAgentFile)).sort();
 const expected = sourceAgents.length;
+const sourceSlugs = sourceAgents.map((rel) => path.basename(rel, '.md')).sort();
+const agencySlugs = sourceSlugs.map((slug) => `agency-${slug}`).sort();
 
 function checkCount(label, actual, detail) {
   if (actual !== expected) {
@@ -79,71 +81,146 @@ function checkCount(label, actual, detail) {
   }
 }
 
-function dirCount(dir, filter) {
-  return directEntries(dir, filter).length;
+function checkUnique(label, values) {
+  const seen = new Set();
+  for (const value of values) {
+    if (seen.has(value)) {
+      fail(`${label}: duplicate ${value}`);
+    }
+    seen.add(value);
+  }
 }
 
-checkCount(
+function checkExactSet(label, actual, expectedItems, detail) {
+  checkCount(label, actual.length, detail);
+
+  const actualSet = new Set(actual);
+  const expectedSet = new Set(expectedItems);
+
+  for (const expectedItem of expectedItems) {
+    if (!actualSet.has(expectedItem)) {
+      fail(`${label}: missing ${expectedItem}`);
+    }
+  }
+
+  for (const actualItem of actual) {
+    if (!expectedSet.has(actualItem)) {
+      fail(`${label}: unexpected ${actualItem}`);
+    }
+  }
+}
+
+function checkRequiredFiles(label, dirs, filenames) {
+  for (const dir of dirs) {
+    for (const filename of filenames) {
+      const rel = path.join(dir, filename);
+      if (!exists(rel)) {
+        fail(`${label}: missing ${rel}`);
+      }
+    }
+  }
+}
+
+function expectedFiles(dir, ext) {
+  return sourceSlugs.map((slug) => path.join(dir, `${slug}${ext}`)).sort();
+}
+
+function expectedDirs(dir, slugs = sourceSlugs) {
+  return slugs.map((slug) => path.join(dir, slug)).sort();
+}
+
+checkUnique('source agents', sourceSlugs);
+
+const antigravityDirs = expectedDirs('integrations/antigravity', agencySlugs);
+checkExactSet(
   'antigravity',
-  dirCount('integrations/antigravity', (entry) => entry.isDirectory() && entry.name.startsWith('agency-')),
+  directEntries('integrations/antigravity', (entry) => entry.isDirectory() && entry.name.startsWith('agency-')),
+  antigravityDirs,
   'integrations/antigravity/agency-*',
 );
-checkCount(
+checkRequiredFiles('antigravity', antigravityDirs, ['SKILL.md']);
+
+const geminiCliDirs = expectedDirs('integrations/gemini-cli/skills');
+checkExactSet(
   'gemini-cli',
-  dirCount('integrations/gemini-cli/skills', (entry) => entry.isDirectory()),
+  directEntries('integrations/gemini-cli/skills', (entry) => entry.isDirectory()),
+  geminiCliDirs,
   'integrations/gemini-cli/skills/*',
 );
+checkRequiredFiles('gemini-cli', geminiCliDirs, ['SKILL.md']);
 if (!exists('integrations/gemini-cli/gemini-extension.json')) {
   fail('gemini-cli: missing integrations/gemini-cli/gemini-extension.json');
 }
-checkCount(
+checkExactSet(
   'opencode',
-  dirCount('integrations/opencode/agents', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  directEntries('integrations/opencode/agents', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  expectedFiles('integrations/opencode/agents', '.md'),
   'integrations/opencode/agents/*.md',
 );
-checkCount(
+checkExactSet(
   'cursor',
-  dirCount('integrations/cursor/rules', (entry) => entry.isFile() && entry.name.endsWith('.mdc')),
+  directEntries('integrations/cursor/rules', (entry) => entry.isFile() && entry.name.endsWith('.mdc')),
+  expectedFiles('integrations/cursor/rules', '.mdc'),
   'integrations/cursor/rules/*.mdc',
 );
-checkCount(
+
+const openclawDirs = expectedDirs('integrations/openclaw');
+checkExactSet(
   'openclaw',
-  dirCount('integrations/openclaw', (entry) => entry.isDirectory()),
+  directEntries('integrations/openclaw', (entry) => entry.isDirectory()),
+  openclawDirs,
   'integrations/openclaw/*',
 );
-checkCount(
+checkRequiredFiles('openclaw', openclawDirs, ['SOUL.md', 'AGENTS.md', 'IDENTITY.md']);
+
+checkExactSet(
   'qwen',
-  dirCount('integrations/qwen/agents', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  directEntries('integrations/qwen/agents', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  expectedFiles('integrations/qwen/agents', '.md'),
   'integrations/qwen/agents/*.md',
 );
-checkCount(
+checkExactSet(
   'zcode',
-  dirCount('integrations/zcode/agents', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  directEntries('integrations/zcode/agents', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  expectedFiles('integrations/zcode/agents', '.md'),
   'integrations/zcode/agents/*.md',
 );
-checkCount(
+
+const kimiDirs = expectedDirs('integrations/kimi');
+checkExactSet(
   'kimi',
-  dirCount('integrations/kimi', (entry) => entry.isDirectory()),
+  directEntries('integrations/kimi', (entry) => entry.isDirectory()),
+  kimiDirs,
   'integrations/kimi/*',
 );
-checkCount(
+checkRequiredFiles('kimi', kimiDirs, ['agent.yaml', 'system.md']);
+
+checkExactSet(
   'codex',
-  dirCount('integrations/codex/agents', (entry) => entry.isFile() && entry.name.endsWith('.toml')),
+  directEntries('integrations/codex/agents', (entry) => entry.isFile() && entry.name.endsWith('.toml')),
+  expectedFiles('integrations/codex/agents', '.toml'),
   'integrations/codex/agents/*.toml',
 );
-checkCount(
+
+const osaurusDirs = expectedDirs('integrations/osaurus', agencySlugs);
+checkExactSet(
   'osaurus',
-  dirCount('integrations/osaurus', (entry) => entry.isDirectory() && entry.name.startsWith('agency-')),
+  directEntries('integrations/osaurus', (entry) => entry.isDirectory() && entry.name.startsWith('agency-')),
+  osaurusDirs,
   'integrations/osaurus/agency-*',
 );
-checkCount(
+checkRequiredFiles('osaurus', osaurusDirs, ['SKILL.md']);
+
+checkExactSet(
   'vibe agents',
-  dirCount('integrations/vibe/agents', (entry) => entry.isFile() && entry.name.endsWith('.toml')),
+  directEntries('integrations/vibe/agents', (entry) => entry.isFile() && entry.name.endsWith('.toml')),
+  expectedFiles('integrations/vibe/agents', '.toml'),
   'integrations/vibe/agents/*.toml',
 );
-checkCount(
+checkExactSet(
   'vibe prompts',
-  dirCount('integrations/vibe/prompts', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  directEntries('integrations/vibe/prompts', (entry) => entry.isFile() && entry.name.endsWith('.md')),
+  expectedFiles('integrations/vibe/prompts', '.md'),
   'integrations/vibe/prompts/*.md',
 );
 
@@ -159,7 +236,13 @@ if (!exists(hermesData)) {
   fail(`hermes: missing ${hermesData}`);
 } else {
   const agents = JSON.parse(read(hermesData));
-  checkCount('hermes', Array.isArray(agents) ? agents.length : 0, hermesData);
+  if (!Array.isArray(agents)) {
+    fail(`${hermesData}: expected an array`);
+  } else {
+    const hermesSlugs = agents.map((agent) => agent.slug).sort();
+    checkUnique('hermes', hermesSlugs);
+    checkExactSet('hermes', hermesSlugs, sourceSlugs, hermesData);
+  }
 }
 for (const rel of [
   'integrations/hermes/agency-agents-router/plugin.yaml',
