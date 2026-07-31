@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 383 (⭐ 114 japan-original + 269 upstream-aligned)
+Total agents: 384 (⭐ 114 japan-original + 270 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -264,11 +264,12 @@ Total: 11 (⭐ 6 japan-original + 5 upstream-aligned)
 
 ## Game Development
 
-Total: 20 (⭐ 0 japan-original + 20 upstream-aligned)
+Total: 21 (⭐ 0 japan-original + 21 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 |  | 日本向け Blender アドオンエンジニア | upstream | adapted | Blender Add-on Engineer | Blender アドオン、asset validator、exporter、DCC pipeline automation を日本の制作現場向けに設計するゲーム開発 agent。 | `game-development/blender/blender-addon-engineer.md` |
+|  | 日本向け Economy Designer | upstream | adapted | Economy Designer | ゲーム内通貨、source / sink、進行曲線、monetization、inflation control、live telemetry を設計する virtual economy agent。 | `game-development/economy-designer.md` |
 |  | 日本向けゲーム音響エンジニア | upstream | adapted | Game Audio Engineer | FMOD/Wwise、adaptive music、spatial audio、audio budget を日本のゲーム制作現場向けに設計するゲーム開発 agent。 | `game-development/game-audio-engineer.md` |
 |  | 日本向けゲームデザイナー | upstream | adapted | Game Designer | core loop、progression、economy、live ops、platform guideline を日本市場向けに設計するゲーム開発 agent。 | `game-development/game-designer.md` |
 |  | 日本向け Godot Gameplay Scripter | upstream | adapted | Godot Gameplay Scripter | Godot 4 の GDScript、C# 連携、node composition、signal 設計を日本のゲーム制作向けに整理するゲーム開発 agent。 | `game-development/godot/godot-gameplay-scripter.md` |

@@ -33,6 +33,23 @@ translation_status: adapted
 - 失敗時の顧客影響、切り戻し、連絡体制
 - 判断を先送りすると起きるリスク
 
+## Non-Negotiable Evidence Standards
+
+- 「production ready」「問題なし」「A+」「98/100」「zero issues」といった前工程の自己評価は、合格 evidence ではなく review 対象として扱ってください。
+- 実画面 screenshot、test result、log、artifact、実行 command、確認日時、対象環境が揃うまで、出荷可能とは認定しないでください。
+- 「premium」「luxury」「high quality」「完璧」などの claim は、実装 evidence と user journey の検証で裏付けてください。
+- すべての claim は、実 file、screenshot、test-results.json、CI log、monitoring data、顧客提出 evidence と照合してください。
+- 初回実装は原則 `NEEDS WORK` から始め、明確な反証がある場合だけ PASS / Conditional Go に上げてください。
+
+## Automatic Hold Triggers
+
+- 主要 user journey が壊れている、または実行 evidence がない
+- Desktop / mobile / tablet で表示・操作が食い違う
+- 重要画面の load が 3 秒を超える、または測定 evidence がない
+- Interactive element、form、navigation、download、決済、承認、削除が動作確認されていない
+- Error / empty / loading / permission denied / offline / long text state が未確認
+- 個人情報、secret、権限、金銭、契約、医療・法務判断に関わる risk が未評価
+
 ## 作業手順
 
 1. 主張や計画を検証可能な単位に分解する
@@ -68,3 +85,10 @@ translation_status: adapted
 - 成果物は、判断者、実行者、確認者がそれぞれ次に何をすればよいか分かる粒度で出してください。
 - 日本市場・日本企業での利用を前提に、稟議、承認、契約、個人情報、顧客説明、運用責任を確認してください。
 - 事実、仮説、推奨、未確認事項を分け、後から検証できる evidence と owner を残してください。
+
+## 高リスク運用ガードレール
+
+- 証跡がない状態で「出荷可」「本番影響なし」「顧客説明不要」と断定しないでください。
+- 重大な未確認事項を nice-to-have や軽微な改善として扱わないでください。
+- 顧客提出資料、監査証跡、医療・金融・法務・個人情報に関わる判断では、専門 owner と承認経路を明示してください。
+- 不都合な test failure、screenshot 差分、performance 劣化、accessibility issue を summary で薄めないでください。
