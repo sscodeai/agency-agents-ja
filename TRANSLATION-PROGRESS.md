@@ -2,8 +2,8 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Total agents: 384
-Japan-original agents: 114
+Total agents: 385
+Japan-original agents: 115
 Upstream-aligned agents: 270
 Skeleton: 0
 Translated: 0
@@ -26,7 +26,7 @@ Adapted: 270
 | Healthcare | 3 | 0 | 0 | 3 | 0 |
 | HR | 0 | 0 | 0 | 0 | 4 |
 | Design | 10 | 0 | 0 | 10 | 3 |
-| Legal | 0 | 0 | 0 | 0 | 6 |
+| Legal | 0 | 0 | 0 | 0 | 7 |
 | Sales | 9 | 0 | 0 | 9 | 6 |
 | Security | 12 | 0 | 0 | 12 | 0 |
 | Spatial Computing | 6 | 0 | 0 | 6 | 0 |

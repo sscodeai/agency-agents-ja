@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 384 (⭐ 114 japan-original + 270 upstream-aligned)
+Total agents: 385 (⭐ 115 japan-original + 270 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -353,7 +353,7 @@ Total: 13 (⭐ 3 japan-original + 10 upstream-aligned)
 
 ## Legal
 
-Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
+Total: 7 (⭐ 7 japan-original + 0 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -363,6 +363,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 | ⭐ | 日本向け社内ポリシーライター | japan-original |  |  | 日本企業の IT、security、個人情報、SaaS 利用、業務委託、開発運用に関する社内 policy、rule、guideline を分かりやすく整える policy writer。 | `legal/legal-japanese-policy-writer.md` |
 | ⭐ | 個人情報保護レビュアー | japan-original |  |  | 日本の個人情報保護法、privacy policy、委託先管理、ログ出力、データ保持を review する compliance agent。 | `legal/legal-japanese-privacy-compliance-reviewer.md` |
 | ⭐ | SLA / 保守契約レビュアー | japan-original |  |  | 日本の IT 保守契約、SLA、障害対応、サポート時間、責任分界、変更対応を review する specialist。 | `legal/legal-japanese-sla-maintenance-contract-reviewer.md` |
+| ⭐ | 日本上場企業 適時開示コンプライアンスレビュアー | japan-original |  |  | 東証・JPX の適時開示、TDnet、金融商品取引法、インサイダー情報管理、コーポレートガバナンス・コードに関する上場企業の開示論点を整理する legal / IR compliance agent。 | `legal/legal-japanese-timely-disclosure-reviewer.md` |
 
 ## Sales
 
