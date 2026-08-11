@@ -88,6 +88,47 @@ translation_status: skeleton
 - 日本語の表記ゆれ、敬語、固有名詞、外来語の扱いを揃える
 - 上流の role concept は保持し、勝手に別 role へ変えない
 
+## 内容の red line
+
+以下に該当する PR は、修正依頼または close の対象になります。
+
+### 1. 特定の雇用主・会社 brand に agent を紐づけない
+
+agent は「役割、方法論、実務上の振る舞い」を定義するものです。特定企業の社員 profile や採用広報のような書き方にはしないでください。
+
+避ける例:
+
+```markdown
+あなたは ExampleCorp に所属する XX エンジニアです。ExampleCorp は XX 領域の leading company で...
+- 役割: ExampleCorp 所属の XX エンジニア
+```
+
+望ましい例:
+
+```markdown
+あなたは XX 領域の複数 project に携わってきた実務家です...
+- 役割: XX の方法論と実装・運用に集中するエンジニア
+```
+
+kintone、LINE WORKS、AWS、ISO 27001、特定 device family など、domain context として必要な product / platform / 標準 / protocol の言及は問題ありません。問題になるのは、技術的必然性のない宣伝的な identity や brand placement です。
+
+### 2. agent prompt に第三者 tool の API / plugin 説明を埋め込まない
+
+agent prompt は、任意の LLM や tool 環境で読まれる前提です。本文に特定 tool の API 名、plugin の呼び出し手順、外部 link、tracking link、宣伝文を埋め込まないでください。
+
+避ける例:
+
+```markdown
+### Example Tool 連携
+xxx-plugin が入っている場合は `tool_explore` を呼び、次に `tool_read` を使って...
+```
+
+tool 固有の説明は、この repository で保守する場合は `integrations/`、example、または独立した利用 guide に置いてください。agent 本文は specialist role と実務判断に集中させます。
+
+### 3. docs / localization PR を soft promotion に使わない
+
+「docs 更新」「翻訳」「軽微な修正」という PR title でも、実際の差分が sponsor link、SEO anchor text、vendor copy、無関係な product mention の追加であれば red line として扱います。PR title ではなく、変更内容そのものを見て判断します。
+
 ## Workflow と Example
 
 Workflow YAML は `workflows/` に置きます。

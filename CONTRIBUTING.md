@@ -59,6 +59,47 @@ Japan-original agents should be concrete enough to use in real delivery work. In
 
 Upstream-aligned agents should preserve the upstream role concept while making Japanese terminology, workflows, compliance, approval, and operations assumptions explicit.
 
+## Content Boundaries
+
+PRs may be closed or asked to revise if they cross these boundaries:
+
+### 1. Do not bind an agent to a specific employer or company brand
+
+Agents should describe a role, practice, and operating method. They should not read like an employee profile for one company.
+
+Avoid:
+
+```markdown
+You are an XX engineer at ExampleCorp, a global leader in XX solutions...
+- Role: XX engineer, belonging to ExampleCorp
+```
+
+Prefer:
+
+```markdown
+You are an XX engineer with practical experience across multiple XX projects...
+- Role: XX engineer focused on methods and delivery for XX
+```
+
+References to products, platforms, devices, standards, or protocols are fine when they are needed domain context, for example kintone, LINE WORKS, AWS, ISO 27001, or a named device family. The issue is promotional identity or brand placement, not technical specificity.
+
+### 2. Do not embed third-party tool API or plugin instructions inside agent prompts
+
+Agent prompts should work across LLMs and tool environments. Do not add tool-specific API names, plugin usage, command recipes, tracking links, or external promotion inside an agent body.
+
+Avoid:
+
+```markdown
+### Example Tool Integration
+If the xxx-plugin is installed, call `tool_explore`, then `tool_read`...
+```
+
+Tool-specific guidance belongs in `integrations/`, examples, or a separate user guide when it is maintained as part of this repository. Agent bodies should stay focused on the specialist role.
+
+### 3. Do not use docs or localization PRs for soft promotion
+
+A PR labeled as documentation, translation, or small cleanup should not introduce sponsor links, SEO anchor text, vendor copy, or unrelated product mentions. Review is based on the substance of the change, not only the PR title.
+
 ## Workflows
 
 Workflow YAML files live in `workflows/`. Example files live in `examples/` and must contain a YAML block synchronized with the workflow file.
