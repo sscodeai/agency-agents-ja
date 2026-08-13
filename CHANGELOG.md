@@ -2,6 +2,17 @@
 
 All notable changes to `agency-agents-ja` are recorded here.
 
+## 0.4.0 - 2026-08-13
+
+- Updated upstream coverage to `msitarzewski/agency-agents@ebe9c99` as of 2026-08-08.
+- Expanded the catalog to 385 agents: 115 Japan-original and 270 upstream-aligned adapted agents.
+- Added the `gis/` and `healthcare/` divisions, including GIS specialists, clinical evidence, healthcare innovation, and sovereign health systems agents.
+- Added newly adapted upstream roles across engineering, security, legal, testing, game development, and specialized divisions, including Economy Designer, Privacy Engineer, LLM Post-Training Engineer, Data Visualization Engineer, UI Finish-Gate Reviewer, Rust Refactoring Specialist, RAG Pipeline Engineer, GaussDB Expert Engineer, and Japanese Timely Disclosure Reviewer.
+- Added Codex, Osaurus, Hermes, Mistral Vibe, and ZCode integration support.
+- Hardened release validation with generated integration checks, division/tool/runbook consistency checks, workflow YAML validation, package file checks, and a standard `npm test` script.
+- Improved install and conversion tooling for selective installs, path overrides, deterministic generated outputs, and stale integration detection.
+- Expanded README, integration docs, and contribution guidance for upstream parity, package publishing, and content boundary rules.
+
 ## 0.3.0 - 2026-06-06
 
 - Updated upstream coverage to `msitarzewski/agency-agents@main` as of 2026-06-06.
