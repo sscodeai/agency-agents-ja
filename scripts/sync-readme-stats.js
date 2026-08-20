@@ -60,9 +60,11 @@ function computeStats() {
   let upstream = 0;
   let skeleton = 0;
   let adapted = 0;
+  let categories = 0;
 
   for (const dir of AGENT_CATEGORIES) {
     if (!existsSync(dir)) continue;
+    categories++;
     for (const file of listMarkdownFiles(dir)) {
       const fm = parseFrontmatter(file);
       total++;
@@ -80,7 +82,22 @@ function computeStats() {
     workflows = readdirSync('workflows').filter(f => f.endsWith('.yaml') || f.endsWith('.yml')).length;
   }
 
-  return { TOTAL: total, JAPAN: japan, UPSTREAM: upstream, SKELETON: skeleton, ADAPTED: adapted, WORKFLOWS: workflows };
+  let tools = 0;
+  if (existsSync('tools.json')) {
+    const registry = JSON.parse(readFileSync('tools.json', 'utf8'));
+    tools = Object.keys(registry.tools || {}).length;
+  }
+
+  return {
+    TOTAL: total,
+    JAPAN: japan,
+    UPSTREAM: upstream,
+    SKELETON: skeleton,
+    ADAPTED: adapted,
+    WORKFLOWS: workflows,
+    CATEGORIES: categories,
+    TOOLS: tools,
+  };
 }
 
 function applyTokens(text, stats) {

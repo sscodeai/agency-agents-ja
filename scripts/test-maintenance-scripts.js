@@ -85,6 +85,7 @@ expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/check-generated-integrations.js']);
   run('node', ['--check', 'scripts/check-package-files.js']);
   run('node', ['--check', 'scripts/check-upstream-parity.js']);
+  run('node', ['--check', 'scripts/sync-readme-stats.js']);
   run('node', ['--check', 'scripts/validate-workflows.js']);
 });
 

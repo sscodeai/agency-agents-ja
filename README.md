@@ -19,7 +19,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | Upstream-aligned (adapted to Japan) | <!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM --> |
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
 | Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
-| Categories | 20 |
+| Categories | <!-- AUTOGEN:CATEGORIES -->20<!-- /AUTOGEN:CATEGORIES --> |
 | Upstream baseline | `msitarzewski/agency-agents@ebe9c99` as of 2026-08-08 |
 
 > **<!-- AUTOGEN:TOTAL -->385<!-- /AUTOGEN:TOTAL --> ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
@@ -93,7 +93,7 @@ The <!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN --> ⭐ Japan-market originals 
 - **Compliance**: 個人情報保護法 (APPI), インボイス制度 (invoice system), 電子帳簿保存法 (electronic bookkeeping), 適時開示 / TDnet / インサイダー情報管理, AI usage policy
 - **Japanese platforms**: kintone, LINE WORKS, Backlog / Redmine / Jira, Rakuten / Amazon Japan, note / Qiita / Zenn, Yahoo! JAPAN SEO, LINE Official Account
 - **Manufacturing DX / public sector**: 工場 IoT, 自治体 DX, BCP, 内部統制
-- **Workflows**: 27 end-to-end workflows that chain agents together (e.g. `japanese-sier-requirements-review`, `acceptance-readiness-review`, `csv-data-migration-readiness`, `oss-localization-launch`, `oss-upstream-sync`)
+- **Workflows**: <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> end-to-end workflows that chain agents together (e.g. `japanese-sier-requirements-review`, `acceptance-readiness-review`, `csv-data-migration-readiness`, `oss-localization-launch`, `oss-upstream-sync`)
 
 ### Translation status
 
@@ -200,13 +200,13 @@ MIT
 
 英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、中国語コミュニティ版 [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の取り組みからも一部の領域設計や coverage gap の示唆を得て、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent として本土化しています。
 
-> **<!-- AUTOGEN:TOTAL -->385<!-- /AUTOGEN:TOTAL --> 個の即戦力 AI 専門家 agent** — 工程、設計、QA、GIS / 地図・空間データ、healthcare、product、marketing、sales、support、legal、finance、security、製造業 DX、公共 sector など 20 category を収録。単なる「あなたは専門家です」prompt ではなく、各 agent に役割、確認観点、作業手順、成果物、運用 guardrail を持たせています。
+> **<!-- AUTOGEN:TOTAL -->385<!-- /AUTOGEN:TOTAL --> 個の即戦力 AI 専門家 agent** — 工程、設計、QA、GIS / 地図・空間データ、healthcare、product、marketing、sales、support、legal、finance、security、製造業 DX、公共 sector など <!-- AUTOGEN:CATEGORIES -->20<!-- /AUTOGEN:CATEGORIES --> category を収録。単なる「あなたは専門家です」prompt ではなく、各 agent に役割、確認観点、作業手順、成果物、運用 guardrail を持たせています。
 
 ## プロジェクト規模
 
 | AI agent | 上流由来 adapted | 日本市場 original | 対応 tool | Category | Workflow |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| **<!-- AUTOGEN:TOTAL -->385<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN -->** | **16** | **20** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
+| **<!-- AUTOGEN:TOTAL -->385<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN -->** | **<!-- AUTOGEN:TOOLS -->16<!-- /AUTOGEN:TOOLS -->** | **<!-- AUTOGEN:CATEGORIES -->20<!-- /AUTOGEN:CATEGORIES -->** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
 
 ## これは何か
 
@@ -369,7 +369,7 @@ ticket は PROJ-1234、spec は docs/spec.md です。
 - 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM -->（2026-08-08 時点の英文上流 `ebe9c99` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 上流由来 agent の skeleton backlog: <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON -->
 - 合計: <!-- AUTOGEN:TOTAL -->385<!-- /AUTOGEN:TOTAL --> agents
-- Workflow: 27
+- Workflow: <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->
 
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
 翻訳進捗は [TRANSLATION-PROGRESS.md](TRANSLATION-PROGRESS.md)、上流 path coverage は [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) で確認できます。
