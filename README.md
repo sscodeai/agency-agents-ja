@@ -16,7 +16,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | --- | --- |
 | Total agents | <!-- AUTOGEN:TOTAL -->385<!-- /AUTOGEN:TOTAL --> |
 | ⭐ Japan-market originals | <!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN --> |
-| Upstream-aligned (adapted to Japan) | <!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM --> / <!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM --> |
+| Upstream-aligned (adapted to Japan) | <!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM --> |
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
 | Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
 | Categories | 20 |
@@ -37,10 +37,13 @@ npx agency-agents-ja install --tool claude-code
 # Or install for a specific tool
 ./scripts/install.sh --tool claude-code
 ./scripts/install.sh --tool copilot
+./scripts/install.sh --tool antigravity
+./scripts/install.sh --tool gemini-cli
+./scripts/install.sh --tool opencode
 ./scripts/install.sh --tool openclaw
 ./scripts/install.sh --tool cursor
-./scripts/install.sh --tool opencode
-./scripts/install.sh --tool gemini-cli
+./scripts/install.sh --tool aider
+./scripts/install.sh --tool windsurf
 ./scripts/install.sh --tool qwen
 ./scripts/install.sh --tool zcode
 ./scripts/install.sh --tool kimi
@@ -106,16 +109,20 @@ When upstream `main` adds or revises an agent, we treat that as an adaptation ta
 You can query the breakdown directly:
 
 ```bash
-AGENT_DIRS="academic engineering project-management testing product marketing paid-media finance game-development gis healthcare hr design legal sales security spatial-computing support supply-chain specialized"
+AGENT_DIRS=(
+  academic engineering project-management testing product marketing paid-media
+  finance game-development gis healthcare hr design legal sales security
+  spatial-computing support supply-chain specialized
+)
 
 # Adapted (rewritten for Japan): currently <!-- AUTOGEN:ADAPTED -->270<!-- /AUTOGEN:ADAPTED -->
-grep -rl '^translation_status: adapted'    $AGENT_DIRS | wc -l
+grep -rl '^translation_status: adapted'    "${AGENT_DIRS[@]}" | wc -l
 
 # Literal translation of upstream prompt: currently 0
-grep -rl '^translation_status: translated' $AGENT_DIRS | wc -l
+grep -rl '^translation_status: translated' "${AGENT_DIRS[@]}" | wc -l
 
 # Untouched Japan-context placeholders: currently 0
-grep -rl '^translation_status: skeleton'   $AGENT_DIRS | wc -l
+grep -rl '^translation_status: skeleton'   "${AGENT_DIRS[@]}" | wc -l
 ```
 
 For ongoing maintenance, run:
@@ -166,8 +173,8 @@ ticket: PROJ-1234, spec: docs/spec.md
 
 In addition to agent files, this repo mirrors two upstream documentation directories verbatim in English:
 
-- [`strategy/`](strategy/) — upstream's executive brief, playbooks, runbooks, coordination templates (17 files)
-- [`integrations/`](integrations/) — integration guides for Claude Code, Cursor, Gemini CLI, GitHub Copilot, MCP memory, and generated-tool formats (20 files)
+- [`strategy/`](strategy/) — upstream's executive brief, playbooks, runbooks, and coordination templates
+- [`integrations/`](integrations/) — integration guides and generated artifacts for the supported tool set
 
 These are **not source-agent files** and **do not** carry `source:` frontmatter. `scripts/validate.sh` checks their packaging and runbook roster consistency, but not agent frontmatter or localization quality. They are kept in English at upstream parity so the two repos can be synced cleanly. Japanese-language adaptation of these framework docs is on the roadmap but not in this release.
 
@@ -567,7 +574,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 - <!-- AUTOGEN:UPSTREAM -->270<!-- /AUTOGEN:UPSTREAM --> 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応します。現在は `translation_status: adapted`（直訳ではなく、日本市場向けに役割を書き直し済み）。frontmatter の `upstream_path:` で 1:1 対応関係を保持
 - <!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN --> 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
 - 一部の日本特化 agent は、中国語コミュニティ版 [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の agent coverage や実務領域の切り口を参考にし、日本の業務、platform、法規制、商習慣に合わせて再設計・本土化しています。英文上流と中国語コミュニティ版の maintainers / contributors に感謝します
-- 上流の framework 文書（[`strategy/`](strategy/) 17 ファイル、[`integrations/`](integrations/) 20 ファイル）は現状そのまま英語で保持しています。これらは source agent ではないため `source:` frontmatter を持ちません。`scripts/validate.sh` では package / runbook roster の整合性だけを確認し、agent frontmatter や localization quality の対象にはしていません。日本語化は roadmap 上の項目です
+- 上流の framework 文書（[`strategy/`](strategy/)）と tool integration 文書・生成物（[`integrations/`](integrations/)）は現状そのまま英語で保持しています。これらは source agent ではないため `source:` frontmatter を持ちません。`scripts/validate.sh` では package / runbook roster の整合性だけを確認し、agent frontmatter や localization quality の対象にはしていません。日本語化は roadmap 上の項目です
 - 上流 `main` への追従と本翻訳の方針は [ROADMAP.md](ROADMAP.md) を参照してください
 
 ## 関連ツール
@@ -589,9 +596,15 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 翻訳進捗の確認:
 
 ```bash
-grep -rl '^translation_status: adapted'    . | wc -l  # 適応済み (日本市場向けに書き直し)
-grep -rl '^translation_status: translated' . | wc -l  # 直訳
-grep -rl '^translation_status: skeleton'   . | wc -l  # 未着手 placeholder
+AGENT_DIRS=(
+  academic engineering project-management testing product marketing paid-media
+  finance game-development gis healthcare hr design legal sales security
+  spatial-computing support supply-chain specialized
+)
+
+grep -rl '^translation_status: adapted'    "${AGENT_DIRS[@]}" | wc -l  # 適応済み (日本市場向けに書き直し)
+grep -rl '^translation_status: translated' "${AGENT_DIRS[@]}" | wc -l  # 直訳
+grep -rl '^translation_status: skeleton'   "${AGENT_DIRS[@]}" | wc -l  # 未着手 placeholder
 ```
 
 ## メンテナンス
