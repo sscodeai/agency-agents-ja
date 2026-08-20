@@ -376,107 +376,32 @@ ticket は PROJ-1234、spec は docs/spec.md です。
 `adapted` の品質基準は [docs/localization-review-checklist-ja.md](docs/localization-review-checklist-ja.md) を参照してください。
 設計背景と関連記事は [docs/sscodeai-articles.md](docs/sscodeai-articles.md) にまとめています。
 
-## 初期 Agent
+## 代表 Agent
 
-| Agent | 用途 |
-| --- | --- |
-| `engineering/engineering-japanese-requirements-engineer.md` | 要件定義、受入条件、仕様確認 |
-| `engineering/engineering-japanese-sier-architect.md` | SIer / 受託開発向け architecture |
-| `engineering/engineering-japanese-enterprise-architect.md` | 全社 system、data、integration、governance、移行 roadmap |
-| `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ |
-| `engineering/engineering-japanese-data-engineer.md` | ETL / ELT、DWH、BI、CSV、data quality |
-| `engineering/engineering-japanese-data-governance-steward.md` | data owner、catalog、品質、権限、監査 |
-| `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form、table |
-| `engineering/engineering-japanese-code-reviewer.md` | 日本語チーム向け code review |
-| `engineering/engineering-japanese-security-engineer.md` | 認証認可、個人情報、security review |
-| `engineering/engineering-japanese-software-supply-chain-engineer.md` | npm / PyPI / OSS license / CVE / SBOM / provenance / 委託先承認 |
-| `engineering/engineering-japanese-sre.md` | SLO、監視、障害対応、runbook |
-| `engineering/engineering-japanese-observability-engineer.md` | log、metrics、trace、dashboard、alert |
-| `engineering/engineering-japanese-database-optimizer.md` | DB、query、index、migration |
-| `engineering/engineering-japanese-legacy-modernization-engineer.md` | legacy system modernization |
-| `engineering/engineering-japanese-mobile-app-builder.md` | iOS / Android / React Native / Flutter |
-| `engineering/engineering-japanese-performance-engineer.md` | response time、batch、DB、frontend 性能改善 |
-| `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、運用手順 |
-| `engineering/engineering-japanese-oss-localization-engineer.md` | OSS の README / docs / CONTRIBUTING / CLI message 自然な日本語化、upstream 追従 |
-| `engineering/engineering-kintone-developer.md` | Cybozu kintone 開発 |
-| `engineering/engineering-line-works-integration-developer.md` | LINE WORKS 連携 |
-| `project-management/project-management-japanese-pm.md` | WBS、課題、進捗、会議体 |
-| `project-management/project-management-japanese-business-analyst.md` | 業務分析、As-Is / To-Be、受入条件 |
-| `project-management/project-management-backlog-redmine-jira-steward.md` | ticket workflow 管理 |
-| `project-management/project-management-acceptance-criteria-writer.md` | 受入条件、検収条件 |
-| `project-management/project-management-japanese-release-manager.md` | release 判定、作業手順、切り戻し |
-| `project-management/project-management-japanese-change-management-lead.md` | 仕様変更、影響分析、承認、周知 |
-| `project-management/project-management-japanese-upstream-sync-coordinator.md` | 上流 OSS の更新を watch、fork 追従、翻訳追従、追従 PR / ticket 化 |
-| `testing/testing-japanese-qa-planner.md` | QA plan、test matrix |
-| `testing/testing-japanese-quality-assurance-manager.md` | 品質方針、QA gate、不具合傾向、検収 readiness |
-| `testing/testing-japanese-api-tester.md` | API contract、異常系、権限、検収 evidence |
-| `testing/testing-evidence-collector-ja.md` | テスト証跡、CI 結果、検収資料 |
-| `testing/testing-shift-jis-csv-tester.md` | Shift_JIS、CSV、Excel 検証 |
-| `product/product-japanese-product-manager.md` | 日本市場向け product planning |
-| `product/product-japanese-b2b-saas-planner.md` | B2B SaaS、契約、権限、CS |
-| `legal/legal-japanese-privacy-compliance-reviewer.md` | 個人情報保護法、privacy review |
-| `legal/legal-japanese-ai-policy-writer.md` | 生成 AI / AI tool 利用 policy |
-| `legal/legal-japanese-contract-reviewer.md` | 業務委託、NDA、SaaS 契約 review |
-| `legal/legal-japanese-policy-writer.md` | IT / security / SaaS 利用社内 policy |
-| `legal/legal-japanese-sla-maintenance-contract-reviewer.md` | SLA、保守契約、責任分界 |
-| `legal/legal-japanese-data-privacy-officer.md` | 個人情報、委託先、保存期間、漏えい対応 |
-| `marketing/marketing-note-qiita-zenn-strategist.md` | note / Qiita / Zenn 技術広報 |
-| `marketing/marketing-japanese-oss-positioning-writer.md` | 上流 OSS の README / docs を日本市場向けに positioning し直す |
-| `marketing/marketing-japanese-ai-citation-strategist.md` | 生成 AI / answer engine での引用・推薦可視性、AEO / GEO 改善 |
-| `marketing/marketing-japanese-developer-advocate.md` | API / SDK / OSS developer advocacy |
-| `marketing/marketing-japanese-product-marketing-manager.md` | positioning、message、launch、sales enablement |
-| `marketing/marketing-japanese-market-researcher.md` | 市場規模、競合、顧客課題、購買 process |
-| `marketing/marketing-japanese-case-study-writer.md` | 導入事例、顧客 proof、公開許諾 |
-| `marketing/marketing-japanese-community-manager.md` | user group、developer community、feedback loop |
-| `marketing/marketing-japanese-customer-marketing-manager.md` | 既存顧客 marketing、advocacy、user group |
-| `marketing/marketing-instagram-lemon8-operator.md` | Instagram / Lemon8 採用広報、event、事例 |
-| `marketing/marketing-tiktok-japan-strategist.md` | TikTok / short video strategy |
-| `marketing/marketing-line-official-account-operator.md` | LINE 公式アカウント運用 |
-| `marketing/marketing-rakuten-amazon-japan-operator.md` | 楽天 / Amazon Japan EC 運用 |
-| `marketing/marketing-yahoo-google-japan-seo.md` | Yahoo! JAPAN / Google SEO |
-| `marketing/marketing-seminar-webinar-planner.md` | B2B セミナー / ウェビナー |
-| `marketing/marketing-japanese-knowledge-commerce-strategist.md` | 有料 newsletter、講座、template、community |
-| `paid-media/paid-media-japan-search-social-strategist.md` | 日本向け検索広告 / SNS 広告 |
-| `finance/finance-japanese-invoice-system-advisor.md` | インボイス制度、請求書 system |
-| `finance/finance-electronic-bookkeeping-reviewer.md` | 電子帳簿保存法 review |
-| `finance/finance-japanese-finops-analyst.md` | cloud / SaaS cost、予算、配賦、削減施策 |
-| `finance/finance-japanese-internal-audit-coordinator.md` | IT 統制、権限、変更、証跡、監査対応 |
-| `hr/hr-japanese-it-recruiter.md` | IT 採用、職務要件、面談設計 |
-| `hr/hr-japanese-onboarding-specialist.md` | 新メンバー onboarding |
-| `hr/hr-japanese-performance-review-facilitator.md` | IT 人事評価、1on1、昇格判断 |
-| `hr/hr-japanese-corporate-training-designer.md` | security、AI 活用、開発 process 研修 |
-| `design/design-japanese-business-ui-designer.md` | 日本の業務 UI / 管理画面 |
-| `design/design-accessibility-auditor-ja.md` | 日本語 UI accessibility audit |
-| `design/design-japanese-design-system-maintainer.md` | 業務 UI design system 運用 |
-| `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
-| `sales/sales-japanese-account-strategist.md` | 既存顧客 account plan、更新、拡張提案 |
-| `sales/sales-japanese-partner-alliance-manager.md` | partner alliance、co-marketing、共同提案 |
-| `sales/sales-japanese-sales-operations-analyst.md` | pipeline、forecast、CRM hygiene、営業 KPI |
-| `sales/sales-japanese-revenue-operations-manager.md` | funnel、契約、請求、更新、拡張 process |
-| `sales/sales-japanese-sales-engineer.md` | 技術商談、demo、PoC、feasibility |
-| `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
-| `support/support-japanese-customer-success-manager.md` | B2B SaaS customer success |
-| `support/support-japanese-helpdesk-responder.md` | 日本語 helpdesk 一次対応 |
-| `support/support-japanese-it-asset-manager.md` | PC、SaaS license、account、貸与品管理 |
-| `support/support-release-note-writer-ja.md` | 日本語 release note |
-| `support/support-japanese-support-analytics-reporter.md` | 問い合わせ、SLA、FAQ、顧客影響分析 |
-| `support/support-japanese-service-delivery-manager.md` | SLA、問い合わせ、障害、顧客報告、改善計画 |
-| `testing/testing-japanese-tool-evaluator.md` | SaaS / AI tool / 開発支援 tool 評価 |
-| `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共 sector |
-| `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、automation governance |
-| `specialized/specialized-japanese-manufacturing-dx-consultant.md` | 製造業 DX |
-| `specialized/specialized-factory-iot-planner.md` | 工場 IoT plan |
-| `specialized/specialized-quality-control-kaizen-advisor.md` | 品質管理、カイゼン |
-| `specialized/specialized-japanese-knowledge-base-steward.md` | 社内 knowledge base / wiki 整備 |
-| `specialized/specialized-japanese-meeting-assistant.md` | 議事録、決定事項、課題、次 action |
-| `specialized/specialized-japanese-prompt-engineer.md` | 社内 AI 活用 prompt、評価、guardrail |
-| `specialized/specialized-japanese-risk-assessor.md` | project、release、AI 活用 risk assessment |
-| `specialized/specialized-japanese-pricing-strategist.md` | pricing、packaging、見積前提、値引き rule |
-| `specialized/specialized-japanese-business-continuity-planner.md` | BCP、DR、代替運用、連絡網、訓練 |
-| `supply-chain/supply-chain-japanese-vendor-evaluator.md` | vendor 評価、調達 |
-| `supply-chain/supply-chain-japanese-procurement-manager.md` | SaaS、cloud、委託、hardware 調達 |
-| `supply-chain/supply-chain-japanese-vendor-risk-manager.md` | vendor security、privacy、BCP、契約 risk |
-| `supply-chain/supply-chain-inventory-forecasting-ja.md` | 在庫予測、安全在庫 |
+用途別に最初に試しやすい agent だけを抜粋しています。完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください。
+
+| 領域 | Agent | 用途 |
+| --- | --- | --- |
+| 要件・検収 | `engineering/engineering-japanese-requirements-engineer.md` | 要件定義、受入条件、仕様確認 |
+| SIer architecture | `engineering/engineering-japanese-sier-architect.md` | SIer / 受託開発向け architecture |
+| Backend | `engineering/engineering-japanese-backend-architect.md` | API、DB、batch、監査ログ |
+| Frontend / UI | `engineering/engineering-japanese-frontend-engineer.md` | 業務画面、管理画面、form、table |
+| Security | `security/security-appsec-engineer.md` | threat modeling、secure code review、privacy risk |
+| QA / evidence | `testing/testing-evidence-collector-ja.md` | テスト証跡、CI 結果、検収資料 |
+| Project management | `project-management/project-management-japanese-pm.md` | WBS、課題、進捗、会議体 |
+| Release | `project-management/project-management-japanese-release-manager.md` | release 判定、作業手順、切り戻し |
+| Documentation | `engineering/engineering-japanese-technical-writer.md` | 設計書、API document、運用手順 |
+| Product | `product/product-japanese-b2b-saas-planner.md` | B2B SaaS、契約、権限、CS |
+| Legal / privacy | `legal/legal-japanese-privacy-compliance-reviewer.md` | 個人情報保護法、privacy review |
+| Finance / cost | `finance/finance-japanese-finops-analyst.md` | cloud / SaaS cost、予算、配賦、削減施策 |
+| Marketing / GTM | `marketing/marketing-japanese-product-marketing-manager.md` | positioning、message、launch、sales enablement |
+| Sales / RFP | `sales/sales-japanese-rfp-response-writer.md` | RFP、提案書、見積前提 |
+| Support / incident | `support/support-japanese-incident-report-writer.md` | 障害報告書、postmortem |
+| Manufacturing DX | `specialized/specialized-japanese-manufacturing-dx-consultant.md` | 製造業 DX |
+| Public sector | `specialized/japanese-public-sector-dx-consultant.md` | 自治体 DX、公共 sector |
+| Vendor risk | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` | vendor security、privacy、BCP、契約 risk |
+| AI governance | `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、automation governance |
+| OSS localization | `engineering/engineering-japanese-oss-localization-engineer.md` | OSS docs / CLI message の自然な日本語化、upstream 追従 |
 
 ## Agent 形式
 
