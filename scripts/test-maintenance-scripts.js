@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { execFileSync } = require('child_process');
-const { mkdtempSync, mkdirSync, rmSync, writeFileSync } = require('fs');
+const { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } = require('fs');
 const { tmpdir } = require('os');
 const { join, resolve } = require('path');
 
@@ -84,10 +84,112 @@ expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/check-adapted-quality.js']);
   run('node', ['--check', 'scripts/check-generated-integrations.js']);
   run('node', ['--check', 'scripts/check-package-files.js']);
+  run('node', ['--check', 'scripts/check-readme-references.js']);
   run('node', ['--check', 'scripts/check-upstream-parity.js']);
   run('node', ['--check', 'scripts/sync-readme-stats.js']);
   run('node', ['--check', 'scripts/validate-workflows.js']);
 });
+
+const readmeFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-readme-'));
+
+try {
+  expectPass('README reference check accepts existing local links and repo paths', () => {
+    mkdirSync(join(readmeFixture, 'docs'), { recursive: true });
+    mkdirSync(join(readmeFixture, 'workflows'), { recursive: true });
+    writeFileSync(join(readmeFixture, 'docs/guide.md'), '# Guide\n', 'utf8');
+    writeFileSync(join(readmeFixture, 'workflows/demo.yaml'), 'name: demo\n', 'utf8');
+    writeFileSync(join(readmeFixture, 'README.md'), [
+      '# Fixture',
+      '',
+      'See [guide](docs/guide.md) and `workflows/demo.yaml`.',
+      'Generated formats like `SOUL.md` and helper names like `convert.sh` are descriptive.',
+      '',
+    ].join('\n'), 'utf8');
+    run('node', [join(root, 'scripts/check-readme-references.js')], { cwd: readmeFixture });
+  });
+
+  expectFail('README reference check rejects missing local links', () => {
+    writeFileSync(join(readmeFixture, 'README.md'), [
+      '# Fixture',
+      '',
+      'Broken link: [missing](docs/missing.md).',
+      '',
+    ].join('\n'), 'utf8');
+    run('node', [join(root, 'scripts/check-readme-references.js')], { cwd: readmeFixture });
+  }, 'README local link points to a missing path');
+
+  expectFail('README reference check rejects missing inline repo paths', () => {
+    writeFileSync(join(readmeFixture, 'README.md'), [
+      '# Fixture',
+      '',
+      'Broken inline path: `workflows/missing.yaml`.',
+      '',
+    ].join('\n'), 'utf8');
+    run('node', [join(root, 'scripts/check-readme-references.js')], { cwd: readmeFixture });
+  }, 'README inline path reference points to a missing path');
+} finally {
+  rmSync(readmeFixture, { recursive: true, force: true });
+}
+
+const statsFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-stats-'));
+
+try {
+  expectPass('README stats sync updates category, tool, workflow, and agent counts', () => {
+    writeAgent(statsFixture, 'academic/japan-original.md', [
+      '---',
+      'name: 日本 original',
+      'description: Fixture original agent。',
+      'emoji: 🧪',
+      'color: blue',
+      'source: japan-original',
+      '---',
+      '',
+      '# 日本 original',
+      '',
+    ].join('\n'));
+    writeAgent(statsFixture, 'engineering/upstream-agent.md', minimalAgent());
+    mkdirSync(join(statsFixture, 'workflows'), { recursive: true });
+    writeFileSync(join(statsFixture, 'workflows/demo.yaml'), 'name: demo\n', 'utf8');
+    writeFileSync(join(statsFixture, 'tools.json'), JSON.stringify({
+      tools: {
+        first: {},
+        second: {},
+      },
+    }), 'utf8');
+    writeFileSync(join(statsFixture, 'README.md'), [
+      '# Fixture',
+      '',
+      '<!-- AUTOGEN:TOTAL -->0<!-- /AUTOGEN:TOTAL -->',
+      '<!-- AUTOGEN:JAPAN -->0<!-- /AUTOGEN:JAPAN -->',
+      '<!-- AUTOGEN:UPSTREAM -->0<!-- /AUTOGEN:UPSTREAM -->',
+      '<!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON -->',
+      '<!-- AUTOGEN:ADAPTED -->0<!-- /AUTOGEN:ADAPTED -->',
+      '<!-- AUTOGEN:WORKFLOWS -->0<!-- /AUTOGEN:WORKFLOWS -->',
+      '<!-- AUTOGEN:CATEGORIES -->0<!-- /AUTOGEN:CATEGORIES -->',
+      '<!-- AUTOGEN:TOOLS -->0<!-- /AUTOGEN:TOOLS -->',
+      '',
+    ].join('\n'), 'utf8');
+
+    run('node', [join(root, 'scripts/sync-readme-stats.js')], { cwd: statsFixture });
+    run('node', [join(root, 'scripts/sync-readme-stats.js'), '--check'], { cwd: statsFixture });
+    const readme = readFileSync(join(statsFixture, 'README.md'), 'utf8');
+    for (const expected of [
+      '<!-- AUTOGEN:TOTAL -->2<!-- /AUTOGEN:TOTAL -->',
+      '<!-- AUTOGEN:JAPAN -->1<!-- /AUTOGEN:JAPAN -->',
+      '<!-- AUTOGEN:UPSTREAM -->1<!-- /AUTOGEN:UPSTREAM -->',
+      '<!-- AUTOGEN:ADAPTED -->1<!-- /AUTOGEN:ADAPTED -->',
+      '<!-- AUTOGEN:WORKFLOWS -->1<!-- /AUTOGEN:WORKFLOWS -->',
+      '<!-- AUTOGEN:CATEGORIES -->2<!-- /AUTOGEN:CATEGORIES -->',
+      '<!-- AUTOGEN:TOOLS -->2<!-- /AUTOGEN:TOOLS -->',
+    ]) {
+      if (!readme.includes(expected)) {
+        throw new Error(`Expected README stats to include ${expected}`);
+      }
+    }
+  });
+} finally {
+  rmSync(statsFixture, { recursive: true, force: true });
+}
 
 const fixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-maintenance-'));
 

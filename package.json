@@ -34,6 +34,7 @@
     "generate:readme-stats": "node scripts/sync-readme-stats.js",
     "check:upstream-coverage": "node scripts/check-upstream-coverage.js",
     "check:adapted-quality": "node scripts/check-adapted-quality.js",
+    "check:readme-references": "node scripts/check-readme-references.js",
     "check:tools": "bash scripts/check-tools.sh",
     "check:generated-integrations": "node scripts/check-generated-integrations.js",
     "check:package-files": "node scripts/check-package-files.js",
