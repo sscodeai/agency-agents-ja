@@ -23,6 +23,7 @@ const CATEGORIES = [
   'spatial-computing',
   'support',
   'supply-chain',
+  'research',
   'specialized',
 ];
 

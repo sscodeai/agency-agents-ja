@@ -7,7 +7,7 @@
 # is missing or stale.
 #
 # Usage:
-#   ./scripts/install.sh [--tool <name>] [--interactive] [--no-interactive] [--parallel] [--jobs N] [--help]
+#   ./scripts/install.sh [selection] [mode] [behavior]
 #
 # Tools:
 #   claude-code  -- Copy agents to ~/.claude/agents/
@@ -29,6 +29,11 @@
 #
 # Flags:
 #   --tool <name>     Install only the specified tool
+#   --division <name> Install only one or more divisions (comma-separated)
+#   --agent <name>    Install only one or more agents by display name or file slug
+#   --agents-file <path> Install agents listed in a file (one name or slug per line)
+#   --dry-run         Print the install plan without writing files
+#   --list [tools|teams|agents] List tools, divisions, or agents and exit
 #   --interactive     Show interactive selector (default when run in a terminal)
 #   --no-interactive  Skip interactive selector, install all detected tools
 #   --parallel        Run install for each selected tool in parallel (output order may vary)
@@ -127,8 +132,175 @@ resolve_dest() {
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
   academic design engineering finance game-development gis healthcare hr legal marketing paid-media product project-management
-  sales security spatial-computing specialized support supply-chain testing
+  research sales security spatial-computing specialized support supply-chain testing
 )
+
+FILTER_DIVISIONS=()
+FILTER_AGENTS=()
+AGENTS_FILE=""
+DRY_RUN=false
+SELECTION_ACTIVE=false
+_ALLOWED_SLUGS=""
+
+get_field() {
+  local field="$1" file="$2"
+  awk -v f="$field" '
+    /^---$/ { fm++; next }
+    fm == 1 && $0 ~ "^" f ": " { sub("^" f ": ", ""); print; exit }
+  ' "$file"
+}
+
+slugify() {
+  printf '%s' "$1" | tr '[:upper:]' '[:lower:]' \
+    | sed 's/[^a-z0-9]/-/g; s/--*/-/g; s/^-//; s/-$//'
+}
+
+is_agent_file() {
+  [[ -f "$1" ]] && [[ "$(head -1 "$1")" == "---" ]]
+}
+
+agent_file_slug() {
+  basename "$1" .md
+}
+
+agent_name_slug() {
+  local name
+  name="$(get_field name "$1")"
+  [[ -n "$name" ]] && slugify "$name"
+}
+
+division_files() {
+  local d="$REPO_ROOT/$1" f
+  [[ -d "$d" ]] || return 0
+  while IFS= read -r -d '' f; do
+    is_agent_file "$f" && printf '%s\n' "$f"
+  done < <(find "$d" -name "*.md" -type f -print0 2>/dev/null)
+}
+
+division_count() {
+  division_files "$1" | awk 'END { print NR + 0 }'
+}
+
+validate_division() {
+  local candidate
+  for candidate in "${AGENT_DIRS[@]}"; do
+    [[ "$candidate" == "$1" ]] && return 0
+  done
+  err "Unknown division '$1'. Valid: ${AGENT_DIRS[*]}"
+  exit 1
+}
+
+lookup_agent_file_slug() {
+  local target="$1" div f file_slug name_slug
+  for div in "${AGENT_DIRS[@]}"; do
+    while IFS= read -r f; do
+      file_slug="$(agent_file_slug "$f")"
+      name_slug="$(agent_name_slug "$f")"
+      if [[ "$file_slug" == "$target" || "$name_slug" == "$target" ]]; then
+        printf '%s\n' "$file_slug"
+        return 0
+      fi
+    done < <(division_files "$div")
+  done
+  return 1
+}
+
+agent_slug_exists() {
+  lookup_agent_file_slug "$1" >/dev/null
+}
+
+build_selection() {
+  if [[ ${#FILTER_DIVISIONS[@]} -eq 0 && ${#FILTER_AGENTS[@]} -eq 0 && -z "$AGENTS_FILE" ]]; then
+    SELECTION_ACTIVE=false
+    return
+  fi
+  SELECTION_ACTIVE=true
+  local slugs="" div f s line requested resolved
+  for div in ${FILTER_DIVISIONS[@]+"${FILTER_DIVISIONS[@]}"}; do
+    while IFS= read -r f; do
+      s="$(agent_file_slug "$f")"
+      [[ -n "$s" ]] && slugs+="$s"$'\n'
+    done < <(division_files "$div")
+  done
+  for s in ${FILTER_AGENTS[@]+"${FILTER_AGENTS[@]}"}; do
+    requested="$(slugify "$s")"
+    if ! resolved="$(lookup_agent_file_slug "$requested")"; then
+      err "Unknown agent '$s'. Use --list agents to see the available roster."
+      exit 1
+    fi
+    slugs+="$resolved"$'\n'
+  done
+  if [[ -n "$AGENTS_FILE" ]]; then
+    [[ -f "$AGENTS_FILE" ]] || { err "agents-file not found: $AGENTS_FILE"; exit 1; }
+    while IFS= read -r line || [[ -n "$line" ]]; do
+      line="${line%%#*}"
+      line="$(printf '%s' "$line" | xargs 2>/dev/null)"
+      [[ -z "$line" ]] && continue
+      requested="$(slugify "$line")"
+      if ! resolved="$(lookup_agent_file_slug "$requested")"; then
+        err "Unknown agent '$line' in agents-file '$AGENTS_FILE'."
+        exit 1
+      fi
+      slugs+="$resolved"$'\n'
+    done < "$AGENTS_FILE"
+  fi
+  _ALLOWED_SLUGS="$(printf '%s' "$slugs" | sort -u | sed '/^$/d')"
+}
+
+slug_allowed() {
+  $SELECTION_ACTIVE || return 0
+  local slug="${1#agency-}"
+  printf '%s\n' "$_ALLOWED_SLUGS" | grep -qxF "$slug"
+}
+
+selected_agent_count() {
+  if ! $SELECTION_ACTIVE; then
+    source_agent_count
+  else
+    printf '%s\n' "$_ALLOWED_SLUGS" | grep -c .
+  fi
+}
+
+division_emoji() {
+  case "$1" in
+    academic) printf '📚';; design) printf '🎨';; engineering) printf '💻';;
+    finance) printf '💵';; game-development) printf '🎮';; gis) printf '🌍';; healthcare) printf '🏥';;
+    hr) printf '👥';; legal) printf '⚖️';; marketing) printf '📢';; paid-media) printf '💰';;
+    product) printf '📊';; project-management) printf '🎬';; research) printf '🔍';;
+    sales) printf '💼';; security) printf '🔒';; spatial-computing) printf '🥽';;
+    specialized) printf '🎯';; support) printf '🛟';; supply-chain) printf '🚚';; testing) printf '🧪';;
+    *) printf '•';;
+  esac
+}
+
+do_list() {
+  case "${1:-all}" in
+    tools)
+      printf '%s\n' "${ALL_TOOLS[@]}" ;;
+    teams|divisions)
+      local div
+      for div in "${AGENT_DIRS[@]}"; do
+        printf '%s %-22s %3s agents\n' "$(division_emoji "$div")" "$div" "$(division_count "$div")"
+      done ;;
+    agents)
+      local div f
+      for div in "${AGENT_DIRS[@]}"; do
+        while IFS= read -r f; do
+          printf '%-22s %-42s %s\n' "$div" "$(agent_file_slug "$f")" "$(get_field name "$f")"
+        done < <(division_files "$div")
+      done ;;
+    all)
+      echo "Tools (${#ALL_TOOLS[@]}):"
+      printf '  %s\n' "${ALL_TOOLS[@]}"
+      echo
+      echo "Teams (${#AGENT_DIRS[@]}):"
+      local div
+      for div in "${AGENT_DIRS[@]}"; do
+        printf '  %s %-22s %3s agents\n' "$(division_emoji "$div")" "$div" "$(division_count "$div")"
+      done ;;
+    *) err "Unknown list target '$1'. Valid: tools, teams, agents"; exit 1 ;;
+  esac
+}
 
 # ---------------------------------------------------------------------------
 # Usage
@@ -365,12 +537,14 @@ install_claude_code() {
   dest="$(resolve_dest CLAUDE_AGENTS_DIR "${HOME}/.claude/agents")"
   local count=0
   mkdir -p "$dest"
-  local dir f first_line
+  local dir f first_line slug
   for dir in "${AGENT_DIRS[@]}"; do
     [[ -d "$REPO_ROOT/$dir" ]] || continue
     while IFS= read -r -d '' f; do
       first_line="$(head -1 "$f")"
       [[ "$first_line" == "---" ]] || continue
+      slug="$(agent_file_slug "$f")"
+      slug_allowed "$slug" || continue
       cp "$f" "$dest/"
       (( count++ )) || true
     done < <(find "$REPO_ROOT/$dir" -name "*.md" -type f -print0)
@@ -384,12 +558,14 @@ install_copilot() {
   dest_copilot="$(resolve_dest COPILOT_AGENT_DIR "${HOME}/.copilot/agents")"
   local count=0
   mkdir -p "$dest_github" "$dest_copilot"
-  local dir f first_line
+  local dir f first_line slug
   for dir in "${AGENT_DIRS[@]}"; do
     [[ -d "$REPO_ROOT/$dir" ]] || continue
     while IFS= read -r -d '' f; do
       first_line="$(head -1 "$f")"
       [[ "$first_line" == "---" ]] || continue
+      slug="$(agent_file_slug "$f")"
+      slug_allowed "$slug" || continue
       cp "$f" "$dest_github/"
       cp "$f" "$dest_copilot/"
       (( count++ )) || true
@@ -412,6 +588,7 @@ install_antigravity() {
   local d
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
     mkdir -p "$dest/$name"
     cp "$d/SKILL.md" "$dest/$name/SKILL.md"
     (( count++ )) || true
@@ -430,6 +607,7 @@ install_osaurus() {
   local d
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
     mkdir -p "$dest/$name"
     cp "$d/SKILL.md" "$dest/$name/SKILL.md"
     (( count++ )) || true
@@ -453,6 +631,7 @@ install_gemini_cli() {
   local d
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
     mkdir -p "$dest/skills/$name"
     cp "$d/SKILL.md" "$dest/skills/$name/SKILL.md"
     (( count++ )) || true
@@ -475,6 +654,7 @@ install_opencode() {
   while IFS= read -r -d '' f; do
     local base; base="$(basename "$f")"
     [[ "$base" == "README.md" ]] && continue
+    slug_allowed "${base%.md}" || continue
     cp "$f" "$dest/"; (( count++ )) || true
   done < <(find "$search_dir" -maxdepth 1 -name "*.md" -print0)
   if (( count == 0 )); then
@@ -500,6 +680,7 @@ install_openclaw() {
   local d
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
     [[ -f "$d/SOUL.md" && -f "$d/AGENTS.md" && -f "$d/IDENTITY.md" ]] || continue
     mkdir -p "$dest/$name"
     cp "$d/SOUL.md" "$dest/$name/SOUL.md"
@@ -532,6 +713,7 @@ install_cursor() {
   mkdir -p "$dest"
   local f
   while IFS= read -r -d '' f; do
+    slug_allowed "$(basename "$f" .mdc)" || continue
     cp "$f" "$dest/"; (( count++ )) || true
   done < <(find "$src" -maxdepth 1 -name "*.mdc" -print0)
   ok "Cursor: $count rules -> $dest"
@@ -577,6 +759,7 @@ install_qwen() {
 
   local f
   while IFS= read -r -d '' f; do
+    slug_allowed "$(basename "$f" .md)" || continue
     cp "$f" "$dest/"
     (( count++ )) || true
   done < <(find "$src" -maxdepth 1 -name "*.md" -print0)
@@ -599,6 +782,7 @@ install_zcode() {
 
   local f
   while IFS= read -r -d '' f; do
+    slug_allowed "$(basename "$f" .md)" || continue
     cp "$f" "$dest/"
     (( count++ )) || true
   done < <(find "$src" -maxdepth 1 -name "*.md" -print0)
@@ -621,6 +805,7 @@ install_kimi() {
   local d
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
     mkdir -p "$dest/$name"
     cp "$d/agent.yaml" "$dest/$name/agent.yaml"
     cp "$d/system.md" "$dest/$name/system.md"
@@ -644,6 +829,7 @@ install_codex() {
 
   local f
   while IFS= read -r -d '' f; do
+    slug_allowed "$(basename "$f" .toml)" || continue
     cp "$f" "$dest/"
     (( count++ )) || true
   done < <(find "$src" -maxdepth 1 -name "*.toml" -print0)
@@ -667,6 +853,7 @@ install_vibe() {
   local agent_file prompt_file slug
   while IFS= read -r -d '' agent_file; do
     slug="$(basename "$agent_file" .toml)"
+    slug_allowed "$slug" || continue
     prompt_file="$src_prompts/$slug.md"
     [[ -f "$prompt_file" ]] || continue
     cp "$agent_file" "$dest/agents/"
@@ -786,12 +973,43 @@ main() {
   local tool="all"
   local interactive_mode="auto"
   local use_parallel=false
+  local list_target=""
   local parallel_jobs
   parallel_jobs="$(parallel_jobs_default)"
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
       --tool)            tool="${2:?'--tool requires a value'}"; shift 2; interactive_mode="no" ;;
+      --division)
+        local raw_div div
+        IFS=',' read -ra raw_divs <<< "${2:?'--division requires a value'}"
+        for raw_div in "${raw_divs[@]}"; do
+          div="$(printf '%s' "$raw_div" | xargs)"
+          [[ -z "$div" ]] && continue
+          validate_division "$div"
+          FILTER_DIVISIONS+=("$div")
+        done
+        shift 2
+        interactive_mode="no" ;;
+      --agent)
+        local raw_agent agent
+        IFS=',' read -ra raw_agents <<< "${2:?'--agent requires a value'}"
+        for raw_agent in "${raw_agents[@]}"; do
+          agent="$(printf '%s' "$raw_agent" | xargs)"
+          [[ -n "$agent" ]] && FILTER_AGENTS+=("$agent")
+        done
+        shift 2
+        interactive_mode="no" ;;
+      --agents-file)     AGENTS_FILE="${2:?'--agents-file requires a value'}"; shift 2; interactive_mode="no" ;;
+      --dry-run)         DRY_RUN=true; shift; interactive_mode="no" ;;
+      --list)
+        if [[ $# -ge 2 && "${2#-}" == "$2" ]]; then
+          list_target="$2"
+          shift 2
+        else
+          list_target="all"
+          shift
+        fi ;;
       --interactive)     interactive_mode="yes"; shift ;;
       --no-interactive)  interactive_mode="no"; shift ;;
       --parallel)        use_parallel=true; shift ;;
@@ -800,6 +1018,18 @@ main() {
       *)                 err "Unknown option: $1"; usage ;;
     esac
   done
+
+  if [[ -n "$list_target" ]]; then
+    do_list "$list_target"
+    exit 0
+  fi
+
+  if [[ -n "${AGENCY_ALLOWED_SLUGS:-}" ]]; then
+    SELECTION_ACTIVE=true
+    _ALLOWED_SLUGS="$AGENCY_ALLOWED_SLUGS"
+  else
+    build_selection
+  fi
 
   check_integrations
 
@@ -819,7 +1049,13 @@ main() {
         err "Unknown tool '$t'. Valid: ${ALL_TOOLS[*]}"
         exit 1
       fi
-      cleaned+=("$t")
+      local duplicate=false selected
+      if [[ ${#cleaned[@]} -gt 0 ]]; then
+        for selected in "${cleaned[@]}"; do
+          [[ "$selected" == "$t" ]] && duplicate=true && break
+        done
+      fi
+      $duplicate || cleaned+=("$t")
     done
     if [[ ${#cleaned[@]} -eq 0 ]]; then
       err "--tool requires at least one tool name. Valid: ${ALL_TOOLS[*]}"
@@ -867,6 +1103,22 @@ main() {
     exit 0
   fi
 
+  if $DRY_RUN; then
+    printf "\n"
+    header "The Agency -- Install plan"
+    printf "  Repo:    %s\n" "$REPO_ROOT"
+    printf "  Tools:   %s\n" "${SELECTED_TOOLS[*]}"
+    printf "  Agents:  %s\n" "$(selected_agent_count)"
+    if $SELECTION_ACTIVE; then
+      printf "  Filter:  active\n"
+    else
+      printf "  Filter:  all agents\n"
+    fi
+    printf "\n"
+    ok "Dry run complete. No files were written."
+    exit 0
+  fi
+
   # When parent runs install.sh --parallel, it spawns workers with AGENCY_INSTALL_WORKER=1
   # so each worker only runs install_tool(s) and skips header/done box (avoids duplicate output).
   if [[ -n "${AGENCY_INSTALL_WORKER:-}" ]]; then
@@ -893,6 +1145,7 @@ main() {
     install_out_dir="$(mktemp -d)"
     export AGENCY_INSTALL_OUT_DIR="$install_out_dir"
     export AGENCY_INSTALL_SCRIPT="$SCRIPT_DIR/install.sh"
+    export AGENCY_ALLOWED_SLUGS="$_ALLOWED_SLUGS"
     printf '%s\n' "${SELECTED_TOOLS[@]}" | xargs -P "$parallel_jobs" -I {} sh -c 'AGENCY_INSTALL_WORKER=1 "$AGENCY_INSTALL_SCRIPT" --tool "{}" --no-interactive > "$AGENCY_INSTALL_OUT_DIR/{}" 2>&1'
     for t in "${SELECTED_TOOLS[@]}"; do
       [[ -f "$install_out_dir/$t" ]] && cat "$install_out_dir/$t"

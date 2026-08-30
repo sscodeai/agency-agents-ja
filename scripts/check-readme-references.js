@@ -25,6 +25,7 @@ const knownPathRoots = new Set([
   'paid-media',
   'product',
   'project-management',
+  'research',
   'sales',
   'scripts',
   'security',

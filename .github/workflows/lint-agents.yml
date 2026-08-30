@@ -18,6 +18,7 @@ on:
       - "security/**"
       - "product/**"
       - "project-management/**"
+      - "research/**"
       - "testing/**"
       - "support/**"
       - "spatial-computing/**"
@@ -38,7 +39,7 @@ jobs:
         run: |
           FILES=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- \
             'academic/**/*.md' 'design/**/*.md' 'engineering/**/*.md' 'finance/**/*.md' 'game-development/**/*.md' 'gis/**/*.md' 'healthcare/**/*.md' 'hr/**/*.md' 'legal/**/*.md' 'marketing/**/*.md' 'paid-media/**/*.md' 'sales/**/*.md' 'product/**/*.md' \
-            'project-management/**/*.md' 'testing/**/*.md' 'support/**/*.md' \
+            'project-management/**/*.md' 'research/**/*.md' 'testing/**/*.md' 'support/**/*.md' \
             'security/**/*.md' 'spatial-computing/**/*.md' 'specialized/**/*.md' 'supply-chain/**/*.md')
           {
             echo "files<<ENDOFLIST"

@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 385 (⭐ 115 japan-original + 270 upstream-aligned)
+Total agents: 388 (⭐ 115 japan-original + 273 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -21,7 +21,7 @@ Total: 7 (⭐ 1 japan-original + 6 upstream-aligned)
 
 ## Engineering
 
-Total: 85 (⭐ 27 japan-original + 58 upstream-aligned)
+Total: 86 (⭐ 27 japan-original + 59 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -82,6 +82,7 @@ Total: 85 (⭐ 27 japan-original + 58 upstream-aligned)
 |  | 日本向けインシデント対応指揮者 | upstream | adapted | Incident Response Commander | 日本の SaaS / 業務システム運用で障害対応、顧客連絡、復旧、暫定対応、再発防止を指揮する agent。 | `engineering/engineering-incident-response-commander.md` |
 |  | 日本向け IoT Fleet Engineer | upstream | adapted | IoT Fleet Engineer | IoT / edge device fleet の provisioning、device identity、MQTT telemetry、OTA firmware update、edge observability を安全に設計する agent。 | `engineering/engineering-iot-fleet-engineer.md` |
 |  | 日本向け IT Service Manager | upstream | adapted | IT Service Manager | ITIL 4 を軸に service catalog、incident / problem / change、SLA、CMDB、継続改善を日本企業の情シス・運用保守に合わせて設計する agent。 | `engineering/engineering-it-service-manager.md` |
+|  | 日本向けナレッジグラフエンジニア | upstream | adapted | Knowledge Graph Engineer | 文書、業務知識、system 構成、agent 能力を entity / relationship として構造化し、根拠追跡・矛盾管理・GraphRAG を設計する engineering agent。 | `engineering/engineering-knowledge-graph-engineer.md` |
 |  | 日本向け LLM Post-Training Engineer | upstream | adapted | LLM Post-Training Engineer | SFT、preference optimization、RLHF / RLVR、MoE post-training、checkpoint integrity、release gate を evidence-driven に管理する agent。 | `engineering/engineering-llm-post-training-engineer.md` |
 |  | 日本向け最小変更エンジニア | upstream | adapted | Minimal Change Engineer | 既存仕様、保守運用、検収リスクを守りながら、目的達成に必要な最小差分で修正する engineering agent。 | `engineering/engineering-minimal-change-engineer.md` |
 |  | 日本向け Mobile App Builder | upstream | adapted | Mobile App Builder | 日本向け iOS / Android / React Native / Flutter app の認証、push、決済、審査、運用を実装する mobile agent。 | `engineering/engineering-mobile-app-builder.md` |
@@ -243,6 +244,14 @@ Total: 8 (⭐ 1 japan-original + 7 upstream-aligned)
 |  | 日本向けプログラマティック広告バイヤー | upstream | adapted | Programmatic Buyer | 日本の DSP、PMP、動画、ディスプレイ、ブランドセーフティを踏まえて programmatic buying を設計・改善する agent。 | `paid-media/paid-media-programmatic-buyer.md` |
 |  | 日本向け検索クエリアナリスト | upstream | adapted | Search Query Analyst | 日本語の検索語句、表記ゆれ、購買意図を分析し、広告運用の除外・拡張・LP 改善につなげる agent。 | `paid-media/paid-media-search-query-analyst.md` |
 |  | 日本向け広告計測専門家 | upstream | adapted | Tracking Specialist | GA4、GTM、媒体タグ、CAPI、オフライン CV を、日本の広告運用・個人情報・CRM 連携に合わせて設計する agent。 | `paid-media/paid-media-tracking-specialist.md` |
+
+## Research
+
+Total: 1 (⭐ 0 japan-original + 1 upstream-aligned)
+
+| | Name | Source | Status | Upstream | Description | Path |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 日本向けリサーチシンセシスト | upstream | adapted | Research Synthesist | 論文、技術資料、政策文書、業界 report、一次情報を評価し、引用の循環や根拠の強弱を分けて evidence synthesis を作る research agent。 | `research/research-synthesist.md` |
 
 ## Finance
 
@@ -454,7 +463,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 71 (⭐ 14 japan-original + 57 upstream-aligned)
+Total: 72 (⭐ 14 japan-original + 58 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -520,6 +529,7 @@ Total: 71 (⭐ 14 japan-original + 57 upstream-aligned)
 |  | 日本向け FedRAMP / RMF コンプライアンスエンジニア | upstream | adapted | FedRAMP & RMF Compliance Engineer | FedRAMP、NIST RMF、NIST SP 800-53 Rev.5、ATO、POA&M、OSCAL を、日本企業・SIer・cloud service の米国公共 sector 対応に合わせて整理する compliance engineering agent。 | `specialized/specialized-fedramp-rmf-compliance.md` |
 |  | 日本向けフランス市場コンサルティング担当 | upstream | adapted | French Consulting Market | 日本企業のフランス市場進出、現地 partner、商習慣、言語、規制、提案資料を支援する market consulting agent。 | `specialized/specialized-french-consulting-market.md` |
 |  | 日本向け韓国ビジネスナビゲーター | upstream | adapted | Korean Business Navigator | 日本企業と韓国市場・韓国企業の商談、提携、ローカライズ、文化差、資料作成を支援する agent。 | `specialized/specialized-korean-business-navigator.md` |
+|  | 日本向けマスタープランアーキテクト | upstream | adapted | Master Plan Architect | 実装前に概念講義、ground truth 確認、red team、file mutation manifest、検証・rollback 方針をまとめた Markdown 実装計画を作る planning agent。 | `specialized/specialized-master-plan-architect.md` |
 |  | 日本向け MCP ビルダー | upstream | adapted | MCP Builder | 日本企業の社内 tools、SaaS、DB、業務 API を安全に AI へ接続する MCP server / tool builder agent。 | `specialized/specialized-mcp-builder.md` |
 |  | 日本向けモデル QA 担当 | upstream | adapted | Model QA | 日本語 AI model / RAG / agent の評価、回帰試験、安全性、業務適合性を検証する QA agent。 | `specialized/specialized-model-qa.md` |
 |  | 日本向け Pricing Analyst | upstream | adapted | Pricing Analyst | 価格、packaging、値引き、見積、margin、競合比較を分析し、日本市場向けの pricing decision を数値で支える agent。 | `specialized/specialized-pricing-analyst.md` |
