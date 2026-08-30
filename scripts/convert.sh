@@ -68,7 +68,7 @@ TODAY="$(date +%Y-%m-%d)"
 
 AGENT_DIRS=(
   academic design engineering finance game-development gis healthcare hr legal marketing paid-media product project-management
-  sales security spatial-computing specialized support supply-chain testing
+  research sales security spatial-computing specialized support supply-chain testing
 )
 
 # --- Usage ---
@@ -126,6 +126,13 @@ toml_escape_string() {
   '
 }
 
+# Quote a single-line value for a YAML frontmatter scalar. Single-quoted YAML
+# strings keep colons, hashes, backslashes, and Unicode literal, while doubling
+# an apostrophe is the only escaping rule required here.
+yaml_quote() {
+  printf "'%s'" "$(printf '%s' "$1" | sed "s/'/''/g")"
+}
+
 # --- Per-tool converters ---
 
 convert_antigravity() {
@@ -146,8 +153,8 @@ convert_antigravity() {
   # project-scoped to <project>/.agents/skills/.
   cat > "$outfile" <<HEREDOC
 ---
-name: ${slug}
-description: ${description}
+name: $(yaml_quote "$slug")
+description: $(yaml_quote "$description")
 ---
 ${body}
 HEREDOC
@@ -168,8 +175,8 @@ convert_osaurus() {
 
   cat > "$outfile" <<HEREDOC
 ---
-name: ${slug}
-description: ${description}
+name: $(yaml_quote "$slug")
+description: $(yaml_quote "$description")
 ---
 ${body}
 HEREDOC
@@ -210,8 +217,8 @@ convert_gemini_cli() {
   # Gemini CLI skill format: minimal frontmatter (name + description only)
   cat > "$outfile" <<HEREDOC
 ---
-name: ${slug}
-description: ${description}
+name: $(yaml_quote "$slug")
+description: $(yaml_quote "$description")
 ---
 ${body}
 HEREDOC
@@ -278,8 +285,8 @@ convert_opencode() {
   # Named colors are resolved to hex via resolve_opencode_color().
   cat > "$outfile" <<HEREDOC
 ---
-name: ${name}
-description: ${description}
+name: $(yaml_quote "$name")
+description: $(yaml_quote "$description")
 mode: subagent
 color: '${color}'
 ---
@@ -302,7 +309,7 @@ convert_cursor() {
   # Cursor .mdc format: description + globs + alwaysApply frontmatter
   cat > "$outfile" <<HEREDOC
 ---
-description: ${description}
+description: $(yaml_quote "$description")
 globs: ""
 alwaysApply: false
 ---
@@ -424,17 +431,17 @@ convert_qwen() {
   if [[ -n "$tools" ]]; then
     cat > "$outfile" <<HEREDOC
 ---
-name: ${slug}
-description: ${description}
-tools: ${tools}
+name: $(yaml_quote "$slug")
+description: $(yaml_quote "$description")
+tools: $(yaml_quote "$tools")
 ---
 ${body}
 HEREDOC
   else
     cat > "$outfile" <<HEREDOC
 ---
-name: ${slug}
-description: ${description}
+name: $(yaml_quote "$slug")
+description: $(yaml_quote "$description")
 ---
 ${body}
 HEREDOC
@@ -459,17 +466,17 @@ convert_zcode() {
   if [[ -n "$tools" ]]; then
     cat > "$outfile" <<HEREDOC
 ---
-name: ${slug}
-description: ${description}
-tools: ${tools}
+name: $(yaml_quote "$slug")
+description: $(yaml_quote "$description")
+tools: $(yaml_quote "$tools")
 ---
 ${body}
 HEREDOC
   else
     cat > "$outfile" <<HEREDOC
 ---
-name: ${slug}
-description: ${description}
+name: $(yaml_quote "$slug")
+description: $(yaml_quote "$description")
 ---
 ${body}
 HEREDOC

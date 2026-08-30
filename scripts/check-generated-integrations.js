@@ -17,6 +17,7 @@ const agentDirs = [
   'paid-media',
   'product',
   'project-management',
+  'research',
   'sales',
   'security',
   'spatial-computing',

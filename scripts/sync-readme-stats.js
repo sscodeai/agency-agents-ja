@@ -11,6 +11,7 @@ const AGENT_CATEGORIES = [
   'product',
   'marketing',
   'paid-media',
+  'research',
   'finance',
   'game-development',
   'gis',

@@ -51,11 +51,21 @@ canonical() {
     | sort -u
 }
 
+has_agent_file() {
+  local f first
+  while IFS= read -r f; do
+    first="$(head -1 "$f" | tr -d '\r')"
+    [[ "$first" == "---" ]] && return 0
+  done < <(find "$1" -name '*.md' -type f 2>/dev/null)
+  return 1
+}
+
 actual_dirs() {
   local base
-  git ls-files | awk -F/ 'NF > 1 {print $1}' | sort -u | while IFS= read -r base; do
+  find . -mindepth 1 -maxdepth 1 -type d -print | sed 's#^\./##' | sort -u | while IFS= read -r base; do
     [[ "$base" == .* ]] && continue
     case " ${NON_DIVISION_DIRS[*]} " in *" $base "*) continue ;; esac
+    has_agent_file "$base" || continue
     echo "$base"
   done
 }
@@ -111,15 +121,6 @@ while IFS= read -r div; do
       || fail "division '$div' in $JSON is missing \"$field\""
   done
 done < <(canonical)
-
-has_agent_file() {
-  local f first
-  while IFS= read -r f; do
-    first="$(head -1 "$f" | tr -d '\r')"
-    [[ "$first" == "---" ]] && return 0
-  done < <(find "$1" -name '*.md' -type f 2>/dev/null)
-  return 1
-}
 
 while IFS= read -r div; do
   if [[ ! -d "$div" ]]; then
