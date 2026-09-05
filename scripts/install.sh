@@ -34,6 +34,8 @@
 #   --agents-file <path> Install agents listed in a file (one name or slug per line)
 #   --dry-run         Print the install plan without writing files
 #   --list [tools|teams|agents] List tools, divisions, or agents and exit
+#   --path <dir>      Override the install directory for selected tools
+#   --no-convert      Do not auto-generate missing integration outputs
 #   --interactive     Show interactive selector (default when run in a terminal)
 #   --no-interactive  Skip interactive selector, install all detected tools
 #   --parallel        Run install for each selected tool in parallel (output order may vary)
@@ -41,7 +43,7 @@
 #   --help            Show this help
 #
 # Env path overrides:
-#   CLAUDE_AGENTS_DIR, GITHUB_AGENT_DIR, COPILOT_AGENT_DIR,
+#   CLAUDE_CONFIG_DIR, CLAUDE_AGENTS_DIR, GITHUB_AGENT_DIR, COPILOT_AGENT_DIR,
 #   ANTIGRAVITY_SKILLS_DIR, GEMINI_EXTENSION_DIR, OPENCODE_AGENTS_DIR,
 #   OPENCLAW_DIR, CURSOR_RULES_DIR, QWEN_AGENTS_DIR, ZCODE_AGENTS_DIR, KIMI_AGENTS_DIR,
 #   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME
@@ -122,6 +124,19 @@ ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor a
 resolve_dest() {
   local env_name="$1"
   local default_path="$2"
+  if [[ -n "${OVERRIDE_PATH:-}" ]]; then
+    printf '%s' "$OVERRIDE_PATH"
+    return
+  fi
+  if [[ "$env_name" == "CLAUDE_AGENTS_DIR" && -z "${CLAUDE_AGENTS_DIR:-}" && -n "${CLAUDE_CONFIG_DIR:-}" ]]; then
+    local cfg="${CLAUDE_CONFIG_DIR%/}"
+    if [[ "$cfg" == */agents ]]; then
+      printf '%s' "$cfg"
+    else
+      printf '%s' "$cfg/agents"
+    fi
+    return
+  fi
   if [[ -n "${!env_name:-}" ]]; then
     printf '%s' "${!env_name}"
   else
@@ -141,12 +156,23 @@ AGENTS_FILE=""
 DRY_RUN=false
 SELECTION_ACTIVE=false
 _ALLOWED_SLUGS=""
+AUTO_CONVERT=true
+OVERRIDE_PATH=""
 
 get_field() {
   local field="$1" file="$2"
   awk -v f="$field" '
-    /^---$/ { fm++; next }
-    fm == 1 && $0 ~ "^" f ": " { sub("^" f ": ", ""); print; exit }
+    function emit(v) {
+      sub(/^[ \t]+/, "", v); sub(/[ \t]+$/, "", v)
+      if (v ~ /^".*"$/)            { v = substr(v, 2, length(v) - 2); gsub(/\\"/, "\"", v); gsub(/\\\\/, "\\", v) }
+      else if (v ~ /^\047.*\047$/) { v = substr(v, 2, length(v) - 2); gsub(/\047\047/, "\047", v) }
+      print v; printed = 1; exit
+    }
+    /^---$/ { fm++; if (fm == 2 && found) emit(val); next }
+    fm == 1 && !found && $0 ~ "^" f ": " { sub("^" f ": ", ""); val = $0; found = 1; next }
+    fm == 1 && found && /^[ \t]+[^ \t]/ { sub(/^[ \t]+/, ""); val = val " " $0; next }
+    fm == 1 && found { emit(val) }
+    END { if (found && !printed) emit(val) }
   ' "$file"
 }
 
@@ -261,6 +287,44 @@ selected_agent_count() {
   fi
 }
 
+path_collision_group() {
+  case "$1" in
+    claude-code|copilot)            printf 'raw-source-md' ;;
+    gemini-cli|opencode|qwen|zcode) printf 'slug-md' ;;
+    antigravity|osaurus)            printf 'agency-skill' ;;
+    *)                              printf '' ;;
+  esac
+}
+
+validate_path_override() {
+  [[ -z "$OVERRIDE_PATH" || ${#SELECTED_TOOLS[@]} -lt 2 ]] && return 0
+  local seen="" tool group
+  for tool in "${SELECTED_TOOLS[@]}"; do
+    group="$(path_collision_group "$tool")"
+    [[ -z "$group" ]] && continue
+    case "$seen" in
+      *"|$group|"*)
+        err "--path cannot safely combine tools that write colliding $group outputs. Run them separately or choose distinct paths."
+        exit 1
+        ;;
+    esac
+    seen="$seen|$group|"
+  done
+}
+
+ensure_converted() {
+  local tool="$1"
+  $AUTO_CONVERT || return 0
+  case "$tool" in claude-code|copilot) return 0 ;; esac
+  local d="$INTEGRATIONS/$tool"
+  if [[ ! -d "$d" ]] || [[ -z "$(find "$d" -type f ! -name 'README.md' 2>/dev/null | head -1)" ]]; then
+    warn "$tool: integration files missing -- running convert.sh --tool $tool"
+    "$SCRIPT_DIR/convert.sh" --tool "$tool" >/dev/null 2>&1 \
+      && ok "$tool: generated integration files" \
+      || { err "$tool: convert.sh failed; run it manually"; return 1; }
+  fi
+}
+
 division_emoji() {
   case "$1" in
     academic) printf '📚';; design) printf '🎨';; engineering) printf '💻';;
@@ -353,7 +417,7 @@ require_generated_count() {
 # ---------------------------------------------------------------------------
 # Tool detection
 # ---------------------------------------------------------------------------
-detect_claude_code() { [[ -n "${CLAUDE_AGENTS_DIR:-}" || -d "${HOME}/.claude" ]]; }
+detect_claude_code() { [[ -n "${CLAUDE_CONFIG_DIR:-}${CLAUDE_AGENTS_DIR:-}" || -d "${HOME}/.claude" ]]; }
 detect_copilot()      { command -v code >/dev/null 2>&1 || [[ -n "${GITHUB_AGENT_DIR:-}${COPILOT_AGENT_DIR:-}" || -d "${HOME}/.github" || -d "${HOME}/.copilot" ]]; }
 detect_antigravity()  { [[ -n "${ANTIGRAVITY_SKILLS_DIR:-}" || -d "${HOME}/.gemini/config/skills" || -d "${PWD}/.agents/skills" ]]; }
 detect_gemini_cli()   { command -v gemini >/dev/null 2>&1 || [[ -n "${GEMINI_EXTENSION_DIR:-}" || -d "${HOME}/.gemini" ]]; }
@@ -722,8 +786,10 @@ install_cursor() {
 
 install_aider() {
   local src="$INTEGRATIONS/aider/CONVENTIONS.md"
-  local dest="${PWD}/CONVENTIONS.md"
+  local dest_dir="${OVERRIDE_PATH:-$PWD}"
+  local dest="${dest_dir%/}/CONVENTIONS.md"
   [[ -f "$src" ]] || { err "integrations/aider/CONVENTIONS.md missing. Run convert.sh first."; return 1; }
+  mkdir -p "$dest_dir"
   if [[ -f "$dest" ]]; then
     warn "Aider: CONVENTIONS.md already exists at $dest (remove to reinstall)."
     return 0
@@ -735,8 +801,10 @@ install_aider() {
 
 install_windsurf() {
   local src="$INTEGRATIONS/windsurf/.windsurfrules"
-  local dest="${PWD}/.windsurfrules"
+  local dest_dir="${OVERRIDE_PATH:-$PWD}"
+  local dest="${dest_dir%/}/.windsurfrules"
   [[ -f "$src" ]] || { err "integrations/windsurf/.windsurfrules missing. Run convert.sh first."; return 1; }
+  mkdir -p "$dest_dir"
   if [[ -f "$dest" ]]; then
     warn "Windsurf: .windsurfrules already exists at $dest (remove to reinstall)."
     return 0
@@ -946,6 +1014,7 @@ PY
 }
 
 install_tool() {
+  ensure_converted "$1" || return 1
   case "$1" in
     claude-code) install_claude_code ;;
     copilot)     install_copilot     ;;
@@ -1002,6 +1071,8 @@ main() {
         interactive_mode="no" ;;
       --agents-file)     AGENTS_FILE="${2:?'--agents-file requires a value'}"; shift 2; interactive_mode="no" ;;
       --dry-run)         DRY_RUN=true; shift; interactive_mode="no" ;;
+      --path)            OVERRIDE_PATH="${2:?'--path requires a value'}"; shift 2; interactive_mode="no" ;;
+      --no-convert)      AUTO_CONVERT=false; shift ;;
       --list)
         if [[ $# -ge 2 && "${2#-}" == "$2" ]]; then
           list_target="$2"
@@ -1022,6 +1093,13 @@ main() {
   if [[ -n "$list_target" ]]; then
     do_list "$list_target"
     exit 0
+  fi
+
+  if [[ -n "${AGENCY_OVERRIDE_PATH:-}" ]]; then
+    OVERRIDE_PATH="$AGENCY_OVERRIDE_PATH"
+  fi
+  if [[ "${AGENCY_AUTO_CONVERT:-}" == "false" ]]; then
+    AUTO_CONVERT=false
   fi
 
   if [[ -n "${AGENCY_ALLOWED_SLUGS:-}" ]]; then
@@ -1103,6 +1181,8 @@ main() {
     exit 0
   fi
 
+  validate_path_override
+
   if $DRY_RUN; then
     printf "\n"
     header "The Agency -- Install plan"
@@ -1146,6 +1226,8 @@ main() {
     export AGENCY_INSTALL_OUT_DIR="$install_out_dir"
     export AGENCY_INSTALL_SCRIPT="$SCRIPT_DIR/install.sh"
     export AGENCY_ALLOWED_SLUGS="$_ALLOWED_SLUGS"
+    export AGENCY_OVERRIDE_PATH="$OVERRIDE_PATH"
+    export AGENCY_AUTO_CONVERT="$AUTO_CONVERT"
     printf '%s\n' "${SELECTED_TOOLS[@]}" | xargs -P "$parallel_jobs" -I {} sh -c 'AGENCY_INSTALL_WORKER=1 "$AGENCY_INSTALL_SCRIPT" --tool "{}" --no-interactive > "$AGENCY_INSTALL_OUT_DIR/{}" 2>&1'
     for t in "${SELECTED_TOOLS[@]}"; do
       [[ -f "$install_out_dir/$t" ]] && cat "$install_out_dir/$t"

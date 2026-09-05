@@ -92,8 +92,17 @@ parallel_jobs_default() {
 get_field() {
   local field="$1" file="$2"
   awk -v f="$field" '
-    /^---$/ { fm++; next }
-    fm == 1 && $0 ~ "^" f ": " { sub("^" f ": ", ""); print; exit }
+    function emit(v) {
+      sub(/^[ \t]+/, "", v); sub(/[ \t]+$/, "", v)
+      if (v ~ /^".*"$/)            { v = substr(v, 2, length(v) - 2); gsub(/\\"/, "\"", v); gsub(/\\\\/, "\\", v) }
+      else if (v ~ /^\047.*\047$/) { v = substr(v, 2, length(v) - 2); gsub(/\047\047/, "\047", v) }
+      print v; printed = 1; exit
+    }
+    /^---$/ { fm++; if (fm == 2 && found) emit(val); next }
+    fm == 1 && !found && $0 ~ "^" f ": " { sub("^" f ": ", ""); val = $0; found = 1; next }
+    fm == 1 && found && /^[ \t]+[^ \t]/ { sub(/^[ \t]+/, ""); val = val " " $0; next }
+    fm == 1 && found { emit(val) }
+    END { if (found && !printed) emit(val) }
   ' "$file"
 }
 
@@ -617,6 +626,10 @@ HEREDOC
 # --- Main loop ---
 
 clean_tool_output() {
+  [[ "$1" =~ ^[a-z0-9-]+$ ]] || {
+    echo "ERROR: clean_tool_output: refusing non-slug tool name '$1'" >&2
+    return 1
+  }
   local dir="$OUT_DIR/$1"
   [[ -d "$dir" ]] || return 0
   find "$dir" -mindepth 1 -maxdepth 1 ! -name 'README.md' -exec rm -rf {} +
