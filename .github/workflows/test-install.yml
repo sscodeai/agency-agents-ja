@@ -1,0 +1,31 @@
+name: Test Installer
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test-install:
+    name: install.sh behavior (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Shell syntax
+        run: for f in scripts/*.sh; do bash -n "$f"; done
+
+      - name: Run installer tests
+        run: bash scripts/test-install.sh

@@ -119,3 +119,29 @@ npm run validate
 - workflow tables in `README.md` and `docs/superpowers-ja-integration.md`
 
 `npm run validate` checks frontmatter, generated files, workflow role references, example synchronization, and non-Japan localization drift.
+
+## Tooling Changes
+
+When changing `scripts/convert.sh`, `scripts/install.sh`, `tools.json`, or files
+under `integrations/`, also run:
+
+```bash
+bash scripts/test-install.sh
+bash scripts/test-convert-outputs.sh
+```
+
+`scripts/test-install.sh` installs into temporary sandboxes only. It checks
+destination paths, `CLAUDE_CONFIG_DIR`, `--path`, `--agent`, and dry-run behavior
+without touching your real `$HOME`.
+
+`scripts/test-convert-outputs.sh` regenerates every integration into a temporary
+directory, parses YAML/JSON outputs, checks generated counts, and compares
+descriptions back to the source agent frontmatter. If the converter output
+changes intentionally, refresh the manifest:
+
+```bash
+bash scripts/test-convert-outputs.sh --update
+```
+
+Commit the updated `scripts/convert-outputs.sha256` with the converter change so
+reviewers can see which tool outputs changed.

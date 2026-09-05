@@ -1,5 +1,18 @@
 # OpenCode Integration
 
+Do not copy source agent files directly into `.opencode/agents/`.
+
+```bash
+# Wrong: source frontmatter can contain fields OpenCode does not accept.
+cp agency-agents-ja/engineering/*.md .opencode/agents/
+
+# Right: convert and install through the repository scripts.
+/path/to/agency-agents-ja/scripts/install.sh --tool opencode
+```
+
+The installer writes converted OpenCode files with compatible frontmatter,
+including `mode: subagent` and normalized hex colors.
+
 OpenCode agents are `.md` files with YAML frontmatter stored in
 `.opencode/agents/`. The converter maps named colors to hex codes and adds
 `mode: subagent` so agents are invoked on-demand via `@agent-name` rather
