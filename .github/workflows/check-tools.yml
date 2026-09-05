@@ -24,3 +24,9 @@ jobs:
 
       - name: Validate converted YAML frontmatter
         run: bash scripts/test-convert-frontmatter.sh
+
+      - name: Validate converted outputs
+        run: bash scripts/test-convert-outputs.sh
+
+      - name: Validate installer selection
+        run: bash scripts/test-agent-selection.sh
