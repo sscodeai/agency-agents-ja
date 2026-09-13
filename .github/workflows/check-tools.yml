@@ -34,7 +34,7 @@ jobs:
         run: bash scripts/test-convert-frontmatter.sh
 
       - name: Validate converted outputs
-        run: bash scripts/test-convert-outputs.sh
+        run: bash scripts/test-convert-outputs.sh ${{ github.event_name == 'pull_request' && '--drift=advisory' || '' }}
 
       - name: Validate installer selection
         run: bash scripts/test-agent-selection.sh

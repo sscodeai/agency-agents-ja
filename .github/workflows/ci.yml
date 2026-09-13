@@ -24,9 +24,6 @@ jobs:
       - name: Validate agent files
         run: scripts/validate.sh
 
-      - name: Generate integrations
-        run: bash scripts/convert.sh --parallel --jobs 4
-
       - name: Validate generated integrations
         run: npm run check:generated-integrations
 

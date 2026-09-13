@@ -1,0 +1,18 @@
+name: Check Hermes Config Rewrite
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check-hermes-config-rewrite:
+    name: install.sh hermes config rewrite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Run regression cases
+        run: |
+          chmod +x scripts/check-hermes-config-rewrite.sh
+          ./scripts/check-hermes-config-rewrite.sh
