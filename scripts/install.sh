@@ -944,41 +944,132 @@ ensure_hermes_plugin_enabled() {
   mkdir -p "$hermes_home"
   set +e
   python3 - "$config" "$plugin" <<'PY'
-from __future__ import annotations
-
-import sys
 from pathlib import Path
+import sys
+import re
 
-config = Path(sys.argv[1])
+path = Path(sys.argv[1])
 plugin = sys.argv[2]
+text = path.read_text() if path.exists() else ""
+lines = text.splitlines()
+plugin_strip = plugin.strip()
 
-try:
-    import yaml
-except Exception:
-    raise SystemExit(2)
+plugin_start = None
+end_line = None
+enabled_indent = ""
+item_indent = ""
+has_enabled = False
+enabled_empty = False
+for i, line in enumerate(lines):
+    if line.startswith("plugins:"):
+        plugin_start = i
+        j = i + 1
+        broke = False
+        while j < len(lines):
+            jl = lines[j]
+            if jl and not jl.startswith((" ", "\t")):
+                broke = True
+                break
+            stripped = jl.strip()
+            if stripped.startswith("enabled:") and not enabled_indent:
+                has_enabled = True
+                enabled_indent = jl[: len(jl) - len(stripped)]
+                if "[]" in stripped:
+                    enabled_empty = True
+            elif stripped.startswith("-") and has_enabled and not item_indent:
+                item_indent = jl[: len(jl) - len(stripped)]
+            j += 1
+        end_line = j if broke else len(lines)
+        break
 
-data = {}
-if config.exists():
-    loaded = yaml.safe_load(config.read_text(encoding="utf-8")) or {}
-    if isinstance(loaded, dict):
-        data = loaded
-plugins = data.setdefault("plugins", {})
-if not isinstance(plugins, dict):
-    plugins = {}
-    data["plugins"] = plugins
-enabled = plugins.setdefault("enabled", [])
-if not isinstance(enabled, list):
-    enabled = []
-    plugins["enabled"] = enabled
-if plugin not in enabled:
-    enabled.append(plugin)
-config.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True), encoding="utf-8")
+corrupted_lines = []
+has_plugin_already = False
+if has_enabled and not enabled_empty:
+    for idx in range(plugin_start + 1, end_line):
+        l = lines[idx]
+        stripped = l.strip()
+        if not stripped.startswith("-"):
+            continue
+        if stripped.count("- ") > 1:
+            corrupted_lines.append(idx)
+        else:
+            value = stripped[1:].strip().strip('"\'')
+            if value == plugin_strip:
+                has_plugin_already = True
+
+for idx in sorted(corrupted_lines, reverse=True):
+    l = lines[idx]
+    stripped = l.strip()
+    if not item_indent:
+        item_indent = l[: len(l) - len(stripped)] or (enabled_indent + "  ")
+    content = stripped[1:].strip()
+    parts = re.split(r"\s+-\s+", content)
+    new_lines = [f"{item_indent}- {parts[0]}"]
+    for p in parts[1:]:
+        new_lines.append(f"{item_indent}- {p}")
+    lines[idx : idx + 1] = new_lines
+    end_line += len(new_lines) - 1
+    has_plugin_already = False
+    for nl in lines[plugin_start + 1 : end_line]:
+        if nl.strip().startswith("-") and nl[len(item_indent):].strip() == f"- {plugin_strip}":
+            has_plugin_already = True
+            break
+
+if has_plugin_already:
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
+
+new_item_line = f"{item_indent or (enabled_indent + '  ')}- {plugin}"
+
+if plugin_start is None:
+    if lines and lines[-1].strip():
+        lines.append("")
+    lines.append("plugins:")
+    lines.append(f"{enabled_indent or '  '}enabled:")
+    lines.append(new_item_line)
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
+
+if enabled_empty:
+    new_block = [
+        f"{enabled_indent}enabled:",
+        new_item_line,
+    ]
+    lines[plugin_start + 1 : plugin_start + 2] = new_block
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
+
+if has_enabled and not item_indent and not enabled_empty:
+    for idx in range(plugin_start + 1, end_line):
+        if lines[idx].strip() == "enabled:":
+            lines.insert(idx + 1, new_item_line)
+            break
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
+
+insert_at = None
+for idx in range(end_line - 1, plugin_start, -1):
+    l = lines[idx]
+    stripped = l.strip()
+    if stripped.startswith("-"):
+        if l != item_indent + stripped:
+            lines[idx] = item_indent + stripped
+        insert_at = idx + 1
+        break
+if insert_at is None and has_enabled:
+    for idx in range(plugin_start + 1, end_line):
+        if lines[idx].strip() == "enabled:":
+            insert_at = idx + 1
+            break
+if insert_at is None:
+    sys.exit(1)
+lines.insert(insert_at, new_item_line)
+path.write_text("\n".join(lines) + "\n")
 PY
   local rc=$?
   set -e
   case "$rc" in
     0) ok "Hermes: enabled agency-agents-router in $config" ;;
-    2) warn "Hermes: PyYAML is unavailable; add 'agency-agents-router' to plugins.enabled in $config manually." ;;
     *) warn "Hermes: plugin installed but $config was not updated." ;;
   esac
 }

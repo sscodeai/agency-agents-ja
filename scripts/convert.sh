@@ -66,6 +66,9 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OUT_DIR="$REPO_ROOT/integrations"
 TODAY="$(date +%Y-%m-%d)"
 
+# shellcheck source=lib.sh
+. "$SCRIPT_DIR/lib.sh"
+
 AGENT_DIRS=(
   academic design engineering finance game-development gis healthcare hr legal marketing paid-media product project-management
   research sales security spatial-computing specialized support supply-chain testing
@@ -349,8 +352,27 @@ convert_openclaw() {
 
   local current_target="agents"  # default bucket
   local current_section=""
+  local fence_marker="" fence_len=0 fence_indent=0
 
   while IFS= read -r line; do
+    if [[ -n "$fence_marker" ]]; then
+      current_section+="$line"$'\n'
+      if fence_closes_p "$line" "$fence_marker" "$fence_len" "$fence_indent"; then
+        fence_marker=""
+        fence_len=0
+        fence_indent=0
+      fi
+      continue
+    fi
+
+    if fence_open_p "$line"; then
+      fence_marker="${BASH_REMATCH[2]:0:1}"
+      fence_len=${#BASH_REMATCH[2]}
+      fence_indent=${#BASH_REMATCH[1]}
+      current_section+="$line"$'\n'
+      continue
+    fi
+
     # Detect ## headers (with or without emoji prefixes)
     if [[ "$line" =~ ^##[[:space:]] ]]; then
       # Flush previous section

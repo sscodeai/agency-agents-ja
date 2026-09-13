@@ -10,6 +10,10 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=lib.sh
+. "$SCRIPT_DIR/lib.sh"
+
 # Keep in sync with AGENT_DIRS in scripts/convert.sh
 AGENT_DIRS=(
   academic
@@ -120,7 +124,22 @@ lint_file() {
 
   local soul_headers=0
   local agents_headers=0
+  local fence_marker="" fence_len=0 fence_indent=0
   while IFS= read -r line; do
+    if [[ -n "$fence_marker" ]]; then
+      if fence_closes_p "$line" "$fence_marker" "$fence_len" "$fence_indent"; then
+        fence_marker=""
+        fence_len=0
+        fence_indent=0
+      fi
+      continue
+    fi
+    if fence_open_p "$line"; then
+      fence_marker="${BASH_REMATCH[2]:0:1}"
+      fence_len=${#BASH_REMATCH[2]}
+      fence_indent=${#BASH_REMATCH[1]}
+      continue
+    fi
     if [[ "$line" =~ ^##[[:space:]] ]]; then
       local target
       target=$(classify_header_target "$line")
