@@ -955,115 +955,137 @@ lines = text.splitlines()
 plugin_strip = plugin.strip()
 
 plugin_start = None
-end_line = None
-enabled_indent = ""
-item_indent = ""
-has_enabled = False
-enabled_empty = False
+plugin_end = len(lines)
+enabled_idx = None
+enabled_indent = "  "
+enabled_value = None
+
 for i, line in enumerate(lines):
     if line.startswith("plugins:"):
         plugin_start = i
         j = i + 1
-        broke = False
         while j < len(lines):
-            jl = lines[j]
-            if jl and not jl.startswith((" ", "\t")):
-                broke = True
+            if lines[j] and not lines[j].startswith((" ", "\t")):
                 break
-            stripped = jl.strip()
-            if stripped.startswith("enabled:") and not enabled_indent:
-                has_enabled = True
-                enabled_indent = jl[: len(jl) - len(stripped)]
-                if "[]" in stripped:
-                    enabled_empty = True
-            elif stripped.startswith("-") and has_enabled and not item_indent:
-                item_indent = jl[: len(jl) - len(stripped)]
             j += 1
-        end_line = j if broke else len(lines)
+        plugin_end = j
         break
-
-corrupted_lines = []
-has_plugin_already = False
-if has_enabled and not enabled_empty:
-    for idx in range(plugin_start + 1, end_line):
-        l = lines[idx]
-        stripped = l.strip()
-        if not stripped.startswith("-"):
-            continue
-        if stripped.count("- ") > 1:
-            corrupted_lines.append(idx)
-        else:
-            value = stripped[1:].strip().strip('"\'')
-            if value == plugin_strip:
-                has_plugin_already = True
-
-for idx in sorted(corrupted_lines, reverse=True):
-    l = lines[idx]
-    stripped = l.strip()
-    if not item_indent:
-        item_indent = l[: len(l) - len(stripped)] or (enabled_indent + "  ")
-    content = stripped[1:].strip()
-    parts = re.split(r"\s+-\s+", content)
-    new_lines = [f"{item_indent}- {parts[0]}"]
-    for p in parts[1:]:
-        new_lines.append(f"{item_indent}- {p}")
-    lines[idx : idx + 1] = new_lines
-    end_line += len(new_lines) - 1
-    has_plugin_already = False
-    for nl in lines[plugin_start + 1 : end_line]:
-        if nl.strip().startswith("-") and nl[len(item_indent):].strip() == f"- {plugin_strip}":
-            has_plugin_already = True
-            break
-
-if has_plugin_already:
-    path.write_text("\n".join(lines) + "\n")
-    sys.exit(0)
-
-new_item_line = f"{item_indent or (enabled_indent + '  ')}- {plugin}"
 
 if plugin_start is None:
     if lines and lines[-1].strip():
         lines.append("")
     lines.append("plugins:")
-    lines.append(f"{enabled_indent or '  '}enabled:")
-    lines.append(new_item_line)
+    lines.append("  enabled:")
+    lines.append(f"    - {plugin}")
     path.write_text("\n".join(lines) + "\n")
     sys.exit(0)
 
-if enabled_empty:
-    new_block = [
-        f"{enabled_indent}enabled:",
-        new_item_line,
-    ]
-    lines[plugin_start + 1 : plugin_start + 2] = new_block
-    path.write_text("\n".join(lines) + "\n")
-    sys.exit(0)
-
-if has_enabled and not item_indent and not enabled_empty:
-    for idx in range(plugin_start + 1, end_line):
-        if lines[idx].strip() == "enabled:":
-            lines.insert(idx + 1, new_item_line)
-            break
-    path.write_text("\n".join(lines) + "\n")
-    sys.exit(0)
-
-insert_at = None
-for idx in range(end_line - 1, plugin_start, -1):
-    l = lines[idx]
-    stripped = l.strip()
-    if stripped.startswith("-"):
-        if l != item_indent + stripped:
-            lines[idx] = item_indent + stripped
-        insert_at = idx + 1
+for idx in range(plugin_start + 1, plugin_end):
+    stripped = lines[idx].strip()
+    if stripped.startswith("enabled:"):
+        enabled_idx = idx
+        enabled_indent = lines[idx][: len(lines[idx]) - len(stripped)]
+        enabled_value = stripped[len("enabled:"):].strip()
         break
-if insert_at is None and has_enabled:
-    for idx in range(plugin_start + 1, end_line):
-        if lines[idx].strip() == "enabled:":
-            insert_at = idx + 1
+
+if enabled_idx is None:
+    insert = plugin_end
+    if insert > plugin_start + 1 and lines[insert - 1].strip():
+        # Keep the new key as a sibling under plugins, after existing children.
+        lines.insert(insert, f"{enabled_indent}enabled:")
+        lines.insert(insert + 1, f"{enabled_indent}  - {plugin}")
+    else:
+        lines.insert(insert, f"{enabled_indent}enabled:")
+        lines.insert(insert + 1, f"{enabled_indent}  - {plugin}")
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
+
+def unquote(value: str) -> str:
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+        if value[0] == "'":
+            return value[1:-1].replace("''", "'")
+        return value[1:-1].replace('\\"', '"').replace("\\\\", "\\")
+    return value
+
+def split_inline_list(value: str) -> list[str]:
+    if not (value.startswith("[") and value.endswith("]")):
+        return [unquote(value)] if value else []
+    inner = value[1:-1].strip()
+    if not inner:
+        return []
+    out = []
+    buf = []
+    quote = ""
+    i = 0
+    while i < len(inner):
+        ch = inner[i]
+        if quote:
+            buf.append(ch)
+            if ch == quote:
+                quote = ""
+            i += 1
+            continue
+        if ch in ("'", '"'):
+            quote = ch
+            buf.append(ch)
+        elif ch == ",":
+            item = unquote("".join(buf).strip())
+            if item:
+                out.append(item)
+            buf = []
+        else:
+            buf.append(ch)
+        i += 1
+    item = unquote("".join(buf).strip())
+    if item:
+        out.append(item)
+    return out
+
+def enabled_block_end() -> int:
+    j = enabled_idx + 1
+    while j < plugin_end:
+        line = lines[j]
+        if line.strip() and not line.startswith((" ", "\t")):
             break
-if insert_at is None:
-    sys.exit(1)
-lines.insert(insert_at, new_item_line)
+        stripped = line.strip()
+        indent = line[: len(line) - len(stripped)]
+        if stripped and len(indent) <= len(enabled_indent):
+            break
+        j += 1
+    return j
+
+item_indent = enabled_indent + "  "
+
+if enabled_value:
+    items = split_inline_list(enabled_value)
+    if plugin_strip not in items:
+        items.append(plugin)
+    new_block = [f"{enabled_indent}enabled:"] + [f"{item_indent}- {item}" for item in items]
+    lines[enabled_idx : enabled_idx + 1] = new_block
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
+
+block_end = enabled_block_end()
+items = []
+for idx in range(enabled_idx + 1, block_end):
+    stripped = lines[idx].strip()
+    if not stripped.startswith("-"):
+        continue
+    if not items:
+        item_indent = lines[idx][: len(lines[idx]) - len(stripped)] or item_indent
+    content = stripped[1:].strip()
+    parts = re.split(r"\s+-\s+", content)
+    for part in parts:
+        value = unquote(part.strip())
+        if value:
+            items.append(value)
+
+if plugin_strip not in items:
+    items.append(plugin)
+
+new_block = [f"{enabled_indent}enabled:"] + [f"{item_indent}- {item}" for item in items]
+lines[enabled_idx:block_end] = new_block
 path.write_text("\n".join(lines) + "\n")
 PY
   local rc=$?

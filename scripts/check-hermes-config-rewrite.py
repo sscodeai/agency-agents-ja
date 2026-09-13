@@ -52,6 +52,7 @@ def enabled_item_lines(text: str) -> list[str]:
     lines = text.splitlines()
     in_plugins = False
     in_enabled = False
+    enabled_indent = 0
     items: list[str] = []
     for line in lines:
         if line.startswith("plugins:"):
@@ -63,12 +64,43 @@ def enabled_item_lines(text: str) -> list[str]:
         stripped = line.strip()
         if in_plugins and stripped == "enabled:":
             in_enabled = True
+            enabled_indent = len(line) - len(stripped)
             continue
         if in_enabled:
+            indent = len(line) - len(stripped)
+            if stripped and indent <= enabled_indent:
+                break
             if stripped.startswith("-"):
                 items.append(line)
             elif stripped and not line.startswith((" ", "\t")):
                 break
+    return items
+
+
+def disabled_item_lines(text: str) -> list[str]:
+    lines = text.splitlines()
+    in_plugins = False
+    in_disabled = False
+    disabled_indent = 0
+    items: list[str] = []
+    for line in lines:
+        if line.startswith("plugins:"):
+            in_plugins = True
+            in_disabled = False
+            continue
+        if in_plugins and line and not line.startswith((" ", "\t")):
+            break
+        stripped = line.strip()
+        if in_plugins and stripped == "disabled:":
+            in_disabled = True
+            disabled_indent = len(line) - len(stripped)
+            continue
+        if in_disabled:
+            indent = len(line) - len(stripped)
+            if stripped and indent <= disabled_indent:
+                break
+            if stripped.startswith("-"):
+                items.append(line)
     return items
 
 
@@ -85,6 +117,17 @@ def check_case(heredoc: str, name: str, cfg_text: str) -> list[str]:
     glued = [line for line in items if line.strip().count("- ") > 1]
     if glued:
         failures.append(f"{name}: glued list item remains: {glued!r}")
+    if "old/dead" in cfg_text:
+        disabled = [line.strip() for line in disabled_item_lines(out)]
+        enabled = [line.strip() for line in items]
+        if "- old/dead" not in disabled:
+            failures.append(f"{name}: disabled item was not preserved under disabled: {disabled!r}")
+        if "- old/dead" in enabled:
+            failures.append(f"{name}: disabled item leaked into enabled: {enabled!r}")
+    if "enabled: [basic" in cfg_text:
+        enabled = [line.strip() for line in items]
+        if "- basic" not in enabled:
+            failures.append(f"{name}: inline enabled item was not preserved: {enabled!r}")
 
     out2, err2 = run_once(heredoc, out)
     if err2:
@@ -147,6 +190,30 @@ def main() -> int:
                   name: x
                 session_reset:
                   foo: bar
+            """),
+        ),
+        (
+            "Plugins with disabled only",
+            textwrap.dedent("""\
+                plugins:
+                  disabled:
+                    - old/dead
+            """),
+        ),
+        (
+            "Disabled before empty inline enabled",
+            textwrap.dedent("""\
+                plugins:
+                  disabled:
+                    - old/dead
+                  enabled: []
+            """),
+        ),
+        (
+            "Non-empty inline enabled",
+            textwrap.dedent("""\
+                plugins:
+                  enabled: [basic]
             """),
         ),
     ]
