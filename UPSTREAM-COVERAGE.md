@@ -2,12 +2,12 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Baseline: `msitarzewski/agency-agents@3c95888` as of 2026-08-30 (declared in README.md).
+Baseline: `msitarzewski/agency-agents@ad9264e` as of 2026-09-12 (declared in README.md).
 
-Total local agents: 388
+Total local agents: 394
 Japan-original agents: 115
-Upstream-aligned agents: 273
-Unique upstream paths: 273
+Upstream-aligned agents: 279
+Unique upstream paths: 279
 Missing upstream_path: 0
 Invalid translation_status: 0
 Duplicate upstream_path groups: 0
