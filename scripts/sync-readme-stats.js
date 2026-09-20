@@ -5,6 +5,7 @@ const { join } = require('path');
 
 const AGENT_CATEGORIES = [
   'academic',
+  'company',
   'engineering',
   'project-management',
   'testing',

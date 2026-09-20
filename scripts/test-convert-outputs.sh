@@ -271,6 +271,7 @@ function digestEntries(entries) {
 const tools = [
   'aider',
   'antigravity',
+  'codewhale',
   'codex',
   'cursor',
   'gemini-cli',
@@ -280,6 +281,7 @@ const tools = [
   'openclaw',
   'osaurus',
   'qwen',
+  'qwenpaw',
   'vibe',
   'windsurf',
   'zcode',

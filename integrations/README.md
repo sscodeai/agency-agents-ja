@@ -17,7 +17,9 @@ supported agentic coding tools.
 - **[Kimi Code](#kimi-code)** — YAML agent specs in `kimi/`
 - **[Qwen Code](#qwen-code)** — project-scoped `.md` SubAgents in `.qwen/agents/`
 - **[ZCode](zcode/README.md)** — `.md` agent files in `zcode/`
+- **[QwenPaw](qwenpaw/README.md)** — `SKILL.md` directories in `qwenpaw/skill_pool/`
 - **[Codex](codex/README.md)** — `.toml` custom agents in `codex/`
+- **[CodeWhale](codewhale/README.md)** — `SKILL.md` directories in `codewhale/skills/`
 - **[Osaurus](osaurus/README.md)** — `SKILL.md` skills in `osaurus/`
 - **[Hermes](hermes/README.md)** — lazy-router plugin in `hermes/`
 - **[Mistral Vibe](vibe/README.md)** — TOML agents and Markdown prompts in `vibe/`
@@ -46,7 +48,11 @@ supported agentic coding tools.
 ./scripts/convert.sh --tool zcode
 ./scripts/install.sh --tool zcode
 
-# Codex and Osaurus also use generated integration files
+# QwenPaw, CodeWhale, Codex, and Osaurus also use generated integration files
+./scripts/convert.sh --tool qwenpaw
+./scripts/install.sh --tool qwenpaw
+./scripts/convert.sh --tool codewhale
+./scripts/install.sh --tool codewhale
 ./scripts/convert.sh --tool codex
 ./scripts/install.sh --tool codex
 ./scripts/convert.sh --tool osaurus

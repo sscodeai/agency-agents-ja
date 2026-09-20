@@ -4,8 +4,8 @@ This file is generated from agent frontmatter. Do not edit it manually.
 
 Baseline: `msitarzewski/agency-agents@ad9264e` as of 2026-09-12 (declared in README.md).
 
-Total local agents: 394
-Japan-original agents: 115
+Total local agents: 402
+Japan-original agents: 123
 Upstream-aligned agents: 279
 Unique upstream paths: 279
 Missing upstream_path: 0

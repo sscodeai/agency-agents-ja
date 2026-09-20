@@ -5,6 +5,7 @@ const path = require('path');
 const root = path.resolve(__dirname, '..');
 const agentDirs = [
   'academic',
+  'company',
   'design',
   'engineering',
   'finance',
@@ -187,6 +188,15 @@ checkExactSet(
   'integrations/zcode/agents/*.md',
 );
 
+const qwenpawDirs = expectedDirs('integrations/qwenpaw/skill_pool');
+checkExactSet(
+  'qwenpaw',
+  directEntries('integrations/qwenpaw/skill_pool', (entry) => entry.isDirectory()),
+  qwenpawDirs,
+  'integrations/qwenpaw/skill_pool/*',
+);
+checkRequiredFiles('qwenpaw', qwenpawDirs, ['SKILL.md']);
+
 const kimiDirs = expectedDirs('integrations/kimi');
 checkExactSet(
   'kimi',
@@ -202,6 +212,15 @@ checkExactSet(
   expectedFiles('integrations/codex/agents', '.toml'),
   'integrations/codex/agents/*.toml',
 );
+
+const codewhaleDirs = expectedDirs('integrations/codewhale/skills');
+checkExactSet(
+  'codewhale',
+  directEntries('integrations/codewhale/skills', (entry) => entry.isDirectory()),
+  codewhaleDirs,
+  'integrations/codewhale/skills/*',
+);
+checkRequiredFiles('codewhale', codewhaleDirs, ['SKILL.md']);
 
 const osaurusDirs = expectedDirs('integrations/osaurus', agencySlugs);
 checkExactSet(

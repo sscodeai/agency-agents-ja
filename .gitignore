@@ -11,6 +11,7 @@ integrations/aider/CONVENTIONS.md
 integrations/antigravity/agency-*/
 integrations/cursor/rules/
 integrations/codex/agents/
+integrations/codewhale/skills/
 integrations/gemini-cli/skills/
 integrations/gemini-cli/gemini-extension.json
 integrations/hermes/agency-agents-router/
@@ -21,6 +22,7 @@ integrations/openclaw/*
 !integrations/openclaw/README.md
 integrations/osaurus/agency-*/
 integrations/qwen/agents/
+integrations/qwenpaw/skill_pool/
 integrations/vibe/agents/
 integrations/vibe/prompts/
 integrations/windsurf/.windsurfrules

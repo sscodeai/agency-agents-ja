@@ -14,15 +14,15 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 
 | Metric | Count |
 | --- | --- |
-| Total agents | <!-- AUTOGEN:TOTAL -->394<!-- /AUTOGEN:TOTAL --> |
-| ⭐ Japan-market originals | <!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN --> |
+| Total agents | <!-- AUTOGEN:TOTAL -->402<!-- /AUTOGEN:TOTAL --> |
+| ⭐ Japan-market originals | <!-- AUTOGEN:JAPAN -->123<!-- /AUTOGEN:JAPAN --> |
 | Upstream-aligned (adapted to Japan) | <!-- AUTOGEN:UPSTREAM -->279<!-- /AUTOGEN:UPSTREAM --> |
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
 | Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
-| Categories | <!-- AUTOGEN:CATEGORIES -->21<!-- /AUTOGEN:CATEGORIES --> |
+| Categories | <!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES --> |
 | Upstream baseline | `msitarzewski/agency-agents@ad9264e` as of 2026-09-12 |
 
-> **<!-- AUTOGEN:TOTAL -->394<!-- /AUTOGEN:TOTAL --> ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
+> **<!-- AUTOGEN:TOTAL -->402<!-- /AUTOGEN:TOTAL --> ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
 
 ### Quick install
 
@@ -46,14 +46,16 @@ npx agency-agents-ja install --tool claude-code
 ./scripts/install.sh --tool windsurf
 ./scripts/install.sh --tool qwen
 ./scripts/install.sh --tool zcode
+./scripts/install.sh --tool qwenpaw
 ./scripts/install.sh --tool kimi
 ./scripts/install.sh --tool codex
+./scripts/install.sh --tool codewhale
 ./scripts/install.sh --tool osaurus
 ./scripts/install.sh --tool hermes
 ./scripts/install.sh --tool vibe
 ```
 
-Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, Qwen Code, ZCode, Codex, Osaurus, Hermes, and Mistral Vibe. Some tools need generated integration files first:
+Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, Qwen Code, ZCode, QwenPaw, Codex, CodeWhale, Osaurus, Hermes, and Mistral Vibe. Some tools need generated integration files first:
 
 ```bash
 ./scripts/convert.sh
@@ -62,7 +64,7 @@ Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCo
 Tool notes:
 - **Claude Code / GitHub Copilot**: copy native `.md` agent files directly.
 - **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped installs. Run the installer from the target project directory.
-- **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / Codex / Osaurus / Hermes / Mistral Vibe**: require generated files under `integrations/`; run `./scripts/convert.sh` before installing.
+- **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / QwenPaw / Codex / CodeWhale / Osaurus / Hermes / Mistral Vibe**: require generated files under `integrations/`; run `./scripts/convert.sh` before installing.
 - **Hermes**: installs one lazy-router plugin (`agency-agents-router`) instead of preloading the full roster.
 - **OpenClaw**: recommended when you want multi-agent workspaces with explicit identity, capability, and summary files.
 - **Qwen Code**: after install, run `/agents manage` or restart the session so new subagents are picked up.
@@ -87,7 +89,7 @@ Maintenance references:
 
 ### What is Japan-specific here
 
-The <!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN --> ⭐ Japan-market originals cover scenarios upstream does not address:
+The <!-- AUTOGEN:JAPAN -->123<!-- /AUTOGEN:JAPAN --> ⭐ Japan-market originals cover scenarios upstream does not address:
 
 - **SIer / 受託開発**: requirements engineering, basic/detailed design, acceptance review (検収), change management, release sign-off, RFP response
 - **Compliance**: 個人情報保護法 (APPI), インボイス制度 (invoice system), 電子帳簿保存法 (electronic bookkeeping), 適時開示 / TDnet / インサイダー情報管理, AI usage policy
@@ -110,7 +112,7 @@ You can query the breakdown directly:
 
 ```bash
 AGENT_DIRS=(
-  academic engineering project-management testing product marketing paid-media
+  academic company engineering project-management testing product marketing paid-media
   finance game-development gis healthcare hr design legal sales security
   spatial-computing support supply-chain research specialized
 )
@@ -200,13 +202,13 @@ MIT
 
 英文上流 [agency-agents](https://github.com/msitarzewski/agency-agents) の汎用 agent を日本語化・日本市場向けに移植・適配しつつ、中国語コミュニティ版 [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の取り組みからも一部の領域設計や coverage gap の示唆を得て、SIer、受託開発、日本 SaaS、製造業 DX、公共 sector で使うための日本特化 agent として本土化しています。
 
-> **<!-- AUTOGEN:TOTAL -->394<!-- /AUTOGEN:TOTAL --> 個の即戦力 AI 専門家 agent** — 工程、設計、QA、GIS / 地図・空間データ、healthcare、product、marketing、sales、support、legal、finance、security、製造業 DX、公共 sector など <!-- AUTOGEN:CATEGORIES -->21<!-- /AUTOGEN:CATEGORIES --> category を収録。単なる「あなたは専門家です」prompt ではなく、各 agent に役割、確認観点、作業手順、成果物、運用 guardrail を持たせています。
+> **<!-- AUTOGEN:TOTAL -->402<!-- /AUTOGEN:TOTAL --> 個の即戦力 AI 専門家 agent** — 工程、設計、QA、GIS / 地図・空間データ、healthcare、product、marketing、sales、support、legal、finance、security、製造業 DX、公共 sector など <!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES --> category を収録。単なる「あなたは専門家です」prompt ではなく、各 agent に役割、確認観点、作業手順、成果物、運用 guardrail を持たせています。
 
 ## プロジェクト規模
 
 | AI agent | 上流由来 adapted | 日本市場 original | 対応 tool | Category | Workflow |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| **<!-- AUTOGEN:TOTAL -->394<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->279<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN -->** | **<!-- AUTOGEN:TOOLS -->16<!-- /AUTOGEN:TOOLS -->** | **<!-- AUTOGEN:CATEGORIES -->21<!-- /AUTOGEN:CATEGORIES -->** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
+| **<!-- AUTOGEN:TOTAL -->402<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->279<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->123<!-- /AUTOGEN:JAPAN -->** | **<!-- AUTOGEN:TOOLS -->18<!-- /AUTOGEN:TOOLS -->** | **<!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES -->** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
 
 ## これは何か
 
@@ -247,8 +249,10 @@ npx agency-agents-ja install --tool claude-code
 ./scripts/install.sh --tool gemini-cli
 ./scripts/install.sh --tool qwen
 ./scripts/install.sh --tool zcode
+./scripts/install.sh --tool qwenpaw
 ./scripts/install.sh --tool kimi
 ./scripts/install.sh --tool codex
+./scripts/install.sh --tool codewhale
 ./scripts/install.sh --tool osaurus
 ./scripts/install.sh --tool hermes
 ./scripts/install.sh --tool vibe
@@ -270,7 +274,9 @@ npx agency-agents-ja install --tool claude-code
 | Kimi Code | YAML specs | `convert.sh` 後に install |
 | Qwen Code | `.qwen/agents/` subagents | project-scoped |
 | ZCode | `.zcode/agents/` agent files | `convert.sh` 後に install |
+| QwenPaw | `.qwenpaw/skill_pool/` skills | `convert.sh` 後に install |
 | Codex | `.toml` custom agents | `convert.sh` 後に install |
+| CodeWhale | `SKILL.md` skill directories | `convert.sh` 後に install |
 | Osaurus | `SKILL.md` | `convert.sh` 後に install |
 | Hermes | lazy-router plugin | `convert.sh` 後に install |
 | Mistral Vibe | `.toml` agents + prompt files | `convert.sh` 後に install |
@@ -285,7 +291,7 @@ npx agency-agents-ja install --tool claude-code
 
 - **Claude Code / GitHub Copilot**: native `.md` agent を直接 copy します。
 - **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped です。導入したい project directory で install script を実行してください。
-- **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / Codex / Osaurus / Hermes / Mistral Vibe**: `integrations/` 配下の変換済み file が必要です。先に `./scripts/convert.sh` を実行してください。
+- **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / QwenPaw / Codex / CodeWhale / Osaurus / Hermes / Mistral Vibe**: `integrations/` 配下の変換済み file が必要です。先に `./scripts/convert.sh` を実行してください。
 - **Hermes**: 全 agent を事前に skill として読み込ませず、`agency-agents-router` plugin から必要な specialist だけを lazy load します。
 - **OpenClaw**: identity、業務能力、概要を分けた multi-agent workspace として使いたい場合に向いています。
 - **Qwen Code**: install 後に `/agents manage` を実行するか session を再起動すると、新しい subagent を認識しやすくなります。
@@ -304,8 +310,10 @@ install 先を標準 path から変えたい場合は、次の環境変数で上
 | Cursor | `CURSOR_RULES_DIR` | `.cursor/rules` |
 | Qwen Code | `QWEN_AGENTS_DIR` | `.qwen/agents` |
 | ZCode | `ZCODE_AGENTS_DIR` | `~/.zcode/agents` |
+| QwenPaw | `QWENPAW_SKILL_POOL` | `~/.qwenpaw/skill_pool` |
 | Kimi Code | `KIMI_AGENTS_DIR` | `~/.config/kimi/agents` |
 | Codex | `CODEX_AGENTS_DIR` | `~/.codex/agents` |
+| CodeWhale | `CODEWHALE_SKILLS_DIR` | `~/.codewhale/skills` |
 | Osaurus | `OSAURUS_SKILLS_DIR` | `~/.osaurus/skills` |
 | Hermes | `HERMES_PLUGIN_DIR` | `~/.hermes/plugins/agency-agents-router` |
 | Mistral Vibe | `VIBE_HOME` | `~/.vibe` |
@@ -365,10 +373,10 @@ ticket は PROJ-1234、spec は docs/spec.md です。
 
 ## Coverage
 
-- 日本特化 agent (⭐ `source: japan-original`): <!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN -->（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
+- 日本特化 agent (⭐ `source: japan-original`): <!-- AUTOGEN:JAPAN -->123<!-- /AUTOGEN:JAPAN -->（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
 - 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->279<!-- /AUTOGEN:UPSTREAM -->（2026-09-12 時点の英文上流 `ad9264e` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 上流由来 agent の skeleton backlog: <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON -->
-- 合計: <!-- AUTOGEN:TOTAL -->394<!-- /AUTOGEN:TOTAL --> agents
+- 合計: <!-- AUTOGEN:TOTAL -->402<!-- /AUTOGEN:TOTAL --> agents
 - Workflow: <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->
 
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
@@ -497,7 +505,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 ## 上流との関係
 
 - <!-- AUTOGEN:UPSTREAM -->279<!-- /AUTOGEN:UPSTREAM --> 個の `source: upstream` agent は、上流 [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) (MIT) の各 agent path に 1:1 で対応します。現在は `translation_status: adapted`（直訳ではなく、日本市場向けに役割を書き直し済み）。frontmatter の `upstream_path:` で 1:1 対応関係を保持
-- <!-- AUTOGEN:JAPAN -->115<!-- /AUTOGEN:JAPAN --> 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
+- <!-- AUTOGEN:JAPAN -->123<!-- /AUTOGEN:JAPAN --> 個の `source: japan-original` agent は、上流に対応する agent がない、日本市場向けに独自設計した agent です（AGENT-LIST.md で ⭐ で識別）
 - 一部の日本特化 agent は、中国語コミュニティ版 [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) の agent coverage や実務領域の切り口を参考にし、日本の業務、platform、法規制、商習慣に合わせて再設計・本土化しています。英文上流と中国語コミュニティ版の maintainers / contributors に感謝します
 - 上流の framework 文書（[`strategy/`](strategy/)）と tool integration 文書・生成物（[`integrations/`](integrations/)）は現状そのまま英語で保持しています。これらは source agent ではないため `source:` frontmatter を持ちません。`scripts/validate.sh` では package / runbook roster の整合性だけを確認し、agent frontmatter や localization quality の対象にはしていません。日本語化は roadmap 上の項目です
 - 上流 `main` への追従と本翻訳の方針は [ROADMAP.md](ROADMAP.md) を参照してください
@@ -522,7 +530,7 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 
 ```bash
 AGENT_DIRS=(
-  academic engineering project-management testing product marketing paid-media
+  academic company engineering project-management testing product marketing paid-media
   finance game-development gis healthcare hr design legal sales security
   spatial-computing support supply-chain research specialized
 )

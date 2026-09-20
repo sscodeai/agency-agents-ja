@@ -5,6 +5,7 @@ const { join } = require('path');
 
 const CATEGORIES = [
   ['academic', 'Academic'],
+  ['company', 'Company'],
   ['engineering', 'Engineering'],
   ['project-management', 'Project Management'],
   ['testing', 'Testing'],
