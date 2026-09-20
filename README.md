@@ -64,6 +64,7 @@ Supported tools are Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCo
 Tool notes:
 - **Claude Code / GitHub Copilot**: copy native `.md` agent files directly.
 - **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped installs. Run the installer from the target project directory.
+- **Aider**: installs a compact `CONVENTIONS.md` roster index. Load one agent's full instructions with `/read-only <path shown in the index>` when needed.
 - **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / QwenPaw / Codex / CodeWhale / Osaurus / Hermes / Mistral Vibe**: require generated files under `integrations/`; run `./scripts/convert.sh` before installing.
 - **Hermes**: installs one lazy-router plugin (`agency-agents-router`) instead of preloading the full roster.
 - **OpenClaw**: recommended when you want multi-agent workspaces with explicit identity, capability, and summary files.
@@ -269,7 +270,7 @@ npx agency-agents-ja install --tool claude-code
 | OpenCode | `.md` agents | project-scoped |
 | OpenClaw | `SOUL.md` + `AGENTS.md` + `IDENTITY.md` | multi-agent workspace |
 | Cursor | `.mdc` rules | project-scoped |
-| Aider | `CONVENTIONS.md` | project-scoped |
+| Aider | `CONVENTIONS.md` roster index | project-scoped |
 | Windsurf | `.windsurfrules` | project-scoped |
 | Kimi Code | YAML specs | `convert.sh` 後に install |
 | Qwen Code | `.qwen/agents/` subagents | project-scoped |
@@ -291,6 +292,7 @@ npx agency-agents-ja install --tool claude-code
 
 - **Claude Code / GitHub Copilot**: native `.md` agent を直接 copy します。
 - **Cursor / OpenCode / Aider / Windsurf / Qwen Code**: project-scoped です。導入したい project directory で install script を実行してください。
+- **Aider**: `CONVENTIONS.md` は全 agent 本文ではなく compact な roster index です。必要な agent の全文は index に出る path を `/read-only <path>` で読み込んでください。
 - **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / QwenPaw / Codex / CodeWhale / Osaurus / Hermes / Mistral Vibe**: `integrations/` 配下の変換済み file が必要です。先に `./scripts/convert.sh` を実行してください。
 - **Hermes**: 全 agent を事前に skill として読み込ませず、`agency-agents-router` plugin から必要な specialist だけを lazy load します。
 - **OpenClaw**: identity、業務能力、概要を分けた multi-agent workspace として使いたい場合に向いています。

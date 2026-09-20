@@ -249,6 +249,27 @@ for (const required of [
   if (!exists(path.join(out, ...required))) fail(`${required.join('/')}: missing`);
 }
 
+const aiderIndex = path.join(out, 'aider', 'CONVENTIONS.md');
+const aiderIndexCeiling = 250_000;
+if (exists(aiderIndex)) {
+  const text = read(aiderIndex);
+  if (text.length > aiderIndexCeiling) {
+    fail(`aider: CONVENTIONS.md is ${text.length.toLocaleString()} characters; it must stay an index, not inline every agent body`);
+  }
+  const paths = [...text.matchAll(/^Full instructions: (.+)$/gm)].map((match) => match[1]);
+  const dangling = paths
+    .filter((agentPath) => !exists(path.join(root, agentPath)))
+    .sort();
+  if (paths.length !== expected) {
+    fail(`aider: CONVENTIONS.md points at ${paths.length} agent files, roster has ${expected}`);
+  } else if (dangling.length > 0) {
+    for (const missing of dangling.slice(0, 3)) {
+      fail(`aider: CONVENTIONS.md points at a file that does not exist: ${missing}`);
+    }
+    if (dangling.length > 3) fail(`aider: ...and ${dangling.length - 3} more dangling paths`);
+  }
+}
+
 function normBuffer(buffer) {
   return Buffer.from(buffer.toString('utf8').replace(/\r\n/g, '\n'), 'utf8');
 }

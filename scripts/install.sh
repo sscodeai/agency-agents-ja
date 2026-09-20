@@ -798,6 +798,9 @@ install_aider() {
   fi
   cp "$src" "$dest"
   ok "Aider: installed -> $dest"
+  dim  "       CONVENTIONS.md is the roster index. Load one agent's full instructions with"
+  dim  "       /read-only $REPO_ROOT/<path shown in the index>"
+  $SELECTION_ACTIVE && warn "Aider: single-file format — team/agent filtering N/A (installs the full roster)."
   warn "Aider: project-scoped. Run from your project root to install there."
 }
 
