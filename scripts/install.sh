@@ -21,7 +21,9 @@
 #   openclaw     -- Copy workspaces to ~/.openclaw/agency-agents/
 #   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
 #   zcode        -- Copy agents to ~/.zcode/agents/ (user-wide) or .zcode/agents/ (project)
+#   qwenpaw      -- Copy skills to ~/.qwenpaw/skill_pool/
 #   codex        -- Copy custom agent TOML files to ~/.codex/agents/
+#   codewhale    -- Copy skills to ~/.codewhale/skills/
 #   osaurus      -- Copy skills to ~/.osaurus/skills/
 #   hermes       -- Copy lazy-router plugin to ~/.hermes/plugins/
 #   vibe         -- Copy agents and prompts to ~/.vibe/agents/ and ~/.vibe/prompts/
@@ -119,7 +121,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen zcode kimi codex osaurus hermes vibe)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen zcode qwenpaw kimi codex codewhale osaurus hermes vibe)
 
 resolve_dest() {
   local env_name="$1"
@@ -146,7 +148,7 @@ resolve_dest() {
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
-  academic design engineering finance game-development gis healthcare hr legal marketing paid-media product project-management
+  academic company design engineering finance game-development gis healthcare hr legal marketing paid-media product project-management
   research sales security spatial-computing specialized support supply-chain testing
 )
 
@@ -859,6 +861,30 @@ install_zcode() {
   warn "ZCode: set ZCODE_AGENTS_DIR=.zcode/agents to install into a project."
 }
 
+install_qwenpaw() {
+  local src="$INTEGRATIONS/qwenpaw/skill_pool"
+  local dest
+  dest="$(resolve_dest QWENPAW_SKILL_POOL "${HOME}/.qwenpaw/skill_pool")"
+  local count=0
+
+  [[ -d "$src" ]] || { err "integrations/qwenpaw missing. Run convert.sh first."; return 1; }
+  require_generated_count qwenpaw "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
+
+  mkdir -p "$dest"
+
+  local d
+  while IFS= read -r -d '' d; do
+    local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
+    mkdir -p "$dest/$name"
+    cp "$d/SKILL.md" "$dest/$name/SKILL.md"
+    (( count++ )) || true
+  done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
+
+  ok "QwenPaw: installed $count skills to $dest"
+  warn "QwenPaw: enable imported skills from its console if your setup keeps skill_pool entries disabled by default."
+}
+
 install_kimi() {
   local src="$INTEGRATIONS/kimi"
   local dest
@@ -903,6 +929,29 @@ install_codex() {
   done < <(find "$src" -maxdepth 1 -name "*.toml" -print0)
 
   ok "Codex: $count agents -> $dest"
+}
+
+install_codewhale() {
+  local src="$INTEGRATIONS/codewhale/skills"
+  local dest
+  dest="$(resolve_dest CODEWHALE_SKILLS_DIR "${HOME}/.codewhale/skills")"
+  local count=0
+
+  [[ -d "$src" ]] || { err "integrations/codewhale missing. Run convert.sh first."; return 1; }
+  require_generated_count codewhale "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
+
+  mkdir -p "$dest"
+
+  local d
+  while IFS= read -r -d '' d; do
+    local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
+    mkdir -p "$dest/$name"
+    cp "$d/SKILL.md" "$dest/$name/SKILL.md"
+    (( count++ )) || true
+  done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
+
+  ok "CodeWhale: installed $count skills to $dest"
 }
 
 install_vibe() {
@@ -1140,8 +1189,10 @@ install_tool() {
     windsurf)    install_windsurf    ;;
     qwen)        install_qwen        ;;
     zcode)       install_zcode       ;;
+    qwenpaw)     install_qwenpaw     ;;
     kimi)        install_kimi        ;;
     codex)       install_codex       ;;
+    codewhale)   install_codewhale   ;;
     osaurus)     install_osaurus     ;;
     hermes)      install_hermes      ;;
     vibe)        install_vibe        ;;

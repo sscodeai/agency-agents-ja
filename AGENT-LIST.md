@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 394 (⭐ 115 japan-original + 279 upstream-aligned)
+Total agents: 402 (⭐ 123 japan-original + 279 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -18,6 +18,20 @@ Total: 7 (⭐ 1 japan-original + 6 upstream-aligned)
 |  | 日本向けナラティブ分析者 | upstream | adapted | Narratologist | 物語構造、語り口、ブランド narrative、政策・企業メッセージを分析し、日本向け IT 提案・UX・広報に活かす学術・リサーチ agent。 | `academic/academic-narratologist.md` |
 |  | 日本向け心理リサーチャー | upstream | adapted | Psychologist | 行動心理、意思決定、motivation、認知負荷、組織心理を分析し、日本向け UX・導入定着・業務変革に活かす学術・リサーチ agent。 | `academic/academic-psychologist.md` |
 |  | 日本向け統計リサーチャー | upstream | adapted | Statistician | 実験設計、因果推論、統計的検定、効果量、信頼区間、バイアスを確認し、日本の調査・事業判断・政策検討で数字を過信しないための academic agent。 | `academic/academic-statistician.md` |
+
+## Company
+
+Total: 7 (⭐ 7 japan-original + 0 upstream-aligned)
+
+| | Name | Source | Status | Upstream | Description | Path |
+| --- | --- | --- | --- | --- | --- | --- |
+| ⭐ | 日本向け CEO / 代表取締役アドバイザー | japan-original |  |  | 日本企業の経営方針、事業優先順位、資金配分、組織設計、取締役会・稟議・ステークホルダー説明を整理する executive strategy agent。 | `company/company-chief-executive-officer.md` |
+| ⭐ | 日本向け CFO / 財務責任者 | japan-original |  |  | 資金繰り、予算、管理会計、ARR / gross margin、投資判断、内部統制、取締役会・金融機関向け説明を支援する finance executive agent。 | `company/company-chief-financial-officer.md` |
+| ⭐ | 日本向け CMO / マーケティング責任者 | japan-original |  |  | 日本市場の demand generation、brand、content、event、partner marketing、検索成長、sales alignment を統合する CMO agent。 | `company/company-chief-marketing-officer.md` |
+| ⭐ | 日本向け Chief of Staff / 経営企画補佐 | japan-original |  |  | 経営 agenda、会議設計、横断 project、意思決定 memo、部門間調整、進捗管理を支援する executive operations agent。 | `company/company-chief-of-staff.md` |
+| ⭐ | 日本向け COO / 業務執行責任者 | japan-original |  |  | 業務プロセス、部門間連携、SLA、運用改善、標準化、内部統制、現場定着を設計する operations executive agent。 | `company/company-chief-operating-officer.md` |
+| ⭐ | 日本向け CPO / プロダクト責任者 | japan-original |  |  | 日本市場向け product strategy、roadmap、discovery、pricing、UX、delivery、go-to-market alignment を統合する product executive agent。 | `company/company-chief-product-officer.md` |
+| ⭐ | 日本向け CTO アドバイザー | japan-original |  |  | 技術戦略、architecture、platform、採用、開発生産性、security、technical debt を経営課題として整理する CTO agent。 | `company/company-chief-technology-officer.md` |
 
 ## Engineering
 
@@ -177,7 +191,7 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 
 ## Marketing
 
-Total: 53 (⭐ 17 japan-original + 36 upstream-aligned)
+Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -195,6 +209,7 @@ Total: 53 (⭐ 17 japan-original + 36 upstream-aligned)
 | ⭐ | LINE 公式アカウント運用者 | japan-original |  |  | 日本向け LINE Official Account の配信、セグメント、ステップ配信、CRM、来店・購買導線を設計する marketing operator。 | `marketing/marketing-line-official-account-operator.md` |
 | ⭐ | note / Qiita / Zenn 技術広報ストラテジスト | japan-original |  |  | 日本向け技術広報、採用広報、developer marketing のために note、Qiita、Zenn、はてなブログのコンテンツ戦略を作る。 | `marketing/marketing-note-qiita-zenn-strategist.md` |
 | ⭐ | 楽天 / Amazon Japan EC 運用者 | japan-original |  |  | 楽天市場、Amazon Japan、Yahoo! ショッピング、Shopify Japan の商品ページ、広告、在庫、レビュー、販促を運用する EC specialist。 | `marketing/marketing-rakuten-amazon-japan-operator.md` |
+| ⭐ | 日本向け検索成長オーケストレーター | japan-original |  |  | SEO、AEO、AI citation / GEO、agentic search の役割境界を整理し、日本語サイトの検索成長施策を evidence、優先順位、owner、事業成果に接続する marketing orchestration agent。 | `marketing/marketing-search-growth-orchestrator.md` |
 | ⭐ | セミナー / ウェビナー企画者 | japan-original |  |  | 日本の B2B SaaS / IT 企業向けに seminar、webinar、white paper、lead nurturing の企画を作る marketer。 | `marketing/marketing-seminar-webinar-planner.md` |
 | ⭐ | 日本向け TikTok ストラテジスト | japan-original |  |  | 日本の IT 企業、SaaS、採用広報、developer marketing、イベント告知向けに TikTok / short video の企画、台本、配信、効果測定を設計する strategist。 | `marketing/marketing-tiktok-japan-strategist.md` |
 | ⭐ | Yahoo! JAPAN / Google SEO スペシャリスト | japan-original |  |  | 日本語検索向け technical SEO、content SEO、local SEO、構造化 data、検索意図分析を行う specialist。 | `marketing/marketing-yahoo-google-japan-seo.md` |
