@@ -8,6 +8,7 @@ const UPSTREAM_BASELINE_REF = 'ad9264e';
 
 const CATEGORIES = [
   'academic',
+  'company',
   'engineering',
   'project-management',
   'testing',
