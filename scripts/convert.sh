@@ -287,6 +287,10 @@ HEREDOC
 }
 
 # Map known color names and normalize to OpenCode-safe #RRGGBB values.
+# An unknown name lands on grey, which looks like a choice rather than a miss,
+# so scripts/lint-agents.sh reads this list and rejects a color that is not in
+# it. Values follow the CSS named color where one exists (teal, navy) and
+# Tailwind's 500 shade otherwise (gray, slate).
 resolve_opencode_color() {
   local c="$1"
   local mapped
@@ -314,6 +318,8 @@ resolve_opencode_color() {
     lime)           mapped="#84CC16" ;;
     gray)           mapped="#6B7280" ;;
     fuchsia)        mapped="#D946EF" ;;
+    slate)          mapped="#64748B" ;;
+    navy)           mapped="#000080" ;;
     *)              mapped="$c" ;;
   esac
 

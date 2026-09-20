@@ -174,6 +174,26 @@ checkGeneratedFrontmatter(
   (file) => path.basename(file, '.md'),
 );
 
+const greyFallback = '#6B7280';
+const greyNames = new Set(['gray', 'grey', '#6b7280', '6b7280']);
+let colorFallbackErrors = 0;
+for (const file of directFiles(path.join(out, 'opencode', 'agents'), '.md').map((name) => path.join(out, 'opencode', 'agents', name))) {
+  const slug = path.basename(file, '.md');
+  const source = bySlug.get(slug);
+  if (!source) continue;
+  const emitted = String(frontmatter(file).color || '').trim().toUpperCase();
+  const sourceColor = String(frontmatter(path.join(root, source.rel)).color || '').trim().toLowerCase();
+  if (emitted === greyFallback && !greyNames.has(sourceColor)) {
+    colorFallbackErrors += 1;
+    if (colorFallbackErrors <= 3) {
+      fail(`opencode: ${slug} asked for color ${JSON.stringify(sourceColor)} and got ${greyFallback}; resolve_opencode_color() does not know that name`);
+    }
+  }
+}
+if (colorFallbackErrors > 3) {
+  fail(`opencode: ...and ${colorFallbackErrors - 3} more colors silently replaced with grey`);
+}
+
 checkGeneratedFrontmatter(
   'cursor',
   directFiles(path.join(out, 'cursor', 'rules'), '.mdc').map((file) => path.join(out, 'cursor', 'rules', file)),

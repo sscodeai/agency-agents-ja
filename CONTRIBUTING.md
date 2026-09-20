@@ -22,6 +22,10 @@ source: japan-original
 ---
 ```
 
+`color` may be a `#RRGGBB` value or a name supported by `resolve_opencode_color()` in `scripts/convert.sh`.
+`scripts/lint-agents.sh` reads that converter map and rejects unknown names, because OpenCode otherwise falls back to grey silently.
+Add new color names to the converter map in the same PR that introduces them.
+
 Upstream-aligned agents must include:
 
 ```yaml
