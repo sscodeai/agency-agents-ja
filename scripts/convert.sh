@@ -320,6 +320,8 @@ resolve_opencode_color() {
     fuchsia)        mapped="#D946EF" ;;
     slate)          mapped="#64748B" ;;
     navy)           mapped="#000080" ;;
+    brown)          mapped="#A52A2A" ;;
+    black)          mapped="#000000" ;;
     *)              mapped="$c" ;;
   esac
 
