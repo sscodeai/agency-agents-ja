@@ -512,10 +512,6 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 - 上流の framework 文書（[`strategy/`](strategy/)）と tool integration 文書・生成物（[`integrations/`](integrations/)）は現状そのまま英語で保持しています。これらは source agent ではないため `source:` frontmatter を持ちません。`scripts/validate.sh` では package / runbook roster の整合性だけを確認し、agent frontmatter や localization quality の対象にはしていません。日本語化は roadmap 上の項目です
 - 上流 `main` への追従と本翻訳の方針は [ROADMAP.md](ROADMAP.md) を参照してください
 
-## 関連ツール
-
-- [`local-agent-toolkit`](https://github.com/jnMetaCode/local-agent-toolkit) — agent の memory, skill 管理, 実行 trace を local-first に扱う toolkit. 付属の `skillet` CLI は本 library のような agent / skill 群の導入フロー整理に使えます.
-
 ### Frontmatter schema
 
 | Field | 必須 | 内容 |
