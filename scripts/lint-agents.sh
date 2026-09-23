@@ -43,6 +43,23 @@ AGENT_DIRS=(
 REQUIRED_FRONTMATTER=("name" "description" "color")
 RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
 
+get_frontmatter_field() {
+  local field="$1" file="$2"
+  awk -v f="$field" '
+    function emit(v) {
+      sub(/^[ \t]+/, "", v); sub(/[ \t]+$/, "", v)
+      if (v ~ /^".*"$/)            { v = substr(v, 2, length(v) - 2); gsub(/\\"/, "\"", v); gsub(/\\\\/, "\\", v) }
+      else if (v ~ /^\047.*\047$/) { v = substr(v, 2, length(v) - 2); gsub(/\047\047/, "\047", v) }
+      print v; printed = 1; exit
+    }
+    /^---$/ { fm++; if (fm == 2 && found) emit(val); next }
+    fm == 1 && !found && $0 ~ "^" f ": " { sub("^" f ": ", ""); val = $0; found = 1; next }
+    fm == 1 && found && /^[ \t]+[^ \t]/ { sub(/^[ \t]+/, ""); val = val " " $0; next }
+    fm == 1 && found { emit(val) }
+    END { if (found && !printed) emit(val) }
+  ' "$file"
+}
+
 # The color names convert.sh's resolve_opencode_color() knows, read out of the
 # converter rather than copied, so this can never drift from the map that does
 # the work. A name that is not in it falls through to grey in the OpenCode
@@ -119,7 +136,7 @@ lint_file() {
   # the field exists let four agents ship a name nothing maps, and they render
   # grey in OpenCode with no warning anywhere.
   local color
-  color="$(get_field color "$file" | tr '[:upper:]' '[:lower:]')"
+  color="$(get_frontmatter_field color "$file" | tr '[:upper:]' '[:lower:]')"
   if [[ -n "$color" && -n "$KNOWN_COLORS" ]] \
      && [[ ! "$color" =~ ^#?[0-9a-f]{6}$ ]] \
      && ! grep -qxF "$color" <<<"$KNOWN_COLORS"; then
