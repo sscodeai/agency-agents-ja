@@ -174,6 +174,26 @@ checkGeneratedFrontmatter(
   (file) => path.basename(file, '.md'),
 );
 
+const greyFallback = '#6B7280';
+const greyNames = new Set(['gray', 'grey', '#6b7280', '6b7280']);
+let colorFallbackErrors = 0;
+for (const file of directFiles(path.join(out, 'opencode', 'agents'), '.md').map((name) => path.join(out, 'opencode', 'agents', name))) {
+  const slug = path.basename(file, '.md');
+  const source = bySlug.get(slug);
+  if (!source) continue;
+  const emitted = String(frontmatter(file).color || '').trim().toUpperCase();
+  const sourceColor = String(frontmatter(path.join(root, source.rel)).color || '').trim().toLowerCase();
+  if (emitted === greyFallback && !greyNames.has(sourceColor)) {
+    colorFallbackErrors += 1;
+    if (colorFallbackErrors <= 3) {
+      fail(`opencode: ${slug} asked for color ${JSON.stringify(sourceColor)} and got ${greyFallback}; resolve_opencode_color() does not know that name`);
+    }
+  }
+}
+if (colorFallbackErrors > 3) {
+  fail(`opencode: ...and ${colorFallbackErrors - 3} more colors silently replaced with grey`);
+}
+
 checkGeneratedFrontmatter(
   'cursor',
   directFiles(path.join(out, 'cursor', 'rules'), '.mdc').map((file) => path.join(out, 'cursor', 'rules', file)),
@@ -247,6 +267,27 @@ for (const required of [
   ['windsurf', '.windsurfrules'],
 ]) {
   if (!exists(path.join(out, ...required))) fail(`${required.join('/')}: missing`);
+}
+
+const aiderIndex = path.join(out, 'aider', 'CONVENTIONS.md');
+const aiderIndexCeiling = 250_000;
+if (exists(aiderIndex)) {
+  const text = read(aiderIndex);
+  if (text.length > aiderIndexCeiling) {
+    fail(`aider: CONVENTIONS.md is ${text.length.toLocaleString()} characters; it must stay an index, not inline every agent body`);
+  }
+  const paths = [...text.matchAll(/^Full instructions: (.+)$/gm)].map((match) => match[1]);
+  const dangling = paths
+    .filter((agentPath) => !exists(path.join(root, agentPath)))
+    .sort();
+  if (paths.length !== expected) {
+    fail(`aider: CONVENTIONS.md points at ${paths.length} agent files, roster has ${expected}`);
+  } else if (dangling.length > 0) {
+    for (const missing of dangling.slice(0, 3)) {
+      fail(`aider: CONVENTIONS.md points at a file that does not exist: ${missing}`);
+    }
+    if (dangling.length > 3) fail(`aider: ...and ${dangling.length - 3} more dangling paths`);
+  }
 }
 
 function normBuffer(buffer) {

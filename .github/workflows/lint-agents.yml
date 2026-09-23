@@ -25,6 +25,11 @@ on:
       - "spatial-computing/**"
       - "specialized/**"
       - "supply-chain/**"
+      # Changing lint or conversion rules has to run the linter too; otherwise a
+      # new rule can land without ever checking the full roster.
+      - "scripts/lint-agents.sh"
+      - "scripts/convert.sh"
+      - "scripts/lib.sh"
 
 jobs:
   lint:
@@ -61,3 +66,32 @@ jobs:
         run: |
           chmod +x scripts/lint-agents.sh
           ./scripts/lint-agents.sh $CHANGED_FILES
+
+  lint-all:
+    name: Whole roster, when the linter changes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Did the linter or the color map change?
+        id: rules
+        run: |
+          RULES="scripts/lint-agents.sh scripts/convert.sh scripts/lib.sh"
+          CHANGED=$(git diff --name-only --diff-filter=ACMR \
+            "origin/${{ github.base_ref }}...HEAD" -- $RULES)
+          if [ -n "$CHANGED" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Linting the whole roster because these changed:"
+            echo "$CHANGED"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Linter unchanged - the changed-files job is the right scope here."
+          fi
+
+      - name: Lint every agent in the roster
+        if: steps.rules.outputs.changed == 'true'
+        run: |
+          chmod +x scripts/lint-agents.sh
+          ./scripts/lint-agents.sh
