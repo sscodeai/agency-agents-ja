@@ -122,7 +122,27 @@ npm run validate
 - `UPSTREAM-COVERAGE.md`
 - workflow tables in `README.md` and `docs/superpowers-ja-integration.md`
 
-`npm run validate` checks frontmatter, generated files, workflow role references, example synchronization, and non-Japan localization drift.
+`npm run validate` checks frontmatter, generated files, workflow role references, example synchronization, evaluation fixtures, and non-Japan localization drift.
+
+## Evaluation Fixtures
+
+`evals/` holds behaviour fixtures: a user prompt, the pass conditions an agent
+answer must satisfy, and the critical failures that fail the case outright. They
+exist to compare an agent's answers before and after a change, and to catch
+claims the agent should refuse to make (fabricated benchmarks, guaranteed
+rankings, invented regulation).
+
+Add a fixture as `evals/<division>/<agent-slug>-v<version>.md`. Write the target
+agent path in backticks (for example `` `marketing/marketing-seo-specialist.md` ``),
+include a `## Purpose`, at least three `## Case` sections with `**User:**` and
+`**Pass conditions:**`, and a `## Scoring` section. Do not add frontmatter:
+fixtures are not agents and must not be counted as source agents.
+
+```bash
+npm run check:evals
+```
+
+`npm run validate` runs the same check, so a broken fixture reference fails CI.
 
 ## Tooling Changes
 
@@ -149,3 +169,4 @@ bash scripts/test-convert-outputs.sh --update
 
 Commit the updated `scripts/convert-outputs.sha256` with the converter change so
 reviewers can see which tool outputs changed.
+

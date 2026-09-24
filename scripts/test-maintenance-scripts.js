@@ -82,6 +82,7 @@ function expectFail(name, fn, expectedText) {
 
 expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/check-adapted-quality.js']);
+  run('node', ['--check', 'scripts/check-evals.js']);
   run('node', ['--check', 'scripts/check-generated-integrations.js']);
   run('node', ['--check', 'scripts/check-package-files.js']);
   run('node', ['--check', 'scripts/check-readme-references.js']);
