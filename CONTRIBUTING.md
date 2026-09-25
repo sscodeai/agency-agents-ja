@@ -170,3 +170,27 @@ bash scripts/test-convert-outputs.sh --update
 Commit the updated `scripts/convert-outputs.sha256` with the converter change so
 reviewers can see which tool outputs changed.
 
+## Release
+
+`v*` tag pushes publish the package to npm through
+`.github/workflows/release.yml` using npm Trusted Publishing (OIDC). There is no
+stored `NPM_TOKEN`.
+
+One-time setup on npmjs.com: add a trusted publisher for `agency-agents-ja` with
+organization / user `sscodeai`, repository `agency-agents-ja`, workflow filename
+`release.yml`.
+
+To cut a release:
+
+```bash
+npm version patch          # or minor / major; updates package.json and tags
+git push origin main --follow-tags
+```
+
+The workflow re-runs `scripts/lint-agents.sh` and `scripts/validate.sh`, then
+`npm publish --access public`. `prepublishOnly` runs the full `prepack` chain
+(`generate`, generated integration checks, `validate`) before the tarball is
+built, so a release cannot publish stale catalogs. Provenance is attached
+automatically.
+
+
