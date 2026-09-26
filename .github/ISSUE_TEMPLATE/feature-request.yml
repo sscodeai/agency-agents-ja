@@ -1,0 +1,59 @@
+name: Feature Request
+description: Suggest an improvement to validation, conversion, installer, integrations, or documentation
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for improvements to the repository itself. To suggest a
+        new agent, use the **New Agent Request** template instead.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - agent content / localization
+        - validation / linting
+        - conversion / integrations
+        - installer
+        - generation / catalogs
+        - evaluation fixtures
+        - documentation
+        - CI / release
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      placeholder: Describe the current behavior, who is affected, and why it is a problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      placeholder: Describe the change you would like. Include commands, file paths, or examples where useful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: Other approaches you considered, and why you did not choose them.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that a similar request does not already exist in the issue list.
+          required: true
+        - label: This request is about the repository's tooling, docs, or existing agents, not a new agent.
+          required: true

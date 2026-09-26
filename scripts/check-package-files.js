@@ -13,6 +13,7 @@ const requiredDirs = [
   'examples',
   'workflows',
   'docs',
+  'evals',
   'strategy',
   ...Object.keys(divisions),
 ].sort();

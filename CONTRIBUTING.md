@@ -122,7 +122,27 @@ npm run validate
 - `UPSTREAM-COVERAGE.md`
 - workflow tables in `README.md` and `docs/superpowers-ja-integration.md`
 
-`npm run validate` checks frontmatter, generated files, workflow role references, example synchronization, and non-Japan localization drift.
+`npm run validate` checks frontmatter, generated files, workflow role references, example synchronization, evaluation fixtures, and non-Japan localization drift.
+
+## Evaluation Fixtures
+
+`evals/` holds behaviour fixtures: a user prompt, the pass conditions an agent
+answer must satisfy, and the critical failures that fail the case outright. They
+exist to compare an agent's answers before and after a change, and to catch
+claims the agent should refuse to make (fabricated benchmarks, guaranteed
+rankings, invented regulation).
+
+Add a fixture as `evals/<division>/<agent-slug>-v<version>.md`. Write the target
+agent path in backticks (for example `` `marketing/marketing-seo-specialist.md` ``),
+include a `## Purpose`, at least three `## Case` sections with `**User:**` and
+`**Pass conditions:**`, and a `## Scoring` section. Do not add frontmatter:
+fixtures are not agents and must not be counted as source agents.
+
+```bash
+npm run check:evals
+```
+
+`npm run validate` runs the same check, so a broken fixture reference fails CI.
 
 ## Tooling Changes
 
@@ -149,3 +169,28 @@ bash scripts/test-convert-outputs.sh --update
 
 Commit the updated `scripts/convert-outputs.sha256` with the converter change so
 reviewers can see which tool outputs changed.
+
+## Release
+
+`v*` tag pushes publish the package to npm through
+`.github/workflows/release.yml` using npm Trusted Publishing (OIDC). There is no
+stored `NPM_TOKEN`.
+
+One-time setup on npmjs.com: add a trusted publisher for `agency-agents-ja` with
+organization / user `sscodeai`, repository `agency-agents-ja`, workflow filename
+`release.yml`.
+
+To cut a release:
+
+```bash
+npm version patch          # or minor / major; updates package.json and tags
+git push origin main --follow-tags
+```
+
+The workflow re-runs `scripts/lint-agents.sh` and `scripts/validate.sh`, then
+`npm publish --access public`. `prepublishOnly` runs the full `prepack` chain
+(`generate`, generated integration checks, `validate`) before the tarball is
+built, so a release cannot publish stale catalogs. Provenance is attached
+automatically.
+
+

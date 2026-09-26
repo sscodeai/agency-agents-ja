@@ -15,17 +15,29 @@ body:
     attributes:
       label: Category
       options:
-        - engineering
+        # Keep in sync with the divisions map in divisions.json.
+        - academic
+        - company
         - design
+        - engineering
+        - finance
+        - game-development
+        - gis
+        - healthcare
+        - hr
+        - legal
         - marketing
+        - paid-media
         - product
         - project-management
         - research
-        - testing
-        - support
+        - sales
+        - security
         - spatial-computing
         - specialized
-        - strategy
+        - supply-chain
+        - support
+        - testing
         - new category (describe below)
     validations:
       required: true

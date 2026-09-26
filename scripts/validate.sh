@@ -110,6 +110,10 @@ if ! node scripts/check-adapted-quality.js; then
   errors=$((errors + 1))
 fi
 
+if ! node scripts/check-evals.js; then
+  errors=$((errors + 1))
+fi
+
 if ! node scripts/check-readme-references.js; then
   errors=$((errors + 1))
 fi

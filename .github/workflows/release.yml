@@ -1,0 +1,47 @@
+# Release (npm)
+
+> npm Trusted Publishing を使います。事前に npmjs.com 側で
+> `agency-agents-ja` に GitHub Actions の trusted publisher を登録してください
+> （Organization / User: `sscodeai`、Repository: `agency-agents-ja`、
+> Workflow filename: `release.yml`、Environment: 空欄）。
+> 登録後は `v*` tag の push だけで公開でき、OTP や長期 token は不要です。
+> provenance は OIDC 経由で自動付与されます。
+
+name: Release (npm)
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # Trusted Publishing の OIDC token 取得に必須
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g npm@latest
+
+      - name: Lint agent files
+        run: bash scripts/lint-agents.sh
+
+      - name: Validate catalog, workflows, and fixtures
+        run: scripts/validate.sh
+
+      - name: Publish to npm
+        # prepublishOnly runs the full prepack chain (generate, generated
+        # integration checks, validate) before the tarball is created.
+        run: npm publish --access public
