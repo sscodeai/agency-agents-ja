@@ -102,6 +102,10 @@ if ! node scripts/sync-readme-stats.js --check; then
   errors=$((errors + 1))
 fi
 
+if ! node scripts/check-agent-counts.js; then
+  errors=$((errors + 1))
+fi
+
 if ! node scripts/check-upstream-coverage.js --check; then
   errors=$((errors + 1))
 fi
