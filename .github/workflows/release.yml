@@ -1,11 +1,11 @@
 # Release (npm)
-
-> npm Trusted Publishing を使います。事前に npmjs.com 側で
-> `agency-agents-ja` に GitHub Actions の trusted publisher を登録してください
-> （Organization / User: `sscodeai`、Repository: `agency-agents-ja`、
-> Workflow filename: `release.yml`、Environment: 空欄）。
-> 登録後は `v*` tag の push だけで公開でき、OTP や長期 token は不要です。
-> provenance は OIDC 経由で自動付与されます。
+#
+# npm Trusted Publishing を使います。事前に npmjs.com 側で
+# `agency-agents-ja` に GitHub Actions の trusted publisher を登録してください
+# （Organization / User: `sscodeai`、Repository: `agency-agents-ja`、
+# Workflow filename: `release.yml`、Environment: 空欄）。
+# 登録後は `v*` tag の push だけで公開でき、OTP や長期 token は不要です。
+# provenance は OIDC 経由で自動付与されます。
 
 name: Release (npm)
 

@@ -84,6 +84,7 @@ expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/check-adapted-quality.js']);
   run('node', ['--check', 'scripts/check-evals.js']);
   run('node', ['--check', 'scripts/check-generated-integrations.js']);
+  run('node', ['--check', 'scripts/check-github-workflows.js']);
   run('node', ['--check', 'scripts/check-package-files.js']);
   run('node', ['--check', 'scripts/check-readme-references.js']);
   run('node', ['--check', 'scripts/check-upstream-parity.js']);
@@ -295,6 +296,95 @@ steps:
   }, 'references unavailable placeholder');
 } finally {
   rmSync(workflowFixture, { recursive: true, force: true });
+}
+
+// A ">" line at the top of a workflow file is Markdown emphasis in a comment
+// block, but YAML reads it as the header of a folded scalar: the following
+// `name:` becomes its content, the file stops being a mapping, and GitHub marks
+// the workflow invalid without any run logs to inspect.
+const githubWorkflowFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-github-workflows-'));
+
+function writeGithubWorkflow(name, text) {
+  mkdirSync(join(githubWorkflowFixture, '.github', 'workflows'), { recursive: true });
+  writeFileSync(join(githubWorkflowFixture, '.github', 'workflows', name), text, 'utf8');
+}
+
+try {
+  expectPass('GitHub Actions workflow check accepts a valid workflow file', () => {
+    writeGithubWorkflow('ci.yml', [
+      'name: CI',
+      '',
+      'on:',
+      '  push:',
+      '    branches: [main]',
+      '',
+      'jobs:',
+      '  validate:',
+      '    runs-on: ubuntu-latest',
+      '    steps:',
+      '      - uses: actions/checkout@v7',
+      '      - name: Validate',
+      '        run: scripts/validate.sh',
+      '',
+    ].join('\n'));
+    run('node', [join(root, 'scripts/check-github-workflows.js')], { cwd: githubWorkflowFixture });
+  });
+
+  expectFail('GitHub Actions workflow check rejects a Markdown ">" block before the keys', () => {
+    writeGithubWorkflow('broken.yml', [
+      '# Broken',
+      '',
+      '> This line reads as Markdown, but YAML sees a folded scalar header.',
+      '> It leaves the following keys inside that scalar.',
+      '',
+      'name: Broken',
+      '',
+      'on:',
+      '  push:',
+      '',
+      'jobs:',
+      '  build:',
+      '    runs-on: ubuntu-latest',
+      '    steps:',
+      '      - run: echo ok',
+      '',
+    ].join('\n'));
+    run('node', [join(root, 'scripts/check-github-workflows.js')], { cwd: githubWorkflowFixture });
+  }, 'invalid YAML');
+
+  expectFail('GitHub Actions workflow check rejects a job without runs-on', () => {
+    writeGithubWorkflow('broken.yml', [
+      'name: Broken',
+      '',
+      'on: push',
+      '',
+      'jobs:',
+      '  build:',
+      '    steps:',
+      '      - run: echo ok',
+      '',
+    ].join('\n'));
+    run('node', [join(root, 'scripts/check-github-workflows.js')], { cwd: githubWorkflowFixture });
+  }, "is missing 'runs-on'");
+
+  expectFail('GitHub Actions workflow check rejects a step with both uses and run', () => {
+    writeGithubWorkflow('broken.yml', [
+      'name: Broken',
+      '',
+      'on: push',
+      '',
+      'jobs:',
+      '  build:',
+      '    runs-on: ubuntu-latest',
+      '    steps:',
+      '      - uses: actions/checkout@v7',
+      '        run: echo ok',
+      '',
+    ].join('\n'));
+    run('node', [join(root, 'scripts/check-github-workflows.js')], { cwd: githubWorkflowFixture });
+  }, "must have exactly one of 'uses' or 'run'");
+} finally {
+  rmSync(githubWorkflowFixture, { recursive: true, force: true });
 }
 
 console.log('Maintenance script tests passed.');
