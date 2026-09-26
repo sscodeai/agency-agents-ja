@@ -2,6 +2,15 @@
 
 All notable changes to `agency-agents-ja` are recorded here.
 
+## Unreleased
+
+- Added `evals/`, behaviour evaluation fixtures for the Japanese marketing search-growth agents, with `scripts/check-evals.js`, `npm run check:evals`, and validation wired into `scripts/validate.sh`. Fixtures follow the `SEARCH-GROWTH-STACK.md` evidence protocol.
+- Added `.github/workflows/release.yml` so `v*` tags publish to npm through Trusted Publishing (OIDC, provenance) without a stored token.
+- Added two Japan-original agents: 日本向け動画プロンプトエンジニア (`design/design-video-prompt-engineer.md`) and 日本向け鑑定・真贋評価アドバイザー (`specialized/specialized-authenticity-appraiser.md`).
+- Deepened `specialized/healthcare-marketing-compliance.md` with pharma, medical device, OTC, health food, and Medical Advertising Guidelines applicability coverage instead of adding a duplicate healthcare marketing agent.
+- Added the `Feature Request` issue template and corrected the division list in `new-agent-request.yml` to match `divisions.json`.
+- Some of the subjects above were informed by the Chinese community edition `agency-agents-zh` (its evaluation fixtures, release automation, and agent coverage gaps). Nothing was copied: every file was rewritten for Japanese platforms, regulations, and delivery workflows.
+
 ## 0.4.0 - 2026-08-13
 
 - Updated upstream coverage to `msitarzewski/agency-agents@ebe9c99` as of 2026-08-08.

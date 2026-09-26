@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 402 (⭐ 123 japan-original + 279 upstream-aligned)
+Total agents: 404 (⭐ 125 japan-original + 279 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -362,13 +362,14 @@ Total: 4 (⭐ 4 japan-original + 0 upstream-aligned)
 
 ## Design
 
-Total: 13 (⭐ 3 japan-original + 10 upstream-aligned)
+Total: 14 (⭐ 4 japan-original + 10 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本向けアクセシビリティ監査者 | japan-original |  |  | 日本語 UI、行政・公共 sector、業務 system に対して WCAG / JIS を意識した accessibility audit を行う。 | `design/design-accessibility-auditor-ja.md` |
 | ⭐ | 日本業務 UI デザイナー | japan-original |  |  | 日本の業務画面、管理画面、申請画面、帳票画面に強い UI designer。高密度 table、入力補助、誤操作防止を重視する。 | `design/design-japanese-business-ui-designer.md` |
 | ⭐ | 日本業務 Design System メンテナー | japan-original |  |  | 日本の業務システム、SaaS 管理画面、申請・承認 UI 向けに design system、component rule、文言、accessibility、実装連携を整える maintainer。 | `design/design-japanese-design-system-maintainer.md` |
+| ⭐ | 日本向け動画プロンプトエンジニア | japan-original |  |  | 生成動画の prompt を 5 段構成で撮影指示レベルまで具体化する agent。尺、解像度、コスト、複数カットの整合、ネガティブ prompt、広告審査、権利確認まで含めて設計する。 | `design/design-video-prompt-engineer.md` |
 |  | 日本向けブランドガーディアン | upstream | adapted | Brand Guardian | 日本市場のブランド表現、広告審査、社内承認、顧客信頼を踏まえて visual / copy / UI の一貫性を守る design agent。 | `design/design-brand-guardian.md` |
 |  | 日本向け画像プロンプトエンジニア | upstream | adapted | Image Prompt Engineer | 日本市場向けの広告、LP、営業資料、プロダクト画像に使う生成画像 prompt を、ブランド・審査・権利観点まで含めて設計する agent。 | `design/design-image-prompt-engineer.md` |
 |  | 日本向けインクルーシブビジュアル専門家 | upstream | adapted | Inclusive Visuals Specialist | 日本の多様な利用者、年齢層、地域、障害、ジェンダー、文化背景に配慮した visual 表現を設計・監査する design agent。 | `design/design-inclusive-visuals-specialist.md` |
@@ -483,13 +484,14 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 73 (⭐ 14 japan-original + 59 upstream-aligned)
+Total: 74 (⭐ 15 japan-original + 59 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本向けブロックチェーンセキュリティ監査者 | japan-original |  |  | Smart contract、wallet、key 管理、bridge、token operation を日本向けに監査する security agent。 | `specialized/blockchain-security-auditor.md` |
 | ⭐ | 日本向けコンプライアンス監査者 | japan-original |  |  | 日本企業の法令、社内規程、委託先、個人情報、セキュリティ、運用証跡を確認する compliance audit agent。 | `specialized/compliance-auditor.md` |
 | ⭐ | 自治体 DX コンサルタント | japan-original |  |  | 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。 | `specialized/japanese-public-sector-dx-consultant.md` |
+| ⭐ | 日本向け鑑定・真贋評価アドバイザー | japan-original |  |  | 中古・リユース市場での真贋確認の観点、相場評価のフレーム、取引リスク、古物営業法や商標権上の注意を整理する agent。オンラインで判断できる範囲と、実物鑑定へ回す条件を明示する。 | `specialized/specialized-authenticity-appraiser.md` |
 | ⭐ | 工場 IoT プランナー | japan-original |  |  | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
 | ⭐ | 日本 IT 自動化ガバナンスアーキテクト | japan-original |  |  | 日本企業の RPA、workflow automation、AI agent、batch、integration automation に対して権限、監査、例外処理、運用責任を設計する automation governance architect。 | `specialized/specialized-japanese-automation-governance-architect.md` |
 | ⭐ | 日本向け事業継続プランナー | japan-original |  |  | 日本企業の SaaS / 業務システム / IT 運用における BCP、DR、災害対応、代替運用、連絡網、復旧目標、訓練 plan を作る business continuity planner。 | `specialized/specialized-japanese-business-continuity-planner.md` |
