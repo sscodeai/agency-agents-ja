@@ -23,6 +23,7 @@ supported agentic coding tools.
 - **[Osaurus](osaurus/README.md)** — `SKILL.md` skills in `osaurus/`
 - **[Hermes](hermes/README.md)** — lazy-router plugin in `hermes/`
 - **[Mistral Vibe](vibe/README.md)** — TOML agents and Markdown prompts in `vibe/`
+- **[DeepSeek Harness](dsh/README.md)** — `SKILL.md` directories in `dsh/`
 
 ## Quick Install
 
@@ -65,6 +66,10 @@ supported agentic coding tools.
 # Mistral Vibe uses generated TOML agents and prompt files
 ./scripts/convert.sh --tool vibe
 ./scripts/install.sh --tool vibe
+
+# DeepSeek Harness uses generated SKILL.md directories
+./scripts/convert.sh --tool dsh
+./scripts/install.sh --tool dsh
 ```
 
 If you install OpenClaw and the gateway is already running, restart it after installation:

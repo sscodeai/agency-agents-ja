@@ -27,6 +27,7 @@
 #   osaurus      -- Copy skills to ~/.osaurus/skills/
 #   hermes       -- Copy lazy-router plugin to ~/.hermes/plugins/
 #   vibe         -- Copy agents and prompts to ~/.vibe/agents/ and ~/.vibe/prompts/
+#   dsh          -- Copy skills to ~/.dsh/skills/ (user-wide) or .dsh/skills/ (project)
 #   all          -- Install for all detected tools (default)
 #
 # Flags:
@@ -48,7 +49,8 @@
 #   CLAUDE_CONFIG_DIR, CLAUDE_AGENTS_DIR, GITHUB_AGENT_DIR, COPILOT_AGENT_DIR,
 #   ANTIGRAVITY_SKILLS_DIR, GEMINI_EXTENSION_DIR, OPENCODE_AGENTS_DIR,
 #   OPENCLAW_DIR, CURSOR_RULES_DIR, QWEN_AGENTS_DIR, ZCODE_AGENTS_DIR, KIMI_AGENTS_DIR,
-#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME
+#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME,
+#   DSH_HOME, DSH_SKILLS_DIR
 #
 # Platform support:
 #   Linux, macOS (requires bash 3.2+), Windows Git Bash / WSL
@@ -121,7 +123,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen zcode qwenpaw kimi codex codewhale osaurus hermes vibe)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen zcode qwenpaw kimi codex codewhale osaurus hermes vibe dsh)
 
 resolve_dest() {
   local env_name="$1"
@@ -293,7 +295,7 @@ path_collision_group() {
   case "$1" in
     claude-code|copilot)            printf 'raw-source-md' ;;
     gemini-cli|opencode|qwen|zcode) printf 'slug-md' ;;
-    antigravity|osaurus)            printf 'agency-skill' ;;
+    antigravity|osaurus|dsh)        printf 'agency-skill' ;;
     *)                              printf '' ;;
   esac
 }
@@ -372,7 +374,7 @@ do_list() {
 # Usage
 # ---------------------------------------------------------------------------
 usage() {
-  sed -n '3,32p' "$0" | sed 's/^# \{0,1\}//'
+  sed -n '3,31p' "$0" | sed 's/^# \{0,1\}//'
   exit 0
 }
 
@@ -435,6 +437,7 @@ detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -n "${CODEX_AGENT
 detect_osaurus()      { command -v osaurus >/dev/null 2>&1 || [[ -n "${OSAURUS_SKILLS_DIR:-}" || -d "${HOME}/.osaurus" ]]; }
 detect_hermes()       { command -v hermes >/dev/null 2>&1 || [[ -n "${HERMES_PLUGIN_DIR:-}" || -d "${HERMES_HOME:-${HOME}/.hermes}" ]]; }
 detect_vibe()         { command -v vibe >/dev/null 2>&1 || [[ -n "${VIBE_HOME:-}" || -d "${HOME}/.vibe" ]]; }
+detect_dsh()          { command -v dsh >/dev/null 2>&1 || [[ -n "${DSH_HOME:-}${DSH_SKILLS_DIR:-}" || -d "${HOME}/.dsh" ]]; }
 
 is_detected() {
   case "$1" in
@@ -454,6 +457,7 @@ is_detected() {
     osaurus)     detect_osaurus     ;;
     hermes)      detect_hermes      ;;
     vibe)        detect_vibe        ;;
+    dsh)         detect_dsh         ;;
     *)           return 1 ;;
   esac
 }
@@ -477,6 +481,7 @@ tool_label() {
     osaurus)     printf "%-14s  %s" "Osaurus"      "(~/.osaurus/skills)"     ;;
     hermes)      printf "%-14s  %s" "Hermes"       "(~/.hermes/plugins)"     ;;
     vibe)        printf "%-14s  %s" "Mistral Vibe" "(~/.vibe/agents)"        ;;
+    dsh)         printf "%-14s  %s" "DeepSeek Harness" "(~/.dsh/skills)"     ;;
   esac
 }
 
@@ -972,6 +977,33 @@ install_codewhale() {
   ok "CodeWhale: installed $count skills to $dest"
 }
 
+install_dsh() {
+  local src="$INTEGRATIONS/dsh"
+  local dest
+  dest="$(resolve_dest DSH_SKILLS_DIR "${DSH_HOME:-${HOME}/.dsh}/skills")"
+  local count=0
+
+  [[ -d "$src" ]] || { err "integrations/dsh missing. Run convert.sh first."; return 1; }
+  require_generated_count dsh "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
+
+  mkdir -p "$dest"
+
+  local d
+  while IFS= read -r -d '' d; do
+    local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
+    mkdir -p "$dest/$name"
+    cp "$d/SKILL.md" "$dest/$name/SKILL.md"
+    (( count++ )) || true
+  done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
+
+  ok "DeepSeek Harness: installed $count skills to $dest"
+  warn "DeepSeek Harness: set DSH_SKILLS_DIR=.dsh/skills (in a project) to install there instead."
+  if command -v dsh >/dev/null 2>&1; then
+    warn "DeepSeek Harness: activate an agent with /agency-<slug> or by name in conversation."
+  fi
+}
+
 install_vibe() {
   local src_agents="$INTEGRATIONS/vibe/agents"
   local src_prompts="$INTEGRATIONS/vibe/prompts"
@@ -1298,6 +1330,7 @@ install_tool() {
     osaurus)     install_osaurus     ;;
     hermes)      install_hermes      ;;
     vibe)        install_vibe        ;;
+    dsh)         install_dsh         ;;
   esac
 }
 

@@ -4,6 +4,7 @@ All notable changes to `agency-agents-ja` are recorded here.
 
 ## Unreleased
 
+- Added DeepSeek Harness (`dsh`) as a 19th integration target. `scripts/convert.sh --tool dsh` writes `agency-<slug>/SKILL.md` skills to `integrations/dsh/`, and `scripts/install.sh --tool dsh` installs them to `${DSH_HOME:-~/.dsh}/skills` (user-wide) or `DSH_SKILLS_DIR` (project scope). Wired into `tools.json`, `scripts/check-tools.sh`, `scripts/check-generated-integrations.js`, `scripts/test-convert-outputs.sh`, and `scripts/test-install.sh`.
 - Fixed the Hermes installer, which printed `[OK] enabled plugin` while leaving `agency-agents-router` disabled or absent on real Hermes configs. The `plugins:` block now ends only at a top-level key (not a column-0 `# ====` banner), the `enabled:` sub-block is bounded at its first sibling, stale entries are swept out of `disabled:`, inline `[]` / `[a,b]` and trailing comments are handled, and uneditable shapes bail with a warning instead of reporting success. `scripts/check-hermes-config-rewrite.py` now runs 16 regression cases, including Hermes' own config shape.
 - Added `evals/`, behaviour evaluation fixtures for the Japanese marketing search-growth agents, with `scripts/check-evals.js`, `npm run check:evals`, and validation wired into `scripts/validate.sh`. Fixtures follow the `SEARCH-GROWTH-STACK.md` evidence protocol.
 - Added `.github/workflows/release.yml` so `v*` tags publish to npm through Trusted Publishing (OIDC, provenance) without a stored token.
