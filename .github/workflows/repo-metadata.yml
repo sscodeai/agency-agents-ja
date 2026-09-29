@@ -1,0 +1,28 @@
+name: Repo Metadata
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 2 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  description:
+    name: Check repository description counts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+
+      # The repository description is the one published count that lives outside
+      # git, so no in-repo check can see it drift. It once advertised 323 agents
+      # while README.md said 404 and every check still passed.
+      - name: Check repository description against the generated counts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/check-repo-metadata.js --strict

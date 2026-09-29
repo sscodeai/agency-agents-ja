@@ -153,6 +153,32 @@ node scripts/check-upstream-coverage.js
 ./scripts/validate.sh
 ```
 
+## 公開されるカウント
+
+カタログの規模は、生成ブロック・手書きの文章・GitHub の repository description の
+3 か所に現れます。生成ブロックは自動で守られますが、残り 2 つは過去にずれました。
+カタログが `404 / 125` に増えたあとも description と 3 つのドキュメントが
+`323 agents / 114 japan-original` を掲載し続け、生成ブロックは正しかったため <!-- allow-stale-count: 過去のずれを説明する記述 -->
+どのチェックも気づきませんでした。
+
+```bash
+npm run check:agent-counts    # 追跡下の Markdown に残る引退済みカウント (npm run validate に含まれます)
+npm run check:repo-metadata   # git の外にある GitHub description
+```
+
+`check:repo-metadata` は数値だけを比較し、文言は検査しません。引用したカウントが
+最新であれば、description は自由に書き換えられます。API に到達できない場合は
+スキップし、`--strict`（定期実行の `Repo Metadata` workflow が使用）で失敗に
+変わり、`--fix` は repository の管理権限を持つトークンで description を更新します。
+
+`CHANGELOG.md` は意図的に除外しています。リリース時点で正しかった記録を
+書き換えるほうが、ずれよりも有害だからです。やむを得ず引退済みの数値を書く場合は
+インラインで除外できます:
+
+```markdown
+323 agents から移行しました。 <!-- allow-stale-count: v0.4 以前の記録 -->
+```
+
 ## Pull Request
 
 PR には以下を含めてください。

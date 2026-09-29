@@ -124,6 +124,34 @@ npm run validate
 
 `npm run validate` checks frontmatter, generated files, workflow role references, example synchronization, evaluation fixtures, and non-Japan localization drift.
 
+## Published counts
+
+The catalog size appears in generated blocks, in hand-written prose, and in the
+GitHub repository description. Generated blocks look after themselves, but the
+other two have drifted before: the description and three docs kept advertising
+`323 agents / 114 japan-original` after the catalog had reached `404 / 125`, and <!-- allow-stale-count: documents the historical drift -->
+no check noticed because every generated block was still correct.
+
+Two guards close that gap:
+
+```bash
+npm run check:agent-counts    # retired counts in tracked markdown (runs in npm run validate)
+npm run check:repo-metadata   # the GitHub description, which lives outside git
+```
+
+`check:repo-metadata` only compares numbers, never wording, so the description
+can be rewritten freely as long as any count it quotes is current. It skips
+itself when the API is unreachable; `--strict` (used by the scheduled
+`Repo Metadata` workflow) turns that into a failure, and `--fix` updates the
+description locally with a token that can administer the repository.
+
+`CHANGELOG.md` is exempt on purpose: it records what was true at release time.
+If a line legitimately needs a retired number, opt out inline:
+
+```markdown
+Migrated from 323 agents. <!-- allow-stale-count: predates the v0.4 catalog -->
+```
+
 ## Evaluation Fixtures
 
 `evals/` holds behaviour fixtures: a user prompt, the pass conditions an agent

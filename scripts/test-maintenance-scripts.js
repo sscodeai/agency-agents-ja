@@ -82,12 +82,15 @@ function expectFail(name, fn, expectedText) {
 
 expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/check-adapted-quality.js']);
+  run('node', ['--check', 'scripts/check-agent-counts.js']);
   run('node', ['--check', 'scripts/check-evals.js']);
   run('node', ['--check', 'scripts/check-generated-integrations.js']);
   run('node', ['--check', 'scripts/check-github-workflows.js']);
   run('node', ['--check', 'scripts/check-package-files.js']);
   run('node', ['--check', 'scripts/check-readme-references.js']);
+  run('node', ['--check', 'scripts/check-repo-metadata.js']);
   run('node', ['--check', 'scripts/check-upstream-parity.js']);
+  run('node', ['--check', 'scripts/lib/agent-stats.js']);
   run('node', ['--check', 'scripts/sync-readme-stats.js']);
   run('node', ['--check', 'scripts/validate-workflows.js']);
 });
@@ -385,6 +388,75 @@ try {
   }, "must have exactly one of 'uses' or 'run'");
 } finally {
   rmSync(githubWorkflowFixture, { recursive: true, force: true });
+}
+
+const countsFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-counts-'));
+
+function writeCountsFixture({ doc }) {
+  writeAgent(countsFixture, 'academic/japan-original.md', [
+    '---',
+    'name: 日本 original',
+    'description: Fixture original agent。',
+    'emoji: 🧪',
+    'color: blue',
+    'source: japan-original',
+    '---',
+    '',
+    '# 日本 original',
+    '',
+  ].join('\n'));
+  writeFileSync(join(countsFixture, 'README.md'), '# Fixture\n\nA small agent library.\n', 'utf8');
+  writeFileSync(join(countsFixture, 'NOTES.md'), doc, 'utf8');
+}
+
+try {
+  expectPass('agent count check accepts docs that quote the current counts', () => {
+    writeCountsFixture({ doc: 'This library ships 1 agent (⭐ 1 japan-original).\n' });
+    run('node', [join(root, 'scripts/check-agent-counts.js'), '--root', countsFixture]);
+  });
+
+  expectFail('agent count check rejects retired counts in tracked markdown', () => {
+    writeCountsFixture({ doc: 'The catalog holds 323 agents, of which 114 japan-original agents.\n' });
+    run('node', [join(root, 'scripts/check-agent-counts.js'), '--root', countsFixture]);
+  }, 'Published agent counts contradict the catalog');
+
+  expectFail('agent count check rejects a retired total in README.md', () => {
+    writeCountsFixture({ doc: 'Nothing to see here.\n' });
+    writeFileSync(join(countsFixture, 'README.md'), '# Fixture\n\n394 agents for Japanese dev teams.\n', 'utf8');
+    run('node', [join(root, 'scripts/check-agent-counts.js'), '--root', countsFixture]);
+  }, 'Published agent counts contradict the catalog');
+
+  expectPass('agent count check honours the allow-stale-count marker', () => {
+    writeCountsFixture({ doc: 'Migrated from 323 agents. <!-- allow-stale-count: migration note -->\n' });
+    run('node', [join(root, 'scripts/check-agent-counts.js'), '--root', countsFixture]);
+  });
+
+  expectPass('agent count check treats CHANGELOG.md as a historical record', () => {
+    writeCountsFixture({ doc: 'Nothing to see here.\n' });
+    writeFileSync(join(countsFixture, 'CHANGELOG.md'), '- Expanded the catalog to 323 agents.\n', 'utf8');
+    run('node', [join(root, 'scripts/check-agent-counts.js'), '--root', countsFixture]);
+  });
+} finally {
+  rmSync(countsFixture, { recursive: true, force: true });
+}
+
+try {
+  expectPass('repo metadata check accepts a description quoting the current counts', () => {
+    run('node', [join(root, 'scripts/check-repo-metadata.js'), '--description',
+      '404体の即戦力AI専門エージェント集 — 日本市場向けオリジナル125体。agency-agentsの日本語コミュニティ版']);
+  });
+
+  expectFail('repo metadata check rejects a description quoting a retired total', () => {
+    run('node', [join(root, 'scripts/check-repo-metadata.js'), '--description',
+      '323体の即戦力AI専門エージェント集 — 日本市場向け114個のオリジナルを含む']);
+  }, 'retired agent counts');
+
+  expectPass('repo metadata check allows a description without counts', () => {
+    run('node', [join(root, 'scripts/check-repo-metadata.js'), '--description',
+      'Japanese community edition of agency-agents, adapted for Japanese IT delivery.']);
+  });
+} catch (error) {
+  throw error;
 }
 
 console.log('Maintenance script tests passed.');
