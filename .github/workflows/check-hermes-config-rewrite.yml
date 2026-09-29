@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+
       - name: Run regression cases
         run: |
           chmod +x scripts/check-hermes-config-rewrite.sh

@@ -27,6 +27,7 @@
 #   osaurus      -- Copy skills to ~/.osaurus/skills/
 #   hermes       -- Copy lazy-router plugin to ~/.hermes/plugins/
 #   vibe         -- Copy agents and prompts to ~/.vibe/agents/ and ~/.vibe/prompts/
+#   dsh          -- Copy skills to ~/.dsh/skills/ (user-wide) or .dsh/skills/ (project)
 #   all          -- Install for all detected tools (default)
 #
 # Flags:
@@ -48,7 +49,8 @@
 #   CLAUDE_CONFIG_DIR, CLAUDE_AGENTS_DIR, GITHUB_AGENT_DIR, COPILOT_AGENT_DIR,
 #   ANTIGRAVITY_SKILLS_DIR, GEMINI_EXTENSION_DIR, OPENCODE_AGENTS_DIR,
 #   OPENCLAW_DIR, CURSOR_RULES_DIR, QWEN_AGENTS_DIR, ZCODE_AGENTS_DIR, KIMI_AGENTS_DIR,
-#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME
+#   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME,
+#   DSH_HOME, DSH_SKILLS_DIR
 #
 # Platform support:
 #   Linux, macOS (requires bash 3.2+), Windows Git Bash / WSL
@@ -121,7 +123,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen zcode qwenpaw kimi codex codewhale osaurus hermes vibe)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen zcode qwenpaw kimi codex codewhale osaurus hermes vibe dsh)
 
 resolve_dest() {
   local env_name="$1"
@@ -293,7 +295,7 @@ path_collision_group() {
   case "$1" in
     claude-code|copilot)            printf 'raw-source-md' ;;
     gemini-cli|opencode|qwen|zcode) printf 'slug-md' ;;
-    antigravity|osaurus)            printf 'agency-skill' ;;
+    antigravity|osaurus|dsh)        printf 'agency-skill' ;;
     *)                              printf '' ;;
   esac
 }
@@ -372,7 +374,7 @@ do_list() {
 # Usage
 # ---------------------------------------------------------------------------
 usage() {
-  sed -n '3,32p' "$0" | sed 's/^# \{0,1\}//'
+  sed -n '3,31p' "$0" | sed 's/^# \{0,1\}//'
   exit 0
 }
 
@@ -435,6 +437,7 @@ detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -n "${CODEX_AGENT
 detect_osaurus()      { command -v osaurus >/dev/null 2>&1 || [[ -n "${OSAURUS_SKILLS_DIR:-}" || -d "${HOME}/.osaurus" ]]; }
 detect_hermes()       { command -v hermes >/dev/null 2>&1 || [[ -n "${HERMES_PLUGIN_DIR:-}" || -d "${HERMES_HOME:-${HOME}/.hermes}" ]]; }
 detect_vibe()         { command -v vibe >/dev/null 2>&1 || [[ -n "${VIBE_HOME:-}" || -d "${HOME}/.vibe" ]]; }
+detect_dsh()          { command -v dsh >/dev/null 2>&1 || [[ -n "${DSH_HOME:-}${DSH_SKILLS_DIR:-}" || -d "${HOME}/.dsh" ]]; }
 
 is_detected() {
   case "$1" in
@@ -454,6 +457,7 @@ is_detected() {
     osaurus)     detect_osaurus     ;;
     hermes)      detect_hermes      ;;
     vibe)        detect_vibe        ;;
+    dsh)         detect_dsh         ;;
     *)           return 1 ;;
   esac
 }
@@ -477,6 +481,7 @@ tool_label() {
     osaurus)     printf "%-14s  %s" "Osaurus"      "(~/.osaurus/skills)"     ;;
     hermes)      printf "%-14s  %s" "Hermes"       "(~/.hermes/plugins)"     ;;
     vibe)        printf "%-14s  %s" "Mistral Vibe" "(~/.vibe/agents)"        ;;
+    dsh)         printf "%-14s  %s" "DeepSeek Harness" "(~/.dsh/skills)"     ;;
   esac
 }
 
@@ -972,6 +977,33 @@ install_codewhale() {
   ok "CodeWhale: installed $count skills to $dest"
 }
 
+install_dsh() {
+  local src="$INTEGRATIONS/dsh"
+  local dest
+  dest="$(resolve_dest DSH_SKILLS_DIR "${DSH_HOME:-${HOME}/.dsh}/skills")"
+  local count=0
+
+  [[ -d "$src" ]] || { err "integrations/dsh missing. Run convert.sh first."; return 1; }
+  require_generated_count dsh "$(find "$src" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" || return 1
+
+  mkdir -p "$dest"
+
+  local d
+  while IFS= read -r -d '' d; do
+    local name; name="$(basename "$d")"
+    slug_allowed "$name" || continue
+    mkdir -p "$dest/$name"
+    cp "$d/SKILL.md" "$dest/$name/SKILL.md"
+    (( count++ )) || true
+  done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
+
+  ok "DeepSeek Harness: installed $count skills to $dest"
+  warn "DeepSeek Harness: set DSH_SKILLS_DIR=.dsh/skills (in a project) to install there instead."
+  if command -v dsh >/dev/null 2>&1; then
+    warn "DeepSeek Harness: activate an agent with /agency-<slug> or by name in conversation."
+  fi
+}
+
 install_vibe() {
   local src_agents="$INTEGRATIONS/vibe/agents"
   local src_prompts="$INTEGRATIONS/vibe/prompts"
@@ -1021,138 +1053,222 @@ text = path.read_text() if path.exists() else ""
 lines = text.splitlines()
 plugin_strip = plugin.strip()
 
+# plugins block + enabled: key/indent/rest. Avoids old 2-space hardcode and cross-list scan into disabled:/entries: (#879).
 plugin_start = None
-plugin_end = len(lines)
+end_line = None
 enabled_idx = None
-enabled_indent = "  "
-enabled_value = None
-
+enabled_indent = ""
+enabled_rest = ""
+item_indent = ""
+has_enabled = False
 for i, line in enumerate(lines):
     if line.startswith("plugins:"):
         plugin_start = i
         j = i + 1
+        broke = False
         while j < len(lines):
-            if lines[j] and not lines[j].startswith((" ", "\t")):
+            jl = lines[j]
+            # Only a top-level KEY ends the block. Hermes writes enabled:/disabled: below a
+            # column-0 "# ====" section banner; treating that comment as the end hid them.
+            if jl and not jl.startswith((" ", "\t")) and not jl.startswith("#"):
+                broke = True
                 break
+            stripped = jl.strip()
+            if stripped.startswith("enabled:") and not has_enabled:
+                has_enabled = True
+                enabled_idx = j
+                enabled_indent = jl[: len(jl) - len(stripped)]
+                enabled_rest = stripped[len("enabled:") :].strip()
             j += 1
-        plugin_end = j
+        # ran off EOF: end_line = one past last scanned line so inserts land right.
+        end_line = j if broke else len(lines)
         break
 
+# plugins: must be bare key; inline {} or scalar can't be edited line-wise — bail.
+if plugin_start is not None:
+    if re.sub(r"\s*#.*$", "", lines[plugin_start]).strip() != "plugins:":
+        sys.exit(1)
+
+# Classify enabled: rest: empty (block), [] (empty), [a,b] (flow); else bail.
+enabled_empty = False
+inline_flow = False
+inline_items = []
+inline_comment = ""
+if has_enabled:
+    rest_nc = re.sub(r"\s*#.*$", "", enabled_rest).strip()
+    if rest_nc == "":
+        pass  # block-style list (or an empty key) — handled below
+    elif re.fullmatch(r"\[[^\[\]]*\]", rest_nc):
+        inner = rest_nc[1:-1]
+        inline_items = [
+            p.strip().strip("\"'") for p in inner.split(",") if p.strip()
+        ]
+        if inline_items:
+            inline_flow = True
+            inline_comment = enabled_rest[enabled_rest.find("]") + 1 :]
+        else:
+            enabled_empty = True
+    else:
+        sys.exit(1)
+
+# enabled: sub-block ends at first sibling key (indent <= enabled_indent); blanks/comments/items don't end it (#879).
+enabled_end = end_line
+if has_enabled:
+    for j in range(enabled_idx + 1, end_line):
+        line = lines[j]
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        this_indent = line[: len(line) - len(stripped)]
+        if not stripped.startswith("-") and len(this_indent) <= len(enabled_indent):
+            enabled_end = j
+            break
+
+# item_indent from within (enabled_idx, enabled_end) so sibling lists can't leak in (#879).
+if has_enabled and not enabled_empty and not inline_flow:
+    for idx in range(enabled_idx + 1, enabled_end):
+        stripped = lines[idx].strip()
+        if stripped.startswith("-"):
+            item_indent = lines[idx][: len(lines[idx]) - len(stripped)]
+            break
+
+# Detect "already enabled" + corrupted-scalar form (glued "- " from old 2-space bug); repair splits to one per line.
+corrupted_lines = []
+has_plugin_already = False
+if inline_flow:
+    has_plugin_already = plugin_strip in inline_items
+elif has_enabled and not enabled_empty:
+    for idx in range(enabled_idx + 1, enabled_end):
+        l = lines[idx]
+        stripped = l.strip()
+        if not stripped.startswith("-"):
+            continue
+        # >1 "- " in stripped line = corrupted glue (strict match won't work: names contain dashes).
+        if stripped.count("- ") > 1:
+            corrupted_lines.append(idx)
+        else:
+            value = stripped[1:].strip().strip("\"'")
+            if value == plugin_strip:
+                has_plugin_already = True
+
+# Repair in reverse to keep indices. Splice grows the block — sync enabled_end with end_line or the stale sweep eats the new plugin (#879).
+for idx in sorted(corrupted_lines, reverse=True):
+    l = lines[idx]
+    stripped = l.strip()
+    if not item_indent:
+        item_indent = l[: len(l) - len(stripped)] or (enabled_indent + "  ")
+    content = stripped[1:].strip()
+    parts = re.split(r"\s+-\s+", content)
+    new_lines = [f"{item_indent}- {parts[0]}"]
+    for p in parts[1:]:
+        new_lines.append(f"{item_indent}- {p}")
+    lines[idx : idx + 1] = new_lines
+    end_line += len(new_lines) - 1
+    enabled_end += len(new_lines) - 1
+    # Re-check presence after rewrite.
+    has_plugin_already = False
+    for nl in lines[enabled_idx + 1 : enabled_end]:
+        if nl.strip().startswith("-") and nl[len(item_indent) :].strip() == f"- {plugin_strip}":
+            has_plugin_already = True
+            break
+
+# Remove stale plugin entries elsewhere in the block (disabled:, entries:); sweep whole block if no enabled: yet (#879).
+if plugin_start is not None:
+    stale = []
+    if has_enabled:
+        scan_ranges = [
+            range(plugin_start + 1, enabled_idx),
+            range(enabled_end, end_line),
+        ]
+    else:
+        scan_ranges = [range(plugin_start + 1, end_line)]
+    for rng in scan_ranges:
+        for idx in rng:
+            stripped = lines[idx].strip()
+            if stripped.startswith("-"):
+                value = stripped[1:].strip().strip("\"'")
+                if value == plugin_strip:
+                    stale.append(idx)
+    for idx in sorted(stale, reverse=True):
+        del lines[idx]
+        end_line -= 1
+        if has_enabled and idx < enabled_idx:
+            enabled_idx -= 1
+            enabled_end -= 1
+        elif has_enabled and idx < enabled_end:
+            enabled_end -= 1
+
+# Idempotent fast path.
+if has_plugin_already:
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
+
+new_item_line = f"{item_indent or (enabled_indent + '  ')}- {plugin}"
+
+# Case 1: no plugins: block at all.
 if plugin_start is None:
     if lines and lines[-1].strip():
         lines.append("")
     lines.append("plugins:")
-    lines.append("  enabled:")
-    lines.append(f"    - {plugin}")
+    lines.append(f"{enabled_indent or '  '}enabled:")
+    lines.append(new_item_line)
     path.write_text("\n".join(lines) + "\n")
     sys.exit(0)
 
-for idx in range(plugin_start + 1, plugin_end):
-    stripped = lines[idx].strip()
-    if stripped.startswith("enabled:"):
-        enabled_idx = idx
-        enabled_indent = lines[idx][: len(lines[idx]) - len(stripped)]
-        enabled_value = stripped[len("enabled:"):].strip()
-        break
-
-if enabled_idx is None:
-    insert = plugin_end
-    if insert > plugin_start + 1 and lines[insert - 1].strip():
-        # Keep the new key as a sibling under plugins, after existing children.
-        lines.insert(insert, f"{enabled_indent}enabled:")
-        lines.insert(insert + 1, f"{enabled_indent}  - {plugin}")
-    else:
-        lines.insert(insert, f"{enabled_indent}enabled:")
-        lines.insert(insert + 1, f"{enabled_indent}  - {plugin}")
-    path.write_text("\n".join(lines) + "\n")
-    sys.exit(0)
-
-def unquote(value: str) -> str:
-    value = value.strip()
-    if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
-        if value[0] == "'":
-            return value[1:-1].replace("''", "'")
-        return value[1:-1].replace('\\"', '"').replace("\\\\", "\\")
-    return value
-
-def split_inline_list(value: str) -> list[str]:
-    if not (value.startswith("[") and value.endswith("]")):
-        return [unquote(value)] if value else []
-    inner = value[1:-1].strip()
-    if not inner:
-        return []
-    out = []
-    buf = []
-    quote = ""
-    i = 0
-    while i < len(inner):
-        ch = inner[i]
-        if quote:
-            buf.append(ch)
-            if ch == quote:
-                quote = ""
-            i += 1
+# Case 2: no enabled: key — create as first child at existing child indent (else sibling items dedent to col 0 → invalid YAML).
+if not has_enabled:
+    child_indent = ""
+    for idx in range(plugin_start + 1, end_line):
+        stripped = lines[idx].strip()
+        if not stripped or stripped.startswith("#"):
             continue
-        if ch in ("'", '"'):
-            quote = ch
-            buf.append(ch)
-        elif ch == ",":
-            item = unquote("".join(buf).strip())
-            if item:
-                out.append(item)
-            buf = []
-        else:
-            buf.append(ch)
-        i += 1
-    item = unquote("".join(buf).strip())
-    if item:
-        out.append(item)
-    return out
+        child_indent = lines[idx][: len(lines[idx]) - len(stripped)]
+        break
+    child_indent = child_indent or "  "
+    lines[plugin_start + 1 : plugin_start + 1] = [
+        f"{child_indent}enabled:",
+        f"{child_indent}  - {plugin}",
+    ]
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
 
-def enabled_block_end() -> int:
-    j = enabled_idx + 1
-    while j < plugin_end:
-        line = lines[j]
-        if line.strip() and not line.startswith((" ", "\t")):
-            break
-        stripped = line.strip()
-        indent = line[: len(line) - len(stripped)]
-        if stripped and len(indent) <= len(enabled_indent):
-            break
-        j += 1
-    return j
-
-item_indent = enabled_indent + "  "
-
-if enabled_value:
-    items = split_inline_list(enabled_value)
-    if plugin_strip not in items:
-        items.append(plugin)
-    new_block = [f"{enabled_indent}enabled:"] + [f"{item_indent}- {item}" for item in items]
+# Case 3: enabled: [] — replace key line with block list (keyed off enabled_idx; disabled: may precede).
+if enabled_empty:
+    new_block = [
+        f"{enabled_indent}enabled:",
+        new_item_line,
+    ]
     lines[enabled_idx : enabled_idx + 1] = new_block
     path.write_text("\n".join(lines) + "\n")
     sys.exit(0)
 
-block_end = enabled_block_end()
-items = []
-for idx in range(enabled_idx + 1, block_end):
-    stripped = lines[idx].strip()
-    if not stripped.startswith("-"):
-        continue
-    if not items:
-        item_indent = lines[idx][: len(lines[idx]) - len(stripped)] or item_indent
-    content = stripped[1:].strip()
-    parts = re.split(r"\s+-\s+", content)
-    for part in parts:
-        value = unquote(part.strip())
-        if value:
-            items.append(value)
+# Case 4: enabled: [a,b] — append inside brackets, keep trailing comment.
+if inline_flow:
+    rendered = "[" + ", ".join(inline_items + [plugin_strip]) + "]"
+    lines[enabled_idx] = f"{enabled_indent}enabled: {rendered}{inline_comment}"
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
 
-if plugin_strip not in items:
-    items.append(plugin)
+# Case 5: block-style enabled: key with no items yet.
+if not item_indent:
+    lines.insert(enabled_idx + 1, new_item_line)
+    path.write_text("\n".join(lines) + "\n")
+    sys.exit(0)
 
-new_block = [f"{enabled_indent}enabled:"] + [f"{item_indent}- {item}" for item in items]
-lines[enabled_idx:block_end] = new_block
+# Case 6: append at end of enabled block at item indent, never past enabled_end; normalize mismatched indents (#879).
+insert_at = None
+for idx in range(enabled_end - 1, enabled_idx, -1):
+    l = lines[idx]
+    stripped = l.strip()
+    if stripped.startswith("-"):
+        if l != item_indent + stripped:
+            lines[idx] = item_indent + stripped
+        insert_at = idx + 1
+        break
+# Fallback: insert under the enabled: key (shouldn't happen after Case 5).
+if insert_at is None:
+    insert_at = enabled_idx + 1
+lines.insert(insert_at, new_item_line)
 path.write_text("\n".join(lines) + "\n")
 PY
   local rc=$?
@@ -1214,6 +1330,7 @@ install_tool() {
     osaurus)     install_osaurus     ;;
     hermes)      install_hermes      ;;
     vibe)        install_vibe        ;;
+    dsh)         install_dsh         ;;
   esac
 }
 

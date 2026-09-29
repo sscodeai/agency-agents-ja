@@ -12,6 +12,7 @@ integrations/antigravity/agency-*/
 integrations/cursor/rules/
 integrations/codex/agents/
 integrations/codewhale/skills/
+integrations/dsh/agency-*/
 integrations/gemini-cli/skills/
 integrations/gemini-cli/gemini-extension.json
 integrations/hermes/agency-agents-router/

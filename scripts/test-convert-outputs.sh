@@ -218,6 +218,12 @@ checkGeneratedFrontmatter(
   (file) => path.basename(path.dirname(file)).replace(/^agency-/, ''),
 );
 
+checkGeneratedFrontmatter(
+  'dsh',
+  directDirs(path.join(out, 'dsh')).map((dir) => path.join(out, 'dsh', dir, 'SKILL.md')),
+  (file) => path.basename(path.dirname(file)).replace(/^agency-/, ''),
+);
+
 checkCount('openclaw', directDirs(path.join(out, 'openclaw')).length);
 checkCount('kimi', directDirs(path.join(out, 'kimi')).length);
 checkCount('codex', directFiles(path.join(out, 'codex', 'agents'), '.toml').length);
@@ -315,6 +321,7 @@ const tools = [
   'codewhale',
   'codex',
   'cursor',
+  'dsh',
   'gemini-cli',
   'hermes',
   'kimi',

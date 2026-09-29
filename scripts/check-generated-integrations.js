@@ -231,6 +231,15 @@ checkExactSet(
 );
 checkRequiredFiles('osaurus', osaurusDirs, ['SKILL.md']);
 
+const dshDirs = expectedDirs('integrations/dsh', agencySlugs);
+checkExactSet(
+  'dsh',
+  directEntries('integrations/dsh', (entry) => entry.isDirectory() && entry.name.startsWith('agency-')),
+  dshDirs,
+  'integrations/dsh/agency-*',
+);
+checkRequiredFiles('dsh', dshDirs, ['SKILL.md']);
+
 checkExactSet(
   'vibe agents',
   directEntries('integrations/vibe/agents', (entry) => entry.isFile() && entry.name.endsWith('.toml')),
