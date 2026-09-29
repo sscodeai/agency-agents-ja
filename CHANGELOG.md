@@ -4,6 +4,7 @@ All notable changes to `agency-agents-ja` are recorded here.
 
 ## Unreleased
 
+- Fixed the Hermes installer, which printed `[OK] enabled plugin` while leaving `agency-agents-router` disabled or absent on real Hermes configs. The `plugins:` block now ends only at a top-level key (not a column-0 `# ====` banner), the `enabled:` sub-block is bounded at its first sibling, stale entries are swept out of `disabled:`, inline `[]` / `[a,b]` and trailing comments are handled, and uneditable shapes bail with a warning instead of reporting success. `scripts/check-hermes-config-rewrite.py` now runs 16 regression cases, including Hermes' own config shape.
 - Added `evals/`, behaviour evaluation fixtures for the Japanese marketing search-growth agents, with `scripts/check-evals.js`, `npm run check:evals`, and validation wired into `scripts/validate.sh`. Fixtures follow the `SEARCH-GROWTH-STACK.md` evidence protocol.
 - Added `.github/workflows/release.yml` so `v*` tags publish to npm through Trusted Publishing (OIDC, provenance) without a stored token.
 - Fixed `release.yml`, which used a Markdown-style `>` comment block: YAML read it as a folded scalar, so the file never parsed, GitHub marked the workflow invalid, and every push to `main` produced a failed run with no logs. Added `scripts/check-github-workflows.js`, which parses every file under `.github/workflows/` and checks `name` / `on` / `jobs`, `runs-on`, and that each step has exactly one of `uses` or `run`. Wired into `scripts/validate.sh`, `npm run check:github-workflows`, and the maintenance tests.
