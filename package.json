@@ -37,6 +37,7 @@
     "check:evals": "node scripts/check-evals.js",
     "check:readme-references": "node scripts/check-readme-references.js",
     "check:agent-counts": "node scripts/check-agent-counts.js",
+    "check:duplicate-names": "node scripts/check-duplicate-names.js",
     "check:repo-metadata": "node scripts/check-repo-metadata.js",
     "check:tools": "bash scripts/check-tools.sh",
     "check:generated-integrations": "bash scripts/convert.sh --parallel --jobs 4 && node scripts/check-generated-integrations.js",
