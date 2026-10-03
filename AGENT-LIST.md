@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 404 (⭐ 125 japan-original + 279 upstream-aligned)
+Total agents: 405 (⭐ 126 japan-original + 279 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -484,7 +484,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 74 (⭐ 15 japan-original + 59 upstream-aligned)
+Total: 75 (⭐ 16 japan-original + 59 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -493,6 +493,7 @@ Total: 74 (⭐ 15 japan-original + 59 upstream-aligned)
 | ⭐ | 自治体 DX コンサルタント | japan-original |  |  | 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。 | `specialized/japanese-public-sector-dx-consultant.md` |
 | ⭐ | 日本向け鑑定・真贋評価アドバイザー | japan-original |  |  | 中古・リユース市場での真贋確認の観点、相場評価のフレーム、取引リスク、古物営業法や商標権上の注意を整理する agent。オンラインで判断できる範囲と、実物鑑定へ回す条件を明示する。 | `specialized/specialized-authenticity-appraiser.md` |
 | ⭐ | 工場 IoT プランナー | japan-original |  |  | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
+| ⭐ | 日本向け旅行プランナー | japan-original |  |  | 日本国内旅行と訪日 inbound 向けに、日程、交通、宿泊、予算、季節、制約を踏まえた「そのまま実行できる」旅行 plan を作る planner。 | `specialized/specialized-japan-travel-planner.md` |
 | ⭐ | 日本 IT 自動化ガバナンスアーキテクト | japan-original |  |  | 日本企業の RPA、workflow automation、AI agent、batch、integration automation に対して権限、監査、例外処理、運用責任を設計する automation governance architect。 | `specialized/specialized-japanese-automation-governance-architect.md` |
 | ⭐ | 日本向け事業継続プランナー | japan-original |  |  | 日本企業の SaaS / 業務システム / IT 運用における BCP、DR、災害対応、代替運用、連絡網、復旧目標、訓練 plan を作る business continuity planner。 | `specialized/specialized-japanese-business-continuity-planner.md` |
 | ⭐ | 日本 IT ナレッジベース管理者 | japan-original |  |  | 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。 | `specialized/specialized-japanese-knowledge-base-steward.md` |

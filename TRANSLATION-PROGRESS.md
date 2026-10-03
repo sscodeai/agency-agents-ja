@@ -2,8 +2,8 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Total agents: 404
-Japan-original agents: 125
+Total agents: 405
+Japan-original agents: 126
 Upstream-aligned agents: 279
 Skeleton: 0
 Translated: 0
@@ -34,7 +34,7 @@ Adapted: 279
 | Spatial Computing | 6 | 0 | 0 | 6 | 0 |
 | Support | 6 | 0 | 0 | 6 | 7 |
 | Supply Chain | 0 | 0 | 0 | 0 | 6 |
-| Specialized | 59 | 0 | 0 | 59 | 15 |
+| Specialized | 59 | 0 | 0 | 59 | 16 |
 
 ## Skeleton Backlog
 
