@@ -83,6 +83,7 @@ function expectFail(name, fn, expectedText) {
 expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/check-adapted-quality.js']);
   run('node', ['--check', 'scripts/check-agent-counts.js']);
+  run('node', ['--check', 'scripts/check-duplicate-names.js']);
   run('node', ['--check', 'scripts/check-evals.js']);
   run('node', ['--check', 'scripts/check-generated-integrations.js']);
   run('node', ['--check', 'scripts/check-github-workflows.js']);
@@ -94,6 +95,53 @@ expectPass('maintenance scripts parse as valid JavaScript', () => {
   run('node', ['--check', 'scripts/sync-readme-stats.js']);
   run('node', ['--check', 'scripts/validate-workflows.js']);
 });
+
+const namesFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-names-'));
+
+try {
+  const agent = (name) => ['---', `name: ${name}`, 'description: テスト。', 'emoji: 🧪', 'color: blue', 'source: japan-original', '---', '', '# テスト', ''].join('\n');
+
+  expectPass('duplicate-name check accepts unique agent names', () => {
+    writeAgent(namesFixture, 'marketing/marketing-alpha.md', agent('アルファ'));
+    writeAgent(namesFixture, 'marketing/marketing-beta.md', agent('ベータ'));
+    run('node', [join(root, 'scripts/check-duplicate-names.js'), '--root', namesFixture]);
+  });
+
+  expectFail('duplicate-name check rejects two agents sharing a display name', () => {
+    writeAgent(namesFixture, 'marketing/marketing-gamma.md', agent('アルファ'));
+    run('node', [join(root, 'scripts/check-duplicate-names.js'), '--root', namesFixture]);
+  }, 'Duplicate agent display names');
+} finally {
+  rmSync(namesFixture, { recursive: true, force: true });
+}
+
+const lintFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-lint-'));
+
+try {
+  const lintFile = (name, sections) => {
+    const path = join(lintFixture, name);
+    writeFileSync(path, ['---', 'name: Lint Fixture', 'description: テスト。', 'emoji: 🧪', 'color: blue', 'source: japan-original', '---', '', '# Fixture', '', sections, ''].join('\n'), 'utf8');
+    return path;
+  };
+
+  expectPass('lint accepts Japanese recommended sections without warnings', () => {
+    const file = lintFile('ja.md', ['## 役割', '', '役割の説明。', '', '## 成果物', '', '- 成果物', '', '## 必ず確認すること', '', '- 確認事項'].join('\n'));
+    const output = run('bash', [join(root, 'scripts/lint-agents.sh'), file]);
+    if (output.includes('missing recommended section')) {
+      throw new Error(`lint flagged Japanese headings: ${output}`);
+    }
+  });
+
+  expectPass('lint flags a file with no recommended sections', () => {
+    const file = lintFile('none.md', '本文だけがあり、推奨 section はありません。');
+    const output = run('bash', [join(root, 'scripts/lint-agents.sh'), file]);
+    if (!output.includes('missing recommended section')) {
+      throw new Error(`lint did not flag a file with no sections: ${output}`);
+    }
+  });
+} finally {
+  rmSync(lintFixture, { recursive: true, force: true });
+}
 
 const readmeFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-readme-'));
 

@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 404 (⭐ 125 japan-original + 279 upstream-aligned)
+Total agents: 405 (⭐ 126 japan-original + 279 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -217,7 +217,7 @@ Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
 |  | 日本向けエージェント検索最適化担当 | upstream | adapted | Agentic Search Optimizer | ChatGPT、Perplexity、Gemini などの AI agent / answer engine に日本語で発見・引用されやすい情報設計を行う marketing agent。 | `marketing/marketing-agentic-search-optimizer.md` |
 |  | 日本向け AI Citation Strategist | upstream | adapted | AI Citation Strategist | 生成 AI / answer engine で日本語ユーザーに正しく引用・推薦されるための AEO / GEO 戦略を設計する marketing agent。 | `marketing/marketing-ai-citation-strategist.md` |
 |  | 日本向けアプリストア最適化担当 | upstream | adapted | App Store Optimizer | App Store / Google Play で日本語キーワード、説明文、スクリーンショット、レビュー改善を行う ASO agent。 | `marketing/marketing-app-store-optimizer.md` |
-|  | Yahoo! JAPAN / Google SEO スペシャリスト | upstream | adapted | Baidu SEO Specialist | Yahoo! JAPAN / Google SEO スペシャリスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-baidu-seo-specialist.md` |
+|  | テクニカル SEO スペシャリスト | upstream | adapted | Baidu SEO Specialist | 日本語 site の crawl、index、rendering、Core Web Vitals、log 分析、構造化 data 実装を担う technical SEO specialist。 | `marketing/marketing-baidu-seo-specialist.md` |
 |  | YouTube / NicoNico コンテンツ戦略家 | upstream | adapted | Bilibili Content Strategist | 日本向けに YouTube、NicoNico、技術動画、採用広報動画、製品解説動画の企画・改善を行う marketing agent。 | `marketing/marketing-bilibili-content-strategist.md` |
 |  | 日本向け書籍共同著者 | upstream | adapted | Book Co-Author | 日本語のビジネス書、技術書、Zenn Book、同人誌、ホワイトペーパーを企画・構成・執筆支援する marketing agent。 | `marketing/marketing-book-co-author.md` |
 |  | 日本向けカルーセル投稿成長エンジン | upstream | adapted | Carousel Growth Engine | Instagram、LinkedIn、X、note 連携向けに日本語カルーセル投稿の企画・構成・改善を行う marketing agent。 | `marketing/marketing-carousel-growth-engine.md` |
@@ -225,7 +225,7 @@ Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
 |  | 日本市場ローカライゼーション戦略家 | upstream | adapted | China Market Localization Strategist | 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。 | `marketing/marketing-china-market-localization-strategist.md` |
 |  | 日本向けコンテンツクリエイター | upstream | adapted | Content Creator | 日本の B2B / B2C マーケティング向けに記事、SNS、LP、メール、導入事例、技術解説を作る content agent。 | `marketing/marketing-content-creator.md` |
 |  | 日本向け越境 EC 戦略家 | upstream | adapted | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
-|  | TikTok Japan 戦略家 | upstream | adapted | Douyin Strategist | TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-douyin-strategist.md` |
+|  | TikTok LIVE コマース ストラテジスト | upstream | adapted | Douyin Strategist | 日本の EC、小売、BtoC ブランド向けに TikTok LIVE / ライブコマースの企画、台本、配信、在庫・物流・CS 連携、効果測定を設計する strategist。 | `marketing/marketing-douyin-strategist.md` |
 |  | 日本向け Email Marketing Strategist | upstream | adapted | Email Marketing Strategist | CRM segment、lifecycle automation、deliverability、法令・同意管理を踏まえて、日本向け email / newsletter / nurture campaign を設計する agent。 | `marketing/marketing-email-strategist.md` |
 |  | 日本向け Global Podcast Strategist | upstream | adapted | Global Podcast Strategist | Podcast の positioning、episode format、配信導線、clip 展開、monetization を設計し、日本語・海外向け音声 brand を育てる agent。 | `marketing/marketing-global-podcast-strategist.md` |
 |  | 日本向けグロースハッカー | upstream | adapted | Growth Hacker | 日本の SaaS、アプリ、EC、メディアで acquisition、activation、retention、referral、revenue を実験改善する agent。 | `marketing/marketing-growth-hacker.md` |
@@ -484,7 +484,7 @@ Total: 6 (⭐ 6 japan-original + 0 upstream-aligned)
 
 ## Specialized
 
-Total: 74 (⭐ 15 japan-original + 59 upstream-aligned)
+Total: 75 (⭐ 16 japan-original + 59 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -493,6 +493,7 @@ Total: 74 (⭐ 15 japan-original + 59 upstream-aligned)
 | ⭐ | 自治体 DX コンサルタント | japan-original |  |  | 日本の自治体・公共 sector 向け DX、調達、住民サービス、セキュリティ、アクセシビリティ、運用保守を支援する consultant。 | `specialized/japanese-public-sector-dx-consultant.md` |
 | ⭐ | 日本向け鑑定・真贋評価アドバイザー | japan-original |  |  | 中古・リユース市場での真贋確認の観点、相場評価のフレーム、取引リスク、古物営業法や商標権上の注意を整理する agent。オンラインで判断できる範囲と、実物鑑定へ回す条件を明示する。 | `specialized/specialized-authenticity-appraiser.md` |
 | ⭐ | 工場 IoT プランナー | japan-original |  |  | 日本の工場で sensor、PLC、edge device、network、cloud、dashboard を使った IoT data collection plan を作る。 | `specialized/specialized-factory-iot-planner.md` |
+| ⭐ | 日本向け旅行プランナー | japan-original |  |  | 日本国内旅行と訪日 inbound 向けに、日程、交通、宿泊、予算、季節、制約を踏まえた「そのまま実行できる」旅行 plan を作る planner。 | `specialized/specialized-japan-travel-planner.md` |
 | ⭐ | 日本 IT 自動化ガバナンスアーキテクト | japan-original |  |  | 日本企業の RPA、workflow automation、AI agent、batch、integration automation に対して権限、監査、例外処理、運用責任を設計する automation governance architect。 | `specialized/specialized-japanese-automation-governance-architect.md` |
 | ⭐ | 日本向け事業継続プランナー | japan-original |  |  | 日本企業の SaaS / 業務システム / IT 運用における BCP、DR、災害対応、代替運用、連絡網、復旧目標、訓練 plan を作る business continuity planner。 | `specialized/specialized-japanese-business-continuity-planner.md` |
 | ⭐ | 日本 IT ナレッジベース管理者 | japan-original |  |  | 日本の IT 組織で Notion / Confluence / esa / Qiita Team / SharePoint などの knowledge base を整理し、検索性、更新責任、運用ルールを整える steward。 | `specialized/specialized-japanese-knowledge-base-steward.md` |
@@ -546,7 +547,7 @@ Total: 74 (⭐ 15 japan-original + 59 upstream-aligned)
 |  | 日本向け土木エンジニア | upstream | adapted | Civil Engineer | 日本の土木・建設 project で設計条件、施工、維持管理、安全、発注者説明を整理する civil engineering agent。 | `specialized/specialized-civil-engineer.md` |
 |  | 日本向け Codebase Archaeologist | upstream | adapted | Codebase Archaeologist | 複数 AI tool / 複数 session が長期間触った codebase の drift、dead code、doc-code mismatch、重複実装、時代差を監査する agent。 | `specialized/specialized-codebase-archaeologist.md` |
 |  | 日本向け文化インテリジェンス戦略家 | upstream | adapted | Cultural Intelligence Strategist | 日本市場・海外市場間の文化、商習慣、表現、交渉、ローカライズリスクを読み解く strategist agent。 | `specialized/specialized-cultural-intelligence-strategist.md` |
-|  | 日本向けデベロッパーアドボケイト | upstream | adapted | Developer Advocate | 日本向けデベロッパーアドボケイト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む 専門業務 agent。 | `specialized/specialized-developer-advocate.md` |
+|  | デベロッパーエクスペリエンス / DevEx スペシャリスト | upstream | adapted | Developer Advocate | 社内の開発者が platform、toolchain、API、環境構築で詰まらないよう、developer experience と内部開発者支援を設計する specialist。 | `specialized/specialized-developer-advocate.md` |
 |  | 日本向け文書生成担当 | upstream | adapted | Document Generator | 稟議書、議事録、提案書、報告書、手順書、FAQ など日本企業で使う文書を構造化して生成する agent。 | `specialized/specialized-document-generator.md` |
 |  | 日本向け FedRAMP / RMF コンプライアンスエンジニア | upstream | adapted | FedRAMP & RMF Compliance Engineer | FedRAMP、NIST RMF、NIST SP 800-53 Rev.5、ATO、POA&M、OSCAL を、日本企業・SIer・cloud service の米国公共 sector 対応に合わせて整理する compliance engineering agent。 | `specialized/specialized-fedramp-rmf-compliance.md` |
 |  | 日本向け Focus Music Architect | upstream | adapted | Focus Music Architect | 深い集中、coding flow、作業回復のための instrumental focus music、neuroacoustic soundscape、生成 AI 音楽 prompt を設計する agent。 | `specialized/specialized-focus-music-architect.md` |

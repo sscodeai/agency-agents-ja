@@ -41,7 +41,14 @@ AGENT_DIRS=(
 )
 
 REQUIRED_FRONTMATTER=("name" "description" "color")
-RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
+# Japanese or English: this catalog is Japanese-first, and the upstream English
+# headings only survive in a handful of agents. Checking each language as a
+# separate required section flagged every Japanese agent three times.
+RECOMMENDED_SECTION_PATTERNS=(
+  "役割|Role|Identity"
+  "成果物|想定シーン|Deliverables|Core Mission"
+  "必ず確認すること|注意点|Critical Rules"
+)
 
 get_frontmatter_field() {
   local field="$1" file="$2"
@@ -152,9 +159,9 @@ lint_file() {
 
   # Feed grep from a herestring so grep -q cannot close a pipe early and
   # turn a real match into a SIGPIPE-shaped false warning under pipefail.
-  for section in "${RECOMMENDED_SECTIONS[@]}"; do
-    if ! grep -qi -- "$section" <<<"$body"; then
-      echo "WARN  $file: missing recommended section '${section}'"
+  for pattern in "${RECOMMENDED_SECTION_PATTERNS[@]}"; do
+    if ! grep -qiE -- "$pattern" <<<"$body"; then
+      echo "WARN  $file: missing recommended section (matched on: ${pattern})"
       warnings=$((warnings + 1))
     fi
   done
