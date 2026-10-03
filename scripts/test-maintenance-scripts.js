@@ -115,6 +115,34 @@ try {
   rmSync(namesFixture, { recursive: true, force: true });
 }
 
+const lintFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-lint-'));
+
+try {
+  const lintFile = (name, sections) => {
+    const path = join(lintFixture, name);
+    writeFileSync(path, ['---', 'name: Lint Fixture', 'description: テスト。', 'emoji: 🧪', 'color: blue', 'source: japan-original', '---', '', '# Fixture', '', sections, ''].join('\n'), 'utf8');
+    return path;
+  };
+
+  expectPass('lint accepts Japanese recommended sections without warnings', () => {
+    const file = lintFile('ja.md', ['## 役割', '', '役割の説明。', '', '## 成果物', '', '- 成果物', '', '## 必ず確認すること', '', '- 確認事項'].join('\n'));
+    const output = run('bash', [join(root, 'scripts/lint-agents.sh'), file]);
+    if (output.includes('missing recommended section')) {
+      throw new Error(`lint flagged Japanese headings: ${output}`);
+    }
+  });
+
+  expectPass('lint flags a file with no recommended sections', () => {
+    const file = lintFile('none.md', '本文だけがあり、推奨 section はありません。');
+    const output = run('bash', [join(root, 'scripts/lint-agents.sh'), file]);
+    if (!output.includes('missing recommended section')) {
+      throw new Error(`lint did not flag a file with no sections: ${output}`);
+    }
+  });
+} finally {
+  rmSync(lintFixture, { recursive: true, force: true });
+}
+
 const readmeFixture = mkdtempSync(join(tmpdir(), 'agency-agents-ja-readme-'));
 
 try {
