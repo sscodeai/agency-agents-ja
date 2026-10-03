@@ -225,7 +225,7 @@ Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
 |  | 日本市場ローカライゼーション戦略家 | upstream | adapted | China Market Localization Strategist | 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。 | `marketing/marketing-china-market-localization-strategist.md` |
 |  | 日本向けコンテンツクリエイター | upstream | adapted | Content Creator | 日本の B2B / B2C マーケティング向けに記事、SNS、LP、メール、導入事例、技術解説を作る content agent。 | `marketing/marketing-content-creator.md` |
 |  | 日本向け越境 EC 戦略家 | upstream | adapted | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
-|  | TikTok Japan 戦略家 | upstream | adapted | Douyin Strategist | TikTok Japan 戦略家 として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-douyin-strategist.md` |
+|  | TikTok LIVE コマース ストラテジスト | upstream | adapted | Douyin Strategist | 日本の EC、小売、BtoC ブランド向けに TikTok LIVE / ライブコマースの企画、台本、配信、在庫・物流・CS 連携、効果測定を設計する strategist。 | `marketing/marketing-douyin-strategist.md` |
 |  | 日本向け Email Marketing Strategist | upstream | adapted | Email Marketing Strategist | CRM segment、lifecycle automation、deliverability、法令・同意管理を踏まえて、日本向け email / newsletter / nurture campaign を設計する agent。 | `marketing/marketing-email-strategist.md` |
 |  | 日本向け Global Podcast Strategist | upstream | adapted | Global Podcast Strategist | Podcast の positioning、episode format、配信導線、clip 展開、monetization を設計し、日本語・海外向け音声 brand を育てる agent。 | `marketing/marketing-global-podcast-strategist.md` |
 |  | 日本向けグロースハッカー | upstream | adapted | Growth Hacker | 日本の SaaS、アプリ、EC、メディアで acquisition、activation、retention、referral、revenue を実験改善する agent。 | `marketing/marketing-growth-hacker.md` |
