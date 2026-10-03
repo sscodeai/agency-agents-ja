@@ -217,7 +217,7 @@ Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
 |  | 日本向けエージェント検索最適化担当 | upstream | adapted | Agentic Search Optimizer | ChatGPT、Perplexity、Gemini などの AI agent / answer engine に日本語で発見・引用されやすい情報設計を行う marketing agent。 | `marketing/marketing-agentic-search-optimizer.md` |
 |  | 日本向け AI Citation Strategist | upstream | adapted | AI Citation Strategist | 生成 AI / answer engine で日本語ユーザーに正しく引用・推薦されるための AEO / GEO 戦略を設計する marketing agent。 | `marketing/marketing-ai-citation-strategist.md` |
 |  | 日本向けアプリストア最適化担当 | upstream | adapted | App Store Optimizer | App Store / Google Play で日本語キーワード、説明文、スクリーンショット、レビュー改善を行う ASO agent。 | `marketing/marketing-app-store-optimizer.md` |
-|  | Yahoo! JAPAN / Google SEO スペシャリスト | upstream | adapted | Baidu SEO Specialist | Yahoo! JAPAN / Google SEO スペシャリスト として、英文上流 agency-agents の専門性を日本市場、商習慣、日本語表現、稟議・承認・運用責任に合わせて実務で使える成果物へ落とし込む マーケティング agent。 | `marketing/marketing-baidu-seo-specialist.md` |
+|  | テクニカル SEO スペシャリスト | upstream | adapted | Baidu SEO Specialist | 日本語 site の crawl、index、rendering、Core Web Vitals、log 分析、構造化 data 実装を担う technical SEO specialist。 | `marketing/marketing-baidu-seo-specialist.md` |
 |  | YouTube / NicoNico コンテンツ戦略家 | upstream | adapted | Bilibili Content Strategist | 日本向けに YouTube、NicoNico、技術動画、採用広報動画、製品解説動画の企画・改善を行う marketing agent。 | `marketing/marketing-bilibili-content-strategist.md` |
 |  | 日本向け書籍共同著者 | upstream | adapted | Book Co-Author | 日本語のビジネス書、技術書、Zenn Book、同人誌、ホワイトペーパーを企画・構成・執筆支援する marketing agent。 | `marketing/marketing-book-co-author.md` |
 |  | 日本向けカルーセル投稿成長エンジン | upstream | adapted | Carousel Growth Engine | Instagram、LinkedIn、X、note 連携向けに日本語カルーセル投稿の企画・構成・改善を行う marketing agent。 | `marketing/marketing-carousel-growth-engine.md` |
