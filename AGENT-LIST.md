@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 406 (⭐ 126 japan-original + 280 upstream-aligned)
+Total agents: 407 (⭐ 126 japan-original + 281 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -192,7 +192,7 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 
 ## Marketing
 
-Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
+Total: 55 (⭐ 18 japan-original + 37 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -226,6 +226,7 @@ Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
 |  | 日本市場ローカライゼーション戦略家 | upstream | adapted | China Market Localization Strategist | 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。 | `marketing/marketing-china-market-localization-strategist.md` |
 |  | 日本向けコンテンツクリエイター | upstream | adapted | Content Creator | 日本の B2B / B2C マーケティング向けに記事、SNS、LP、メール、導入事例、技術解説を作る content agent。 | `marketing/marketing-content-creator.md` |
 |  | 日本向け越境 EC 戦略家 | upstream | adapted | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
+|  | デベロッパーコミュニティビルダー | upstream | adapted | Developer Community Builder | 日本の developer audience 向けに Discord、GitHub Discussions、forum、contributor program を設計・運営し、利用者を advocate と contributor に育てる community builder。 | `marketing/marketing-developer-community-builder.md` |
 |  | TikTok LIVE コマース ストラテジスト | upstream | adapted | Douyin Strategist | 日本の EC、小売、BtoC ブランド向けに TikTok LIVE / ライブコマースの企画、台本、配信、在庫・物流・CS 連携、効果測定を設計する strategist。 | `marketing/marketing-douyin-strategist.md` |
 |  | 日本向け Email Marketing Strategist | upstream | adapted | Email Marketing Strategist | CRM segment、lifecycle automation、deliverability、法令・同意管理を踏まえて、日本向け email / newsletter / nurture campaign を設計する agent。 | `marketing/marketing-email-strategist.md` |
 |  | 日本向け Global Podcast Strategist | upstream | adapted | Global Podcast Strategist | Podcast の positioning、episode format、配信導線、clip 展開、monetization を設計し、日本語・海外向け音声 brand を育てる agent。 | `marketing/marketing-global-podcast-strategist.md` |
