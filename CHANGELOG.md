@@ -4,6 +4,10 @@ All notable changes to `agency-agents-ja` are recorded here.
 
 ## Unreleased
 
+- Adapted three new upstream agents: ServiceNow 開発者メンター (`engineering/engineering-servicenow-developer-mentor.md`), デベロッパーコミュニティビルダー (`marketing/marketing-developer-community-builder.md`), and プロダクト DX エンジニア (`product/product-dx-engineer.md`). Upstream agent parity is 282/282 again.
+- Fixed `scripts/lib.sh` `fence_closes_p`, shared by `scripts/lint-agents.sh` and the OpenClaw split in `scripts/convert.sh`: a closing fence may be indented up to three spaces whatever the opener's indent (CommonMark/GitHub), and a run with an info string (` ```python `) does not close a block. Both were wrong. Added `scripts/test-lint-fences.sh`.
+- Added the upstream frontmatter / fence lint guards: a missing closing `---`, folded YAML values, empty required fields, fences nested at equal length (with real line numbers), and blocks left open to end of file.
+- Assessed the upstream content-fix batch (#968–#1026, 69 agents) as not applicable: none of the upstream-added content appears in this repo's Japanese rewrites (0/69 overlap), so there is nothing to merge.
 - Disambiguated three pairs of agents that shared the same frontmatter `name:` (which makes name-keyed hosts load only one of them): the Baidu-derived SEO agent is now テクニカル SEO スペシャリスト, the Douyin-derived one is now TikTok LIVE コマース ストラテジスト, and the upstream developer advocate is now デベロッパーエクスペリエンス / DevEx スペシャリスト. Added `scripts/check-duplicate-names.js`, wired into `scripts/validate.sh` and `npm run check:duplicate-names`, so the collision cannot return.
 - Fixed `scripts/lint-agents.sh`, which required the English section headings `Identity` / `Core Mission` / `Critical Rules` and therefore flagged every Japanese-first agent three times (1207 warnings). Recommended sections now match Japanese or English, dropping the run to 3 warnings — all of them real.
 - Added a Japan-original agent: 日本向け旅行プランナー (`specialized/specialized-japan-travel-planner.md`), covering domestic travel and inbound guests with day-by-day itineraries, booking deadlines, seasonal peaks, contingencies, and accessibility / dietary / payment constraints.
