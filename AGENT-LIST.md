@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 405 (⭐ 126 japan-original + 279 upstream-aligned)
+Total agents: 406 (⭐ 126 japan-original + 280 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -35,7 +35,7 @@ Total: 7 (⭐ 7 japan-original + 0 upstream-aligned)
 
 ## Engineering
 
-Total: 91 (⭐ 27 japan-original + 64 upstream-aligned)
+Total: 92 (⭐ 27 japan-original + 65 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -118,6 +118,7 @@ Total: 91 (⭐ 27 japan-original + 64 upstream-aligned)
 |  | 日本向け検索関連性エンジニア | upstream | adapted | Search Relevance Engineer | 日本語検索、形態素解析、同義語、ranking、BM25 / vector search、query understanding、evaluation、検索ログ改善を扱う search relevance engineering agent。 | `engineering/engineering-search-relevance-engineer.md` |
 |  | 日本向け Section 508 / アクセシビリティ専門家 | upstream | adapted | Section 508 Accessibility Specialist | 米国 Section 508 / WCAG と、日本の JIS X 8341-3、公共・自治体アクセシビリティ要件、VPAT / ACR を橋渡しする accessibility specialist agent。 | `engineering/engineering-section-508-specialist.md` |
 |  | 日本向けシニア開発者 | upstream | adapted | Senior Developer | 日本の開発現場で設計、実装、レビュー、障害対応、育成、技術的意思決定をリードする senior developer agent。 | `engineering/engineering-senior-developer.md` |
+|  | ServiceNow 開発者メンター | upstream | adapted | ServiceNow Developer & Mentor | 日本企業の ServiceNow 導入・内製化を支援する platform developer。Business Rules、Script Include、GlideRecord、Flow Designer、ACL、OOTB と custom の切り分けを、ログと再現手順で支援する agent。 | `engineering/engineering-servicenow-developer-mentor.md` |
 |  | 日本向けソフトウェアアーキテクト | upstream | adapted | Software Architect | 日本の SaaS、SI、受託開発、業務システム向けに全体設計、非機能、移行、運用保守を設計する agent。 | `engineering/engineering-software-architect.md` |
 |  | 日本向け Solidity スマートコントラクトエンジニア | upstream | adapted | Solidity Smart Contract Engineer | 日本向け Web3 / blockchain project の Solidity contract、監査、運用、法務・セキュリティ論点を整理する agent。 | `engineering/engineering-solidity-smart-contract-engineer.md` |
 |  | 日本向けSRE (Site Reliability Engineer) | upstream | adapted | SRE (Site Reliability Engineer) | 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE agent。 | `engineering/engineering-sre.md` |
