@@ -46,6 +46,8 @@
     "test:cli-usage": "bash scripts/test-cli-usage.sh",
     "test:convert-slug-collisions": "bash scripts/test-convert-slug-collisions.sh",
     "test:convert-symlink-output": "bash scripts/test-convert-symlink-output.sh",
+    "test:install-continue-after-failure": "bash scripts/test-install-continue-after-failure.sh",
+    "test:install-conversion-failure": "bash scripts/test-install-conversion-failure.sh",
     "check:package-files": "node scripts/check-package-files.js",
     "check:upstream-parity": "node scripts/check-upstream-parity.js",
     "test": "npm run test:maintenance",
