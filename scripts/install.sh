@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #
+# --- USAGE-START ---  (sentinel for usage(); do not remove)
 # install.sh -- Install The Agency agents into your local agentic tool(s).
 #
 # Reads converted files from integrations/ and copies them to the appropriate
@@ -52,6 +53,7 @@
 #   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME,
 #   DSH_HOME, DSH_SKILLS_DIR
 #
+# --- USAGE-END ---  (sentinel for usage(); do not remove)
 # Platform support:
 #   Linux, macOS (requires bash 3.2+), Windows Git Bash / WSL
 
@@ -373,9 +375,16 @@ do_list() {
 # ---------------------------------------------------------------------------
 # Usage
 # ---------------------------------------------------------------------------
+# usage [status] — print the header between the USAGE sentinels and exit.
+# `--help` exits 0 on stdout; an unknown option exits 1 with the text on
+# stderr, so a mistyped flag in CI or a wrapper script is not read as success.
 usage() {
-  sed -n '3,31p' "$0" | sed 's/^# \{0,1\}//'
-  exit 0
+  local status="${1:-0}"
+  local text
+  text="$(sed -n '/^# --- USAGE-START ---/,/^# --- USAGE-END ---/p' "$0" \
+    | sed -e '1d;$d' -e 's/^# \{0,1\}//')"
+  if (( status == 0 )); then printf '%s\n' "$text"; else printf '%s\n' "$text" >&2; fi
+  exit "$status"
 }
 
 # Default parallel job count (nproc on Linux; sysctl on macOS when nproc missing)
@@ -1384,8 +1393,8 @@ main() {
       --no-interactive)  interactive_mode="no"; shift ;;
       --parallel)        use_parallel=true; shift ;;
       --jobs)            parallel_jobs="${2:?'--jobs requires a value'}"; shift 2 ;;
-      --help|-h)         usage ;;
-      *)                 err "Unknown option: $1"; usage ;;
+      --help|-h)         usage 0 ;;
+      *)                 err "Unknown option: $1"; usage 1 ;;
     esac
   done
 

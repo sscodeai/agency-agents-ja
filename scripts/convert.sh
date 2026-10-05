@@ -6,6 +6,7 @@
 # converted files to integrations/<tool>/. Run this to regenerate all
 # integration files after adding or modifying agents.
 #
+# --- USAGE-START ---  (sentinel for usage(); do not remove)
 # Usage:
 #   ./scripts/convert.sh [--tool <name>] [--out <dir>] [--parallel] [--jobs N] [--help]
 #
@@ -32,8 +33,12 @@
 # Output is written to integrations/<tool>/ relative to the repo root.
 # This script never touches user config dirs — see install.sh for that.
 #
+#   --tool <name>    Convert for one tool (default: all).
+#   --out <dir>      Write to <dir>/<tool>/ instead of integrations/<tool>/.
 #   --parallel       When tool is 'all', run independent tools in parallel (output order may vary).
 #   --jobs N         Max parallel jobs when using --parallel (default: nproc or 4).
+#
+# --- USAGE-END ---  (sentinel for usage(); do not remove)
 
 set -euo pipefail
 
@@ -78,9 +83,17 @@ AGENT_DIRS=(
 )
 
 # --- Usage ---
+# usage [status] — print the header between the USAGE sentinels and exit.
+# `--help` exits 0 on stdout; an unknown option exits 1 with the text on
+# stderr. Using sentinels instead of hard-coded line numbers means adding a
+# line to the header cannot silently break --help output.
 usage() {
-  sed -n '3,30p' "$0" | sed 's/^# \{0,1\}//'
-  exit 0
+  local status="${1:-0}"
+  local text
+  text="$(sed -n '/^# --- USAGE-START ---/,/^# --- USAGE-END ---/p' "$0" \
+    | sed -e '1d;$d' -e 's/^# \{0,1\}//')"
+  if (( status == 0 )); then printf '%s\n' "$text"; else printf '%s\n' "$text" >&2; fi
+  exit "$status"
 }
 
 # Default parallel job count (nproc on Linux; sysctl on macOS when nproc missing)
@@ -755,8 +768,41 @@ clean_tool_output() {
     return 1
   }
   local dir="$OUT_DIR/$1"
+  # The converter writes into this directory after cleaning it. Following a
+  # symlink here could overwrite an unrelated directory's existing agent files.
+  [[ ! -L "$dir" ]] || { error "refusing symlinked output directory: $dir"; return 1; }
   [[ -d "$dir" ]] || return 0
   find "$dir" -mindepth 1 -maxdepth 1 ! -name 'README.md' -exec rm -rf {} +
+}
+
+# Every per-agent integration writes to a path derived from the agent file's
+# slug. Refuse collisions before cleaning any existing output: otherwise the
+# later source file silently replaces the earlier agent in the generated tree.
+check_agent_slug_collisions() {
+  local dir dirpath file slug relative i first_line
+  local seen_slugs=() seen_files=()
+  local collisions=0
+  for dir in "${AGENT_DIRS[@]}"; do
+    dirpath="$REPO_ROOT/$dir"
+    [[ -d "$dirpath" ]] || continue
+    while IFS= read -r -d '' file; do
+      first_line="$(head -1 "$file")"
+      [[ "$first_line" == "---" ]] || continue
+      slug="$(agent_file_slug "$file")"
+      [[ -n "$slug" ]] || continue
+      relative="${file#"$REPO_ROOT"/}"
+      for i in "${!seen_slugs[@]}"; do
+        if [[ "${seen_slugs[i]}" == "$slug" ]]; then
+          error "duplicate agent slug '$slug': ${seen_files[i]} and $relative"
+          collisions=$((collisions + 1))
+          break
+        fi
+      done
+      seen_slugs+=("$slug")
+      seen_files+=("$relative")
+    done < <(find "$dirpath" -name "*.md" -type f -print0)
+  done
+  (( collisions == 0 ))
 }
 
 run_conversions() {
@@ -764,12 +810,12 @@ run_conversions() {
   local count=0
 
   if [[ "$tool" == "hermes" ]]; then
-    clean_tool_output "$tool"
+    clean_tool_output "$tool" || return 1
     python3 "$SCRIPT_DIR/build-hermes-plugin.py" --repo-root "$REPO_ROOT" --out "$OUT_DIR/hermes"
     return
   fi
 
-  clean_tool_output "$tool"
+  clean_tool_output "$tool" || return 1
 
   for dir in "${AGENT_DIRS[@]}"; do
     local dirpath="$REPO_ROOT/$dir"
@@ -825,8 +871,8 @@ main() {
       --out)      OUT_DIR="${2:?'--out requires a value'}"; shift 2 ;;
       --parallel) use_parallel=true; shift ;;
       --jobs)     parallel_jobs="${2:?'--jobs requires a value'}"; shift 2 ;;
-      --help|-h)  usage ;;
-      *)          error "Unknown option: $1"; usage ;;
+      --help|-h)  usage 0 ;;
+      *)          error "Unknown option: $1"; usage 1 ;;
     esac
   done
 
@@ -837,6 +883,8 @@ main() {
     error "Unknown tool '$tool'. Valid: ${valid_tools[*]}"
     exit 1
   fi
+
+  check_agent_slug_collisions || exit 1
 
   header "The Agency -- Converting agents to tool-specific formats"
   echo "  Repo:   $REPO_ROOT"
