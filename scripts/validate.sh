@@ -138,6 +138,10 @@ if ! node scripts/check-github-workflows.js; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/test-lint-fences.sh; then
+  errors=$((errors + 1))
+fi
+
 if ! bash scripts/check-runbooks.sh; then
   errors=$((errors + 1))
 fi
