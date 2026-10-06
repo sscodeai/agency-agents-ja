@@ -95,3 +95,8 @@ jobs:
         run: |
           chmod +x scripts/lint-agents.sh
           ./scripts/lint-agents.sh
+
+      - name: Regression-test the code-fence rules
+        run: |
+          chmod +x scripts/test-lint-fences.sh
+          ./scripts/test-lint-fences.sh

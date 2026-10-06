@@ -42,6 +42,7 @@
     "check:tools": "bash scripts/check-tools.sh",
     "check:generated-integrations": "bash scripts/convert.sh --parallel --jobs 4 && node scripts/check-generated-integrations.js",
     "check:github-workflows": "node scripts/check-github-workflows.js",
+    "test:lint-fences": "bash scripts/test-lint-fences.sh",
     "check:package-files": "node scripts/check-package-files.js",
     "check:upstream-parity": "node scripts/check-upstream-parity.js",
     "test": "npm run test:maintenance",

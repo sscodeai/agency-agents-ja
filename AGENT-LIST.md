@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 405 (⭐ 126 japan-original + 279 upstream-aligned)
+Total agents: 408 (⭐ 126 japan-original + 282 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -35,7 +35,7 @@ Total: 7 (⭐ 7 japan-original + 0 upstream-aligned)
 
 ## Engineering
 
-Total: 91 (⭐ 27 japan-original + 64 upstream-aligned)
+Total: 92 (⭐ 27 japan-original + 65 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -118,6 +118,7 @@ Total: 91 (⭐ 27 japan-original + 64 upstream-aligned)
 |  | 日本向け検索関連性エンジニア | upstream | adapted | Search Relevance Engineer | 日本語検索、形態素解析、同義語、ranking、BM25 / vector search、query understanding、evaluation、検索ログ改善を扱う search relevance engineering agent。 | `engineering/engineering-search-relevance-engineer.md` |
 |  | 日本向け Section 508 / アクセシビリティ専門家 | upstream | adapted | Section 508 Accessibility Specialist | 米国 Section 508 / WCAG と、日本の JIS X 8341-3、公共・自治体アクセシビリティ要件、VPAT / ACR を橋渡しする accessibility specialist agent。 | `engineering/engineering-section-508-specialist.md` |
 |  | 日本向けシニア開発者 | upstream | adapted | Senior Developer | 日本の開発現場で設計、実装、レビュー、障害対応、育成、技術的意思決定をリードする senior developer agent。 | `engineering/engineering-senior-developer.md` |
+|  | ServiceNow 開発者メンター | upstream | adapted | ServiceNow Developer & Mentor | 日本企業の ServiceNow 導入・内製化を支援する platform developer。Business Rules、Script Include、GlideRecord、Flow Designer、ACL、OOTB と custom の切り分けを、ログと再現手順で支援する agent。 | `engineering/engineering-servicenow-developer-mentor.md` |
 |  | 日本向けソフトウェアアーキテクト | upstream | adapted | Software Architect | 日本の SaaS、SI、受託開発、業務システム向けに全体設計、非機能、移行、運用保守を設計する agent。 | `engineering/engineering-software-architect.md` |
 |  | 日本向け Solidity スマートコントラクトエンジニア | upstream | adapted | Solidity Smart Contract Engineer | 日本向け Web3 / blockchain project の Solidity contract、監査、運用、法務・セキュリティ論点を整理する agent。 | `engineering/engineering-solidity-smart-contract-engineer.md` |
 |  | 日本向けSRE (Site Reliability Engineer) | upstream | adapted | SRE (Site Reliability Engineer) | 日本の SaaS / 業務システム運用に合わせて SLO、監視、障害対応、当番、ポストモーテム、運用改善を設計する SRE agent。 | `engineering/engineering-sre.md` |
@@ -177,13 +178,14 @@ Total: 16 (⭐ 7 japan-original + 9 upstream-aligned)
 
 ## Product
 
-Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
+Total: 8 (⭐ 2 japan-original + 6 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本 B2B SaaS プランナー | japan-original |  |  | 日本の B2B SaaS における onboarding、権限、契約、請求、管理画面、CS 運用を踏まえた product planning を行う。 | `product/product-japanese-b2b-saas-planner.md` |
 | ⭐ | 日本向けプロダクトマネージャー | japan-original |  |  | 日本市場向け SaaS / 業務プロダクトの課題整理、優先順位、ロードマップ、受入条件、顧客説明を設計する product manager。 | `product/product-japanese-product-manager.md` |
 |  | 日本向け行動ナッジ設計者 | upstream | adapted | Behavioral Nudge Engine | 行動科学、認知負荷、choice architecture を使い、日本の B2B SaaS / 業務 UI / 公共 DX の利用定着を倫理的に改善するプロダクト agent。 | `product/product-behavioral-nudge-engine.md` |
+|  | プロダクト DX エンジニア | upstream | adapted | DX Engineer | API、SDK、sample、quickstart、error message、onboarding から、開発者が最初の成功に到達するまでの摩擦を取り除く product engineer。 | `product/product-dx-engineer.md` |
 |  | 日本向けフィードバック統合担当 | upstream | adapted | Feedback Synthesizer | 営業、CS、support、NPS、商談、解約理由、問い合わせを統合し、日本の product decision に使える insight へ変換するプロダクト agent。 | `product/product-feedback-synthesizer.md` |
 |  | 日本向け Product Manager | upstream | adapted | Product Manager | 日本の B2B SaaS / 業務 system / SIer 開発で、課題、価値、roadmap、受入条件、顧客説明を統合するプロダクト agent。 | `product/product-manager.md` |
 |  | 日本向けスプリント優先順位設計者 | upstream | adapted | Sprint Prioritizer | 顧客影響、売上、保守負債、障害 risk、依存関係を踏まえ、日本の開発 sprint backlog を優先順位付けするプロダクト agent。 | `product/product-sprint-prioritizer.md` |
@@ -191,7 +193,7 @@ Total: 7 (⭐ 2 japan-original + 5 upstream-aligned)
 
 ## Marketing
 
-Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
+Total: 55 (⭐ 18 japan-original + 37 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -225,6 +227,7 @@ Total: 54 (⭐ 18 japan-original + 36 upstream-aligned)
 |  | 日本市場ローカライゼーション戦略家 | upstream | adapted | China Market Localization Strategist | 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。 | `marketing/marketing-china-market-localization-strategist.md` |
 |  | 日本向けコンテンツクリエイター | upstream | adapted | Content Creator | 日本の B2B / B2C マーケティング向けに記事、SNS、LP、メール、導入事例、技術解説を作る content agent。 | `marketing/marketing-content-creator.md` |
 |  | 日本向け越境 EC 戦略家 | upstream | adapted | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
+|  | デベロッパーコミュニティビルダー | upstream | adapted | Developer Community Builder | 日本の developer audience 向けに Discord、GitHub Discussions、forum、contributor program を設計・運営し、利用者を advocate と contributor に育てる community builder。 | `marketing/marketing-developer-community-builder.md` |
 |  | TikTok LIVE コマース ストラテジスト | upstream | adapted | Douyin Strategist | 日本の EC、小売、BtoC ブランド向けに TikTok LIVE / ライブコマースの企画、台本、配信、在庫・物流・CS 連携、効果測定を設計する strategist。 | `marketing/marketing-douyin-strategist.md` |
 |  | 日本向け Email Marketing Strategist | upstream | adapted | Email Marketing Strategist | CRM segment、lifecycle automation、deliverability、法令・同意管理を踏まえて、日本向け email / newsletter / nurture campaign を設計する agent。 | `marketing/marketing-email-strategist.md` |
 |  | 日本向け Global Podcast Strategist | upstream | adapted | Global Podcast Strategist | Podcast の positioning、episode format、配信導線、clip 展開、monetization を設計し、日本語・海外向け音声 brand を育てる agent。 | `marketing/marketing-global-podcast-strategist.md` |

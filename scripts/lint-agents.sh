@@ -120,6 +120,11 @@ lint_file() {
     errors=$((errors + 1))
     return
   fi
+  if ! awk 'NR > 1 && $0 == "---" {found = 1; exit} END {exit !found}' "$file"; then
+    echo "ERROR $file: missing frontmatter closing ---"
+    errors=$((errors + 1))
+    return
+  fi
 
   # Extract frontmatter (between first and second ---)
   local frontmatter
@@ -131,10 +136,22 @@ lint_file() {
     return
   fi
 
+  # The lightweight converters read plain or quoted scalar fields. A folded
+  # block otherwise passes presence checks but leaks its YAML indicator into
+  # the generated value.
+  if grep -qE '^[[:space:]]*[[:alnum:]_-]+:[[:space:]]*>([-+][1-9]?|[1-9][-+]?)?([[:space:]]+#.*)?[[:space:]]*$' <<<"$frontmatter"; then
+    echo "ERROR $file: folded YAML frontmatter is unsupported — use a single-line scalar"
+    errors=$((errors + 1))
+    return
+  fi
+
   # 2. Check required frontmatter fields
   for field in "${REQUIRED_FRONTMATTER[@]}"; do
     if ! grep -qE -- "^${field}:" <<<"$frontmatter"; then
       echo "ERROR $file: missing frontmatter field '${field}'"
+      errors=$((errors + 1))
+    elif [[ ! "$(get_frontmatter_field "$field" "$file")" =~ [^[:space:]] ]]; then
+      echo "ERROR $file: frontmatter field '${field}' must not be empty"
       errors=$((errors + 1))
     fi
   done
@@ -176,13 +193,33 @@ lint_file() {
 
   local soul_headers=0
   local agents_headers=0
-  local fence_marker="" fence_len=0 fence_indent=0
-  while IFS= read -r line; do
+  local fence_marker="" fence_len=0 fence_indent=0 fence_line=0
+  # Walk the body from the file itself rather than from $body, so fence errors
+  # can name a real line number. ($body drops every "---" line.)
+  local lineno
+  lineno=$(awk 'NR > 1 && $0 == "---" {print NR; exit}' "$file")
+  # "|| [[ -n $line ]]" keeps a last line that has no trailing newline; several
+  # agents end on a closing fence with none, and dropping it reads as unclosed.
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    lineno=$((lineno + 1))
+    # Skip fenced code blocks so ## doc-comment lines (e.g. GDScript `##`)
+    # and in-fence markdown headers aren't miscounted (issue #849).
     if [[ -n "$fence_marker" ]]; then
       if fence_closes_p "$line" "$fence_marker" "$fence_len" "$fence_indent"; then
         fence_marker=""
         fence_len=0
         fence_indent=0
+      elif fence_open_p "$line" \
+           && [[ "${BASH_REMATCH[2]:0:1}" == "$fence_marker" ]] \
+           && (( ${#BASH_REMATCH[2]} >= fence_len )); then
+        # A fence line long enough to close this block that did not close it
+        # can only be one with an info string: someone nesting ```bash inside
+        # a ```markdown template. Markdown has no nesting at equal length —
+        # GitHub shows that line as text and ends the outer block at the next
+        # bare ```, so the rest of the template renders as a document.
+        echo "ERROR $file:$lineno: '${line}' inside the block opened at line $fence_line does not nest — the next bare ${fence_marker}${fence_marker}${fence_marker} closes the outer block instead"
+        echo "      fence the outer block with a longer run (e.g. ${fence_marker}${fence_marker}${fence_marker}${fence_marker}markdown ... ${fence_marker}${fence_marker}${fence_marker}${fence_marker}) so the inner ones stay inside it"
+        errors=$((errors + 1))
       fi
       continue
     fi
@@ -190,6 +227,7 @@ lint_file() {
       fence_marker="${BASH_REMATCH[2]:0:1}"
       fence_len=${#BASH_REMATCH[2]}
       fence_indent=${#BASH_REMATCH[1]}
+      fence_line=$lineno
       continue
     fi
     if [[ "$line" =~ ^##[[:space:]] ]]; then
@@ -201,7 +239,14 @@ lint_file() {
         agents_headers=$((agents_headers + 1))
       fi
     fi
-  done <<< "$body"
+  done < <(tail -n +"$((lineno + 1))" "$file")
+
+  # An unclosed block runs to the end of the file: on GitHub, and in every
+  # tool the converters feed, everything after the opener renders as code.
+  if [[ -n "$fence_marker" ]]; then
+    echo "ERROR $file:$fence_line: code block is never closed — everything after line $fence_line renders as code"
+    errors=$((errors + 1))
+  fi
 
   if [[ $soul_headers -eq 0 ]]; then
     echo "WARN  $file: no section headers map to SOUL.md in convert.sh"
