@@ -174,6 +174,22 @@ if ! bash scripts/test-convert-parallel-failure.sh; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/test-install-selection-completeness.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-parallel-logs.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-hermes-destination.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-all-path-collision.sh; then
+  errors=$((errors + 1))
+fi
+
 if ! bash scripts/check-runbooks.sh; then
   errors=$((errors + 1))
 fi

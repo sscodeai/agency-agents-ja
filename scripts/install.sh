@@ -282,7 +282,9 @@ build_selection() {
 slug_allowed() {
   $SELECTION_ACTIVE || return 0
   local slug="${1#agency-}"
-  printf '%s\n' "$_ALLOWED_SLUGS" | grep -qxF "$slug"
+  # grep -q closes the pipe as soon as it finds an early match. With pipefail,
+  # printf may then get SIGPIPE and make a valid slug look unselected.
+  grep -qxF "$slug" <<< "$_ALLOWED_SLUGS"
 }
 
 selected_agent_count() {
@@ -304,17 +306,20 @@ path_collision_group() {
 
 validate_path_override() {
   [[ -z "$OVERRIDE_PATH" || ${#SELECTED_TOOLS[@]} -lt 2 ]] && return 0
-  local seen="" tool group
+  local tool group other i
+  local seen_groups=() seen_tools=()
   for tool in "${SELECTED_TOOLS[@]}"; do
     group="$(path_collision_group "$tool")"
     [[ -z "$group" ]] && continue
-    case "$seen" in
-      *"|$group|"*)
-        err "--path cannot safely combine tools that write colliding $group outputs. Run them separately or choose distinct paths."
+    for (( i=0; i < ${#seen_groups[@]}; i++ )); do
+      if [[ "${seen_groups[i]}" == "$group" ]]; then
+        other="${seen_tools[i]}"
+        err "--path is one shared directory, and $other and $tool write the same filenames into it — they would overwrite each other. Use one of them per --path (tools with distinct outputs may share one)."
         exit 1
-        ;;
-    esac
-    seen="$seen|$group|"
+      fi
+    done
+    seen_groups+=("$group")
+    seen_tools+=("$tool")
   done
 }
 
@@ -1302,6 +1307,9 @@ install_hermes() {
   local hermes_home dest count
   hermes_home="$(hermes_home_dir)"
   dest="$(resolve_dest HERMES_PLUGIN_DIR "${hermes_home}/plugins/agency-agents-router")"
+  # Strip trailing slashes first: basename ignores them, but `rm -rf link/`
+  # follows a symlink and empties its target instead of removing the link.
+  while [[ "$dest" == */ && "$dest" != "/" ]]; do dest="${dest%/}"; done
   if [[ "$(basename "$dest")" != "agency-agents-router" ]]; then
     dest="${dest%/}/agency-agents-router"
   fi
@@ -1314,7 +1322,22 @@ install_hermes() {
     err "Hermes: refusing to remove '$dest' — expected an agency-agents-router directory."
     return 1
   fi
-  rm -rf "$dest"
+  # The basename alone does not establish ownership: --path or an existing
+  # Hermes setup may point here with unrelated user files. Replace only a
+  # previous copy of this plugin, identified by its generated manifest.
+  if [[ -e "$dest" || -L "$dest" ]]; then
+    if [[ ! -f "$dest/plugin.yaml" ]] || \
+       ! grep -Eq '^[[:space:]]*name:[[:space:]]*agency-agents-router[[:space:]]*$' "$dest/plugin.yaml"; then
+      err "Hermes: refusing to replace '$dest' because it is not an existing agency-agents-router plugin."
+      return 1
+    fi
+  fi
+  # A symlink (e.g. from an earlier install) is replaced, never followed.
+  if [[ -L "$dest" ]]; then
+    rm -f -- "$dest"
+  else
+    rm -rf -- "$dest"
+  fi
   cp -R "$src" "$dest"
   ensure_hermes_plugin_enabled
   count="$(python3 - "$src/data/agents.json" <<'PY'

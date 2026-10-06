@@ -164,7 +164,7 @@ RUN_STATUS=$?
 set -e
 [[ "$RUN_STATUS" -ne 0 ]] || fail "--path rejects colliding tool outputs"
 case "$RUN_OUT" in
-  *"colliding"*) pass "--path collision explains the error" ;;
+  *"would overwrite each other"*) pass "--path collision explains the error" ;;
   *) fail "--path collision explains the error" "$RUN_OUT" ;;
 esac
 
