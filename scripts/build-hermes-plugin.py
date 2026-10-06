@@ -40,11 +40,22 @@ def parse_agent(path: Path, repo_root: Path) -> dict[str, str] | None:
     frontmatter = parts[1]
     body = parts[2].lstrip("\n")
     fields: dict[str, str] = {}
+    current_key = None
     for line in frontmatter.splitlines():
-        if ":" not in line or line.startswith((" ", "\t")):
+        # YAML folds indented plain-scalar continuation lines into one value.
+        if line.startswith((" ", "\t")):
+            if current_key and line.strip():
+                fields[current_key] += " " + line.strip()
+            continue
+        current_key = None
+        if ":" not in line:
             continue
         key, value = line.split(":", 1)
-        fields[key.strip()] = value.strip().strip('"').strip("'")
+        current_key = key.strip()
+        fields[current_key] = value.strip()
+    for key, value in fields.items():
+        if len(value) > 1 and value[0] == value[-1] and value[0] in ('"', "'"):
+            fields[key] = value[1:-1]
     name = fields.get("name", "").strip()
     if not name:
         return None

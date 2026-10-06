@@ -33,6 +33,25 @@ def main() -> int:
     builder = load_module("agency_agents_hermes_builder", BUILDER_PATH)
 
     with tempfile.TemporaryDirectory() as tmp:
+        # Indented continuation lines are one folded scalar, and a quoted scalar
+        # keeps its inner quotes: both used to be dropped or mangled.
+        source = Path(tmp) / "engineering" / "engineering-multiline.md"
+        source.parent.mkdir()
+        source.write_text(
+            "---\n"
+            "name: Multiline Specialist\n"
+            "description: First part of the description\n"
+            "             followed by essential context.\n"
+            "vibe: 'First part of the vibe\n"
+            "      followed by the rest.'\n"
+            "---\n\n# Multiline Specialist\n",
+            encoding="utf-8",
+        )
+        parsed = builder.parse_agent(source, Path(tmp))
+        assert parsed is not None
+        assert parsed["description"] == "First part of the description followed by essential context."
+        assert parsed["vibe"] == "First part of the vibe followed by the rest."
+
         out_dir = Path(tmp) / "hermes"
         builder.build(REPO_ROOT, out_dir)
         plugin = load_module(
