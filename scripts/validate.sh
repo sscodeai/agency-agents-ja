@@ -162,6 +162,18 @@ if ! bash scripts/test-install-conversion-failure.sh; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/test-folded-frontmatter.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-frontmatter-closing.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-convert-parallel-failure.sh; then
+  errors=$((errors + 1))
+fi
+
 if ! bash scripts/check-runbooks.sh; then
   errors=$((errors + 1))
 fi

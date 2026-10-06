@@ -110,3 +110,6 @@ jobs:
         run: |
           chmod +x scripts/test-lint-fences.sh
           ./scripts/test-lint-fences.sh
+
+      - name: Reject folded frontmatter fixtures
+        run: bash scripts/test-folded-frontmatter.sh
