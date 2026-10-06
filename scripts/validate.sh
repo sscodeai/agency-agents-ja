@@ -142,6 +142,26 @@ if ! bash scripts/test-lint-fences.sh; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/test-cli-usage.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-convert-slug-collisions.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-convert-symlink-output.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-continue-after-failure.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-conversion-failure.sh; then
+  errors=$((errors + 1))
+fi
+
 if ! bash scripts/check-runbooks.sh; then
   errors=$((errors + 1))
 fi
