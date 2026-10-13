@@ -1155,6 +1155,16 @@ if has_enabled and not enabled_empty and not inline_flow:
             item_indent = lines[idx][: len(lines[idx]) - len(stripped)]
             break
 
+# A trailing YAML comment is not part of an item's value: "#" starts a comment
+# only after whitespace, so strip it before matching. The earlier raw compare
+# missed an existing entry that carried a comment (adding a duplicate) and let
+# a comment containing " - " trip the corrupted-glue repair below.
+def strip_comment(text):
+    return re.sub(r"\s+#.*$", "", text).strip()
+
+def item_value(text):
+    return strip_comment(text).strip("\"'")
+
 # Detect "already enabled" + corrupted-scalar form (glued "- " from old 2-space bug); repair splits to one per line.
 corrupted_lines = []
 has_plugin_already = False
@@ -1166,13 +1176,11 @@ elif has_enabled and not enabled_empty:
         stripped = l.strip()
         if not stripped.startswith("-"):
             continue
-        # >1 "- " in stripped line = corrupted glue (strict match won't work: names contain dashes).
-        if stripped.count("- ") > 1:
+        # Any "- " inside the comment-stripped value = corrupted glue (strict match won't work: names contain dashes).
+        if strip_comment(stripped[1:]).count("- ") > 0:
             corrupted_lines.append(idx)
-        else:
-            value = stripped[1:].strip().strip("\"'")
-            if value == plugin_strip:
-                has_plugin_already = True
+        elif item_value(stripped[1:]) == plugin_strip:
+            has_plugin_already = True
 
 # Repair in reverse to keep indices. Splice grows the block — sync enabled_end with end_line or the stale sweep eats the new plugin (#879).
 for idx in sorted(corrupted_lines, reverse=True):
@@ -1180,7 +1188,7 @@ for idx in sorted(corrupted_lines, reverse=True):
     stripped = l.strip()
     if not item_indent:
         item_indent = l[: len(l) - len(stripped)] or (enabled_indent + "  ")
-    content = stripped[1:].strip()
+    content = strip_comment(stripped[1:])
     parts = re.split(r"\s+-\s+", content)
     new_lines = [f"{item_indent}- {parts[0]}"]
     for p in parts[1:]:
@@ -1191,7 +1199,8 @@ for idx in sorted(corrupted_lines, reverse=True):
     # Re-check presence after rewrite.
     has_plugin_already = False
     for nl in lines[enabled_idx + 1 : enabled_end]:
-        if nl.strip().startswith("-") and nl[len(item_indent) :].strip() == f"- {plugin_strip}":
+        ns = nl.strip()
+        if ns.startswith("-") and item_value(ns[1:]) == plugin_strip:
             has_plugin_already = True
             break
 
@@ -1209,8 +1218,7 @@ if plugin_start is not None:
         for idx in rng:
             stripped = lines[idx].strip()
             if stripped.startswith("-"):
-                value = stripped[1:].strip().strip("\"'")
-                if value == plugin_strip:
+                if item_value(stripped[1:]) == plugin_strip:
                     stale.append(idx)
     for idx in sorted(stale, reverse=True):
         del lines[idx]
