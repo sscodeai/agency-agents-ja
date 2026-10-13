@@ -142,6 +142,54 @@ if ! bash scripts/test-lint-fences.sh; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/test-cli-usage.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-convert-slug-collisions.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-convert-symlink-output.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-continue-after-failure.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-conversion-failure.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-folded-frontmatter.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-frontmatter-closing.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-convert-parallel-failure.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-selection-completeness.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-parallel-logs.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-hermes-destination.sh; then
+  errors=$((errors + 1))
+fi
+
+if ! bash scripts/test-install-all-path-collision.sh; then
+  errors=$((errors + 1))
+fi
+
 if ! bash scripts/check-runbooks.sh; then
   errors=$((errors + 1))
 fi

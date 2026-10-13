@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #
+# --- USAGE-START ---  (sentinel for usage(); do not remove)
 # install.sh -- Install The Agency agents into your local agentic tool(s).
 #
 # Reads converted files from integrations/ and copies them to the appropriate
@@ -52,6 +53,7 @@
 #   CODEX_AGENTS_DIR, OSAURUS_SKILLS_DIR, HERMES_PLUGIN_DIR, VIBE_HOME,
 #   DSH_HOME, DSH_SKILLS_DIR
 #
+# --- USAGE-END ---  (sentinel for usage(); do not remove)
 # Platform support:
 #   Linux, macOS (requires bash 3.2+), Windows Git Bash / WSL
 
@@ -280,7 +282,9 @@ build_selection() {
 slug_allowed() {
   $SELECTION_ACTIVE || return 0
   local slug="${1#agency-}"
-  printf '%s\n' "$_ALLOWED_SLUGS" | grep -qxF "$slug"
+  # grep -q closes the pipe as soon as it finds an early match. With pipefail,
+  # printf may then get SIGPIPE and make a valid slug look unselected.
+  grep -qxF "$slug" <<< "$_ALLOWED_SLUGS"
 }
 
 selected_agent_count() {
@@ -302,17 +306,20 @@ path_collision_group() {
 
 validate_path_override() {
   [[ -z "$OVERRIDE_PATH" || ${#SELECTED_TOOLS[@]} -lt 2 ]] && return 0
-  local seen="" tool group
+  local tool group other i
+  local seen_groups=() seen_tools=()
   for tool in "${SELECTED_TOOLS[@]}"; do
     group="$(path_collision_group "$tool")"
     [[ -z "$group" ]] && continue
-    case "$seen" in
-      *"|$group|"*)
-        err "--path cannot safely combine tools that write colliding $group outputs. Run them separately or choose distinct paths."
+    for (( i=0; i < ${#seen_groups[@]}; i++ )); do
+      if [[ "${seen_groups[i]}" == "$group" ]]; then
+        other="${seen_tools[i]}"
+        err "--path is one shared directory, and $other and $tool write the same filenames into it — they would overwrite each other. Use one of them per --path (tools with distinct outputs may share one)."
         exit 1
-        ;;
-    esac
-    seen="$seen|$group|"
+      fi
+    done
+    seen_groups+=("$group")
+    seen_tools+=("$tool")
   done
 }
 
@@ -323,9 +330,18 @@ ensure_converted() {
   local d="$INTEGRATIONS/$tool"
   if [[ ! -d "$d" ]] || [[ -z "$(find "$d" -type f ! -name 'README.md' 2>/dev/null | head -1)" ]]; then
     warn "$tool: integration files missing -- running convert.sh --tool $tool"
-    "$SCRIPT_DIR/convert.sh" --tool "$tool" >/dev/null 2>&1 \
-      && ok "$tool: generated integration files" \
-      || { err "$tool: convert.sh failed; run it manually"; return 1; }
+    if "$SCRIPT_DIR/convert.sh" --tool "$tool" >/dev/null 2>&1; then
+      ok "$tool: generated integration files"
+    else
+      # A failed conversion may have written only part of the roster. Remove
+      # that partial output so the next install retries conversion instead of
+      # treating it as a complete generated integration.
+      if [[ -d "$d" ]]; then
+        find "$d" -mindepth 1 -maxdepth 1 ! -name 'README.md' -exec rm -rf {} +
+      fi
+      err "$tool: convert.sh failed; run it manually"
+      return 1
+    fi
   fi
 }
 
@@ -373,9 +389,16 @@ do_list() {
 # ---------------------------------------------------------------------------
 # Usage
 # ---------------------------------------------------------------------------
+# usage [status] — print the header between the USAGE sentinels and exit.
+# `--help` exits 0 on stdout; an unknown option exits 1 with the text on
+# stderr, so a mistyped flag in CI or a wrapper script is not read as success.
 usage() {
-  sed -n '3,31p' "$0" | sed 's/^# \{0,1\}//'
-  exit 0
+  local status="${1:-0}"
+  local text
+  text="$(sed -n '/^# --- USAGE-START ---/,/^# --- USAGE-END ---/p' "$0" \
+    | sed -e '1d;$d' -e 's/^# \{0,1\}//')"
+  if (( status == 0 )); then printf '%s\n' "$text"; else printf '%s\n' "$text" >&2; fi
+  exit "$status"
 }
 
 # Default parallel job count (nproc on Linux; sysctl on macOS when nproc missing)
@@ -1284,6 +1307,9 @@ install_hermes() {
   local hermes_home dest count
   hermes_home="$(hermes_home_dir)"
   dest="$(resolve_dest HERMES_PLUGIN_DIR "${hermes_home}/plugins/agency-agents-router")"
+  # Strip trailing slashes first: basename ignores them, but `rm -rf link/`
+  # follows a symlink and empties its target instead of removing the link.
+  while [[ "$dest" == */ && "$dest" != "/" ]]; do dest="${dest%/}"; done
   if [[ "$(basename "$dest")" != "agency-agents-router" ]]; then
     dest="${dest%/}/agency-agents-router"
   fi
@@ -1296,7 +1322,22 @@ install_hermes() {
     err "Hermes: refusing to remove '$dest' — expected an agency-agents-router directory."
     return 1
   fi
-  rm -rf "$dest"
+  # The basename alone does not establish ownership: --path or an existing
+  # Hermes setup may point here with unrelated user files. Replace only a
+  # previous copy of this plugin, identified by its generated manifest.
+  if [[ -e "$dest" || -L "$dest" ]]; then
+    if [[ ! -f "$dest/plugin.yaml" ]] || \
+       ! grep -Eq '^[[:space:]]*name:[[:space:]]*agency-agents-router[[:space:]]*$' "$dest/plugin.yaml"; then
+      err "Hermes: refusing to replace '$dest' because it is not an existing agency-agents-router plugin."
+      return 1
+    fi
+  fi
+  # A symlink (e.g. from an earlier install) is replaced, never followed.
+  if [[ -L "$dest" ]]; then
+    rm -f -- "$dest"
+  else
+    rm -rf -- "$dest"
+  fi
   cp -R "$src" "$dest"
   ensure_hermes_plugin_enabled
   count="$(python3 - "$src/data/agents.json" <<'PY'
@@ -1384,8 +1425,8 @@ main() {
       --no-interactive)  interactive_mode="no"; shift ;;
       --parallel)        use_parallel=true; shift ;;
       --jobs)            parallel_jobs="${2:?'--jobs requires a value'}"; shift 2 ;;
-      --help|-h)         usage ;;
-      *)                 err "Unknown option: $1"; usage ;;
+      --help|-h)         usage 0 ;;
+      *)                 err "Unknown option: $1"; usage 1 ;;
     esac
   done
 
@@ -1518,20 +1559,27 @@ main() {
   fi
   printf "\n"
 
-  local installed=0 t i=0
+  local installed=0 t i=0 rc
+  local failed=()
   if $use_parallel; then
-    local install_out_dir
+    local install_out_dir install_status=0
     install_out_dir="$(mktemp -d)"
     export AGENCY_INSTALL_OUT_DIR="$install_out_dir"
     export AGENCY_INSTALL_SCRIPT="$SCRIPT_DIR/install.sh"
     export AGENCY_ALLOWED_SLUGS="$_ALLOWED_SLUGS"
     export AGENCY_OVERRIDE_PATH="$OVERRIDE_PATH"
     export AGENCY_AUTO_CONVERT="$AUTO_CONVERT"
-    printf '%s\n' "${SELECTED_TOOLS[@]}" | xargs -P "$parallel_jobs" -I {} sh -c 'AGENCY_INSTALL_WORKER=1 "$AGENCY_INSTALL_SCRIPT" --tool "{}" --no-interactive > "$AGENCY_INSTALL_OUT_DIR/{}" 2>&1'
+    printf '%s\n' "${SELECTED_TOOLS[@]}" | xargs -P "$parallel_jobs" -I {} sh -c 'AGENCY_INSTALL_WORKER=1 "$AGENCY_INSTALL_SCRIPT" --tool "{}" --no-interactive > "$AGENCY_INSTALL_OUT_DIR/{}" 2>&1' || install_status=$?
     for t in "${SELECTED_TOOLS[@]}"; do
-      [[ -f "$install_out_dir/$t" ]] && cat "$install_out_dir/$t"
+      if [[ -f "$install_out_dir/$t" ]]; then
+        cat "$install_out_dir/$t"
+      fi
     done
     rm -rf "$install_out_dir"
+    if [[ "$install_status" -ne 0 ]]; then
+      err "Parallel install failed (xargs exit $install_status); see tool output above."
+      return "$install_status"
+    fi
     installed=$n_selected
   else
     for t in "${SELECTED_TOOLS[@]}"; do
@@ -1539,20 +1587,45 @@ main() {
       progress_bar "$i" "$n_selected"
       printf "\n"
       printf "  ${C_DIM}[%s/%s]${C_RESET} %s\n" "$i" "$n_selected" "$t"
-      install_tool "$t"
-      (( installed++ )) || true
+      # One tool failing must not cost the tools after it. A bare install_tool
+      # under set -e exited the whole script at the first `return 1`, so a
+      # missing integrations/<tool> meant every later tool was never tried and
+      # nothing said so.
+      #
+      # Not `install_tool "$t" || ...`: bash ignores errexit inside anything run
+      # on the left of || (subshell included), so a failing cp inside a tool
+      # would carry on as if it had worked. The subshell turns errexit back on
+      # for itself while the parent's is off for this one command.
+      set +e
+      ( set -e; install_tool "$t" )
+      rc=$?
+      set -e
+      if (( rc == 0 )); then
+        (( installed++ )) || true
+      else
+        failed+=("$t")
+      fi
     done
   fi
 
   # Done box
   local msg="  Done!  Installed $installed tool(s)."
+  (( ${#failed[@]} )) && msg="  Installed $installed of $n_selected tool(s)."
   printf "\n"
   box_top
-  box_row "${C_GREEN}${C_BOLD}${msg}${C_RESET}"
+  if (( ${#failed[@]} )); then
+    box_row "${C_YELLOW}${C_BOLD}${msg}${C_RESET}"
+  else
+    box_row "${C_GREEN}${C_BOLD}${msg}${C_RESET}"
+  fi
   box_bot
   printf "\n"
   dim "  Run ./scripts/convert.sh to regenerate after adding or editing agents."
   printf "\n"
+  if (( ${#failed[@]} )); then
+    err "Failed: ${failed[*]} — see the [ERR] line under each above. The other tools installed."
+    exit 1
+  fi
 }
 
 main "$@"

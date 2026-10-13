@@ -53,21 +53,37 @@ if not isinstance(runbooks, list) or not runbooks:
 
 seen_slugs = set()
 total_refs = 0
-for rb in runbooks:
+for index, rb in enumerate(runbooks, 1):
+    if not isinstance(rb, dict):
+        errors.append(f"runbook #{index} must be an object")
+        continue
     rid = rb.get("slug", "<no slug>")
-    for field in ("slug", "title", "mode", "doc", "roster"):
-        if field not in rb:
-            errors.append(f"runbook '{rid}' is missing required field \"{field}\"")
-    if rb.get("slug") in seen_slugs:
-        errors.append(f"duplicate runbook slug '{rb.get('slug')}'")
-    seen_slugs.add(rb.get("slug"))
+    for field in ("slug", "title", "mode", "doc"):
+        value = rb.get(field)
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"runbook '{rid}' requires a nonempty '{field}' string")
+    if isinstance(rid, str):
+        if rid in seen_slugs:
+            errors.append(f"duplicate runbook slug '{rid}'")
+        seen_slugs.add(rid)
     doc = rb.get("doc")
-    if doc and not os.path.isfile(doc):
+    if isinstance(doc, str) and doc.strip() and not os.path.isfile(doc):
         errors.append(f"runbook '{rid}': doc path does not exist: {doc}")
-    for g in rb.get("roster", []):
-        for slug in g.get("agents", []):
+    roster = rb.get("roster")
+    if not isinstance(roster, list) or not roster:
+        errors.append(f"runbook '{rid}' requires a nonempty 'roster' array")
+        continue
+    for group_index, g in enumerate(roster, 1):
+        if not isinstance(g, dict):
+            errors.append(f"runbook '{rid}' / group #{group_index} must be an object")
+            continue
+        agents = g.get("agents")
+        if not isinstance(agents, list) or not agents:
+            errors.append(f"runbook '{rid}' / group '{g.get('group','?')}' requires a nonempty 'agents' array")
+            continue
+        for slug in agents:
             total_refs += 1
-            if slug not in real:
+            if not isinstance(slug, str) or slug not in real:
                 errors.append(f"runbook '{rid}' / group '{g.get('group','?')}': "
                               f"slug '{slug}' does not match any agent .md filename stem")
 
