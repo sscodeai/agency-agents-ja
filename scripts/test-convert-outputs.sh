@@ -225,6 +225,80 @@ checkGeneratedFrontmatter(
 );
 
 checkCount('openclaw', directDirs(path.join(out, 'openclaw')).length);
+
+// Split integrity: a source fenced block must survive whole in one output file.
+// openclaw is the one tool that splits an agent body across two files at `## `
+// headings (SOUL.md / AGENTS.md). A heading inside a fenced block is block
+// content, not a boundary, so splitting on one tears the block and leaves each
+// file with a dangling fence (#849).
+//
+// This model reads fences as lib.sh's fence_open_p / fence_closes_p do: up to
+// three spaces of indentation, same character, a closer at least as long as the
+// opener with nothing but whitespace after it.
+const OPEN_FENCE = /^( {0,3})(`{3,}|~{3,})/;
+
+function bodyLines(text) {
+  const out = [];
+  let fm = 0;
+  for (const line of text.split('\n')) {
+    if (fm < 2 && line === '---') { fm += 1; continue; }
+    if (fm >= 2) out.push(line);
+  }
+  while (out.length && out[out.length - 1] === '') out.pop();
+  return out;
+}
+
+function fenceBlocks(lines) {
+  const res = [];
+  let marker = '';
+  let mlen = 0;
+  let start = null;
+  for (let i = 0; i < lines.length; i += 1) {
+    const m = OPEN_FENCE.exec(lines[i]);
+    if (!m) continue;
+    const tok = m[2];
+    const rest = lines[i].slice(m[0].length);
+    if (!marker) {
+      marker = tok[0]; mlen = tok.length; start = i;
+    } else if (tok[0] === marker && tok.length >= mlen && !rest.trim()) {
+      res.push([start, i]); marker = ''; mlen = 0; start = null;
+    }
+  }
+  if (marker && start !== null) res.push([start, lines.length - 1]);
+  return res;
+}
+
+function hasRun(hay, needle) {
+  const n = needle.length;
+  if (n === 0 || n > hay.length) return false;
+  outer: for (let i = 0; i + n <= hay.length; i += 1) {
+    for (let j = 0; j < n; j += 1) if (hay[i + j] !== needle[j]) continue outer;
+    return true;
+  }
+  return false;
+}
+
+let splitBad = 0;
+for (const agent of agents) {
+  const sfile = path.join(out, 'openclaw', agent.slug, 'SOUL.md');
+  const afile = path.join(out, 'openclaw', agent.slug, 'AGENTS.md');
+  if (!exists(sfile) || !exists(afile)) continue;
+  const body = bodyLines(read(path.join(root, agent.rel)));
+  const blocks = fenceBlocks(body);
+  if (blocks.length === 0) continue;
+  const outs = [read(sfile).replace(/\r\n/g, '\n').split('\n'), read(afile).replace(/\r\n/g, '\n').split('\n')];
+  for (const [a, b] of blocks) {
+    const block = body.slice(a, b + 1);
+    if (!outs.some((o) => hasRun(o, block))) {
+      splitBad += 1;
+      if (splitBad <= 3) {
+        fail(`openclaw: ${agent.slug} source fenced block at lines ${a + 1}-${b + 1} is torn across SOUL.md/AGENTS.md — a \`## \` heading inside the fence was treated as a section boundary`);
+      }
+    }
+  }
+}
+if (splitBad > 3) fail(`openclaw: ...and ${splitBad - 3} more torn fenced blocks`);
+
 checkCount('kimi', directDirs(path.join(out, 'kimi')).length);
 checkCount('codex', directFiles(path.join(out, 'codex', 'agents'), '.toml').length);
 checkCount('vibe agents', directFiles(path.join(out, 'vibe', 'agents'), '.toml').length);

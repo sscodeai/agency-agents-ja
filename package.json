@@ -52,6 +52,7 @@
     "test:folded-frontmatter": "bash scripts/test-folded-frontmatter.sh",
     "test:frontmatter-closing": "bash scripts/test-frontmatter-closing.sh",
     "test:convert-parallel-failure": "bash scripts/test-convert-parallel-failure.sh",
+    "test:convert-fence-model": "bash scripts/test-convert-fence-model.sh",
     "test:install-selection-completeness": "bash scripts/test-install-selection-completeness.sh",
     "test:install-parallel-logs": "bash scripts/test-install-parallel-logs.sh",
     "test:install-hermes-destination": "bash scripts/test-install-hermes-destination.sh",
