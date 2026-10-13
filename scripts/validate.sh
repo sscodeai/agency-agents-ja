@@ -174,6 +174,10 @@ if ! bash scripts/test-convert-parallel-failure.sh; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/test-convert-fence-model.sh; then
+  errors=$((errors + 1))
+fi
+
 if ! bash scripts/test-install-selection-completeness.sh; then
   errors=$((errors + 1))
 fi

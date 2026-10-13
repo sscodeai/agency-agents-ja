@@ -74,6 +74,26 @@ def check_case(heredoc: str, name: str, cfg_text: str) -> list[str]:
         return failures
     if PLUGIN not in enabled:
         failures.append(f"{name}: plugin missing from enabled")
+    # A healthy result holds the plugin exactly once. A duplicated entry means
+    # the writer failed to recognize an existing one.
+    if enabled.count(PLUGIN) != 1:
+        failures.append(f"{name}: plugin appears {enabled.count(PLUGIN)}x in enabled")
+    # Comments are not list content: the writer may add the plugin, but it must
+    # not turn other text into entries or drop what the user had. The repair of
+    # a legacy glued scalar ("a - b - c" in one quoted item) is the documented
+    # exception: there, splitting one item into several is the whole point.
+    try:
+        before = (yaml.safe_load(cfg_text) or {}).get("plugins", {}).get("enabled")
+    except yaml.YAMLError:
+        before = None
+    if isinstance(before, list):
+        repaired = any(" - " in str(item) for item in before)
+        gained = [item for item in enabled if item not in before and item != PLUGIN]
+        lost = [item for item in before if item not in enabled]
+        if gained and not repaired:
+            failures.append(f"{name}: enabled gained unrelated entries: {gained!r}")
+        if lost and not repaired:
+            failures.append(f"{name}: enabled lost entries: {lost!r}")
     disabled = (parsed or {}).get("plugins", {}).get("disabled")
     if isinstance(disabled, list) and PLUGIN in disabled:
         failures.append(f"{name}: plugin still in disabled")
@@ -280,6 +300,59 @@ def main() -> int:
                     - agency-agents-router
                   enabled:
                     - basic
+            """),
+        ),
+        (
+            # YAML ends an item at " #", so these entries are the plugin, not
+            # free text. The writer must match them and must not let the
+            # comment's own text reach the list.
+            "Enabled item with an inline comment (already enabled)",
+            textwrap.dedent("""\
+                plugins:
+                  enabled:
+                    - chronos
+                    - agency-agents-router  # our router
+                  disabled:
+                    - browser/firecrawl
+            """),
+        ),
+        (
+            "Disabled item with an inline comment (stale entry)",
+            textwrap.dedent("""\
+                plugins:
+                  enabled:
+                    - chronos
+                  disabled:
+                    - agency-agents-router  # temporarily off
+            """),
+        ),
+        (
+            "Inline comment containing ' - ' on an enabled item",
+            textwrap.dedent("""\
+                plugins:
+                  enabled:
+                    - chronos  # keep - rotate this one first
+                  disabled:
+                    - browser/firecrawl
+            """),
+        ),
+        (
+            "Corrupted glue with a quoted plugin (post-#879 recovery)",
+            textwrap.dedent("""\
+                plugins:
+                  enabled:
+                    - basic - "agency-agents-router"
+            """),
+        ),
+        (
+            # Reviewer-verified shape: quotes and an inline comment on an
+            # existing entry must still match, and must not be re-added.
+            "Quoted enabled item with an inline comment (already enabled)",
+            textwrap.dedent("""\
+                plugins:
+                  enabled:
+                    - chronos
+                    - "agency-agents-router"  # quoted and commented
             """),
         ),
     ]
