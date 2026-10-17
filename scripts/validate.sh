@@ -142,6 +142,10 @@ if ! bash scripts/test-lint-fences.sh; then
   errors=$((errors + 1))
 fi
 
+if ! bash scripts/test-lint-qwen-placeholders.sh; then
+  errors=$((errors + 1))
+fi
+
 if ! bash scripts/test-cli-usage.sh; then
   errors=$((errors + 1))
 fi

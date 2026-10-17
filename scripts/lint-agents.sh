@@ -191,6 +191,16 @@ lint_file() {
     warnings=$((warnings + 1))
   fi
 
+  # 4b. Qwen Code substitutes ${task_prompt}, ${hook_context} and
+  # ${external_inputs_override} into a SubAgent's prompt at launch. From 0.25.1
+  # it leaves every other ${name} as written (older releases refuse any name
+  # they can't fill, #1081). One of these three in a body would be silently
+  # replaced, so the names are reserved.
+  if grep -qE '\$\{(task_prompt|hook_context|external_inputs_override)\}' <<<"$body"; then
+    echo "ERROR $file: uses a placeholder Qwen Code fills at launch (\${task_prompt}, \${hook_context} or \${external_inputs_override}) — rename it"
+    errors=$((errors + 1))
+  fi
+
   local soul_headers=0
   local agents_headers=0
   local fence_marker="" fence_len=0 fence_indent=0 fence_line=0

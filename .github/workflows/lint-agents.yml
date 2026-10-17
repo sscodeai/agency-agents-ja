@@ -113,3 +113,6 @@ jobs:
 
       - name: Reject folded frontmatter fixtures
         run: bash scripts/test-folded-frontmatter.sh
+
+      - name: Reject Qwen launch placeholders
+        run: bash scripts/test-lint-qwen-placeholders.sh
