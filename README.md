@@ -20,7 +20,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
 | Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
 | Categories | <!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES --> |
-| Upstream baseline | `msitarzewski/agency-agents@4bce55a` as of 2026-10-13 |
+| Upstream baseline | `msitarzewski/agency-agents@652b269` as of 2026-10-15 |
 
 > **<!-- AUTOGEN:TOTAL -->408<!-- /AUTOGEN:TOTAL --> ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
 
@@ -69,7 +69,7 @@ Tool notes:
 - **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / QwenPaw / Codex / CodeWhale / Osaurus / Hermes / Mistral Vibe / DeepSeek Harness**: require generated files under `integrations/`; run `./scripts/convert.sh` before installing.
 - **Hermes**: installs one lazy-router plugin (`agency-agents-router`) instead of preloading the full roster.
 - **OpenClaw**: recommended when you want multi-agent workspaces with explicit identity, capability, and summary files.
-- **Qwen Code**: after install, run `/agents manage` or restart the session so new subagents are picked up.
+- **Qwen Code**: after install, run `/agents manage` or restart the session so new subagents are picked up. Requires Qwen Code 0.25.1 or later — earlier releases can't launch agents whose code examples contain `${…}` placeholders.
 - **ZCode**: installs user-wide by default; set `ZCODE_AGENTS_DIR=.zcode/agents` for a project-scoped install.
 
 For OpenClaw, agents are converted into `SOUL.md` + `AGENTS.md` + `IDENTITY.md` workspaces:
@@ -301,7 +301,7 @@ npx agency-agents-ja install --tool claude-code
 - **Antigravity / Gemini CLI / OpenClaw / Kimi Code / ZCode / QwenPaw / Codex / CodeWhale / Osaurus / Hermes / Mistral Vibe / DeepSeek Harness**: `integrations/` 配下の変換済み file が必要です。先に `./scripts/convert.sh` を実行してください。
 - **Hermes**: 全 agent を事前に skill として読み込ませず、`agency-agents-router` plugin から必要な specialist だけを lazy load します。
 - **OpenClaw**: identity、業務能力、概要を分けた multi-agent workspace として使いたい場合に向いています。
-- **Qwen Code**: install 後に `/agents manage` を実行するか session を再起動すると、新しい subagent を認識しやすくなります。
+- **Qwen Code**: install 後に `/agents manage` を実行するか session を再起動すると、新しい subagent を認識しやすくなります。Qwen Code 0.25.1 以降が必要です（それ以前は code 例に `${…}` を含む agent を起動できません）。
 - **ZCode**: 既定では user-wide install です。project-scoped にする場合は `ZCODE_AGENTS_DIR=.zcode/agents` を指定します。
 
 install 先を標準 path から変えたい場合は、次の環境変数で上書きできます:
