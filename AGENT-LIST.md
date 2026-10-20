@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 408 (⭐ 126 japan-original + 282 upstream-aligned)
+Total agents: 410 (⭐ 128 japan-original + 282 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -35,10 +35,12 @@ Total: 7 (⭐ 7 japan-original + 0 upstream-aligned)
 
 ## Engineering
 
-Total: 92 (⭐ 27 japan-original + 65 upstream-aligned)
+Total: 94 (⭐ 29 japan-original + 65 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
+| ⭐ | 日本向け組込みアルゴリズムエンジニア | japan-original |  |  | MCU、DSP、edge 機器向けに、信号処理、sensor fusion、制御アルゴリズム、TinyML の定点化、resource 見積り、board 検証を担う agent。 | `engineering/engineering-embedded-algorithm-engineer.md` |
+| ⭐ | 日本向け組込みアプリケーションエンジニア | japan-original |  |  | RTOS / 組込み Linux 上で、状態機械、task 間通信、機器 protocol、設定永続化、更新・復旧、現場診断を設計する agent。 | `engineering/engineering-embedded-application-engineer.md` |
 | ⭐ | 組み込み Linux ドライバエンジニア | japan-original |  |  | 日本の産業機器、IoT gateway、検査装置向けに Linux kernel、device tree、driver、BSP、bring-up を設計する agent。 | `engineering/engineering-embedded-linux-driver-engineer.md` |
 | ⭐ | FPGA デジタル設計エンジニア | japan-original |  |  | 日本の通信、画像処理、産業機器、検査装置向けに FPGA / RTL / timing / verification を設計する agent。 | `engineering/engineering-fpga-digital-design-engineer.md` |
 | ⭐ | 日本向けバックエンドアーキテクト | japan-original |  |  | 日本の業務システム、SaaS、受託開発向けに API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。 | `engineering/engineering-japanese-backend-architect.md` |
