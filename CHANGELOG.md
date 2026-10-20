@@ -4,6 +4,7 @@ All notable changes to `agency-agents-ja` are recorded here.
 
 ## Unreleased
 
+- Added two Japan-original agents inspired by the Chinese community edition's issue #97: 日本向け組込みアルゴリズムエンジニア (`engineering/engineering-embedded-algorithm-engineer.md`) and 日本向け組込みアプリケーションエンジニア (`engineering/engineering-embedded-application-engineer.md`). Both are rewritten for Japanese automotive / industrial / medical products and state their boundaries against the existing firmware, Linux driver and algorithm roles. Catalog: 410 agents (128 Japan-original).
 - `scripts/lint-agents.sh` now rejects `${task_prompt}`, `${hook_context}` and `${external_inputs_override}` in agent bodies, the three `${name}` placeholders Qwen Code substitutes into a SubAgent prompt at launch. Added `scripts/test-lint-qwen-placeholders.sh` and documented that Qwen Code 0.25.1 or later is required (earlier releases refuse to launch agents whose code examples contain `${…}`).
 - Bumped the declared upstream baseline to `msitarzewski/agency-agents@652b269` (2026-10-15). Agent-path coverage is unchanged at 282/282.
 - Ported two more upstream fixes: Hermes config matching strips YAML inline comments before comparing/splitting (so an existing commented entry is not re-added, a stale commented `disabled:` entry is removed, and a comment containing ` - ` is not split into fake entries) with six new regression cases; and the converted-outputs eval now verifies fenced-block split integrity for OpenClaw against `lib.sh`'s fence rules, with `scripts/test-convert-fence-model.sh`.
