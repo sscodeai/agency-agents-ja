@@ -978,12 +978,14 @@ HEREDOC
   if [[ "$tool" == "all" || "$tool" == "aider" ]]; then
     mkdir -p "$OUT_DIR/aider"
     cp "$AIDER_TMP" "$OUT_DIR/aider/CONVENTIONS.md"
-    info "Wrote integrations/aider/CONVENTIONS.md"
+    chmod 644 "$OUT_DIR/aider/CONVENTIONS.md"  # mktemp writes 600; cp keeps it
+    info "Wrote $OUT_DIR/aider/CONVENTIONS.md"
   fi
   if [[ "$tool" == "all" || "$tool" == "windsurf" ]]; then
     mkdir -p "$OUT_DIR/windsurf"
     cp "$WINDSURF_TMP" "$OUT_DIR/windsurf/.windsurfrules"
-    info "Wrote integrations/windsurf/.windsurfrules"
+    chmod 644 "$OUT_DIR/windsurf/.windsurfrules"
+    info "Wrote $OUT_DIR/windsurf/.windsurfrules"
   fi
 
   echo ""

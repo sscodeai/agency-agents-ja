@@ -59,6 +59,7 @@
     "test:install-hermes-destination": "bash scripts/test-install-hermes-destination.sh",
     "test:install-all-path-collision": "bash scripts/test-install-all-path-collision.sh",
     "check:package-files": "node scripts/check-package-files.js",
+    "check:package": "node scripts/check-package.mjs",
     "check:upstream-parity": "node scripts/check-upstream-parity.js",
     "test": "npm run test:maintenance",
     "test:maintenance": "node scripts/test-maintenance-scripts.js",

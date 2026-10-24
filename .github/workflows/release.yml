@@ -35,11 +35,21 @@ jobs:
       - name: Upgrade npm for trusted publishing
         run: npm install -g npm@latest
 
+      - name: Check release tag matches package version
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          node --input-type=module -e 'import fs from "node:fs"; const version = JSON.parse(fs.readFileSync("package.json", "utf8")).version; if (process.env.RELEASE_TAG !== `v${version}`) throw new Error("Release tag does not match package version");'
+
       - name: Lint agent files
         run: bash scripts/lint-agents.sh
 
       - name: Validate catalog, workflows, and fixtures
         run: scripts/validate.sh
+
+      - name: Verify packaged consumer installation
+        run: npm run check:package
 
       - name: Publish to npm
         # prepublishOnly runs the full prepack chain (generate, generated
