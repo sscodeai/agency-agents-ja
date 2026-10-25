@@ -20,7 +20,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
 | Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
 | Categories | <!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES --> |
-| Upstream baseline | `msitarzewski/agency-agents@4e3ac3c` as of 2026-10-19 |
+| Upstream baseline | `msitarzewski/agency-agents@b37b5bb` as of 2026-10-24 |
 
 > **<!-- AUTOGEN:TOTAL -->411<!-- /AUTOGEN:TOTAL --> ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
 
