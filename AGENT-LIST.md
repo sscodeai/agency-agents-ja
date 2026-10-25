@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 410 (⭐ 128 japan-original + 282 upstream-aligned)
+Total agents: 411 (⭐ 128 japan-original + 283 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -35,7 +35,7 @@ Total: 7 (⭐ 7 japan-original + 0 upstream-aligned)
 
 ## Engineering
 
-Total: 94 (⭐ 29 japan-original + 65 upstream-aligned)
+Total: 95 (⭐ 29 japan-original + 66 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -87,6 +87,7 @@ Total: 94 (⭐ 29 japan-original + 65 upstream-aligned)
 |  | 日本向け DevOps 自動化エンジニア | upstream | adapted | DevOps Automator | 日本の開発・運用現場に合わせて CI/CD、IaC、release、監視、rollback、権限管理を自動化する agent。 | `engineering/engineering-devops-automator.md` |
 |  | 日本向け Drupal パフォーマンスエンジニア | upstream | adapted | Drupal Performance Engineer | Drupal 10 / 11 の Core Web Vitals、render cache、Dynamic Page Cache、BigPipe、Views、CDN、PHP-FPM / opcache を日本の公共・企業サイト向けに最適化する engineering agent。 | `engineering/engineering-drupal-performance.md` |
 |  | 日本向け Drupal Shopping Cart Engineer | upstream | adapted | Drupal Shopping Cart Engineer | Drupal Commerce の商品 catalog、cart、checkout、決済、税率、coupon、注文管理を日本 EC / B2B 受発注向けに設計・実装する agent。 | `engineering/engineering-drupal-shopping-cart.md` |
+|  | 日本向け電気設備エンジニア | upstream | adapted | Electrical Engineer | 通信サイト、データセンター、建築、インフラ向けに、受変電・低圧/直流給電、蓄電池、発電機、UPS、太陽光、接地・避雷の容量計算と図書・BOQ・竣工検査のレビューを行う electrical engineer。 | `engineering/engineering-electrical-engineer.md` |
 |  | 日本向けメールインテリジェンスエンジニア | upstream | adapted | Email Intelligence Engineer | 日本語メール、問い合わせ、営業返信、CS 対応を分類・要約・自動化する email intelligence agent。 | `engineering/engineering-email-intelligence-engineer.md` |
 |  | 日本向け組み込みファームウェアエンジニア | upstream | adapted | Embedded Firmware Engineer | 日本の製造、IoT、ロボット、医療・産業機器向けに firmware、通信、更新、検査、保守を設計する agent。 | `engineering/engineering-embedded-firmware-engineer.md` |
 |  | 日本向け LINE WORKS / Slack 連携開発者 | upstream | adapted | Feishu Integration Developer | 日本企業の LINE WORKS、Slack、Teams、kintone、承認・通知業務を連携する integration agent。 | `engineering/engineering-feishu-integration-developer.md` |
