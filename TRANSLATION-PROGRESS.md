@@ -2,12 +2,12 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Total agents: 410
+Total agents: 411
 Japan-original agents: 128
-Upstream-aligned agents: 282
+Upstream-aligned agents: 283
 Skeleton: 0
 Translated: 0
-Adapted: 282
+Adapted: 283
 
 ## By Category
 
@@ -15,7 +15,7 @@ Adapted: 282
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Academic | 6 | 0 | 0 | 6 | 1 |
 | Company | 0 | 0 | 0 | 0 | 7 |
-| Engineering | 65 | 0 | 0 | 65 | 29 |
+| Engineering | 66 | 0 | 0 | 66 | 29 |
 | Project Management | 7 | 0 | 0 | 7 | 7 |
 | Testing | 9 | 0 | 0 | 9 | 7 |
 | Product | 6 | 0 | 0 | 6 | 2 |
