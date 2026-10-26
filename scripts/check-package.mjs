@@ -43,9 +43,16 @@ try {
 
   const destination = join(scratch, 'dist');
   mkdirSync(destination);
-  const [packed] = JSON.parse(run([
+  // npm 10 prints an array of packs; npm 11/12 prints an object keyed by
+  // package name. Accept both so the release job does not depend on the npm
+  // version the runner installed.
+  const packedOutput = JSON.parse(run([
     'pack', '--json', '--ignore-scripts', '--pack-destination', destination,
   ]));
+  const packed = Array.isArray(packedOutput)
+    ? packedOutput[0]
+    : Object.values(packedOutput)[0];
+  assert(packed && packed.filename, 'npm pack did not report a tarball filename');
 
   const installed = join(scratch, 'consumer');
   run([
