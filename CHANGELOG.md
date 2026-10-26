@@ -4,6 +4,8 @@ All notable changes to `agency-agents-ja` are recorded here.
 
 ## Unreleased
 
+## 0.5.0 - 2026-10-26
+
 - Added 日本向け電気設備エンジニア (`engineering/engineering-electrical-engineer.md`), adapted from the upstream Electrical Engineer: LV AC / -48 V DC, switchgear, batteries, standby generators, UPS, solar, earthing and lightning protection, plus SLD / BOQ / inspection review and software validation rules. Framed around 電気事業法, 電技・電技解釈, 内線規程, JIS, PSE, 消防法 and 建築基準法, with the 電気主任技術者 / 電気工事士 review boundary explicit. Catalog: **411 agents (128 Japan-original, 283 upstream-aligned)**.
 - Bumped the declared upstream baseline to `msitarzewski/agency-agents@b37b5bb` (2026-10-24).
 - Hardened the release path: `scripts/check-package.mjs` runs prepack, packs the tarball, installs it into a scratch consumer and verifies the name/version, all 410 agent bodies byte-for-byte, required files and the bin entry, with no `.npmrc` / `.env` / `node_modules` in the package. `npm run check:package` now runs before publish, and a `v*` tag that does not match `package.json` fails the release.
