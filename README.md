@@ -2,6 +2,8 @@
 
 **Language**: [English](#english) | [日本語](#日本語)
 
+**Latest release**: [v0.5.0 — 411 agents / 19 tools](RELEASE-NOTES-0.5.0.md) (2026-10-26)
+
 ---
 
 ## English
@@ -20,6 +22,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
 | Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
 | Categories | <!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES --> |
+| Supported tools (`tools.json`) | <!-- AUTOGEN:TOOLS -->19<!-- /AUTOGEN:TOOLS --> |
 | Upstream baseline | `msitarzewski/agency-agents@b37b5bb` as of 2026-10-24 |
 
 > **<!-- AUTOGEN:TOTAL -->411<!-- /AUTOGEN:TOTAL --> ready-to-use AI specialist agents** for Japanese IT delivery — engineering, GIS, healthcare, design, marketing, product, game development, security, finance, legal, support, and more. This is not a generic prompt dump: each agent has a role, operating rules, workflow assumptions, and concrete deliverables tuned for Japanese teams.
@@ -98,6 +101,7 @@ The <!-- AUTOGEN:JAPAN -->128<!-- /AUTOGEN:JAPAN --> ⭐ Japan-market originals 
 - **Compliance**: 個人情報保護法 (APPI), インボイス制度 (invoice system), 電子帳簿保存法 (electronic bookkeeping), 適時開示 / TDnet / インサイダー情報管理, AI usage policy
 - **Japanese platforms**: kintone, LINE WORKS, Backlog / Redmine / Jira, Rakuten / Amazon Japan, note / Qiita / Zenn, Yahoo! JAPAN SEO, LINE Official Account
 - **Manufacturing DX / public sector**: 工場 IoT, 自治体 DX, BCP, 内部統制
+- **New in 0.5.0**: CxO / 経営企画, 組込み・電気設備, 旅行・インバウンド, DevRel / DevEx, 技術 SEO / TikTok LIVE コマース
 - **Workflows**: <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> end-to-end workflows that chain agents together (e.g. `japanese-sier-requirements-review`, `acceptance-readiness-review`, `csv-data-migration-readiness`, `oss-localization-launch`, `oss-upstream-sync`)
 
 ### Translation status
@@ -369,6 +373,9 @@ ticket は PROJ-1234、spec は docs/spec.md です。
 | 日本市場 GTM | `marketing/marketing-japanese-product-marketing-manager.md`, `marketing/marketing-seminar-webinar-planner.md`, `workflows/japan-go-to-market-campaign.yaml` |
 | 製造業 DX | `specialized/specialized-japanese-manufacturing-dx-consultant.md`, `specialized/specialized-factory-iot-planner.md`, `workflows/manufacturing-dx-assessment.yaml` |
 | Vendor / cost review | `supply-chain/supply-chain-japanese-vendor-risk-manager.md`, `finance/finance-japanese-finops-analyst.md`, `workflows/vendor-cost-review.yaml` |
+| 組込み / 電気設備の設計レビュー | `engineering/engineering-embedded-firmware-engineer.md`, `engineering/engineering-electrical-engineer.md` |
+| 経営層・取締役会向けの技術戦略 | `company/company-chief-technology-officer.md`, `company/company-chief-executive-officer.md` |
+| 旅行 / インバウンド企画 | `specialized/specialized-japan-travel-planner.md` |
 
 ## 方針
 
@@ -382,7 +389,7 @@ ticket は PROJ-1234、spec は docs/spec.md です。
 ## Coverage
 
 - 日本特化 agent (⭐ `source: japan-original`): <!-- AUTOGEN:JAPAN -->128<!-- /AUTOGEN:JAPAN -->（日本の IT 開発、SIer、SaaS、EC、製造業 DX、公共 sector 向け）
-- 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->283<!-- /AUTOGEN:UPSTREAM -->（2026-09-12 時点の英文上流 `ad9264e` の agent path に対応。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
+- 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->283<!-- /AUTOGEN:UPSTREAM -->（英文上流 `msitarzewski/agency-agents` の agent path に対応。baseline は [Stats](#stats) / [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) を参照。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 上流由来 agent の skeleton backlog: <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON -->
 - 合計: <!-- AUTOGEN:TOTAL -->411<!-- /AUTOGEN:TOTAL --> agents
 - Workflow: <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->
@@ -419,6 +426,12 @@ agent の応答を変更前後で比較する評価 fixture は [evals/README.md
 | Vendor risk | `supply-chain/supply-chain-japanese-vendor-risk-manager.md` | vendor security、privacy、BCP、契約 risk |
 | AI governance | `specialized/specialized-japanese-automation-governance-architect.md` | RPA、AI agent、automation governance |
 | OSS localization | `engineering/engineering-japanese-oss-localization-engineer.md` | OSS docs / CLI message の自然な日本語化、upstream 追従 |
+| 経営 / 技術戦略 | `company/company-chief-technology-officer.md` | CTO、技術戦略、投資判断 |
+| 電気設備 | `engineering/engineering-electrical-engineer.md` | 受変電、低圧/直流給電、蓄電池、発電機 |
+| 組込み | `engineering/engineering-embedded-firmware-engineer.md` | MCU、RTOS、通信、OTA、量産検査 |
+| ServiceNow | `engineering/engineering-servicenow-developer-mentor.md` | Business Rule、GlideRecord、ACL、OOTB 切り分け |
+| 旅行 / インバウンド | `specialized/specialized-japan-travel-planner.md` | 国内旅行・訪日 guest の行程、予約、季節、代替案 |
+| Product DX | `product/product-dx-engineer.md` | SDK、quickstart、error message、onboarding |
 
 ## Agent 形式
 
