@@ -1,5 +1,10 @@
 # agency-agents-ja
 
+[![npm](https://img.shields.io/npm/v/agency-agents-ja.svg)](https://www.npmjs.com/package/agency-agents-ja)
+[![release](https://img.shields.io/github/v/release/sscodeai/agency-agents-ja.svg)](https://github.com/sscodeai/agency-agents-ja/releases)
+[![CI](https://github.com/sscodeai/agency-agents-ja/actions/workflows/ci.yml/badge.svg)](https://github.com/sscodeai/agency-agents-ja/actions/workflows/ci.yml)
+[![license](https://img.shields.io/github/license/sscodeai/agency-agents-ja.svg)](LICENSE)
+
 **Language**: [English](#english) | [日本語](#日本語)
 
 **Latest release**: [v0.5.0 — 411 agents / 19 tools](RELEASE-NOTES-0.5.0.md) (2026-10-26)

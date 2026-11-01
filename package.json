@@ -13,7 +13,15 @@
     "sier",
     "requirements",
     "kintone",
-    "line-works"
+    "line-works",
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "cursor",
+    "deepseek",
+    "dsh",
+    "qwen",
+    "mcp"
   ],
   "author": "SS",
   "license": "MIT",
