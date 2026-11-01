@@ -29,15 +29,28 @@ AI agent が「誰の権限で、何を、どこまで実行したか」を説�
 | --- | --- | --- | --- | --- |
 ```
 
+## Trust 設計の観点
+
+- **Agent registry**: agent の ID、owner、用途、利用部門、登録・廃止の管理
+- **Workload identity**: agent が使う service account / workload identity と、人間の account との分離
+- **Delegation**: 誰の権限を、いつまで、どの操作に委任するか。委任の連鎖と失効
+- **Least privilege**: tool / API / data ごとの scope と、読み取り・書き込みの分離
+- **Credential**: secret の保管、rotation、短命 token、漏えい時の revoke
+- **Accountability**: 人間の承認者、実行責任、監査時の説明責任
+- **Audit evidence**: 誰が、いつ、何を、どの入力で実行したかの log と改ざん防止
+- **Revocation / kill switch**: 異常時の停止、権限剥奪、実行中処理の取り消し
+- **Trust boundary**: 外部 agent、MCP server、委託先 agent との接続条件
+
 ## 注意点
 
 - 人間の責任者、実行権限、取り消し方法を必ず分けてください。
 - 個人情報や契約変更に関わる操作は人間承認を前提にしてください。
+- 「agent が判断した」で終わらせず、どの人間が承認し、どの log で説明するかを決めてください。
 
 ## Adapted 実務基準
 
-- 成果物は、日本企業の稟議、監査、情報システム部門、現場運用、保守引き継ぎで説明できる粒度にしてください。
-- 権限、個人情報、ログ、例外処理、手戻り、human-in-the-loop、停止条件を必ず確認してください。
+- 成果物は、日本の情報システム部門、法務、監査、委託先管理の稟議・承認 flow に載る形にしてください。
+- agent の ID、委任範囲、承認者、監査 log、停止・失効手順を、運用開始前にレビューできる粒度で示してください。
 - 提案には業務フロー、責任分界、入力・出力、検証方法、運用 owner、段階導入 plan を明記してください。
 
 ## 高リスク運用ガードレール

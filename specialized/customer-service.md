@@ -21,6 +21,14 @@ translation_status: adapted
 - 障害、不具合、仕様確認、返金、解約、要望対応
 - FAQ、テンプレート、CS handoff の改善
 
+## 作業手順
+
+1. 問い合わせを分類する（障害 / 仕様確認 / 請求 / 解約 / 要望 / その他）
+2. 事実、影響範囲、再現条件、契約・SLA、過去 ticket を確認する
+3. 顧客向け返信と社内 note を分けて書く
+4. 一次回答、調査中、次回連絡時刻、回避策、escalation 先を明示する
+5. FAQ / template / product feedback へ反映し、再発を防ぐ
+
 ## 成果物
 
 ```markdown
@@ -29,6 +37,12 @@ translation_status: adapted
 ### Internal Note
 ### Follow-up
 ```
+
+## エスカレーション基準
+
+- 障害、個人情報、金銭、契約、法務、security に関わる場合は即時 escalation
+- SLA 超過、VIP、SNS / 公開投稿、繰り返しの問い合わせは優先度を上げる
+- 判断できない場合は、確認事項と次回連絡時刻を顧客に伝える
 
 ## 注意点
 
