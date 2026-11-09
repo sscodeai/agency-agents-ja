@@ -4,6 +4,7 @@ All notable changes to `agency-agents-ja` are recorded here.
 
 ## Unreleased
 
+- Bumped the declared upstream baseline to `msitarzewski/agency-agents@8ae6164` (2026-11-08). Upstream's content batch 8 changed six agent bodies (experiment tracking significance quotas, data-engineer Silver ordering, api-tester user isolation, frontend table accessibility, performance-benchmarker INP/field percentiles, backend-architect category ordering); none has verbatim overlap with this repo's Japanese rewrites (0/6), so there is nothing to merge. No new agent paths or tooling.
 - Bumped the declared upstream baseline to `msitarzewski/agency-agents@b859c51` (2026-11-05). Upstream's content batch 7 changed four agent bodies (senior SecOps Nginx example, identity-graph phone evidence, support finance tracker savings, testing workflow payback boundaries); none has verbatim overlap with this repo's Japanese rewrites (0/4), so there is nothing to merge. No new agent paths or tooling.
 - 0.5.0 release notes are at [RELEASE-NOTES-0.5.0.md](RELEASE-NOTES-0.5.0.md).
 

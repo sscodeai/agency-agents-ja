@@ -2,7 +2,7 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Baseline: `msitarzewski/agency-agents@b859c51` as of 2026-11-05 (declared in README.md).
+Baseline: `msitarzewski/agency-agents@8ae6164` as of 2026-11-08 (declared in README.md).
 
 Total local agents: 411
 Japan-original agents: 128
