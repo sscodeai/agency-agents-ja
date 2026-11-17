@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 411 (⭐ 128 japan-original + 283 upstream-aligned)
+Total agents: 413 (⭐ 130 japan-original + 283 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -35,7 +35,7 @@ Total: 7 (⭐ 7 japan-original + 0 upstream-aligned)
 
 ## Engineering
 
-Total: 95 (⭐ 29 japan-original + 66 upstream-aligned)
+Total: 96 (⭐ 30 japan-original + 66 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -45,6 +45,7 @@ Total: 95 (⭐ 29 japan-original + 66 upstream-aligned)
 | ⭐ | FPGA デジタル設計エンジニア | japan-original |  |  | 日本の通信、画像処理、産業機器、検査装置向けに FPGA / RTL / timing / verification を設計する agent。 | `engineering/engineering-fpga-digital-design-engineer.md` |
 | ⭐ | 日本向けバックエンドアーキテクト | japan-original |  |  | 日本の業務システム、SaaS、受託開発向けに API、database、batch、認証認可、監査ログ、運用保守を設計する backend architect。 | `engineering/engineering-japanese-backend-architect.md` |
 | ⭐ | 日本語コードレビュアー | japan-original |  |  | 日本語チーム向け code review 専門家。丁寧な表現、明確な重大度、証跡、受入条件、保守運用リスクを重視する。 | `engineering/engineering-japanese-code-reviewer.md` |
+| ⭐ | 日本企業コラボツール連携エンジニア | japan-original |  |  | Chatwork、Slack、Microsoft Teams、LINE WORKS を横断し、通知、承認、問い合わせ、bot、業務ワークフロー連携を安全に設計・実装する専門家。 | `engineering/engineering-japanese-collaboration-integration-developer.md` |
 | ⭐ | 日本向けデータエンジニア | japan-original |  |  | 日本の業務システム、SaaS、EC、製造業 DX 向けに ETL / ELT、DWH、BI、CSV、個人情報、データ品質を設計する data engineer。 | `engineering/engineering-japanese-data-engineer.md` |
 | ⭐ | 日本向けデータガバナンス管理者 | japan-original |  |  | 日本企業の SaaS / 業務システム / DWH で data owner、data catalog、品質、権限、個人情報、監査、利用 rule を整える data governance steward。 | `engineering/engineering-japanese-data-governance-steward.md` |
 | ⭐ | 日本向けデータベース最適化エンジニア | japan-original |  |  | 業務システムの database schema、query、index、migration、帳票・CSV・batch workload を最適化する専門家。 | `engineering/engineering-japanese-database-optimizer.md` |
@@ -131,7 +132,7 @@ Total: 95 (⭐ 29 japan-original + 66 upstream-aligned)
 |  | 日本向け動画配信エンジニア | upstream | adapted | Video Streaming Engineer | HLS / DASH、ABR、CMAF、encoding ladder、CDN、DRM、低遅延配信、QoE monitoring を日本向け video streaming service で設計する engineering agent。 | `engineering/engineering-video-streaming-engineer.md` |
 |  | 日本向け音声 AI 連携エンジニア | upstream | adapted | Voice AI Integration Engineer | 日本語音声認識、音声合成、電話、コールセンター、会議要約、voice bot を連携する AI engineering agent。 | `engineering/engineering-voice-ai-integration-engineer.md` |
 |  | 日本向け WebAssembly エンジニア | upstream | adapted | WebAssembly Engineer | Rust / C++ / Go からの Wasm、JS interop、WASI、Wasmtime / Wasmer、component model、binary size、sandbox、性能 tuning を扱う engineering agent。 | `engineering/engineering-webassembly-engineer.md` |
-|  | 日本向け LINE ミニアプリ開発者 | upstream | adapted | WeChat Mini Program Developer | 日本向け LINE ミニアプリ / LIFF、予約、会員証、EC、CRM、店舗導線を実装する agent。 | `engineering/engineering-wechat-mini-program-developer.md` |
+|  | 日本向け LINE ミニアプリ開発者 | upstream | adapted | WeChat Mini Program Developer | 日本向け LINE ミニアプリ / LIFF のフロントエンド、LINE Login、Messaging API、予約・会員証・決済・クーポン、審査・運用を設計・実装する agent。 | `engineering/engineering-wechat-mini-program-developer.md` |
 |  | 日本向け WordPress パフォーマンスエンジニア | upstream | adapted | WordPress Performance Engineer | WordPress / WooCommerce の Core Web Vitals、page cache、object cache、WP_Query、plugin 負荷、CDN、画像、PHP-FPM / opcache を最適化する engineering agent。 | `engineering/engineering-wordpress-performance.md` |
 |  | 日本向け WordPress Shopping Cart Engineer | upstream | adapted | WordPress Shopping Cart Engineer | WooCommerce の商品 catalog、cart、checkout、決済、税・送料、coupon、注文管理を日本 EC 向けに安全に custom 実装する agent。 | `engineering/engineering-wordpress-shopping-cart.md` |
 
@@ -196,11 +197,12 @@ Total: 8 (⭐ 2 japan-original + 6 upstream-aligned)
 
 ## Marketing
 
-Total: 55 (⭐ 18 japan-original + 37 upstream-aligned)
+Total: 56 (⭐ 19 japan-original + 37 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本向け Instagram / Lemon8 運用者 | japan-original |  |  | 日本の IT 企業、B2B SaaS、採用広報、イベント、導入事例向けに Instagram / Lemon8 の企画、投稿、導線、効果測定を設計する social operator。 | `marketing/marketing-instagram-lemon8-operator.md` |
+| ⭐ | 日本市場参入・ローカライズストラテジスト | japan-original |  |  | 海外SaaS・ブランドの日本市場参入を、市場検証、ローカライズ、価格・請求、販売パートナー、法規・表示、GTMまで一気通貫で設計する strategist。 | `marketing/marketing-japan-market-entry-strategist.md` |
 | ⭐ | 日本向け AI 引用戦略家 | japan-original |  |  | ChatGPT、Claude、Gemini、Perplexity などの生成 AI / answer engine で自社・製品・OSS がどのように引用・推薦されるかを監査し、AEO / GEO 改善策を作る strategist。 | `marketing/marketing-japanese-ai-citation-strategist.md` |
 | ⭐ | 日本向け導入事例ライター | japan-original |  |  | 日本の B2B SaaS、SI、IT service 向けに顧客導入事例、課題、選定理由、効果、公開許諾、営業活用 copy を作る case study writer。 | `marketing/marketing-japanese-case-study-writer.md` |
 | ⭐ | 日本向けコミュニティマネージャー | japan-original |  |  | 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。 | `marketing/marketing-japanese-community-manager.md` |
