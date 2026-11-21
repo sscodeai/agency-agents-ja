@@ -2,6 +2,8 @@ name: Check Tools Consistency
 
 # Runs on every PR (no path filter on purpose): a new or renamed tool must trip
 # this check even when nobody touched tools.json or the install/convert scripts.
+# Converted-output drift is strict on PRs too, so a stale manifest is caught in
+# review instead of failing only after the merge lands on main.
 on:
   pull_request:
   push:
@@ -34,7 +36,7 @@ jobs:
         run: bash scripts/test-convert-frontmatter.sh
 
       - name: Validate converted outputs
-        run: bash scripts/test-convert-outputs.sh ${{ github.event_name == 'pull_request' && '--drift=advisory' || '' }}
+        run: bash scripts/test-convert-outputs.sh
 
       - name: Validate the outputs eval's fence model
         run: bash scripts/test-convert-fence-model.sh
