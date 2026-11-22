@@ -2,8 +2,8 @@
 
 This file is generated from agent frontmatter. Do not edit it manually.
 
-Total agents: 413
-Japan-original agents: 130
+Total agents: 412
+Japan-original agents: 129
 Upstream-aligned agents: 283
 Skeleton: 0
 Translated: 0
@@ -19,7 +19,7 @@ Adapted: 283
 | Project Management | 7 | 0 | 0 | 7 | 7 |
 | Testing | 9 | 0 | 0 | 9 | 7 |
 | Product | 6 | 0 | 0 | 6 | 2 |
-| Marketing | 37 | 0 | 0 | 37 | 19 |
+| Marketing | 37 | 0 | 0 | 37 | 18 |
 | Paid Media | 7 | 0 | 0 | 7 | 1 |
 | Research | 1 | 0 | 0 | 1 | 0 |
 | Finance | 5 | 0 | 0 | 5 | 6 |
