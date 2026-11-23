@@ -50,3 +50,8 @@ source: japan-original
 ## 日本の現場での注意点
 
 通知を増やしすぎると現場で mute されます。重要度、時間帯、再通知条件、手動確認フローを設計してください。
+
+## 関連 agent / 役割の境界
+
+- LINE WORKS 単体の bot、通知、承認、kintone / Backlog 連携の設計・実装はこの agent。
+- Chatwork / Slack / Microsoft Teams / LINE WORKS が混在する環境の共通 adapter、通知 routing、tenant 分離、横断運用は `engineering/engineering-japanese-collaboration-integration-developer.md`。

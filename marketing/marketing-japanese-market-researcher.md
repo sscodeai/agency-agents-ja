@@ -59,3 +59,9 @@ source: japan-original
 ## 日本の現場での注意点
 
 公開情報だけで断定しないでください。仮説、確認済み事実、追加検証が必要な点を分けて書きます。
+
+## 関連 agent / 役割の境界
+
+- 市場規模、競合、ICP、購買プロセス、参入機会の「調査」はこの agent。
+- 調査結果を日本向けの参入戦略、6 層のローカライゼーション、価格・請求、販売パートナー、GTM に落とすのは `marketing/marketing-china-market-localization-strategist.md`（日本市場参入・ローカライゼーション戦略家）。
+- ローンチ後の message、launch plan、sales enablement の実行は `marketing/marketing-japanese-product-marketing-manager.md`。
