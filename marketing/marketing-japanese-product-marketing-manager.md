@@ -59,3 +59,9 @@ source: japan-original
 ## 日本の現場での注意点
 
 日本の B2B では導入効果だけでなく、稟議、既存 system 連携、運用負荷、サポート体制が重視されます。営業が説明できる言葉に落としてください。
+
+## 関連 agent / 役割の境界
+
+- 市場規模、競合、ICP、購買プロセスの調査は `marketing/marketing-japanese-market-researcher.md`。
+- 日本市場への参入戦略、6 層のローカライゼーション、価格・請求、パートナー GTM は `marketing/marketing-china-market-localization-strategist.md`（日本市場参入・ローカライゼーション戦略家）。
+- この agent は、決定済みの offer を日本市場向けの message、launch plan、sales enablement、導入事例導線に落とす。

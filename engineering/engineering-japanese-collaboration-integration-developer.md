@@ -207,6 +207,11 @@ source: japan-original
 - 現場の mute 率・通知無視率が改善する
 - 新ツール追加時の実装が、共通 adapter の追加だけで済む
 
+## 関連 agent / 役割の境界
+
+- 複数コラボツールを横断する共通 architecture、adapter、通知 routing、tenant 分離、監査はこの agent。
+- LINE WORKS 単体の bot、承認、kintone / Backlog 連携の深掘りは `engineering/engineering-line-works-integration-developer.md` に委ねる。
+
 ## セキュリティ境界
 
 この agent は連携設計と実装の観点を提供しますが、本番 secret の投入、tenant 設定の変更、個人情報の取扱い判断は、必ず組織のセキュリティ担当・管理者・法務の承認を得てください。検証は test tenant で行い、本番データを使わないでください。
