@@ -1,6 +1,6 @@
 # Agent List
 
-Total agents: 413 (⭐ 130 japan-original + 283 upstream-aligned)
+Total agents: 412 (⭐ 129 japan-original + 283 upstream-aligned)
 
 ⭐ = Japan-market original agent (independently designed for Japanese IT / SaaS / SIer / 製造業 DX / 公共 sector workflows).
 Other rows = upstream-aligned agents derived from [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents), tracked with `source`, `upstream_path`, and `translation_status` frontmatter.
@@ -197,12 +197,11 @@ Total: 8 (⭐ 2 japan-original + 6 upstream-aligned)
 
 ## Marketing
 
-Total: 56 (⭐ 19 japan-original + 37 upstream-aligned)
+Total: 55 (⭐ 18 japan-original + 37 upstream-aligned)
 
 | | Name | Source | Status | Upstream | Description | Path |
 | --- | --- | --- | --- | --- | --- | --- |
 | ⭐ | 日本向け Instagram / Lemon8 運用者 | japan-original |  |  | 日本の IT 企業、B2B SaaS、採用広報、イベント、導入事例向けに Instagram / Lemon8 の企画、投稿、導線、効果測定を設計する social operator。 | `marketing/marketing-instagram-lemon8-operator.md` |
-| ⭐ | 日本市場参入・ローカライズストラテジスト | japan-original |  |  | 海外SaaS・ブランドの日本市場参入を、市場検証、ローカライズ、価格・請求、販売パートナー、法規・表示、GTMまで一気通貫で設計する strategist。 | `marketing/marketing-japan-market-entry-strategist.md` |
 | ⭐ | 日本向け AI 引用戦略家 | japan-original |  |  | ChatGPT、Claude、Gemini、Perplexity などの生成 AI / answer engine で自社・製品・OSS がどのように引用・推薦されるかを監査し、AEO / GEO 改善策を作る strategist。 | `marketing/marketing-japanese-ai-citation-strategist.md` |
 | ⭐ | 日本向け導入事例ライター | japan-original |  |  | 日本の B2B SaaS、SI、IT service 向けに顧客導入事例、課題、選定理由、効果、公開許諾、営業活用 copy を作る case study writer。 | `marketing/marketing-japanese-case-study-writer.md` |
 | ⭐ | 日本向けコミュニティマネージャー | japan-original |  |  | 日本の SaaS、developer community、user group、partner community 向けにイベント、投稿、moderation、feedback loop を設計する community manager。 | `marketing/marketing-japanese-community-manager.md` |
@@ -229,7 +228,7 @@ Total: 56 (⭐ 19 japan-original + 37 upstream-aligned)
 |  | 日本向け書籍共同著者 | upstream | adapted | Book Co-Author | 日本語のビジネス書、技術書、Zenn Book、同人誌、ホワイトペーパーを企画・構成・執筆支援する marketing agent。 | `marketing/marketing-book-co-author.md` |
 |  | 日本向けカルーセル投稿成長エンジン | upstream | adapted | Carousel Growth Engine | Instagram、LinkedIn、X、note 連携向けに日本語カルーセル投稿の企画・構成・改善を行う marketing agent。 | `marketing/marketing-carousel-growth-engine.md` |
 |  | 日本向け EC 運用者 | upstream | adapted | China Ecommerce Operator | 楽天市場、Amazon Japan、Yahoo! ショッピング、Shopify Japan の商品ページ、広告、レビュー、在庫、販促を運用する agent。 | `marketing/marketing-china-ecommerce-operator.md` |
-|  | 日本市場ローカライゼーション戦略家 | upstream | adapted | China Market Localization Strategist | 海外プロダクトや上流コンテンツを、日本市場の商習慣、表現、販売チャネル、規制に合わせて再設計する agent。 | `marketing/marketing-china-market-localization-strategist.md` |
+|  | 日本市場参入・ローカライゼーション戦略家 | upstream | adapted | China Market Localization Strategist | 海外SaaS・ブランドの日本市場参入を、市場検証、6層のローカライゼーション、価格・請求、販売パートナー、法規・表示、GTMまで一気通貫で設計する strategist。 | `marketing/marketing-china-market-localization-strategist.md` |
 |  | 日本向けコンテンツクリエイター | upstream | adapted | Content Creator | 日本の B2B / B2C マーケティング向けに記事、SNS、LP、メール、導入事例、技術解説を作る content agent。 | `marketing/marketing-content-creator.md` |
 |  | 日本向け越境 EC 戦略家 | upstream | adapted | Cross-Border Ecommerce | 日本発または日本向けの越境 EC で、商品、物流、決済、翻訳、広告、規制、CS を設計する marketing agent。 | `marketing/marketing-cross-border-ecommerce.md` |
 |  | デベロッパーコミュニティビルダー | upstream | adapted | Developer Community Builder | 日本の developer audience 向けに Discord、GitHub Discussions、forum、contributor program を設計・運営し、利用者を advocate と contributor に育てる community builder。 | `marketing/marketing-developer-community-builder.md` |
