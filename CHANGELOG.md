@@ -4,6 +4,7 @@ All notable changes to `agency-agents-ja` are recorded here.
 
 ## Unreleased
 
+- Added two workflows: `workflows/japan-market-entry-readiness.yaml` (market research → entry/localization → pricing → legal → security → 90-day plan) and `workflows/collaboration-integration-review.yaml` (requirements → security → cross-tool integration → API test → observability → rollout).
 - Added evaluation fixtures for the Japan market entry/localization strategist and the cross-tool collaboration integration engineer. They cover fabricated market data, translation-only launches, legal overconfidence, partner economics, notification fan-out, webhook signature verification, retry/idempotency, and tenant/PII boundaries.
 - Added role boundary notes between the Japan market researcher, market-entry/localization strategist, and product marketing manager, and between the single-tool LINE WORKS integrator and the cross-tool collaboration integration engineer.
 - Made the converted-output manifest check strict on pull requests. `Check Tools Consistency` now fails when `scripts/convert-outputs.sha256` is stale, instead of letting the PR pass and failing only on the post-merge `main` push.

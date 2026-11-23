@@ -1,0 +1,38 @@
+name: collaboration-integration-review
+description: Chatwork / Slack / Microsoft Teams / LINE WORKS 連携の要件、security、実装、test、observability、rollout
+agents_dir: "."
+inputs:
+  - name: integration_request
+    required: true
+  - name: target_tools
+    required: true
+steps:
+  - id: requirements
+    role: "engineering/engineering-japanese-requirements-engineer"
+    task: "Integration request {{integration_request}} と target tools {{target_tools}} を読み、対象ユーザー、業務イベント、通知要件、承認フロー、データ分類、受入条件を整理してください。"
+    output: requirements
+  - id: security
+    role: "security/security-appsec-engineer"
+    task: "Requirements {{requirements}} と target tools {{target_tools}} をもとに、認証、署名検証、secret 管理、tenant 分離、個人情報、監査ログの threat model を作ってください。"
+    depends_on: [requirements]
+    output: security
+  - id: integration
+    role: "engineering/engineering-japanese-collaboration-integration-developer"
+    task: "Requirements {{requirements}} と security review {{security}} をもとに、共通 adapter、通知 routing、retry / idempotency、dead letter、監査を設計してください。"
+    depends_on: [requirements, security]
+    output: integration
+  - id: test
+    role: "testing/testing-japanese-api-tester"
+    task: "Requirements {{requirements}}、security review {{security}}、integration design {{integration}} をもとに、署名不正、重複 event、rate limit、権限不足、長文・添付、退職者・異動の test plan を作ってください。"
+    depends_on: [requirements, security, integration]
+    output: test
+  - id: observability
+    role: "engineering/engineering-japanese-observability-engineer"
+    task: "Integration design {{integration}} と test plan {{test}} をもとに、送達率、失敗、再送、遅延、tenant 分離を監視する log / metric / alert / runbook を設計してください。"
+    depends_on: [integration, test]
+    output: observability
+  - id: rollout
+    role: "project-management/project-management-japanese-pm"
+    task: "Requirements {{requirements}}、security {{security}}、integration {{integration}}、test {{test}}、observability {{observability}} を統合し、段階 rollout、切戻し、owner、残リスク、Go/No-Go をまとめてください。"
+    depends_on: [requirements, security, integration, test, observability]
+    output: summary

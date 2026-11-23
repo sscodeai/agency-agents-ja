@@ -1,0 +1,38 @@
+name: japan-market-entry-readiness
+description: 日本市場参入の調査、ローカライゼーション、価格、法務、セキュリティ、90 日計画
+agents_dir: "."
+inputs:
+  - name: offer
+    required: true
+  - name: target_segment
+    required: true
+steps:
+  - id: market_research
+    role: "marketing/marketing-japanese-market-researcher"
+    task: "Offer {{offer}} と target segment {{target_segment}} をもとに、日本市場の顧客課題、競合、購買プロセス、参入機会、追加検証が必要な点を整理してください。"
+    output: market_research
+  - id: entry_strategy
+    role: "marketing/marketing-china-market-localization-strategist"
+    task: "Market research {{market_research}} と offer {{offer}} をもとに、日本市場の参入仮説、6 層のローカライゼーション gap、P0-P5 の 90 日計画、Go/No-Go 条件を作ってください。"
+    depends_on: [market_research]
+    output: entry_strategy
+  - id: pricing
+    role: "specialized/specialized-japanese-pricing-strategist"
+    task: "Entry strategy {{entry_strategy}} と offer {{offer}} をもとに、日本向けの価格、パッケージ、税込表示、パートナー粗利、値引きルールを整理してください。"
+    depends_on: [entry_strategy]
+    output: pricing
+  - id: legal
+    role: "legal/legal-japanese-contract-reviewer"
+    task: "Entry strategy {{entry_strategy}} と pricing {{pricing}} をもとに、契約、SLA、責任分界、個人情報、表示・業法上の確認事項を整理してください。"
+    depends_on: [entry_strategy, pricing]
+    output: legal
+  - id: security
+    role: "security/security-architect"
+    task: "Entry strategy {{entry_strategy}} と legal notes {{legal}} をもとに、日本の企業審査で聞かれるセキュリティ、データ保管、監査、委託先管理の確認事項を整理してください。"
+    depends_on: [entry_strategy, legal]
+    output: security
+  - id: execution_plan
+    role: "project-management/project-management-japanese-pm"
+    task: "Market research {{market_research}}、entry strategy {{entry_strategy}}、pricing {{pricing}}、legal {{legal}}、security {{security}} を統合し、90 日実行計画、owner、リスク、Go/No-Go 判断をまとめてください。"
+    depends_on: [market_research, entry_strategy, pricing, legal, security]
+    output: summary

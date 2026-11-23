@@ -25,7 +25,7 @@ A library of AI specialist agents and workflows for Japanese IT delivery: SIer (
 | ⭐ Japan-market originals | <!-- AUTOGEN:JAPAN -->129<!-- /AUTOGEN:JAPAN --> |
 | Upstream-aligned (adapted to Japan) | <!-- AUTOGEN:UPSTREAM -->283<!-- /AUTOGEN:UPSTREAM --> |
 | Upstream skeleton backlog | <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON --> |
-| Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> |
+| Workflows (`workflows/`) | <!-- AUTOGEN:WORKFLOWS -->29<!-- /AUTOGEN:WORKFLOWS --> |
 | Categories | <!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES --> |
 | Supported tools (`tools.json`) | <!-- AUTOGEN:TOOLS -->19<!-- /AUTOGEN:TOOLS --> |
 | Upstream baseline | `msitarzewski/agency-agents@8ae6164` as of 2026-11-08 |
@@ -108,7 +108,7 @@ The <!-- AUTOGEN:JAPAN -->129<!-- /AUTOGEN:JAPAN --> ⭐ Japan-market originals 
 - **Manufacturing DX / public sector**: 工場 IoT, 自治体 DX, BCP, 内部統制
 - **Market entry / localization**: 日本市場参入, 6 層のローカライズ, 価格・請求・パートナー GTM
 - **New in 0.5.0**: CxO / 経営企画, 組込み・電気設備, 旅行・インバウンド, DevRel / DevEx, 技術 SEO / TikTok LIVE コマース
-- **Workflows**: <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS --> end-to-end workflows that chain agents together (e.g. `japanese-sier-requirements-review`, `acceptance-readiness-review`, `csv-data-migration-readiness`, `oss-localization-launch`, `oss-upstream-sync`)
+- **Workflows**: <!-- AUTOGEN:WORKFLOWS -->29<!-- /AUTOGEN:WORKFLOWS --> end-to-end workflows that chain agents together (e.g. `japanese-sier-requirements-review`, `acceptance-readiness-review`, `csv-data-migration-readiness`, `oss-localization-launch`, `oss-upstream-sync`)
 
 ### Translation status
 
@@ -222,7 +222,7 @@ MIT
 
 | AI agent | 上流由来 adapted | 日本市場 original | 対応 tool | Category | Workflow |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| **<!-- AUTOGEN:TOTAL -->412<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->283<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->129<!-- /AUTOGEN:JAPAN -->** | **<!-- AUTOGEN:TOOLS -->19<!-- /AUTOGEN:TOOLS -->** | **<!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES -->** | **<!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->** |
+| **<!-- AUTOGEN:TOTAL -->412<!-- /AUTOGEN:TOTAL -->** | **<!-- AUTOGEN:UPSTREAM -->283<!-- /AUTOGEN:UPSTREAM -->** | **<!-- AUTOGEN:JAPAN -->129<!-- /AUTOGEN:JAPAN -->** | **<!-- AUTOGEN:TOOLS -->19<!-- /AUTOGEN:TOOLS -->** | **<!-- AUTOGEN:CATEGORIES -->22<!-- /AUTOGEN:CATEGORIES -->** | **<!-- AUTOGEN:WORKFLOWS -->29<!-- /AUTOGEN:WORKFLOWS -->** |
 
 ## これは何か
 
@@ -398,7 +398,7 @@ ticket は PROJ-1234、spec は docs/spec.md です。
 - 上流由来 agent (`source: upstream`): <!-- AUTOGEN:UPSTREAM -->283<!-- /AUTOGEN:UPSTREAM -->（英文上流 `msitarzewski/agency-agents` の agent path に対応。baseline は [Stats](#stats) / [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) を参照。現在は `translation_status: adapted` ＝ 上流 role を日本市場向けに書き直し済み。`upstream_path:` で 1:1 対応関係を保持）
 - 上流由来 agent の skeleton backlog: <!-- AUTOGEN:SKELETON -->0<!-- /AUTOGEN:SKELETON -->
 - 合計: <!-- AUTOGEN:TOTAL -->412<!-- /AUTOGEN:TOTAL --> agents
-- Workflow: <!-- AUTOGEN:WORKFLOWS -->27<!-- /AUTOGEN:WORKFLOWS -->
+- Workflow: <!-- AUTOGEN:WORKFLOWS -->29<!-- /AUTOGEN:WORKFLOWS -->
 
 完全な一覧は [AGENT-LIST.md](AGENT-LIST.md) を参照してください（⭐ が日本特化 agent）。
 翻訳進捗は [TRANSLATION-PROGRESS.md](TRANSLATION-PROGRESS.md)、上流 path coverage は [UPSTREAM-COVERAGE.md](UPSTREAM-COVERAGE.md) で確認できます。
@@ -522,6 +522,8 @@ workflow 内の `agents_dir` はこの repository root を基準にします。�
 | `workflows/service-delivery-review.yaml` | SLA、問い合わせ、障害、service review、CS action | `examples/workflow-service-delivery-review.md` |
 | `workflows/technical-documentation-review.yaml` | 技術 document、knowledge base、引き継ぎ evidence | `examples/workflow-technical-documentation-review.md` |
 | `workflows/vendor-cost-review.yaml` | vendor 調達、risk、FinOps、pricing、契約単位 | `examples/workflow-vendor-cost-review.md` |
+| `workflows/collaboration-integration-review.yaml` | Chatwork / Slack / Microsoft Teams / LINE WORKS 連携の要件、security、実装、test、observability、rollout |  |
+| `workflows/japan-market-entry-readiness.yaml` | 日本市場参入の調査、ローカライゼーション、価格、法務、セキュリティ、90 日計画 |  |
 | `workflows/oss-localization-launch.yaml` | 上流 OSS project を日本市場向けに初回ローカライズして公開するための workflow。翻訳、用語集、positioning、license / 商標確認、公開 plan、Backlog / Redmine / Jira ticket、初週 KPI までを日本 IT 現場向けに整える | `examples/workflow-oss-localization-launch.md` |
 | `workflows/oss-upstream-sync.yaml` | fork 後の OSS project を継続的に上流追従するための workflow。upstream release / commit の分類、fork 独自改修との衝突確認、翻訳追従、release note への反映、Backlog / Redmine / Jira ticket 化、四半期 sync 健全性 review までを日本 IT 現場向けに整える | `examples/workflow-oss-upstream-sync.md` |
 | `workflows/software-supply-chain-review.yaml` | npm / PyPI / Maven などソフトウェア依存、OSS license、CVE、SBOM、provenance、委託先承認、incident readiness を日本 IT 現場向けに review | `examples/workflow-software-supply-chain-review.md` |
